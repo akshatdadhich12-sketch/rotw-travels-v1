@@ -1,0 +1,2212 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>St Petersburg travel guide: talk to a local guide | ROTW Travels</title>
+<meta name="description" content="The Hermitage, the Neva bridges opening at night, and June evenings that never get dark. Plan your St Petersburg trip by talking to Sasha, a guide at ROTW Travels in Moscow.">
+<meta name="theme-color" content="#0A1424">
+<meta property="og:title" content="St Petersburg travel guide: talk to a local guide | ROTW Travels">
+<meta property="og:description" content="The Hermitage, the Neva bridges opening at night, and June evenings that never get dark. Plan your St Petersburg trip by talking to Sasha, a guide at ROTW Travels in Moscow.">
+<meta property="og:image" content="assets/spb.webp">
+<link rel="alternate" hreflang="en" href="spb.html">
+<link rel="alternate" hreflang="ru" href="ru/spb.html">
+<link rel="alternate" hreflang="ar" href="ar/spb.html">
+<link rel="alternate" hreflang="hi" href="hi/spb.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A1424'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23D4A84B' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23E9EDF1'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23D4A84B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&family=Caveat:wght@400;600&display=swap">
+<style>
+/* Sasha's Field Notebook
+   ROTW Travels Moscow - Integration with v1
+   Layout: Notebook spreads on a dark navy desk background with an envelope trip aside.
+   Type: Cormorant Garamond for headings and voice, Jost for UI and body, Caveat for Sasha's handwriting. */
+
+:root{
+  --desk:#0A1424;        /* v1's deepest navy page background */
+  --paper:#F1EEE6;       /* warm off-white notebook pages */
+  --kraft:#E8DCC4;       /* warm kraft envelope */
+  --kraft-2:#D9CBAE;     /* envelope flap */
+  --slip:#F7F3EA;        /* note slips */
+  --rule:rgba(10,20,36,.07);   /* ruled lines on slips */
+  --line:rgba(10,20,36,.10);   /* row dividers */
+  --ink:#0A1424;         /* main dark navy text */
+  --ink-2:#465365;       /* secondary text */
+  --pencil:rgba(70,83,101,.28); /* empty bar tracks, pencil marks */
+  --pen:#1F3B66;         /* Sasha's fountain pen ink (royal navy) */
+  --pen-2:#162B4D;       /* hover/pressed */
+  --gold-text:#6E4F17;   /* gold text on light paper */
+  --gold:#D4A84B;        /* v1's accent gold */
+  --gold-hover:#E2BC66;  /* gold hover */
+  --tape:rgba(236,226,200,.78);
+  --shadow-page:0 2px 4px rgba(0,0,0,.35),0 24px 48px -20px rgba(0,0,0,.6);
+  --glacier:#E9EDF1;
+  --mist:#9AA7B8;
+  --soft:#C9D3DF;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-move:cubic-bezier(.77,0,.175,1);
+  --f-voice:"Cormorant Garamond","Iowan Old Style",Georgia,serif;  /* headings, place names */
+  --f-ui:"Jost","Segoe UI",system-ui,sans-serif;                  /* body, buttons, labels */
+  --f-hand:"Caveat","Segoe Print",cursive;                         /* Sasha's handwriting */
+  --hand-scale:1;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--desk);
+  color:var(--glacier);
+  font:17px/1.6 var(--f-ui);
+  -webkit-font-smoothing:antialiased;
+  padding-left:max(20px,env(safe-area-inset-left,0px));
+  padding-right:max(20px,env(safe-area-inset-right,0px));
+}
+@media (max-width:1099px){
+  body{padding-bottom:110px}
+}
+
+h1,h2,h3{font-family:var(--f-voice);font-weight:400;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:var(--pen)}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:var(--gold);color:var(--ink);padding:10px 14px;border-radius:4px;z-index:50;text-decoration:none;font-weight:500}
+.skip:focus{top:12px}
+
+/* top bar */
+.top{
+  max-width:1240px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding-block:calc(env(safe-area-inset-top,0px) + 18px) 14px;
+}
+.rotw-logo{display:block;width:auto;overflow:visible;--lg-main:var(--glacier);--lg-red:#E53824;--lg-hole:var(--desk)}
+.rotw-logo.logo{height:38px}
+.rotw-logo .lg-needle{transform-box:view-box;transform-origin:227px 136px}
+.rotw-logo .lg-l,.rotw-logo .lg-red,.rotw-logo .lg-dirs,.rotw-logo .lg-plane{transform-box:fill-box;transform-origin:50% 50%}
+.top .logo-link{text-decoration:none;display:inline-flex;align-items:center}
+
+.top .right{display:flex;align-items:center;gap:18px}
+.langs{display:flex;gap:2px;font-size:13px;letter-spacing:.02em}
+.langs a{color:var(--soft);text-decoration:none;min-width:36px;min-height:36px;display:inline-grid;place-items:center;border-radius:999px;padding:0 8px;transition:background .15s, color .15s}
+.langs a[aria-current="true"]{background:var(--gold);color:var(--ink);font-weight:500}
+@media (hover:hover) and (pointer:fine){.langs a:not([aria-current="true"]):hover{background:rgba(233,237,241,.1);color:var(--glacier)}}
+
+.btn-plan{
+  background:var(--gold);
+  color:#17120A;
+  border-radius:2px;
+  padding:10px 18px;
+  font:500 14px var(--f-ui);
+  text-decoration:none;
+  min-height:40px;
+  display:inline-flex;
+  align-items:center;
+  transition:background .15s, transform .15s;
+}
+.btn-plan:active{transform:scale(.98)}
+@media (hover:hover) and (pointer:fine){.btn-plan:hover{background:var(--gold-hover)}}
+@media (max-width:560px){.btn-plan{display:none}}
+
+/* Type scale */
+h1{
+  font:300 clamp(40px, 5.2vw, 84px)/1 var(--f-voice);
+  letter-spacing:-0.02em;
+  margin:0 0 16px;
+  color:var(--ink);
+  overflow-wrap:anywhere;
+  -webkit-hyphens:auto;
+  hyphens:auto;
+}
+h2{
+  font:400 31px/1.2 var(--f-voice);
+  margin-top:40px;
+  margin-bottom:16px;
+  color:var(--ink);
+}
+.kicker{
+  font:italic 400 21px var(--f-voice);
+  color:var(--ink-2);
+  margin:0 0 16px;
+}
+.hook{
+  font-size:17px;
+  line-height:1.6;
+  margin-bottom:24px;
+  color:var(--ink);
+}
+.hand{
+  font-family:var(--f-hand);
+  font-size:calc(27px * var(--hand-scale, 1));
+  line-height:1.3;
+  color:var(--pen);
+  margin:0 0 12px;
+}
+.hand.small{
+  font-size:calc(22px * var(--hand-scale, 1));
+}
+.hand.sign{
+  font-size:calc(22px * var(--hand-scale, 1));
+}
+.sign-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:20px;
+}
+.sign-av{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Desk Layout */
+.desk{
+  max-width:1240px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 340px;
+  gap:40px;
+  align-items:start;
+  padding-top:16px;
+}
+@media (max-width:1099px){
+  .desk{
+    grid-template-columns:minmax(0,1fr);
+    gap:0;
+  }
+}
+.notebook{
+  min-width:0;
+}
+
+/* Spreads and Pages */
+.spread{
+  background:var(--paper);
+  border-radius:6px;
+  box-shadow:var(--shadow-page);
+  margin-bottom:40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+  color:var(--ink);
+}
+.page{
+  padding:48px 52px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+.page:first-child{
+  box-shadow:inset -18px 0 24px -22px rgba(10,20,36,.22);
+}
+.page:last-child{
+  box-shadow:inset 18px 0 24px -22px rgba(10,20,36,.22);
+}
+[dir=rtl] .page:first-child{
+  box-shadow:inset 18px 0 24px -22px rgba(10,20,36,.22);
+}
+[dir=rtl] .page:last-child{
+  box-shadow:inset -18px 0 24px -22px rgba(10,20,36,.22);
+}
+@media (max-width:899px){
+  h1{
+    font-size:clamp(40px, 11vw, 64px);
+  }
+  .spread{
+    grid-template-columns:1fr;
+  }
+  .page{
+    padding:28px 22px;
+  }
+  .page:first-child,.page:last-child{
+    box-shadow:none;
+  }
+  [dir=rtl] .page:first-child,[dir=rtl] .page:last-child{
+    box-shadow:none;
+  }
+  .page:nth-child(2){
+    border-top:1px dashed rgba(10,20,36,.18);
+  }
+}
+.page-num{
+  margin-top:auto;
+  padding-top:24px;
+  align-self:flex-end;
+  font:13px var(--f-ui);
+  color:var(--ink-2);
+}
+
+/* Taped photo */
+.taped{
+  position:relative;
+  margin:12px 0 24px;
+  transform:rotate(-1.2deg);
+  align-self:start;
+  width:100%;
+  flex:none;
+}
+.taped.rot-alt, .taped:nth-of-type(even){
+  transform:rotate(1deg);
+}
+.taped img{
+  display:block;
+  aspect-ratio:4/3;
+  height:auto;
+  width:100%;
+  object-fit:cover;
+  border:10px solid #fff;
+  box-shadow:0 1px 2px rgba(10,20,36,.12),0 10px 24px -12px rgba(10,20,36,.3);
+  box-sizing:border-box;
+}
+.taped::before, .taped::after{
+  content:"";
+  position:absolute;
+  top:-12px;
+  width:84px;
+  height:26px;
+  background:var(--tape);
+  z-index:2;
+  pointer-events:none;
+}
+.taped::before{
+  inset-inline-start:16px;
+  transform:rotate(-38deg);
+}
+.taped::after{
+  inset-inline-end:16px;
+  transform:rotate(38deg);
+}
+[dir=rtl] .taped::before{
+  transform:rotate(38deg);
+}
+[dir=rtl] .taped::after{
+  transform:rotate(-38deg);
+}
+
+.taped.square{
+  max-width:220px;
+}
+.taped.square img{
+  aspect-ratio:1/1;
+  max-width:220px;
+}
+
+.taped.small{
+  margin:10px 0 12px;
+}
+.taped.small img{
+  border:6px solid #fff;
+}
+.taped.small::before, .taped.small::after{
+  width:56px;
+  height:18px;
+  top:-8px;
+}
+.taped.small::before{
+  inset-inline-start:8px;
+}
+.taped.small::after{
+  inset-inline-end:8px;
+}
+
+/* Note slip */
+.slip{
+  position:relative;
+  background:var(--slip);
+  background-image:repeating-linear-gradient(to bottom, transparent 0 31px, var(--rule) 31px 32px);
+  padding:20px 24px;
+  transform:rotate(.6deg);
+  box-shadow:0 1px 2px rgba(10,20,36,.1);
+  margin:28px 0 20px;
+}
+.slip::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:84px;
+  height:26px;
+  background:var(--tape);
+  z-index:2;
+  pointer-events:none;
+}
+.slip p{
+  margin:0 0 12px;
+}
+.slip p:last-child{
+  margin-bottom:0;
+}
+
+/* Index tabs */
+html:not(.js) .tabs{
+  display:none;
+}
+html.js .tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+  margin-top:24px;
+  margin-bottom:0;
+  position:relative;
+  z-index:2;
+}
+.tab{
+  font:500 14px var(--f-ui);
+  min-height:44px;
+  padding:0 14px;
+  background:var(--slip);
+  border:1px solid rgba(10,20,36,.12);
+  border-bottom:none;
+  border-radius:8px 8px 0 0;
+  color:var(--ink-2);
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:background .15s ease, color .15s ease;
+}
+.tab[aria-selected="true"]{
+  background:var(--paper);
+  color:var(--ink);
+  margin-bottom:-1px;
+  border-bottom:1px solid var(--paper);
+  position:relative;
+  z-index:3;
+}
+.topic-says{
+  margin-top:16px;
+  min-height:0;
+}
+.topic-says:empty{
+  margin-top:0;
+}
+
+/* Picks list */
+.picks{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-top:1px solid rgba(10,20,36,.12);
+}
+.pick-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:16px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  align-items:center;
+}
+.pick-row.fade-in{
+  animation:pickFade 160ms ease-out both;
+}
+@keyframes pickFade{
+  from{opacity:0}
+  to{opacity:1}
+}
+.pick-info{
+  min-width:0;
+}
+.pick-title{
+  font:400 23px/1.3 var(--f-voice);
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.pick-line{
+  font:400 15px/1.5 var(--f-ui);
+  color:var(--ink-2);
+  margin-bottom:10px;
+}
+.dur-bar{
+  width:96px;
+  height:6px;
+  border-radius:3px;
+  background:var(--pencil);
+  overflow:hidden;
+  margin-bottom:4px;
+}
+.dur-fill{
+  height:100%;
+  background:var(--gold);
+  border-radius:3px;
+}
+.dur-text{
+  font:13px var(--f-ui);
+  color:var(--gold-text);
+  font-variant-numeric:tabular-nums;
+  display:block;
+}
+
+/* Pin button */
+.pin{
+  min-height:44px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid rgba(10,20,36,.22);
+  background:transparent;
+  color:var(--ink-2);
+  font:500 14px var(--f-ui);
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+  transition:background .15s ease, color .15s ease, border-color .15s ease, transform .16s var(--ease-out);
+}
+.pin:active{
+  transform:scale(.97);
+}
+.pin[aria-pressed="true"]{
+  background:var(--gold);
+  color:var(--ink);
+  border-color:var(--gold);
+}
+@media (hover:hover) and (pointer:fine){
+  .pin:not([aria-pressed="true"]):hover{
+    border-color:var(--ink);
+    color:var(--ink);
+  }
+  .pin[aria-pressed="true"]:hover{
+    background:var(--gold-hover);
+    border-color:var(--gold-hover);
+  }
+}
+.pin.plan{
+  min-height:48px;
+  margin-top:20px;
+}
+
+/* Paper clip on row when pinned */
+.row-clip{
+  position:absolute;
+  inset-inline-start:-8px;
+  top:-12px;
+  width:20px;
+  height:46px;
+  display:none;
+  pointer-events:none;
+  z-index:4;
+}
+.pick-row.pinned .row-clip{
+  display:block;
+  animation:clipSnap 180ms var(--ease-out) both;
+}
+@keyframes clipSnap{
+  from{transform:scale(1.15);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* Seasons Table, Days & FAQs */
+.seasons-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+.seasons-table tr{
+  border-bottom:1px dashed rgba(10,20,36,.18);
+}
+.seasons-table th, .seasons-table td{
+  text-align:start;
+  padding:14px 10px 14px 0;
+  vertical-align:baseline;
+}
+[dir=rtl] .seasons-table th, [dir=rtl] .seasons-table td{
+  padding:14px 0 14px 10px;
+}
+.season-name{
+  font:400 20px var(--f-voice);
+  color:var(--ink);
+  white-space:nowrap;
+}
+.season-months{
+  font:13px var(--f-ui);
+  color:var(--gold-text);
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.season-note{
+  font:15px/1.5 var(--f-ui);
+  color:var(--ink-2);
+}
+
+.plan-say{
+  font-size:17px;
+  line-height:1.6;
+  margin-bottom:20px;
+  color:var(--ink);
+}
+.days{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.days li{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:16px;
+  align-items:baseline;
+}
+.day-num{
+  font-family:var(--f-hand);
+  font-size:calc(40px * var(--hand-scale, 1));
+  color:var(--pen);
+  line-height:1;
+  min-width:32px;
+}
+.day-body{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.day-title{
+  font:400 21px/1.3 var(--f-voice);
+  color:var(--ink);
+}
+.day-places{
+  font:15px/1.5 var(--f-ui);
+  color:var(--ink-2);
+}
+
+.getting-text{
+  font-size:17px;
+  line-height:1.6;
+  color:var(--ink);
+}
+
+details{
+  border-bottom:1px solid var(--line);
+  padding:16px 0;
+}
+summary{
+  font:400 20px var(--f-voice);
+  color:var(--ink);
+  cursor:pointer;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  padding-inline-end:28px;
+  list-style:none;
+}
+summary::-webkit-details-marker{
+  display:none;
+}
+summary::after{
+  content:"+";
+  position:absolute;
+  inset-inline-end:0;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:var(--f-voice);
+  font-size:24px;
+  color:var(--pen);
+  line-height:1;
+}
+details[open] summary::after{
+  content:"–";
+}
+details p{
+  font:400 16px/1.6 var(--f-ui);
+  color:var(--ink-2);
+  margin-top:10px;
+}
+
+/* Contents strip at the bottom of city pages */
+.contents-strip{
+  margin:40px 0 20px;
+}
+.contents-strip h2{
+  color:var(--glacier);
+  margin-bottom:24px;
+}
+.strip-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:24px;
+}
+.strip-item{
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  color:var(--glacier);
+}
+.strip-name{
+  font:400 19px var(--f-voice);
+  color:var(--glacier);
+  margin-top:8px;
+  text-align:center;
+  transition:color .15s ease;
+}
+@media (hover:hover) and (pointer:fine){
+  .strip-item:hover .strip-name{
+    color:var(--gold);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+}
+
+/* Hub contents list */
+.contents{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-top:1px solid rgba(10,20,36,.12);
+}
+.content-row{
+  display:grid;
+  grid-template-columns:auto 96px minmax(0,1fr);
+  gap:16px;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+  align-items:center;
+}
+.content-row.fade-in{
+  animation:pickFade 160ms ease-out both;
+}
+.content-num{
+  font-family:var(--f-hand);
+  font-size:calc(28px * var(--hand-scale, 1));
+  color:var(--pen);
+  min-width:28px;
+  line-height:1;
+}
+.thumb-frame{
+  width:96px;
+  height:72px;
+  border:4px solid #fff;
+  box-shadow:0 1px 2px rgba(10,20,36,.1);
+  overflow:hidden;
+  flex:none;
+}
+.thumb-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.content-info{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
+}
+.content-title{
+  font:400 28px/1.2 var(--f-voice);
+  color:var(--ink);
+  text-decoration:none;
+}
+@media (hover:hover) and (pointer:fine){
+  .content-title:hover{
+    text-decoration:underline;
+  }
+}
+.content-kicker{
+  font:400 15px/1.5 var(--f-ui);
+  color:var(--ink-2);
+}
+.open-link{
+  font:500 14px var(--f-ui);
+  color:var(--pen);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  margin-top:2px;
+  min-height:44px;
+}
+.open-link .chevron{
+  transition:transform .15s ease;
+}
+[dir=rtl] .open-link .chevron{
+  transform:scaleX(-1);
+}
+@media (hover:hover) and (pointer:fine){
+  .open-link:hover{
+    text-decoration:underline;
+  }
+}
+
+/* Hub Spread 2: How steps */
+.how-steps{
+  list-style:none;
+  margin:20px 0 0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+.how-steps li{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:16px;
+  align-items:baseline;
+}
+.step-num{
+  font-family:var(--f-hand);
+  font-size:calc(32px * var(--hand-scale, 1));
+  color:var(--pen);
+  line-height:1;
+  min-width:24px;
+}
+.how-steps p{
+  font-family:var(--f-hand);
+  font-size:calc(26px * var(--hand-scale, 1));
+  color:var(--pen);
+  line-height:1.3;
+}
+
+/* The Envelope */
+.envelope{
+  background:var(--kraft);
+  border-radius:6px;
+  box-shadow:var(--shadow-page);
+  padding:26px 22px 24px;
+  position:relative;
+  margin-top:0;
+  color:var(--ink);
+}
+.envelope::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:22px;
+  background:var(--kraft-2);
+  clip-path:polygon(0 0, 100% 0, 50% 100%);
+  pointer-events:none;
+  z-index:2;
+}
+
+@media (min-width:1100px){
+  .envelope{
+    position:sticky;
+    top:24px;
+    align-self:start;
+    max-height:calc(100vh - 48px);
+    overflow:auto;
+  }
+}
+
+.env-head{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+  background:none;
+  border:none;
+  padding:0;
+  text-align:start;
+  margin-bottom:12px;
+  position:relative;
+  cursor:default;
+}
+.env-title{
+  font:400 25px/1.2 var(--f-voice);
+  color:var(--ink);
+}
+.env-sum{
+  font:400 14px var(--f-ui);
+  color:var(--ink-2);
+}
+.stamp-badge{
+  display:none;
+}
+.env-chevron{
+  display:none;
+}
+
+/* Stamps row */
+.stamps{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:16px 0;
+  min-height:0;
+}
+.stamp{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  border:2px solid #B08A3A;
+  outline:1px dashed #B08A3A;
+  outline-offset:-7px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  font:500 11px/1.1 var(--f-ui);
+  font-weight:500;
+  color:#5A400F;
+  padding:6px;
+  box-sizing:border-box;
+  background:var(--kraft);
+  flex:none;
+  transition:transform .2s ease;
+}
+.stamp-name{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  color:#5A400F;
+  font-weight:500;
+}
+.stamp.stamp-anim{
+  animation:stampLand 260ms var(--ease-out) forwards;
+}
+@keyframes stampLand{
+  from{transform:scale(1.6) rotate(var(--rot,0deg));opacity:0}
+  to{transform:scale(1) rotate(var(--rot,0deg));opacity:1}
+}
+
+.route{
+  font:400 15px/1.4 var(--f-voice);
+  color:var(--ink);
+  margin:8px 0 16px;
+}
+.route:empty, .route[hidden]{
+  display:none;
+}
+
+.trip-empty{
+  margin:16px 0;
+  color:var(--ink-2);
+  transition:text-decoration .2s ease;
+}
+.trip-empty.underline-flash{
+  text-decoration:underline 2px var(--pen);
+  text-underline-offset:4px;
+}
+
+.city-group{
+  margin-bottom:20px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--line);
+}
+.city-group:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+.city-group-title{
+  font:400 18px/1.3 var(--f-voice);
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.env-item{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto auto;
+  gap:8px 12px;
+  align-items:center;
+  padding:6px 0;
+}
+.env-item-title{
+  font:400 15px/1.3 var(--f-ui);
+  color:var(--ink);
+}
+.env-item-dur{
+  font:13px var(--f-ui);
+  color:var(--gold-text);
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+.env-rm{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:none;
+  background:transparent;
+  color:var(--ink-2);
+  font-size:18px;
+  line-height:1;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  padding:0;
+  transition:background .15s ease, color .15s ease;
+}
+@media (hover:hover) and (pointer:fine){
+  .env-rm:hover{
+    background:var(--kraft-2);
+    color:var(--ink);
+  }
+}
+
+.day-pips{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+}
+.pip{
+  width:12px;
+  height:12px;
+  border-radius:2px;
+  flex:none;
+  box-sizing:border-box;
+}
+.pip.full{
+  background:var(--gold);
+}
+.pip.half{
+  border:1.5px solid var(--gold);
+  background:linear-gradient(to right, var(--gold) 50%, transparent 50%);
+}
+[dir=rtl] .pip.half{
+  background:linear-gradient(to left, var(--gold) 50%, transparent 50%);
+}
+.pips-label{
+  font:13px var(--f-ui);
+  color:var(--ink-2);
+  margin-inline-start:4px;
+}
+
+.price-line{
+  padding:14px 0 8px;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.price-line b{
+  font:500 13px var(--f-ui);
+  color:var(--ink);
+}
+.price-line span{
+  font:400 14px/1.4 var(--f-ui);
+  color:var(--ink-2);
+}
+
+.send{
+  width:100%;
+  min-height:52px;
+  border-radius:999px;
+  background:var(--gold);
+  color:var(--ink);
+  font:500 16px var(--f-ui);
+  border:none;
+  cursor:pointer;
+  margin-top:12px;
+  display:inline-grid;
+  place-items:center;
+  transition:background .15s ease, transform .16s var(--ease-out);
+}
+.send:active{
+  transform:scale(.98);
+}
+@media (hover:hover) and (pointer:fine){
+  .send:hover{
+    background:var(--gold-hover);
+  }
+}
+
+/* Letter view */
+.env-letter[hidden], .env-posted[hidden]{
+  display:none;
+}
+.letter-slip{
+  margin:10px 0 16px;
+  transform:rotate(.3deg);
+}
+.letter-title{
+  font:400 23px var(--f-voice);
+  color:var(--ink);
+}
+.back-btn{
+  background:none;
+  border:none;
+  padding:6px 0;
+  font:500 14px var(--f-ui);
+  color:var(--pen);
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  margin-bottom:12px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:14px;
+}
+.field label{
+  font:500 13px var(--f-ui);
+  color:var(--ink);
+}
+.field input, .field textarea{
+  min-height:44px;
+  background:#fff;
+  border:1px solid rgba(10,20,36,.2);
+  border-radius:6px;
+  padding:10px 12px;
+  font:16px var(--f-ui);
+  color:var(--ink);
+  box-sizing:border-box;
+}
+.field textarea{
+  min-height:76px;
+  resize:vertical;
+}
+.field input:focus, .field textarea:focus{
+  outline:2px solid var(--gold);
+  outline-offset:1px;
+}
+.field-error{
+  font:13px var(--f-ui);
+  color:#9B2C1F;
+}
+
+/* Posted view */
+.postmark{
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  border:2px solid var(--pen);
+  color:var(--pen);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:12px;
+  line-height:1.2;
+  margin:20px auto;
+  transform:rotate(-10deg);
+  animation:postmarkIn 300ms var(--ease-out) both;
+}
+@keyframes postmarkIn{
+  from{transform:scale(1.5) rotate(-10deg);opacity:0}
+  to{transform:scale(1) rotate(-10deg);opacity:1}
+}
+.pm-date{
+  font-weight:500;
+}
+.pm-sub{
+  font-size:11px;
+  letter-spacing:.04em;
+  margin-top:2px;
+}
+.posted-title{
+  font:400 23px var(--f-voice);
+  color:var(--ink);
+  text-align:center;
+  margin:12px 0 8px;
+}
+.posted-summary{
+  font:400 15px/1.5 var(--f-ui);
+  color:var(--ink-2);
+  margin-bottom:16px;
+}
+.posted-proto{
+  font:italic 400 13px/1.5 var(--f-ui);
+  color:var(--ink-2);
+  border-top:1px dashed var(--line);
+  padding-top:12px;
+}
+
+/* Fly chip animation */
+.fly{
+  position:fixed;
+  z-index:60;
+  pointer-events:none;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-voice);
+  font-size:15px;
+  padding:6px 12px;
+  border-radius:4px;
+  box-shadow:0 2px 8px rgba(10,20,36,.18);
+  white-space:nowrap;
+}
+
+/* Mobile bottom sheet */
+@media (max-width:1099px){
+  .envelope{
+    position:fixed;
+    inset-inline:0;
+    bottom:0;
+    top:auto;
+    z-index:20;
+    border-radius:16px 16px 0 0;
+    padding:12px max(20px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px));
+    box-shadow:0 -10px 30px rgba(0,0,0,.35);
+    max-height:80vh;
+    overflow:auto;
+  }
+  .envelope::before{
+    display:none;
+  }
+  .env-head{
+    min-height:64px;
+    cursor:pointer;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto auto;
+    align-items:center;
+    gap:10px;
+    margin-bottom:0;
+  }
+  .env-head-text{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .stamp-badge{
+    display:inline-grid;
+    place-items:center;
+    min-width:24px;
+    height:24px;
+    padding:0 6px;
+    border-radius:12px;
+    background:var(--gold);
+    color:var(--ink);
+    font:500 12px var(--f-ui);
+  }
+  .stamp-badge[hidden], .stamp-badge:empty{
+    display:none !important;
+  }
+  .env-chevron{
+    display:block;
+    transition:transform .2s ease;
+  }
+  .envelope.open .env-chevron{
+    transform:rotate(180deg);
+  }
+  .envelope:not(.open) .env-body{
+    display:none;
+  }
+}
+
+/* Notebook footer */
+footer.foot{
+  background:#08101C;
+  border-top:1px solid #1A283E;
+  color:var(--soft);
+  padding:48px 0 calc(env(safe-area-inset-bottom,0px) + 40px);
+  margin-top:80px;
+}
+.foot-wrap{
+  max-width:1240px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.5fr repeat(4, 1fr);
+  gap:32px;
+}
+.foot-brand-col{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.foot-brand-col .rotw-logo{
+  height:36px;
+}
+.foot-brand-col p{
+  font-size:14px;
+  line-height:1.5;
+  color:var(--mist);
+}
+.foot-brand-col .btn-plan{
+  align-self:flex-start;
+  margin-top:6px;
+}
+.foot-col h3{
+  font:500 13px var(--f-ui);
+  color:var(--mist);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.foot-col a{
+  display:block;
+  color:var(--soft);
+  text-decoration:none;
+  font-size:14px;
+  margin-bottom:8px;
+  transition:color .15s ease;
+}
+.foot-col a:hover{
+  color:var(--glacier);
+}
+.foot-col span{
+  display:block;
+  font-size:14px;
+  color:var(--soft);
+  margin-bottom:8px;
+}
+.foot-bot{
+  max-width:1240px;
+  margin:32px auto 0;
+  padding-top:20px;
+  border-top:1px solid #152238;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  color:var(--mist);
+  flex-wrap:wrap;
+  gap:12px;
+}
+.foot-bot p{
+  font-style:italic;
+  letter-spacing:.2em;
+}
+
+@media (max-width:960px){
+  .foot-wrap{
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .foot-brand-col{
+    grid-column:span 2;
+  }
+}
+@media (max-width:560px){
+  .foot-wrap{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  .foot-brand-col{
+    grid-column:span 1;
+  }
+}
+@media (max-width:1099px){
+  footer.foot{padding-bottom:120px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TouristDestination","name":"St Petersburg","description":"The Hermitage, the Neva bridges opening at night, and June evenings that never get dark.","inLanguage":"en","includesAttraction":[{"@type":"TouristAttraction","name":"The Hermitage","description":"The Winter Palace and three million objects. Go early, choose a few rooms, and come back."},{"@type":"TouristAttraction","name":"Church of the Savior on Spilled Blood","description":"Every inch of the inside is covered in mosaics."},{"@type":"TouristAttraction","name":"The canals by boat","description":"An hour on the rivers and canals shows you the city the way it was meant to be seen."},{"@type":"TouristAttraction","name":"St Isaac’s colonnade","description":"Climb about 260 steps for the best view over the rooftops."},{"@type":"TouristAttraction","name":"The Peterhof fountains","description":"The Grand Cascade by the Gulf of Finland. The fountains run from spring to October."},{"@type":"TouristAttraction","name":"Catherine Palace and the Amber Room","description":"In Pushkin, under an hour south: the restored Amber Room and the palace park."},{"@type":"TouristAttraction","name":"The bridges open at night","description":"From April to November the Neva bridges lift after 1 a.m. to let ships through."},{"@type":"TouristAttraction","name":"The Mariinsky","description":"Ballet and opera where The Sleeping Beauty and The Nutcracker were first staged."},{"@type":"TouristAttraction","name":"Pyshki at the old pyshechnaya","description":"Sugar-dusted doughnuts and milky coffee, served the same way since 1958."}]},{"@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"When are the White Nights?","acceptedAnswer":{"@type":"Answer","text":"Roughly late May to mid-July. Around the solstice the sky only fades to twilight."}},{"@type":"Question","name":"Can I see the bridges open?","acceptedAnswer":{"@type":"Answer","text":"Yes, during the navigation season from April to November, after about 1 a.m. A late boat trip is the best way to watch."}},{"@type":"Question","name":"How many days do I need?","acceptedAnswer":{"@type":"Answer","text":"Three or four days, with one of them for Peterhof or Pushkin."}}]},{"@type":"TravelAgency","name":"ROTW Travels","telephone":"+7 930 945 4007","email":"inbound@rotwtravels.com","address":{"@type":"PostalAddress","streetAddress":"106 Prospekt Mira","addressLocality":"Moscow","postalCode":"129626","addressCountry":"RU"}}]}</script>
+</head>
+<body>
+<a class="skip" href="#notebook">Skip to the notebook</a>
+<header class="top">
+  <a class="logo-link" href="../index.html" aria-label="ROTW Travels"><svg class="rotw-logo logo" viewBox="106 70 346 110" aria-hidden="true"><g class="lg-l lg-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g><g class="lg-l lg-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g><g class="lg-needle"><g class=""><path fill="var(--lg-main)" d="M224.1 133.9L224.1 133.9L235.3 120.7L229.5 137.0L229.5 137.0L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-red)" d="M217.8 151.0L224.0 134.0L224.1 133.9L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-hole)" d="M226.6 133.8C227.7 133.8 228.6 134.7 228.6 135.8C228.6 136.9 227.7 137.9 226.6 137.9C225.4 137.9 224.5 136.9 224.5 135.8C224.5 134.7 225.4 133.8 226.6 133.8"/></g></g><g class="lg-l lg-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g><g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g><g class="lg-l lg-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g><g class="lg-l lg-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g><g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g><g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g></svg></a>
+  <div class="right">
+    <nav class="langs" aria-label="Language"><a href="spb.html" hreflang="en" lang="en" title="English" aria-current="true" onclick="try{localStorage.setItem('rotw-lang','en')}catch(e){}">EN</a><a href="ru/spb.html" hreflang="ru" lang="ru" title="Русский" onclick="try{localStorage.setItem('rotw-lang','ru')}catch(e){}">RU</a><a href="ar/spb.html" hreflang="ar" lang="ar" title="العربية" onclick="try{localStorage.setItem('rotw-lang','ar')}catch(e){}">عربي</a><a href="hi/spb.html" hreflang="hi" lang="hi" title="हिन्दी" onclick="try{localStorage.setItem('rotw-lang','hi')}catch(e){}">हि</a></nav>
+    <a class="btn-plan" href="../plan.html">Plan a trip</a>
+  </div>
+</header>
+<main class="desk">
+  <div class="notebook" id="notebook">
+    
+    <section class="spread" aria-label="St Petersburg - 1">
+      <div class="page">
+        <div class="taped">
+          <img src="assets/spb.webp" alt="St Petersburg" width="800" height="600">
+        </div>
+        <p class="hand">St Petersburg! It’s where I’d send anyone who loves art.</p><p class="hand">Shall I show you the city first, or the palaces outside it?</p>
+        <div class="sign-row">
+          <img class="sign-av" src="assets/sasha.webp" alt="" width="44" height="44">
+          <span class="hand sign">— Sasha</span>
+        </div>
+      </div>
+      <div class="page">
+        <h1>St Petersburg</h1>
+        <p class="kicker">Palaces, canals and the White Nights</p>
+        <p class="hook">The Hermitage, the Neva bridges opening at night, and June evenings that never get dark.</p>
+        <h2>Sasha's picks</h2>
+        <div class="tabs" role="tablist" aria-label="Sasha's picks">
+          <button class="tab" role="tab" id="tab-all" aria-selected="true" aria-controls="picks-list" data-topic="all">Everything</button>
+          <button class="tab" role="tab" id="tab-classic" aria-selected="false" aria-controls="picks-list" data-topic="classic">The city</button><button class="tab" role="tab" id="tab-palaces" aria-selected="false" aria-controls="picks-list" data-topic="palaces">The palaces</button><button class="tab" role="tab" id="tab-night" aria-selected="false" aria-controls="picks-list" data-topic="night">Nights and the theatre</button>
+        </div>
+        <div class="topic-says" id="topic-says" aria-live="polite"></div>
+        <ol class="picks" id="picks-list">
+          
+            <li class="pick-row" data-h="hermitage">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">The Hermitage</div>
+                <div class="pick-line">The Winter Palace and three million objects. Go early, choose a few rooms, and come back.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:50%"></div></div>
+                <span class="dur-text">Half a day</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="hermitage" aria-pressed="false" aria-label="Pin The Hermitage to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+            <li class="pick-row" data-h="spilled">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">Church of the Savior on Spilled Blood</div>
+                <div class="pick-line">Every inch of the inside is covered in mosaics.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:25%"></div></div>
+                <span class="dur-text">Two or three hours</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="spilled" aria-pressed="false" aria-label="Pin Church of the Savior on Spilled Blood to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+            <li class="pick-row" data-h="canals">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">The canals by boat</div>
+                <div class="pick-line">An hour on the rivers and canals shows you the city the way it was meant to be seen.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:25%"></div></div>
+                <span class="dur-text">Two or three hours</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="canals" aria-pressed="false" aria-label="Pin The canals by boat to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+            <li class="pick-row" data-h="isaac">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">St Isaac’s colonnade</div>
+                <div class="pick-line">Climb about 260 steps for the best view over the rooftops.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:25%"></div></div>
+                <span class="dur-text">Two or three hours</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="isaac" aria-pressed="false" aria-label="Pin St Isaac’s colonnade to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+            <li class="pick-row" data-h="peterhof">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">The Peterhof fountains</div>
+                <div class="pick-line">The Grand Cascade by the Gulf of Finland. The fountains run from spring to October.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:50%"></div></div>
+                <span class="dur-text">Half a day</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="peterhof" aria-pressed="false" aria-label="Pin The Peterhof fountains to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+            <li class="pick-row" data-h="catherine">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">Catherine Palace and the Amber Room</div>
+                <div class="pick-line">In Pushkin, under an hour south: the restored Amber Room and the palace park.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:50%"></div></div>
+                <span class="dur-text">Half a day</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="catherine" aria-pressed="false" aria-label="Pin Catherine Palace and the Amber Room to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+            <li class="pick-row" data-h="bridges">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">The bridges open at night</div>
+                <div class="pick-line">From April to November the Neva bridges lift after 1 a.m. to let ships through.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:25%"></div></div>
+                <span class="dur-text">Two or three hours</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="bridges" aria-pressed="false" aria-label="Pin The bridges open at night to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+            <li class="pick-row" data-h="mariinsky">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">The Mariinsky</div>
+                <div class="pick-line">Ballet and opera where The Sleeping Beauty and The Nutcracker were first staged.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:25%"></div></div>
+                <span class="dur-text">Two or three hours</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="mariinsky" aria-pressed="false" aria-label="Pin The Mariinsky to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+            <li class="pick-row" data-h="pyshki">
+              <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              <div class="pick-info">
+                <div class="pick-title">Pyshki at the old pyshechnaya</div>
+                <div class="pick-line">Sugar-dusted doughnuts and milky coffee, served the same way since 1958.</div>
+                <div class="dur-bar"><div class="dur-fill" style="width:10%"></div></div>
+                <span class="dur-text">About an hour</span>
+              </div>
+              <button class="pin" type="button" data-c="spb" data-h="pyshki" aria-pressed="false" aria-label="Pin Pyshki at the old pyshechnaya to your trip">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                <span>Pin</span>
+              </button>
+            </li>
+          
+        </ol>
+      </div>
+    </section>
+    <section class="spread" aria-label="St Petersburg - 2">
+      <div class="page">
+        <h2>When to go</h2>
+        <p class="hand small">June for the White Nights, when it barely gets dark. May and September are calmer and still bright.</p>
+        <table class="seasons-table">
+          <thead>
+            <tr class="sr">
+              <th scope="col">Season</th>
+              <th scope="col">Months</th>
+              <th scope="col">What it’s like</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row" class="season-name">Winter</th><td class="season-months">Dec–Feb</td><td class="season-note">Short days, the Neva frozen, and quieter museums.</td></tr><tr><th scope="row" class="season-name">Spring</th><td class="season-months">Mar–May</td><td class="season-note">The ice breaks on the Neva in April and the Peterhof fountains start.</td></tr><tr><th scope="row" class="season-name">Summer</th><td class="season-months">Jun–Aug</td><td class="season-note">White Nights in June and the Scarlet Sails festival. Busy.</td></tr><tr><th scope="row" class="season-name">Autumn</th><td class="season-months">Sep–Nov</td><td class="season-note">Golden parks in September, wet and grey by November.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="page">
+        <h2>A 3-day plan</h2>
+        <p class="plan-say">Three days gives you the city and one palace day.</p>
+        <ol class="days">
+          
+            <li>
+              <span class="day-num">1</span>
+              <div class="day-body">
+                <b class="day-title">Palace Square and the water</b>
+                <span class="day-places">The Hermitage · St Isaac’s colonnade · The canals by boat · The bridges open at night</span>
+              </div>
+            </li>
+          
+            <li>
+              <span class="day-num">2</span>
+              <div class="day-body">
+                <b class="day-title">Peterhof and the theatre</b>
+                <span class="day-places">The Peterhof fountains · Pyshki at the old pyshechnaya · The Mariinsky</span>
+              </div>
+            </li>
+          
+            <li>
+              <span class="day-num">3</span>
+              <div class="day-body">
+                <b class="day-title">Pushkin and the mosaics</b>
+                <span class="day-places">Catherine Palace and the Amber Room · Church of the Savior on Spilled Blood</span>
+              </div>
+            </li>
+          
+        </ol>
+        <button class="pin plan" type="button" data-plan="spb" aria-pressed="false">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          <span>Pin the whole plan</span>
+        </button>
+      </div>
+    </section>
+    <section class="spread" aria-label="St Petersburg - 3">
+      <div class="page">
+        <h2>Getting there</h2>
+        <p class="getting-text">The Sapsan train from Moscow takes about four hours. Pulkovo airport is 30 to 40 minutes from the centre.</p>
+        <div class="slip">
+          <p class="hand small">ROTW prices every trip for your dates, hotel level and group size. Pin what you like, send it to me, and I'll come back with a real quote.</p>
+          <p class="hand sign">— Sasha</p>
+        </div>
+      </div>
+      <div class="page">
+        <h2>Questions people ask</h2>
+        <details><summary>When are the White Nights?</summary><p>Roughly late May to mid-July. Around the solstice the sky only fades to twilight.</p></details><details><summary>Can I see the bridges open?</summary><p>Yes, during the navigation season from April to November, after about 1 a.m. A late boat trip is the best way to watch.</p></details><details><summary>How many days do I need?</summary><p>Three or four days, with one of them for Peterhof or Pushkin.</p></details>
+        <span class="page-num">2 of 10</span>
+      </div>
+    </section>
+    <section class="contents-strip">
+      <h2>More places Sasha plans</h2>
+      <div class="strip-grid">
+        <a class="strip-item" href="moscow.html">
+            <div class="taped small ">
+              <img src="assets/moscow.webp" alt="Moscow" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">Moscow</span>
+          </a><a class="strip-item" href="suzdal.html">
+            <div class="taped small rot-alt">
+              <img src="assets/suzdal.webp" alt="The Golden Ring" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">The Golden Ring</span>
+          </a><a class="strip-item" href="kazan.html">
+            <div class="taped small ">
+              <img src="assets/kazan.webp" alt="Kazan" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">Kazan</span>
+          </a><a class="strip-item" href="sochi.html">
+            <div class="taped small rot-alt">
+              <img src="../assets/real/sochi-rosa-khutor-dusk-1600.webp" alt="Sochi" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">Sochi</span>
+          </a><a class="strip-item" href="kaliningrad.html">
+            <div class="taped small ">
+              <img src="assets/kaliningrad.webp" alt="Kaliningrad" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">Kaliningrad</span>
+          </a><a class="strip-item" href="murmansk.html">
+            <div class="taped small rot-alt">
+              <img src="../assets/real/murmansk-aurora-spruce-1600.webp" alt="Murmansk" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">Murmansk</span>
+          </a><a class="strip-item" href="baikal.html">
+            <div class="taped small ">
+              <img src="../assets/real/baikal-shamanka-ice-1600.webp" alt="Lake Baikal" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">Lake Baikal</span>
+          </a><a class="strip-item" href="vladivostok.html">
+            <div class="taped small rot-alt">
+              <img src="assets/vladivostok.webp" alt="Vladivostok" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">Vladivostok</span>
+          </a><a class="strip-item" href="kamchatka.html">
+            <div class="taped small ">
+              <img src="assets/kamchatka.webp" alt="Kamchatka" width="400" height="300" loading="lazy">
+            </div>
+            <span class="strip-name">Kamchatka</span>
+          </a>
+      </div>
+    </section>
+  </div>
+  
+  <aside class="envelope" id="trip" aria-labelledby="trip-title">
+    <button class="env-head" id="env-head" type="button" aria-expanded="false" aria-controls="env-body">
+      <div class="env-head-text">
+        <span class="env-title" id="trip-title">Your trip</span>
+        <span class="env-sum" id="env-sum">Nothing yet</span>
+      </div>
+      <span class="stamp-badge" id="env-badge" aria-hidden="true" hidden style="display:none"></span>
+      <svg class="env-chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+    </button>
+    <div class="env-body" id="env-body">
+      <div class="env-list-view" id="env-list-view">
+        <div class="stamps" id="env-stamps" role="region" aria-label="Cities in your trip"><span class="sr">Cities in your trip</span></div>
+        <p class="route" id="env-route"></p>
+        <p class="hand small trip-empty" id="env-empty">Add places from the conversation and your trip builds itself here.</p>
+        <div class="trip-groups" id="env-groups"></div>
+        <div class="price-line"><b>Price</b><span>Sasha quotes it for your dates, hotels and group size.</span></div>
+        <button class="send" id="env-send" type="button">Send my trip to Sasha</button>
+      </div>
+      <div class="env-letter" id="env-letter" hidden>
+        <div class="slip letter-slip">
+          <h3 class="letter-title">A note to Sasha</h3>
+        </div>
+        <form class="letter-form" id="letter-form" novalidate>
+          <button class="back-btn" id="letter-back" type="button">Back to your trip</button>
+          <div class="field">
+            <label for="field-name">Your name</label>
+            <input id="field-name" name="name" type="text" autocomplete="name" required>
+            <span class="field-error" id="err-name" hidden>Add your name so I know who to write to.</span>
+          </div>
+          <div class="field">
+            <label for="field-email">Email</label>
+            <input id="field-email" name="email" type="email" autocomplete="email" required>
+            <span class="field-error" id="err-email" hidden>That email doesn’t look quite right. It should look like name@example.com.</span>
+          </div>
+          <div class="field">
+            <label for="field-when">When would you like to come?</label>
+            <input id="field-when" name="when" type="text" placeholder="For example, June next year">
+          </div>
+          <div class="field">
+            <label for="field-notes">Anything I should know? (optional)</label>
+            <textarea id="field-notes" name="notes" rows="3" placeholder="Travelling with children, a slow pace, a special occasion…"></textarea>
+          </div>
+          <button class="send" type="submit">Post it to Sasha</button>
+        </form>
+      </div>
+      <div class="env-posted" id="env-posted" hidden>
+        <div class="postmark" id="env-postmark" aria-hidden="true">
+          <span class="pm-date" id="pm-date"></span>
+          <span class="pm-sub">ROTW · Moscow</span>
+        </div>
+        <h3 class="posted-title">Posted</h3>
+        <p class="posted-summary" id="posted-summary"></p>
+        <p class="posted-proto">This is a prototype, so nothing has been sent yet. On the live site this goes straight to me at ROTW in Moscow, and I reply by email with a plan and a real price.</p>
+      </div>
+    </div>
+  </aside>
+</main>
+<footer class="foot">
+  <div class="foot-wrap">
+    <div class="foot-brand-col">
+      <a class="logo-link" href="../index.html" aria-label="ROTW Travels"><svg class="rotw-logo logo" viewBox="106 70 346 110" aria-hidden="true"><g class="lg-l lg-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g><g class="lg-l lg-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g><g class="lg-needle"><g class=""><path fill="var(--lg-main)" d="M224.1 133.9L224.1 133.9L235.3 120.7L229.5 137.0L229.5 137.0L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-red)" d="M217.8 151.0L224.0 134.0L224.1 133.9L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-hole)" d="M226.6 133.8C227.7 133.8 228.6 134.7 228.6 135.8C228.6 136.9 227.7 137.9 226.6 137.9C225.4 137.9 224.5 136.9 224.5 135.8C224.5 134.7 225.4 133.8 226.6 133.8"/></g></g><g class="lg-l lg-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g><g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g><g class="lg-l lg-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g><g class="lg-l lg-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g><g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g><g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g></svg></a>
+      <p>Destination management in Russia · Moscow</p>
+      <a class="btn-plan" href="../plan.html">Plan a trip</a>
+    </div>
+    <div class="foot-col">
+      <h3>Destinations</h3>
+      <a href="moscow.html">Moscow</a>
+      <a href="spb.html">St Petersburg</a>
+      <a href="suzdal.html">The Golden Ring</a>
+      <a href="kazan.html">Kazan</a>
+      <a href="baikal.html">Lake Baikal</a>
+      <a href="index.html">All ten places</a>
+    </div>
+    <div class="foot-col">
+      <h3>Journeys</h3>
+      <a href="../index.html#journeys">Classic Two Capitals</a>
+      <a href="../index.html#journeys">The Golden Ring</a>
+      <a href="../index.html#journeys">The Great Trans-Siberian</a>
+      <a href="../index.html#journeys">Kamchatka Fire &amp; Ice</a>
+    </div>
+    <div class="foot-col">
+      <h3>Services</h3>
+      <a href="../index.html#services">Visa support</a>
+      <a href="../index.html#services">Airport meet &amp; assist</a>
+      <a href="../index.html#services">Private transfers</a>
+      <a href="../index.html#partners">For travel agents</a>
+    </div>
+    <div class="foot-col">
+      <h3>Contact</h3>
+      <span>106 Prospekt Mira, Moscow 129626</span>
+      <span dir="ltr">+7 930 945 4007</span>
+      <span dir="ltr">inbound@rotwtravels.com</span>
+      <a href="index.html">Sasha, your ROTW guide</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 ROTW Travels</span>
+    <p lang="ru">Дороги мира</p>
+  </div>
+</footer>
+<script>window.PAGE={"guide":{"name":"Sasha","initial":"S","photo":"assets/sasha.webp","role":"Your guide at ROTW Travels, Moscow"},"city":"spb","order":["moscow","spb","suzdal","kazan","sochi","kaliningrad","murmansk","baikal","vladivostok","kamchatka"],"base":"","t":{"_lang":{"code":"en","dir":"ltr","label":"English","short":"EN"},"guideName":"Sasha","guideRole":"Your guide at ROTW Travels, Moscow","plural":{"days":{"one":"{n} day","other":"{n} days"},"places":{"one":"{n} place","other":"{n} places"},"planChip":{"one":"A {n}-day plan","other":"A {n}-day plan"}},"dur":["About an hour","Two or three hours","Half a day","A full day"],"skip":"Skip to the notebook","homeLabel":"ROTW Travels, talk to a guide","preferTalk":"Prefer to talk?","langLabel":"Language","portraitAlt":"{name}, your ROTW guide","yourTrip":"Your trip","nothingYet":"Nothing yet","tripEmpty":"Add places from the conversation and your trip builds itself here.","priceLabel":"Price","priceSlot":"{name} quotes it for your dates, hotels and group size.","address":"106 Prospekt Mira, Moscow 129626","whenToGo":"When to go","thSeason":"Season","thMonths":"Months","thLike":"What it’s like","gettingThere":"Getting there","faqTitle":"Questions people ask","morePlaces":"More places {name} plans","cityTitle":"{city} travel guide: talk to a local guide | ROTW Travels","cityDesc":"{hook} Plan your {city} trip by talking to {name}, a guide at ROTW Travels in Moscow.","hubTitle":"Talk to a guide about Russia | ROTW Travels","hubDesc":"Plan a trip to Russia by talking to a guide at ROTW Travels in Moscow: Moscow, St Petersburg, Lake Baikal, Kamchatka and more.","hubH1":"Where in Russia?","hubKicker":"Talk to your guide, and your trip builds itself as you go.","hubReadTitle":"Every place {name} plans","hubIntro":"ROTW Travels is a tour operator in Moscow. Talk to your guide about any of these places, or read about them here.","hubGreet":["Hello, I’m {name}. I work at ROTW’s office in Moscow, and I’ll be your guide.","Tell me what you’re curious about, and I’ll put a trip together while we talk."],"sendTrip":"Send my trip to {name}","tripSum":"{places}, about {days}","removeItem":"Remove {item}","badEmail":"That email doesn’t look quite right. It should look like name@example.com.","whenPh":"For example, June next year","summary":"Thank you, {name}. Here is what I have: {places} across {cities}, about {days}, around {when}.","prototypeNote":"This is a prototype, so nothing has been sent yet. On the live site this goes straight to me at ROTW in Moscow, and I reply by email with a plan and a real price.","hubTopics":{"first":{"chip":"My first time in Russia","say":"For a first trip, most people start with Moscow and St Petersburg, and add the Golden Ring if they have time."},"nature":{"chip":"Nature and wild places","say":"Russia is enormous once you leave the cities. These are the wildest places I send people."},"winter":{"chip":"A winter trip","say":"Winter is my favourite season here, if you dress for it."},"sea":{"chip":"Sea and sunshine","say":"Russia has more coast than you’d think."},"rail":{"chip":"The Trans-Siberian","say":"The classic route runs from Moscow through Kazan and Lake Baikal to Vladivostok. Talk to me about any stop."},"all":{"chip":"Show me everything","say":"Here is every place I can plan for you."}},"picksTitle":"{name}'s picks","tabAll":"Everything","pin":"Pin","pinned":"Pinned","pinAria":"Pin {title} to your trip","pinPlan":"Pin the whole plan","planPinned":"Plan pinned","noteSign":"— {name}","pageOf":"{n} of {total}","openPage":"Open {city}","contentsLabel":"Contents","howTitle":"How this notebook works","howSteps":["Read my notes on a place.","Pin the things you like. They go into your trip envelope.","Send me your trip. I reply by email with a plan and a real price."],"tripStamps":"Cities in your trip","aboutDaysCity":"about {days}","letterTitle":"A note to {name}","fieldName":"Your name","fieldEmail":"Email","fieldWhen":"When would you like to come?","fieldNotes":"Anything I should know? (optional)","notesPh":"Travelling with children, a slow pace, a special occasion…","nameRequired":"Add your name so I know who to write to.","postIt":"Post it to {name}","back":"Back to your trip","postedTitle":"Posted","priceText":"ROTW prices every trip for your dates, hotel level and group size. Pin what you like, send it to me, and I'll come back with a real quote."},"cities":{"moscow":{"name":"Moscow","photo":"moscow","kicker":"The capital, and where most trips begin","hook":"Red Square at night, the Bolshoi, and metro stations that look like palaces.","highlights":[{"id":"kremlin","title":"The Kremlin and Red Square","line":"Cathedrals, the Armoury, and the square at dusk when the lights come on.","dur":0.5},{"id":"basil","title":"St Basil’s Cathedral","line":"Nine chapels under the famous domes, each painted differently inside.","dur":0.25},{"id":"metro","title":"The metro palaces","line":"Komsomolskaya, Mayakovskaya and Ploshchad Revolyutsii: chandeliers, mosaics and bronze for the price of a ticket.","dur":0.25},{"id":"zaryadye","title":"Zaryadye Park","line":"The floating bridge over the river, with the Kremlin walls behind you.","dur":0.25},{"id":"bolshoi","title":"An evening at the Bolshoi","line":"Ballet or opera on the historic stage. Tickets for big productions go early.","dur":0.25},{"id":"tretyakov","title":"The Tretyakov Gallery","line":"A thousand years of Russian art, from icons to Repin and Levitan.","dur":0.5},{"id":"novodevichy","title":"Novodevichy Convent","line":"A UNESCO-listed convent beside a quiet pond, with a cemetery of famous Russians.","dur":0.5},{"id":"vdnkh","title":"VDNKh","line":"Soviet pavilions, gilded fountains and the Space Pavilion.","dur":0.5},{"id":"danilovsky","title":"Danilovsky Market","line":"Georgian khachapuri, Uzbek plov and Russian pickles under one roof.","dur":0.25},{"id":"gum","title":"GUM and a Soviet ice cream","line":"The glass-roofed arcade on Red Square, and plombir ice cream from the stalls inside.","dur":0.1},{"id":"dinner","title":"A proper Russian dinner","line":"Pelmeni, borscht and blini in a restaurant that does them well.","dur":0.25},{"id":"river","title":"Moscow by night","line":"A river cruise past the lit Kremlin, then the city view from Sparrow Hills.","dur":0.25}],"topics":[{"id":"classic","chip":"The classics","says":["These are the ones you shouldn’t miss on a first visit."],"cards":["kremlin","basil","metro","zaryadye"],"photo":true},{"id":"culture","chip":"Art, ballet and history","says":["Moscow does culture on a grand scale. My favourites:"],"cards":["bolshoi","tretyakov","novodevichy","vdnkh"]},{"id":"food","chip":"Food and markets","says":["Moscow eats well. This is where I’d take you."],"cards":["danilovsky","gum","dinner"]},{"id":"night","chip":"Moscow at night","says":["The city looks its best after dark."],"cards":["river","bolshoi","dinner"]}],"when":{"say":"Late spring to early autumn is easiest. December has the lights and the snow, if you don’t mind the cold.","seasons":[["Winter","Dec–Feb","Snow, New Year lights and the skating rink on Red Square."],["Spring","Mar–May","The snow melts in March and the parks turn green by May. Victory Day parade on 9 May."],["Summer","Jun–Aug","Long days, terraces and parks. The busiest season."],["Autumn","Sep–Nov","Golden leaves in September, grey skies by November, and the theatre season begins."]]},"plan":{"say":"Three days is a good first visit. This is how I’d spend them.","days":[["The heart of the city",["kremlin","basil","gum","river"]],["Art and the metro",["tretyakov","metro","zaryadye","bolshoi"]],["Markets and monasteries",["danilovsky","novodevichy","vdnkh"]]]},"greet":["Privet! I’m Sasha, your guide in Moscow.","It’s my city, so ask me anything. Shall I start with the places you shouldn’t miss?"]},"spb":{"name":"St Petersburg","photo":"spb","kicker":"Palaces, canals and the White Nights","hook":"The Hermitage, the Neva bridges opening at night, and June evenings that never get dark.","highlights":[{"id":"hermitage","title":"The Hermitage","line":"The Winter Palace and three million objects. Go early, choose a few rooms, and come back.","dur":0.5},{"id":"spilled","title":"Church of the Savior on Spilled Blood","line":"Every inch of the inside is covered in mosaics.","dur":0.25},{"id":"canals","title":"The canals by boat","line":"An hour on the rivers and canals shows you the city the way it was meant to be seen.","dur":0.25},{"id":"isaac","title":"St Isaac’s colonnade","line":"Climb about 260 steps for the best view over the rooftops.","dur":0.25},{"id":"peterhof","title":"The Peterhof fountains","line":"The Grand Cascade by the Gulf of Finland. The fountains run from spring to October.","dur":0.5},{"id":"catherine","title":"Catherine Palace and the Amber Room","line":"In Pushkin, under an hour south: the restored Amber Room and the palace park.","dur":0.5},{"id":"bridges","title":"The bridges open at night","line":"From April to November the Neva bridges lift after 1 a.m. to let ships through.","dur":0.25},{"id":"mariinsky","title":"The Mariinsky","line":"Ballet and opera where The Sleeping Beauty and The Nutcracker were first staged.","dur":0.25},{"id":"pyshki","title":"Pyshki at the old pyshechnaya","line":"Sugar-dusted doughnuts and milky coffee, served the same way since 1958.","dur":0.1}],"topics":[{"id":"classic","chip":"The city","says":["Start in the centre. Everything here is walkable or a short boat ride away."],"cards":["hermitage","spilled","canals","isaac"],"photo":true},{"id":"palaces","chip":"The palaces","says":["The tsars’ summer palaces are an easy trip out of town."],"cards":["peterhof","catherine"]},{"id":"night","chip":"Nights and the theatre","says":["St Petersburg comes alive late."],"cards":["bridges","mariinsky","pyshki"]}],"when":{"say":"June for the White Nights, when it barely gets dark. May and September are calmer and still bright.","seasons":[["Winter","Dec–Feb","Short days, the Neva frozen, and quieter museums."],["Spring","Mar–May","The ice breaks on the Neva in April and the Peterhof fountains start."],["Summer","Jun–Aug","White Nights in June and the Scarlet Sails festival. Busy."],["Autumn","Sep–Nov","Golden parks in September, wet and grey by November."]]},"plan":{"say":"Three days gives you the city and one palace day.","days":[["Palace Square and the water",["hermitage","isaac","canals","bridges"]],["Peterhof and the theatre",["peterhof","pyshki","mariinsky"]],["Pushkin and the mosaics",["catherine","spilled"]]]},"greet":["St Petersburg! It’s where I’d send anyone who loves art.","Shall I show you the city first, or the palaces outside it?"]},"suzdal":{"name":"The Golden Ring","photo":"suzdal","kicker":"Old towns north-east of Moscow","hook":"White churches, wooden houses and onion domes over the meadows, a few hours from the capital.","highlights":[{"id":"suzdal","title":"Suzdal","line":"A small town of white churches, wooden houses and meadows along the Kamenka river.","dur":0.5},{"id":"vladimir","title":"Vladimir","line":"The Golden Gate and the Assumption Cathedral, with frescoes by Andrei Rublev.","dur":0.5},{"id":"sergiev","title":"Sergiev Posad","line":"The Trinity Lavra of St Sergius, the heart of Russian Orthodoxy, about two hours from Moscow.","dur":0.5},{"id":"woodmuseum","title":"Museum of Wooden Architecture","line":"Log churches and farmhouses moved here from villages across the region.","dur":0.25},{"id":"rostov","title":"Rostov Veliky","line":"A lakeside kremlin that looks like a film set, and has been one.","dur":0.5},{"id":"yaroslavl","title":"Yaroslavl","line":"Painted churches on the Volga. The historic centre is UNESCO-listed.","dur":0.5},{"id":"medovukha","title":"Medovukha tasting","line":"Suzdal’s honey mead, tasted where it is still made.","dur":0.1}],"topics":[{"id":"classic","chip":"The towns to pick","says":["If you only have two days, these three."],"cards":["suzdal","vladimir","sergiev"],"photo":true},{"id":"more","chip":"Going further","says":["With more time, the northern half of the ring."],"cards":["rostov","yaroslavl","woodmuseum"]},{"id":"food","chip":"Food and drink","says":["Suzdal has one thing everyone tries."],"cards":["medovukha"]}],"when":{"say":"May to September for walking and the meadows. In winter Suzdal looks like a Christmas card.","seasons":[["Winter","Dec–Feb","Snow on the domes and sleigh rides."],["Spring","Mar–May","Muddy in March, green by May."],["Summer","Jun–Aug","Warm evenings by the river and the cucumber festival in Suzdal."],["Autumn","Sep–Nov","Golden birches in September."]]},"plan":{"say":"Two days, with a night in Suzdal so you see it after the day visitors leave.","days":[["Vladimir and Suzdal",["vladimir","suzdal","medovukha"]],["Wood and a monastery",["woodmuseum","sergiev"]]]},"greet":["The Golden Ring is old Russia: monasteries, wooden houses and quiet rivers.","It’s a ring of towns around Moscow. Shall I tell you which ones I’d pick?"]},"kazan":{"name":"Kazan","photo":"kazan","kicker":"Where Europe meets Asia on the Volga","hook":"A white-stone kremlin with a mosque and a cathedral side by side, and Tatar food you won’t find anywhere else.","highlights":[{"id":"kremlin","title":"The Kazan Kremlin","line":"UNESCO-listed walls with a mosque and an Orthodox cathedral side by side.","dur":0.5},{"id":"kulsharif","title":"Kul Sharif Mosque","line":"Blue domes and white minarets, rebuilt inside the Kremlin and opened in 2005.","dur":0.25},{"id":"religions","title":"The Temple of All Religions","line":"One artist’s life project: domes and minarets from many faiths on one building.","dur":0.25},{"id":"bauman","title":"Bauman Street","line":"The pedestrian street for an evening walk, street music and chak-chak.","dur":0.25},{"id":"tatarfood","title":"A Tatar dinner","line":"Echpochmak pies, kazylyk sausage and chak-chak with tea.","dur":0.25},{"id":"sviyazhsk","title":"Sviyazhsk island","line":"An island town of monasteries on the Volga, about an hour from the city.","dur":0.5}],"topics":[{"id":"classic","chip":"The Kremlin and around","says":["Everything starts at the Kremlin."],"cards":["kremlin","kulsharif","religions"],"photo":true},{"id":"food","chip":"Tatar food","says":["You have to eat in Kazan. Truly."],"cards":["tatarfood","bauman"]},{"id":"out","chip":"A day out","says":["The best short trip from Kazan."],"cards":["sviyazhsk"]}],"when":{"say":"May to September. Sabantuy, the Tatar summer festival, usually falls in June.","seasons":[["Winter","Dec–Feb","Cold and clear, with the Kremlin under snow."],["Spring","Mar–May","The Volga thaws and the city warms up by May."],["Summer","Jun–Aug","Sabantuy festival and long evenings on the embankment."],["Autumn","Sep–Nov","Mild in September, quiet afterwards."]]},"plan":{"say":"Two days is right for Kazan.","days":[["The Kremlin and dinner",["kremlin","kulsharif","bauman","tatarfood"]],["The island and the temple",["sviyazhsk","religions"]]]},"greet":["Kazan! Two cultures in one city, and some of the best food in Russia.","Shall I start with the Kremlin?"]},"sochi":{"name":"Sochi","photo":"sochi","photoSrc":"sochi-rosa-khutor-dusk","kicker":"The Black Sea and the Caucasus mountains","hook":"Beaches in the morning and mountains in the afternoon, where the 2014 Winter Olympics were held.","highlights":[{"id":"promenade","title":"The sea promenade","line":"Palms, pebble beaches and the Black Sea, warm enough to swim from June to October.","dur":0.25},{"id":"arboretum","title":"Sochi Arboretum","line":"A park of palms and rare trees, planted in the 1890s.","dur":0.25},{"id":"olympic","title":"Olympic Park","line":"The 2014 Winter Olympics venues by the sea in Adler.","dur":0.25},{"id":"rosa","title":"Rosa Khutor","line":"Mountains above Krasnaya Polyana: skiing in winter, hiking and cable cars in summer.","dur":1},{"id":"agura","title":"The Agura waterfalls","line":"A short gorge walk to three waterfalls and the Eagle Rocks.","dur":0.5},{"id":"tea","title":"The tea plantations","line":"Some of the world’s northernmost tea grows here. Taste it where it’s picked.","dur":0.25}],"topics":[{"id":"classic","chip":"By the sea","says":["Sochi itself is made for slow days."],"cards":["promenade","arboretum","olympic"],"photo":true},{"id":"mountains","chip":"The mountains","says":["The mountains are under an hour from the coast."],"cards":["rosa","agura"]},{"id":"tea","chip":"Tea and food","says":["Something most visitors don’t expect."],"cards":["tea"]}],"when":{"say":"June to September for the sea. December to April for skiing in the mountains.","seasons":[["Winter","Dec–Feb","Skiing at Rosa Khutor; mild by the sea."],["Spring","Mar–May","Spring skiing up high, blossom on the coast."],["Summer","Jun–Aug","Beach season and mountain hiking."],["Autumn","Sep–Nov","The sea stays warm into October."]]},"plan":{"say":"Three days: one by the sea, one up high, one in between.","days":[["The coast",["promenade","arboretum","olympic"]],["The mountains",["rosa"]],["Waterfalls and tea",["agura","tea"]]]},"greet":["Sochi is Russia’s seaside, with mountains right behind it.","Are you after the sea or the mountains? You can have both."]},"kaliningrad":{"name":"Kaliningrad","photo":"kaliningrad","kicker":"Old Königsberg on the Baltic","hook":"A Gothic cathedral on an island, the dunes of the Curonian Spit, and most of the world’s amber.","highlights":[{"id":"cathedral","title":"Königsberg Cathedral","line":"A Gothic cathedral on Kant Island, with Immanuel Kant’s tomb beside its wall.","dur":0.25},{"id":"amber","title":"The Amber Museum","line":"Most of the world’s amber comes from this coast. See the best of it here.","dur":0.25},{"id":"fishing","title":"Fishing Village","line":"A riverside quarter built in the old Prussian style, with smoked fish on the menu.","dur":0.25},{"id":"curonian","title":"The Curonian Spit","line":"A UNESCO-listed sand spit with high dunes and the twisted pines of the Dancing Forest.","dur":1},{"id":"svetlogorsk","title":"Svetlogorsk","line":"A Baltic seaside town of old villas and a long promenade.","dur":0.5}],"topics":[{"id":"classic","chip":"The old city","says":["Start on Kant Island."],"cards":["cathedral","amber","fishing"],"photo":true},{"id":"coast","chip":"The Baltic coast","says":["The coast is the reason to stay longer."],"cards":["curonian","svetlogorsk"]}],"when":{"say":"June to September for the coast. The Spit is beautiful in autumn too.","seasons":[["Winter","Dec–Feb","Grey and mild, with quiet museums."],["Spring","Mar–May","Birdwatching season on the Spit."],["Summer","Jun–Aug","Beach weather on the Baltic."],["Autumn","Sep–Nov","Golden dunes and empty beaches."]]},"plan":{"say":"Two days: the city, then the coast.","days":[["Königsberg",["cathedral","amber","fishing"]],["The Spit and the sea",["curonian","svetlogorsk"]]]},"greet":["Kaliningrad is the Russia most people don’t know about: Baltic, Prussian, and full of amber.","Shall I start in the old city or out on the coast?"]},"murmansk":{"name":"Murmansk","photo":"murmansk","photoSrc":"murmansk-aurora-spruce","kicker":"The Arctic, and the northern lights","hook":"The largest city above the Arctic Circle, with the aurora overhead from September to March.","highlights":[{"id":"lights","title":"The northern lights","line":"From September to March, on clear dark nights away from the city lights.","dur":0.25},{"id":"teriberka","title":"Teriberka","line":"A fishing village on the Barents Sea, at the edge of the Arctic Ocean.","dur":1},{"id":"huskies","title":"Huskies and reindeer","line":"Sled rides and Sami culture outside the city.","dur":0.5},{"id":"lenin","title":"The icebreaker Lenin","line":"The world’s first nuclear-powered surface ship, now a museum.","dur":0.25},{"id":"alyosha","title":"The Alyosha monument","line":"A giant soldier above the bay, with a view over the port.","dur":0.25}],"topics":[{"id":"north","chip":"The Arctic","says":["This is why you came north."],"cards":["lights","teriberka","huskies"],"photo":true},{"id":"city","chip":"The city","says":["Murmansk itself has a few things worth an afternoon."],"cards":["lenin","alyosha"]}],"when":{"say":"September to March for the northern lights. Late May to July for the midnight sun.","seasons":[["Winter","Dec–Feb","The polar night in December, auroras on clear nights."],["Spring","Mar–May","Snow and light return; the aurora season ends in March."],["Summer","Jun–Aug","The midnight sun, until late July."],["Autumn","Sep–Nov","The aurora season starts and the tundra turns red."]]},"plan":{"say":"Two or three nights gives you the best chance of clear skies.","days":[["The city and the first night out",["alyosha","lenin","lights"]],["The Barents Sea",["teriberka","huskies"]]]},"greet":["Murmansk is above the Arctic Circle. Most people come for the northern lights.","Shall I tell you the best way to see them?"]},"baikal":{"name":"Lake Baikal","photo":"baikal","photoSrc":"baikal-shamanka-ice","kicker":"The deepest lake on Earth","hook":"Clear blue ice in February, Olkhon Island in summer, and three nights on the Trans-Siberian to get there.","highlights":[{"id":"olkhon","title":"Olkhon Island","line":"The largest island on the lake, with steppe, cliffs and Shaman Rock.","dur":1},{"id":"ice","title":"The clear ice","line":"In February and March the ice is clear enough to see the water beneath your feet.","dur":0.5},{"id":"circum","title":"The Circum-Baikal Railway","line":"A historic line along the shore, through tunnels and over stone bridges.","dur":1},{"id":"listvyanka","title":"Listvyanka","line":"A lakeside village an hour from Irkutsk, known for smoked omul fish.","dur":0.5},{"id":"irkutsk","title":"Irkutsk","line":"Wooden houses with carved windows, and the gateway to the lake.","dur":0.5},{"id":"nerpa","title":"The Baikal seals","line":"The nerpa lives only here. See them in Listvyanka or, with luck, on the rocks.","dur":0.1}],"topics":[{"id":"classic","chip":"The lake itself","says":["The lake is the reason to come."],"cards":["olkhon","ice","circum"],"photo":true},{"id":"villages","chip":"Towns and villages","says":["Where you’ll stay and eat on the way."],"cards":["irkutsk","listvyanka","nerpa"]}],"when":{"say":"February and March for the clear ice. July and August for warm days on Olkhon.","seasons":[["Winter","Dec–Feb","The lake freezes by January; clear ice from February."],["Spring","Mar–May","The ice holds into March, then breaks up in May."],["Summer","Jun–Aug","Warm days, hiking and boat trips."],["Autumn","Sep–Nov","Golden larches and calm water in September."]]},"plan":{"say":"Four days: Irkutsk, two days on Olkhon, and the old railway.","days":[["Irkutsk and Listvyanka",["irkutsk","listvyanka","nerpa"]],["Olkhon Island",["olkhon"]],["The ice, or a boat in summer",["ice"]],["Along the shore by train",["circum"]]]},"greet":["Baikal is my favourite place in Russia. It’s the deepest and oldest lake on Earth.","Winter ice or summer island? It’s two different trips."]},"vladivostok":{"name":"Vladivostok","photo":"vladivostok","kicker":"The end of the Trans-Siberian, on the Pacific","hook":"Hills over the bay, two great bridges, and seafood straight from the Pacific.","highlights":[{"id":"station","title":"The end of the line","line":"The kilometre 9,288 marker at the station, where the Trans-Siberian ends.","dur":0.1},{"id":"eagle","title":"Eagle’s Nest viewpoint","line":"The best view of the bay and both bridges.","dur":0.25},{"id":"goldenbridge","title":"The Golden Bridge","line":"Cable-stayed across the Golden Horn Bay, and lit at night.","dur":0.25},{"id":"seafood","title":"The fish market","line":"Crab, scallops and sea urchin, eaten by the water.","dur":0.25},{"id":"russky","title":"Russky Island","line":"Across one of the longest cable-stayed bridges in the world: forts, coves and the oceanarium.","dur":0.5},{"id":"fortress","title":"Vladivostok Fortress","line":"Sea forts and tunnels built to guard the Pacific port.","dur":0.25}],"topics":[{"id":"classic","chip":"The city and the bay","says":["Start with the view, then go down to the water."],"cards":["station","eagle","goldenbridge"],"photo":true},{"id":"sea","chip":"Islands and seafood","says":["The Pacific side of the city."],"cards":["russky","seafood","fortress"]}],"when":{"say":"August and September are the warmest and clearest. Early summer is often foggy.","seasons":[["Winter","Dec–Feb","Cold, sunny and dry; the bay can freeze."],["Spring","Mar–May","Windy and cool."],["Summer","Jun–Aug","Fog in June and July, warm sea in August."],["Autumn","Sep–Nov","The best weather of the year in September."]]},"plan":{"say":"Two days is enough for the city.","days":[["The city and the bay",["station","eagle","goldenbridge","seafood"]],["Russky Island",["russky","fortress"]]]},"greet":["Vladivostok is where the railway from Moscow ends, on the Pacific.","Shall I show you the bay first?"]},"kamchatka":{"name":"Kamchatka","photo":"kamchatka","kicker":"Volcanoes and bears on the Pacific","hook":"Active volcanoes, the Valley of Geysers, and brown bears fishing for salmon.","highlights":[{"id":"geysers","title":"The Valley of Geysers","line":"Reached by helicopter: one of the largest geyser fields in the world.","dur":1},{"id":"bears","title":"Bears at Kurile Lake","line":"Brown bears fishing for salmon, July to September, by helicopter.","dur":1},{"id":"avacha","title":"Avachinsky volcano","line":"A climbable volcano above the city, with a summer hike to the crater rim.","dur":1},{"id":"beach","title":"Khalaktyrsky beach","line":"Black volcanic sand on the open Pacific.","dur":0.25},{"id":"springs","title":"The hot springs","line":"Natural thermal pools in the hills, after a day outside.","dur":0.25},{"id":"crab","title":"Kamchatka crab and red caviar","line":"Straight from the Pacific, at the market in Petropavlovsk.","dur":0.1}],"topics":[{"id":"classic","chip":"Volcanoes and wildlife","says":["These are the big days, each a trip of its own."],"cards":["geysers","bears","avacha"],"photo":true},{"id":"coast","chip":"The coast and the springs","says":["For the days in between."],"cards":["beach","springs","crab"]}],"when":{"say":"July to September for hiking, bears and helicopter trips. Winter is for heli-skiing and snowmobiles.","seasons":[["Winter","Dec–Feb","Deep snow, heli-skiing and snowmobiles."],["Spring","Mar–May","Ski touring on the volcanoes."],["Summer","Jun–Aug","Hiking season; bears from July."],["Autumn","Sep–Nov","Bears until September, autumn colours on the tundra."]]},"plan":{"say":"Four days, with a spare day for the weather.","days":[["Arrive and the coast",["beach","crab","springs"]],["The Valley of Geysers",["geysers"]],["Avachinsky volcano",["avacha"]],["Kurile Lake bears",["bears"]]]},"greet":["Kamchatka is the wildest place I send people. Volcanoes, geysers, bears.","Most of it is reached by helicopter. Shall I show you?"]}}};</script>
+<script>
+// Sasha's Field Notebook
+// Framework-free ES2020 client script.
+// Handles tabs, pinning, fly animation, envelope updates, and the letter/posted views.
+(() => {
+  document.documentElement.classList.add('js');
+
+  const P = window.PAGE, G = P.guide, CID = P.city, C = CID ? P.cities[CID] : null, T = P.t, B = P.base || '';
+  const LANG = T._lang.code, DIR = T._lang.dir;
+
+  // Sync current notebook language into shared localStorage so v1 home and plan pages reflect it
+  try { localStorage.setItem('rotw-lang', LANG); } catch (e) {}
+
+  const PR = new Intl.PluralRules(LANG), NF = new Intl.NumberFormat(LANG);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const f = (s, o = {}) => String(s).replace(/\{(\w+)\}/g, (m, k) => (k in o ? o[k] : m));
+  const pl = (key, n) => { const forms = T.plural[key]; return f(forms[PR.select(n)] || forms.other, { n: NF.format(n) }); };
+  const durTxt = d => T.dur[d <= 0.15 ? 0 : d <= 0.3 ? 1 : d <= 0.6 ? 2 : 3];
+  const H = (cid, hid) => (P.cities[cid] && P.cities[cid].highlights ? P.cities[cid].highlights.find(h => h.id === hid) : null);
+  const N = { name: G.name };
+  const ROTATIONS = [-8, 5, -3, 9, -6, 4, -7, 6, -2, 8];
+
+  /* ---------- trip in localStorage ---------- */
+  let trip = [];
+  try {
+    trip = JSON.parse(localStorage.getItem('rotw-guide-trip') || '[]').filter(t => P.cities[t.c] && H(t.c, t.h));
+  } catch (e) {
+    trip = [];
+  }
+  const saveTrip = () => {
+    try { localStorage.setItem('rotw-guide-trip', JSON.stringify(trip)); } catch (e) {}
+  };
+  const inTrip = (c, h) => trip.some(t => t.c === c && t.h === h);
+  const planIn = cid => P.cities[cid] && P.cities[cid].plan && P.cities[cid].plan.days.every(([, ids]) => ids.every(id => inTrip(cid, id)));
+
+  /* ---------- fly animation ---------- */
+  function fly(fromEl, text) {
+    if (reduce || !document.body.animate) return;
+    const target = matchMedia('(max-width: 1099px)').matches
+      ? document.getElementById('env-head')
+      : (document.getElementById('env-stamps') || document.getElementById('trip'));
+    if (!target) return;
+    const a = fromEl.getBoundingClientRect(), b = target.getBoundingClientRect();
+    const fl = document.createElement('div');
+    fl.className = 'fly';
+    fl.textContent = text;
+    document.body.append(fl);
+    const w = fl.offsetWidth;
+    const startX = a.left + a.width / 2 - w / 2;
+    const startY = a.top;
+    fl.style.left = startX + 'px';
+    fl.style.top = startY + 'px';
+    const targetX = b.left + (b.width > 60 ? 30 : b.width / 2) - w / 2;
+    const targetY = b.top + Math.min(b.height / 2, 30);
+    const dx = targetX - startX;
+    const dy = targetY - startY;
+    fl.animate([
+      { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+      { transform: `translate(${dx}px, ${dy}px) scale(.7)`, opacity: .2 }
+    ], {
+      duration: 620,
+      easing: 'cubic-bezier(.77,0,.175,1)',
+      fill: 'forwards'
+    }).finished.then(() => fl.remove()).catch(() => fl.remove());
+  }
+
+  /* ---------- sync button states in page ---------- */
+  function syncButtons() {
+    document.querySelectorAll('.pin[data-h]').forEach(btn => {
+      const on = inTrip(btn.dataset.c, btn.dataset.h);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      const span = btn.querySelector('span');
+      if (span) span.textContent = on ? T.pinned : T.pin;
+      const row = btn.closest('.pick-row');
+      if (row) {
+        if (on) row.classList.add('pinned');
+        else row.classList.remove('pinned');
+      }
+    });
+    document.querySelectorAll('.pin[data-plan]').forEach(btn => {
+      const on = planIn(btn.dataset.plan);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      const span = btn.querySelector('span');
+      if (span) span.textContent = on ? T.planPinned : T.pinPlan;
+    });
+  }
+
+  /* ---------- render envelope ---------- */
+  let knownStamps = new Set();
+
+  function renderEnvelope(newCity) {
+    const sumEl = document.getElementById('env-sum');
+    const badgeEl = document.getElementById('env-badge');
+    const emptyEl = document.getElementById('env-empty');
+    const routeEl = document.getElementById('env-route');
+    const stampsEl = document.getElementById('env-stamps');
+    const groupsEl = document.getElementById('env-groups');
+
+    const citiesInTrip = [];
+    trip.forEach(t => {
+      if (!citiesInTrip.includes(t.c)) citiesInTrip.push(t.c);
+    });
+
+    const perCityDays = {};
+    trip.forEach(t => {
+      const h = H(t.c, t.h);
+      if (h) perCityDays[t.c] = (perCityDays[t.c] || 0) + h.dur;
+    });
+
+    let totalDays = 0;
+    citiesInTrip.forEach(c => {
+      totalDays += Math.max(1, Math.ceil((perCityDays[c] || 0) * 2) / 2);
+    });
+
+    if (!trip.length || !citiesInTrip.length) {
+      if (sumEl) sumEl.textContent = T.nothingYet;
+      if (badgeEl) { badgeEl.textContent = ''; badgeEl.hidden = true; badgeEl.style.display = 'none'; }
+      if (emptyEl) emptyEl.hidden = false;
+      if (routeEl) { routeEl.textContent = ''; routeEl.hidden = true; }
+      if (stampsEl) stampsEl.innerHTML = `<span class="sr">${esc(T.tripStamps)}</span>`;
+      if (groupsEl) groupsEl.innerHTML = '';
+      knownStamps = new Set();
+      return;
+    }
+
+    if (emptyEl) emptyEl.hidden = true;
+    if (sumEl) sumEl.textContent = f(T.tripSum, { places: pl('places', trip.length), days: pl('days', totalDays) });
+    if (badgeEl) {
+      if (citiesInTrip.length > 0) {
+        badgeEl.textContent = NF.format(citiesInTrip.length);
+        badgeEl.hidden = false;
+        badgeEl.style.display = '';
+      } else {
+        badgeEl.textContent = '';
+        badgeEl.hidden = true;
+        badgeEl.style.display = 'none';
+      }
+    }
+    if (routeEl) {
+      if (citiesInTrip.length >= 2) {
+        routeEl.textContent = citiesInTrip.map(c => P.cities[c].name).join(DIR === 'rtl' ? ' ← ' : ' → ');
+        routeEl.hidden = false;
+      } else {
+        routeEl.textContent = '';
+        routeEl.hidden = true;
+      }
+    }
+
+    // Stamps
+    if (stampsEl) {
+      stampsEl.innerHTML = `<span class="sr">${esc(T.tripStamps)}</span>` + citiesInTrip.map(cid => {
+        const c = P.cities[cid];
+        const rot = ROTATIONS[P.order.indexOf(cid) % ROTATIONS.length] || 0;
+        const isNew = (!knownStamps.has(cid) && cid === newCity && !reduce);
+        return `<div class="stamp ${isNew ? 'stamp-anim' : ''}" style="--rot:${rot}deg; transform:rotate(${rot}deg);" title="${esc(c.name)}"><span class="stamp-name">${esc(c.name)}</span></div>`;
+      }).join('');
+    }
+    knownStamps = new Set(citiesInTrip);
+
+    // Group items by city
+    if (groupsEl) {
+      groupsEl.innerHTML = citiesInTrip.map(cid => {
+        const c = P.cities[cid];
+        const cItems = trip.filter(t => t.c === cid);
+        const durSum = cItems.reduce((acc, t) => { const h = H(t.c, t.h); return acc + (h ? h.dur : 0); }, 0);
+        const cDays = Math.max(1, Math.ceil(durSum * 2) / 2);
+        const wholeDays = Math.floor(cDays);
+        const hasHalf = cDays % 1 !== 0;
+
+        let pipsHtml = '';
+        for (let i = 0; i < wholeDays; i++) {
+          pipsHtml += '<span class="pip full" aria-hidden="true"></span>';
+        }
+        if (hasHalf) {
+          pipsHtml += '<span class="pip half" aria-hidden="true"></span>';
+        }
+
+        return `
+        <div class="city-group">
+          <div class="city-group-title">${esc(c.name)}</div>
+          ${cItems.map(t => {
+            const h = H(t.c, t.h);
+            if (!h) return '';
+            return `
+            <div class="env-item">
+              <span class="env-item-title">${esc(h.title)}</span>
+              <span class="env-item-dur">${esc(durTxt(h.dur))}</span>
+              <button type="button" class="env-rm" data-c="${cid}" data-h="${h.id}" aria-label="${esc(f(T.removeItem, { item: h.title }))}">×</button>
+            </div>`;
+          }).join('')}
+          <div class="day-pips">
+            ${pipsHtml}
+            <span class="pips-label">${esc(f(T.aboutDaysCity, { days: pl('days', cDays) }))}</span>
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+
+  /* ---------- click handling for pins & removes ---------- */
+  document.addEventListener('click', e => {
+    // Pin / unpin place
+    const pinBtn = e.target.closest('.pin[data-h]');
+    if (pinBtn) {
+      const { c, h } = pinBtn.dataset;
+      const i = trip.findIndex(t => t.c === c && t.h === h);
+      if (i >= 0) {
+        trip.splice(i, 1);
+      } else {
+        trip.push({ c, h });
+        const hObj = H(c, h);
+        if (hObj) fly(pinBtn, hObj.title);
+      }
+      saveTrip();
+      syncButtons();
+      renderEnvelope(c);
+      return;
+    }
+
+    // Pin / unpin plan
+    const planBtn = e.target.closest('.pin[data-plan]');
+    if (planBtn) {
+      const cid = planBtn.dataset.plan;
+      const all = planIn(cid);
+      const cObj = P.cities[cid];
+      cObj.plan.days.forEach(([, ids]) => ids.forEach(id => {
+        const i = trip.findIndex(t => t.c === cid && t.h === id);
+        if (all && i >= 0) trip.splice(i, 1);
+        if (!all && i < 0) trip.push({ c: cid, h: id });
+      }));
+      if (!all) fly(planBtn, pl('planChip', cObj.plan.days.length));
+      saveTrip();
+      syncButtons();
+      renderEnvelope(cid);
+      return;
+    }
+
+    // Remove item from envelope
+    const rmBtn = e.target.closest('.env-rm');
+    if (rmBtn) {
+      const { c, h } = rmBtn.dataset;
+      const i = trip.findIndex(t => t.c === c && t.h === h);
+      if (i >= 0) {
+        trip.splice(i, 1);
+        saveTrip();
+        syncButtons();
+        renderEnvelope();
+      }
+      return;
+    }
+  });
+
+  /* ---------- send button & letter view ---------- */
+  const sendBtn = document.getElementById('env-send');
+  if (sendBtn) {
+    sendBtn.addEventListener('click', () => {
+      if (!trip.length) {
+        const emptyEl = document.getElementById('env-empty');
+        if (emptyEl) {
+          emptyEl.classList.add('underline-flash');
+          setTimeout(() => emptyEl.classList.remove('underline-flash'), 1200);
+        }
+        const picks = document.getElementById('picks-list') || document.getElementById('contents-list') || document.getElementById('notebook');
+        if (picks) picks.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        return;
+      }
+      const listView = document.getElementById('env-list-view');
+      const letterView = document.getElementById('env-letter');
+      if (listView) listView.hidden = true;
+      if (letterView) {
+        letterView.hidden = false;
+        const nameInput = document.getElementById('field-name');
+        if (nameInput) nameInput.focus({ preventScroll: true });
+      }
+    });
+  }
+
+  const backBtn = document.getElementById('letter-back');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      const listView = document.getElementById('env-list-view');
+      const letterView = document.getElementById('env-letter');
+      if (letterView) letterView.hidden = true;
+      if (listView) listView.hidden = false;
+    });
+  }
+
+  const letterForm = document.getElementById('letter-form');
+  if (letterForm) {
+    letterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const nameInput = document.getElementById('field-name');
+      const emailInput = document.getElementById('field-email');
+      const whenInput = document.getElementById('field-when');
+      const errName = document.getElementById('err-name');
+      const errEmail = document.getElementById('err-email');
+
+      const nameVal = nameInput ? nameInput.value.trim() : '';
+      const emailVal = emailInput ? emailInput.value.trim() : '';
+      const whenVal = whenInput ? whenInput.value.trim() : '';
+
+      let valid = true;
+      if (!nameVal) {
+        valid = false;
+        if (errName) errName.hidden = false;
+      } else {
+        if (errName) errName.hidden = true;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!emailRegex.test(emailVal)) {
+        valid = false;
+        if (errEmail) errEmail.hidden = false;
+      } else {
+        if (errEmail) errEmail.hidden = true;
+      }
+
+      if (!valid) return;
+
+      const letterView = document.getElementById('env-letter');
+      const postedView = document.getElementById('env-posted');
+      if (letterView) letterView.hidden = true;
+      if (postedView) {
+        postedView.hidden = false;
+
+        const pmDate = document.getElementById('pm-date');
+        if (pmDate) {
+          try {
+            pmDate.textContent = new Intl.DateTimeFormat(LANG, { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date());
+          } catch (err) {
+            pmDate.textContent = new Date().toLocaleDateString();
+          }
+        }
+
+        const summaryEl = document.getElementById('posted-summary');
+        if (summaryEl) {
+          const citiesInTrip = [];
+          trip.forEach(t => { if (!citiesInTrip.includes(t.c)) citiesInTrip.push(t.c); });
+          const perCityDays = {};
+          trip.forEach(t => { const h = H(t.c, t.h); if (h) perCityDays[t.c] = (perCityDays[t.c] || 0) + h.dur; });
+          let totalDays = 0;
+          citiesInTrip.forEach(c => { totalDays += Math.max(1, Math.ceil((perCityDays[c] || 0) * 2) / 2); });
+          const citiesStr = citiesInTrip.map(cid => P.cities[cid].name).join(', ');
+
+          summaryEl.textContent = f(T.summary, {
+            name: nameVal,
+            places: pl('places', trip.length),
+            cities: citiesStr,
+            days: pl('days', totalDays),
+            when: whenVal || '—'
+          });
+        }
+      }
+    });
+  }
+
+  /* ---------- mobile bottom sheet toggle ---------- */
+  const envHead = document.getElementById('env-head');
+  const envEl = document.getElementById('trip');
+  if (envHead && envEl) {
+    envHead.addEventListener('click', () => {
+      if (matchMedia('(max-width: 1099px)').matches) {
+        const isOpen = envEl.classList.toggle('open');
+        envHead.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    });
+  }
+
+  /* ---------- tabs: city page picks ---------- */
+  if (CID && C) {
+    const tabsContainer = document.querySelector('.tabs');
+    const picksList = document.getElementById('picks-list');
+    const topicSays = document.getElementById('topic-says');
+
+    function renderCityPicks(topicId) {
+      if (!picksList) return;
+      let items = C.highlights;
+      if (topicId !== 'all') {
+        const topicObj = C.topics.find(t => t.id === topicId);
+        if (topicObj && topicObj.cards) {
+          items = topicObj.cards.map(hid => H(CID, hid)).filter(Boolean);
+        }
+      }
+
+      picksList.innerHTML = items.map(h => {
+        const on = inTrip(CID, h.id);
+        const durPercent = Math.max(10, Math.round(h.dur * 100));
+        return `
+        <li class="pick-row fade-in ${on ? 'pinned' : ''}" data-h="${h.id}">
+          <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+          <div class="pick-info">
+            <div class="pick-title">${esc(h.title)}</div>
+            <div class="pick-line">${esc(h.line)}</div>
+            <div class="dur-bar"><div class="dur-fill" style="width:${durPercent}%"></div></div>
+            <span class="dur-text">${esc(durTxt(h.dur))}</span>
+          </div>
+          <button class="pin" type="button" data-c="${CID}" data-h="${h.id}" aria-pressed="${on ? 'true' : 'false'}" aria-label="${esc(f(T.pinAria, { title: h.title }))}">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+            <span>${esc(on ? T.pinned : T.pin)}</span>
+          </button>
+        </li>`;
+      }).join('');
+    }
+
+    if (tabsContainer) {
+      tabsContainer.addEventListener('click', e => {
+        const tab = e.target.closest('[role="tab"]');
+        if (!tab) return;
+        tabsContainer.querySelectorAll('[role="tab"]').forEach(t => t.setAttribute('aria-selected', 'false'));
+        tab.setAttribute('aria-selected', 'true');
+        const topicId = tab.dataset.topic;
+
+        if (topicSays) {
+          if (topicId === 'all') {
+            topicSays.innerHTML = '';
+          } else {
+            const topicObj = C.topics.find(t => t.id === topicId);
+            if (topicObj && topicObj.says) {
+              topicSays.innerHTML = topicObj.says.map(l => `<p class="hand small">${esc(l)}</p>`).join('');
+            } else {
+              topicSays.innerHTML = '';
+            }
+          }
+        }
+
+        renderCityPicks(topicId);
+      });
+    }
+  }
+
+  /* ---------- tabs: hub page contents ---------- */
+  if (!CID) {
+    const HUB = {
+      first: ['moscow', 'spb', 'suzdal'],
+      nature: ['baikal', 'kamchatka', 'murmansk', 'kaliningrad'],
+      winter: ['murmansk', 'baikal', 'moscow', 'suzdal'],
+      sea: ['sochi', 'kaliningrad', 'vladivostok'],
+      rail: ['moscow', 'kazan', 'baikal', 'vladivostok'],
+      all: P.order
+    };
+
+    const tabsContainer = document.querySelector('.tabs');
+    const contentsList = document.getElementById('contents-list');
+    const hubTopicSay = document.getElementById('hub-topic-say');
+
+    function renderHubContents(topicId) {
+      if (!contentsList) return;
+      const cityIds = HUB[topicId] || P.order;
+      contentsList.innerHTML = cityIds.map(k => {
+        const c = P.cities[k];
+        const num = P.order.indexOf(k) + 1;
+        return `
+        <li class="content-row fade-in" data-city="${k}">
+          <span class="content-num">${esc(NF.format(num))}</span>
+          <div class="thumb-frame"><img src="${B}assets/${c.photo}.webp" alt="" width="96" height="72" loading="lazy"></div>
+          <div class="content-info">
+            <a class="content-title" href="${k}.html">${esc(c.name)}</a>
+            <p class="content-kicker">${esc(c.kicker)}</p>
+            <a class="open-link" href="${k}.html"><span>${esc(f(T.openPage, { city: c.name }))}</span><svg class="chevron" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+          </div>
+        </li>`;
+      }).join('');
+    }
+
+    if (tabsContainer) {
+      tabsContainer.addEventListener('click', e => {
+        const tab = e.target.closest('[role="tab"]');
+        if (!tab) return;
+        tabsContainer.querySelectorAll('[role="tab"]').forEach(t => t.setAttribute('aria-selected', 'false'));
+        tab.setAttribute('aria-selected', 'true');
+        const topicId = tab.dataset.topic;
+
+        if (hubTopicSay) {
+          if (topicId === 'all') {
+            hubTopicSay.innerHTML = '';
+          } else {
+            const tp = T.hubTopics[topicId];
+            hubTopicSay.innerHTML = tp && tp.say ? `<p class="hand small">${esc(tp.say)}</p>` : '';
+          }
+        }
+
+        renderHubContents(topicId);
+      });
+    }
+  }
+
+  /* ---------- WAI-ARIA keyboard navigation for tabs ---------- */
+  const tabsList = document.querySelector('.tabs');
+  if (tabsList) {
+    const tabs = Array.from(tabsList.querySelectorAll('[role="tab"]'));
+    tabsList.addEventListener('keydown', e => {
+      const idx = tabs.indexOf(document.activeElement);
+      if (idx === -1) return;
+      let nextIdx = null;
+      const isRtl = DIR === 'rtl';
+      if (e.key === 'ArrowRight') {
+        nextIdx = isRtl ? (idx - 1 + tabs.length) % tabs.length : (idx + 1) % tabs.length;
+      } else if (e.key === 'ArrowLeft') {
+        nextIdx = isRtl ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+      } else if (e.key === 'Home') {
+        nextIdx = 0;
+      } else if (e.key === 'End') {
+        nextIdx = tabs.length - 1;
+      }
+      if (nextIdx !== null) {
+        e.preventDefault();
+        tabs[nextIdx].focus();
+        tabs[nextIdx].click();
+      }
+    });
+  }
+
+  /* ---------- initial setup ---------- */
+  syncButtons();
+  renderEnvelope();
+})();
+
+</script>
+</body>
+</html>

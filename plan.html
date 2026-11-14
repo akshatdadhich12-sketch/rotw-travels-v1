@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Plan your Russia trip · ROTW Travels</title>
+<meta name="description" content="Plan a trip to Russia with ROTW Travels, a Moscow tour operator: pick cities, month, length and interests, and get a day-by-day draft route.">
+<meta name="theme-color" content="#0A1424">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A1424'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23D4A84B' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23E9EDF1'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23D4A84B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap">
+<style>
+/* Layout: one question per screen on the left, a live "flight plan" on the right that draws your route as you answer.
+   Same world as the flight story: Cormorant Garamond + Jost, navy ground, gold only for the route and the main action. */
+:root{
+  --ink:#0A1424; --ink-2:#111E33; --ink-3:#16243C; --line:#26354F; --glacier:#E9EDF1; --paper:#F1EEE6; --mist:#9AA7B8; --soft:#C9D3DF;
+  --gold:#D4A84B; --gold-2:#E0B862; --ice:#7FB3D5; --err:#F0A493;
+  --f-display:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+  --f-text:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1);
+  color-scheme:dark;
+}
+html[lang="ar"]{--f-display:"Noto Naskh Arabic",serif;--f-text:"Noto Sans Arabic",system-ui,sans-serif}
+html[lang="hi"]{--f-display:"Noto Serif Devanagari",serif;--f-text:"Noto Sans Devanagari",system-ui,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:radial-gradient(1200px 700px at 85% -10%,#15284A 0%,rgba(21,40,74,0) 60%),var(--ink);background-attachment:fixed;color:var(--glacier);font-family:var(--f-text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;letter-spacing:-.015em;text-wrap:balance}
+html[lang="ar"] :is(h1,h2,h3),html[lang="hi"] :is(h1,h2,h3){letter-spacing:0;line-height:1.3!important}
+p{margin:0;text-wrap:pretty}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.label{font-size:13px;font-weight:500;color:var(--mist);line-height:1.4}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;background:var(--gold);color:#17120A;padding:10px 14px;border-radius:2px;z-index:50;text-decoration:none;font-weight:500}
+.skip:focus{top:12px}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1240px;margin:0 auto;padding-block:calc(env(safe-area-inset-top,0px) + 18px) 18px}
+.top .left{display:flex;align-items:center;gap:22px;min-width:0}
+.logo{display:block;height:36px;width:auto}
+.rotw-logo{overflow:visible;--lg-main:var(--glacier);--lg-red:#E53824;--lg-hole:var(--ink)}
+.rotw-logo .lg-needle{transform-box:view-box;transform-origin:227px 136px;transition:transform 1.1s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.logo-link:hover .lg-needle{transform:rotate(360deg)}}
+.logo-link{display:block;border-radius:4px}
+.back{font-size:15px;color:var(--soft);text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.back:hover{color:var(--glacier)}
+html[dir="rtl"] .back svg{transform:scaleX(-1)}
+.lang select{appearance:none;-webkit-appearance:none;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--glacier);padding:6px 18px 6px 2px;cursor:pointer;min-height:44px;font-size:15px;
+  background-image:linear-gradient(45deg,transparent 50%,var(--mist) 50%),linear-gradient(135deg,var(--mist) 50%,transparent 50%);background-position:calc(100% - 7px) 52%,calc(100% - 2px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+html[dir="rtl"] .lang select{padding:6px 2px 6px 18px;background-position:7px 52%,2px 52%}
+.lang option{background:var(--ink-2)}
+@media (max-width:560px){.back span{display:none}}
+
+/* layout */
+.wrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:56px;align-items:start;padding-bottom:72px}
+@media (max-width:980px){.wrap{grid-template-columns:minmax(0,1fr);gap:36px}}
+
+/* question column */
+.q{min-width:0;padding-top:12px}
+.progress{height:2px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:22px}
+.progress i{display:block;height:100%;background:var(--gold);transform-origin:left;transform:scaleX(0);transition:transform .5s var(--ease-out)}
+html[dir="rtl"] .progress i{transform-origin:right}
+.meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.meta .glance{color:var(--soft);font-size:15px}
+.step{display:flex;flex-direction:column;gap:22px;transition:opacity .22s var(--ease-out),transform .28s var(--ease-out)}
+.step[hidden]{display:none}
+.step.leave{opacity:0;transform:translateY(-8px);transition-duration:.16s}
+.step.enter{opacity:0;transform:translateY(10px)}
+.step h1{font-size:clamp(40px,5vw,68px);line-height:1;outline:none}
+.hint{color:var(--soft);max-width:56ch}
+.err{color:var(--err);font-size:15px;min-height:1.6em}
+.err:empty{min-height:0}
+
+/* choice rows */
+.rows{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;border:0}
+.choice{display:grid;grid-template-columns:minmax(0,1fr) 26px;align-items:center;gap:14px;width:100%;text-align:start;background:rgba(17,30,51,.6);border:1px solid var(--line);border-radius:10px;padding:16px 18px;cursor:pointer;min-height:64px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
+.choice:active{transform:scale(.985)}
+.choice b{display:block;font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1.15}
+.choice small{display:block;font-size:14px;color:var(--mist);margin-top:2px}
+.choice .tick{width:26px;height:26px;border-radius:50%;border:1px solid var(--mist);display:grid;place-items:center;color:transparent;transition:background .15s ease,border-color .15s ease}
+.choice[aria-checked="true"],.choice[aria-pressed="true"]{border-color:var(--gold);background:rgba(212,168,75,.08)}
+.choice[aria-checked="true"] .tick,.choice[aria-pressed="true"] .tick{background:var(--gold);border-color:var(--gold);color:#17120A}
+@media (hover:hover) and (pointer:fine){.choice:hover{border-color:#3A4C6C}}
+
+/* cities */
+.cities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.city{display:grid;grid-template-columns:64px minmax(0,1fr) 26px;align-items:center;gap:12px;text-align:start;background:rgba(17,30,51,.6);border:1px solid var(--line);border-radius:10px;padding:8px 12px 8px 8px;cursor:pointer;min-height:64px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
+html[dir="rtl"] .city{padding:8px 8px 8px 12px}
+.city img{width:64px;height:48px;object-fit:cover;border-radius:6px;display:block}
+.city b{font-family:var(--f-display);font-weight:400;font-size:22px;line-height:1.1;display:block}
+.city small{font-size:13px;color:var(--mist)}
+.city:active{transform:scale(.985)}
+.city .tick{width:24px;height:24px;border-radius:50%;border:1px solid var(--mist);display:grid;place-items:center;color:transparent;font-size:12px;font-weight:500;font-variant-numeric:tabular-nums}
+.city[aria-pressed="true"]{border-color:var(--gold);background:rgba(212,168,75,.08)}
+.city[aria-pressed="true"] .tick{background:var(--gold);border-color:var(--gold);color:#17120A}
+@media (hover:hover) and (pointer:fine){.city:hover{border-color:#3A4C6C}}
+@media (max-width:520px){.cities{grid-template-columns:minmax(0,1fr)}}
+.textbtn{align-self:flex-start;background:none;border:0;border-bottom:1px solid var(--mist);padding:10px 2px;color:var(--glacier);cursor:pointer;min-height:44px}
+@media (hover:hover) and (pointer:fine){.textbtn:hover{border-color:var(--glacier)}}
+
+/* months */
+.months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.month{background:rgba(17,30,51,.6);border:1px solid var(--line);border-radius:8px;min-height:56px;cursor:pointer;font-size:16px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
+.month:active{transform:scale(.97)}
+.month[aria-checked="true"]{background:var(--gold);color:#17120A;border-color:var(--gold);font-weight:500}
+@media (hover:hover) and (pointer:fine){.month:hover{border-color:#3A4C6C}}
+@media (max-width:520px){.months{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.note{display:flex;gap:12px;align-items:flex-start;background:rgba(127,179,213,.07);border:1px solid rgba(127,179,213,.22);border-radius:10px;padding:14px 16px;color:var(--soft);font-size:16px}
+.note[hidden]{display:none}
+.note svg{flex:none;margin-top:3px;color:var(--ice)}
+.len{display:flex;flex-direction:column;gap:10px}
+.len .row{display:flex;justify-content:space-between;align-items:baseline}
+.len output{font-family:var(--f-display);font-size:34px;line-height:1}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--gold) var(--p,40%),var(--line) var(--p,40%))}
+html[dir="rtl"] input[type=range]::-webkit-slider-runnable-track{background:linear-gradient(270deg,var(--gold) var(--p,40%),var(--line) var(--p,40%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--paper);border:3px solid var(--gold);margin-top:-11px}
+input[type=range]::-moz-range-track{height:2px;background:var(--line)}
+input[type=range]::-moz-range-progress{height:2px;background:var(--gold)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--paper);border:3px solid var(--gold)}
+.scale{display:flex;justify-content:space-between;font-size:13px;color:var(--mist)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:rgba(17,30,51,.6);border:1px solid var(--line);border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer;font-size:16px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed="true"]{background:var(--glacier);color:var(--ink);border-color:var(--glacier)}
+.chip[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+@media (hover:hover) and (pointer:fine){.chip:hover{border-color:#3A4C6C}}
+
+/* fields */
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:15px;color:var(--soft)}
+.field input{background:var(--ink-2);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-height:50px;font-size:17px;color:var(--glacier);width:100%}
+.field input::placeholder{color:#6F7D92}
+.field input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,168,75,.18)}
+.field input[aria-invalid="true"]{border-color:var(--err)}
+.field .ferr{font-size:14px;color:var(--err)}
+.field .ferr:empty{display:none}
+.consent{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:15px;color:var(--soft)}
+.consent input{width:22px;height:22px;accent-color:var(--gold);flex:none;margin-top:2px}
+@media (max-width:620px){.fields{grid-template-columns:minmax(0,1fr)}}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:500 16px var(--f-text);border-radius:2px;padding:13px 24px;border:0;cursor:pointer;min-height:48px;text-decoration:none;transition:background .15s ease,transform .16s var(--ease-out)}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--gold);color:#17120A}
+.btn.ghost{background:none;color:var(--glacier);border:1px solid var(--line)}
+@media (hover:hover) and (pointer:fine){.btn.primary:hover{background:var(--gold-2)}.btn.ghost:hover{border-color:var(--mist)}}
+.btn[hidden]{display:none}
+html[dir="rtl"] .btn svg{transform:scaleX(-1)}
+.keys{font-size:13px;color:var(--mist)}
+@media (pointer:coarse){.keys{display:none}}
+
+/* done */
+.done textarea{width:100%;min-height:260px;background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:16px;color:var(--soft);font-size:15px;line-height:1.55;resize:vertical}
+.done .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.done .status{font-size:15px;color:var(--soft)}
+
+/* plan panel */
+.panel{position:sticky;top:20px;display:flex;flex-direction:column;gap:18px;min-width:0}
+@media (max-width:980px){.panel{position:static}}
+.sasha{display:flex;align-items:flex-end;gap:10px}
+.sasha img{width:84px;height:100px;object-fit:contain;object-position:50% 100%;flex:none;display:block}
+.say{background:var(--paper);color:#1A2230;border-radius:3px;padding:11px 14px 12px;font-size:15px;line-height:1.45;position:relative;margin-bottom:14px;transition:opacity .2s ease}
+.say::before{content:"";position:absolute;bottom:14px;inset-inline-start:-8px;border:8px solid transparent;border-inline-end-color:var(--paper);border-inline-start:0}
+.say b{display:block;font-size:13px;font-weight:500;color:#7A6230;margin-bottom:2px}
+.say.swap{opacity:0}
+.mapbox{position:relative;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;overflow:hidden;aspect-ratio:1000/430}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.mapbox .land{fill:#1A2B45;stroke:#2F4567;stroke-width:.8}
+.mapbox .ru{fill:#2C2B20;stroke:#D4A84B;stroke-width:1.4}
+.mapbox .route{fill:none;stroke:var(--gold);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.mapbox .route.draw{transition:stroke-dashoffset .8s var(--ease-in-out)}
+.mapbox .pt{position:absolute;transform:translate(-50%,-50%);width:28px;height:28px;border-radius:50%;border:0;background:none;cursor:pointer;display:grid;place-items:center;padding:0}
+.mapbox .pt i{width:9px;height:9px;border-radius:50%;background:var(--ink);border:1.5px solid var(--glacier);transition:transform .16s var(--ease-out),background .15s ease}
+.mapbox .pt[aria-pressed="true"] i{background:var(--gold);border-color:var(--gold);transform:scale(1.35)}
+.mapbox .pt span{position:absolute;top:100%;left:50%;transform:translateX(-50%);font-size:12px;line-height:1;white-space:nowrap;color:var(--soft);text-shadow:0 1px 3px #000;pointer-events:none;margin-top:-4px}
+.mapbox .pt span{display:none}
+.mapbox .pt[aria-pressed="true"] span,.mapbox .pt:focus-visible span{display:block;color:var(--gold)}
+@media (hover:hover) and (pointer:fine){.mapbox .pt:hover span{display:block}}
+.mapbox .empty{position:absolute;inset:auto 0 12px 0;text-align:center;font-size:14px;color:var(--mist);pointer-events:none}
+
+.pass{background:var(--paper);color:#1A2230;border-radius:8px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:14px}
+.pass h2{font-size:28px;line-height:1}
+.pass dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:0}
+.pass dt{font-size:13px;color:#6A707A}
+.pass dd{margin:0;font-size:16px;font-weight:500;min-width:0;overflow-wrap:anywhere}
+.pass .route-line{font-family:var(--f-display);font-size:24px;line-height:1.2;border-top:1px dashed #C3BCAC;padding-top:12px;overflow-wrap:anywhere}
+.pass .route-line.muted{font-family:var(--f-text);font-size:15px;color:#6A707A}
+.days{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.days li{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid var(--line)}
+.days li:first-child{border-top:0}
+.days .d{font-size:14px;color:var(--mist);font-variant-numeric:tabular-nums}
+.days .c{font-family:var(--f-display);font-size:22px;line-height:1.1}
+.days .n{font-size:14px;color:var(--soft);white-space:nowrap}
+.days li.train .c{color:var(--ice)}
+.warn{font-size:14px;color:var(--err)}
+.warn:empty{display:none}
+.panel h3{font-size:24px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}.step.enter,.step.leave{transform:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#q-main" data-i18n="skip">Skip to the planner</a>
+<header class="top">
+  <div class="left">
+    <a class="logo-link" href="index.html" aria-label="ROTW Travels"><svg class="rotw-logo logo" viewBox="106 70 346 110" aria-hidden="true"><g class="lg-l lg-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g><g class="lg-l lg-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g><g class="lg-needle"><g class=""><path fill="var(--lg-main)" d="M224.1 133.9L224.1 133.9L235.3 120.7L229.5 137.0L229.5 137.0L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-red)" d="M217.8 151.0L224.0 134.0L224.1 133.9L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-hole)" d="M226.6 133.8C227.7 133.8 228.6 134.7 228.6 135.8C228.6 136.9 227.7 137.9 226.6 137.9C225.4 137.9 224.5 136.9 224.5 135.8C224.5 134.7 225.4 133.8 226.6 133.8"/></g></g><g class="lg-l lg-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g><g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g><g class="lg-l lg-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g><g class="lg-l lg-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g><g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g><g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g></svg></a>
+    <a class="back" href="index.html"><svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true"><path d="M16 5H2M6 1L2 5l4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span data-i18n="back_story">Back to the flight story</span></a>
+  </div>
+  <label class="lang"><span class="sr">Language</span>
+    <select id="lang" aria-label="Language"><option value="en">English</option><option value="ru">Русский</option><option value="ar">العربية</option><option value="hi">हिन्दी</option></select>
+  </label>
+</header>
+
+<main class="wrap">
+  <section class="q" id="q-main" aria-labelledby="h1">
+    <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+    <div class="meta"><span class="label" id="stepLabel" aria-live="polite"></span><span class="glance" id="glance"></span></div>
+    <form id="form" novalidate>
+      <!-- 1 who -->
+      <div class="step" data-step="1">
+        <h1 tabindex="-1" data-i18n="q1"></h1>
+        <div class="rows" role="radiogroup" id="who"></div>
+        <p class="err" role="alert" data-err="1"></p>
+      </div>
+      <!-- 2 where -->
+      <div class="step" data-step="2" hidden>
+        <h1 tabindex="-1" data-i18n="q2"></h1>
+        <p class="hint" data-i18n="hint2"></p>
+        <div class="cities" id="cities"></div>
+        <button type="button" class="textbtn" id="suggest" data-i18n="suggest"></button>
+        <p class="err" role="alert" data-err="2"></p>
+      </div>
+      <!-- 3 when -->
+      <div class="step" data-step="3" hidden>
+        <h1 tabindex="-1" data-i18n="q3"></h1>
+        <span class="label" data-i18n="month" id="monthLabel"></span>
+        <div class="months" role="radiogroup" aria-labelledby="monthLabel" id="months"></div>
+        <p class="note" id="monthNote" hidden><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" fill="none" stroke-width="1.4"/><path d="M8 7v4.5M8 4.6v.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span id="monthNoteText"></span></p>
+        <div class="len">
+          <div class="row"><label for="nights" class="label" data-i18n="length"></label><output id="nightsOut" for="nights"></output></div>
+          <input type="range" id="nights" min="4" max="21" step="1" value="10">
+          <div class="scale" aria-hidden="true"><span id="minN"></span><span id="maxN"></span></div>
+        </div>
+        <p class="err" role="alert" data-err="3"></p>
+      </div>
+      <!-- 4 interests -->
+      <div class="step" data-step="4" hidden>
+        <h1 tabindex="-1" data-i18n="q4"></h1>
+        <p class="hint" data-i18n="hint4"></p>
+        <div class="chips" id="interests"></div>
+        <p class="err" role="alert" data-err="4"></p>
+      </div>
+      <!-- 5 budget -->
+      <div class="step" data-step="5" hidden>
+        <h1 tabindex="-1" data-i18n="q5"></h1>
+        <p class="hint" data-i18n="hint5"></p>
+        <div class="rows" role="radiogroup" id="budget"></div>
+        <p class="err" role="alert" data-err="5"></p>
+      </div>
+      <!-- 6 visa -->
+      <div class="step" data-step="6" hidden>
+        <h1 tabindex="-1" data-i18n="q6"></h1>
+        <span class="label" data-i18n="visa_q" id="visaLabel"></span>
+        <div class="rows" role="radiogroup" aria-labelledby="visaLabel" id="visa"></div>
+        <div class="field"><label for="arrival" data-i18n="arrival"></label><input id="arrival" name="arrival" autocomplete="address-level2"></div>
+        <p class="err" role="alert" data-err="6"></p>
+      </div>
+      <!-- 7 contact -->
+      <div class="step" data-step="7" hidden>
+        <h1 tabindex="-1" data-i18n="q7"></h1>
+        <div class="fields">
+          <div class="field"><label for="name" data-i18n="name"></label><input id="name" name="name" autocomplete="name" aria-describedby="e-name"><span class="ferr" id="e-name"></span></div>
+          <div class="field"><label for="email" data-i18n="email"></label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="e-email"><span class="ferr" id="e-email"></span></div>
+          <div class="field"><label for="phone" data-i18n="phone"></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+          <div class="field" id="companyField" hidden><label for="company" data-i18n="company"></label><input id="company" name="company" autocomplete="organization"></div>
+          <div class="field full"><label class="consent"><input type="checkbox" id="consent" aria-describedby="e-consent"><span data-i18n="consent"></span></label><span class="ferr" id="e-consent"></span></div>
+        </div>
+        <p class="err" role="alert" data-err="7"></p>
+      </div>
+      <!-- done -->
+      <div class="step done" data-step="8" hidden>
+        <h1 tabindex="-1" data-i18n="done_title"></h1>
+        <p class="hint" data-i18n="done_body"></p>
+        <label for="planText" class="sr" data-i18n="plan_title"></label>
+        <textarea id="planText" readonly></textarea>
+        <div class="acts">
+          <button type="button" class="btn primary" id="copy" data-i18n="copy"></button>
+          <button type="button" class="btn ghost" id="restart" data-i18n="restart"></button>
+          <span class="status" id="copyStatus" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="nav" id="nav">
+        <button type="button" class="btn ghost" id="prev"><svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true"><path d="M16 5H2M6 1L2 5l4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span data-i18n="back"></span></button>
+        <span class="keys" data-i18n="keys"></span>
+        <button type="submit" class="btn primary" id="next"><span id="nextLabel"></span><svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+      </div>
+    </form>
+  </section>
+
+  <aside class="panel" aria-labelledby="planTitle">
+    <div class="sasha"><img id="sashaImg" src="assets/guide-stand.webp" alt="" width="84" height="100"><p class="say" id="say" aria-live="polite"><b id="sashaName"></b><span id="sayText"></span></p></div>
+    <div class="mapbox" id="mapbox">
+      <svg viewBox="0 0 1000 430" aria-hidden="true"><g id="mapLand"></g><path id="route" class="route"/></svg>
+      <p class="empty" id="mapEmpty" data-i18n="empty"></p>
+    </div>
+    <div class="pass">
+      <h2 id="planTitle" data-i18n="plan_title"></h2>
+      <dl id="passList"></dl>
+      <p class="route-line" id="routeLine"></p>
+    </div>
+    <h3 data-i18n="daybyday"></h3>
+    <p class="warn" id="warn"></p>
+    <ol class="days" id="days"></ol>
+  </aside>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const CITIES={
+  moscow:{lat:55.7558,lon:37.6173,w:3,tz:'Europe/Moscow'}, suzdal:{lat:56.4196,lon:40.4497,w:1}, spb:{lat:59.9343,lon:30.3351,w:3},
+  kaliningrad:{lat:54.7104,lon:20.4522,w:2}, murmansk:{lat:68.9585,lon:33.0827,w:2}, kazan:{lat:55.7963,lon:49.1088,w:2},
+  sochi:{lat:43.6028,lon:39.7342,w:3}, baikal:{lat:52.287,lon:104.305,w:4}, vladivostok:{lat:43.1155,lon:131.8855,w:2}, kamchatka:{lat:53.0167,lon:158.65,w:4}
+};
+const ORDER=['moscow','suzdal','spb','kaliningrad','murmansk','kazan','sochi','baikal','vladivostok','kamchatka'];
+const WEST=['moscow','suzdal','spb','kaliningrad','murmansk','kazan','sochi'];
+const PHOTO=id=>['moscow','spb','kazan','baikal','vladivostok'].includes(id)?`assets/site/${id}-t.webp`:`assets/site/${id}-t.webp`;
+const WHO=['solo','couple','family','group','agent'];
+const INTERESTS=['culture','rail','winter','ballet','food','nature','luxury'];
+const BUDGETS=['b1','b2','b3','b4'];
+const VISA=['yes','no','unsure'];
+const STEPS=7;
+
+const T={
+en:{dir:'ltr',skip:'Skip to the planner',back_story:'Back to the flight story',step:'Step {n} of 7',back:'Back',next:'Continue',finish:'Finish my plan',keys:'Press Enter to continue',
+ q1:'Who is travelling?',who:{solo:'Just me',couple:'Two of us',family:'Family with children',group:'A group of friends or colleagues',agent:"I'm a travel agent planning for clients"},agent_desc:"We'll prepare a quote for your clients",err1:'Choose who is travelling.',
+ q2:'Where would you like to go?',hint2:'Tap cities here or on the map. Choose as many as you like.',suggest:'Not sure yet? Suggest a route',err2:'Choose at least one city, or ask for a suggestion.',
+ q3:'When, and for how long?',month:'Month',length:'Nights in Russia',err3:'Pick a month.',
+ q4:'What should the trip be about?',hint4:'Pick up to four.',interests:{culture:'Culture and history',rail:'Rail journeys',winter:'Winter and snow',ballet:'Ballet and opera',food:'Food',nature:'Nature and lakes',luxury:'Luxury hotels'},
+ q5:'What budget per person?',hint5:'Without international flights. This only helps us choose hotels.',budget:{b1:'Under $1,500',b2:'$1,500–3,000',b3:'$3,000–5,000',b4:'Over $5,000'},
+ q6:'Visa and arrival',visa_q:'Do you need visa support?',visa:{yes:'Yes, please help',no:"No, I have one or don't need one",unsure:'Not sure yet'},arrival:'Flying in from',arrival_ph:'e.g. Mumbai',
+ q7:'Where should we send your plan?',name:'Your name',email:'Email',phone:'Phone (optional)',company:'Agency name',consent:'I agree that ROTW may use these details to reply to my request.',
+ err_name:'Please add your name.',err_email:'Check the email address. It should look like name@example.com.',err_consent:'Please tick the box so we can reply.',
+ done_title:'Your plan is ready',done_body:"This is a prototype, so nothing has been sent yet. On the live site this request goes straight to ROTW's planners in Moscow, who reply by email.",copy:'Copy my plan',copied:'Copied to your clipboard.',copy_fail:"Couldn't copy. Select the text and copy it instead.",restart:'Start again',
+ plan_title:'Your draft plan',l_who:'Travellers',l_month:'Month',l_len:'Length',l_budget:'Budget',l_visa:'Visa',l_interests:'Interests',l_arrival:'Flying in from',l_contact:'Contact',daybyday:'Day by day',empty:'Choose cities to see your route.',no_route:'No cities yet',train_leg:'Trans-Siberian train',days:'Days {a}–{b}',too_short:'Too many cities for this length. Add nights or remove a city.',glance:'{c} cities, {n} in {m}',glance1:'1 city, {n} in {m}',
+ nights:{one:'{n} night',other:'{n} nights'},
+ sasha:["Hi again! Tell me who's coming and I'll set the pace of the trip.","Pick your cities. I'll join them into a route.","The month changes everything. Here's what happens then.","Choose what you love and I'll suggest what to add.","The budget only helps us pick hotels.","Nearly there. We can help with the visa if you need it.","Last step. Where should we send the plan?","Great route! Copy your plan or start again."],
+ suggestLine:'Moscow and St Petersburg is the classic first trip. Add Kazan if you have 10 nights.',railTip:'You picked rail journeys, so I added three nights on the Trans-Siberian before Baikal.',sashaName:'Sasha, your guide',
+ notes:['Snow and New Year lights. Cold: around −7 °C in Moscow.','Clear ice on Lake Baikal. The best month for a winter trip.','The last weeks of Baikal ice. Days get longer.','Snow melts. A quiet month, already warm in Sochi.','Parks turn green. Victory Day parades on 9 May.','White Nights in St Petersburg. The sun barely sets.','The warmest month. Best for the Black Sea and Baikal hikes.','Warm and busy. Book St Petersburg early.','Golden autumn. Fewer crowds, mild days.','Autumn colours early in the month, first snow by the end.','Grey and quiet. A good time for museums and theatre.','Christmas markets and New Year lights in Moscow.'],
+ city:{moscow:'Moscow',suzdal:'Golden Ring',spb:'St Petersburg',kaliningrad:'Kaliningrad',murmansk:'Murmansk',kazan:'Kazan',sochi:'Sochi',baikal:'Lake Baikal',vladivostok:'Vladivostok',kamchatka:'Kamchatka'},
+ sub:{moscow:'Red Square, Bolshoi',suzdal:'Old towns by road',spb:'Hermitage, canals',kaliningrad:'Baltic coast',murmansk:'Northern lights',kazan:'Kremlin on the Volga',sochi:'Black Sea, mountains',baikal:'Deepest lake on Earth',vladivostok:'End of the railway',kamchatka:'Volcanoes, wild coast'}},
+ru:{dir:'ltr',skip:'К планировщику',back_story:'Назад к истории полёта',step:'Шаг {n} из 7',back:'Назад',next:'Дальше',finish:'Собрать план',keys:'Нажмите Enter, чтобы продолжить',
+ q1:'Кто едет?',who:{solo:'Только я',couple:'Мы вдвоём',family:'Семья с детьми',group:'Компания друзей или коллег',agent:'Я турагент, планирую для клиентов'},agent_desc:'Подготовим предложение для ваших клиентов',err1:'Выберите, кто едет.',
+ q2:'Куда вы хотите поехать?',hint2:'Нажимайте на города здесь или на карте. Можно выбрать сколько угодно.',suggest:'Пока не знаете? Предложим маршрут',err2:'Выберите хотя бы один город или попросите предложить маршрут.',
+ q3:'Когда и на сколько?',month:'Месяц',length:'Ночей в России',err3:'Выберите месяц.',
+ q4:'О чём должна быть поездка?',hint4:'Выберите до четырёх.',interests:{culture:'История и культура',rail:'Поезда',winter:'Зима и снег',ballet:'Балет и опера',food:'Кухня',nature:'Природа и озёра',luxury:'Отели высокого класса'},
+ q5:'Какой бюджет на человека?',hint5:'Без международных перелётов. Это нужно только для выбора отелей.',budget:{b1:'До $1 500',b2:'$1 500–3 000',b3:'$3 000–5 000',b4:'Больше $5 000'},
+ q6:'Виза и прилёт',visa_q:'Нужна ли помощь с визой?',visa:{yes:'Да, помогите',no:'Нет, виза есть или не нужна',unsure:'Пока не знаю'},arrival:'Откуда вы летите',arrival_ph:'например, Мумбаи',
+ q7:'Куда отправить ваш план?',name:'Ваше имя',email:'Эл. почта',phone:'Телефон (необязательно)',company:'Название агентства',consent:'Я согласен(на), что ROTW использует эти данные, чтобы ответить на мой запрос.',
+ err_name:'Укажите имя.',err_email:'Проверьте адрес. Он должен выглядеть как name@example.com.',err_consent:'Отметьте галочку, чтобы мы могли ответить.',
+ done_title:'Ваш план готов',done_body:'Это прототип, поэтому пока ничего не отправлено. На настоящем сайте запрос сразу попадёт к планировщикам ROTW в Москве, и они ответят по почте.',copy:'Скопировать план',copied:'Скопировано в буфер обмена.',copy_fail:'Не удалось скопировать. Выделите текст и скопируйте вручную.',restart:'Начать заново',
+ plan_title:'Ваш черновой план',l_who:'Кто едет',l_month:'Месяц',l_len:'Длительность',l_budget:'Бюджет',l_visa:'Виза',l_interests:'Интересы',l_arrival:'Откуда',l_contact:'Контакт',daybyday:'По дням',empty:'Выберите города, чтобы увидеть маршрут.',no_route:'Городов пока нет',train_leg:'Поезд по Транссибу',days:'Дни {a}–{b}',too_short:'Слишком много городов для такого срока. Добавьте ночей или уберите город.',glance:'Городов: {c}, {n}, {m}',glance1:'1 город, {n}, {m}',
+ nights:{one:'{n} ночь',few:'{n} ночи',many:'{n} ночей',other:'{n} ночи'},
+ sasha:['Привет снова! Расскажите, кто едет, и я подберу темп поездки.','Выбирайте города. Я соединю их в маршрут.','Месяц меняет всё. Посмотрите, что происходит в это время.','Выберите, что вам интересно, и я подскажу, что добавить.','Бюджет нужен только для выбора отелей.','Почти всё. Мы поможем с визой, если нужно.','Последний шаг. Куда отправить план?','Отличный маршрут! Скопируйте план или начните заново.'],
+ suggestLine:'Москва и Петербург — классика для первой поездки. Если есть 10 ночей, добавьте Казань.',railTip:'Вы выбрали поезда, поэтому я добавил три ночи на Транссибе перед Байкалом.',sashaName:'Саша, ваш гид',
+ notes:['Снег и новогодние огни. Холодно: около −7 °C в Москве.','Прозрачный лёд на Байкале. Лучший месяц для зимней поездки.','Последние недели байкальского льда. Дни становятся длиннее.','Тает снег. Тихий месяц, в Сочи уже тепло.','Парки зеленеют. 9 мая — парад Победы.','Белые ночи в Петербурге. Солнце почти не садится.','Самый тёплый месяц. Лучшее время для Чёрного моря и походов на Байкале.','Тепло и многолюдно. Петербург лучше бронировать заранее.','Золотая осень. Меньше туристов, мягкая погода.','В начале месяца осенние краски, к концу первый снег.','Серо и спокойно. Хорошее время для музеев и театров.','Рождественские ярмарки и новогодние огни в Москве.'],
+ city:{moscow:'Москва',suzdal:'Золотое кольцо',spb:'Санкт-Петербург',kaliningrad:'Калининград',murmansk:'Мурманск',kazan:'Казань',sochi:'Сочи',baikal:'Байкал',vladivostok:'Владивосток',kamchatka:'Камчатка'},
+ sub:{moscow:'Красная площадь, Большой',suzdal:'Старые города',spb:'Эрмитаж, каналы',kaliningrad:'Балтийское побережье',murmansk:'Северное сияние',kazan:'Кремль на Волге',sochi:'Чёрное море, горы',baikal:'Самое глубокое озеро',vladivostok:'Конец Транссиба',kamchatka:'Вулканы, дикий берег'}},
+ar:{dir:'rtl',skip:'انتقل إلى المخطط',back_story:'العودة إلى قصة الرحلة',step:'الخطوة {n} من 7',back:'رجوع',next:'متابعة',finish:'جهّز خطتي',keys:'اضغط Enter للمتابعة',
+ q1:'من سيسافر؟',who:{solo:'أنا فقط',couple:'نحن الاثنان',family:'عائلة مع أطفال',group:'مجموعة من الأصدقاء أو الزملاء',agent:'أنا وكيل سفر أخطط لعملائي'},agent_desc:'سنجهّز عرضًا لعملائك',err1:'اختر من سيسافر.',
+ q2:'إلى أين تريد الذهاب؟',hint2:'اضغط على المدن هنا أو على الخريطة. اختر ما تشاء.',suggest:'لست متأكدًا؟ اقترح مسارًا',err2:'اختر مدينة واحدة على الأقل، أو اطلب اقتراحًا.',
+ q3:'متى، وكم المدة؟',month:'الشهر',length:'عدد الليالي في روسيا',err3:'اختر شهرًا.',
+ q4:'عمّ تريد أن تكون الرحلة؟',hint4:'اختر حتى أربعة.',interests:{culture:'التاريخ والثقافة',rail:'رحلات القطار',winter:'الشتاء والثلج',ballet:'الباليه والأوبرا',food:'الطعام',nature:'الطبيعة والبحيرات',luxury:'فنادق فاخرة'},
+ q5:'ما الميزانية للشخص الواحد؟',hint5:'من دون الطيران الدولي. هذا يساعدنا فقط في اختيار الفنادق.',budget:{b1:'أقل من 1,500 دولار',b2:'1,500–3,000 دولار',b3:'3,000–5,000 دولار',b4:'أكثر من 5,000 دولار'},
+ q6:'التأشيرة والوصول',visa_q:'هل تحتاج إلى مساعدة في التأشيرة؟',visa:{yes:'نعم، ساعدوني',no:'لا، لدي تأشيرة أو لا أحتاجها',unsure:'لست متأكدًا'},arrival:'قادم من',arrival_ph:'مثلًا: دبي',
+ q7:'إلى أين نرسل خطتك؟',name:'اسمك',email:'البريد الإلكتروني',phone:'الهاتف (اختياري)',company:'اسم الوكالة',consent:'أوافق على أن تستخدم ROTW هذه البيانات للرد على طلبي.',
+ err_name:'أضف اسمك من فضلك.',err_email:'تحقق من البريد الإلكتروني. يجب أن يكون مثل name@example.com.',err_consent:'ضع علامة في المربع حتى نتمكن من الرد.',
+ done_title:'خطتك جاهزة',done_body:'هذا نموذج أولي، لذلك لم يُرسل أي شيء بعد. في الموقع الحقيقي يصل هذا الطلب مباشرة إلى مخططي ROTW في موسكو، ويردّون عبر البريد الإلكتروني.',copy:'انسخ خطتي',copied:'تم النسخ إلى الحافظة.',copy_fail:'تعذّر النسخ. حدّد النص وانسخه يدويًا.',restart:'ابدأ من جديد',
+ plan_title:'مسودة خطتك',l_who:'المسافرون',l_month:'الشهر',l_len:'المدة',l_budget:'الميزانية',l_visa:'التأشيرة',l_interests:'الاهتمامات',l_arrival:'قادم من',l_contact:'التواصل',daybyday:'يومًا بيوم',empty:'اختر مدنًا لترى مسارك.',no_route:'لا مدن بعد',train_leg:'قطار سيبيريا',days:'الأيام {a}–{b}',too_short:'المدن كثيرة لهذه المدة. أضف ليالي أو احذف مدينة.',glance:'{c} مدن، {n} في {m}',glance1:'مدينة واحدة، {n} في {m}',
+ nights:{zero:'{n} ليلة',one:'ليلة واحدة',two:'ليلتان',few:'{n} ليالٍ',many:'{n} ليلة',other:'{n} ليلة'},
+ sasha:['مرحبًا مجددًا! أخبرني من سيسافر وسأختار وتيرة الرحلة.','اختر المدن وسأربطها في مسار واحد.','الشهر يغيّر كل شيء. انظر ماذا يحدث في هذا الوقت.','اختر ما يهمك وسأقترح ما يمكن إضافته.','الميزانية تساعدنا فقط في اختيار الفنادق.','اقتربنا. سنساعدك في التأشيرة إن احتجت.','الخطوة الأخيرة. إلى أين نرسل الخطة؟','مسار رائع! انسخ خطتك أو ابدأ من جديد.'],
+ suggestLine:'موسكو وسانت بطرسبرغ هما الخيار الكلاسيكي لأول رحلة. أضف قازان إن كان لديك 10 ليالٍ.',railTip:'اخترت رحلات القطار، فأضفت ثلاث ليالٍ على قطار سيبيريا قبل بايكال.',sashaName:'ساشا، مرشدك',
+ notes:['ثلج وأضواء رأس السنة. الجو بارد: نحو −7 درجات في موسكو.','جليد صافٍ على بحيرة بايكال. أفضل شهر لرحلة شتوية.','الأسابيع الأخيرة من جليد بايكال. النهار يطول.','يذوب الثلج. شهر هادئ، والجو دافئ في سوتشي.','تخضرّ الحدائق. عرض يوم النصر في 9 مايو.','الليالي البيضاء في سانت بطرسبرغ. الشمس بالكاد تغيب.','أدفأ شهر. الأفضل للبحر الأسود والمشي حول بايكال.','دافئ ومزدحم. احجز سانت بطرسبرغ مبكرًا.','الخريف الذهبي. زحام أقل وطقس معتدل.','ألوان الخريف في بداية الشهر، وأول ثلج في نهايته.','رمادي وهادئ. وقت جيد للمتاحف والمسرح.','أسواق عيد الميلاد وأضواء رأس السنة في موسكو.'],
+ city:{moscow:'موسكو',suzdal:'الحلقة الذهبية',spb:'سانت بطرسبرغ',kaliningrad:'كالينينغراد',murmansk:'مورمانسك',kazan:'قازان',sochi:'سوتشي',baikal:'بحيرة بايكال',vladivostok:'فلاديفوستوك',kamchatka:'كامتشاتكا'},
+ sub:{moscow:'الساحة الحمراء والبولشوي',suzdal:'مدن قديمة بالطريق البري',spb:'الإرميتاج والقنوات',kaliningrad:'ساحل البلطيق',murmansk:'الشفق القطبي',kazan:'كرملين على الفولغا',sochi:'البحر الأسود والجبال',baikal:'أعمق بحيرة في العالم',vladivostok:'نهاية سكة الحديد',kamchatka:'براكين وساحل بري'}},
+hi:{dir:'ltr',skip:'प्लानर पर जाएँ',back_story:'फ़्लाइट स्टोरी पर वापस',step:'चरण {n} / 7',back:'पीछे',next:'आगे',finish:'मेरा प्लान तैयार करें',keys:'आगे बढ़ने के लिए Enter दबाएँ',
+ q1:'कौन यात्रा कर रहा है?',who:{solo:'सिर्फ़ मैं',couple:'हम दोनों',family:'बच्चों के साथ परिवार',group:'दोस्तों या सहकर्मियों का समूह',agent:'मैं ट्रैवल एजेंट हूँ, क्लाइंट के लिए प्लान कर रहा हूँ'},agent_desc:'हम आपके क्लाइंट के लिए कोटेशन तैयार करेंगे',err1:'चुनें कि कौन यात्रा कर रहा है।',
+ q2:'आप कहाँ जाना चाहते हैं?',hint2:'यहाँ या नक्शे पर शहरों पर टैप करें। जितने चाहें चुनें।',suggest:'पक्का नहीं? कोई रूट सुझाइए',err2:'कम से कम एक शहर चुनें, या सुझाव माँगें।',
+ q3:'कब, और कितने दिन?',month:'महीना',length:'रूस में रातें',err3:'एक महीना चुनें।',
+ q4:'यात्रा किस बारे में हो?',hint4:'चार तक चुनें।',interests:{culture:'इतिहास और संस्कृति',rail:'ट्रेन यात्राएँ',winter:'सर्दी और बर्फ़',ballet:'बैले और ओपेरा',food:'खाना',nature:'प्रकृति और झीलें',luxury:'लग्ज़री होटल'},
+ q5:'प्रति व्यक्ति बजट कितना है?',hint5:'अंतरराष्ट्रीय उड़ानों के बिना। इससे हमें सिर्फ़ होटल चुनने में मदद मिलती है।',budget:{b1:'$1,500 से कम',b2:'$1,500–3,000',b3:'$3,000–5,000',b4:'$5,000 से ज़्यादा'},
+ q6:'वीज़ा और आगमन',visa_q:'क्या आपको वीज़ा में मदद चाहिए?',visa:{yes:'हाँ, मदद कीजिए',no:'नहीं, वीज़ा है या ज़रूरत नहीं',unsure:'पक्का नहीं'},arrival:'कहाँ से उड़ान भरेंगे',arrival_ph:'जैसे, मुंबई',
+ q7:'आपका प्लान कहाँ भेजें?',name:'आपका नाम',email:'ईमेल',phone:'फ़ोन (वैकल्पिक)',company:'एजेंसी का नाम',consent:'मैं सहमत हूँ कि ROTW मेरे अनुरोध का जवाब देने के लिए इन जानकारियों का उपयोग करे।',
+ err_name:'कृपया अपना नाम लिखें।',err_email:'ईमेल पता जाँचें। यह name@example.com जैसा होना चाहिए।',err_consent:'कृपया बॉक्स पर टिक करें ताकि हम जवाब दे सकें।',
+ done_title:'आपका प्लान तैयार है',done_body:'यह एक प्रोटोटाइप है, इसलिए अभी कुछ भी भेजा नहीं गया है। असली साइट पर यह अनुरोध सीधे मॉस्को में ROTW के प्लानरों तक पहुँचेगा, और वे ईमेल से जवाब देंगे।',copy:'मेरा प्लान कॉपी करें',copied:'क्लिपबोर्ड पर कॉपी हो गया।',copy_fail:'कॉपी नहीं हो सका। टेक्स्ट चुनकर ख़ुद कॉपी करें।',restart:'फिर से शुरू करें',
+ plan_title:'आपका ड्राफ़्ट प्लान',l_who:'यात्री',l_month:'महीना',l_len:'अवधि',l_budget:'बजट',l_visa:'वीज़ा',l_interests:'रुचियाँ',l_arrival:'कहाँ से',l_contact:'संपर्क',daybyday:'दिन-ब-दिन',empty:'अपना रूट देखने के लिए शहर चुनें।',no_route:'अभी कोई शहर नहीं',train_leg:'ट्रांस-साइबेरियन ट्रेन',days:'दिन {a}–{b}',too_short:'इतने समय के लिए शहर ज़्यादा हैं। रातें बढ़ाएँ या कोई शहर हटाएँ।',glance:'{c} शहर, {m} में {n}',glance1:'1 शहर, {m} में {n}',
+ nights:{one:'{n} रात',other:'{n} रातें'},
+ sasha:['फिर से नमस्ते! बताइए कौन यात्रा कर रहा है, मैं यात्रा की रफ़्तार तय करूँगा।','शहर चुनिए। मैं उन्हें एक रूट में जोड़ दूँगा।','महीने से सब कुछ बदल जाता है। देखिए उस समय क्या होता है।','चुनिए आपको क्या पसंद है, मैं बताऊँगा क्या जोड़ें।','बजट से हमें सिर्फ़ होटल चुनने में मदद मिलती है।','लगभग हो गया। ज़रूरत हो तो वीज़ा में हम मदद करेंगे।','आख़िरी चरण। प्लान कहाँ भेजें?','बढ़िया रूट! अपना प्लान कॉपी करें या फिर से शुरू करें।'],
+ suggestLine:'पहली यात्रा के लिए मॉस्को और सेंट पीटर्सबर्ग क्लासिक है। 10 रातें हों तो कज़ान जोड़ें।',railTip:'आपने ट्रेन यात्राएँ चुनीं, इसलिए मैंने बैकाल से पहले ट्रांस-साइबेरियन पर तीन रातें जोड़ दीं।',sashaName:'साशा, आपका गाइड',
+ notes:['बर्फ़ और नए साल की रोशनी। ठंड: मॉस्को में लगभग −7 °C।','बैकाल झील पर साफ़ बर्फ़। सर्दियों की यात्रा का सबसे अच्छा महीना।','बैकाल की बर्फ़ के आख़िरी हफ़्ते। दिन लंबे होने लगते हैं।','बर्फ़ पिघलती है। शांत महीना, सोची में मौसम गरम।','पार्क हरे हो जाते हैं। 9 मई को विजय दिवस परेड।','सेंट पीटर्सबर्ग में व्हाइट नाइट्स। सूरज लगभग डूबता ही नहीं।','सबसे गरम महीना। काला सागर और बैकाल ट्रेकिंग के लिए सबसे अच्छा।','गरम और भीड़भाड़। सेंट पीटर्सबर्ग पहले से बुक करें।','सुनहरी शरद ऋतु। कम भीड़, सुहावना मौसम।','महीने की शुरुआत में पतझड़ के रंग, अंत तक पहली बर्फ़।','धूसर और शांत। संग्रहालयों और थिएटर के लिए अच्छा समय।','मॉस्को में क्रिसमस बाज़ार और नए साल की रोशनी।'],
+ city:{moscow:'मॉस्को',suzdal:'गोल्डन रिंग',spb:'सेंट पीटर्सबर्ग',kaliningrad:'कालिनिनग्राद',murmansk:'मरमंस्क',kazan:'कज़ान',sochi:'सोची',baikal:'बैकाल झील',vladivostok:'व्लादिवोस्तोक',kamchatka:'कामचटका'},
+ sub:{moscow:'रेड स्क्वायर, बोल्शोई',suzdal:'सड़क से पुराने शहर',spb:'हर्मिटेज, नहरें',kaliningrad:'बाल्टिक तट',murmansk:'नॉर्दर्न लाइट्स',kazan:'वोल्गा पर क्रेमलिन',sochi:'काला सागर, पहाड़',baikal:'धरती की सबसे गहरी झील',vladivostok:'रेल लाइन का आख़िरी छोर',kamchatka:'ज्वालामुखी, जंगली तट'}}
+};
+
+/* ---------- state ---------- */
+const BLANK={step:1,who:null,cities:[],month:null,nights:10,interests:[],budget:null,visa:null,arrival:'',name:'',email:'',phone:'',company:'',consent:false};
+let S=Object.assign({},BLANK);
+try{const s=JSON.parse(localStorage.getItem('rotw-plan')||'null');if(s)S=Object.assign({},BLANK,s);}catch(e){}
+let lang='en';try{const l=localStorage.getItem('rotw-lang');if(l&&T[l])lang=l;}catch(e){}
+const h=location.hash.slice(1);
+if(h==='agent'){S.who='agent';}
+else if(h.startsWith('city-')&&CITIES[h.slice(5)]){const c=h.slice(5);if(!S.cities.includes(c))S.cities.push(c);if(S.step<2)S.step=2;}
+if(S.step>8)S.step=1;
+function save(){try{localStorage.setItem('rotw-plan',JSON.stringify(S));}catch(e){}}
+const $=id=>document.getElementById(id);
+const L=()=>T[lang];
+const nf=n=>new Intl.NumberFormat(lang).format(n);
+function nightsTxt(n){const forms=L().nights;let cat='other';try{cat=new Intl.PluralRules(lang).select(n);}catch(e){}return (forms[cat]||forms.other).replace('{n}',nf(n));}
+const monthName=(m,style='long')=>new Intl.DateTimeFormat(lang,{month:style}).format(new Date(2026,m-1,1));
+
+/* ---------- fonts for Arabic and Hindi load only when needed ---------- */
+const extraFonts={ar:'family=Noto+Naskh+Arabic:wght@400;500&family=Noto+Sans+Arabic:wght@400;500',hi:'family=Noto+Serif+Devanagari:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500'};
+function loadFont(l){if(!extraFonts[l]||document.getElementById('font-'+l))return;const k=document.createElement('link');k.id='font-'+l;k.rel='stylesheet';k.href='https://fonts.googleapis.com/css2?'+extraFonts[l]+'&display=swap';document.head.appendChild(k);}
+
+/* ---------- build controls ---------- */
+const tick='<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.5 2.5L10 3.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function radioRows(el,keys,getLabel,getDesc,stateKey){
+  el.innerHTML=keys.map(k=>`<button type="button" class="choice" role="radio" data-k="${k}"><span><b></b><small hidden></small></span><span class="tick">${tick}</span></button>`).join('');
+  el.querySelectorAll('.choice').forEach(b=>{b.addEventListener('click',()=>{S[stateKey]=b.dataset.k;clearErr();save();sync();});});
+  el._labels=()=>el.querySelectorAll('.choice').forEach(b=>{b.querySelector('b').textContent=getLabel(b.dataset.k);const d=getDesc&&getDesc(b.dataset.k);const sm=b.querySelector('small');sm.hidden=!d;sm.textContent=d||'';});
+  // arrow keys move within a radio group
+  el.addEventListener('keydown',e=>{const items=[...el.querySelectorAll('[role=radio]')];const i=items.indexOf(document.activeElement);if(i<0)return;
+    const dir=document.documentElement.dir==='rtl'?-1:1;let j=null;
+    if(e.key==='ArrowDown'||e.key===(dir>0?'ArrowRight':'ArrowLeft'))j=(i+1)%items.length;
+    if(e.key==='ArrowUp'||e.key===(dir>0?'ArrowLeft':'ArrowRight'))j=(i-1+items.length)%items.length;
+    if(j!==null){e.preventDefault();items[j].focus();items[j].click();}});
+}
+radioRows($('who'),WHO,k=>L().who[k],k=>k==='agent'?L().agent_desc:'','who');
+radioRows($('budget'),BUDGETS,k=>L().budget[k],null,'budget');
+radioRows($('visa'),VISA,k=>L().visa[k],null,'visa');
+
+$('cities').innerHTML=ORDER.map(id=>`<button type="button" class="city" data-city="${id}" aria-pressed="false"><img src="${PHOTO(id)}" alt="" width="64" height="48" loading="lazy"><span><b></b><small></small></span><span class="tick"></span></button>`).join('');
+document.querySelectorAll('.city').forEach(b=>b.addEventListener('click',()=>toggleCity(b.dataset.city)));
+function toggleCity(id){const i=S.cities.indexOf(id);if(i>=0)S.cities.splice(i,1);else S.cities.push(id);clearErr();save();sync(true);}
+$('suggest').addEventListener('click',()=>{S.cities=['moscow','spb'];if(S.nights>=10)S.cities.push('kazan');clearErr();save();sync(true);say(L().suggestLine);});
+
+$('months').innerHTML=Array.from({length:12},(_,i)=>`<button type="button" class="month" role="radio" data-m="${i+1}"></button>`).join('');
+document.querySelectorAll('.month').forEach(b=>b.addEventListener('click',()=>{S.month=+b.dataset.m;clearErr();save();sync();}));
+$('months').addEventListener('keydown',e=>{const items=[...document.querySelectorAll('.month')];const i=items.indexOf(document.activeElement);if(i<0)return;const dir=document.documentElement.dir==='rtl'?-1:1;let j=null;
+  if(e.key===(dir>0?'ArrowRight':'ArrowLeft'))j=Math.min(11,i+1);if(e.key===(dir>0?'ArrowLeft':'ArrowRight'))j=Math.max(0,i-1);
+  if(j!==null){e.preventDefault();items[j].focus();items[j].click();}});
+$('nights').addEventListener('input',e=>{S.nights=+e.target.value;save();sync();});
+
+$('interests').innerHTML=INTERESTS.map(k=>`<button type="button" class="chip" data-i="${k}" aria-pressed="false"></button>`).join('');
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.i;const i=S.interests.indexOf(k);
+  if(i>=0)S.interests.splice(i,1);else if(S.interests.length<4)S.interests.push(k);else return;save();sync(true);}));
+
+['arrival','name','email','phone','company'].forEach(k=>$(k).addEventListener('input',e=>{S[k]=e.target.value;save();if(k==='name'||k==='email')fieldErr(k,'');syncPanel();}));
+$('consent').addEventListener('change',e=>{S.consent=e.target.checked;save();fieldErr('consent','');});
+
+/* ---------- itinerary ---------- */
+function buildPlan(){
+  const sel=ORDER.filter(id=>S.cities.includes(id));
+  let legs=sel.map(id=>({id,w:CITIES[id].w}));
+  const wantTrain=S.interests.includes('rail')&&sel.includes('baikal')&&sel.some(id=>WEST.includes(id));
+  let total=S.nights,train=null;
+  if(wantTrain&&total-3>=legs.length){train={train:true,n:3};total-=3;}
+  let short=false;
+  if(legs.length>total){short=true;legs.forEach(l=>l.n=1);}
+  else if(legs.length){
+    const sw=legs.reduce((a,l)=>a+l.w,0);legs.forEach(l=>{l.raw=total*l.w/sw;l.n=Math.max(1,Math.floor(l.raw));});
+    let left=total-legs.reduce((a,l)=>a+l.n,0);
+    const byRem=legs.slice().sort((a,b)=>(b.raw-b.n)-(a.raw-a.n));let k=0;while(left>0){byRem[k%byRem.length].n++;left--;k++;}
+    while(left<0){const big=legs.slice().sort((a,b)=>b.n-a.n)[0];if(big.n<=1)break;big.n--;left++;}
+  }
+  if(train){const bi=legs.findIndex(l=>l.id==='baikal');legs.splice(bi,0,train);}
+  let d=1;legs.forEach(l=>{l.a=d;l.b=d+l.n;d+=l.n;});
+  return {legs,short,train:!!train};
+}
+
+/* ---------- map ---------- */
+const VBW=1000,VBH=430;
+function proj(lon,lat){if(lon<0)lon+=360;const x=(lon-102)*Math.cos(lat*Math.PI/180)*8.6+VBW/2;const y=(80.5-lat)*9.4+8;return [x,y];}
+function ringD(ring,isRU){let d='',prev=null,pen=false;
+  for(let [lo,la] of ring){if(isRU&&lo<0)lo+=360;if(prev!==null&&Math.abs(lo-prev)>180){pen=false;}
+    const [x,y]=proj(lo,la);d+=(pen?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);pen=true;prev=lo;}
+  return d+'Z';}
+function drawMap(world){
+  const geo=topojson.feature(world,world.objects.countries);
+  const inBox=f=>{const g=f.geometry;if(!g)return false;const polys=g.type==='Polygon'?[g.coordinates]:g.coordinates;
+    return polys.some(p=>p[0].some(([lo,la])=>lo>10&&lo<170&&la>36&&la<82));};
+  let out='';
+  geo.features.filter(inBox).forEach(f=>{const isRU=f.id==='643'||(f.properties&&f.properties.name==='Russia');
+    const polys=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;
+    const d=polys.map(p=>p.map(r=>ringD(r,isRU)).join('')).join('');
+    out+=`<path class="${isRU?'ru':'land'}" d="${d}"/>`;});
+  $('mapLand').innerHTML=out;
+}
+function loadWorld(){
+  return fetch('assets/countries-50m.json').then(r=>{if(!r.ok)throw 0;return r.json();})
+    .catch(()=>new Promise((res,rej)=>{const s=document.createElement('script');s.src='assets/mapdata.js';s.onload=()=>window.MAP_DATA?res(MAP_DATA.world):rej();s.onerror=rej;document.head.appendChild(s);}));
+}
+loadWorld().then(drawMap).catch(()=>{});
+// city points on the map
+const mapbox=$('mapbox');
+ORDER.forEach(id=>{const [x,y]=proj(CITIES[id].lon,CITIES[id].lat);const b=document.createElement('button');b.type='button';b.className='pt';b.dataset.city=id;
+  b.style.left=(x/VBW*100)+'%';b.style.top=(y/VBH*100)+'%';b.innerHTML='<i></i><span></span>';b.addEventListener('click',()=>{toggleCity(id);if(S.step!==2&&S.step<8)go(2);});mapbox.appendChild(b);});
+let lastRoute='';
+function drawRoute(animate){
+  const sel=ORDER.filter(id=>S.cities.includes(id));
+  const pts=sel.map(id=>proj(CITIES[id].lon,CITIES[id].lat));
+  let d='';pts.forEach((p,i)=>{if(!i){d+=`M${p[0].toFixed(1)} ${p[1].toFixed(1)}`;return;}const q=pts[i-1];const mx=(q[0]+p[0])/2,my=(q[1]+p[1])/2-Math.min(60,Math.hypot(p[0]-q[0],p[1]-q[1])*.18);d+=` Q${mx.toFixed(1)} ${my.toFixed(1)} ${p[0].toFixed(1)} ${p[1].toFixed(1)}`;});
+  const r=$('route');
+  if(d===lastRoute)return;lastRoute=d;
+  r.setAttribute('d',d);
+  $('mapEmpty').hidden=sel.length>0;
+  if(!d){return;}
+  const len=r.getTotalLength();
+  r.classList.remove('draw');r.style.strokeDasharray=len;r.style.strokeDashoffset=animate&&!reduce?len:0;
+  if(animate&&!reduce){r.getBoundingClientRect();r.classList.add('draw');r.style.strokeDashoffset=0;}
+}
+
+/* ---------- Sasha ---------- */
+let sayTimer=0,waveTimer=0;
+function say(text){const el=$('say'),t=$('sayText');if(t.textContent===text)return;el.classList.add('swap');clearTimeout(sayTimer);
+  sayTimer=setTimeout(()=>{t.textContent=text;el.classList.remove('swap');},reduce?0:160);
+  const img=$('sashaImg');img.src='assets/guide-wave.webp';clearTimeout(waveTimer);waveTimer=setTimeout(()=>{img.src='assets/guide-stand.webp';},1800);}
+
+/* ---------- panel ---------- */
+function syncPanel(animate){
+  const t=L();const plan=buildPlan();
+  const sel=ORDER.filter(id=>S.cities.includes(id));
+  const dash='—';
+  const items=[
+    [t.l_who,S.who?t.who[S.who]:dash],
+    [t.l_month,S.month?monthName(S.month):dash],
+    [t.l_len,nightsTxt(S.nights)],
+    [t.l_budget,S.budget?t.budget[S.budget]:dash],
+    [t.l_visa,S.visa?t.visa[S.visa]:dash],
+    [t.l_interests,S.interests.length?nf(S.interests.length):dash]];
+  $('passList').innerHTML=items.map(([k,v])=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('');
+  const rl=$('routeLine');
+  if(sel.length){rl.classList.remove('muted');rl.textContent=sel.map(id=>t.city[id]).join(' → ');}else{rl.classList.add('muted');rl.textContent=t.no_route;}
+  $('days').innerHTML=plan.legs.map(l=>{const name=l.train?t.train_leg:t.city[l.id];
+    return `<li class="${l.train?'train':''}"><span class="d">${t.days.replace('{a}',nf(l.a)).replace('{b}',nf(l.b))}</span><span class="c">${esc(name)}</span><span class="n">${nightsTxt(l.n)}</span></li>`;}).join('');
+  $('warn').textContent=plan.short?t.too_short:'';
+  document.querySelectorAll('.pt').forEach(b=>{const on=S.cities.includes(b.dataset.city);b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',t.city[b.dataset.city]);b.querySelector('span').textContent=t.city[b.dataset.city];});
+  const g=sel.length?(sel.length===1?t.glance1:t.glance).replace('{c}',nf(sel.length)).replace('{n}',nightsTxt(S.nights)).replace('{m}',S.month?monthName(S.month):'…'):'';
+  $('glance').textContent=g;
+  drawRoute(animate);
+}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- sync controls ---------- */
+function sync(animate){
+  const t=L();
+  ['who','budget','visa'].forEach(k=>$(k).querySelectorAll('.choice').forEach(b=>{const on=S[k]===b.dataset.k;b.setAttribute('aria-checked',on);b.tabIndex=on||(!S[k]&&b===$(k).firstElementChild)?0:-1;}));
+  document.querySelectorAll('.city').forEach(b=>{const i=ORDER.filter(id=>S.cities.includes(id)).indexOf(b.dataset.city);b.setAttribute('aria-pressed',i>=0);b.querySelector('.tick').textContent=i>=0?nf(i+1):'';});
+  document.querySelectorAll('.month').forEach(b=>{const on=S.month===+b.dataset.m;b.setAttribute('aria-checked',on);b.tabIndex=on||(!S.month&&b.dataset.m==='1')?0:-1;});
+  const full=S.interests.length>=4;
+  document.querySelectorAll('.chip').forEach(b=>{const on=S.interests.includes(b.dataset.i);b.setAttribute('aria-pressed',on);b.setAttribute('aria-disabled',!on&&full);});
+  const nr=$('nights');nr.value=S.nights;nr.style.setProperty('--p',((S.nights-4)/17*100)+'%');$('nightsOut').textContent=nightsTxt(S.nights);
+  const mn=$('monthNote');if(S.month){mn.hidden=false;$('monthNoteText').textContent=t.notes[S.month-1];}else mn.hidden=true;
+  $('companyField').hidden=S.who!=='agent';
+  ['arrival','name','email','phone','company'].forEach(k=>{if($(k).value!==S[k])$(k).value=S[k];});
+  $('consent').checked=S.consent;
+  syncPanel(animate);
+}
+
+/* ---------- steps ---------- */
+function clearErr(){document.querySelectorAll('[data-err]').forEach(e=>e.textContent='');}
+function fieldErr(k,msg){const e=$('e-'+k);if(e)e.textContent=msg;const inp=$(k);if(inp)inp.setAttribute('aria-invalid',msg?'true':'false');}
+function validate(n){const t=L();
+  if(n===1&&!S.who){showErr(1,t.err1);return false;}
+  if(n===2&&!S.cities.length){showErr(2,t.err2);return false;}
+  if(n===3&&!S.month){showErr(3,t.err3);return false;}
+  if(n===7){let ok=true;
+    if(!S.name.trim()){fieldErr('name',t.err_name);ok=false;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(S.email.trim())){fieldErr('email',t.err_email);ok=false;}
+    if(!S.consent){fieldErr('consent',t.err_consent);ok=false;}
+    if(!ok){const first=document.querySelector('[aria-invalid="true"]')||$('consent');first.focus();}
+    return ok;}
+  return true;}
+function showErr(n,msg){document.querySelector(`[data-err="${n}"]`).textContent=msg;}
+let busy=false;
+function go(n,focus=true){
+  if(busy||n===S.step&&!document.querySelector(`.step[data-step="${n}"]`).hidden)return;
+  const cur=document.querySelector(`.step[data-step="${S.step}"]`),nxt=document.querySelector(`.step[data-step="${n}"]`);
+  S.step=n;save();
+  const swap=()=>{document.querySelectorAll('.step').forEach(s=>{if(s!==nxt)s.hidden=true;s.classList.remove('leave');});
+    nxt.hidden=false;nxt.classList.add('enter');requestAnimationFrame(()=>requestAnimationFrame(()=>nxt.classList.remove('enter')));
+    if(focus)nxt.querySelector('h1').focus({preventScroll:true});
+    if(focus&&window.innerWidth<980)window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    busy=false;};
+  chrome();
+  if(cur&&cur!==nxt&&!cur.hidden&&!reduce){busy=true;cur.classList.add('leave');setTimeout(swap,150);}else swap();
+}
+function chrome(){const t=L(),n=S.step;
+  $('bar').style.transform=`scaleX(${Math.min(n,STEPS)/STEPS})`;
+  $('stepLabel').textContent=n<=STEPS?t.step.replace('{n}',nf(n)):'';
+  $('nav').hidden=n>STEPS;
+  $('prev').style.visibility=n>1?'visible':'hidden';
+  $('nextLabel').textContent=n===STEPS?t.finish:t.next;
+  if(n>STEPS){$('planText').value=planText();say(t.sasha[7]);}
+  else{
+    if(n===4&&S.interests.includes('rail')&&buildPlan().train)say(t.railTip);else say(t.sasha[n-1]);
+  }
+}
+$('form').addEventListener('submit',e=>{e.preventDefault();if(!validate(S.step))return;if(S.step<STEPS)go(S.step+1);else go(8);});
+$('prev').addEventListener('click',()=>{if(S.step>1)go(S.step-1);});
+$('restart').addEventListener('click',()=>{const l=lang;S=Object.assign({},BLANK);save();sync();go(1);$('copyStatus').textContent='';});
+$('copy').addEventListener('click',()=>{const txt=$('planText').value;const st=$('copyStatus');
+  const fallback=()=>{$('planText').focus();$('planText').select();st.textContent=L().copy_fail;};
+  try{navigator.clipboard.writeText(txt).then(()=>{st.textContent=L().copied;},fallback);}catch(e){fallback();}});
+// enter inside a text field moves on, except in the textarea
+function planText(){const t=L(),p=buildPlan();const sel=ORDER.filter(id=>S.cities.includes(id));const lines=[t.plan_title,''];
+  lines.push(`${t.l_who}: ${S.who?t.who[S.who]:'—'}`);
+  lines.push(`${t.l_month}: ${S.month?monthName(S.month):'—'}`);
+  lines.push(`${t.l_len}: ${nightsTxt(S.nights)}`);
+  lines.push(`${t.l_interests}: ${S.interests.map(k=>t.interests[k]).join(', ')||'—'}`);
+  lines.push(`${t.l_budget}: ${S.budget?t.budget[S.budget]:'—'}`);
+  lines.push(`${t.l_visa}: ${S.visa?t.visa[S.visa]:'—'}`);
+  if(S.arrival.trim())lines.push(`${t.l_arrival}: ${S.arrival.trim()}`);
+  lines.push('',t.daybyday);
+  p.legs.forEach(l=>lines.push(`${t.days.replace('{a}',nf(l.a)).replace('{b}',nf(l.b))}  ${l.train?t.train_leg:t.city[l.id]} (${nightsTxt(l.n)})`));
+  lines.push('',`${t.l_contact}: ${S.name.trim()}, ${S.email.trim()}${S.phone.trim()?', '+S.phone.trim():''}${S.company.trim()?', '+S.company.trim():''}`);
+  return lines.join('\n');}
+
+/* ---------- language ---------- */
+function applyLang(){const t=L();
+  loadFont(lang);
+  document.documentElement.lang=lang;document.documentElement.dir=t.dir;$('lang').value=lang;
+  document.querySelectorAll('[data-i18n]').forEach(e=>{const v=t[e.dataset.i18n];if(typeof v==='string')e.textContent=v;});
+  ['who','budget','visa'].forEach(k=>$(k)._labels());
+  $('who').setAttribute('aria-label',t.q1);$('budget').setAttribute('aria-label',t.q5);$('interests').setAttribute('aria-label',t.q4);$('cities').setAttribute('aria-label',t.q2);
+  document.querySelectorAll('.city').forEach(b=>{b.querySelector('b').textContent=t.city[b.dataset.city];b.querySelector('small').textContent=t.sub[b.dataset.city];});
+  document.querySelectorAll('.month').forEach(b=>{b.textContent=monthName(+b.dataset.m,'short');b.setAttribute('aria-label',monthName(+b.dataset.m));});
+  document.querySelectorAll('.chip').forEach(b=>b.textContent=t.interests[b.dataset.i]);
+  $('arrival').placeholder=t.arrival_ph;$('minN').textContent=nightsTxt(4);$('maxN').textContent=nightsTxt(21);
+  $('sashaName').textContent=t.sashaName;
+  document.title=(lang==='en'?'Plan your Russia trip':t.plan_title)+' · ROTW Travels';
+  lastRoute='';sync();chrome();
+}
+$('lang').addEventListener('change',e=>{lang=e.target.value;try{localStorage.setItem('rotw-lang',lang);}catch(_){}applyLang();});
+
+applyLang();
+document.querySelectorAll('.step').forEach(s=>s.hidden=+s.dataset.step!==S.step);
+chrome();
+</script>
+</body>
+</html>
