@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ROTW Travels · Icon System &amp; Sprite Preview</title>
+<meta name="description" content="Visual inspection catalog for ROTW Travels v1 outline icon suite (24px grid, 1.75px stroke, round caps).">
+<meta name="theme-color" content="#0B1626">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ink: #0B1626;
+  --ink-2: #15233B;
+  --ink-3: #1C2B44;
+  --line: #2B3A57;
+  --glacier: #F8F1E8;
+  --paper: #F7EBDD;
+  --mist: #AEB6C4;
+  --soft: #D8CFC8;
+  --gold: #F4A63C;
+  --gold-glow: rgba(244, 166, 60, 0.2);
+  --ice: #7BA7D0;
+  --ember: #E8613C;
+  --sun: #FFAF28;
+  --coral: #FF8156;
+  --rose: #F58AA0;
+  --peach: #FFD7A8;
+  --dusk: #212C3E;
+  --sunset-line: linear-gradient(90deg,#FF8156,#F4A63C);
+  --sunset-wash: linear-gradient(180deg,rgba(255,129,86,0),rgba(255,129,86,.10) 60%,rgba(245,138,160,.12));
+  --f-display: "Cormorant Garamond", Georgia, serif;
+  --f-text: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+::selection {
+  background: var(--coral);
+  color: #0B1626;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--f-text);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: 32px 24px 80px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sun);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.kicker::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+h1 {
+  font-family: var(--f-display);
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--paper);
+  margin-bottom: 12px;
+}
+
+.intro {
+  color: var(--soft);
+  max-width: 720px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.specs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spec-chip {
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--mist);
+}
+.spec-chip b {
+  color: var(--paper);
+  font-weight: 500;
+}
+
+/* Controls Toolbar */
+.toolbar {
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-label {
+  font-size: 13px;
+  color: var(--mist);
+  margin-right: 4px;
+}
+
+.btn-tool {
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  color: var(--soft);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-tool:hover {
+  border-color: var(--gold);
+  color: var(--paper);
+}
+
+.btn-tool.active {
+  background: rgba(244, 166, 60, 0.15);
+  border-color: var(--gold);
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.search-input {
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--glacier);
+  padding: 8px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  min-width: 200px;
+  min-height: 38px;
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+/* Icons Grid */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.icon-card {
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.icon-preview-box {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  background: rgba(11, 22, 38, 0.7);
+  border: 1px solid rgba(43, 58, 87, 0.6);
+  border-radius: 6px;
+  margin-bottom: 14px;
+  color: var(--paper);
+  transition: color 0.15s ease;
+}
+
+.icon-card:hover .icon-preview-box {
+  color: var(--gold);
+  border-color: rgba(244, 166, 60, 0.4);
+}
+
+/* Base icon dimensions dynamically overridden by tool switcher */
+svg.icon {
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+  stroke-width: 1.75;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+/* RTL Demo Flip */
+html[dir="rtl"] svg.icon.rtl-flip {
+  transform: scaleX(-1);
+}
+
+.icon-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.icon-name {
+  font-size: 13px;
+  color: var(--soft);
+  margin-bottom: 8px;
+}
+
+.badges-row {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.badge {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.badge-rtl-flip {
+  background: rgba(244, 166, 60, 0.12);
+  color: #FFB547;
+  border: 1px solid rgba(244, 166, 60, 0.3);
+}
+
+.badge-rtl-invariant {
+  background: rgba(174, 182, 196, 0.1);
+  color: var(--mist);
+  border: 1px solid rgba(174, 182, 196, 0.25);
+}
+
+/* Toast confirmation */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--gold);
+  color: #0B1626;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1);
+  z-index: 999;
+  pointer-events: none;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Light / Ground mode variations */
+body.mode-paper {
+  background: var(--paper);
+  color: #1A2230;
+}
+body.mode-paper .toolbar,
+body.mode-paper .icon-card,
+body.mode-paper .spec-chip {
+  background: #E8E4DA;
+  border-color: #D6D0C2;
+}
+body.mode-paper .icon-preview-box {
+  background: #DFDACF;
+  border-color: #C8C1B0;
+  color: #1A2230;
+}
+body.mode-paper .icon-card:hover .icon-preview-box {
+  color: #D98A2E;
+}
+body.mode-paper .icon-id {
+  color: #8A4A10;
+}
+body.mode-paper .icon-name {
+  color: #4A5668;
+}
+body.mode-paper .intro,
+body.mode-paper .spec-chip,
+body.mode-paper .tool-label {
+  color: #4A5668;
+}
+body.mode-paper h1 {
+  color: #1A2230;
+}
+body.mode-paper .spec-chip b {
+  color: #1A2230;
+}
+</style>
+</head>
+<body>
+
+<!-- Hidden SVG Sprite reference loaded via inline fetch or embedded container -->
+<div id="sprite-container" style="display:none;" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header>
+    <div class="kicker">ROTW Travels Design System (v1)</div>
+    <h1>Icon Suite &amp; Sprite Catalog</h1>
+    <p class="intro">
+      Custom outline iconography hand-authored on a 24×24px coordinate grid with uniform 1.75px stroke width and round terminals. Used across navigation menus, story headers, activity categories, and the trip planner.
+    </p>
+    <div class="specs-bar">
+      <div class="spec-chip">Grid: <b>24 × 24 px</b></div>
+      <div class="spec-chip">Stroke: <b>1.75 px</b></div>
+      <div class="spec-chip">Cap &amp; Join: <b>Round</b></div>
+      <div class="spec-chip">Palette: <b>CurrentColor (Gold #F4A63C / Glacier #F8F1E8)</b></div>
+      <div class="spec-chip">Source: <b>prototype/assets/icons.svg</b></div>
+      <div class="spec-chip">Total Symbols: <b>32 Icons</b></div>
+    </div>
+  </header>
+
+  <!-- Controls -->
+  <div class="toolbar" role="region" aria-label="Inspection controls">
+    <div class="tool-group">
+      <span class="tool-label">Size:</span>
+      <button class="btn-tool" data-size="20" aria-label="20px size">20px</button>
+      <button class="btn-tool active" data-size="24" aria-label="24px default size">24px</button>
+      <button class="btn-tool" data-size="32" aria-label="32px size">32px</button>
+      <button class="btn-tool" data-size="44" aria-label="44px tap target size">44px</button>
+    </div>
+
+    <div class="tool-group">
+      <span class="tool-label">RTL Preview:</span>
+      <button class="btn-tool" id="btn-toggle-rtl" aria-pressed="false">Toggle RTL (Mirror)</button>
+    </div>
+
+    <div class="tool-group">
+      <span class="tool-label">Ground:</span>
+      <button class="btn-tool active" id="btn-theme-dark">Navy #0B1626</button>
+      <button class="btn-tool" id="btn-theme-light">Paper #F7EBDD</button>
+    </div>
+
+    <div class="tool-group">
+      <input type="search" id="icon-search" class="search-input" placeholder="Filter icons..." aria-label="Filter icons by name or id">
+    </div>
+  </div>
+
+  <!-- Icon Grid -->
+  <main class="icon-grid" id="icons-container">
+    <!-- 1. map-pin -->
+    <article class="icon-card" data-id="icon-map-pin" data-rtl="invariant" data-name="Map Pin / Destinations" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-map-pin"></use></svg>
+      </div>
+      <span class="icon-id">#icon-map-pin</span>
+      <span class="icon-name">Destinations Hub</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 2. route -->
+    <article class="icon-card" data-id="icon-route" data-rtl="flip" data-name="Route / Journeys" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon rtl-flip"><use href="icons.svg#icon-route"></use></svg>
+      </div>
+      <span class="icon-id">#icon-route</span>
+      <span class="icon-name">Journeys (6 Routes)</span>
+      <div class="badges-row"><span class="badge badge-rtl-flip">RTL Flipped</span></div>
+    </article>
+
+    <!-- 3. compass -->
+    <article class="icon-card" data-id="icon-compass" data-rtl="invariant" data-name="Compass / Experiences" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-compass"></use></svg>
+      </div>
+      <span class="icon-id">#icon-compass</span>
+      <span class="icon-name">Experiences / Explore</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 4. briefcase -->
+    <article class="icon-card" data-id="icon-briefcase" data-rtl="invariant" data-name="Briefcase / For Agents" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-briefcase"></use></svg>
+      </div>
+      <span class="icon-id">#icon-briefcase</span>
+      <span class="icon-name">For Agents &amp; MICE</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 5. notebook -->
+    <article class="icon-card" data-id="icon-notebook" data-rtl="flip" data-name="Notebook / Sasha's Notes" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon rtl-flip"><use href="icons.svg#icon-notebook"></use></svg>
+      </div>
+      <span class="icon-id">#icon-notebook</span>
+      <span class="icon-name">Sasha's Notebook (10 Cities)</span>
+      <div class="badges-row"><span class="badge badge-rtl-flip">RTL Flipped</span></div>
+    </article>
+
+    <!-- 6. paper-plane -->
+    <article class="icon-card" data-id="icon-paper-plane" data-rtl="flip" data-name="Paper Plane / Plan a Trip" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon rtl-flip"><use href="icons.svg#icon-paper-plane"></use></svg>
+      </div>
+      <span class="icon-id">#icon-paper-plane</span>
+      <span class="icon-name">Plan a Trip (CTA)</span>
+      <div class="badges-row"><span class="badge badge-rtl-flip">RTL Flipped</span></div>
+    </article>
+
+    <!-- 7. ticket -->
+    <article class="icon-card" data-id="icon-ticket" data-rtl="flip" data-name="Ticket / Boarding Pass" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon rtl-flip"><use href="icons.svg#icon-ticket"></use></svg>
+      </div>
+      <span class="icon-id">#icon-ticket</span>
+      <span class="icon-name">Boarding Pass / Voucher</span>
+      <div class="badges-row"><span class="badge badge-rtl-flip">RTL Flipped</span></div>
+    </article>
+
+    <!-- 8. globe -->
+    <article class="icon-card" data-id="icon-globe" data-rtl="invariant" data-name="Globe / Languages" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-globe"></use></svg>
+      </div>
+      <span class="icon-id">#icon-globe</span>
+      <span class="icon-name">Language Selector</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 9. phone -->
+    <article class="icon-card" data-id="icon-phone" data-rtl="flip" data-name="Phone / Contact Desk" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon rtl-flip"><use href="icons.svg#icon-phone"></use></svg>
+      </div>
+      <span class="icon-id">#icon-phone</span>
+      <span class="icon-name">Moscow Desk Phone</span>
+      <div class="badges-row"><span class="badge badge-rtl-flip">RTL Flipped</span></div>
+    </article>
+
+    <!-- 10. mail -->
+    <article class="icon-card" data-id="icon-mail" data-rtl="invariant" data-name="Mail / Inquiries" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-mail"></use></svg>
+      </div>
+      <span class="icon-id">#icon-mail</span>
+      <span class="icon-name">Email Desk</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 11. clock -->
+    <article class="icon-card" data-id="icon-clock" data-rtl="invariant" data-name="Clock / Local Time" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-clock"></use></svg>
+      </div>
+      <span class="icon-id">#icon-clock</span>
+      <span class="icon-name">Local Clocks / Timezones</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 12. menu -->
+    <article class="icon-card" data-id="icon-menu" data-rtl="invariant" data-name="Menu / Hamburger" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-menu"></use></svg>
+      </div>
+      <span class="icon-id">#icon-menu</span>
+      <span class="icon-name">Mobile Drawer Trigger</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 13. close -->
+    <article class="icon-card" data-id="icon-close" data-rtl="invariant" data-name="Close / Dismiss" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-close"></use></svg>
+      </div>
+      <span class="icon-id">#icon-close</span>
+      <span class="icon-name">Dismiss / Close Drawer</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 14. chevron-down -->
+    <article class="icon-card" data-id="icon-chevron" data-rtl="invariant" data-name="Chevron Down / Dropdown" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-chevron"></use></svg>
+      </div>
+      <span class="icon-id">#icon-chevron</span>
+      <span class="icon-name">Dropdown Indicator</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 14b. chevron-right -->
+    <article class="icon-card" data-id="icon-chevron-right" data-rtl="flip" data-name="Chevron Right / Breadcrumb" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon rtl-flip"><use href="icons.svg#icon-chevron-right"></use></svg>
+      </div>
+      <span class="icon-id">#icon-chevron-right</span>
+      <span class="icon-name">Breadcrumb Separator</span>
+      <div class="badges-row"><span class="badge badge-rtl-flip">RTL Flipped</span></div>
+    </article>
+
+    <!-- 15. arrow-right -->
+    <article class="icon-card" data-id="icon-arrow" data-rtl="flip" data-name="Arrow Right / Forward" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon rtl-flip"><use href="icons.svg#icon-arrow"></use></svg>
+      </div>
+      <span class="icon-id">#icon-arrow</span>
+      <span class="icon-name">Forward Link CTA</span>
+      <div class="badges-row"><span class="badge badge-rtl-flip">RTL Flipped</span></div>
+    </article>
+
+    <!-- 16. search -->
+    <article class="icon-card" data-id="icon-search" data-rtl="invariant" data-name="Search / Find City" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-search"></use></svg>
+      </div>
+      <span class="icon-id">#icon-search</span>
+      <span class="icon-name">Header Search / Find</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 17. camera -->
+    <article class="icon-card" data-id="icon-camera" data-rtl="invariant" data-name="Camera / Highlights" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-camera"></use></svg>
+      </div>
+      <span class="icon-id">#icon-camera</span>
+      <span class="icon-name">Trip Gallery / Moments</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 18. mountain -->
+    <article class="icon-card" data-id="icon-mountain" data-rtl="invariant" data-name="Mountain / Caucasus Kamchatka" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-mountain"></use></svg>
+      </div>
+      <span class="icon-id">#icon-mountain</span>
+      <span class="icon-name">Volcanoes &amp; Caucasus</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 19. snowflake -->
+    <article class="icon-card" data-id="icon-snowflake" data-rtl="invariant" data-name="Snowflake / Baikal Ice" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-snowflake"></use></svg>
+      </div>
+      <span class="icon-id">#icon-snowflake</span>
+      <span class="icon-name">Baikal Clear Ice Season</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 20. aurora -->
+    <article class="icon-card" data-id="icon-aurora" data-rtl="invariant" data-name="Aurora / Northern Lights" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-aurora"></use></svg>
+      </div>
+      <span class="icon-id">#icon-aurora</span>
+      <span class="icon-name">Northern Lights Murmansk</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 21. train -->
+    <article class="icon-card" data-id="icon-train" data-rtl="invariant" data-name="Train / Trans-Siberian" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-train"></use></svg>
+      </div>
+      <span class="icon-id">#icon-train</span>
+      <span class="icon-name">Trans-Siberian / Sapsan</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 22. plane -->
+    <article class="icon-card" data-id="icon-plane" data-rtl="invariant" data-name="Plane / Domestic Flights" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-plane"></use></svg>
+      </div>
+      <span class="icon-id">#icon-plane</span>
+      <span class="icon-name">Flight Craft / Arrival</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 23. sun -->
+    <article class="icon-card" data-id="icon-sun" data-rtl="invariant" data-name="Sun / White Nights" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-sun"></use></svg>
+      </div>
+      <span class="icon-id">#icon-sun</span>
+      <span class="icon-name">White Nights / Summer</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 24. anchor -->
+    <article class="icon-card" data-id="icon-anchor" data-rtl="invariant" data-name="Anchor / Maritime" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-anchor"></use></svg>
+      </div>
+      <span class="icon-id">#icon-anchor</span>
+      <span class="icon-name">Volga &amp; Pacific Waters</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 25. users -->
+    <article class="icon-card" data-id="icon-users" data-rtl="invariant" data-name="Users / Group Tours" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-users"></use></svg>
+      </div>
+      <span class="icon-id">#icon-users</span>
+      <span class="icon-name">FIT &amp; Small Group Tours</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 26. calendar -->
+    <article class="icon-card" data-id="icon-calendar" data-rtl="invariant" data-name="Calendar / Seasonality" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-calendar"></use></svg>
+      </div>
+      <span class="icon-id">#icon-calendar</span>
+      <span class="icon-name">Trip Timing &amp; Month</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 27. check -->
+    <article class="icon-card" data-id="icon-check" data-rtl="invariant" data-name="Check / Included" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-check"></use></svg>
+      </div>
+      <span class="icon-id">#icon-check</span>
+      <span class="icon-name">Services Included Tick</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 28. star -->
+    <article class="icon-card" data-id="icon-star" data-rtl="invariant" data-name="Star / Reviews" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-star"></use></svg>
+      </div>
+      <span class="icon-id">#icon-star</span>
+      <span class="icon-name">Verified Reviews</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 29. shield-check -->
+    <article class="icon-card" data-id="icon-shield-check" data-rtl="invariant" data-name="Shield Check / Visa" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-shield-check"></use></svg>
+      </div>
+      <span class="icon-id">#icon-shield-check</span>
+      <span class="icon-name">Visa Support &amp; License</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 30. external-link -->
+    <article class="icon-card" data-id="icon-external-link" data-rtl="flip" data-name="External Link / Partner Portal" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon rtl-flip"><use href="icons.svg#icon-external-link"></use></svg>
+      </div>
+      <span class="icon-id">#icon-external-link</span>
+      <span class="icon-name">External Agency Link</span>
+      <div class="badges-row"><span class="badge badge-rtl-flip">RTL Flipped</span></div>
+    </article>
+
+    <!-- 31. filter -->
+    <article class="icon-card" data-id="icon-filter" data-rtl="invariant" data-name="Filter / Refine" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-filter"></use></svg>
+      </div>
+      <span class="icon-id">#icon-filter</span>
+      <span class="icon-name">Refine Journeys Filter</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+
+    <!-- 32. copy -->
+    <article class="icon-card" data-id="icon-copy" data-rtl="invariant" data-name="Copy / Copy Address" tabindex="0">
+      <div class="icon-preview-box">
+        <svg class="icon"><use href="icons.svg#icon-copy"></use></svg>
+      </div>
+      <span class="icon-id">#icon-copy</span>
+      <span class="icon-name">Copy Office Details</span>
+      <div class="badges-row"><span class="badge badge-rtl-invariant">RTL Invariant</span></div>
+    </article>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Snippet copied to clipboard!</div>
+
+<script>
+// Inline sprite injection fallback for file:// protocol where external <use> might be restricted
+fetch('icons.svg')
+  .then(res => res.text())
+  .then(svgText => {
+    const container = document.getElementById('sprite-container');
+    container.innerHTML = svgText;
+  })
+  .catch(() => {
+    // If fetch fails in local file origins, external icons.svg will still resolve via HTTP
+  });
+
+// Size switcher
+document.querySelectorAll('.btn-tool[data-size]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.btn-tool[data-size]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.documentElement.style.setProperty('--icon-size', btn.dataset.size + 'px');
+  });
+});
+
+// RTL Preview Toggle
+const btnRtl = document.getElementById('btn-toggle-rtl');
+btnRtl.addEventListener('click', () => {
+  const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+  if (isRtl) {
+    document.documentElement.setAttribute('dir', 'ltr');
+    btnRtl.classList.remove('active');
+    btnRtl.setAttribute('aria-pressed', 'false');
+  } else {
+    document.documentElement.setAttribute('dir', 'rtl');
+    btnRtl.classList.add('active');
+    btnRtl.setAttribute('aria-pressed', 'true');
+  }
+});
+
+// Theme switcher
+const btnDark = document.getElementById('btn-theme-dark');
+const btnLight = document.getElementById('btn-theme-light');
+btnDark.addEventListener('click', () => {
+  document.body.classList.remove('mode-paper');
+  btnDark.classList.add('active');
+  btnLight.classList.remove('active');
+});
+btnLight.addEventListener('click', () => {
+  document.body.classList.add('mode-paper');
+  btnLight.classList.add('active');
+  btnDark.classList.remove('active');
+});
+
+// Search / Filter
+const searchInput = document.getElementById('icon-search');
+const cards = document.querySelectorAll('.icon-card');
+searchInput.addEventListener('input', (e) => {
+  const term = e.target.value.toLowerCase().trim();
+  cards.forEach(card => {
+    const id = card.dataset.id.toLowerCase();
+    const name = card.dataset.name.toLowerCase();
+    const visible = id.includes(term) || name.includes(term);
+    card.style.display = visible ? 'flex' : 'none';
+  });
+});
+
+// Toast copy helper
+const toast = document.getElementById('toast');
+function showToast(text) {
+  toast.textContent = text;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const iconId = card.dataset.id;
+    const snippet = `<svg class="icon"><use href="assets/icons.svg#${iconId}"></use></svg>`;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(snippet)
+        .then(() => showToast(`Copied: ${iconId}`))
+        .catch(() => showToast(`Selected: ${iconId}`));
+    } else {
+      showToast(`Selected: ${iconId}`);
+    }
+  });
+
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.click();
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,17 +1,16 @@
 <!doctype html>
 <html lang="en">
-<head>
+<head><meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ROTW Flight Story</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Fly across Russia with ROTW Travels, a Moscow tour operator: Moscow, St Petersburg, Kazan, the Trans-Siberian, Lake Baikal and Vladivostok, with live local times and a trip planner.">
-<meta name="theme-color" content="#0A1424">
+<meta name="theme-color" content="#0B1626">
 <meta property="og:title" content="Russia, from the window seat · ROTW Travels">
 <meta property="og:description" content="A scroll journey from Moscow to the Pacific with your guide Sasha.">
 <meta property="og:image" content="assets/window.webp">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A1424'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23D4A84B' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23E9EDF1'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23D4A84B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1626'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23F4A63C' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23F8F1E8'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23F4A63C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/window.webp" fetchpriority="high">
@@ -77,48 +76,73 @@
    Type: Cormorant Garamond (display, 400/500) + Jost (text). Pairing from ui-ux-pro-max rows 4/50, both with Cyrillic.
    Rules from taste-skill: no bold headlines, sentence-case labels, no tracked capitals, nothing under 13px. */
 :root{
-  --ink:#0A1424; --ink-2:#111E33; --line:#26354F; --glacier:#E9EDF1; --paper:#F1EEE6; --mist:#9AA7B8; --soft:#C9D3DF;
-  --gold:#D4A84B; --ice:#7FB3D5; --ember:#C8402F;
+  --base:#0B1626;
+  --ink:#0B1626; --ink-2:#15233B; --ink-3:#1C2B44; --line:#2B3A57; --glacier:#F8F1E8; --paper:#F7EBDD; --mist:#AEB6C4; --soft:#D8CFC8;
+  --gold:#F4A63C; --ice:#7BA7D0; --ember:#E8613C;
+  --sun:#FFAF28; --coral:#FF8156; --rose:#F58AA0; --peach:#FFD7A8; --dusk:#212C3E;
+  --sky-1:#15233B; --sky-2:#2A3A5E; --sky-3:#385D89; --dusk-rose:#6B4A6A;
+  --horizon-rose:#F58AA0; --horizon-coral:#FF8156; --horizon-amber:#FFAF28; --horizon-peach:#FFD7A8;
+  --bg-sunset:linear-gradient(180deg,#0B1626 0%,#15233B 32%,#2A3A5E 55%,#6B4A6A 76%,#C65F5A 90%,#F4A63C 100%);
+  --bg-dusk:linear-gradient(180deg,#0B1626 0%,#15233B 45%,#2A3A5E 100%);
+  --bg-glow:radial-gradient(120% 70% at 50% 110%, rgba(255,129,86,.55) 0%, rgba(245,138,160,.28) 38%, rgba(11,22,38,0) 70%);
+  --bg-sunrise-side:radial-gradient(80% 60% at 100% 100%, rgba(255,175,40,.35), rgba(11,22,38,0) 65%);
+  --sunset-line:linear-gradient(90deg, rgba(255,129,86,0) 0%, #FF8156 25%, #F4A63C 75%, rgba(244,166,60,0) 100%);
+  --sunset-wash:linear-gradient(180deg,rgba(255,129,86,0),rgba(255,129,86,.10) 60%,rgba(245,138,160,.12));
   --f-display:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
   --f-text:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
   color-scheme:dark;
 }
+@media (prefers-contrast: more){
+  :root{
+    --bg-glow:none;
+    --bg-sunrise-side:none;
+  }
+}
 html[lang="ar"]{--f-display:"Noto Naskh Arabic",serif;--f-text:"Noto Sans Arabic",system-ui,sans-serif}
 html[lang="hi"]{--f-display:"Noto Serif Devanagari",serif;--f-text:"Noto Sans Devanagari",system-ui,sans-serif}
 *{box-sizing:border-box}
-body{background:var(--ink);color:var(--glacier);font-family:var(--f-text);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
-h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.015em}
+body{background:var(--base);background-color:#0B1626;color:var(--glacier);font-family:var(--f-text);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--base)}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.015em;color:var(--glacier)}
+h1 span.hl,h2 span.hl,h3 span.hl,.hl{color:var(--peach)}
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="hi"] h1,html[lang="hi"] h2,html[lang="hi"] h3{letter-spacing:0;line-height:1.3!important}
-p{margin:0}
+p{margin:0;color:var(--soft)}
 button{font:inherit;color:inherit}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.label{font-size:13px;font-weight:500;color:var(--mist);line-height:1.4}
+a:hover{text-decoration-color:var(--coral)}
+::selection{background:var(--coral);color:#0B1626}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+.label{font-size:13px;font-weight:500;color:var(--gold);line-height:1.4}
 
 /* ---------- stage layers ---------- */
-#stage{position:fixed;inset:0;z-index:0}
+#stage{position:fixed;inset:0;z-index:0;background-color:#0B1626;background:var(--bg-glow), var(--bg-sunset);background-repeat:no-repeat;background-position:center bottom, center center}
 #globe{width:100%;height:100%;display:block}
-#scrim{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(10,20,36,.82) 0%,rgba(10,20,36,.55) 30%,rgba(10,20,36,0) 52%);opacity:0;transition:opacity .4s}
-html[dir="rtl"] #scrim{background:linear-gradient(270deg,rgba(10,20,36,.82) 0%,rgba(10,20,36,.55) 30%,rgba(10,20,36,0) 52%)}
+#scrim{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,22,38,.82) 0%,rgba(11,22,38,.55) 30%,rgba(11,22,38,0) 52%);opacity:0;transition:opacity .4s}
+#scrim::after{content:"";position:absolute;inset:auto 0 0 0;height:35%;background:var(--bg-glow);pointer-events:none}
+html[dir="rtl"] #scrim{background:linear-gradient(270deg,rgba(11,22,38,.82) 0%,rgba(11,22,38,.55) 30%,rgba(11,22,38,0) 52%)}
 #pins{position:fixed;inset:0;z-index:2;pointer-events:none}
 .pin{position:absolute;left:0;top:0;pointer-events:auto;display:flex;align-items:center;gap:7px;background:none;border:0;padding:6px;cursor:pointer;white-space:nowrap;transform:translate(-9999px,-9999px);transition:opacity .25s}
-.pin i{width:7px;height:7px;border-radius:50%;background:var(--glacier);box-shadow:0 0 0 3px rgba(233,237,241,.16);flex:none}
+.pin i{width:7px;height:7px;border-radius:50%;background:var(--glacier);box-shadow:0 0 0 3px rgba(248,241,232,.16);flex:none}
 .pin.office i{background:var(--ice)}
-.pin span{font-size:13px;font-weight:500;color:var(--glacier);text-shadow:0 1px 3px rgba(0,0,0,.9),0 0 10px rgba(10,20,36,.9)}
+.pin span{font-size:13px;font-weight:500;color:var(--glacier);text-shadow:0 1px 3px rgba(0,0,0,.9),0 0 10px rgba(11,22,38,.9)}
 .pin.active span{color:var(--gold)}
-.pin.active i{background:var(--gold);box-shadow:0 0 0 4px rgba(212,168,75,.25)}
+.pin.active i{background:var(--coral);box-shadow:0 0 12px rgba(255,129,86,.6)}
 .pin.hidden{opacity:0;pointer-events:none}
+.pin.pin-left{flex-direction:row-reverse}
+.pin.pin-top{flex-direction:column-reverse;gap:3px;align-items:center}
+.pin.pin-bottom{flex-direction:column;gap:3px;align-items:center}
+html[dir="rtl"] .pin.pin-right{flex-direction:row-reverse}
+html[dir="rtl"] .pin.pin-left{flex-direction:row}
 
 #window{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden}
 #window img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:56% 45%;transform-origin:58% 46%;will-change:transform}
-#window::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,36,.92) 0%,rgba(10,20,36,.6) 32%,rgba(10,20,36,0) 60%)}
-html[dir="rtl"] #window::after{background:linear-gradient(270deg,rgba(10,20,36,.92) 0%,rgba(10,20,36,.6) 32%,rgba(10,20,36,0) 60%)}
+#window::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,22,38,.92) 0%,rgba(11,22,38,.6) 32%,rgba(11,22,38,0) 60%)}
+html[dir="rtl"] #window::after{background:linear-gradient(270deg,rgba(11,22,38,.92) 0%,rgba(11,22,38,.6) 32%,rgba(11,22,38,0) 60%)}
 
 #train{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:0;visibility:hidden}
 #train video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-#train::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,20,36,.9) 0%,rgba(10,20,36,.45) 42%,rgba(10,20,36,.05) 70%)}
-html[dir="rtl"] #train::before{background:linear-gradient(270deg,rgba(10,20,36,.9) 0%,rgba(10,20,36,.45) 42%,rgba(10,20,36,.05) 70%)}
+#train::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,22,38,.9) 0%,rgba(11,22,38,.45) 42%,rgba(11,22,38,.05) 70%)}
+html[dir="rtl"] #train::before{background:linear-gradient(270deg,rgba(11,22,38,.9) 0%,rgba(11,22,38,.45) 42%,rgba(11,22,38,.05) 70%)}
 #train .tcopy{position:absolute;z-index:2;top:50%;transform:translateY(-50%);inset-inline-start:max(20px,calc(6vw + 8px));width:min(480px,calc(100% - 40px));display:flex;flex-direction:column;gap:18px}
 #train h2{font-size:clamp(40px,5vw,72px);line-height:1}
 #train p{color:var(--soft)}
@@ -128,7 +152,7 @@ html[dir="rtl"] #train::before{background:linear-gradient(270deg,rgba(10,20,36,.
 .interlude{height:140vh}
 
 /* ---------- top bar ---------- */
-.top{position:fixed;z-index:20;top:env(safe-area-inset-top,0px);left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px max(20px,env(safe-area-inset-right,0px)) 30px max(20px,env(safe-area-inset-left,0px));background:linear-gradient(180deg,rgba(10,20,36,.96) 0%,rgba(10,20,36,.8) 55%,rgba(10,20,36,0) 100%)}
+.top{position:fixed;z-index:20;top:env(safe-area-inset-top,0px);left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px max(20px,env(safe-area-inset-right,0px)) 30px max(20px,env(safe-area-inset-left,0px));background:linear-gradient(180deg,rgba(11,22,38,.96) 0%,rgba(11,22,38,.8) 55%,rgba(11,22,38,0) 100%)}
 .logo{display:block;height:40px;width:auto}
 .top nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px}
 .top nav a{text-decoration:none;color:var(--soft)}
@@ -138,11 +162,11 @@ html[dir="rtl"] #train::before{background:linear-gradient(270deg,rgba(10,20,36,.
 html[dir="rtl"] .lang select{padding:6px 2px 6px 18px;background-position:7px 52%,2px 52%}
 .lang select option{background:var(--ink-2)}
 .btn{display:inline-flex;align-items:center;gap:10px;font:500 15px var(--f-text);border-radius:2px;padding:12px 20px;border:0;cursor:pointer;min-height:44px;text-decoration:none;transition:background .2s,transform .2s}
-.btn.primary{background:var(--gold);color:#17120A}
-.btn.primary:active{transform:scale(.97)}
+.btn.primary{background:var(--gold);color:#0B1626}
+.btn.primary:active{background:var(--coral);transform:scale(.97)}
 .btn.link{background:none;padding:12px 2px;color:var(--glacier);border-bottom:1px solid var(--mist);border-radius:0}
-@media (hover:hover) and (pointer:fine){.btn.primary:hover{background:#E0B862}.btn.link:hover{border-color:var(--glacier)}.top nav a:hover{color:var(--glacier)}.pin:hover span{color:var(--gold)}.board .row:not(.head):hover{background:rgba(212,168,75,.06)}.board .go:hover{border-color:var(--gold);color:var(--gold)}}
-.skip{position:fixed;inset-inline-start:12px;top:-60px;z-index:60;background:var(--gold);color:#17120A;padding:10px 14px;border-radius:2px;text-decoration:none;font-weight:500}
+@media (hover:hover) and (pointer:fine){.btn.primary:hover{background:var(--sun)}.btn.link:hover{border-color:var(--glacier)}.top nav a:hover{color:var(--glacier)}.pin:hover span{color:var(--gold)}.board .row:not(.head):hover{background:rgba(244,166,60,.06)}.board .go:hover{border-color:var(--gold);color:var(--gold)}}
+.skip{position:fixed;inset-inline-start:12px;top:-60px;z-index:60;background:var(--gold);color:#0B1626;padding:10px 14px;border-radius:2px;text-decoration:none;font-weight:500}
 .skip:focus{top:12px}
 .btn svg,.jny-link svg{flex:none}
 html[dir="rtl"] .btn svg.arr,html[dir="rtl"] .jny-link svg.arr,[dir="rtl"] .jny-link svg.arr{transform:scaleX(-1)}
@@ -150,16 +174,24 @@ html[dir="rtl"] .btn svg.arr,html[dir="rtl"] .jny-link svg.arr,[dir="rtl"] .jny-
 @media (max-width:520px){.top .btn.primary{display:none}}
 
 /* ---------- route strip ---------- */
-.route{position:fixed;z-index:5;inset-inline-end:max(22px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);height:min(380px,52vh);width:60px}
+.route{position:fixed;z-index:5;inset-inline-end:max(22px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);height:min(380px,50vh);width:60px;transition:opacity .3s}
 .route .track{position:absolute;inset-inline-end:6px;top:0;bottom:0;width:1px;background:var(--line)}
-.route .fill{position:absolute;inset-inline-end:6px;top:0;width:1px;background:var(--gold);height:0}
-.route button{position:absolute;inset-inline-end:0;transform:translateY(-50%);display:flex;align-items:center;gap:10px;background:none;border:0;padding:4px 0;cursor:pointer;flex-direction:row}
-.route button span{font-size:13px;font-weight:500;color:var(--mist);font-variant-numeric:tabular-nums}
-.route button i{width:13px;height:13px;border-radius:50%;border:1px solid var(--mist);background:var(--ink);flex:none}
+.route .fill{position:absolute;inset-inline-end:6px;top:0;width:1px;background:var(--sunset-line);height:0}
+.route button{position:absolute;inset-inline-end:0;transform:translateY(-50%);display:flex;align-items:center;gap:8px;background:none;border:0;padding:2px 0;cursor:pointer;flex-direction:row}
+.route button span{font-size:12px;font-weight:500;color:var(--mist);font-variant-numeric:tabular-nums}
+.route button i{width:11px;height:11px;border-radius:50%;border:1px solid var(--mist);background:var(--ink);flex:none}
 .route button.done i{background:var(--gold);border-color:var(--gold)}
+.route button.on i{background:var(--coral);border-color:var(--coral);box-shadow:0 0 10px rgba(255,129,86,.6)}
 .route button.on span{color:var(--glacier)}
-.route .craft{position:absolute;inset-inline-end:-1px;width:15px;height:15px;transform:translateY(-50%);color:var(--gold);pointer-events:none}
-@media (max-width:900px){.route{display:none}}
+.route .craft{position:absolute;inset-inline-end:0;width:13px;height:13px;transform:translateY(-50%);color:var(--gold);pointer-events:none}
+@media (max-width:900px){
+  .route{inset-inline-end:max(10px,env(safe-area-inset-right,0px));height:min(320px,calc(100vh - 170px));top:calc(50% - 14px)}
+  .route button{gap:6px;padding:1px 0}
+  .route button span{font-size:11px}
+  .route button i{width:9px;height:9px}
+  .route .track, .route .fill{inset-inline-end:4px}
+  .route .craft{width:11px;height:11px;inset-inline-end:-1px}
+}
 
 /* ---------- story ---------- */
 main{position:relative;z-index:4;pointer-events:none}
@@ -203,17 +235,16 @@ html[dir="rtl"] .ticket .path svg{transform:translate(-50%,-50%) scaleX(-1)}
 .ticket .bars{margin-top:auto;height:22px;background:repeating-linear-gradient(90deg,#1A2230 0 2px,transparent 2px 4px,#1A2230 4px 5px,transparent 5px 8px,#1A2230 8px 11px,transparent 11px 12px)}
 
 /* departures board */
+#explore{background-color:#0B1626;background:var(--bg-glow), var(--bg-dusk);background-position:center bottom, center top;background-repeat:no-repeat;box-shadow:0 0 0 100vmax #0B1626;clip-path:inset(0 -100vmax);position:relative;z-index:10;border-top:1px solid transparent;border-image:var(--sunset-line) 1}
 .explore .col{width:min(760px,100%);gap:26px}
 .explore h2{font-size:clamp(48px,6vw,88px);line-height:.95}
-.board{background:rgba(8,15,28,.92);border:1px solid var(--line);border-radius:4px;overflow:hidden}
-.board .row{display:grid;grid-template-columns:minmax(0,1.7fr) 70px minmax(0,1fr) 90px 104px;align-items:center;gap:12px;padding:12px 18px;border-top:1px solid var(--line)}
-.board .row.head{border-top:0;padding-block:10px;background:rgba(233,237,241,.03)}
+.board{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:6px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:hidden;max-height:min(470px,52vh);overflow-y:auto;overscroll-behavior:contain}
+.board .row{display:grid;grid-template-columns:minmax(0,1.7fr) 70px minmax(0,1fr) 90px 104px;align-items:center;gap:12px;padding:12px 18px;border-top:1px solid rgba(244,166,60,.15)}
+.board .row.head{border-top:0;padding-block:10px;background:rgba(21,35,59,.9);position:sticky;top:0;z-index:1}
 .board .row.head span{font-size:13px;font-weight:500;color:var(--mist)}
 .board .dest{font-family:var(--f-display);font-size:24px;line-height:1.1;min-width:0}
 .board .dcell{display:flex;align-items:center;gap:12px;min-width:0}
 .board .dcell img{width:56px;height:40px;object-fit:cover;border-radius:2px;flex:none;filter:saturate(.9)}
-.board{max-height:min(470px,52vh);overflow-y:auto;overscroll-behavior:contain}
-.board .row.head{position:sticky;top:0;background:#0E1828;z-index:1}
 
 /* postcard shown after landing somewhere you picked */
 .postcard-pop{position:fixed;z-index:8;top:96px;inset-inline-end:max(110px,calc(env(safe-area-inset-right,0px) + 110px));width:min(320px,calc(100vw - 40px));background:var(--paper);color:#1A2230;padding:9px 9px 14px;box-shadow:0 24px 60px rgba(0,0,0,.5);transform:rotate(-1.5deg);transition:opacity .35s,transform .35s}
@@ -224,7 +255,7 @@ html[dir="rtl"] .ticket .path svg{transform:translate(-50%,-50%) scaleX(-1)}
 .postcard-pop h3{font-size:30px;line-height:1}
 .postcard-pop .pc-time{font-size:13px;color:#5A616C;font-variant-numeric:tabular-nums}
 .postcard-pop .pc-cta{margin:12px 4px 0;width:calc(100% - 8px);justify-content:center}
-.postcard-pop .pc-x{position:absolute;top:14px;inset-inline-end:14px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(10,20,36,.7);color:#fff;cursor:pointer;display:grid;place-items:center}
+.postcard-pop .pc-x{position:absolute;top:14px;inset-inline-end:14px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(11,22,38,.7);color:#fff;cursor:pointer;display:grid;place-items:center}
 @media (max-width:900px){.postcard-pop{top:84px;inset-inline-end:max(16px,env(safe-area-inset-right,0px));width:min(260px,calc(100vw - 32px))}.postcard-pop h3{font-size:24px}}
 .board .row.active .dest{color:var(--gold)}
 .board .c{font-variant-numeric:tabular-nums;font-size:15px;color:var(--soft)}
@@ -238,29 +269,29 @@ footer{position:relative;z-index:4;background:var(--ink);border-top:1px solid va
 .foot span{font-size:15px;color:var(--mist);font-variant-numeric:tabular-nums}
 @media (max-width:820px){.foot{grid-template-columns:1fr 1fr}}
 
-/* ---------- guide ---------- */
-.guide{position:fixed;z-index:10;bottom:calc(env(safe-area-inset-bottom,0px) + 6px);inset-inline-end:max(96px,calc(env(safe-area-inset-right,0px) + 96px));display:flex;flex-direction:row-reverse;align-items:flex-end;gap:2px;pointer-events:none}
-.guide canvas{width:170px;height:204px;flex:none;display:block}
-.guide canvas.off{display:none}
-.guide .gimg{width:170px;height:204px;flex:none;display:block;max-width:none;object-fit:contain;object-position:50% 100%;transform:scaleX(-1)}
-.guide .gimg[hidden]{display:none}
-html[dir="rtl"] .guide .gimg{transform:none}
-@media (max-width:720px){.guide .gimg{width:104px;height:125px}}
-.bubble{pointer-events:auto;max-width:290px;margin-bottom:128px;background:var(--paper);color:#1A2230;border-radius:3px;padding:12px 15px 13px;font-size:15px;line-height:1.45;position:relative;box-shadow:0 14px 34px rgba(0,0,0,.4);transition:opacity .25s,transform .25s}
-.bubble::after{content:"";position:absolute;bottom:16px;inset-inline-end:-8px;border:8px solid transparent;border-inline-start-color:var(--paper);border-inline-end:0}
-.bubble b{display:block;font-size:13px;font-weight:500;color:#7A6230;margin-bottom:2px}
-.bubble.swap{opacity:0;transform:translateY(6px)}
-.guide{transition:opacity .3s}
-.guide.tuck{opacity:0}
-.guide.tuck .bubble{pointer-events:none}
-@media (max-width:900px){.guide{inset-inline-end:max(10px,env(safe-area-inset-right,0px))}}
-@media (max-width:720px){.guide canvas{width:104px;height:125px}.bubble{max-width:215px;font-size:14px;margin-bottom:82px}}
+/* ---------- Sasha's Walking Figure (FIX 4) ---------- */
+.sasha-walker{position:fixed;z-index:3;bottom:calc(76px + env(safe-area-inset-bottom,0px));left:0;pointer-events:none;will-change:transform;display:flex;flex-direction:column;align-items:flex-start}
+@media (max-width:768px){.sasha-walker{bottom:calc(68px + env(safe-area-inset-bottom,0px))}}
+.sasha-figure-wrap{width:60px;height:72px;display:flex;align-items:flex-end;justify-content:center;pointer-events:auto;cursor:pointer;transform-origin:50% 100%}
+@media (max-width:768px){.sasha-figure-wrap{width:47px;height:56px}}
+.sasha-figure-wrap canvas{width:100%;height:100%;display:block;object-fit:contain}
+.sasha-figure-wrap canvas.off{display:none}
+.sasha-figure-wrap .gimg{width:100%;height:100%;display:block;object-fit:contain}
+.sasha-figure-wrap .gimg[hidden]{display:none}
+.sasha-walker.tuck{opacity:0}
+
+/* Speech Bubble following Sasha (FIX 4) */
+.sasha-walker-bubble{position:absolute;bottom:calc(100% + 10px);left:0;max-width:220px;width:max-content;background:#FBF1E4;color:#0B1626;font-family:var(--f-ui,"Jost",sans-serif);font-size:14px;line-height:1.35;font-weight:500;padding:8px 12px;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.35);border:1px solid rgba(244,166,60,.35);opacity:0;pointer-events:none;transition:opacity .35s ease;white-space:normal;z-index:3}
+.sasha-walker-bubble.visible{opacity:1}
+.sasha-walker-bubble::after{content:"";position:absolute;bottom:-6px;left:20px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid #FBF1E4}
+.sasha-walker-bubble.flip-tail::after{left:auto;right:20px}
+@media (prefers-reduced-motion:reduce){.sasha-walker,.sasha-figure-wrap{transform:none!important}}
 
 /* ---------- phone ---------- */
 @media (max-width:900px){
-  #window::after,html[dir="rtl"] #window::after{background:linear-gradient(0deg,rgba(10,20,36,.94) 0%,rgba(10,20,36,.55) 48%,rgba(10,20,36,0) 75%)}
-  #scrim,html[dir="rtl"] #scrim{background:linear-gradient(0deg,rgba(10,20,36,.9) 0%,rgba(10,20,36,.6) 45%,rgba(10,20,36,0) 70%)}
-  #train::before,html[dir="rtl"] #train::before{background:linear-gradient(0deg,rgba(10,20,36,.94) 0%,rgba(10,20,36,.5) 52%,rgba(10,20,36,.1) 80%)}
+  #window::after,html[dir="rtl"] #window::after{background:linear-gradient(0deg,rgba(11,22,38,.94) 0%,rgba(11,22,38,.55) 48%,rgba(11,22,38,0) 75%)}
+  #scrim,html[dir="rtl"] #scrim{background:linear-gradient(0deg,rgba(11,22,38,.9) 0%,rgba(11,22,38,.6) 45%,rgba(11,22,38,0) 70%)}
+  #train::before,html[dir="rtl"] #train::before{background:linear-gradient(0deg,rgba(11,22,38,.94) 0%,rgba(11,22,38,.5) 52%,rgba(11,22,38,.1) 80%)}
   #train .tcopy{top:auto;bottom:170px;transform:none}
   #train .postcard{display:none}
   .chapter{align-items:flex-end;padding-bottom:210px}
@@ -284,6 +315,18 @@ html[dir="rtl"] .guide .gimg{transform:none}
 .rotw-logo .lg-l,.rotw-logo .lg-red,.rotw-logo .lg-dirs,.rotw-logo .lg-plane{transform-box:fill-box;transform-origin:50% 50%}
 .logo-link{display:block;border-radius:4px}
 #intro{position:fixed;inset:0;z-index:100;background:var(--ink);display:grid;place-items:center;cursor:pointer}
+#intro[hidden]{display:none!important}
+/* Fade out fixed layers when scrolled past story into post-story sections (Boss review round 3) */
+#stage,#pins,#scrim,#window,#train,.route,#route,.sasha-walker,.sasha-walker-bubble{transition:opacity .4s ease,visibility .4s ease}
+html.post-story #stage,
+html.post-story #pins,
+html.post-story #scrim,
+html.post-story #window,
+html.post-story #train,
+html.post-story .route,
+html.post-story #route,
+html.post-story .sasha-walker,
+html.post-story .sasha-walker-bubble{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
 #intro .intro-inner{display:flex;flex-direction:column;align-items:center;gap:20px;padding-inline:20px}
 #intro .intro-logo{width:min(600px,80vw);height:auto}
 #intro .intro-tag{margin:0;font-family:"Jost",var(--f-text);font-style:italic;font-weight:500;font-size:clamp(16px,2.3vw,26px);letter-spacing:.42em;padding-inline-start:.42em;color:var(--soft);white-space:nowrap}
@@ -325,16 +368,16 @@ html[lang="ar"] .night .n-word,html[lang="hi"] .night .n-word{letter-spacing:0;l
 .night .n-copy p{color:#DCE4F0;font-size:18px;text-shadow:0 1px 12px rgba(4,10,24,.8)}
 .night .n-btn{position:absolute;right:max(24px,9vw);bottom:30vh;width:118px;height:118px;border-radius:50%;display:grid;place-items:center;text-align:center;padding:12px;border:1px solid rgba(233,237,241,.55);color:var(--glacier);text-decoration:none;font-size:14px;line-height:1.25;background:rgba(8,16,34,.35);transition:border-color .2s,background .2s,transform .16s var(--ease-out,ease)}
 .night .n-btn:active{transform:scale(.97)}
-@media (hover:hover) and (pointer:fine){.night .n-btn:hover{border-color:var(--gold);background:rgba(212,168,75,.12)}}
+@media (hover:hover) and (pointer:fine){.night .n-btn:hover{border-color:var(--gold);background:rgba(244,166,60,.12)}}
 html[dir="rtl"] .night .n-btn{right:auto;left:max(24px,9vw)}
 
 /* ---------- services band: pinned, slides move sideways as you scroll ---------- */
 .services{position:relative;pointer-events:auto;height:calc(var(--n,6) * 100vh)}
-.services .pin-wrap{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--ink)}
+.services .pin-wrap{position:sticky;top:0;height:100vh;overflow:hidden;background-color:#0B1626;background:var(--bg-dusk)}
 .services .track{display:flex;height:100%;will-change:transform}
 .services .slide{position:relative;flex:0 0 100vw;height:100%;overflow:hidden}
 .services .slide img{position:absolute;inset:-4% -6%;width:112%;height:108%;max-width:none;object-fit:cover;will-change:transform}
-.services .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,20,36,.88) 0%,rgba(10,20,36,.25) 55%,rgba(10,20,36,.35) 100%)}
+.services .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,22,38,.88) 0%,rgba(11,22,38,.25) 55%,rgba(11,22,38,.35) 100%)}
 .services .copy{position:absolute;z-index:1;inset-inline-start:max(24px,6vw);bottom:max(56px,12vh);width:min(820px,calc(100% - 48px));display:flex;flex-direction:column;gap:14px}
 .services .word{font-family:var(--f-display);font-weight:400;font-size:clamp(72px,13vw,200px);line-height:.85;letter-spacing:-.025em;margin:0}
 html[lang="ar"] .services .word,html[lang="hi"] .services .word{letter-spacing:0;line-height:1.15}
@@ -350,17 +393,22 @@ html[dir="rtl"] .services .bar i{transform-origin:right}
 .services.static{height:auto}.services.static .pin-wrap{position:relative;height:auto}.services.static .track{flex-direction:column;transform:none!important}
 .services.static .slide{flex:none;width:100%;height:100vh}.services.static .head,.services.static .bar{display:none}
 
-/* ---------- offices finale ---------- */
-.finale{min-height:120vh;display:flex;align-items:center;padding-block:110px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.finale .col{width:min(520px,100%)}
-.finale h2{font-size:clamp(48px,5.6vw,84px);line-height:.95}
-.offices{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column}
-.offices li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:14px 0;border-top:1px solid var(--line)}
-.offices li:last-child{border-bottom:1px solid var(--line)}
-.offices b{font-family:var(--f-display);font-weight:400;font-size:28px;line-height:1.1}
-.offices .when{font-family:"Cormorant Garamond",serif;font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums;text-align:end;color:var(--gold)}
-.offices .role{font-size:14px;color:var(--mist)}
-.offices .reach{font-size:14px;color:var(--soft);text-align:end;user-select:all;overflow-wrap:anywhere}
+/* ---------- offices finale (Requirements A, C, D) ---------- */
+.finale{width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:64px max(24px,env(safe-area-inset-right,0px)) calc(92px + env(safe-area-inset-bottom,0px)) max(24px,env(safe-area-inset-left,0px));background-color:#0B1626;background:var(--bg-glow), #0B1626;background-position:center bottom;background-repeat:no-repeat;border-top:1px solid transparent;border-image:var(--sunset-line) 1;position:relative;z-index:20;box-sizing:border-box}
+@media (max-width:640px){.finale{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+body{padding-bottom:0!important}
+.presence-wrap{max-width:1200px;width:100%;margin:0 auto;box-sizing:border-box;display:flex;flex-direction:column;gap:32px}
+.presence-head{display:flex;flex-direction:column;gap:12px;max-width:760px}
+.presence-head h2{font-size:clamp(36px,4.5vw,56px);line-height:1.05;color:var(--glacier)}
+.presence-head p.body{font-size:16px;color:var(--soft);line-height:1.6}
+.offices{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px 32px;width:100%;box-sizing:border-box}
+@media (max-width:960px){.offices{grid-template-columns:repeat(2,1fr);gap:20px 24px}}
+@media (max-width:600px){.offices{grid-template-columns:1fr;gap:16px}}
+.offices li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:baseline;box-sizing:border-box}
+.offices b{font-family:var(--f-display);font-weight:400;font-size:24px;line-height:1.2;color:var(--glacier)}
+.offices .when{font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.2;font-variant-numeric:tabular-nums;text-align:end;color:var(--gold)}
+.offices .role{font-size:13px;color:var(--mist);margin-top:2px}
+.offices .reach{font-size:13px;color:var(--soft);text-align:end;user-select:all;overflow-wrap:anywhere;margin-top:2px;line-height:1.4}
 #pins.office-focus .pin:not(.office){opacity:0;pointer-events:none}
 .route.away{opacity:0;pointer-events:none}
 .route{transition:opacity .3s}
@@ -373,18 +421,11 @@ html[dir="rtl"] .services .bar i{transform-origin:right}
 @media (max-width:900px){
   .chapter{min-height:110vh}
   .chapter:not(.hero) .col{position:relative;isolation:isolate}
-  .chapter:not(.hero) .col::before{content:"";position:absolute;inset:-56px -20px -40px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(10,20,36,0) 0,rgba(10,20,36,.88) 64px,rgba(10,20,36,.93) 100%)}
-  #window::after,html[dir="rtl"] #window::after{background:linear-gradient(0deg,rgba(10,20,36,.95) 0%,rgba(10,20,36,.72) 52%,rgba(10,20,36,.3) 80%,rgba(10,20,36,.45) 100%)}
-  .hero .label{color:var(--soft);text-shadow:0 1px 8px rgba(10,20,36,.95)}
-  /* guide docks as a slim bar at the bottom: Sasha on one side, the line beside him, never over the story */
-  .guide{inset-inline:0;bottom:0;flex-direction:row;align-items:center;gap:10px;pointer-events:auto;
-    padding:6px max(14px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));
-    background:linear-gradient(180deg,rgba(10,20,36,.9),rgba(10,20,36,.97));border-top:1px solid var(--line)}
-  .guide canvas,.guide .gimg{width:54px;height:66px}
-  .bubble{flex:1;min-width:0;max-width:none;margin:0;padding:0;background:none;box-shadow:none;color:var(--glacier);font-size:14px;line-height:1.4}
-  .bubble::after{display:none}
-  .bubble b{color:var(--gold);margin-bottom:1px}
-  footer{padding-bottom:110px}
+  .chapter:not(.hero) .col::before{content:"";position:absolute;inset:-56px -20px -40px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(11,22,38,0) 0,rgba(11,22,38,.88) 64px,rgba(11,22,38,.93) 100%)}
+  #window::after,html[dir="rtl"] #window::after{background:linear-gradient(0deg,rgba(11,22,38,.95) 0%,rgba(11,22,38,.72) 52%,rgba(11,22,38,.3) 80%,rgba(11,22,38,.45) 100%)}
+  .hero .label{color:var(--soft);text-shadow:0 1px 8px rgba(11,22,38,.95)}
+  /* keep body padded for bottom dock */
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
   /* keep the services copy and button above the docked guide bar */
   .night .n-word{top:30vh;right:0;font-size:clamp(96px,25vw,220px)}
   .night .n-moon{width:34vw;right:6vw;top:10vh}
@@ -396,9 +437,7 @@ html[dir="rtl"] .services .bar i{transform-origin:right}
   .services .copy p{font-size:16px}
   .services .cta{inset-inline-end:auto;inset-inline-start:max(24px,6vw);bottom:118px}
   .services .bar{bottom:100px}
-  .finale .col{position:relative;isolation:isolate}
-  .finale .col::before{content:"";position:absolute;inset:-56px -20px -40px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(10,20,36,0) 0,rgba(10,20,36,.88) 64px,rgba(10,20,36,.93) 100%)}
-  .finale{align-items:flex-end;padding-bottom:130px}
+
 }
 /* phones: the departures board drops the code column so names fit */
 @media (max-width:640px){.board .row{grid-template-columns:minmax(0,1fr) auto}.board .row>span.c:not(.hide-s),.board .row.head>span:nth-child(2){display:none}}
@@ -407,9 +446,9 @@ html[dir="rtl"] .services .bar i{transform-origin:right}
 /* touch: larger hit areas on the map and route strip */
 @media (pointer:coarse){.pin{padding:10px}.route button{padding:10px 0}}
 /* very large monitors: more room and slightly larger text */
-@media (min-width:1680px){body{font-size:18px}.col{width:min(540px,100%);margin-inline-start:120px}.hero .col{width:min(780px,100%)}.explore .col{width:min(880px,100%)}.guide{inset-inline-end:150px}}
+@media (min-width:1680px){body{font-size:18px}.col{width:min(540px,100%);margin-inline-start:120px}.hero .col{width:min(780px,100%)}.explore .col{width:min(880px,100%)}}
 /* ---------- integration v1 styles: notebook, journeys, partners, how, faq, footer ---------- */
-.nav-notebook{font-family:var(--f-text);font-size:13px;font-weight:500;color:var(--glacier);border:1px solid rgba(212,168,75,.35);border-radius:999px;padding:5px 12px;text-decoration:none;transition:border-color .2s,color .2s;white-space:nowrap;display:inline-flex;align-items:center}
+.nav-notebook{font-family:var(--f-text);font-size:13px;font-weight:500;color:var(--glacier);border:1px solid rgba(244,166,60,.35);border-radius:999px;padding:5px 12px;text-decoration:none;transition:border-color .2s,color .2s;white-space:nowrap;display:inline-flex;align-items:center}
 .nav-notebook:hover{border-color:var(--gold);color:var(--gold)}
 @media (max-width:720px){.nav-notebook{display:none}}
 
@@ -417,7 +456,7 @@ html[dir="rtl"] .services .bar i{transform-origin:right}
 .arr-notes:hover{opacity:1}
 
 /* Notebook */
-.notebook-section{width:100%;padding:100px 0;background:var(--ink);border-top:1px solid var(--line);position:relative;z-index:10;pointer-events:auto;box-sizing:border-box}
+.notebook-section{width:100%;padding:100px 0;background-color:#0B1626;background:var(--bg-sunrise-side), var(--bg-dusk);background-position:top right, center top;background-repeat:no-repeat;border-top:1px solid transparent;border-image:var(--sunset-line) 1;position:relative;z-index:10;pointer-events:auto;box-sizing:border-box;box-shadow:0 0 0 100vmax #0B1626;clip-path:inset(0 -100vmax)}
 .nb-wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:grid;grid-template-columns:minmax(320px,380px) 1fr;gap:64px;align-items:start}
 @media (max-width:900px){.nb-wrap{grid-template-columns:1fr;gap:48px}}
 .nb-col-book{display:flex;justify-content:center}
@@ -444,8 +483,8 @@ html[lang="hi"] .nb-hand-title,html[lang="hi"] .nb-hand-sub,html[lang="hi"] .nb-
 .nb-body{font-size:17px;color:var(--soft);max-width:58ch;line-height:1.6}
 .nb-cities{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 20px;margin-block:12px}
 @media (max-width:600px){.nb-cities{grid-template-columns:1fr}}
-.nb-city-item{display:flex;flex-direction:column;padding:10px 14px;background:rgba(17,30,51,.5);border:1px solid var(--line);border-radius:4px;text-decoration:none;transition:border-color .2s,background .2s}
-.nb-city-item:hover{border-color:var(--gold);background:rgba(212,168,75,.08)}
+.nb-city-item{display:flex;flex-direction:column;padding:10px 14px;background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:6px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);text-decoration:none;transition:border-color .2s,background .2s}
+.nb-city-item:hover{border-color:var(--gold);background:rgba(244,166,60,.12)}
 .nb-city-top{display:flex;justify-content:space-between;align-items:baseline}
 .nb-city-name{font-family:var(--f-display);font-size:20px;font-weight:500;color:var(--glacier)}
 .nb-city-arrow{color:var(--gold);font-size:14px;transition:transform .2s}
@@ -458,7 +497,7 @@ html[lang="hi"] .nb-city-hook{font-family:'Kalam',cursive;font-size:14px}
 .nb-lang-note{font-size:13px;color:var(--mist)}
 
 /* Journeys */
-.journeys-section{width:100%;padding:100px 0;border-top:1px solid var(--line);position:relative;z-index:10;background:var(--ink);pointer-events:auto;box-sizing:border-box}
+.journeys-section{width:100%;padding:100px 0;background-color:#0B1626;background:var(--bg-dusk);border-top:1px solid transparent;border-image:var(--sunset-line) 1;position:relative;z-index:10;pointer-events:auto;box-sizing:border-box;box-shadow:0 0 0 100vmax #0B1626;clip-path:inset(0 -100vmax)}
 .jny-wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
 .jny-head{margin-bottom:40px;display:flex;flex-direction:column;gap:10px;max-width:720px}
 .jny-head h2{font-size:clamp(32px,4vw,52px);line-height:1.05}
@@ -466,12 +505,12 @@ html[lang="hi"] .nb-city-hook{font-family:'Kalam',cursive;font-size:14px}
 .jny-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media (max-width:960px){.jny-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.jny-grid{grid-template-columns:1fr}}
-.jny-card{background:var(--ink-2);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease-out,ease),border-color .25s,box-shadow .25s}
-.jny-card:hover{transform:translateY(-6px);border-color:rgba(212,168,75,.4);box-shadow:0 16px 36px rgba(0,0,0,.4)}
+.jny-card{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:6px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease-out,ease),border-color .25s,box-shadow .25s}
+.jny-card:hover{transform:translateY(-6px);border-color:rgba(244,166,60,.5);box-shadow:0 16px 36px rgba(0,0,0,.4)}
 .jny-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:#06101F}
 .jny-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,0,0,1);display:block}
 .jny-card:hover .jny-media img{transform:scale(1.05)}
-.jny-badge{position:absolute;top:12px;right:12px;background:rgba(10,20,36,.85);color:var(--gold);border:1px solid rgba(212,168,75,.4);font-size:13px;font-weight:500;border-radius:999px;padding:4px 10px;backdrop-filter:blur(4px)}
+.jny-badge{position:absolute;top:12px;right:12px;background:rgba(11,22,38,.85);color:var(--gold);border:1px solid rgba(244,166,60,.4);font-size:13px;font-weight:500;border-radius:999px;padding:4px 10px;backdrop-filter:blur(4px)}
 html[dir="rtl"] .jny-badge{right:auto;left:12px}
 .jny-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
 .jny-title{font-size:22px;font-weight:500;color:var(--glacier);margin:0}
@@ -482,23 +521,23 @@ html[dir="rtl"] .jny-badge{right:auto;left:12px}
 .jny-link{font-size:13px;font-weight:500;color:var(--glacier);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color .2s}
 .jny-link:hover{color:var(--gold)}
 .jny-foot{margin-top:48px}
-.jny-foot-box{background:linear-gradient(90deg,rgba(17,30,51,.9) 0%,rgba(38,53,79,.4) 100%);border:1px solid var(--line);border-radius:6px;padding:28px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.jny-foot-box{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:6px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:28px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .jny-foot-box h3{font-size:22px;margin-bottom:4px}
 .jny-foot-box p{font-size:15px;color:var(--soft);max-width:54ch}
 
 /* Trips */
-.trips-section{width:100%;padding:100px 0;border-top:1px solid var(--line);position:relative;z-index:10;background:var(--ink);pointer-events:auto;box-sizing:border-box}
+.trips-section{width:100%;padding:100px 0;background-color:#0B1626;background:var(--bg-sunrise-side), var(--bg-dusk);background-position:top right, center top;background-repeat:no-repeat;border-top:1px solid transparent;border-image:var(--sunset-line) 1;position:relative;z-index:10;pointer-events:auto;box-sizing:border-box;box-shadow:0 0 0 100vmax #0B1626;clip-path:inset(0 -100vmax)}
 .trips-wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
 .trips-head{margin-bottom:40px;display:flex;flex-direction:column;gap:12px;max-width:720px}
 .trips-head h2{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,5vw,60px);color:var(--glacier);line-height:1.05}
 .trips-lead{font-size:18px;color:var(--soft);max-width:60ch;line-height:1.5}
 .trips-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;grid-auto-rows:120px;grid-auto-flow:dense;width:100%}
-.trips-tile{border-radius:10px;overflow:hidden;position:relative;background:var(--ink-2);width:100%}
+.trips-tile{border-radius:10px;overflow:hidden;position:relative;background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);width:100%}
 .trips-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.23,1,.32,1)}
 @media (hover:hover) and (pointer:fine){
   .trips-tile:hover img{transform:scale(1.03)}
 }
-.trips-label{position:absolute;bottom:12px;inset-inline-start:12px;padding:4px 10px;border-radius:999px;background:rgba(10,20,36,.62);color:var(--glacier);font-family:var(--f-text);font-size:13px;font-weight:500;line-height:1.4;pointer-events:none;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:2}
+.trips-label{position:absolute;bottom:12px;inset-inline-start:12px;padding:4px 10px;border-radius:999px;background:rgba(11,22,38,.62);color:var(--glacier);font-family:var(--f-text);font-size:13px;font-weight:500;line-height:1.4;pointer-events:none;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:2}
 .trips-credit{margin-top:20px;font-family:var(--f-text);font-size:13px;color:var(--mist);line-height:1.4}
 
 .trips-t1{grid-column:span 6;grid-row:span 4}
@@ -537,41 +576,41 @@ html[dir="rtl"] .jny-badge{right:auto;left:12px}
   .trips-tile.trips-t7{grid-column:span 2;grid-row:span 2;width:100%}
 }
 
-/* Partners / Two Doors */
-.partners-section{width:100%;padding:100px 0;border-top:1px solid var(--line);background:var(--ink);position:relative;z-index:10;pointer-events:auto;box-sizing:border-box}
+/* Partners / Two Doors (FIX 2) */
+.partners-section{width:100%;padding:64px 0;background-color:#0B1626!important;background:#0B1626!important;border-top:1px solid transparent;border-image:var(--sunset-line) 1;position:relative;z-index:10;pointer-events:auto;box-sizing:border-box}
 .prt-wrap{max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box}
-.prt-head{text-align:center;max-width:680px;margin:0 auto 50px;display:flex;flex-direction:column;gap:10px}
+.prt-head{text-align:center;max-width:680px;margin:0 auto 40px;display:flex;flex-direction:column;gap:10px}
 .prt-head h2{font-size:clamp(32px,4vw,52px);line-height:1.05}
 .prt-sub{font-size:18px;color:var(--soft)}
-.doors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
-@media (max-width:800px){.doors-grid{grid-template-columns:1fr}}
-.door-card{border-radius:8px;padding:40px 36px;display:flex;flex-direction:column;justify-content:space-between;min-height:480px;transition:transform .3s var(--ease-out,ease),box-shadow .3s}
+.doors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch}
+@media (max-width:899px){.doors-grid{grid-template-columns:1fr;gap:24px}}
+.door-card{border-radius:8px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;height:100%;box-sizing:border-box;overflow:visible;transition:transform .3s var(--ease-out,ease),box-shadow .3s}
 .door-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,.3)}
-.door-light{background:var(--paper);color:#0A1424}
-.door-light h3{color:#0A1424;font-size:32px;margin:12px 0 8px}
+.door-light{background:var(--paper);color:#0B1626}
+.door-light h3{color:#0B1626;font-family:var(--f-display);font-size:28px;font-weight:500;margin:0 0 16px;line-height:1.2}
 .door-light .door-desc{color:#4A5668;font-size:15px;margin-bottom:24px}
-.door-light .door-list{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:12px}
-.door-light .door-list li{position:relative;padding-inline-start:24px;font-size:15px;color:#1E293B}
-.door-light .door-list li::before{content:"✓";position:absolute;inset-inline-start:0;color:#8A6D3B;font-weight:bold}
-.door-dark{background:var(--ink-2);border:1px solid rgba(212,168,75,.4);color:var(--glacier);box-shadow:0 12px 36px rgba(0,0,0,.4)}
-.door-dark h3{color:var(--glacier);font-size:32px;margin:12px 0 8px}
+.door-light .door-list{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px}
+.door-light .door-list li{position:relative;padding-inline-start:24px;font-size:15px;line-height:1.45;color:#1E293B}
+.door-light .door-list li::before{content:"✓";position:absolute;inset-inline-start:0;color:#8A4A10;font-weight:bold}
+.door-dark{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--glacier);box-shadow:0 12px 36px rgba(0,0,0,.4)}
+.door-dark h3{color:var(--glacier);font-family:var(--f-display);font-size:28px;font-weight:500;margin:0 0 16px;line-height:1.2}
 .door-dark .door-desc{color:var(--soft);font-size:15px;margin-bottom:24px}
-.door-dark .door-list{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:12px}
-.door-dark .door-list li{position:relative;padding-inline-start:24px;font-size:15px;color:var(--glacier)}
+.door-dark .door-list{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:12px}
+.door-dark .door-list li{position:relative;padding-inline-start:24px;font-size:15px;line-height:1.45;color:var(--glacier)}
 .door-dark .door-list li::before{content:"✓";position:absolute;inset-inline-start:0;color:var(--gold);font-weight:bold}
-.door-badge{display:inline-block;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:999px;background:rgba(10,20,36,.08);color:#64748B;align-self:flex-start}
-.door-badge.gold{background:rgba(212,168,75,.15);color:var(--gold);border:1px solid rgba(212,168,75,.3)}
-.door-btn{align-self:flex-start}
+.door-badge{display:inline-block;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:999px;background:rgba(11,22,38,.08);color:#64748B;align-self:flex-start}
+.door-badge.gold{background:rgba(244,166,60,.15);color:var(--gold);border:1px solid rgba(244,166,60,.3)}
+.door-btn{align-self:flex-start;min-height:44px}
 .btn.outline{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:12px 24px;border-radius:4px;text-decoration:none;font-size:15px;font-weight:500;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,color .2s}
 .btn.outline:hover{background:var(--gold);color:var(--ink)}
 
 /* How it works */
-.how-section{width:100%;padding:100px 0;border-top:1px solid var(--line);background:var(--ink);position:relative;z-index:10;pointer-events:auto;box-sizing:border-box}
+.how-section{width:100%;padding:64px 0;background-color:#0B1626;background:#0B1626;border-top:1px solid transparent;border-image:var(--sunset-line) 1;position:relative;z-index:10;pointer-events:auto;box-sizing:border-box;box-shadow:0 0 0 100vmax #0B1626;clip-path:inset(0 -100vmax)}
 .how-wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
-.how-head{text-align:center;margin-bottom:60px}
+.how-head{text-align:center;margin-bottom:48px}
 .how-head h2{font-size:clamp(32px,4vw,52px)}
 .how-lead{font-size:18px;color:var(--soft);margin-top:10px}
-.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
 @media (max-width:900px){.how-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:540px){.how-grid{grid-template-columns:1fr}}
 .how-step{position:relative;display:flex;flex-direction:column;gap:8px}
@@ -581,13 +620,13 @@ html[dir="rtl"] .jny-badge{right:auto;left:12px}
 .how-step p{font-size:14px;color:var(--soft);line-height:1.5}
 
 /* FAQ */
-.faq-section{width:100%;padding:100px 0;border-top:1px solid var(--line);background:var(--ink);position:relative;z-index:10;pointer-events:auto;box-sizing:border-box}
-.faq-wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:grid;grid-template-columns:4fr 8fr;gap:60px}
+.faq-section{width:100%;padding:64px 0;background-color:#0B1626;background:radial-gradient(120% 70% at 50% 110%, rgba(255,129,86,.066) 0%, rgba(245,138,160,.034) 38%, rgba(11,22,38,0) 70%), #0B1626;border-top:1px solid transparent;border-image:var(--sunset-line) 1;position:relative;z-index:10;pointer-events:auto;box-sizing:border-box;box-shadow:0 0 0 100vmax #0B1626;clip-path:inset(0 -100vmax)}
+.faq-wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:grid;grid-template-columns:4fr 8fr;gap:48px}
 @media (max-width:900px){.faq-wrap{grid-template-columns:1fr;gap:40px}}
 .faq-side{display:flex;flex-direction:column;gap:14px}
 .faq-side h2{font-size:clamp(32px,3.8vw,48px);line-height:1.05}
 .faq-body{font-size:16px;color:var(--soft);line-height:1.6}
-.faq-ask-card{margin-top:24px;padding:24px;background:var(--ink-2);border:1px solid var(--line);border-radius:6px;display:flex;flex-direction:column;gap:8px}
+.faq-ask-card{margin-top:24px;padding:24px;background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:6px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;flex-direction:column;gap:8px}
 .faq-ask-card h3{font-size:18px;color:var(--glacier)}
 .faq-ask-card p{font-size:14px;color:var(--mist);margin-bottom:8px}
 .faq-main{display:flex;flex-direction:column}
@@ -600,26 +639,19 @@ html[dir="rtl"] .jny-badge{right:auto;left:12px}
 .faq-item[open] summary::after{content:"–"}
 .faq-ans{padding-bottom:24px;font-size:15px;color:var(--soft);line-height:1.65;max-width:65ch}
 
-/* Footer v3 adapted */
-footer{width:100%;padding:80px 0 110px;background:var(--ink);border-top:1px solid var(--line);position:relative;z-index:10;pointer-events:auto;box-sizing:border-box}
-#notebook, #journeys, #trips, #partners, #how, #faq, footer{position:relative!important;z-index:10!important;background:var(--ink)!important;background-color:var(--ink)!important;width:100%!important;box-sizing:border-box!important;pointer-events:auto!important}
-.foot-cols{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:60px}
-@media (max-width:900px){.foot-cols{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:500px){.foot-cols{grid-template-columns:1fr}}
-.foot-col h3{font-family:var(--f-display);font-size:20px;font-weight:500;color:var(--glacier);margin-bottom:14px}
-.foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-.foot-col a{font-size:14px;color:var(--mist);text-decoration:none;transition:color .2s}
-.foot-col a:hover{color:var(--gold)}
-.foot-brand-wrap{max-width:1200px;margin:0 auto;padding:40px 24px 0;box-sizing:border-box;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
-.foot-brand-left{display:flex;align-items:center;gap:16px}
-.foot-brand-left .rotw-logo{height:38px}
-.foot-tag{font-family:"Jost",var(--f-text);font-style:italic;font-weight:500;color:var(--mist);font-size:14px;margin:0}
-.foot-copy{font-size:13px;color:var(--mist);margin:0}
+/* Proof / Reviews empty state */
+.proof-section{width:100%;padding:64px 0;background-color:#0B1626;background:#0B1626;border-top:1px solid transparent;border-image:var(--sunset-line) 1;position:relative;z-index:10;pointer-events:auto;box-sizing:border-box;box-shadow:0 0 0 100vmax #0B1626;clip-path:inset(0 -100vmax)}
+.proof-wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:flex;justify-content:center}
+.proof-card{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:6px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:48px 36px;text-align:center;max-width:560px;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px}
+.proof-card h2{font-size:clamp(32px,3.8vw,44px);color:var(--glacier);line-height:1.1}
+.proof-card p{font-size:16px;color:var(--soft);line-height:1.6}
+.proof-card .btn{margin-top:8px}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 /* new sections: extend their navy past any wrapper padding so the fixed globe never shows at the screen edges */
-#notebook,#journeys,#trips,#partners,#how,#faq,footer{box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}
+#notebook,#journeys,#trips,#how,#faq,#proof{box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}
 </style>
+<link rel="stylesheet" href="./shell/shell.css">
 
 <div id="intro" hidden aria-hidden="true"><div class="intro-inner"><svg class="rotw-logo intro-logo" viewBox="106 70 346 110"><g class="lg-l lg-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g><g class="lg-l lg-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g><g class="lg-needle"><g class=""><path fill="var(--lg-main)" d="M224.1 133.9L224.1 133.9L235.3 120.7L229.5 137.0L229.5 137.0L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-red)" d="M217.8 151.0L224.0 134.0L224.1 133.9L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-hole)" d="M226.6 133.8C227.7 133.8 228.6 134.7 228.6 135.8C228.6 136.9 227.7 137.9 226.6 137.9C225.4 137.9 224.5 136.9 224.5 135.8C224.5 134.7 225.4 133.8 226.6 133.8"/></g></g><g class="lg-l lg-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g><g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g><g class="lg-l lg-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g><g class="lg-l lg-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g><g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g><g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g></svg><p class="intro-tag" lang="ru">Дороги мира</p></div></div>
 <div id="stage"><canvas id="globe" aria-label="Globe of Russia showing the route, rivers, cities and the plane that follows the story"></canvas></div>
@@ -637,24 +669,126 @@ footer{width:100%;padding:80px 0 110px;background:var(--ink);border-top:1px soli
 </div>
 
 <a class="skip" href="#c1" data-i18n="skip">Skip to the journey</a>
-<header class="top">
-  <a class="logo-link" href="#c0" aria-label="ROTW Travels"><svg class="rotw-logo logo" viewBox="106 70 346 110" aria-hidden="true"><g class="lg-l lg-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g><g class="lg-l lg-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g><g class="lg-needle"><g class=""><path fill="var(--lg-main)" d="M224.1 133.9L224.1 133.9L235.3 120.7L229.5 137.0L229.5 137.0L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-red)" d="M217.8 151.0L224.0 134.0L224.1 133.9L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-hole)" d="M226.6 133.8C227.7 133.8 228.6 134.7 228.6 135.8C228.6 136.9 227.7 137.9 226.6 137.9C225.4 137.9 224.5 136.9 224.5 135.8C224.5 134.7 225.4 133.8 226.6 133.8"/></g></g><g class="lg-l lg-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g><g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g><g class="lg-l lg-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g><g class="lg-l lg-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g><g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g><g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g></svg></a>
-  <nav aria-label="Main"><ul>
-    <li><a href="#c1" data-i18n="nav_dest"></a></li>
-    <li><a href="#journeys" data-i18n="nav_journeys"></a></li>
-    <li><a href="#services" data-i18n="nav_exp"></a></li>
-    <li><a href="#partners" data-i18n="nav_partners"></a></li>
-  </ul></nav>
-  <div class="right">
-    <a class="nav-notebook" href="#notebook" data-i18n="navNotebook"></a>
-    <label class="lang"><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Language</span>
-      <select id="lang" aria-label="Language">
-        <option value="en">English</option><option value="ru">Русский</option><option value="ar">العربية</option><option value="hi">हिन्दी</option>
-      </select>
-    </label>
-    <a class="btn primary" href="plan.html" data-i18n="cta_plan"></a>
+<!-- SHELL:HEADER -->
+<a href="#main" class="shell-skip">Skip to main content</a>
+
+<header class="shell-header-wrapper" role="banner">
+  <div class="compass-capsule" id="compass-capsule">
+    <!-- Company Logo (FIX 1) -->
+    <a href="index.html" class="capsule-brand" aria-label="ROTW Travels">
+      <img class="capsule-logo" src="./assets/site/logo-white.png" alt="ROTW Travels" width="80" height="32">
+    </a>
+
+    <!-- Category Nav Links -->
+    <nav class="capsule-nav" aria-label="Main Navigation">
+      <a href="notes/index.html" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-map-pin"/></svg>
+      <span>Destinations</span>
+    </a>
+      <a href="index.html#journeys" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-route"/></svg>
+      <span>Journeys</span>
+    </a>
+      <a href="index.html#trips" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-compass"/></svg>
+      <span>Experiences</span>
+    </a>
+      <a href="index.html#partners" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
+      <span>For agents</span>
+    </a>
+      <a href="notes/index.html" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-notebook"/></svg>
+      <span>Sasha's notebook</span>
+    </a>
+    </nav>
+
+    <!-- Right Controls: Language Endonym + Gold Pill CTA -->
+    <div class="capsule-actions">
+      <div class="capsule-lang-wrap">
+        <svg class="shell-icon capsule-lang-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-globe"/></svg>
+        <select class="capsule-lang-select" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+        <svg class="shell-icon capsule-lang-arrow" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
+      </div>
+
+      <a href="plan.html" class="btn-pill-plan">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+        <span>Plan a trip</span>
+      </a>
+
+      <button class="btn-capsule-menu" id="btn-capsule-menu" aria-label="Open menu" aria-expanded="false" aria-controls="shell-menu-drawer">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-menu"/></svg>
+      </button>
+    </div>
   </div>
 </header>
+
+<!-- Full-screen Mobile Menu Drawer (<1024px) -->
+<div class="shell-menu-drawer" id="shell-menu-drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Navigation Menu">
+  <div class="drawer-top-row">
+    <a href="index.html" class="capsule-brand" aria-label="ROTW Travels">
+      <img class="capsule-logo" src="./assets/site/logo-white.png" alt="ROTW Travels" width="70" height="28">
+    </a>
+    <button class="drawer-close-btn" id="btn-drawer-close" aria-label="Close menu">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-close"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer-scroll-area">
+    <ul class="drawer-nav-list">
+      <li>
+      <a href="notes/index.html" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-map-pin"/></svg>
+        <span>Destinations</span>
+      </a>
+    </li>
+      <li>
+      <a href="index.html#journeys" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-route"/></svg>
+        <span>Journeys</span>
+      </a>
+    </li>
+      <li>
+      <a href="index.html#trips" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-compass"/></svg>
+        <span>Experiences</span>
+      </a>
+    </li>
+      <li>
+      <a href="index.html#partners" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
+        <span>For agents</span>
+      </a>
+    </li>
+      <li>
+      <a href="notes/index.html" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-notebook"/></svg>
+        <span>Sasha's notebook</span>
+      </a>
+    </li>
+    </ul>
+
+    <div class="drawer-lang-chips">
+      <button class="drawer-lang-chip active" data-shell-lang="en">English</button>
+        <button class="drawer-lang-chip" data-shell-lang="ru">Русский</button>
+        <button class="drawer-lang-chip" data-shell-lang="ar">العربية</button>
+        <button class="drawer-lang-chip" data-shell-lang="hi">हिन्दी</button>
+    </div>
+  </div>
+
+  <div class="drawer-cta-wrap">
+    <a href="plan.html" class="btn-pill-plan drawer-cta-btn">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+      <span>Plan a trip</span>
+    </a>
+  </div>
+</div>
+<!-- /SHELL:HEADER -->
 
 <div class="route" id="route" aria-label="Journey progress"><div class="track"></div><div class="fill" id="route-fill"></div>
   <svg class="craft" id="route-craft" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c.8 0 1.3.9 1.3 2v5.3l7.7 4.4v2l-7.7-2.3v4.8l2.2 1.6V21L12 20l-3.5 1v-1.2l2.2-1.6v-4.8L3 15.7v-2l7.7-4.4V4c0-1.1.5-2 1.3-2z" transform="rotate(180 12 12)"/></svg>
@@ -717,7 +851,7 @@ footer{width:100%;padding:80px 0 110px;background:var(--ink);border-top:1px soli
               <p class="nb-hand-sub" data-i18n="nb_cover_sub">Field notes from 10 stops across Russia</p>
             </div>
             <div class="nb-seal" aria-hidden="true">
-              <svg viewBox="0 0 40 40" width="28" height="28"><circle cx="20" cy="20" r="18" fill="none" stroke="#D4A84B" stroke-width="1.5"/><polygon points="20,6 24,18 36,20 24,22 20,34 16,22 4,20 16,18" fill="#D4A84B"/></svg>
+              <svg viewBox="0 0 40 40" width="28" height="28"><circle cx="20" cy="20" r="18" fill="none" stroke="#F4A63C" stroke-width="1.5"/><polygon points="20,6 24,18 36,20 24,22 20,34 16,22 4,20 16,18" fill="#F4A63C"/></svg>
             </div>
           </div>
         </a>
@@ -936,72 +1070,349 @@ footer{width:100%;padding:80px 0 110px;background:var(--ink);border-top:1px soli
     </div>
   </section>
 
+  <section class="proof-section" id="proof" aria-labelledby="proof-title">
+    <div class="proof-wrap">
+      <div class="proof-card">
+        <h2 id="proof-title" data-i18n="reviewsTitle">Traveller reviews</h2>
+        <p class="proof-empty" data-i18n="reviewsEmpty">Reviews from ROTW travellers will appear here.</p>
+        <a class="btn primary" href="mailto:inbound@rotwtravels.com" data-i18n="reviewsCta">Speak with our Moscow team</a>
+      </div>
+    </div>
+  </section>
+
   <section class="finale" id="presence" aria-labelledby="off-h">
-    <div class="col">
-      <p class="label" data-i18n="off_kicker" style="color:var(--gold)"></p>
-      <h2 id="off-h" data-i18n="off_title"></h2>
-      <p class="body" data-i18n="off_body"></p>
+    <div class="presence-wrap">
+      <div class="presence-head">
+        <p class="label" data-i18n="off_kicker" style="color:var(--gold)"></p>
+        <h2 id="off-h" data-i18n="off_title"></h2>
+        <p class="body" data-i18n="off_body"></p>
+      </div>
       <ul class="offices" id="office-list"></ul>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="foot-cols">
-    <div class="foot-col">
-      <h3 data-i18n="foot_dest">Destinations</h3>
-      <ul>
-        <li><a href="notes/moscow.html" data-city="moscow"></a></li>
-        <li><a href="notes/spb.html" data-city="spb"></a></li>
-        <li><a href="notes/kazan.html" data-city="kazan"></a></li>
-        <li><a href="notes/baikal.html" data-city="baikal"></a></li>
-        <li><a href="notes/vladivostok.html" data-city="vladivostok"></a></li>
-        <li><a href="notes/sochi.html" data-city="sochi"></a></li>
-        <li><a href="notes/murmansk.html" data-city="murmansk"></a></li>
-        <li><a href="notes/kamchatka.html" data-city="kamchatka"></a></li>
-      </ul>
+<!-- SHELL:FOOTER -->
+<footer class="rotw-shell-footer" role="contentinfo">
+  <!-- Collapsed Persistent Dock Console -->
+  <aside class="rotw-dock" id="rotw-dock" aria-label="Sasha's Travel Console">
+    <div class="dock-sasha-block" id="bubble">
+      <div class="dock-sasha-avatar">
+        <img src="./assets/sasha.webp" alt="Sasha" width="40" height="40" loading="lazy">
+      </div>
+      <b id="guide-name" style="display:none;">Sasha</b>
+      <span class="dock-speech" id="guide-text">Privet! I’m Sasha, your guide across Russia.</span>
     </div>
-    <div class="foot-col">
-      <h3 data-i18n="foot_journeys">Journeys</h3>
-      <ul>
-        <li><a href="#journeys">The two capitals</a></li>
-        <li><a href="#journeys">Moscow and the Golden Ring</a></li>
-        <li><a href="#journeys">Trans-Siberian, end to end</a></li>
-        <li><a href="#journeys">Baikal on clear ice</a></li>
-        <li><a href="#journeys">Kazan and the Volga</a></li>
-        <li><a href="#journeys">Northern lights</a></li>
-      </ul>
+
+    <div class="dock-actions">
+      <button class="btn-dock-dir" id="btn-dock-directory" aria-expanded="false" aria-controls="rotw-directory-tray">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-menu"/></svg>
+        <span class="label-text">Full directory</span>
+      </button>
+
+      <a href="plan.html" class="btn-dock-plan">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+        <span class="label-text">Plan a trip</span>
+      </a>
     </div>
-    <div class="foot-col">
-      <h3 data-i18n="foot_services">Services</h3>
-      <ul>
-        <li><a href="plan.html">Russian E-Visa & Invitation</a></li>
-        <li><a href="plan.html">Arrivals Meet & Assist</a></li>
-        <li><a href="plan.html">Airport & Intercity Transfers</a></li>
-        <li><a href="plan.html">Boutique & Luxury Hotels</a></li>
-        <li><a href="plan.html#agent">Groups & Corporate MICE</a></li>
-        <li><a href="plan.html#agent">Confidential B2B Net Rates</a></li>
-      </ul>
+  </aside>
+
+  <!-- Slide-Up Full Directory Disclosure Backdrop -->
+  <div class="rotw-tray-backdrop" id="rotw-tray-backdrop" aria-hidden="true"></div>
+
+  <!-- Slide-Up Full Directory Disclosure Tray -->
+  <div class="rotw-directory-tray" id="rotw-directory-tray" role="region" aria-label="Directory &amp; Operations" hidden="until-found">
+    <!-- Tray Header -->
+    <div class="tray-header">
+      <div class="tray-title-block">
+        <h3 id="rotw-directory-heading">Directory &amp; Operations</h3>
+        <p>Official Inbound Tour Operator · Moscow</p>
+      </div>
+      <button class="tray-close-btn" id="btn-tray-close" aria-label="Close directory">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-close"/></svg>
+      </button>
     </div>
-    <div class="foot-col">
-      <h3 data-i18n="foot_contact">Contact & Offices</h3>
-      <ul>
-        <li><span style="color:var(--glacier)">Moscow:</span> +7 930 945 4007</li>
-        <li><span style="color:var(--glacier)">Dubai:</span> +971 4 338 4075</li>
-        <li><span style="color:var(--glacier)">Mumbai:</span> +91 98218 69339</li>
-        <li><a href="mailto:inbound@rotwtravels.com">inbound@rotwtravels.com</a></li>
-        <li><span style="color:var(--gold);font-size:13px" data-i18n="foot_ops">Operations Desk 24/7</span></li>
-      </ul>
+
+    <!-- Tray Scrollable Content -->
+    <div class="tray-scroll-body">
+      <!-- 1. Sasha's Note Slip -->
+      <article class="sasha-note-card">
+        <div class="note-tape note-tape-left" aria-hidden="true"></div>
+        <div class="note-tape note-tape-right" aria-hidden="true"></div>
+        <p class="sasha-handwriting-p">
+          “Questions before you pack? Write to Sasha and the Moscow team.”
+          <span class="sasha-signature-span">— Sasha</span>
+        </p>
+        <div class="sasha-note-actions">
+          <a href="plan.html" class="btn-note-plan">
+            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+            <span>Plan a trip</span>
+          </a>
+          <a href="mailto:inbound@rotwtravels.com" class="btn-note-mail">
+            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-mail"/></svg>
+            <span>Write to the Moscow team</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- 2. Two Doors Block -->
+      <div class="tray-doors-block">
+        <!-- Door 1: Travellers -->
+        <div class="tray-door-card tray-door-light">
+          <div>
+            <h4>Planning a trip to Russia?</h4>
+            <ul class="tray-door-list">
+              <li>Private and small-group tours</li>
+              <li>Visa support and invitation letters</li>
+              <li>Airport meet and assist</li>
+              <li>Transfers and cars with a driver</li>
+              <li>Hotels, rail and domestic flights</li>
+              <li>Ballet, opera and event tickets</li>
+            </ul>
+          </div>
+          <a href="plan.html" class="btn-pill-plan tray-door-btn">
+            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+            <span>Plan a trip</span>
+          </a>
+        </div>
+
+        <!-- Door 2: Agents & Tour Operators -->
+        <div class="tray-door-card tray-door-dark">
+          <div>
+            <h4>Travel agent or operator?</h4>
+            <ul class="tray-door-list">
+              <li>Net rates for FIT and groups</li>
+              <li>MICE, incentives and conferences</li>
+              <li>Guides in English, Hindi, Arabic and more</li>
+              <li>An operations desk in Moscow</li>
+              <li>Outbound to Dubai, Oman, India and Hong Kong</li>
+            </ul>
+          </div>
+          <a href="plan.html#agent" class="btn-pill-plan tray-door-btn" style="background:transparent;border:1px solid var(--shell-gold);color:var(--shell-gold);">
+            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
+            <span>Request net rates</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Directory as Luggage Tags -->
+      <div class="tray-tags-container">
+        <!-- Desktop 3-Column Tags -->
+        <div class="desktop-tags-grid">
+          <!-- Tag 1: Places & Expeditions -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 01 · ROUTE &amp; STOPS</div>
+              <h4>Places &amp; Expeditions</h4>
+            </div>
+            <div class="tag-body">
+              <ul class="tag-dest-grid">
+                <li><a href="notes/moscow.html">Moscow</a></li>
+                <li><a href="notes/spb.html">St Petersburg</a></li>
+                <li><a href="notes/suzdal.html">The Golden Ring</a></li>
+                <li><a href="notes/kazan.html">Kazan</a></li>
+                <li><a href="notes/sochi.html">Sochi</a></li>
+                <li><a href="notes/kaliningrad.html">Kaliningrad</a></li>
+                <li><a href="notes/murmansk.html">Murmansk</a></li>
+                <li><a href="notes/baikal.html">Lake Baikal</a></li>
+                <li><a href="notes/vladivostok.html">Vladivostok</a></li>
+                <li><a href="notes/kamchatka.html">Kamchatka</a></li>
+              </ul>
+              <div class="tag-section-subhead">Journeys</div>
+              <ul class="tag-sublinks">
+                <li><a href="index.html#journeys">The two capitals (7 days)</a></li>
+                <li><a href="index.html#journeys">Moscow and the Golden Ring (5 days)</a></li>
+                <li><a href="index.html#journeys">Trans-Siberian, end to end (15 days)</a></li>
+                <li><a href="index.html#journeys">Baikal on clear ice (7 days)</a></li>
+                <li><a href="index.html#journeys">Kazan and the Volga (4 days)</a></li>
+                <li><a href="index.html#journeys">Northern lights (4 days)</a></li>
+              </ul>
+              <div class="tag-section-subhead">Contact</div>
+              <ul class="tag-sublinks">
+                <li><a href="reviews.html">Traveller reviews</a></li>
+                <li><a href="notes/index.html">Sasha's notebook</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Tag 2: Agents & Services -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 02 · TRADE &amp; CONCIERGE</div>
+              <h4>Agents &amp; Services</h4>
+            </div>
+            <div class="tag-body">
+              <ul class="tag-services-list">
+                <li>Confidential B2B Net Rates for FIT &amp; Groups</li>
+                <li>Russian E-Visa &amp; Tourist Invitation Letters</li>
+                <li>Airport &amp; Station Meet &amp; Assist with Chauffeur</li>
+                <li>Boutique Hotels &amp; Luxury Rail Accommodations</li>
+                <li>MICE &amp; Corporate Incentives Planning</li>
+              </ul>
+              <a href="plan.html#agent" class="tag-cta-btn">
+                <span>Request net rates</span>
+                <svg class="shell-icon shell-icon-flip" aria-hidden="true"><use href="./assets/icons.svg#icon-arrow-right"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tag 3: Moscow HQ & Clocks -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 03 · HEADQUARTERS</div>
+              <h4>Moscow HQ &amp; Clocks</h4>
+            </div>
+            <div class="tag-body">
+              <div class="tag-hq-address">
+                <strong>ROTW Travels</strong><br>
+                106 Prospekt Mira, Moscow 129626
+              </div>
+              <div class="tag-contact-lines">
+                <div>Moscow: <a href="tel:+79309454007"><span dir="ltr">+7 930 945 4007</span></a></div>
+                <div>Dubai: <a href="tel:+97143384075"><span dir="ltr">+971 4 338 4075</span></a></div>
+                <div>Mumbai: <a href="tel:+919821869339"><span dir="ltr">+91 98218 69339</span></a></div>
+                <div>Inbound: <a href="mailto:inbound@rotwtravels.com"><span dir="ltr">inbound@rotwtravels.com</span></a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Mobile Accordions (<860px) -->
+        <div class="mobile-tag-accordion">
+          <details class="accordion-tag" open>
+            <summary>
+              <span>Tag 01 · Places &amp; Expeditions</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <ul class="tag-dest-grid">
+                <li><a href="notes/moscow.html">Moscow</a></li>
+                <li><a href="notes/spb.html">St Petersburg</a></li>
+                <li><a href="notes/suzdal.html">The Golden Ring</a></li>
+                <li><a href="notes/kazan.html">Kazan</a></li>
+                <li><a href="notes/sochi.html">Sochi</a></li>
+                <li><a href="notes/kaliningrad.html">Kaliningrad</a></li>
+                <li><a href="notes/murmansk.html">Murmansk</a></li>
+                <li><a href="notes/baikal.html">Lake Baikal</a></li>
+                <li><a href="notes/vladivostok.html">Vladivostok</a></li>
+                <li><a href="notes/kamchatka.html">Kamchatka</a></li>
+              </ul>
+              <div class="tag-section-subhead" style="margin-top:12px;">Journeys</div>
+              <ul class="tag-sublinks">
+                <li><a href="index.html#journeys">The two capitals (7 days)</a></li>
+                <li><a href="index.html#journeys">Moscow and the Golden Ring (5 days)</a></li>
+                <li><a href="index.html#journeys">Trans-Siberian, end to end (15 days)</a></li>
+                <li><a href="index.html#journeys">Baikal on clear ice (7 days)</a></li>
+                <li><a href="index.html#journeys">Kazan and the Volga (4 days)</a></li>
+                <li><a href="index.html#journeys">Northern lights (4 days)</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="accordion-tag">
+            <summary>
+              <span>Tag 02 · Agents &amp; Services</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <ul class="tag-services-list">
+                <li>Confidential B2B Net Rates for FIT &amp; Groups</li>
+                <li>Russian E-Visa &amp; Tourist Invitation Letters</li>
+                <li>Airport &amp; Station Meet &amp; Assist with Chauffeur</li>
+                <li>Boutique Hotels &amp; Luxury Rail Accommodations</li>
+                <li>MICE &amp; Corporate Incentives Planning</li>
+              </ul>
+              <a href="plan.html#agent" class="tag-cta-btn" style="margin-top:14px;">
+                <span>Request net rates</span>
+                <svg class="shell-icon shell-icon-flip" aria-hidden="true"><use href="./assets/icons.svg#icon-arrow-right"/></svg>
+              </a>
+            </div>
+          </details>
+
+          <details class="accordion-tag">
+            <summary>
+              <span>Tag 03 · Moscow HQ &amp; Clocks</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <div class="tag-hq-address" style="border:0;padding-bottom:6px;">
+                <strong>ROTW Travels</strong><br>
+                106 Prospekt Mira, Moscow 129626
+              </div>
+              <div class="tag-contact-lines">
+                <div>Moscow: <a href="tel:+79309454007"><span dir="ltr">+7 930 945 4007</span></a></div>
+                <div>Dubai: <a href="tel:+97143384075"><span dir="ltr">+971 4 338 4075</span></a></div>
+                <div>Mumbai: <a href="tel:+919821869339"><span dir="ltr">+91 98218 69339</span></a></div>
+                <div>Email: <a href="mailto:inbound@rotwtravels.com"><span dir="ltr">inbound@rotwtravels.com</span></a></div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- 4. Five Live Clocks -->
+      <section class="tray-clocks-section" aria-label="Bureau time zones">
+        <div class="tray-clocks-head">Bureau Local Times</div>
+        <div class="tray-clocks-row">
+          <div class="tray-clock-dial">
+          <span class="dial-city">Moscow</span>
+          <span class="dial-time" data-clock="moscow"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Dubai</span>
+          <span class="dial-time" data-clock="dubai"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Mumbai</span>
+          <span class="dial-time" data-clock="mumbai"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Muscat</span>
+          <span class="dial-time" data-clock="muscat"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Hong Kong</span>
+          <span class="dial-time" data-clock="hongkong"><span dir="ltr">--:--</span></span>
+        </div>
+        </div>
+      </section>
+
+      <!-- 5. Languages Section -->
+      <div class="tray-lang-section" role="group" aria-label="Language options">
+        <button class="tray-lang-btn active" data-shell-lang="en">English</button>
+      <button class="tray-lang-btn" data-shell-lang="ru">Русский</button>
+      <button class="tray-lang-btn" data-shell-lang="ar">العربية</button>
+      <button class="tray-lang-btn" data-shell-lang="hi">हिन्दी</button>
+      </div>
+
+      <!-- 6. Legal Row with Dashed Slots -->
+      <div class="tray-legal-section">
+        <div class="legal-slots-grid">
+          <div class="legal-slot">Tour operator registry no. · ROTW to supply</div>
+          <div class="legal-slot">Financial guarantee · ROTW to supply</div>
+          <div class="legal-slot">Memberships · ROTW to supply</div>
+        </div>
+        <div class="legal-bottom-row">
+          <span>© 2026 ROTW Travels · 106 Prospekt Mira, Moscow 129626</span>
+          <span class="legal-tagline" lang="ru">Дороги мира</span>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="foot-brand-wrap">
-    <div class="foot-brand-left">
-      <svg class="rotw-logo" viewBox="106 70 346 110" role="img" aria-label="ROTW Travels"><g class="lg-l lg-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g><g class="lg-l lg-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g><g class="lg-needle"><g class=""><path fill="var(--lg-main)" d="M224.1 133.9L224.1 133.9L235.3 120.7L229.5 137.0L229.5 137.0L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-red)" d="M217.8 151.0L224.0 134.0L224.1 133.9L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-hole)" d="M226.6 133.8C227.7 133.8 228.6 134.7 228.6 135.8C228.6 136.9 227.7 137.9 226.6 137.9C225.4 137.9 224.5 136.9 224.5 135.8C224.5 134.7 225.4 133.8 226.6 133.8"/></g></g><g class="lg-l lg-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g><g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g><g class="lg-l lg-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g><g class="lg-l lg-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g><g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g><g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g></svg>
-      <p class="foot-tag" lang="ru" data-i18n="foot_tagline">Дороги мира</p>
-    </div>
-    <p class="foot-copy" data-i18n="foot_line">© 2026 ROTW Travels, 106 Prospekt Mira, Moscow 129626</p>
   </div>
 </footer>
+<!-- /SHELL:FOOTER -->
 <div id="arrive" hidden aria-hidden="true"><video muted playsinline></video><div class="arr-cap"><span class="label" data-i18n="arr_label"></span><h2 id="arr-city"></h2><span class="arr-time" id="arr-time"></span><a class="arr-notes" id="arr-notes"></a></div></div>
 
 <aside class="postcard-pop" id="postcard" hidden aria-live="polite">
@@ -1011,12 +1422,16 @@ footer{width:100%;padding:80px 0 110px;background:var(--ink);border-top:1px soli
   <button class="btn primary pc-cta" id="pc-cta"></button>
 </aside>
 
-<div class="guide" id="guide" aria-live="polite">
-  <canvas id="gcanvas" aria-hidden="true"></canvas>
-  <img id="gimg" class="gimg" src="assets/guide-stand.webp" alt="" hidden>
-  <video id="gwalk" src="assets/guide-walk.mp4" muted loop playsinline preload="auto" hidden></video>
-  <video id="gwave" src="assets/guide-wave.mp4" muted playsinline preload="auto" hidden></video>
-  <div class="bubble" id="bubble"><b id="guide-name"></b><span id="guide-text"></span></div>
+<div class="sasha-walker" id="sasha-walker" aria-hidden="true">
+  <div class="sasha-walker-bubble" id="sasha-walker-bubble">
+    <span class="bubble-text" id="sasha-bubble-text"></span>
+  </div>
+  <div class="sasha-figure-wrap" id="sasha-figure-wrap">
+    <canvas id="gcanvas" aria-hidden="true"></canvas>
+    <img id="gimg" class="gimg" src="assets/guide-stand.webp" alt="" hidden>
+    <video id="gwalk" src="assets/guide-walk.mp4" muted loop playsinline preload="auto" hidden></video>
+    <video id="gwave" src="assets/guide-wave.mp4" muted playsinline preload="auto" hidden></video>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -1034,31 +1449,42 @@ const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 
 /* ================= DATA ================= */
 const PLACES={
+  del:{lat:28.56,lon:77.10,code:'DEL',tz:'Asia/Kolkata'},
   dubai:{lat:25.2532,lon:55.3657,code:'DXB',office:true,tz:'Asia/Dubai'},
-  moscow:{lat:55.7558,lon:37.6173,code:'SVO',tz:'Europe/Moscow'},
-  spb:{lat:59.9343,lon:30.3351,code:'LED',tz:'Europe/Moscow'},
-  kazan:{lat:55.7963,lon:49.1088,code:'KZN',tz:'Europe/Moscow'},
-  baikal:{lat:52.287,lon:104.305,code:'IKT',tz:'Asia/Irkutsk'},
-  vladivostok:{lat:43.1155,lon:131.8855,code:'VVO',tz:'Asia/Vladivostok'},
-  sochi:{lat:43.6028,lon:39.7342,code:'AER',tz:'Europe/Moscow'},
+  moscow:{lat:55.97,lon:37.41,code:'SVO',tz:'Europe/Moscow'},
+  spb:{lat:59.80,lon:30.27,code:'LED',tz:'Europe/Moscow'},
+  sochi:{lat:43.45,lon:39.96,code:'AER',tz:'Europe/Moscow'},
+  murmansk:{lat:68.78,lon:32.75,code:'MMK',tz:'Europe/Moscow'},
+  kazan:{lat:55.61,lon:49.28,code:'KZN',tz:'Europe/Moscow'},
+  baikal:{lat:52.27,lon:104.39,code:'IKT',tz:'Asia/Irkutsk'},
+  kamchatka:{lat:53.17,lon:158.45,code:'PKC',tz:'Asia/Kamchatka'},
+  vladivostok:{lat:43.40,lon:132.15,code:'VVO',tz:'Asia/Vladivostok'},
   kaliningrad:{lat:54.7104,lon:20.4522,code:'KGD',tz:'Europe/Kaliningrad'},
   suzdal:{lat:56.4196,lon:40.4497,code:'—',tz:'Europe/Moscow'},
   mumbai:{lat:19.076,lon:72.8777,code:'BOM',office:true,tz:'Asia/Kolkata'},
   muscat:{lat:23.588,lon:58.3829,code:'MCT',office:true,tz:'Asia/Muscat'},
-  hongkong:{lat:22.3193,lon:114.1694,code:'HKG',office:true,tz:'Asia/Hong_Kong'},
-  murmansk:{lat:68.9585,lon:33.0827,code:'MMK',tz:'Europe/Moscow'},
-  kamchatka:{lat:53.0167,lon:158.65,code:'PKC',tz:'Asia/Kamchatka'}
+  hongkong:{lat:22.3193,lon:114.1694,code:'HKG',office:true,tz:'Asia/Hong_Kong'}
 };
-// photo for each place: the five story stops use the commissioned stills, the rest come from rotwtravels.com
-const PHOTO=id=>['moscow','spb','kazan','baikal','vladivostok'].includes(id)?`assets/${id}.webp`:`assets/site/${id}.webp`;
+// photo for each place: the 8 story stops use the commissioned stills, the rest come from rotwtravels.com
+/* kamchatka: replace with real footage when ROTW supplies it */
+const PHOTO=id=>['moscow','spb','sochi','murmansk','kazan','baikal','kamchatka','vladivostok'].includes(id)?`assets/${id}.webp`:`assets/site/${id}.webp`;
 const THUMB=id=>`assets/site/${id}-t.webp`;
-const PATH=['dubai','moscow','spb','kazan','baikal','vladivostok'];
-const STOPS=[{id:'moscow',best:[5,9]},{id:'spb',best:[6,7]},{id:'kazan',best:[5,9]},{id:'baikal',best:[2,3],train:true},{id:'vladivostok',best:[7,9]}];
-const ROMAN=['I','II','III','IV','V'];
+const PATH=['del','moscow','spb','sochi','murmansk','kazan','baikal','kamchatka','vladivostok'];
+const STOPS=[
+  {id:'moscow',best:[5,9]},
+  {id:'spb',best:[6,7]},
+  {id:'sochi',best:[6,9]},
+  {id:'murmansk',best:[9,3]},
+  {id:'kazan',best:[5,9]},
+  {id:'baikal',best:[2,3],train:true},
+  {id:'kamchatka',best:[7,9]},
+  {id:'vladivostok',best:[8,9]}
+];
+const ROMAN=['I','II','III','IV','V','VI','VII','VIII'];
 const RAIL=[[55.7558,37.6173],[56.3269,44.0059],[55.7963,49.1088],[58.0105,56.2502],[56.8389,60.6057],[57.153,65.534],[54.9885,73.3242],[55.0084,82.9357],[56.0153,92.8932],[52.287,104.305],[51.8335,107.5841],[52.034,113.4994],[50.29,127.53],[48.4802,135.0719],[43.1155,131.8855]];
 const RAIL_STATIONS=[[56.3269,44.0059],[58.0105,56.2502],[56.8389,60.6057],[54.9885,73.3242],[55.0084,82.9357],[56.0153,92.8932],[51.8335,107.5841],[52.034,113.4994],[48.4802,135.0719]];
-const HERO_CAM=[36,62,4.2], EXPLORE_CAM=[49,80,3.3];
-const BOARD=['moscow','spb','suzdal','kazan','sochi','kaliningrad','murmansk','baikal','vladivostok','kamchatka','dubai','muscat','mumbai','hongkong'];
+const HERO_CAM=[38,65,4.3], EXPLORE_CAM=[49,80,3.3];
+const BOARD=['moscow','spb','sochi','murmansk','kazan','baikal','kamchatka','vladivostok'];
 const WATER=[['w_arctic',79,95,64],['w_pacific',38,165,64],['w_black',43.2,34.4,30],['w_caspian',41.6,50.6,26],['w_baltic',57.6,19.3,26],['w_okhotsk',54.5,148,34],['w_indian',8,72,52]];
 
 /* ================= TEXT ================= */
@@ -1073,10 +1499,10 @@ en:{dir:'ltr',
  board_kicker:'Your turn',board_title:'Where next?',board_body:'Pick a city on the board or on the globe and the plane will take you there.',
  col_dest:'Destination',col_code:'Code',col_dist:'From Moscow',col_local:'Local time',fly:'Fly there',
  train_kicker:'On board the Trans-Siberian',train_title:'Day two. Birch forests and hot tea.',train_body:'Between Kazan and Lake Baikal the train runs for three nights. Tea comes in metal glass holders, and the forest goes on for hundreds of kilometres.',train_caption:'Sasha, somewhere past Omsk',
- guide:["Hi, I'm Sasha, your guide. Scroll down and we'll take off.","Look, that's the Kremlin. Let's start with Red Square.","Welcome to St Petersburg. Tonight we watch the bridges open.","Kazan! Two cultures, one kremlin. Try the chak-chak.","Here's Irkutsk. Lake Baikal is an hour down the road.","Vladivostok. We crossed seven time zones together.","Your turn. Pick a city and I'll fly you there."],
+ guide:["Hi, I'm Sasha, your guide. Scroll down and we'll take off.","Look, that's the Kremlin. Let's start with Red Square.","Welcome to St Petersburg. Tonight we watch the bridges open.","Sochi is Russia’s seaside, with mountains right behind it.","Murmansk is above the Arctic Circle. Most people come for the northern lights.","Kazan! Two cultures, one kremlin. Try the chak-chak.","Here's Irkutsk. Lake Baikal is an hour down the road.","Kamchatka is the wildest place I send people. Volcanoes, geysers, bears.","Vladivostok. We crossed eleven time zones together.","Your turn. Pick a city and I'll fly you there."],
  guide_train:"My favourite part. Tea, a window seat and the taiga.",flying:'Next stop: {city}',landed:"We've landed: {city}. Shall we plan a trip here?",guideName:'Sasha, your guide',
- body:{moscow:'Red Square at night, the Bolshoi, metro stations that look like palaces. Most journeys start here.',spb:'The city of canals and the Hermitage. In June the sun barely sets and the bridges open at night.',kazan:'Where Europe meets Asia. A white-stone kremlin with a mosque and a cathedral side by side on the Volga.',baikal:'Three nights on the Trans-Siberian bring you to the deepest lake on Earth. In February the ice is clear as glass.',vladivostok:'The end of the line, 9,289 km from Moscow. Seafood, hills and the Golden Bridge over the Pacific.'},
- city:{dubai:'Dubai',moscow:'Moscow',spb:'St Petersburg',kazan:'Kazan',baikal:'Lake Baikal',vladivostok:'Vladivostok',sochi:'Sochi',kaliningrad:'Kaliningrad',suzdal:'Suzdal',mumbai:'Mumbai',muscat:'Muscat',hongkong:'Hong Kong',murmansk:'Murmansk',kamchatka:'Kamchatka'},plan_to:'Plan a trip to {city}',close:'Close',
+ body:{moscow:'Red Square at night, the Bolshoi, metro stations that look like palaces. Most journeys start here.',spb:'The city of canals and the Hermitage. In June the sun barely sets and the bridges open at night.',sochi:'Beaches in the morning and mountains in the afternoon, where the 2014 Winter Olympics were held.',murmansk:'The largest city above the Arctic Circle, with the aurora overhead from September to March.',kazan:'Where Europe meets Asia. A white-stone kremlin with a mosque and a cathedral side by side on the Volga.',baikal:'Three nights on the Trans-Siberian bring you to the deepest lake on Earth. In February the ice is clear as glass.',kamchatka:'Active volcanoes, the Valley of Geysers, and brown bears fishing for salmon.',vladivostok:'The end of the line, 9,289 km from Moscow. Seafood, hills and the Golden Bridge over the Pacific.'},
+ city:{del:'Delhi',dubai:'Dubai',moscow:'Moscow',spb:'St Petersburg',kazan:'Kazan',baikal:'Lake Baikal',vladivostok:'Vladivostok',sochi:'Sochi',kaliningrad:'Kaliningrad',suzdal:'Suzdal',mumbai:'Mumbai',muscat:'Muscat',hongkong:'Hong Kong',murmansk:'Murmansk',kamchatka:'Kamchatka'},plan_to:'Plan a trip to {city}',close:'Close',
  w_arctic:'Arctic Ocean',w_pacific:'Pacific Ocean',w_black:'Black Sea',w_caspian:'Caspian Sea',w_baltic:'Baltic Sea',w_okhotsk:'Sea of Okhotsk',w_indian:'Indian Ocean',russia:'Russia',
  svc_kicker:'What we arrange',svc_title:'Everything between the stops',svc_cta:'Plan my trip',
  svc:{visa:['Visa','Invitation letters and step-by-step help with your Russian visa or e-visa, so the application is complete the first time.'],meet:['Meet & assist','A ROTW host waits at arrivals with your name, helps with the formalities and walks you to your car.'],transfer:['Transfers','Airport transfers, cars with drivers and self-drive rentals in every city on your route.'],hotels:['Hotels','Hotels for every budget, from boutique stays in St Petersburg to lodges on Lake Baikal.'],groups:['Groups & MICE','Conferences, incentive trips and group tours planned end to end, with one team on call around the clock.'],outbound:['Beyond Russia','Holidays in Dubai, Oman, India and Hong Kong, planned with our sister offices in each country.']},
@@ -1084,7 +1510,7 @@ en:{dir:'ltr',
  role:{moscow:'Head office',dubai:'Middle East',mumbai:'India',muscat:'Oman',hongkong:'East Asia'},
  arr_label:'Now arriving',foot_line:'© 2026 ROTW Travels, 106 Prospekt Mira, Moscow 129626',
  guide_svc:'Between the stops, we handle visas, transfers and hotels.',guide_off:'Wherever you start, one of our five offices is awake.',
- night_k:'Night over the Pacific',night_word:'Pacific',night_body:'The last leg ends 9,289 km from Moscow, with the Golden Bridge lit over the bay and the moon on the water.',night_btn:'Plan this trip',guide_night:'Goodnight from Vladivostok. Tomorrow you choose the route.',
+ night_k:'Night over the Pacific',night_word:'Pacific',night_body:'The last leg ends 9,289 km from Moscow, with the Golden Bridge lit over the bay and the moon on the water.',night_btn:'Plan this trip',guide_night:'Goodnight from Vladivostok. Tomorrow you choose the route.',guide_nb:"Ten cities in my field notebook. Quiet courtyards, local tea, real advice.",guide_jny:"Six classic journeys across Russia. Every itinerary is tailored to you.",guide_trips:"Real photos from our journeys across Russia. No stock photos.",guide_doors:"Two ways to travel with ROTW: custom trips or partner net rates.",guide_how:"From first message to Moscow arrivals: how we build your journey.",guide_faq:"Frequently asked questions about visas, seasons and travelling with us.",guide_reviews:"Traveller reviews and stories from our guests across Russia.",
  nb_kicker:'Field Notes · Ten Cities',nb_title:'Ten cities. What the guidebooks leave out.',
  nb_body:'On journeys across Russia, our guide Sasha has filled dozens of notebooks with local timings, quiet courtyards, tea rooms, and practical advice. We transcribed ten of them here.',
  nb_cover_title:"Sasha's Notebook",nb_cover_sub:'Field notes from 10 stops across Russia',
@@ -1131,7 +1557,7 @@ en:{dir:'ltr',
  tripAlt12:'Sochi Sea Terminal lit up at night',
  nbCity:{suzdal:'The Golden Ring'},
  prt_kicker:'Two Doors',prt_title:'Two ways to travel with ROTW',prt_sub:'Whether you are planning your own holiday or booking for clients worldwide.',
- prt_c1_title:'For travellers',
+ prt_c1_title:'Planning a trip to Russia?',
  prt_c1_f1:'Private and small-group tours',
  prt_c1_f2:'Visa support and invitation letters',
  prt_c1_f3:'Airport meet and assist',
@@ -1139,7 +1565,7 @@ en:{dir:'ltr',
  prt_c1_f5:'Hotels, rail and domestic flights',
  prt_c1_f6:'Ballet, opera and event tickets',
  prt_c1_btn:'Plan my trip',
- prt_c2_title:'For agents and tour operators',
+ prt_c2_title:'Travel agent or operator?',
  prt_c2_f1:'Net rates for FIT and groups',
  prt_c2_f2:'MICE, incentives and conferences',
  prt_c2_f3:'Guides in English, Hindi, Arabic and more',
@@ -1165,7 +1591,8 @@ en:{dir:'ltr',
  faq_a5:'We meet you at the airport, arrange private drivers and local guides, and give you a Moscow number that answers for the whole trip.',
  faq_q6:'I am a travel agent. Do you work with agencies?',
  faq_a6:'Yes. We offer net rates for individual travellers and groups, MICE and incentive programmes, and an operations desk in Moscow. Choose “A travel agent” in the planner to request rates.',
- foot_dest:'Destinations',foot_journeys:'Journeys',foot_services:'Services',foot_contact:'Contact & Offices',foot_tagline:'Дороги мира',foot_ops:'Operations Desk 24/7'},
+ foot_dest:'Destinations',foot_journeys:'Journeys',foot_services:'Services',foot_contact:'Contact & Offices',foot_tagline:'Дороги мира',foot_ops:'Operations Desk',
+ reviewsTitle:'Traveller reviews',reviewsEmpty:'Reviews from ROTW travellers will appear here.',reviewsCta:'Speak with our Moscow team'},
 ru:{dir:'ltr',
  mark_small:'Travels',nav_dest:'Направления',skip:'Перейти к путешествию',nav_journeys:'Маршруты',nav_exp:'Впечатления',nav_partners:'Агентам',cta_plan:'Спланировать поездку',
  navNotebook:'Заметки Саши',arrNotes:'Заметки Саши о городе {city} →',
@@ -1176,10 +1603,10 @@ ru:{dir:'ltr',
  board_kicker:'Ваша очередь',board_title:'Куда дальше?',board_body:'Выберите город на табло или на глобусе, и самолёт доставит вас туда.',
  col_dest:'Направление',col_code:'Код',col_dist:'От Москвы',col_local:'Местное время',fly:'Лететь',
  train_kicker:'На борту Транссиба',train_title:'День второй. Берёзы и горячий чай.',train_body:'Между Казанью и Байкалом поезд идёт три ночи. Чай подают в подстаканниках, а лес тянется на сотни километров.',train_caption:'Саша, где-то за Омском',
- guide:['Привет, я Саша, ваш гид. Прокрутите вниз, и мы взлетим.','Смотрите, это Кремль. Начнём с Красной площади.','Добро пожаловать в Петербург. Ночью посмотрим развод мостов.','Казань! Две культуры, один кремль. Попробуйте чак-чак.','Это Иркутск. До Байкала отсюда час езды.','Владивосток. Вместе мы пересекли семь часовых поясов.','Ваша очередь. Выберите город, и я вас туда доставлю.'],
+ guide:['Привет, я Саша, ваш гид. Прокрутите вниз, и мы взлетим.','Смотрите, это Кремль. Начнём с Красной площади.','Добро пожаловать в Петербург. Ночью посмотрим развод мостов.','Сочи — это главное морское побережье России, прямо за которым поднимаются горы.','Мурманск находится за полярным кругом. Большинство гостей едут сюда ради северного сияния.','Казань! Две культуры, один кремль. Попробуйте чак-чак.','Это Иркутск. До Байкала отсюда час езды.','Камчатка — самый дикий край, куда я отправляю путешественников. Вулканы, гейзеры, медведи.','Владивосток. Вместе мы пересекли одиннадцать часовых поясов.','Ваша очередь. Выберите город, и я вас туда доставлю.'],
  guide_train:'Моя любимая часть пути. Чай, место у окна и тайга.',flying:'Следующая остановка: {city}',landed:'Мы на месте: {city}. Спланируем поездку?',guideName:'Саша, ваш гид',
- body:{moscow:'Красная площадь ночью, Большой театр, станции метро, похожие на дворцы. Здесь начинается большинство путешествий.',spb:'Город каналов и Эрмитажа. В июне солнце почти не садится, а мосты разводят по ночам.',kazan:'Здесь встречаются Европа и Азия. Белокаменный кремль, где мечеть и собор стоят рядом на берегу Волги.',baikal:'Три ночи по Транссибу, и вы у самого глубокого озера на Земле. В феврале лёд прозрачен, как стекло.',vladivostok:'Конец пути, 9 289 км от Москвы. Морепродукты, сопки и Золотой мост над Тихим океаном.'},
- city:{dubai:'Дубай',moscow:'Москва',spb:'Санкт-Петербург',kazan:'Казань',baikal:'Байкал',vladivostok:'Владивосток',sochi:'Сочи',kaliningrad:'Калининград',suzdal:'Суздаль',mumbai:'Мумбаи',muscat:'Маскат',hongkong:'Гонконг',murmansk:'Мурманск',kamchatka:'Камчатка'},plan_to:'Спланировать поездку: {city}',close:'Закрыть',
+ body:{moscow:'Красная площадь ночью, Большой театр, станции метро, похожие на дворцы. Здесь начинается большинство путешествий.',spb:'Город каналов и Эрмитажа. В июне солнце почти не садится, а мосты разводят по ночам.',sochi:'Утром — пляжи, после обеда — горы, где в 2014 году проходили зимние Олимпийские игры.',murmansk:'Крупнейший город за полярным кругом, где с сентября по март в небе горит аврора.',kazan:'Здесь встречаются Европа и Азия. Белокаменный кремль, где мечеть и собор стоят рядом на берегу Волги.',baikal:'Три ночи по Транссибу, и вы у самого глубокого озера на Земле. В феврале лёд прозрачен, как стекло.',kamchatka:'Действующие вулканы, Долина гейзеров и бурые медведи, ловящие лосося.',vladivostok:'Конец пути, 9 289 км от Москвы. Морепродукты, сопки и Золотой мост над Тихим океаном.'},
+ city:{del:'Дели',dubai:'Дубай',moscow:'Москва',spb:'Санкт-Петербург',kazan:'Казань',baikal:'Байкал',vladivostok:'Владивосток',sochi:'Сочи',kaliningrad:'Калининград',suzdal:'Суздаль',mumbai:'Мумбаи',muscat:'Маскат',hongkong:'Гонконг',murmansk:'Мурманск',kamchatka:'Камчатка'},plan_to:'Спланировать поездку: {city}',close:'Закрыть',
  w_arctic:'Северный Ледовитый океан',w_pacific:'Тихий океан',w_black:'Чёрное море',w_caspian:'Каспийское море',w_baltic:'Балтийское море',w_okhotsk:'Охотское море',w_indian:'Индийский океан',russia:'Россия',
  svc_kicker:'Что мы организуем',svc_title:'Всё, что между остановками',svc_cta:'Спланировать поездку',
  svc:{visa:['Виза','Приглашения и пошаговая помощь с российской визой или электронной визой, чтобы заявление было полным с первого раза.'],meet:['Встреча и сопровождение','Представитель ROTW встретит вас в зоне прилёта с табличкой, поможет с формальностями и проводит до машины.'],transfer:['Трансферы','Трансферы из аэропорта, машины с водителем и аренда авто в каждом городе маршрута.'],hotels:['Отели','Отели на любой бюджет: от бутик-отелей в Петербурге до домиков на Байкале.'],groups:['Группы и MICE','Конференции, инсентив-туры и групповые поездки под ключ, с командой на связи круглосуточно.'],outbound:['За пределами России','Отдых в Дубае, Омане, Индии и Гонконге вместе с нашими офисами в этих странах.']},
@@ -1187,7 +1614,7 @@ ru:{dir:'ltr',
  role:{moscow:'Головной офис',dubai:'Ближний Восток',mumbai:'Индия',muscat:'Оман',hongkong:'Восточная Азия'},
  arr_label:'Прибываем',foot_line:'© 2026 ROTW Travels, Москва, проспект Мира, 106, 129626',
  guide_svc:'Между остановками мы берём на себя визы, трансферы и отели.',guide_off:'Откуда бы вы ни летели, один из наших пяти офисов не спит.',
- night_k:'Ночь над Тихим океаном',night_word:'Тихий',night_body:'Последний отрезок заканчивается в 9 289 км от Москвы: Золотой мост в огнях над бухтой и луна на воде.',night_btn:'Спланировать поездку',guide_night:'Спокойной ночи из Владивостока. Завтра маршрут выбираете вы.',
+ night_k:'Ночь над Тихим океаном',night_word:'Тихий',night_body:'Последний отрезок заканчивается в 9 289 км от Москвы: Золотой мост в огнях над бухтой и луна на воде.',night_btn:'Спланировать поездку',guide_night:'Спокойной ночи из Владивостока. Завтра маршрут выбираете вы.',guide_nb:'Десять городов в моем блокноте. Тихие дворики, чайные и советы.',guide_jny:'Шесть классических маршрутов по России, настроенных под вас.',guide_trips:'Живые фото из наших поездок по России. Никаких стоков.',guide_doors:'Два формата поездок с ROTW: частные туры или тарифы для агентов.',guide_how:'От первого сообщения до встречи в Москве: как мы готовим поездку.',guide_faq:'Ответы на частые вопросы о визах, сезонах и поездках по России.',guide_reviews:'Отзывы и впечатления путешественников со всей России.',
  nb_kicker:'Полевые заметки · Десять городов',nb_title:'Десять городов. То, о чём молчат путеводители.',
  nb_body:'За годы путешествий по дорогам России наш гид Саша исписал десятки блокнотов: тайминги, тихие дворы, чайные и практические советы. Десять из них мы перенесли сюда.',
  nb_cover_title:'Блокнот Саши',nb_cover_sub:'Полевые заметки из 10 остановок по России',
@@ -1234,7 +1661,7 @@ ru:{dir:'ltr',
  tripAlt12:'Морской вокзал Сочи с вечерней подсветкой',
  nbCity:{suzdal:'Золотое кольцо'},
  prt_kicker:'Два формата',prt_title:'Два формата путешествий с ROTW',prt_sub:'Планируете ли вы личный отпуск или бронируете поездку для клиентов со всего мира.',
- prt_c1_title:'Для путешественников',
+ prt_c1_title:'Планируете поездку в Россию?',
  prt_c1_f1:'Индивидуальные и мини-групповые туры',
  prt_c1_f2:'Визовая поддержка и приглашения',
  prt_c1_f3:'Встреча и сопровождение в аэропорту',
@@ -1242,7 +1669,7 @@ ru:{dir:'ltr',
  prt_c1_f5:'Отели, поезда и внутренние перелёты',
  prt_c1_f6:'Билеты на балет, оперу и мероприятия',
  prt_c1_btn:'Спланировать поездку',
- prt_c2_title:'Для агентов и туроператоров',
+ prt_c2_title:'Турагент или туроператор?',
  prt_c2_f1:'Нетто-тарифы для FIT и групп',
  prt_c2_f2:'MICE, инсентив-туры и конференции',
  prt_c2_f3:'Гиды со знанием английского, хинди, арабского и других языков',
@@ -1268,7 +1695,8 @@ ru:{dir:'ltr',
  faq_a5:'Мы встретим вас в аэропорту, предоставим личных водителей и местных гидов, а также дадим московский номер телефона, который будет доступен для связи на протяжении всей поездки.',
  faq_q6:'Я турагент. Работаете ли вы с агентствами?',
  faq_a6:'Да. Мы предлагаем нетто-тарифы для индивидуальных путешественников и групп, программы MICE и инсентив-туры, а также дежурную службу в Москве. Выберите «Я турагент» в планировщике, чтобы запросить тарифы.',
- foot_dest:'Направления',foot_journeys:'Маршруты',foot_services:'Услуги',foot_contact:'Контакты и офисы',foot_tagline:'Дороги мира',foot_ops:'Дежурный офис 24/7'},
+ foot_dest:'Направления',foot_journeys:'Маршруты',foot_services:'Услуги',foot_contact:'Контакты и офисы',foot_tagline:'Дороги мира',foot_ops:'Дежурный офис',
+ reviewsTitle:'Отзывы путешественников',reviewsEmpty:'Здесь появятся отзывы путешественников ROTW.',reviewsCta:'Связаться с нашей командой в Москве'},
 ar:{dir:'rtl',
  mark_small:'Travels',nav_dest:'الوجهات',skip:'انتقل إلى الرحلة',nav_journeys:'الرحلات',nav_exp:'التجارب',nav_partners:'للوكلاء',cta_plan:'خطط رحلتك',
  navNotebook:'ملاحظات ساشا',arrNotes:'ملاحظات ساشا عن {city} →',
@@ -1279,10 +1707,10 @@ ar:{dir:'rtl',
  board_kicker:'دورك الآن',board_title:'إلى أين بعد ذلك؟',board_body:'اختر مدينة من اللوحة أو على الكرة الأرضية وستأخذك الطائرة إليها.',
  col_dest:'الوجهة',col_code:'الرمز',col_dist:'من موسكو',col_local:'التوقيت المحلي',fly:'سافر إليها',
  train_kicker:'على متن قطار سيبيريا',train_title:'اليوم الثاني. غابات البتولا والشاي الساخن.',train_body:'بين قازان وبحيرة بايكال يسير القطار ثلاث ليالٍ. يُقدَّم الشاي في أكواب بحوامل معدنية، وتمتد الغابة مئات الكيلومترات.',train_caption:'ساشا، في مكان ما بعد أومسك',
- guide:['مرحبًا، أنا ساشا، مرشدك. مرّر للأسفل وسننطلق.','انظر، هذا هو الكرملين. لنبدأ بالساحة الحمراء.','أهلًا بك في سانت بطرسبرغ. الليلة نشاهد فتح الجسور.','قازان! ثقافتان في كرملين واحد. جرّب حلوى تشاك تشاك.','هذه إيركوتسك. بحيرة بايكال على بعد ساعة من هنا.','فلاديفوستوك. عبرنا معًا سبعة نطاقات زمنية.','دورك الآن. اختر مدينة وسأطير بك إليها.'],
+ guide:['مرحبًا، أنا ساشا، مرشدك. مرّر للأسفل وسننطلق.','انظر، هذا هو الكرملين. لنبدأ بالساحة الحمراء.','أهلًا بك في سانت بطرسبرغ. الليلة نشاهد فتح الجسور.','سوتشي هي منتجع روسيا الساحلي، والجبال الشاهقة ترتفع خلفها مباشرة.','تقع مورمانسك شمال الدائرة القطبية الشمالية. ويقصدها معظم الزوار لمشاهدة الشفق القطبي.','قازان! ثقافتان في كرملين واحد. جرّب حلوى تشاك تشاك.','هذه إيركوتسك. بحيرة بايكال على بعد ساعة من هنا.','كامتشاتكا هي أكثر الوجهات البرية إثارة التي أرسل المسافرين إليها: براكين، وينابيع فوارة، ودببة.','فلاديفوستوك. عبرنا معًا أحد عشر نطاقًا زمنيًا.','دورك الآن. اختر مدينة وسأطير بك إليها.'],
  guide_train:'هذا الجزء المفضل لدي. شاي ومقعد بجوار النافذة والتايغا.',flying:'المحطة التالية: {city}',landed:'وصلنا: {city}. هل نخطط لرحلة هنا؟',guideName:'ساشا، مرشدك',
- body:{moscow:'الساحة الحمراء ليلًا، ومسرح البولشوي، ومحطات مترو تشبه القصور. من هنا تبدأ معظم الرحلات.',spb:'مدينة القنوات ومتحف الإرميتاج. في يونيو تكاد الشمس لا تغيب، وتُفتح الجسور ليلًا.',kazan:'حيث تلتقي أوروبا بآسيا. كرملين من الحجر الأبيض يضم مسجدًا وكاتدرائية جنبًا إلى جنب على نهر الفولغا.',baikal:'ثلاث ليالٍ على قطار سيبيريا توصلك إلى أعمق بحيرة في العالم. في فبراير يصبح الجليد شفافًا كالزجاج.',vladivostok:'نهاية الخط، على بُعد 9,289 كم من موسكو. مأكولات بحرية وتلال وجسر ذهبي فوق المحيط الهادئ.'},
- city:{dubai:'دبي',moscow:'موسكو',spb:'سانت بطرسبرغ',kazan:'قازان',baikal:'بحيرة بايكال',vladivostok:'فلاديفوستوك',sochi:'سوتشي',kaliningrad:'كالينينغراد',suzdal:'سوزدال',mumbai:'مومباي',muscat:'مسقط',hongkong:'هونغ كونغ',murmansk:'مورمانسك',kamchatka:'كامتشاتكا'},plan_to:'خطط رحلة إلى {city}',close:'إغلاق',
+ body:{moscow:'الساحة الحمراء ليلًا، ومسرح البولشوي، ومحطات مترو تشبه القصور. من هنا تبدأ معظم الرحلات.',spb:'مدينة القنوات ومتحف الإرميتاج. في يونيو تكاد الشمس لا تغيب، وتُفتح الجسور ليلًا.',sochi:'شواطئ في الصباح وجبال في الظهيرة، حيث أقيمت دورة الألعاب الأولمبية الشتوية لعام 2014.',murmansk:'أكبر مدينة شمال الدائرة القطبية الشمالية، حيث يتلألأ الشفق القطبي في سمائها من سبتمبر إلى مارس.',kazan:'حيث تلتقي أوروبا بآسيا. كرملين من الحجر الأبيض يضم مسجدًا وكاتدرائية جنبًا إلى جنب على نهر الفولغا.',baikal:'ثلاث ليالٍ على قطار سيبيريا توصلك إلى أعمق بحيرة في العالم. في فبراير يصبح الجليد شفافًا كالزجاج.',kamchatka:'براكين نشطة، ووادي الينابيع الفوارة، ودببة بنية تصطاد سمك السلمون.',vladivostok:'نهاية الخط، على بُعد 9,289 كم من موسكو. مأكولات بحرية وتلال وجسر ذهبي فوق المحيط الهادئ.'},
+ city:{del:'دلهي',dubai:'دبي',moscow:'موسكو',spb:'سانت بطرسبرغ',kazan:'قازان',baikal:'بحيرة بايكال',vladivostok:'فلاديفوستوك',sochi:'سوتشي',kaliningrad:'كالينينغراد',suzdal:'سوزدال',mumbai:'مومباي',muscat:'مسقط',hongkong:'هونغ كونغ',murmansk:'مورمانسك',kamchatka:'كامتشاتكا'},plan_to:'خطط رحلة إلى {city}',close:'إغلاق',
  w_arctic:'المحيط المتجمد الشمالي',w_pacific:'المحيط الهادئ',w_black:'البحر الأسود',w_caspian:'بحر قزوين',w_baltic:'بحر البلطيق',w_okhotsk:'بحر أوخوتسك',w_indian:'المحيط الهندي',russia:'روسيا',
  svc_kicker:'ما نرتّبه لك',svc_title:'كل ما بين المحطات',svc_cta:'خطط رحلتي',
  svc:{visa:['التأشيرة','رسائل الدعوة ومساعدة خطوة بخطوة في التأشيرة الروسية أو التأشيرة الإلكترونية، ليكتمل طلبك من المرة الأولى.'],meet:['الاستقبال والمرافقة','يستقبلك ممثل ROTW في صالة الوصول باسمك، ويساعدك في الإجراءات ويرافقك إلى سيارتك.'],transfer:['التنقلات','نقل من المطار وإليه، وسيارات بسائق، وسيارات للإيجار في كل مدينة على مسارك.'],hotels:['الفنادق','فنادق لكل الميزانيات، من الفنادق البوتيك في سانت بطرسبرغ إلى النُزل على بحيرة بايكال.'],groups:['المجموعات والمؤتمرات','مؤتمرات ورحلات تحفيزية وجولات جماعية نخطط لها بالكامل، مع فريق متاح على مدار الساعة.'],outbound:['خارج روسيا','عطلات في دبي وعُمان والهند وهونغ كونغ، نخطط لها مع مكاتبنا الشقيقة في كل بلد.']},
@@ -1290,7 +1718,7 @@ ar:{dir:'rtl',
  role:{moscow:'المكتب الرئيسي',dubai:'الشرق الأوسط',mumbai:'الهند',muscat:'عُمان',hongkong:'شرق آسيا'},
  arr_label:'نصل الآن',foot_line:'© 2026 ROTW Travels، 106 بروسبكت ميرا، موسكو 129626',
  guide_svc:'بين المحطات نتولى التأشيرات والتنقلات والفنادق.',guide_off:'أينما بدأت رحلتك، هناك دائمًا مكتب من مكاتبنا الخمسة يعمل.',
- night_k:'ليلة فوق المحيط الهادئ',night_word:'الهادئ',night_body:'تنتهي المرحلة الأخيرة على بُعد 9,289 كم من موسكو، والجسر الذهبي مضاء فوق الخليج والقمر على الماء.',night_btn:'خطط لهذه الرحلة',guide_night:'تصبح على خير من فلاديفوستوك. غدًا أنت من يختار المسار.',
+ night_k:'ليلة فوق المحيط الهادئ',night_word:'الهادئ',night_body:'تنتهي المرحلة الأخيرة على بُعد 9,289 كم من موسكو، والجسر الذهبي مضاء فوق الخليج والقمر على الماء.',night_btn:'خطط لهذه الرحلة',guide_night:'تصبح على خير من فلاديفوستوك. غدًا أنت من يختار المسار.',guide_nb:'عشر مدن في مفكرتي. أزقة هادئة وشاي محلي ونصائح عملية.',guide_jny:'ست رحلات كلاسيكية عبر روسيا، مصممة خصيصًا لتناسبكم.',guide_trips:'صور حقيقية من رحلاتنا عبر روسيا. لا صور جاهزة.',guide_doors:'طريقتان للسفر مع ROTW: رحلات مخصصة أو أسعار صافية للوكلاء.',guide_how:'من الرسالة الأولى حتى الاستقبال في موسكو: هكذا نعد رحلتكم.',guide_faq:'الأسئلة الشائعة حول التأشيرات والمواسم والسفر معنا.',guide_reviews:'آراء وتجارب المسافرين من مختلف أنحاء روسيا.',
  nb_kicker:'ملاحظات ميدانية · عشر مدن',nb_title:'عشر مدن. ما لا تذكره أدلة السفر.',
  nb_body:'خلال رحلاته في ربوع روسيا، ملأ مرشدنا ساشا عشرات الدفاتر بالمواعيد الدقيقة والساحات الهادئة وغرف الشاي والنصائح العملية. جمعنا عشرًا منها هنا.',
  nb_cover_title:'دفتر ساشا',nb_cover_sub:'ملاحظات ميدانية من 10 محطات في روسيا',
@@ -1337,7 +1765,7 @@ ar:{dir:'rtl',
  tripAlt12:'محطة ميناء سوتشي البحري مضاءة ليلًا',
  nbCity:{suzdal:'الطوق الذهبي'},
  prt_kicker:'طريقتان للسفر',prt_title:'خياران للسفر مع ROTW',prt_sub:'سواء كنت تخطط لعطلتك الخاصة أو تحجز لعملائك حول العالم.',
- prt_c1_title:'للمسافرين',
+ prt_c1_title:'تخطط لرحلة إلى روسيا؟',
  prt_c1_f1:'جولات خاصة ومجموعات صغيرة',
  prt_c1_f2:'دعم التأشيرة وخطابات الدعوة',
  prt_c1_f3:'استقبال ومساعدة في المطار',
@@ -1345,7 +1773,7 @@ ar:{dir:'rtl',
  prt_c1_f5:'فنادق وقطارات ورحلات طيران داخلية',
  prt_c1_f6:'تذاكر عروض الباليه والأوبرا والفعاليات',
  prt_c1_btn:'خطط رحلتي',
- prt_c2_title:'للوكلاء ومنظمي الرحلات',
+ prt_c2_title:'وكيل سفر أو منظم رحلات؟',
  prt_c2_f1:'أسعار صافية للأفراد والمجموعات',
  prt_c2_f2:'سياحة الحوافز والمؤتمرات والفعاليات (MICE)',
  prt_c2_f3:'مرشدون يتحدثون الإنجليزية والهندية والعربية والمزيد',
@@ -1371,7 +1799,8 @@ ar:{dir:'rtl',
  faq_a5:'نستقبلكم في المطار، ونوفر لكم سائقين خاصين ومرشدين محليين، ونعطيكم رقم هاتف في موسكو يجيبكم طوال مدة الرحلة.',
  faq_q6:'أنا وكيل سفر. هل تعملون مع الوكالات السياحية؟',
  faq_a6:'نعم. نحن نقدم أسعارًا صافية للمسافرين الأفراد والمجموعات، وبرامج سياحة المؤتمرات والحوافز (MICE)، مع مكتب عمليات في موسكو. اختر «وكيل سفر» في المخطط لطلب الأسعار.',
- foot_dest:'الوجهات',foot_journeys:'الرحلات',foot_services:'الخدمات',foot_contact:'التواصل والمكاتب',foot_tagline:'طرق العالم',foot_ops:'مكتب العمليات 24/7'},
+ foot_dest:'الوجهات',foot_journeys:'الرحلات',foot_services:'الخدمات',foot_contact:'التواصل والمكاتب',foot_tagline:'Дороги мира',foot_ops:'مكتب العمليات',
+ reviewsTitle:'آراء المسافرين',reviewsEmpty:'ستظهر هنا آراء مسافري ROTW.',reviewsCta:'تحدث مع فريقنا في موسكو'},
 hi:{dir:'ltr',
  mark_small:'Travels',nav_dest:'गंतव्य',skip:'यात्रा पर जाएँ',nav_journeys:'यात्राएँ',nav_exp:'अनुभव',nav_partners:'एजेंटों के लिए',cta_plan:'यात्रा प्लान करें',
  navNotebook:'साशा की डायरी',arrNotes:'{city} पर साशा के नोट्स →',
@@ -1382,10 +1811,10 @@ hi:{dir:'ltr',
  board_kicker:'अब आपकी बारी',board_title:'अब कहाँ?',board_body:'बोर्ड पर या ग्लोब पर कोई शहर चुनें, विमान आपको वहाँ ले जाएगा।',
  col_dest:'गंतव्य',col_code:'कोड',col_dist:'मॉस्को से',col_local:'स्थानीय समय',fly:'वहाँ उड़ें',
  train_kicker:'ट्रांस-साइबेरियन ट्रेन में',train_title:'दूसरा दिन। भोज के जंगल और गरम चाय।',train_body:'कज़ान से बैकाल झील तक ट्रेन तीन रातें चलती है। चाय धातु के होल्डर वाले गिलास में आती है, और जंगल सैकड़ों किलोमीटर तक फैला रहता है।',train_caption:'साशा, ओम्स्क से कहीं आगे',
- guide:['नमस्ते, मैं साशा हूँ, आपका गाइड। नीचे स्क्रॉल करें, हम उड़ान भरते हैं।','देखिए, यह क्रेमलिन है। रेड स्क्वायर से शुरू करते हैं।','सेंट पीटर्सबर्ग में स्वागत है। आज रात पुल खुलते देखेंगे।','कज़ान! दो संस्कृतियाँ, एक क्रेमलिन। चक-चक ज़रूर चखिए।','यह इर्कुत्स्क है। बैकाल झील यहाँ से एक घंटे की दूरी पर है।','व्लादिवोस्तोक। हमने साथ मिलकर सात टाइम ज़ोन पार किए।','अब आपकी बारी। कोई शहर चुनें, मैं आपको वहाँ ले चलूँगा।'],
+ guide:['नमस्ते, मैं साशा हूँ, आपका गाइड। नीचे स्क्रॉल करें, हम उड़ान भरते हैं।','देखिए, यह क्रेमलिन है। रेड स्क्वायर से शुरू करते हैं।','सेंट पीटर्सबर्ग में स्वागत है। आज रात पुल खुलते देखेंगे।','सोची रूस का तटीय शहर है, जिसके ठीक पीछे ऊँचे पहाड़ खड़े हैं।','मुरमान्स्क आर्कटिक सर्कल के ऊपर स्थित है। ज़्यादातर लोग यहाँ नदर्न लाइट्स देखने आते हैं।','कज़ान! दो संस्कृतियाँ, एक क्रेमलिन। चक-चक ज़रूर चखिए।','यह इर्कुत्स्क है। बैकाल झील यहाँ से एक घंटे की दूरी पर है।','कमचटका वह सबसे अनोखी और रोमांचक जगह है जहाँ मैं लोगों को भेजता हूँ। ज्वालामुखी, गीज़र, भालू।','व्लादिवोस्तोक। हमने साथ मिलकर ग्यारह टाइम ज़ोन पार किए।','अब आपकी बारी। कोई शहर चुनें, मैं आपको वहाँ ले चलूँगा।'],
  guide_train:'यह मेरा पसंदीदा हिस्सा है। चाय, खिड़की वाली सीट और टैगा।',flying:'अगला पड़ाव: {city}',landed:'हम पहुँच गए: {city}। यहाँ की यात्रा प्लान करें?',guideName:'साशा, आपका गाइड',
- body:{moscow:'रात में रेड स्क्वायर, बोल्शोई थिएटर, और महलों जैसे मेट्रो स्टेशन। ज़्यादातर यात्राएँ यहीं से शुरू होती हैं।',spb:'नहरों और हर्मिटेज का शहर। जून में सूरज लगभग डूबता ही नहीं और रात में पुल खुलते हैं।',kazan:'जहाँ यूरोप और एशिया मिलते हैं। वोल्गा किनारे सफ़ेद पत्थर का क्रेमलिन, जहाँ मस्जिद और गिरजाघर साथ-साथ खड़े हैं।',baikal:'ट्रांस-साइबेरियन पर तीन रातें और आप धरती की सबसे गहरी झील पर। फ़रवरी में बर्फ़ काँच जैसी साफ़ होती है।',vladivostok:'रेल लाइन का आख़िरी स्टेशन, मॉस्को से 9,289 किमी। सी-फ़ूड, पहाड़ियाँ और प्रशांत पर गोल्डन ब्रिज।'},
- city:{dubai:'दुबई',moscow:'मॉस्को',spb:'सेंट पीटर्सबर्ग',kazan:'कज़ान',baikal:'बैकाल झील',vladivostok:'व्लादिवोस्तोक',sochi:'सोची',kaliningrad:'कालिनिनग्राद',suzdal:'सुज़दाल',mumbai:'मुंबई',muscat:'मस्कट',hongkong:'हांगकांग',murmansk:'मरमंस्क',kamchatka:'कामचटका'},plan_to:'{city} की यात्रा प्लान करें',close:'बंद करें',
+ body:{moscow:'रात में रेड स्क्वायर, बोल्शोई थिएटर, और महलों जैसे मेट्रो स्टेशन। ज़्यादातर यात्राएँ यहीं से शुरू होती हैं।',spb:'नहरों और हर्मिटेज का शहर। जून में सूरज लगभग डूबता ही नहीं और रात में पुल खुलते हैं।',sochi:'सुबह समुद्र तट की धूप और दोपहर में ऊँचे पहाड़, जहाँ 2014 के विंटर ओलंपिक आयोजित किए गए थे।',murmansk:'आर्कटिक सर्कल के पार बसा सबसे बड़ा शहर, जहाँ सितंबर से मार्च तक आसमान में ऑरोरा की रोशनी बिखरती है।',kazan:'जहाँ यूरोप और एशिया मिलते हैं। वोल्गा किनारे सफ़ेद पत्थर का क्रेमलिन, जहाँ मस्जिद और गिरजाघर साथ-साथ खड़े हैं।',baikal:'ट्रांस-साइबेरियन पर तीन रातें और आप धरती की सबसे गहरी झील पर। फ़रवरी में बर्फ़ काँच जैसी साफ़ होती है।',kamchatka:'सक्रिय ज्वालामुखी, गर्म पानी के फव्वारों की घाटी (वैली ऑफ गीज़र्स), और सैल्मन मछली पकड़ते भूरे भालू।',vladivostok:'रेल लाइन का आख़िरी स्टेशन, मॉस्को से 9,289 किमी। सी-फ़ूड, पहाड़ियाँ और प्रशांत पर गोल्डन ब्रिज।'},
+ city:{del:'दिल्ली',dubai:'दुबई',moscow:'मॉस्को',spb:'सेंट पीटर्सबर्ग',kazan:'कज़ान',baikal:'बैकाल झील',vladivostok:'व्लादिवोस्तोक',sochi:'सोची',kaliningrad:'कालिनिनग्राद',suzdal:'सुज़दाल',mumbai:'मुंबई',muscat:'मस्कट',hongkong:'हांगकांग',murmansk:'मरमंस्क',kamchatka:'कामचटका'},plan_to:'{city} की यात्रा प्लान करें',close:'बंद करें',
  w_arctic:'आर्कटिक महासागर',w_pacific:'प्रशांत महासागर',w_black:'काला सागर',w_caspian:'कैस्पियन सागर',w_baltic:'बाल्टिक सागर',w_okhotsk:'ओखोत्स्क सागर',w_indian:'हिंद महासागर',russia:'रूस',
  svc_kicker:'हम क्या व्यवस्था करते हैं',svc_title:'पड़ावों के बीच की हर चीज़',svc_cta:'मेरी यात्रा प्लान करें',
  svc:{visa:['वीज़ा','निमंत्रण पत्र और रूसी वीज़ा या ई-वीज़ा में कदम-दर-कदम मदद, ताकि आवेदन पहली बार में ही पूरा हो।'],meet:['स्वागत और सहायता','ROTW का प्रतिनिधि आपके नाम के साथ अराइवल पर इंतज़ार करता है, औपचारिकताओं में मदद करता है और आपको कार तक ले जाता है।'],transfer:['ट्रांसफ़र','एयरपोर्ट ट्रांसफ़र, ड्राइवर के साथ कार और सेल्फ़-ड्राइव किराये की कार, आपके रूट के हर शहर में।'],hotels:['होटल','हर बजट के होटल, सेंट पीटर्सबर्ग के बुटीक होटलों से लेकर बैकाल झील के लॉज तक।'],groups:['ग्रुप और MICE','कॉन्फ़्रेंस, इंसेंटिव ट्रिप और ग्रुप टूर, शुरू से अंत तक प्लान किए हुए, चौबीसों घंटे उपलब्ध एक टीम के साथ।'],outbound:['रूस से आगे','दुबई, ओमान, भारत और हांगकांग में छुट्टियाँ, हर देश में हमारे सहयोगी दफ़्तरों के साथ।']},
@@ -1393,7 +1822,7 @@ hi:{dir:'ltr',
  role:{moscow:'मुख्य दफ़्तर',dubai:'मध्य पूर्व',mumbai:'भारत',muscat:'ओमान',hongkong:'पूर्वी एशिया'},
  arr_label:'अब पहुँच रहे हैं',foot_line:'© 2026 ROTW Travels, 106 प्रोस्पेक्ट मीरा, मॉस्को 129626',
  guide_svc:'पड़ावों के बीच वीज़ा, ट्रांसफ़र और होटल हम सँभालते हैं।',guide_off:'आप कहीं से भी शुरू करें, हमारे पाँच दफ़्तरों में से कोई एक जागता है।',
- night_k:'प्रशांत महासागर पर रात',night_word:'प्रशांत',night_body:'आख़िरी सफ़र मॉस्को से 9,289 किमी दूर ख़त्म होता है, खाड़ी पर रोशन गोल्डन ब्रिज और पानी पर चाँद के साथ।',night_btn:'यह यात्रा प्लान करें',guide_night:'व्लादिवोस्तोक से शुभ रात्रि। कल रूट आप चुनेंगे।',
+ night_k:'प्रशांत महासागर पर रात',night_word:'प्रशांत',night_body:'आख़िरी सफ़र मॉस्को से 9,289 किमी दूर ख़त्म होता है, खाड़ी पर रोशन गोल्डन ब्रिज और पानी पर चाँद के साथ।',night_btn:'यह यात्रा प्लान करें',guide_night:'व्लादिवोस्तोक से शुभ रात्रि। कल रूट आप चुनेंगे।',guide_nb:'मेरी फ़ील्ड नोटबुक में दस शहर। शांत गलियाँ, स्थानीय चाय और सच्ची सलाह।',guide_jny:'रूस भर में छह क्लासिक यात्राएँ, जो आपके अनुसार बनाई जाती हैं।',guide_trips:'रूस में हमारी यात्राओं की असली तस्वीरें। कोई स्टॉक फोटो नहीं।',guide_doors:'ROTW के साथ यात्रा के दो रास्ते: निजी टूर या एजेंटों के लिए नेट रेट।',guide_how:'पहले संदेश से लेकर मॉस्को आगमन तक: हम आपकी यात्रा कैसे बनाते हैं।',guide_faq:'वीज़ा, मौसम और यात्रा से जुड़े अक्सर पूछे जाने वाले सवाल।',guide_reviews:'रूस भर में हमारे यात्रियों के अनुभव और समीक्षाएँ।',
  nb_kicker:'फ़ील्ड नोट्स · दस शहर',nb_title:'दस शहर। वो बातें जो गाइडबुक में नहीं मिलतीं।',
  nb_body:'रूस की सड़कों पर यात्राओं के दौरान हमारे गाइड साशा ने दर्जनों डायरियाँ भरी हैं: स्थानीय समय, शांत आँगन, चाय की दुकानें और व्यावहारिक सलाह। उनमें से दस शहरों के नोट्स यहाँ हैं.',
  nb_cover_title:'साशा की डायरी',nb_cover_sub:'रूस के 10 पड़ावों से फ़ील्ड नोट्स',
@@ -1440,7 +1869,7 @@ hi:{dir:'ltr',
  tripAlt12:'रात में रोशनी से जगमगाता सोची सी टर्मिनल',
  nbCity:{suzdal:'द गोल्डन रिंग'},
  prt_kicker:'दो रास्ते',prt_title:'ROTW के साथ यात्रा के दो रास्ते',prt_sub:'चाहे आप अपनी निजी छुट्टी प्लान कर रहे हों या दुनिया भर के ग्राहकों के लिए बुकिंग कर रहे हों।',
- prt_c1_title:'यात्रियों के लिए',
+ prt_c1_title:'रूस यात्रा की योजना बना रहे हैं?',
  prt_c1_f1:'निजी और छोटे समूहों के टूर',
  prt_c1_f2:'वीज़ा सहायता और आमंत्रण पत्र',
  prt_c1_f3:'हवाई अड्डे पर स्वागत और सहायता',
@@ -1448,7 +1877,7 @@ hi:{dir:'ltr',
  prt_c1_f5:'होटल, ट्रेन और घरेलू उड़ानें',
  prt_c1_f6:'बैले, ओपेरा और कार्यक्रमों के टिकट',
  prt_c1_btn:'मेरी यात्रा प्लान करें',
- prt_c2_title:'एजेंटों और टूर ऑपरेटरों के लिए',
+ prt_c2_title:'ट्रैवल एजेंट या टूर ऑपरेटर?',
  prt_c2_f1:'FIT और ग्रुप्स के लिए नेट रेट्स',
  prt_c2_f2:'MICE, इंसेंटिव और सम्मेलन',
  prt_c2_f3:'अंग्रेज़ी, हिंदी, अरबी और अन्य भाषाओं में गाइड',
@@ -1468,7 +1897,8 @@ hi:{dir:'ltr',
  faq_q4:'आपके गाइड कौन-सी भाषाएँ बोलते हैं?',faq_a4:'अंग्रेज़ी, हिंदी, अरबी और अन्य भाषाएँ। ट्रिप प्लानर में अपनी भाषा बताएं और हम उसी के अनुसार गाइड की व्यवस्था करेंगे।',
  faq_q5:'रूस पहुँचने के बाद क्या होता है?',faq_a5:'हम हवाई अड्डे पर आपका स्वागत करते हैं, निजी ड्राइवर और स्थानीय गाइड की व्यवस्था करते हैं, और आपको एक मॉस्को नंबर देते हैं जो पूरी यात्रा के दौरान उपलब्ध रहता है।',
  faq_q6:'मैं एक ट्रैवल एजेंट हूँ। क्या आप एजेंसियों के साथ काम करते हैं?',faq_a6:'हाँ। हम व्यक्तिगत यात्रियों और समूहों के लिए नेट रेट्स, MICE और इंसेंटिव कार्यक्रम, और मॉस्को में एक ऑपरेशंस डेस्क प्रदान करते हैं। दरों का अनुरोध करने के लिए प्लानर में “ट्रैवल एजेंट” चुनें।',
- foot_dest:'गंतव्य',foot_journeys:'यात्राएँ',foot_services:'सेवाएँ',foot_contact:'संपर्क और दफ़्तर',foot_tagline:'Дороги мира',foot_ops:'ऑपरेशंस डेस्क 24/7'}
+ foot_dest:'गंतव्य',foot_journeys:'यात्राएँ',foot_services:'सेवाएँ',foot_contact:'संपर्क और दफ़्तर',foot_tagline:'Дороги мира',foot_ops:'ऑपरेशंस डेस्क',
+ reviewsTitle:'यात्रियों की समीक्षाएँ',reviewsEmpty:'ROTW यात्रियों की समीक्षाएँ यहाँ दिखाई देंगी।',reviewsCta:'मॉस्को में हमारी टीम से बात करें'}
 };
 
 let lang='en';
@@ -1510,7 +1940,7 @@ STOPS.forEach((s,i)=>{
 });
 explore.before(document.getElementById('night')); // night over the Pacific sits between Vladivostok and the departures board
 const inter=document.createElement('div');inter.className='interlude';inter.setAttribute('aria-hidden','true');
-document.getElementById('c4').before(inter);
+document.getElementById('c6').before(inter);
 const SECTIONS=[...document.querySelectorAll('.chapter')];
 
 // route strip
@@ -1543,9 +1973,31 @@ const finEl=document.getElementById('presence');
 document.getElementById('office-list').innerHTML=OFFICES.map(([id,tel,mail])=>`<li><b data-city="${id}"></b><span class="when" data-tz="${PLACES[id].tz}"></span><span class="role" data-role="${id}"></span><span class="reach" dir="ltr">${tel}<br>${mail}</span></li>`).join('');
 const OFFICES_CAM=[36,72,3.15];
 
-const PIN_ORDER=['moscow','spb','kazan','baikal','vladivostok','dubai','sochi','kaliningrad','murmansk','kamchatka','suzdal','muscat','mumbai','hongkong'];
+const PIN_ORDER=['moscow','spb','sochi','murmansk','kazan','baikal','kamchatka','vladivostok','dubai','muscat','mumbai','hongkong'];
+const PIN_SIDES={
+  spb:'left',
+  moscow:'right',
+  sochi:'left',
+  murmansk:'top',
+  kazan:'right',
+  baikal:'top',
+  kamchatka:'left',
+  vladivostok:'bottom',
+  dubai:'bottom',
+  muscat:'right',
+  mumbai:'bottom',
+  hongkong:'right'
+};
 const pinWrap=document.getElementById('pins');const pins={};
-PIN_ORDER.forEach(id=>{const b=document.createElement('button');b.className='pin'+(PLACES[id].office?' office':'');b.dataset.go=id;b.innerHTML=`<i></i><span data-city="${id}"></span>`;pinWrap.appendChild(b);pins[id]=b;});
+PIN_ORDER.forEach(id=>{
+  const b=document.createElement('button');
+  const side=PIN_SIDES[id]||'right';
+  b.className='pin pin-'+side+(PLACES[id].office?' office':'');
+  b.dataset.go=id;
+  b.innerHTML=`<i></i><span data-city="${id}"></span>`;
+  pinWrap.appendChild(b);
+  pins[id]=b;
+});
 
 function hav(a,b){const R=6371,r=Math.PI/180,dl=(b.lat-a.lat)*r,dn=(b.lon-a.lon)*r;const x=Math.sin(dl/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(x));}
 function fmtKm(km){return new Intl.NumberFormat(lang,{style:'unit',unit:'kilometer',maximumFractionDigits:0}).format(Math.round(km/10)*10);}
@@ -1557,7 +2009,7 @@ function offset(tz){try{return new Intl.DateTimeFormat(lang,{timeZone:tz,timeZon
 function applyLang(){
   const L=T[lang];
   document.documentElement.lang=lang;document.documentElement.dir=L.dir;
-  document.getElementById('lang').value=lang;
+  const _ls=document.getElementById('lang');if(_ls)_ls.value=lang;
   document.querySelectorAll('[data-i18n]').forEach(e=>{e.textContent=L[e.dataset.i18n]??'';});
   document.querySelectorAll('[data-i18n-alt]').forEach(e=>{e.alt=L[e.dataset.i18nAlt]||'';});
   document.querySelectorAll('[data-city]').forEach(e=>{e.textContent=L.city[e.dataset.city];});
@@ -1647,7 +2099,18 @@ function applyLang(){
   setNightWord();
   resize();
 }
-document.getElementById('lang').addEventListener('change',e=>{lang=e.target.value;try{localStorage.setItem('rotw-lang',lang);}catch(_){}applyLang();});
+window.applyLanguage = function(l) {
+  if (l && T[l]) {
+    lang = l;
+    applyLang();
+    if (typeof setGuideForChapter === 'function') setGuideForChapter();
+  }
+};
+window.addEventListener('rotw-lang-change', e => {
+  if (e.detail?.lang) window.applyLanguage(e.detail.lang);
+});
+const _langSel=document.getElementById('lang');
+if(_langSel)_langSel.addEventListener('change',e=>{lang=e.target.value;try{localStorage.setItem('rotw-lang',lang);}catch(_){}applyLang();});
 function tickClocks(){document.querySelectorAll('[data-tz]').forEach(e=>{try{e.textContent=new Intl.DateTimeFormat(lang,{hour:'2-digit',minute:'2-digit',hourCycle:'h23',timeZone:e.dataset.tz}).format(new Date());}catch(_){}});}
 setInterval(tickClocks,15000);
 
@@ -1660,9 +2123,9 @@ const SMALL=Math.min(screen.width,screen.height)<768;
 const TIER=(SAVE||(navigator.deviceMemory||8)<=4||(navigator.hardwareConcurrency||8)<=4||(COARSE&&SMALL))?'low':'high';
 const VID=(SMALL||TIER==='low')?'assets/m/':'assets/';
 document.documentElement.dataset.tier=TIER;
-const renderer=new THREE.WebGLRenderer({canvas,antialias:TIER==='high',powerPreference:TIER==='high'?'high-performance':'low-power'});
+const renderer=new THREE.WebGLRenderer({canvas,antialias:TIER==='high',alpha:true,powerPreference:TIER==='high'?'high-performance':'low-power'});
 renderer.setPixelRatio(Math.min(devicePixelRatio,TIER==='low'?1.5:2));
-renderer.setClearColor(0x0A1424,1);
+renderer.setClearColor(0x000000,0);
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(35,1,0.005,100);
 const R=1,DEG=Math.PI/180;
@@ -1702,7 +2165,7 @@ function paintMap(){
   geo.features.forEach(f=>{if(isRU(f))return;draw(f);x.fillStyle='#1A2B45';x.fill('evenodd');x.strokeStyle='#2F4567';x.lineWidth=1.3;x.stroke();});
   const ru=geo.features.find(isRU);
   if(ru){draw(ru);const g=x.createLinearGradient(0,py(78),0,py(42));g.addColorStop(0,'#343323');g.addColorStop(1,'#3B3422');x.fillStyle=g;x.fill('evenodd');
-    x.save();x.shadowColor='rgba(212,168,75,.55)';x.shadowBlur=16;x.strokeStyle='#D4A84B';x.lineWidth=2.6;x.stroke();x.restore();}
+    x.save();x.shadowColor='rgba(244,166,60,.55)';x.shadowBlur=16;x.strokeStyle='#F4A63C';x.lineWidth=2.6;x.stroke();x.restore();}
   // lakes and rivers
   if(GEO){
     x.fillStyle='#0E2038';x.strokeStyle='rgba(127,179,213,.55)';x.lineWidth=1.1;
@@ -1719,7 +2182,7 @@ function paintMap(){
     if(spacing&&lang!=='ar'&&lang!=='hi'){try{x.letterSpacing=spacing+'px';}catch(e){}}
     x.fillText(text,0,0);x.restore();}
   WATER.forEach(([k,la,lo,s])=>letter(L[k],la,lo,s,'rgba(127,179,213,.55)','italic 400',0));
-  letter(L.russia,63.5,98,120,'rgba(212,168,75,.38)','400',lang==='en'||lang==='ru'?28:0);
+  letter(L.russia,63.5,98,120,'rgba(244,166,60,.38)','400',lang==='en'||lang==='ru'?28:0);
   dayTex.needsUpdate=true;
   // night lights
   const n=nightCanvas.getContext('2d');n.fillStyle='#000';n.fillRect(0,0,2048,1024);
@@ -1758,13 +2221,13 @@ const railCurve=new THREE.CatmullRomCurve3(RAIL.map(c=>toV(c[0],c[1],1.002)));
 const railPath=new THREE.CatmullRomCurve3(railCurve.getPoints(700).map(v=>v.normalize().multiplyScalar(1.002)));
 scene.add(new THREE.Mesh(new THREE.TubeGeometry(railPath,800,.0016,5,false),new THREE.MeshBasicMaterial({color:0x6B5A33})));
 const railGeo=new THREE.TubeGeometry(railPath,800,.0034,6,false);const railTotal=railGeo.index.count;
-const railLit=new THREE.Mesh(railGeo,new THREE.MeshBasicMaterial({color:0xD4A84B}));scene.add(railLit);
+const railLit=new THREE.Mesh(railGeo,new THREE.MeshBasicMaterial({color:0xF4A63C}));scene.add(railLit);
 RAIL_STATIONS.forEach(([la,lo])=>{const m=new THREE.Mesh(new THREE.SphereGeometry(.0045,10,10),new THREE.MeshBasicMaterial({color:0xE9EDF1}));m.position.copy(toV(la,lo,1.003));scene.add(m);});
 function railParamNear(v){let best=0,bd=9;const pts=railPath.getSpacedPoints(1200);pts.forEach((p,i)=>{const d=p.distanceTo(v);if(d<bd){bd=d;best=i/1200;}});return best;}
 const T_KAZAN=railParamNear(P('kazan')),T_IRK=railParamNear(P('baikal'));
 
 /* ---- office arcs ---- */
-const arcMat=new THREE.LineDashedMaterial({color:0x7FB3D5,transparent:true,opacity:.4,dashSize:.015,gapSize:.012});
+const arcMat=new THREE.LineDashedMaterial({color:0x7BA7D0,transparent:true,opacity:.4,dashSize:.015,gapSize:.012});
 ['dubai','mumbai','muscat','hongkong'].forEach(id=>{const a=P('moscow'),b=P(id);const mid=a.clone().add(b).multiplyScalar(.5).normalize().multiplyScalar(1+a.distanceTo(b)*.22);
   const l=new THREE.Line(new THREE.BufferGeometry().setFromPoints(new THREE.QuadraticBezierCurve3(a.multiplyScalar(1.002),mid,b.multiplyScalar(1.002)).getPoints(80)),arcMat);l.computeLineDistances();scene.add(l);});
 
@@ -1783,7 +2246,7 @@ function makePlane(){
   const skin=new THREE.MeshStandardMaterial({vertexColors:true,metalness:.25,roughness:.38});
   g.add(new THREE.Mesh(fg,skin));
   const white=new THREE.MeshStandardMaterial({color:0xEEF1F4,metalness:.25,roughness:.4,side:THREE.DoubleSide});
-  const gold=new THREE.MeshStandardMaterial({color:0xD4A84B,metalness:.55,roughness:.3,side:THREE.DoubleSide});
+  const gold=new THREE.MeshStandardMaterial({color:0xF4A63C,metalness:.55,roughness:.3,side:THREE.DoubleSide});
   const dark=new THREE.MeshStandardMaterial({color:0x101826,roughness:.4});
   // cabin windows + cockpit
   [1,-1].forEach(s=>{const w=new THREE.Mesh(new THREE.BoxGeometry(.004,.014,.86),dark);w.position.set(s*.099,.028,.04);g.add(w);});
@@ -1820,7 +2283,7 @@ const shadow=new THREE.Mesh(new THREE.PlaneGeometry(.06,.06),new THREE.MeshBasic
 
 // trans-siberian train
 function makeTrain(){const g=new THREE.Group();const cars=[];
-  for(let i=0;i<5;i++){const m=new THREE.Mesh(new THREE.BoxGeometry(.0045,.004,.012),new THREE.MeshStandardMaterial({color:i===0?0xC8402F:0xD9DEE4,roughness:.5}));cars.push(m);g.add(m);}
+  for(let i=0;i<5;i++){const m=new THREE.Mesh(new THREE.BoxGeometry(.0045,.004,.012),new THREE.MeshStandardMaterial({color:i===0?0xE8613C:0xD9DEE4,roughness:.5}));cars.push(m);g.add(m);}
   g.userData.cars=cars;return g;}
 const train=makeTrain();train.visible=false;scene.add(train);
 function placeTrain(t){const cars=train.userData.cars;const len=railPath.getLength();
@@ -1829,21 +2292,32 @@ function placeTrain(t){const cars=train.userData.cars;const len=railPath.getLeng
 
 // contrail
 const TRAIL=110,trailPos=new Float32Array(TRAIL*3),trailCol=new Float32Array(TRAIL*3);
-for(let i=0;i<TRAIL;i++){const k=Math.pow(1-i/TRAIL,1.6);trailCol.set([.9*k,.86*k,.78*k],i*3);}
+for(let i=0;i<TRAIL;i++){const t=i/TRAIL;const k=Math.pow(1-t,1.6);const r=(1.0*(1-t)+0.957*t)*k;const g=(0.506*(1-t)+0.651*t)*k;const b=(0.337*(1-t)+0.235*t)*k;trailCol.set([r,g,b],i*3);}
 const trailGeo=new THREE.BufferGeometry();trailGeo.setAttribute('position',new THREE.BufferAttribute(trailPos,3));trailGeo.setAttribute('color',new THREE.BufferAttribute(trailCol,3));
 const trail=new THREE.Line(trailGeo,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,opacity:.7}));trail.frustumCulled=false;scene.add(trail);
 let trailInit=false;
 
 // arrival ripples
 const rings=[];
-function ripple(id){const p=P(id);for(let k=0;k<2;k++){const m=new THREE.Mesh(new THREE.RingGeometry(.006,.0075,48),new THREE.MeshBasicMaterial({color:0xD4A84B,transparent:true,side:THREE.DoubleSide,depthWrite:false}));
+function ripple(id){const p=P(id);for(let k=0;k<2;k++){const m=new THREE.Mesh(new THREE.RingGeometry(.006,.0075,48),new THREE.MeshBasicMaterial({color:0xF4A63C,transparent:true,side:THREE.DoubleSide,depthWrite:false}));
   m.position.copy(p.clone().multiplyScalar(1.0025));m.lookAt(p.clone().multiplyScalar(2));scene.add(m);rings.push({m,t:-k*.35});}}
 
 /* ---- flight model: taxi, climb, cruise, descend, flare ---- */
 function slerp(a,b,t){const ang=a.angleTo(b);if(ang<1e-6)return a.clone();const s=Math.sin(ang);return a.clone().multiplyScalar(Math.sin((1-t)*ang)/s).add(b.clone().multiplyScalar(Math.sin(t*ang)/s));}
+/* ---- dashed flight route line on the globe ---- */
+const routeLineMat=new THREE.LineDashedMaterial({color:0xF4A63C,transparent:true,opacity:.38,dashSize:.014,gapSize:.01});
+for(let i=0;i<PATH.length-1;i++){
+  if(STOPS[i]&&STOPS[i].train)continue;
+  const a=P(PATH[i]),b=P(PATH[i+1]);
+  const pts=[];
+  for(let k=0;k<=40;k++){pts.push(slerp(a,b,k/40).normalize().multiplyScalar(1.0025));}
+  const l=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),routeLineMat);
+  l.computeLineDistances();
+  scene.add(l);
+}
 const GROUND=1.0035;
 function flight(a,b,t){
-  const ang=a.angleTo(b);const cruise=Math.min(.12,.025+ang*.13);
+  const ang=a.angleTo(b);const cruise=Math.min(.18,.025+ang*.2);
   const s=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;       // slow on the runway, fast at cruise
   const climb=smooth(clamp((t-.04)/.24)),desc=1-smooth(clamp((t-.7)/.27));
   const alt=GROUND+cruise*climb*desc;
@@ -1874,13 +2348,116 @@ function resize(){
 }
 addEventListener('resize',resize);
 
-let cSmooth=0,free=null,vehicleGround=P('dubai'),lastGuide=-2,walkUntil=0,lastLanded=-1;
+let cSmooth=0,free=null,vehicleGround=P('del'),lastGuide=-2,walkUntil=0,lastLanded=-1;
 let cam=HERO_CAM.slice();
 const bubble=document.getElementById('bubble'),gText=document.getElementById('guide-text');
-function say(text){if(gText.textContent===text)return;bubble.classList.add('swap');setTimeout(()=>{gText.textContent=text;bubble.classList.remove('swap');},reduce?0:180);}
+let sayTimer=0;
+const walkerEl=document.getElementById('sasha-walker'),walkerWrap=document.getElementById('sasha-figure-wrap');
+const walkerBubble=document.getElementById('sasha-walker-bubble'),walkerBubbleText=document.getElementById('sasha-bubble-text');
+let bubbleTimer=0,walkerStartTime=performance.now();
+
+function showWalkerBubble(text){
+  if(!text||!walkerBubble||!walkerBubbleText)return;
+  walkerBubbleText.textContent=text;
+  walkerBubble.classList.add('visible');
+  clearTimeout(bubbleTimer);
+  bubbleTimer=setTimeout(()=>{if(walkerBubble)walkerBubble.classList.remove('visible');},6000);
+}
+
+if(walkerWrap){
+  walkerWrap.addEventListener('click',()=>{if(gText&&gText.textContent)showWalkerBubble(gText.textContent);});
+}
+const dockSashaAvatar=document.querySelector('.dock-sasha-avatar');
+if(dockSashaAvatar){
+  dockSashaAvatar.addEventListener('click',()=>{if(gText&&gText.textContent)showWalkerBubble(gText.textContent);});
+}
+
+function say(text){
+  if(gText.textContent===text)return;
+  gText.textContent=text;
+  showWalkerBubble(text);
+}
+
+function updateWalker(now){
+  if(!walkerEl||!walkerWrap)return;
+  if(reduce){
+    walkerEl.style.transform='translate3d(12px,0,0)';
+    walkerWrap.style.transform='none';
+    if(imgMode){gImg.src='assets/guide-stand.webp';}else{walkV.pause();}
+    return;
+  }
+  if(!imgMode&&walkV.paused&&walkV.readyState>=2){
+    walkV.play().catch(()=>{});
+  }else if(imgMode&&imgState!=='walk'){
+    imgState='walk';
+    gImg.src='assets/guide-walk.webp';
+  }
+  const isPhone=window.innerWidth<=768;
+  const T=isPhone?16:22;
+  const elapsed=(now-walkerStartTime)/1000;
+  const cycle=(elapsed%(2*T))/T;
+  const figureW=isPhone?47:60;
+  const minX=12;
+  const maxX=Math.max(minX,window.innerWidth-figureW-12);
+  let progress,dir;
+  if(cycle<=1){progress=cycle;dir=1;}
+  else{progress=2-cycle;dir=-1;}
+  const currentX=minX+progress*(maxX-minX);
+  walkerEl.style.transform='translate3d('+currentX.toFixed(2)+'px,0,0)';
+  walkerWrap.style.transform=dir===1?'scaleX(-1)':'scaleX(1)';
+
+  if(walkerBubble){
+    const bubbleW=walkerBubble.offsetWidth||180;
+    let bLeft=0;
+    if(currentX+bubbleW>window.innerWidth-16){
+      bLeft=(window.innerWidth-16)-(currentX+bubbleW);
+    }
+    if(currentX+bLeft<10){
+      bLeft=10-currentX;
+    }
+    walkerBubble.style.left=bLeft.toFixed(1)+'px';
+    if(bLeft<-30){
+      walkerBubble.classList.add('flip-tail');
+    }else{
+      walkerBubble.classList.remove('flip-tail');
+    }
+  }
+}
 let trainShown=false;
 let lastCover=1;const colEls=[...document.querySelectorAll('main .col')];
-function setGuideForChapter(){if(trainShown)return;const i=clamp(Math.round(cSmooth),0,6);if(i!==lastGuide){if(lastGuide!==-2)waveQueued=true;lastGuide=i;say(T[lang].guide[i]);}}
+function getGuideKey(){
+  const y=scrollY+H*.5;
+  const c1=document.getElementById('c1');if(!c1||y<c1.offsetTop)return 0;
+  const c2=document.getElementById('c2');if(c2&&y<c2.offsetTop)return 1;
+  const c3=document.getElementById('c3');if(c3&&y<c3.offsetTop)return 2;
+  const c4=document.getElementById('c4');if(c4&&y<c4.offsetTop)return 3;
+  const c5=document.getElementById('c5');if(c5&&y<c5.offsetTop)return 4;
+  const interEl=document.querySelector('.interlude');if(interEl&&y<interEl.offsetTop)return 5;
+  const c6=document.getElementById('c6');if(c6&&y<c6.offsetTop)return 'guide_train';
+  const c7=document.getElementById('c7');if(c7&&y<c7.offsetTop)return 6;
+  const c8=document.getElementById('c8');if(c8&&y<c8.offsetTop)return 7;
+  const nightEl=document.getElementById('night');if(nightEl&&y<nightEl.offsetTop)return 8;
+  const expEl=document.getElementById('explore');if(expEl&&y<expEl.offsetTop)return 'guide_night';
+  const nbEl=document.getElementById('notebook');if(nbEl&&y<nbEl.offsetTop)return 9;
+  const jnyEl=document.getElementById('journeys');if(jnyEl&&y<jnyEl.offsetTop)return 'guide_nb';
+  const tripsEl=document.getElementById('trips');if(tripsEl&&y<tripsEl.offsetTop)return 'guide_jny';
+  const svcEl=document.getElementById('services');if(svcEl&&y<svcEl.offsetTop)return 'guide_trips';
+  const prtEl=document.getElementById('partners');if(prtEl&&y<prtEl.offsetTop)return 'guide_svc';
+  const howEl=document.getElementById('how');if(howEl&&y<howEl.offsetTop)return 'guide_doors';
+  const faqEl=document.getElementById('faq');if(faqEl&&y<faqEl.offsetTop)return 'guide_how';
+  const proofEl=document.getElementById('proof');if(proofEl&&y<proofEl.offsetTop)return 'guide_faq';
+  const presenceEl=document.getElementById('presence');if(presenceEl&&y<presenceEl.offsetTop)return 'guide_reviews';
+  return 'guide_off';
+}
+function setGuideForChapter(){
+  if(trainShown)return;
+  const k=getGuideKey();
+  if(k!==lastGuide){
+    if(lastGuide!==-2)waveQueued=true;
+    lastGuide=k;
+    say(typeof k==='string'?T[lang][k]:T[lang].guide[k]);
+  }
+}
 
 function chapterIndex(){const y=scrollY+H*.5;let idx=0;
   for(let i=0;i<SECTIONS.length;i++){const s=SECTIONS[i];if(y>=s.offsetTop)idx=i+Math.min(1,(y-s.offsetTop)/s.offsetHeight);}
@@ -1894,7 +2471,8 @@ function flyTo(id){
   document.querySelectorAll('[data-row]').forEach(r=>r.classList.toggle('active',r.dataset.row===id));
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(!b)return;
-  if(Math.abs(chapterIndex()-6)>.6){go(explore);setTimeout(()=>flyTo(b.dataset.go),reduce?0:1000);}else flyTo(b.dataset.go);});
+  const expIdx=SECTIONS.indexOf(explore);
+  if(Math.abs(chapterIndex()-(expIdx>=0?expIdx:9))>.6){go(explore);setTimeout(()=>flyTo(b.dataset.go),reduce?0:1000);}else flyTo(b.dataset.go);});
 
 /* ================= POSTCARD ================= */
 const pc=document.getElementById('postcard');let pcId=null;const guideEl=document.getElementById('guide');
@@ -1910,7 +2488,7 @@ document.getElementById('pc-x').addEventListener('click',hidePostcard);
 
 /* ================= GUIDE (green screen keyed in WebGL) ================= */
 const gCanvas=document.getElementById('gcanvas'),walkV=document.getElementById('gwalk'),waveV=document.getElementById('gwave');
-let gGL=null,gU={},guideOk=false,gCur=waveV,waveQueued=true;
+let gGL=null,gU={},guideOk=false,gCur=walkV,waveQueued=false;
 (function(){try{
   gGL=gCanvas.getContext('webgl',{premultipliedAlpha:false,alpha:true,antialias:false});if(!gGL)throw 0;
   const vs='attribute vec2 p;varying vec2 uv;void main(){uv=vec2(p.x*.5+.5,.5-p.y*.5);gl_Position=vec4(p,0.,1.);}';
@@ -2082,7 +2660,7 @@ function updateLayers(c){
   const to=smooth(clamp((q+.3)/.35))*smooth(clamp((1.3-q)/.35));
   trainLayer.style.opacity=to;trainLayer.style.visibility=to<.01?'hidden':'visible';
   if(to>.01&&!trainOn){trainOn=true;if(!reduce&&!SAVE){if(!trainVid.getAttribute('src'))trainVid.src=VID+'train-loop.mp4';trainVid.play().catch(()=>{});}}else if(to<=.01&&trainOn){trainOn=false;trainVid.pause();}
-  scrim.style.opacity=(c>.6&&c<5.5)?1:0;
+  scrim.style.opacity=(c>.6&&c<8.5)?1:0;
   return to;}
 
 /* ================= LOOP ================= */
@@ -2106,12 +2684,12 @@ function frame(now){
   }else{
     const p=clamp(cSmooth,0,PATH.length-1);const i=Math.min(PATH.length-2,Math.floor(p));const t=clamp(p-i);
     const a=P(PATH[i]),b=P(PATH[i+1]);
-    if(i===3&&t>.04&&t<.96){ // Kazan to Irkutsk by train
+    if(i===5&&t>.04&&t<.96){ // Kazan to Irkutsk by train
       onTrain=true;railT=T_KAZAN+(T_IRK-T_KAZAN)*ease((t-.04)/.92);
       const rp=railPath.getPointAt(railT).normalize();pos=rp.clone().multiplyScalar(GROUND);next=railPath.getPointAt(clamp(railT+.002)).normalize().multiplyScalar(GROUND);zoomOut=.35;
     }else{
-      const tt=i===3?(t<=.04?0:1):t;
-      const f=flight(a,b,tt),f2=flight(a,b,Math.min(1,tt+.004));pos=f.pos;next=f2.pos;alt=f.alt;zoomOut=f.cruise*5.5*Math.sin(Math.PI*tt);
+      const tt=i===5?(t<=.04?0:1):t;
+      const f=flight(a,b,tt),f2=flight(a,b,Math.min(1,tt+.004));pos=f.pos;next=f2.pos;alt=f.alt;zoomOut=f.cruise*6.5*Math.sin(Math.PI*tt);
       if(tt>=.999||tt<=.001){// parked: face along the next leg
         const nb=P(PATH[Math.min(PATH.length-1,(tt>=.999?i+1:i)+1)]);const here=tt>=.999?b:a;next=slerp(here,nb,.01).normalize().multiplyScalar(GROUND);if(next.distanceTo(pos)<1e-6)next=pos.clone().add(new THREE.Vector3(0,.001,0));}
     }
@@ -2145,7 +2723,7 @@ function frame(now){
   trailGeo.attributes.position.needsUpdate=true;
 
   // railway lights up behind the train
-  const rlit=free?1:railT!==null?railT:(cSmooth>=3.96?1:clamp((cSmooth-2.5)/1.5)*T_KAZAN);
+  const rlit=free?1:railT!==null?railT:(cSmooth>=5.96?1:clamp((cSmooth-4.5)/0.5)*T_KAZAN);
   railLit.geometry.setDrawRange(0,Math.floor(railTotal*rlit/6)*6);
 
   // ripples
@@ -2156,7 +2734,7 @@ function frame(now){
   const follow=[vla-5,vlo,2.05+zoomOut];
   if(free)camTarget=follow;
   else if(cSmooth<1)camTarget=HERO_CAM.map((v,k)=>v+(follow[k]-v)*smooth(clamp(cSmooth)));
-  else if(cSmooth>5)camTarget=follow.map((v,k)=>v+(EXPLORE_CAM[k]-v)*smooth(clamp(cSmooth-5)));
+  else if(cSmooth>8)camTarget=follow.map((v,k)=>v+(EXPLORE_CAM[k]-v)*smooth(clamp(cSmooth-8)));
   else camTarget=follow;
   // services band slides sideways while pinned; the offices finale pulls the camera back to show all five offices
   const rtlD=document.documentElement.dir==='rtl'?1:-1;
@@ -2181,17 +2759,35 @@ function frame(now){
 
   // pins with collision (they also stay out from behind the text columns)
   camDir.copy(camera.position).normalize();
-  const focus=free?free.id:(Math.round(cSmooth)>=1&&Math.round(cSmooth)<=5?STOPS[Math.round(cSmooth)-1].id:null);
-  const rtlNow=document.documentElement.dir==='rtl';
-  const placed=W>900?[rtlNow?[0,0,120,H]:[W-120,0,W,H]]:[];
+  const focus=free?free.id:(Math.round(cSmooth)>=1&&Math.round(cSmooth)<=8?STOPS[Math.round(cSmooth)-1].id:null);
+  const zoneW=W>=1024?96:64;
+  const rrRoute=routeEl?routeEl.getBoundingClientRect():null;
+  const zoneX=rrRoute?Math.min(W-zoneW,rrRoute.left-4):W-zoneW;
+  const placed=[];
   colEls.forEach(e=>{const r=e.getBoundingClientRect();if(r.bottom>0&&r.top<H)placed.push([r.left-8,r.top-8,r.right+8,r.bottom+8]);});
   PIN_ORDER.slice().sort((a,b)=>(b===focus)-(a===focus)).forEach(id=>{
     const v=P(id).multiplyScalar(1.004);const facing=v.clone().normalize().dot(camDir);
-    const s=v.project(camera);const X=(s.x*.5+.5)*W,Y=(-s.y*.5+.5)*H;const el=pins[id];const w=el.offsetWidth||90;
-    const box=[X-10,Y-12,X-10+w,Y+14];const hit=placed.some(b=>!(box[2]<b[0]||box[0]>b[2]||box[3]<b[1]||box[1]>b[3]));
-    const hide=facing<.3||hit||lastCover>.6;
+    const s=v.project(camera);const X=(s.x*.5+.5)*W,Y=(-s.y*.5+.5)*H;const el=pins[id];
+    let side=PIN_SIDES[id]||'right';const w=el.offsetWidth||90,h=el.offsetHeight||26;
+    let tx,ty;
+    if(side==='left'){tx=X-w+10;ty=Y-13;}
+    else if(side==='top'){tx=X-w*.5;ty=Y-h+10;}
+    else if(side==='bottom'){tx=X-w*.5;ty=Y-10;}
+    else{tx=X-10;ty=Y-13;}
+    if(X>=zoneX||tx+w>=zoneX){
+      side='left';
+      tx=X-w+10;
+      ty=Y-13;
+    }
+    if(!el.classList.contains('pin-'+side)){
+      el.classList.remove('pin-left','pin-right','pin-top','pin-bottom');
+      el.classList.add('pin-'+side);
+    }
+    const box=[tx-2,ty-2,tx+w+2,ty+h+2];
+    const hit=placed.some(b=>!(box[2]<b[0]||box[0]>b[2]||box[3]<b[1]||box[1]>b[3]));
+    const hide=facing<.3||hit||lastCover>.6||X>=zoneX||tx+w>=zoneX;
     if(hide){if(!el.classList.contains('hidden')){el.classList.add('hidden');el.tabIndex=-1;el.setAttribute('aria-hidden','true');}}
-    else{placed.push(box);if(el.classList.contains('hidden')){el.classList.remove('hidden');el.tabIndex=0;el.removeAttribute('aria-hidden');}el.style.transform=`translate(${X-10}px,${Y-13}px)`;}
+    else{placed.push(box);if(el.classList.contains('hidden')){el.classList.remove('hidden');el.tabIndex=0;el.removeAttribute('aria-hidden');}el.style.transform=`translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px)`;}
     el.classList.toggle('active',id===focus);});
 
   // route strip
@@ -2205,13 +2801,25 @@ function frame(now){
   const gKey=free?null:trainO>.5?'guide_train':fp>.5?'guide_off':svcOn?'guide_svc':(nVis&&np>.04&&np<.97)?'guide_night':null;
   trainShown=!!gKey;
   if(gKey&&lastGuide!==gKey){lastGuide=gKey;say(T[lang][gKey]);}
-  const st=free?-1:Math.round(cRaw);const stopIdx=st>=1&&st<=5&&trainO<.5?st-1:-1;
+  const st=free?-1:Math.round(cRaw);const stopIdx=st>=1&&st<=8&&trainO<.5?st-1:-1;
   if(stopIdx!==activeStop){activeStop=stopIdx;playStop(stopIdx);}
 
-  guideEl.classList.toggle('tuck',W<720&&cRaw>5.5);
-  setGuideMotion(now<walkUntil);drawGuide();
+  if(walkerEl)walkerEl.classList.toggle('tuck',false);
+  updatePostStory();
+  updateWalker(now);drawGuide();
   requestAnimationFrame(frame);
 }
+
+function updatePostStory(){
+  const exploreEl = document.getElementById('explore');
+  if (exploreEl) {
+    const isPostStory = exploreEl.getBoundingClientRect().top <= 0;
+    document.documentElement.classList.toggle('post-story', isPostStory);
+  }
+}
+window.addEventListener('scroll', updatePostStory, { passive: true });
+window.addEventListener('resize', updatePostStory, { passive: true });
+updatePostStory();
 
 /* ================= ANIMATED LOGO ================= */
 const NEEDLE_BASE=26.6; // the needle's drawn angle in the logo, degrees clockwise from north
@@ -2245,11 +2853,12 @@ function runIntro(){
   let done=false;const evs=['wheel','keydown','pointerdown','touchstart'];
   function finish(){if(done)return;done=true;stop=true;pl.removeAttribute('transform');pl.style.opacity='';
     anims.forEach(a=>{try{a.finish();}catch(e){}});evs.forEach(ev=>removeEventListener(ev,finish));
-    const to=document.querySelector('.top .logo-link svg').getBoundingClientRect(),from=svg.getBoundingClientRect();
+    const logoEl=document.querySelector('.top .logo-link svg')||document.querySelector('.top .capsule-logo')||document.querySelector('.capsule-brand');
+    const to=logoEl?logoEl.getBoundingClientRect():{left:40,top:20,width:70};const from=svg.getBoundingClientRect();
     svg.style.transformOrigin='0 0';
     tag.animate([{opacity:1},{opacity:0}],{duration:200,fill:'forwards'});
     svg.animate([{transform:'none'},{transform:`translate(${to.left-from.left}px,${to.top-from.top}px) scale(${to.width/from.width})`}],{duration:720,easing:'cubic-bezier(.77,0,.175,1)',fill:'forwards'});
-    const bg=intro.animate([{backgroundColor:'rgba(10,20,36,1)'},{backgroundColor:'rgba(10,20,36,0)'}],{duration:520,delay:260,easing:'ease',fill:'forwards'});
+    const bg=intro.animate([{backgroundColor:'rgba(11,22,38,1)'},{backgroundColor:'rgba(11,22,38,0)'}],{duration:520,delay:260,easing:'ease',fill:'forwards'});
     bg.finished.then(()=>{document.documentElement.classList.remove('intro-on');intro.remove();});}
   setTimeout(finish,2500);evs.forEach(ev=>addEventListener(ev,finish,{passive:true}));
 }
@@ -2270,3 +2879,5 @@ function loadMapData(){
 Promise.all([loadMapData(),document.fonts?document.fonts.load('400 40px "Cormorant Garamond"').catch(()=>{}):null])
   .then(([[w,g]])=>{WORLD=w;GEO=g;mapReady=true;paintMap();}).catch(e=>console.warn('Map data could not load',e));
 </script>
+
+<script src="./shell/shell.js" defer></script>

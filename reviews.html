@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Traveller reviews</title>
+<meta name="description" content="Verified traveller reviews from ROTW Travels journeys across Russia.">
+<meta name="theme-color" content="#0B1626">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1626'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23F4A63C' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23F8F1E8'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23F4A63C'/%3E%3C/svg%3E">
+<style>
+:root{
+  --base:#0B1626;
+  --ink:#0B1626; --ink-2:#15233B; --line:#2B3A57; --glacier:#F8F1E8; --paper:#F7EBDD; --mist:#AEB6C4; --soft:#D8CFC8;
+  --gold:#F4A63C; --gold-hover:#FFB547; --ice:#7BA7D0; --ember:#E8613C;
+  --sun:#FFAF28; --coral:#FF8156; --rose:#F58AA0; --peach:#FFD7A8; --dusk:#212C3E;
+  --sky-1:#15233B; --sky-2:#2A3A5E; --sky-3:#385D89; --dusk-rose:#6B4A6A;
+  --horizon-rose:#F58AA0; --horizon-coral:#FF8156; --horizon-amber:#FFAF28; --horizon-peach:#FFD7A8;
+  --bg-sunset:linear-gradient(180deg,#0B1626 0%,#15233B 32%,#2A3A5E 55%,#6B4A6A 76%,#C65F5A 90%,#F4A63C 100%);
+  --bg-dusk:linear-gradient(180deg,#0B1626 0%,#15233B 45%,#2A3A5E 100%);
+  --bg-glow:radial-gradient(120% 70% at 50% 110%, rgba(255,129,86,.55) 0%, rgba(245,138,160,.28) 38%, rgba(11,22,38,0) 70%);
+  --bg-sunrise-side:radial-gradient(80% 60% at 100% 100%, rgba(255,175,40,.35), rgba(11,22,38,0) 65%);
+  --sunset-line:linear-gradient(90deg, rgba(255,129,86,0) 0%, #FF8156 25%, #F4A63C 75%, rgba(244,166,60,0) 100%);
+  --sunset-wash:linear-gradient(180deg,rgba(255,129,86,0),rgba(255,129,86,.10) 60%,rgba(245,138,160,.12));
+  --f-display:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+  --f-text:"Jost","Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-contrast: more){
+  :root{
+    --bg-glow:none;
+    --bg-sunrise-side:none;
+  }
+}
+::selection{background:var(--coral);color:#0B1626}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background-color:#0B1626;
+  background:var(--bg-glow), var(--bg-dusk);
+  background-position:center bottom, center top;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  color:var(--glacier);
+  font-family:var(--f-text);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;letter-spacing:-.015em;color:var(--glacier)}
+h1 span.hl,h2 span.hl,h3 span.hl,.hl{color:var(--peach)}
+p{margin:0;color:var(--soft)}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration-color:var(--coral)}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+.skip{position:fixed;inset-inline-start:12px;top:-60px;z-index:60;background:var(--gold);color:#0B1626;padding:10px 14px;border-radius:2px;text-decoration:none;font-weight:500;transition:top .2s}
+.skip:focus{top:12px}
+
+/* Top bar */
+.top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:18px max(20px,env(safe-area-inset-right,0px)) 20px max(20px,env(safe-area-inset-left,0px));
+  background:var(--ink);
+  border-bottom:1px solid var(--line);
+}
+.rotw-logo{display:block;width:auto;overflow:visible;--lg-main:var(--glacier);--lg-red:#E53824;--lg-hole:var(--ink)}
+.rotw-logo.logo{height:40px}
+.top nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px}
+.top nav a{color:var(--soft);transition:color .2s}
+.top nav a:hover{color:var(--glacier)}
+.top .right{display:flex;align-items:center;gap:18px}
+.nav-notebook{font-size:13px;font-weight:500;color:var(--glacier);border:1px solid rgba(244,166,60,.35);border-radius:999px;padding:5px 12px;transition:border-color .2s,color .2s;white-space:nowrap;display:inline-flex;align-items:center}
+.nav-notebook:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:720px){.nav-notebook{display:none}}
+@media (max-width:1020px){.top nav{display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 15px var(--f-text);border-radius:2px;padding:12px 20px;border:0;cursor:pointer;min-height:44px;text-decoration:none;transition:background .2s,transform .2s}
+.btn.primary{background:var(--gold);color:#0B1626}
+.btn.primary:hover{background:var(--sun)}
+.btn.primary:active{transform:scale(.97);background:var(--coral)}
+
+/* Main Content */
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:80px 24px}
+.proof-section{width:100%;max-width:1200px;margin:0 auto}
+.proof-wrap{display:flex;justify-content:center}
+.proof-card{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:6px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:56px 40px;text-align:center;max-width:580px;width:100%;display:flex;flex-direction:column;align-items:center;gap:18px}
+.proof-card h1{font-size:clamp(36px,4.5vw,52px);color:var(--glacier);line-height:1.1}
+.proof-card p{font-size:17px;color:var(--soft);line-height:1.6;max-width:44ch}
+.proof-card .btn{margin-top:10px}
+
+/* Footer */
+footer{width:100%;padding:80px 0 60px;background:var(--ink);border-top:1px solid var(--line);box-sizing:border-box}
+.foot-cols{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:60px}
+@media (max-width:900px){.foot-cols{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:500px){.foot-cols{grid-template-columns:1fr}}
+.foot-col h3{font-family:var(--f-display);font-size:20px;font-weight:500;color:var(--glacier);margin-bottom:14px}
+.foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.foot-col a{font-size:14px;color:var(--mist);transition:color .2s}
+.foot-col a:hover{color:var(--gold)}
+.foot-brand-wrap{max-width:1200px;margin:0 auto;padding:40px 24px 0;box-sizing:border-box;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.foot-brand-left{display:flex;align-items:center;gap:16px}
+.foot-brand-left .rotw-logo{height:38px}
+.foot-tag{font-style:italic;font-weight:500;color:var(--mist);font-size:14px;margin:0}
+.foot-copy{font-size:13px;color:var(--mist);margin:0}
+</style>
+  <link rel="stylesheet" href="./shell/shell.css">
+</head>
+<body>
+<a class="skip" href="#reviews-main">Skip to main content</a>
+<!-- SHELL:HEADER -->
+<a href="#main" class="shell-skip">Skip to main content</a>
+
+<header class="shell-header-wrapper" role="banner">
+  <div class="compass-capsule" id="compass-capsule">
+    <!-- Company Logo (FIX 1) -->
+    <a href="index.html" class="capsule-brand" aria-label="ROTW Travels">
+      <img class="capsule-logo" src="./assets/site/logo-white.png" alt="ROTW Travels" width="80" height="32">
+    </a>
+
+    <!-- Category Nav Links -->
+    <nav class="capsule-nav" aria-label="Main Navigation">
+      <a href="notes/index.html" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-map-pin"/></svg>
+      <span>Destinations</span>
+    </a>
+      <a href="index.html#journeys" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-route"/></svg>
+      <span>Journeys</span>
+    </a>
+      <a href="index.html#trips" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-compass"/></svg>
+      <span>Experiences</span>
+    </a>
+      <a href="index.html#partners" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
+      <span>For agents</span>
+    </a>
+      <a href="notes/index.html" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-notebook"/></svg>
+      <span>Sasha's notebook</span>
+    </a>
+    </nav>
+
+    <!-- Right Controls: Language Endonym + Gold Pill CTA -->
+    <div class="capsule-actions">
+      <div class="capsule-lang-wrap">
+        <svg class="shell-icon capsule-lang-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-globe"/></svg>
+        <select class="capsule-lang-select" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+        <svg class="shell-icon capsule-lang-arrow" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
+      </div>
+
+      <a href="plan.html" class="btn-pill-plan">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+        <span>Plan a trip</span>
+      </a>
+
+      <button class="btn-capsule-menu" id="btn-capsule-menu" aria-label="Open menu" aria-expanded="false" aria-controls="shell-menu-drawer">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Full-screen Mobile Menu Drawer (<1024px) -->
+<div class="shell-menu-drawer" id="shell-menu-drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Navigation Menu">
+  <div class="drawer-top-row">
+    <a href="index.html" class="capsule-brand" aria-label="ROTW Travels">
+      <img class="capsule-logo" src="./assets/site/logo-white.png" alt="ROTW Travels" width="70" height="28">
+    </a>
+    <button class="drawer-close-btn" id="btn-drawer-close" aria-label="Close menu">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-close"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer-scroll-area">
+    <ul class="drawer-nav-list">
+      <li>
+      <a href="notes/index.html" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-map-pin"/></svg>
+        <span>Destinations</span>
+      </a>
+    </li>
+      <li>
+      <a href="index.html#journeys" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-route"/></svg>
+        <span>Journeys</span>
+      </a>
+    </li>
+      <li>
+      <a href="index.html#trips" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-compass"/></svg>
+        <span>Experiences</span>
+      </a>
+    </li>
+      <li>
+      <a href="index.html#partners" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
+        <span>For agents</span>
+      </a>
+    </li>
+      <li>
+      <a href="notes/index.html" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-notebook"/></svg>
+        <span>Sasha's notebook</span>
+      </a>
+    </li>
+    </ul>
+
+    <div class="drawer-lang-chips">
+      <button class="drawer-lang-chip active" data-shell-lang="en">English</button>
+        <button class="drawer-lang-chip" data-shell-lang="ru">Русский</button>
+        <button class="drawer-lang-chip" data-shell-lang="ar">العربية</button>
+        <button class="drawer-lang-chip" data-shell-lang="hi">हिन्दी</button>
+    </div>
+  </div>
+
+  <div class="drawer-cta-wrap">
+    <a href="plan.html" class="btn-pill-plan drawer-cta-btn">
+      <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+      <span>Plan a trip</span>
+    </a>
+  </div>
+</div>
+<!-- /SHELL:HEADER -->
+
+<main id="reviews-main">
+  <section class="proof-section" id="proof" aria-labelledby="proof-title">
+    <div class="proof-wrap">
+      <div class="proof-card">
+        <h1 id="proof-title">Traveller reviews</h1>
+        <p class="proof-empty">Reviews from ROTW travellers will appear here.</p>
+        <a class="btn primary" href="mailto:inbound@rotwtravels.com">Speak with our Moscow team</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- SHELL:FOOTER -->
+<footer class="rotw-shell-footer" role="contentinfo">
+  <!-- Collapsed Persistent Dock Console -->
+  <aside class="rotw-dock" id="rotw-dock" aria-label="Sasha's Travel Console">
+    <div class="dock-sasha-block" id="bubble">
+      <div class="dock-sasha-avatar">
+        <img src="./assets/sasha.webp" alt="Sasha" width="40" height="40" loading="lazy">
+      </div>
+      <b id="guide-name" style="display:none;">Sasha</b>
+      <span class="dock-speech" id="guide-text">Reviews from ROTW travellers will appear here.</span>
+    </div>
+
+    <div class="dock-actions">
+      <button class="btn-dock-dir" id="btn-dock-directory" aria-expanded="false" aria-controls="rotw-directory-tray">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-menu"/></svg>
+        <span class="label-text">Full directory</span>
+      </button>
+
+      <a href="plan.html" class="btn-dock-plan">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+        <span class="label-text">Plan a trip</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Slide-Up Full Directory Disclosure Backdrop -->
+  <div class="rotw-tray-backdrop" id="rotw-tray-backdrop" aria-hidden="true"></div>
+
+  <!-- Slide-Up Full Directory Disclosure Tray -->
+  <div class="rotw-directory-tray" id="rotw-directory-tray" role="region" aria-label="Directory &amp; Operations" hidden="until-found">
+    <!-- Tray Header -->
+    <div class="tray-header">
+      <div class="tray-title-block">
+        <h3 id="rotw-directory-heading">Directory &amp; Operations</h3>
+        <p>Official Inbound Tour Operator · Moscow</p>
+      </div>
+      <button class="tray-close-btn" id="btn-tray-close" aria-label="Close directory">
+        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-close"/></svg>
+      </button>
+    </div>
+
+    <!-- Tray Scrollable Content -->
+    <div class="tray-scroll-body">
+      <!-- 1. Sasha's Note Slip -->
+      <article class="sasha-note-card">
+        <div class="note-tape note-tape-left" aria-hidden="true"></div>
+        <div class="note-tape note-tape-right" aria-hidden="true"></div>
+        <p class="sasha-handwriting-p">
+          “Questions before you pack? Write to Sasha and the Moscow team.”
+          <span class="sasha-signature-span">— Sasha</span>
+        </p>
+        <div class="sasha-note-actions">
+          <a href="plan.html" class="btn-note-plan">
+            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+            <span>Plan a trip</span>
+          </a>
+          <a href="mailto:inbound@rotwtravels.com" class="btn-note-mail">
+            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-mail"/></svg>
+            <span>Write to the Moscow team</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- 2. Two Doors Block -->
+      <div class="tray-doors-block">
+        <!-- Door 1: Travellers -->
+        <div class="tray-door-card tray-door-light">
+          <div>
+            <h4>Planning a trip to Russia?</h4>
+            <ul class="tray-door-list">
+              <li>Private and small-group tours</li>
+              <li>Visa support and invitation letters</li>
+              <li>Airport meet and assist</li>
+              <li>Transfers and cars with a driver</li>
+              <li>Hotels, rail and domestic flights</li>
+              <li>Ballet, opera and event tickets</li>
+            </ul>
+          </div>
+          <a href="plan.html" class="btn-pill-plan tray-door-btn">
+            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
+            <span>Plan a trip</span>
+          </a>
+        </div>
+
+        <!-- Door 2: Agents & Tour Operators -->
+        <div class="tray-door-card tray-door-dark">
+          <div>
+            <h4>Travel agent or operator?</h4>
+            <ul class="tray-door-list">
+              <li>Net rates for FIT and groups</li>
+              <li>MICE, incentives and conferences</li>
+              <li>Guides in English, Hindi, Arabic and more</li>
+              <li>An operations desk in Moscow</li>
+              <li>Outbound to Dubai, Oman, India and Hong Kong</li>
+            </ul>
+          </div>
+          <a href="plan.html#agent" class="btn-pill-plan tray-door-btn" style="background:transparent;border:1px solid var(--shell-gold);color:var(--shell-gold);">
+            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
+            <span>Request net rates</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Directory as Luggage Tags -->
+      <div class="tray-tags-container">
+        <!-- Desktop 3-Column Tags -->
+        <div class="desktop-tags-grid">
+          <!-- Tag 1: Places & Expeditions -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 01 · ROUTE &amp; STOPS</div>
+              <h4>Places &amp; Expeditions</h4>
+            </div>
+            <div class="tag-body">
+              <ul class="tag-dest-grid">
+                <li><a href="notes/moscow.html">Moscow</a></li>
+                <li><a href="notes/spb.html">St Petersburg</a></li>
+                <li><a href="notes/suzdal.html">The Golden Ring</a></li>
+                <li><a href="notes/kazan.html">Kazan</a></li>
+                <li><a href="notes/sochi.html">Sochi</a></li>
+                <li><a href="notes/kaliningrad.html">Kaliningrad</a></li>
+                <li><a href="notes/murmansk.html">Murmansk</a></li>
+                <li><a href="notes/baikal.html">Lake Baikal</a></li>
+                <li><a href="notes/vladivostok.html">Vladivostok</a></li>
+                <li><a href="notes/kamchatka.html">Kamchatka</a></li>
+              </ul>
+              <div class="tag-section-subhead">Journeys</div>
+              <ul class="tag-sublinks">
+                <li><a href="index.html#journeys">The two capitals (7 days)</a></li>
+                <li><a href="index.html#journeys">Moscow and the Golden Ring (5 days)</a></li>
+                <li><a href="index.html#journeys">Trans-Siberian, end to end (15 days)</a></li>
+                <li><a href="index.html#journeys">Baikal on clear ice (7 days)</a></li>
+                <li><a href="index.html#journeys">Kazan and the Volga (4 days)</a></li>
+                <li><a href="index.html#journeys">Northern lights (4 days)</a></li>
+              </ul>
+              <div class="tag-section-subhead">Contact</div>
+              <ul class="tag-sublinks">
+                <li><a href="reviews.html">Traveller reviews</a></li>
+                <li><a href="notes/index.html">Sasha's notebook</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Tag 2: Agents & Services -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 02 · TRADE &amp; CONCIERGE</div>
+              <h4>Agents &amp; Services</h4>
+            </div>
+            <div class="tag-body">
+              <ul class="tag-services-list">
+                <li>Confidential B2B Net Rates for FIT &amp; Groups</li>
+                <li>Russian E-Visa &amp; Tourist Invitation Letters</li>
+                <li>Airport &amp; Station Meet &amp; Assist with Chauffeur</li>
+                <li>Boutique Hotels &amp; Luxury Rail Accommodations</li>
+                <li>MICE &amp; Corporate Incentives Planning</li>
+              </ul>
+              <a href="plan.html#agent" class="tag-cta-btn">
+                <span>Request net rates</span>
+                <svg class="shell-icon shell-icon-flip" aria-hidden="true"><use href="./assets/icons.svg#icon-arrow-right"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tag 3: Moscow HQ & Clocks -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 03 · HEADQUARTERS</div>
+              <h4>Moscow HQ &amp; Clocks</h4>
+            </div>
+            <div class="tag-body">
+              <div class="tag-hq-address">
+                <strong>ROTW Travels</strong><br>
+                106 Prospekt Mira, Moscow 129626
+              </div>
+              <div class="tag-contact-lines">
+                <div>Moscow: <a href="tel:+79309454007"><span dir="ltr">+7 930 945 4007</span></a></div>
+                <div>Dubai: <a href="tel:+97143384075"><span dir="ltr">+971 4 338 4075</span></a></div>
+                <div>Mumbai: <a href="tel:+919821869339"><span dir="ltr">+91 98218 69339</span></a></div>
+                <div>Inbound: <a href="mailto:inbound@rotwtravels.com"><span dir="ltr">inbound@rotwtravels.com</span></a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Mobile Accordions (<860px) -->
+        <div class="mobile-tag-accordion">
+          <details class="accordion-tag" open>
+            <summary>
+              <span>Tag 01 · Places &amp; Expeditions</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <ul class="tag-dest-grid">
+                <li><a href="notes/moscow.html">Moscow</a></li>
+                <li><a href="notes/spb.html">St Petersburg</a></li>
+                <li><a href="notes/suzdal.html">The Golden Ring</a></li>
+                <li><a href="notes/kazan.html">Kazan</a></li>
+                <li><a href="notes/sochi.html">Sochi</a></li>
+                <li><a href="notes/kaliningrad.html">Kaliningrad</a></li>
+                <li><a href="notes/murmansk.html">Murmansk</a></li>
+                <li><a href="notes/baikal.html">Lake Baikal</a></li>
+                <li><a href="notes/vladivostok.html">Vladivostok</a></li>
+                <li><a href="notes/kamchatka.html">Kamchatka</a></li>
+              </ul>
+              <div class="tag-section-subhead" style="margin-top:12px;">Journeys</div>
+              <ul class="tag-sublinks">
+                <li><a href="index.html#journeys">The two capitals (7 days)</a></li>
+                <li><a href="index.html#journeys">Moscow and the Golden Ring (5 days)</a></li>
+                <li><a href="index.html#journeys">Trans-Siberian, end to end (15 days)</a></li>
+                <li><a href="index.html#journeys">Baikal on clear ice (7 days)</a></li>
+                <li><a href="index.html#journeys">Kazan and the Volga (4 days)</a></li>
+                <li><a href="index.html#journeys">Northern lights (4 days)</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="accordion-tag">
+            <summary>
+              <span>Tag 02 · Agents &amp; Services</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <ul class="tag-services-list">
+                <li>Confidential B2B Net Rates for FIT &amp; Groups</li>
+                <li>Russian E-Visa &amp; Tourist Invitation Letters</li>
+                <li>Airport &amp; Station Meet &amp; Assist with Chauffeur</li>
+                <li>Boutique Hotels &amp; Luxury Rail Accommodations</li>
+                <li>MICE &amp; Corporate Incentives Planning</li>
+              </ul>
+              <a href="plan.html#agent" class="tag-cta-btn" style="margin-top:14px;">
+                <span>Request net rates</span>
+                <svg class="shell-icon shell-icon-flip" aria-hidden="true"><use href="./assets/icons.svg#icon-arrow-right"/></svg>
+              </a>
+            </div>
+          </details>
+
+          <details class="accordion-tag">
+            <summary>
+              <span>Tag 03 · Moscow HQ &amp; Clocks</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <div class="tag-hq-address" style="border:0;padding-bottom:6px;">
+                <strong>ROTW Travels</strong><br>
+                106 Prospekt Mira, Moscow 129626
+              </div>
+              <div class="tag-contact-lines">
+                <div>Moscow: <a href="tel:+79309454007"><span dir="ltr">+7 930 945 4007</span></a></div>
+                <div>Dubai: <a href="tel:+97143384075"><span dir="ltr">+971 4 338 4075</span></a></div>
+                <div>Mumbai: <a href="tel:+919821869339"><span dir="ltr">+91 98218 69339</span></a></div>
+                <div>Email: <a href="mailto:inbound@rotwtravels.com"><span dir="ltr">inbound@rotwtravels.com</span></a></div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- 4. Five Live Clocks -->
+      <section class="tray-clocks-section" aria-label="Bureau time zones">
+        <div class="tray-clocks-head">Bureau Local Times</div>
+        <div class="tray-clocks-row">
+          <div class="tray-clock-dial">
+          <span class="dial-city">Moscow</span>
+          <span class="dial-time" data-clock="moscow"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Dubai</span>
+          <span class="dial-time" data-clock="dubai"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Mumbai</span>
+          <span class="dial-time" data-clock="mumbai"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Muscat</span>
+          <span class="dial-time" data-clock="muscat"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Hong Kong</span>
+          <span class="dial-time" data-clock="hongkong"><span dir="ltr">--:--</span></span>
+        </div>
+        </div>
+      </section>
+
+      <!-- 5. Languages Section -->
+      <div class="tray-lang-section" role="group" aria-label="Language options">
+        <button class="tray-lang-btn active" data-shell-lang="en">English</button>
+      <button class="tray-lang-btn" data-shell-lang="ru">Русский</button>
+      <button class="tray-lang-btn" data-shell-lang="ar">العربية</button>
+      <button class="tray-lang-btn" data-shell-lang="hi">हिन्दी</button>
+      </div>
+
+      <!-- 6. Legal Row with Dashed Slots -->
+      <div class="tray-legal-section">
+        <div class="legal-slots-grid">
+          <div class="legal-slot">Tour operator registry no. · ROTW to supply</div>
+          <div class="legal-slot">Financial guarantee · ROTW to supply</div>
+          <div class="legal-slot">Memberships · ROTW to supply</div>
+        </div>
+        <div class="legal-bottom-row">
+          <span>© 2026 ROTW Travels · 106 Prospekt Mira, Moscow 129626</span>
+          <span class="legal-tagline" lang="ru">Дороги мира</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /SHELL:FOOTER -->
+  <script src="./shell/shell.js" defer></script>
+</body>
+</html>

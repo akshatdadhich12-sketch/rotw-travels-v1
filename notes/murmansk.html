@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-<head>
+<head><meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
 <title>Murmansk travel guide: talk to a local guide | ROTW Travels</title>
 <meta name="description" content="The largest city above the Arctic Circle, with the aurora overhead from September to March. Plan your Murmansk trip by talking to Sasha, a guide at ROTW Travels in Moscow.">
-<meta name="theme-color" content="#0A1424">
+<meta name="theme-color" content="#0B1626">
 <meta property="og:title" content="Murmansk travel guide: talk to a local guide | ROTW Travels">
 <meta property="og:description" content="The largest city above the Arctic Circle, with the aurora overhead from September to March. Plan your Murmansk trip by talking to Sasha, a guide at ROTW Travels in Moscow.">
 <meta property="og:image" content="../assets/real/murmansk-aurora-spruce-1600.webp">
@@ -15,10 +14,11 @@
 <link rel="alternate" hreflang="ru" href="ru/murmansk.html">
 <link rel="alternate" hreflang="ar" href="ar/murmansk.html">
 <link rel="alternate" hreflang="hi" href="hi/murmansk.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A1424'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23D4A84B' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23E9EDF1'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23D4A84B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1626'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23F4A63C' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23F8F1E8'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23F4A63C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&family=Caveat:wght@400;600&display=swap">
+<link rel="stylesheet" href="../shell/shell.css">
 <style>
 /* Sasha's Field Notebook
    ROTW Travels Moscow - Integration with v1
@@ -26,26 +26,48 @@
    Type: Cormorant Garamond for headings and voice, Jost for UI and body, Caveat for Sasha's handwriting. */
 
 :root{
-  --desk:#0A1424;        /* v1's deepest navy page background */
-  --paper:#F1EEE6;       /* warm off-white notebook pages */
-  --kraft:#E8DCC4;       /* warm kraft envelope */
-  --kraft-2:#D9CBAE;     /* envelope flap */
-  --slip:#F7F3EA;        /* note slips */
-  --rule:rgba(10,20,36,.07);   /* ruled lines on slips */
-  --line:rgba(10,20,36,.10);   /* row dividers */
-  --ink:#0A1424;         /* main dark navy text */
-  --ink-2:#465365;       /* secondary text */
+  --base:#0B1626;
+  --desk:#0B1626;        /* v1's deepest navy page background (follows --ink) */
+  --paper:#F7EBDD;       /* warm off-white notebook pages */
+  --kraft:#EBD9BE;       /* warm kraft envelope */
+  --kraft-2:#DEC9A6;     /* envelope flap */
+  --slip:#FBF1E4;        /* note slips */
+  --rule:rgba(11,22,38,.07);   /* ruled lines on slips */
+  --line:#2B3A57;        /* hairlines on dark */
+  --ink:#0B1626;         /* main dark navy text */
+  --ink-2:#15233B;       /* secondary text */
   --pencil:rgba(70,83,101,.28); /* empty bar tracks, pencil marks */
   --pen:#1F3B66;         /* Sasha's fountain pen ink (royal navy) */
   --pen-2:#162B4D;       /* hover/pressed */
-  --gold-text:#6E4F17;   /* gold text on light paper */
-  --gold:#D4A84B;        /* v1's accent gold */
-  --gold-hover:#E2BC66;  /* gold hover */
+  --gold-text:#8A4A10;   /* gold text on light paper */
+  --gold:#F4A63C;        /* primary accent, buttons */
+  --gold-hover:#FFB547;  /* gold hover */
+  --ice:#7BA7D0;         /* cool accent (dusk sky) */
+  --ember:#E8613C;       /* strong accent / warnings of attention */
+  --sun:#FFAF28;         /* hover, glows, brightest highlight */
+  --coral:#FF8156;       /* secondary accent, active states, pins, route trail end */
+  --rose:#F58AA0;        /* soft highlights, tags */
+  --peach:#FFD7A8;       /* soft text accent on dark, glows */
+  --dusk:#212C3E;        /* shadow tone */
+  --sky-1:#15233B;
+  --sky-2:#2A3A5E;
+  --sky-3:#385D89;
+  --dusk-rose:#6B4A6A;
+  --horizon-rose:#F58AA0;
+  --horizon-coral:#FF8156;
+  --horizon-amber:#FFAF28;
+  --horizon-peach:#FFD7A8;
+  --bg-sunset:linear-gradient(180deg,#0B1626 0%,#15233B 32%,#2A3A5E 55%,#6B4A6A 76%,#C65F5A 90%,#F4A63C 100%);
+  --bg-dusk:linear-gradient(180deg,#0B1626 0%,#15233B 45%,#2A3A5E 100%);
+  --bg-glow:radial-gradient(120% 70% at 50% 110%, rgba(255,129,86,.55) 0%, rgba(245,138,160,.28) 38%, rgba(11,22,38,0) 70%);
+  --bg-sunrise-side:radial-gradient(80% 60% at 100% 100%, rgba(255,175,40,.35), rgba(11,22,38,0) 65%);
+  --sunset-line:linear-gradient(90deg, rgba(255,129,86,0) 0%, #FF8156 25%, #F4A63C 75%, rgba(244,166,60,0) 100%);
+  --sunset-wash:linear-gradient(180deg,rgba(255,129,86,0),rgba(255,129,86,.10) 60%,rgba(245,138,160,.12));
   --tape:rgba(236,226,200,.78);
   --shadow-page:0 2px 4px rgba(0,0,0,.35),0 24px 48px -20px rgba(0,0,0,.6);
-  --glacier:#E9EDF1;
-  --mist:#9AA7B8;
-  --soft:#C9D3DF;
+  --glacier:#F8F1E8;
+  --mist:#AEB6C4;
+  --soft:#D8CFC8;
   --ease-out:cubic-bezier(.23,1,.32,1);
   --ease-move:cubic-bezier(.77,0,.175,1);
   --f-voice:"Cormorant Garamond","Iowan Old Style",Georgia,serif;  /* headings, place names */
@@ -55,10 +77,20 @@
   color-scheme:light;
 }
 
+@media (prefers-contrast: more){
+  :root{
+    --bg-glow:none;
+    --bg-sunrise-side:none;
+  }
+}
+
 *{box-sizing:border-box}
+::selection{background:var(--coral);color:#0B1626}
 body{
   margin:0;
-  background:var(--desk);
+  background-color:#0B1626;
+  background:var(--bg-dusk);
+  background-attachment:fixed;
   color:var(--glacier);
   font:17px/1.6 var(--f-ui);
   -webkit-font-smoothing:antialiased;
@@ -73,7 +105,7 @@ h1,h2,h3{font-family:var(--f-voice);font-weight:400;margin:0;text-wrap:balance}
 p{margin:0;text-wrap:pretty}
 a{color:var(--pen)}
 button,input,textarea{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .skip{position:absolute;left:12px;top:-60px;background:var(--gold);color:var(--ink);padding:10px 14px;border-radius:4px;z-index:50;text-decoration:none;font-weight:500}
 .skip:focus{top:12px}
@@ -98,11 +130,11 @@ button,input,textarea{font:inherit;color:inherit}
 .langs{display:flex;gap:2px;font-size:13px;letter-spacing:.02em}
 .langs a{color:var(--soft);text-decoration:none;min-width:36px;min-height:36px;display:inline-grid;place-items:center;border-radius:999px;padding:0 8px;transition:background .15s, color .15s}
 .langs a[aria-current="true"]{background:var(--gold);color:var(--ink);font-weight:500}
-@media (hover:hover) and (pointer:fine){.langs a:not([aria-current="true"]):hover{background:rgba(233,237,241,.1);color:var(--glacier)}}
+@media (hover:hover) and (pointer:fine){.langs a:not([aria-current="true"]):hover{background:rgba(248,241,232,.1);color:var(--glacier)}}
 
 .btn-plan{
   background:var(--gold);
-  color:#17120A;
+  color:#0B1626;
   border-radius:2px;
   padding:10px 18px;
   font:500 14px var(--f-ui);
@@ -112,8 +144,8 @@ button,input,textarea{font:inherit;color:inherit}
   align-items:center;
   transition:background .15s, transform .15s;
 }
-.btn-plan:active{transform:scale(.98)}
-@media (hover:hover) and (pointer:fine){.btn-plan:hover{background:var(--gold-hover)}}
+.btn-plan:active{transform:scale(.98);background:var(--coral)}
+@media (hover:hover) and (pointer:fine){.btn-plan:hover{background:var(--sun)}}
 @media (max-width:560px){.btn-plan{display:none}}
 
 /* Type scale */
@@ -209,16 +241,16 @@ h2{
   min-width:0;
 }
 .page:first-child{
-  box-shadow:inset -18px 0 24px -22px rgba(10,20,36,.22);
+  box-shadow:inset -18px 0 24px -22px rgba(11,22,38,.22);
 }
 .page:last-child{
-  box-shadow:inset 18px 0 24px -22px rgba(10,20,36,.22);
+  box-shadow:inset 18px 0 24px -22px rgba(11,22,38,.22);
 }
 [dir=rtl] .page:first-child{
-  box-shadow:inset 18px 0 24px -22px rgba(10,20,36,.22);
+  box-shadow:inset 18px 0 24px -22px rgba(11,22,38,.22);
 }
 [dir=rtl] .page:last-child{
-  box-shadow:inset -18px 0 24px -22px rgba(10,20,36,.22);
+  box-shadow:inset -18px 0 24px -22px rgba(11,22,38,.22);
 }
 @media (max-width:899px){
   h1{
@@ -237,7 +269,7 @@ h2{
     box-shadow:none;
   }
   .page:nth-child(2){
-    border-top:1px dashed rgba(10,20,36,.18);
+    border-top:1px dashed rgba(11,22,38,.18);
   }
 }
 .page-num{
@@ -267,7 +299,7 @@ h2{
   width:100%;
   object-fit:cover;
   border:10px solid #fff;
-  box-shadow:0 1px 2px rgba(10,20,36,.12),0 10px 24px -12px rgba(10,20,36,.3);
+  box-shadow:0 1px 2px rgba(11,22,38,.12),0 10px 24px -12px rgba(11,22,38,.3);
   box-sizing:border-box;
 }
 .taped::before, .taped::after{
@@ -328,7 +360,7 @@ h2{
   background-image:repeating-linear-gradient(to bottom, transparent 0 31px, var(--rule) 31px 32px);
   padding:20px 24px;
   transform:rotate(.6deg);
-  box-shadow:0 1px 2px rgba(10,20,36,.1);
+  box-shadow:0 1px 2px rgba(11,22,38,.1);
   margin:28px 0 20px;
 }
 .slip::before{
@@ -368,7 +400,7 @@ html.js .tabs{
   min-height:44px;
   padding:0 14px;
   background:var(--slip);
-  border:1px solid rgba(10,20,36,.12);
+  border:1px solid rgba(11,22,38,.12);
   border-bottom:none;
   border-radius:8px 8px 0 0;
   color:var(--ink-2);
@@ -399,7 +431,7 @@ html.js .tabs{
   list-style:none;
   margin:0;
   padding:0;
-  border-top:1px solid rgba(10,20,36,.12);
+  border-top:1px solid rgba(11,22,38,.12);
 }
 .pick-row{
   display:grid;
@@ -455,7 +487,7 @@ html.js .tabs{
   min-height:44px;
   padding:0 16px;
   border-radius:999px;
-  border:1px solid rgba(10,20,36,.22);
+  border:1px solid rgba(11,22,38,.22);
   background:transparent;
   color:var(--ink-2);
   font:500 14px var(--f-ui);
@@ -516,7 +548,7 @@ html.js .tabs{
   margin-top:20px;
 }
 .seasons-table tr{
-  border-bottom:1px dashed rgba(10,20,36,.18);
+  border-bottom:1px dashed rgba(11,22,38,.18);
 }
 .seasons-table th, .seasons-table td{
   text-align:start;
@@ -616,7 +648,7 @@ summary::after{
   transform:translateY(-50%);
   font-family:var(--f-voice);
   font-size:24px;
-  color:var(--pen);
+  color:var(--gold);
   line-height:1;
 }
 details[open] summary::after{
@@ -658,6 +690,7 @@ details p{
   .strip-item:hover .strip-name{
     color:var(--gold);
     text-decoration:underline;
+    text-decoration-color:var(--coral);
     text-underline-offset:3px;
   }
 }
@@ -667,7 +700,7 @@ details p{
   list-style:none;
   margin:0;
   padding:0;
-  border-top:1px solid rgba(10,20,36,.12);
+  border-top:1px solid rgba(11,22,38,.12);
 }
 .content-row{
   display:grid;
@@ -691,7 +724,7 @@ details p{
   width:96px;
   height:72px;
   border:4px solid #fff;
-  box-shadow:0 1px 2px rgba(10,20,36,.1);
+  box-shadow:0 1px 2px rgba(11,22,38,.1);
   overflow:hidden;
   flex:none;
 }
@@ -846,15 +879,15 @@ details p{
   width:64px;
   height:64px;
   border-radius:50%;
-  border:2px solid #B08A3A;
-  outline:1px dashed #B08A3A;
+  border:2px solid #D98A2E;
+  outline:1px dashed #D98A2E;
   outline-offset:-7px;
   display:grid;
   place-items:center;
   text-align:center;
   font:500 11px/1.1 var(--f-ui);
   font-weight:500;
-  color:#5A400F;
+  color:#8A4A10;
   padding:6px;
   box-sizing:border-box;
   background:var(--kraft);
@@ -866,7 +899,7 @@ details p{
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
   overflow:hidden;
-  color:#5A400F;
+  color:#8A4A10;
   font-weight:500;
 }
 .stamp.stamp-anim{
@@ -1010,10 +1043,11 @@ details p{
 }
 .send:active{
   transform:scale(.98);
+  background:var(--coral);
 }
 @media (hover:hover) and (pointer:fine){
   .send:hover{
-    background:var(--gold-hover);
+    background:var(--sun);
   }
 }
 
@@ -1056,7 +1090,7 @@ details p{
 .field input, .field textarea{
   min-height:44px;
   background:#fff;
-  border:1px solid rgba(10,20,36,.2);
+  border:1px solid rgba(11,22,38,.2);
   border-radius:6px;
   padding:10px 12px;
   font:16px var(--f-ui);
@@ -1135,24 +1169,30 @@ details p{
   font-size:15px;
   padding:6px 12px;
   border-radius:4px;
-  box-shadow:0 2px 8px rgba(10,20,36,.18);
+  box-shadow:0 2px 8px rgba(11,22,38,.18);
   white-space:nowrap;
 }
 
-/* Mobile bottom sheet */
+/* Mobile bottom sheet (sits directly above Sasha's dock) */
 @media (max-width:1099px){
   .envelope{
     position:fixed;
     inset-inline:0;
-    bottom:0;
+    bottom:calc(76px + env(safe-area-inset-bottom,0px));
     top:auto;
     z-index:20;
     border-radius:16px 16px 0 0;
-    padding:12px max(20px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px));
+    padding:12px max(20px,env(safe-area-inset-left,0px)) 16px;
     box-shadow:0 -10px 30px rgba(0,0,0,.35);
-    max-height:80vh;
+    max-height:calc(80vh - 76px);
     overflow:auto;
   }
+}
+@media (max-width:640px){
+  .envelope{
+    bottom:calc(68px + env(safe-area-inset-bottom,0px));
+  }
+}
   .envelope::before{
     display:none;
   }
@@ -1199,7 +1239,7 @@ details p{
 /* Notebook footer */
 footer.foot{
   background:#08101C;
-  border-top:1px solid #1A283E;
+  border-top:1px solid var(--line);
   color:var(--soft);
   padding:48px 0 calc(env(safe-area-inset-bottom,0px) + 40px);
   margin-top:80px;
@@ -1256,7 +1296,7 @@ footer.foot{
   max-width:1240px;
   margin:32px auto 0;
   padding-top:20px;
-  border-top:1px solid #152238;
+  border-top:1px solid var(--line);
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -1292,6 +1332,322 @@ footer.foot{
   footer.foot{padding-bottom:120px}
 }
 
+/* ==========================================================================
+   Photo Framework & Lightbox (Agent N4)
+   ========================================================================== */
+
+/* Photo links */
+.photo-link{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+}
+.photo-link:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:4px;
+}
+
+/* Strip thumbnail on highlight rows */
+.strip-thumb{
+  position:relative;
+  display:block;
+  width:72px;
+  height:72px;
+  flex:none;
+  transform:rotate(1deg);
+  text-decoration:none;
+  cursor:pointer;
+  z-index:1;
+}
+.strip-thumb img{
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border:4px solid #fff;
+  box-shadow:0 1px 3px rgba(11,22,38,.18);
+  display:block;
+  box-sizing:border-box;
+}
+.strip-thumb::before{
+  content:"";
+  position:absolute;
+  top:-6px;
+  left:50%;
+  transform:translateX(-50%);
+  width:32px;
+  height:12px;
+  background:var(--tape);
+  z-index:2;
+  pointer-events:none;
+}
+@media (hover:hover) and (pointer:fine){
+  .strip-thumb:hover{
+    transform:rotate(0deg) scale(1.05);
+    transition:transform .15s ease;
+  }
+}
+.pick-row.has-thumb{
+  grid-template-columns:auto minmax(0,1fr) auto;
+}
+
+/* "Photos from the trail" Spread & Prints */
+.spread-photos .photos-note{
+  margin-top:8px;
+  margin-bottom:24px;
+  color:var(--pen);
+  font-size:calc(20px * var(--hand-scale, 1));
+}
+.photos-col{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.photo-print{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.photo-print.rot-neg15{ transform:rotate(-1.5deg); }
+.photo-print.rot-pos10{ transform:rotate(1deg); }
+.photo-print.rot-neg05{ transform:rotate(-0.5deg); }
+
+.photo-print .taped{
+  margin:0;
+  transform:none;
+  width:100%;
+}
+.photo-print.portrait .taped img{
+  aspect-ratio:auto;
+}
+.photo-caption{
+  font-family:var(--f-hand);
+  font-size:calc(20px * var(--hand-scale, 1));
+  line-height:1.3;
+  color:var(--pen);
+  margin-top:10px;
+  text-align:center;
+}
+
+@media (max-width:899px){
+  .spread-photos{
+    display:flex;
+    flex-direction:column;
+    padding:28px 22px;
+    gap:20px;
+  }
+  .spread-photos .photos-page-left,
+  .spread-photos .photos-page-right,
+  .spread-photos .photos-col{
+    display:contents;
+  }
+  .spread-photos h2{
+    order:1;
+  }
+  .spread-photos .photos-note{
+    order:2;
+    margin-bottom:12px;
+  }
+}
+
+/* Lightbox Dialog */
+.photo-lightbox{
+  border:none;
+  padding:0;
+  margin:auto;
+  background:transparent;
+  color:var(--glacier);
+  max-width:100vw;
+  max-height:100vh;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+.photo-lightbox::backdrop{
+  background:rgba(11,22,38,.92);
+  backdrop-filter:blur(6px);
+}
+body.lightbox-open{
+  overflow:hidden;
+}
+body.lightbox-open .envelope,
+body.lightbox-open #trip,
+body.lightbox-open .rotw-dock{
+  display:none !important;
+}
+.lb-container{
+  display:flex;
+  flex-direction:column;
+  width:100vw;
+  height:100vh;
+  height:100dvh;
+  padding:max(16px, env(safe-area-inset-top, 16px)) max(16px, env(safe-area-inset-right, 16px)) max(16px, env(safe-area-inset-bottom, 16px)) max(16px, env(safe-area-inset-left, 16px));
+  box-sizing:border-box;
+  position:relative;
+}
+.lb-close{
+  position:absolute;
+  top:max(16px, env(safe-area-inset-top, 16px));
+  inset-inline-end:max(16px, env(safe-area-inset-right, 16px));
+  width:44px;
+  height:44px;
+  min-width:44px;
+  min-height:44px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.24);
+  color:var(--glacier);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  z-index:10;
+  transition:background .15s ease, transform .15s ease;
+}
+.lb-close:hover{
+  background:rgba(255,255,255,.24);
+}
+.lb-close:active{
+  transform:scale(.94);
+}
+.lb-stage{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  min-height:0;
+  position:relative;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+}
+.lb-nav{
+  width:44px;
+  height:44px;
+  min-width:44px;
+  min-height:44px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.24);
+  color:var(--glacier);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  z-index:5;
+  transition:background .15s ease, transform .15s ease;
+}
+.lb-nav:hover{
+  background:rgba(255,255,255,.24);
+}
+.lb-nav:active{
+  transform:scale(.94);
+}
+[dir=rtl] .lb-prev svg,
+[dir=rtl] .lb-next svg{
+  transform:scaleX(-1);
+}
+.lb-figure-wrap{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  min-height:0;
+  height:100%;
+}
+.lb-figure{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  max-width:100%;
+  max-height:100%;
+}
+.lb-img{
+  max-width:100%;
+  max-height:calc(85vh - 70px);
+  max-height:calc(85dvh - 70px);
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border:6px solid #fff;
+  box-shadow:0 12px 36px rgba(0,0,0,.6);
+  border-radius:2px;
+  transition:opacity .18s ease-out;
+}
+.lb-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  width:100%;
+  max-width:800px;
+  margin-top:12px;
+  padding:0 8px;
+  box-sizing:border-box;
+}
+.lb-caption{
+  font-family:var(--f-hand);
+  font-size:calc(22px * var(--hand-scale, 1));
+  color:var(--paper);
+  margin:0;
+  text-align:start;
+}
+.lb-counter{
+  font-family:var(--f-ui);
+  font-size:14px;
+  color:var(--soft);
+  white-space:nowrap;
+  margin-inline-start:auto;
+}
+
+@media (max-width:640px){
+  .lb-stage{
+    position:relative;
+  }
+  .lb-nav{
+    position:absolute;
+    bottom:12px;
+    z-index:6;
+    background:rgba(11,22,38,.75);
+  }
+  .lb-prev{
+    inset-inline-start:12px;
+  }
+  .lb-next{
+    inset-inline-end:12px;
+  }
+  .lb-img{
+    max-height:calc(80dvh - 100px);
+    border-width:4px;
+  }
+  .lb-meta{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:6px;
+  }
+  .lb-caption{
+    text-align:center;
+  }
+  .lb-counter{
+    margin-inline-start:0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .photo-lightbox,
+  .lb-close,
+  .lb-nav,
+  .lb-img{
+    animation:none !important;
+    transition:none !important;
+  }
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation-duration:.01ms!important;
@@ -1303,21 +1659,142 @@ footer.foot{
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TouristDestination","name":"Murmansk","description":"The largest city above the Arctic Circle, with the aurora overhead from September to March.","inLanguage":"en","includesAttraction":[{"@type":"TouristAttraction","name":"The northern lights","description":"From September to March, on clear dark nights away from the city lights."},{"@type":"TouristAttraction","name":"Teriberka","description":"A fishing village on the Barents Sea, at the edge of the Arctic Ocean."},{"@type":"TouristAttraction","name":"Huskies and reindeer","description":"Sled rides and Sami culture outside the city."},{"@type":"TouristAttraction","name":"The icebreaker Lenin","description":"The world’s first nuclear-powered surface ship, now a museum."},{"@type":"TouristAttraction","name":"The Alyosha monument","description":"A giant soldier above the bay, with a view over the port."}]},{"@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Are the northern lights guaranteed?","acceptedAnswer":{"@type":"Answer","text":"No one can promise them. Clear skies and solar activity decide, so two or three nights gives you better odds."}},{"@type":"Question","name":"How cold is it?","acceptedAnswer":{"@type":"Answer","text":"Often minus 10 to minus 20 °C in winter, and colder by the sea in the wind. ROTW can arrange warm gear."}},{"@type":"Question","name":"What is the polar night?","acceptedAnswer":{"@type":"Answer","text":"In December and early January the sun doesn’t rise, though there are a few hours of blue twilight."}}]},{"@type":"TravelAgency","name":"ROTW Travels","telephone":"+7 930 945 4007","email":"inbound@rotwtravels.com","address":{"@type":"PostalAddress","streetAddress":"106 Prospekt Mira","addressLocality":"Moscow","postalCode":"129626","addressCountry":"RU"}}]}</script>
 </head>
 <body>
-<a class="skip" href="#notebook">Skip to the notebook</a>
-<header class="top">
-  <a class="logo-link" href="../index.html" aria-label="ROTW Travels"><svg class="rotw-logo logo" viewBox="106 70 346 110" aria-hidden="true"><g class="lg-l lg-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g><g class="lg-l lg-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g><g class="lg-needle"><g class=""><path fill="var(--lg-main)" d="M224.1 133.9L224.1 133.9L235.3 120.7L229.5 137.0L229.5 137.0L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-red)" d="M217.8 151.0L224.0 134.0L224.1 133.9L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-hole)" d="M226.6 133.8C227.7 133.8 228.6 134.7 228.6 135.8C228.6 136.9 227.7 137.9 226.6 137.9C225.4 137.9 224.5 136.9 224.5 135.8C224.5 134.7 225.4 133.8 226.6 133.8"/></g></g><g class="lg-l lg-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g><g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g><g class="lg-l lg-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g><g class="lg-l lg-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g><g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g><g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g></svg></a>
-  <div class="right">
-    <nav class="langs" aria-label="Language"><a href="murmansk.html" hreflang="en" lang="en" title="English" aria-current="true" onclick="try{localStorage.setItem('rotw-lang','en')}catch(e){}">EN</a><a href="ru/murmansk.html" hreflang="ru" lang="ru" title="Русский" onclick="try{localStorage.setItem('rotw-lang','ru')}catch(e){}">RU</a><a href="ar/murmansk.html" hreflang="ar" lang="ar" title="العربية" onclick="try{localStorage.setItem('rotw-lang','ar')}catch(e){}">عربي</a><a href="hi/murmansk.html" hreflang="hi" lang="hi" title="हिन्दी" onclick="try{localStorage.setItem('rotw-lang','hi')}catch(e){}">हि</a></nav>
-    <a class="btn-plan" href="../plan.html">Plan a trip</a>
+<!-- SHELL:HEADER -->
+<a href="#main" class="shell-skip">Skip to main content</a>
+
+<header class="shell-header-wrapper" role="banner">
+  <div class="compass-capsule" id="compass-capsule">
+    <!-- Company Logo (FIX 1) -->
+    <a href="../index.html" class="capsule-brand" aria-label="ROTW Travels">
+      <img class="capsule-logo" src="../assets/site/logo-white.png" alt="ROTW Travels" width="80" height="32">
+    </a>
+
+    <!-- Category Nav Links -->
+    <nav class="capsule-nav" aria-label="Main Navigation">
+      <a href="../notes/index.html" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-map-pin"/></svg>
+      <span>Destinations</span>
+    </a>
+      <a href="../index.html#journeys" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-route"/></svg>
+      <span>Journeys</span>
+    </a>
+      <a href="../index.html#trips" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-compass"/></svg>
+      <span>Experiences</span>
+    </a>
+      <a href="../index.html#partners" class="capsule-link">
+      <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-briefcase"/></svg>
+      <span>For agents</span>
+    </a>
+      <a href="../notes/index.html" class="capsule-link" aria-current="page">
+      <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-notebook"/></svg>
+      <span>Sasha's notebook</span>
+    </a>
+    </nav>
+
+    <!-- Right Controls: Language Endonym + Gold Pill CTA -->
+    <div class="capsule-actions">
+      <div class="capsule-lang-wrap">
+        <svg class="shell-icon capsule-lang-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-globe"/></svg>
+        <select class="capsule-lang-select" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+        <svg class="shell-icon capsule-lang-arrow" aria-hidden="true"><use href="../assets/icons.svg#icon-chevron-down"/></svg>
+      </div>
+
+      <a href="../plan.html" class="btn-pill-plan">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-paper-plane"/></svg>
+        <span>Plan a trip</span>
+      </a>
+
+      <button class="btn-capsule-menu" id="btn-capsule-menu" aria-label="Open menu" aria-expanded="false" aria-controls="shell-menu-drawer">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"/></svg>
+      </button>
+    </div>
   </div>
 </header>
-<main class="desk">
+
+<!-- Full-screen Mobile Menu Drawer (<1024px) -->
+<div class="shell-menu-drawer" id="shell-menu-drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Navigation Menu">
+  <div class="drawer-top-row">
+    <a href="../index.html" class="capsule-brand" aria-label="ROTW Travels">
+      <img class="capsule-logo" src="../assets/site/logo-white.png" alt="ROTW Travels" width="70" height="28">
+    </a>
+    <button class="drawer-close-btn" id="btn-drawer-close" aria-label="Close menu">
+      <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-close"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer-scroll-area">
+    <ul class="drawer-nav-list">
+      <li>
+      <a href="../notes/index.html" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-map-pin"/></svg>
+        <span>Destinations</span>
+      </a>
+    </li>
+      <li>
+      <a href="../index.html#journeys" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-route"/></svg>
+        <span>Journeys</span>
+      </a>
+    </li>
+      <li>
+      <a href="../index.html#trips" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-compass"/></svg>
+        <span>Experiences</span>
+      </a>
+    </li>
+      <li>
+      <a href="../index.html#partners" class="drawer-nav-row">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-briefcase"/></svg>
+        <span>For agents</span>
+      </a>
+    </li>
+      <li>
+      <a href="../notes/index.html" class="drawer-nav-row" aria-current="page">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-notebook"/></svg>
+        <span>Sasha's notebook</span>
+      </a>
+    </li>
+    </ul>
+
+    <div class="drawer-lang-chips">
+      <button class="drawer-lang-chip active" data-shell-lang="en">English</button>
+        <button class="drawer-lang-chip" data-shell-lang="ru">Русский</button>
+        <button class="drawer-lang-chip" data-shell-lang="ar">العربية</button>
+        <button class="drawer-lang-chip" data-shell-lang="hi">हिन्दी</button>
+    </div>
+  </div>
+
+  <div class="drawer-cta-wrap">
+    <a href="../plan.html" class="btn-pill-plan drawer-cta-btn">
+      <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-paper-plane"/></svg>
+      <span>Plan a trip</span>
+    </a>
+  </div>
+</div>
+<!-- /SHELL:HEADER -->
+<main class="desk" id="main">
   <div class="notebook" id="notebook">
     
     <section class="spread" aria-label="Murmansk - 1">
       <div class="page">
+        
         <div class="taped">
-          <img src="../assets/real/murmansk-aurora-spruce-1600.webp" alt="Murmansk" width="800" height="600">
+          <a href="assets/photos/murmansk-aurora-spruce-1600.webp" class="photo-link" aria-label="View photo: Vibrant green northern lights glow over snow-covered spruce trees in the Murmansk night." data-photo-idx="0">
+            <img src="assets/photos/murmansk-aurora-spruce-800.webp"
+                 srcset="assets/photos/murmansk-aurora-spruce-800.webp 800w, assets/photos/murmansk-aurora-spruce-1600.webp 1600w"
+                 sizes="(max-width: 899px) 100vw, 560px"
+                 width="1616"
+                 height="1080"
+                 alt="Vibrant green northern lights glow over snow-covered spruce trees in the Murmansk night."
+                 fetchpriority="high">
+          </a>
         </div>
         <p class="hand">Murmansk is above the Arctic Circle. Most people come for the northern lights.</p><p class="hand">Shall I tell you the best way to see them?</p>
         <div class="sign-row">
@@ -1337,8 +1814,12 @@ footer.foot{
         <div class="topic-says" id="topic-says" aria-live="polite"></div>
         <ol class="picks" id="picks-list">
           
-            <li class="pick-row" data-h="lights">
+            <li class="pick-row has-thumb" data-h="lights">
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              
+              <a href="assets/photos/murmansk-aurora-ribbons-1600.webp" class="strip-thumb photo-link" aria-label="View photo: Bright green ribbons of the northern lights curve across the dark Arctic sky above trees." data-photo-idx="1">
+                <img src="assets/photos/murmansk-aurora-ribbons-800.webp" alt="Bright green ribbons of the northern lights curve across the dark Arctic sky above trees." width="72" height="72" loading="lazy">
+              </a>
               <div class="pick-info">
                 <div class="pick-title">The northern lights</div>
                 <div class="pick-line">From September to March, on clear dark nights away from the city lights.</div>
@@ -1350,9 +1831,12 @@ footer.foot{
                 <span>Pin</span>
               </button>
             </li>
-          
-            <li class="pick-row" data-h="teriberka">
+            <li class="pick-row has-thumb" data-h="teriberka">
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              
+              <a href="assets/photos/teriberka-ship-graveyard-sunset-1600.webp" class="strip-thumb photo-link" aria-label="View photo: Weathered wooden shipwrecks rest on the frozen tidal shore of Teriberka at sunset." data-photo-idx="2">
+                <img src="assets/photos/teriberka-ship-graveyard-sunset-800.webp" alt="Weathered wooden shipwrecks rest on the frozen tidal shore of Teriberka at sunset." width="72" height="72" loading="lazy">
+              </a>
               <div class="pick-info">
                 <div class="pick-title">Teriberka</div>
                 <div class="pick-line">A fishing village on the Barents Sea, at the edge of the Arctic Ocean.</div>
@@ -1364,9 +1848,12 @@ footer.foot{
                 <span>Pin</span>
               </button>
             </li>
-          
-            <li class="pick-row" data-h="huskies">
+            <li class="pick-row has-thumb" data-h="huskies">
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              
+              <a href="assets/photos/murmansk-husky-sled-trail-1600.webp" class="strip-thumb photo-link" aria-label="View photo: A team of Siberian huskies pulls a sled along a snow-covered woodland trail." data-photo-idx="3">
+                <img src="assets/photos/murmansk-husky-sled-trail-800.webp" alt="A team of Siberian huskies pulls a sled along a snow-covered woodland trail." width="72" height="72" loading="lazy">
+              </a>
               <div class="pick-info">
                 <div class="pick-title">Huskies and reindeer</div>
                 <div class="pick-line">Sled rides and Sami culture outside the city.</div>
@@ -1378,9 +1865,12 @@ footer.foot{
                 <span>Pin</span>
               </button>
             </li>
-          
-            <li class="pick-row" data-h="lenin">
+            <li class="pick-row has-thumb" data-h="lenin">
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              
+              <a href="assets/photos/murmansk-lenin-icebreaker-port-1600.webp" class="strip-thumb photo-link" aria-label="View photo: The nuclear-powered icebreaker Lenin sits moored at the passenger pier in Murmansk port." data-photo-idx="4">
+                <img src="assets/photos/murmansk-lenin-icebreaker-port-800.webp" alt="The nuclear-powered icebreaker Lenin sits moored at the passenger pier in Murmansk port." width="72" height="72" loading="lazy">
+              </a>
               <div class="pick-info">
                 <div class="pick-title">The icebreaker Lenin</div>
                 <div class="pick-line">The world’s first nuclear-powered surface ship, now a museum.</div>
@@ -1392,9 +1882,12 @@ footer.foot{
                 <span>Pin</span>
               </button>
             </li>
-          
-            <li class="pick-row" data-h="alyosha">
+            <li class="pick-row has-thumb" data-h="alyosha">
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+              
+              <a href="assets/photos/murmansk-alyosha-monument-snow-1600.webp" class="strip-thumb photo-link" aria-label="View photo: The monumental concrete soldier statue of the Alyosha memorial stands over Murmansk in winter snow." data-photo-idx="5">
+                <img src="assets/photos/murmansk-alyosha-monument-snow-800.webp" alt="The monumental concrete soldier statue of the Alyosha memorial stands over Murmansk in winter snow." width="72" height="72" loading="lazy">
+              </a>
               <div class="pick-info">
                 <div class="pick-title">The Alyosha monument</div>
                 <div class="pick-line">A giant soldier above the bay, with a view over the port.</div>
@@ -1406,8 +1899,161 @@ footer.foot{
                 <span>Pin</span>
               </button>
             </li>
-          
         </ol>
+      </div>
+    </section>
+    <section class="spread spread-photos" aria-label="Photos from the trail">
+      <div class="page photos-page-left">
+        <h2>Photos from the trail</h2>
+        <p class="hand small photos-note">Real photos from ROTW journeys.</p>
+        <div class="photos-col">
+          
+        <figure class="photo-print rot-neg15 portrait" style="order:3">
+          <div class="taped">
+            <a href="assets/photos/teriberka-dragon-eggs-beach-1600.webp" class="photo-link" aria-label="View photo: Smooth rounded granite boulders emerge from fresh snow along the Arctic beach at Teriberka at sunset." data-photo-idx="6">
+              <img src="assets/photos/teriberka-dragon-eggs-beach-800.webp"
+                   srcset="assets/photos/teriberka-dragon-eggs-beach-800.webp 800w, assets/photos/teriberka-dragon-eggs-beach-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="960"
+                   height="1280"
+                   alt="Smooth rounded granite boulders emerge from fresh snow along the Arctic beach at Teriberka at sunset."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Dragon eggs beach on the Teriberka coast.</figcaption>
+        </figure>
+        <figure class="photo-print rot-neg05 portrait" style="order:5">
+          <div class="taped">
+            <a href="assets/photos/murmansk-glass-igloo-domes-1600.webp" class="photo-link" aria-label="View photo: Glass geodesic igloo cabins glow with warm interior light in a snow-covered birch forest." data-photo-idx="8">
+              <img src="assets/photos/murmansk-glass-igloo-domes-800.webp"
+                   srcset="assets/photos/murmansk-glass-igloo-domes-800.webp 800w, assets/photos/murmansk-glass-igloo-domes-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="960"
+                   height="1280"
+                   alt="Glass geodesic igloo cabins glow with warm interior light in a snow-covered birch forest."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Glass aurora domes nestled in the winter birch forest.</figcaption>
+        </figure>
+        <figure class="photo-print rot-pos10 portrait" style="order:7">
+          <div class="taped">
+            <a href="assets/photos/teriberka-snowmobile-sunset-view-1600.webp" class="photo-link" aria-label="View photo: A yellow snowmobile stands on a snowy mountain ridge overlooking an Arctic sunset." data-photo-idx="10">
+              <img src="assets/photos/teriberka-snowmobile-sunset-view-800.webp"
+                   srcset="assets/photos/teriberka-snowmobile-sunset-view-800.webp 800w, assets/photos/teriberka-snowmobile-sunset-view-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="960"
+                   height="1280"
+                   alt="A yellow snowmobile stands on a snowy mountain ridge overlooking an Arctic sunset."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Snowmobile overlooking an Arctic sunset on the Teriberka ridge.</figcaption>
+        </figure>
+        <figure class="photo-print rot-neg15 portrait" style="order:9">
+          <div class="taped">
+            <a href="assets/photos/murmansk-arctic-floating-suits-1600.webp" class="photo-link" aria-label="View photo: Two swimmers in bright red waterproof immersion suits lie floating comfortably on icy waters." data-photo-idx="12">
+              <img src="assets/photos/murmansk-arctic-floating-suits-800.webp"
+                   srcset="assets/photos/murmansk-arctic-floating-suits-800.webp 800w, assets/photos/murmansk-arctic-floating-suits-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="960"
+                   height="1280"
+                   alt="Two swimmers in bright red waterproof immersion suits lie floating comfortably on icy waters."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Floating comfortably on icy waters in safety immersion suits.</figcaption>
+        </figure>
+        <figure class="photo-print rot-neg05 portrait" style="order:11">
+          <div class="taped">
+            <a href="assets/photos/murmansk-reindeer-team-sunset-1600.webp" class="photo-link" aria-label="View photo: A harnessed team of Arctic reindeer stands in crisp snow facing a golden winter sunset." data-photo-idx="14">
+              <img src="assets/photos/murmansk-reindeer-team-sunset-800.webp"
+                   srcset="assets/photos/murmansk-reindeer-team-sunset-800.webp 800w, assets/photos/murmansk-reindeer-team-sunset-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="960"
+                   height="1280"
+                   alt="A harnessed team of Arctic reindeer stands in crisp snow facing a golden winter sunset."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Harnessed reindeer team in the snow at sunset.</figcaption>
+        </figure>
+        </div>
+      </div>
+      <div class="page photos-page-right">
+        <div class="photos-col">
+          
+        <figure class="photo-print rot-pos10 portrait" style="order:4">
+          <div class="taped">
+            <a href="assets/photos/murmansk-reindeer-sleigh-team-1600.webp" class="photo-link" aria-label="View photo: A team of harnessed reindeer stands with a wooden sleigh in the snow-covered forest near Lovozero." data-photo-idx="7">
+              <img src="assets/photos/murmansk-reindeer-sleigh-team-800.webp"
+                   srcset="assets/photos/murmansk-reindeer-sleigh-team-800.webp 800w, assets/photos/murmansk-reindeer-sleigh-team-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="960"
+                   height="1280"
+                   alt="A team of harnessed reindeer stands with a wooden sleigh in the snow-covered forest near Lovozero."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Reindeer team and wooden sleigh in the snow.</figcaption>
+        </figure>
+        <figure class="photo-print rot-neg15 portrait" style="order:6">
+          <div class="taped">
+            <a href="assets/photos/teriberka-ship-graveyard-skeletons-1600.webp" class="photo-link" aria-label="View photo: Skeletal wooden ribs of historic fishing boats lie buried in sea ice on the Teriberka shore." data-photo-idx="9">
+              <img src="assets/photos/teriberka-ship-graveyard-skeletons-800.webp"
+                   srcset="assets/photos/teriberka-ship-graveyard-skeletons-800.webp 800w, assets/photos/teriberka-ship-graveyard-skeletons-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="960"
+                   height="1280"
+                   alt="Skeletal wooden ribs of historic fishing boats lie buried in sea ice on the Teriberka shore."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Wooden boat skeletons on the frozen shore of Teriberka.</figcaption>
+        </figure>
+        <figure class="photo-print rot-neg05 portrait" style="order:8">
+          <div class="taped">
+            <a href="assets/photos/murmansk-aurora-tourist-group-1600.webp" class="photo-link" aria-label="View photo: A cheerful tour group poses together in winter coats under a vivid green aurora borealis." data-photo-idx="11">
+              <img src="assets/photos/murmansk-aurora-tourist-group-800.webp"
+                   srcset="assets/photos/murmansk-aurora-tourist-group-800.webp 800w, assets/photos/murmansk-aurora-tourist-group-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="1080"
+                   height="1616"
+                   alt="A cheerful tour group poses together in winter coats under a vivid green aurora borealis."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Tourists posing under a glowing green aurora borealis.</figcaption>
+        </figure>
+        <figure class="photo-print rot-pos10 portrait" style="order:10">
+          <div class="taped">
+            <a href="assets/photos/teriberka-arctic-coast-cliffs-1600.webp" class="photo-link" aria-label="View photo: Snow-dusted reddish granite sea cliffs drop into the frothing waves of the Barents Sea." data-photo-idx="13">
+              <img src="assets/photos/teriberka-arctic-coast-cliffs-800.webp"
+                   srcset="assets/photos/teriberka-arctic-coast-cliffs-800.webp 800w, assets/photos/teriberka-arctic-coast-cliffs-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="960"
+                   height="1280"
+                   alt="Snow-dusted reddish granite sea cliffs drop into the frothing waves of the Barents Sea."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Red cliffs and ocean surf on the Teriberka coast.</figcaption>
+        </figure>
+        <figure class="photo-print rot-neg15" style="order:12">
+          <div class="taped">
+            <a href="assets/photos/murmansk-lake-glamping-domes-1600.webp" class="photo-link" aria-label="View photo: White geodesic glamping domes sit on a spacious wooden deck beside a serene Arctic lake." data-photo-idx="15">
+              <img src="assets/photos/murmansk-lake-glamping-domes-800.webp"
+                   srcset="assets/photos/murmansk-lake-glamping-domes-800.webp 800w, assets/photos/murmansk-lake-glamping-domes-1600.webp 1600w"
+                   sizes="(max-width: 899px) 100vw, 420px"
+                   width="1600"
+                   height="900"
+                   alt="White geodesic glamping domes sit on a spacious wooden deck beside a serene Arctic lake."
+                   loading="lazy">
+            </a>
+          </div>
+          <figcaption class="photo-caption hand">Geodesic glamping domes on a wooden deck by the lake.</figcaption>
+        </figure>
+        </div>
       </div>
     </section>
     <section class="spread" aria-label="Murmansk - 2">
@@ -1468,6 +2114,26 @@ footer.foot{
         <h2>Questions people ask</h2>
         <details><summary>Are the northern lights guaranteed?</summary><p>No one can promise them. Clear skies and solar activity decide, so two or three nights gives you better odds.</p></details><details><summary>How cold is it?</summary><p>Often minus 10 to minus 20 °C in winter, and colder by the sea in the wind. ROTW can arrange warm gear.</p></details><details><summary>What is the polar night?</summary><p>In December and early January the sun doesn’t rise, though there are a few hours of blue twilight.</p></details>
         <span class="page-num">7 of 10</span>
+      </div>
+    </section>
+    <section class="reviews" aria-labelledby="reviews-title">
+      <style>
+        .reviews{margin:36px 0 24px}
+        .reviews .slip{max-width:540px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;padding:28px 24px 24px}
+        .reviews-title{font:400 28px/1.2 var(--f-voice);color:var(--ink);margin:0}
+        .reviews-empty{font:400 16px/1.5 var(--f-ui);color:var(--ink-2);margin:0;max-width:44ch}
+        .reviews-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 22px;background:var(--gold);color:var(--ink);font:500 14px var(--f-ui);border-radius:999px;text-decoration:none;transition:background .15s ease}
+        .reviews-cta:hover{background:var(--sun)}
+        .reviews-cta:active{background:var(--coral)}
+        .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;width:100%;margin-top:12px;text-align:start}
+        .review-card{background:rgba(255,255,255,.6);border:1px solid rgba(11,22,38,.1);border-radius:4px;padding:16px}
+        .review-card blockquote{font:italic 400 16px/1.5 var(--f-voice);color:var(--ink);margin:0 0 10px}
+        .review-meta{font:400 13px/1.4 var(--f-ui);color:var(--ink-2)}
+        .review-meta b{color:var(--ink)}
+        .review-meta a{color:var(--pen);text-decoration:underline}
+      </style>
+      <div class="slip">
+        <h2 id="reviews-title" class="reviews-title">Traveller reviews</h2><p class="reviews-empty">Reviews from ROTW travellers will appear here.</p><a class="reviews-cta" href="mailto:inbound@rotwtravels.com">Speak with our Moscow team</a>
       </div>
     </section>
     <section class="contents-strip">
@@ -1580,50 +2246,353 @@ footer.foot{
     </div>
   </aside>
 </main>
-<footer class="foot">
-  <div class="foot-wrap">
-    <div class="foot-brand-col">
-      <a class="logo-link" href="../index.html" aria-label="ROTW Travels"><svg class="rotw-logo logo" viewBox="106 70 346 110" aria-hidden="true"><g class="lg-l lg-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g><g class="lg-l lg-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g><g class="lg-needle"><g class=""><path fill="var(--lg-main)" d="M224.1 133.9L224.1 133.9L235.3 120.7L229.5 137.0L229.5 137.0L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-red)" d="M217.8 151.0L224.0 134.0L224.1 133.9L229.5 137.0Z"/></g><g class=""><path fill="var(--lg-hole)" d="M226.6 133.8C227.7 133.8 228.6 134.7 228.6 135.8C228.6 136.9 227.7 137.9 226.6 137.9C225.4 137.9 224.5 136.9 224.5 135.8C224.5 134.7 225.4 133.8 226.6 133.8"/></g></g><g class="lg-l lg-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g><g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g><g class="lg-l lg-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g><g class="lg-l lg-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g><g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g><g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g></svg></a>
-      <p>Destination management in Russia · Moscow</p>
-      <a class="btn-plan" href="../plan.html">Plan a trip</a>
-    </div>
-    <div class="foot-col">
-      <h3>Destinations</h3>
-      <a href="moscow.html">Moscow</a>
-      <a href="spb.html">St Petersburg</a>
-      <a href="suzdal.html">The Golden Ring</a>
-      <a href="kazan.html">Kazan</a>
-      <a href="baikal.html">Lake Baikal</a>
-      <a href="index.html">All ten places</a>
-    </div>
-    <div class="foot-col">
-      <h3>Journeys</h3>
-      <a href="../index.html#journeys">Classic Two Capitals</a>
-      <a href="../index.html#journeys">The Golden Ring</a>
-      <a href="../index.html#journeys">The Great Trans-Siberian</a>
-      <a href="../index.html#journeys">Kamchatka Fire &amp; Ice</a>
-    </div>
-    <div class="foot-col">
-      <h3>Services</h3>
-      <a href="../index.html#services">Visa support</a>
-      <a href="../index.html#services">Airport meet &amp; assist</a>
-      <a href="../index.html#services">Private transfers</a>
-      <a href="../index.html#partners">For travel agents</a>
-    </div>
-    <div class="foot-col">
-      <h3>Contact</h3>
-      <span>106 Prospekt Mira, Moscow 129626</span>
-      <span dir="ltr">+7 930 945 4007</span>
-      <span dir="ltr">inbound@rotwtravels.com</span>
-      <a href="index.html">Sasha, your ROTW guide</a>
+
+<dialog id="photo-lightbox" class="photo-lightbox" aria-label="Photos from the trail">
+  <div class="lb-container">
+    <button type="button" class="lb-close" id="lb-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="lb-stage" id="lb-stage">
+      <button type="button" class="lb-nav lb-prev" id="lb-prev" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="lb-figure-wrap">
+        <figure class="lb-figure">
+          <img id="lb-img" class="lb-img" src="" alt="" width="1600" height="1200">
+          <figcaption class="lb-meta">
+            <span id="lb-caption" class="lb-caption hand"></span>
+            <span id="lb-counter" class="lb-counter" aria-live="polite"></span>
+          </figcaption>
+        </figure>
+      </div>
+      <button type="button" class="lb-nav lb-next" id="lb-next" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
   </div>
-  <div class="foot-bot">
-    <span>© 2026 ROTW Travels</span>
-    <p lang="ru">Дороги мира</p>
+</dialog>
+<!-- SHELL:FOOTER -->
+<footer class="rotw-shell-footer" role="contentinfo">
+  <!-- Collapsed Persistent Dock Console -->
+  <aside class="rotw-dock" id="rotw-dock" aria-label="Sasha's Travel Console">
+    <div class="dock-sasha-block" id="bubble">
+      <div class="dock-sasha-avatar">
+        <img src="../assets/sasha.webp" alt="Sasha" width="40" height="40" loading="lazy">
+      </div>
+      <b id="guide-name" style="display:none;">Sasha</b>
+      <span class="dock-speech" id="guide-text">Murmansk is above the Arctic Circle. Most people come for the northern lights.</span>
+    </div>
+
+    <div class="dock-actions">
+      <button class="btn-dock-dir" id="btn-dock-directory" aria-expanded="false" aria-controls="rotw-directory-tray">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"/></svg>
+        <span class="label-text">Full directory</span>
+      </button>
+
+      <a href="../plan.html" class="btn-dock-plan">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-paper-plane"/></svg>
+        <span class="label-text">Plan a trip</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Slide-Up Full Directory Disclosure Backdrop -->
+  <div class="rotw-tray-backdrop" id="rotw-tray-backdrop" aria-hidden="true"></div>
+
+  <!-- Slide-Up Full Directory Disclosure Tray -->
+  <div class="rotw-directory-tray" id="rotw-directory-tray" role="region" aria-label="Directory &amp; Operations" hidden="until-found">
+    <!-- Tray Header -->
+    <div class="tray-header">
+      <div class="tray-title-block">
+        <h3 id="rotw-directory-heading">Directory &amp; Operations</h3>
+        <p>Official Inbound Tour Operator · Moscow</p>
+      </div>
+      <button class="tray-close-btn" id="btn-tray-close" aria-label="Close directory">
+        <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-close"/></svg>
+      </button>
+    </div>
+
+    <!-- Tray Scrollable Content -->
+    <div class="tray-scroll-body">
+      <!-- 1. Sasha's Note Slip -->
+      <article class="sasha-note-card">
+        <div class="note-tape note-tape-left" aria-hidden="true"></div>
+        <div class="note-tape note-tape-right" aria-hidden="true"></div>
+        <p class="sasha-handwriting-p">
+          “Questions before you pack? Write to Sasha and the Moscow team.”
+          <span class="sasha-signature-span">— Sasha</span>
+        </p>
+        <div class="sasha-note-actions">
+          <a href="../plan.html" class="btn-note-plan">
+            <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-paper-plane"/></svg>
+            <span>Plan a trip</span>
+          </a>
+          <a href="mailto:inbound@rotwtravels.com" class="btn-note-mail">
+            <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-mail"/></svg>
+            <span>Write to the Moscow team</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- 2. Two Doors Block -->
+      <div class="tray-doors-block">
+        <!-- Door 1: Travellers -->
+        <div class="tray-door-card tray-door-light">
+          <div>
+            <h4>Planning a trip to Russia?</h4>
+            <ul class="tray-door-list">
+              <li>Private and small-group tours</li>
+              <li>Visa support and invitation letters</li>
+              <li>Airport meet and assist</li>
+              <li>Transfers and cars with a driver</li>
+              <li>Hotels, rail and domestic flights</li>
+              <li>Ballet, opera and event tickets</li>
+            </ul>
+          </div>
+          <a href="../plan.html" class="btn-pill-plan tray-door-btn">
+            <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-paper-plane"/></svg>
+            <span>Plan a trip</span>
+          </a>
+        </div>
+
+        <!-- Door 2: Agents & Tour Operators -->
+        <div class="tray-door-card tray-door-dark">
+          <div>
+            <h4>Travel agent or operator?</h4>
+            <ul class="tray-door-list">
+              <li>Net rates for FIT and groups</li>
+              <li>MICE, incentives and conferences</li>
+              <li>Guides in English, Hindi, Arabic and more</li>
+              <li>An operations desk in Moscow</li>
+              <li>Outbound to Dubai, Oman, India and Hong Kong</li>
+            </ul>
+          </div>
+          <a href="../plan.html#agent" class="btn-pill-plan tray-door-btn" style="background:transparent;border:1px solid var(--shell-gold);color:var(--shell-gold);">
+            <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-briefcase"/></svg>
+            <span>Request net rates</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Directory as Luggage Tags -->
+      <div class="tray-tags-container">
+        <!-- Desktop 3-Column Tags -->
+        <div class="desktop-tags-grid">
+          <!-- Tag 1: Places & Expeditions -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 01 · ROUTE &amp; STOPS</div>
+              <h4>Places &amp; Expeditions</h4>
+            </div>
+            <div class="tag-body">
+              <ul class="tag-dest-grid">
+                <li><a href="../notes/moscow.html">Moscow</a></li>
+                <li><a href="../notes/spb.html">St Petersburg</a></li>
+                <li><a href="../notes/suzdal.html">The Golden Ring</a></li>
+                <li><a href="../notes/kazan.html">Kazan</a></li>
+                <li><a href="../notes/sochi.html">Sochi</a></li>
+                <li><a href="../notes/kaliningrad.html">Kaliningrad</a></li>
+                <li><a href="../notes/murmansk.html">Murmansk</a></li>
+                <li><a href="../notes/baikal.html">Lake Baikal</a></li>
+                <li><a href="../notes/vladivostok.html">Vladivostok</a></li>
+                <li><a href="../notes/kamchatka.html">Kamchatka</a></li>
+              </ul>
+              <div class="tag-section-subhead">Journeys</div>
+              <ul class="tag-sublinks">
+                <li><a href="../index.html#journeys">The two capitals (7 days)</a></li>
+                <li><a href="../index.html#journeys">Moscow and the Golden Ring (5 days)</a></li>
+                <li><a href="../index.html#journeys">Trans-Siberian, end to end (15 days)</a></li>
+                <li><a href="../index.html#journeys">Baikal on clear ice (7 days)</a></li>
+                <li><a href="../index.html#journeys">Kazan and the Volga (4 days)</a></li>
+                <li><a href="../index.html#journeys">Northern lights (4 days)</a></li>
+              </ul>
+              <div class="tag-section-subhead">Contact</div>
+              <ul class="tag-sublinks">
+                <li><a href="../reviews.html">Traveller reviews</a></li>
+                <li><a href="../notes/index.html">Sasha's notebook</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Tag 2: Agents & Services -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 02 · TRADE &amp; CONCIERGE</div>
+              <h4>Agents &amp; Services</h4>
+            </div>
+            <div class="tag-body">
+              <ul class="tag-services-list">
+                <li>Confidential B2B Net Rates for FIT &amp; Groups</li>
+                <li>Russian E-Visa &amp; Tourist Invitation Letters</li>
+                <li>Airport &amp; Station Meet &amp; Assist with Chauffeur</li>
+                <li>Boutique Hotels &amp; Luxury Rail Accommodations</li>
+                <li>MICE &amp; Corporate Incentives Planning</li>
+              </ul>
+              <a href="../plan.html#agent" class="tag-cta-btn">
+                <span>Request net rates</span>
+                <svg class="shell-icon shell-icon-flip" aria-hidden="true"><use href="../assets/icons.svg#icon-arrow-right"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tag 3: Moscow HQ & Clocks -->
+          <article class="luggage-tag">
+            <div class="tag-eyelet-row">
+              <div class="tag-twine" aria-hidden="true"></div>
+              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
+            </div>
+            <div class="tag-header">
+              <div class="tag-category-kicker">TAG 03 · HEADQUARTERS</div>
+              <h4>Moscow HQ &amp; Clocks</h4>
+            </div>
+            <div class="tag-body">
+              <div class="tag-hq-address">
+                <strong>ROTW Travels</strong><br>
+                106 Prospekt Mira, Moscow 129626
+              </div>
+              <div class="tag-contact-lines">
+                <div>Moscow: <a href="tel:+79309454007"><span dir="ltr">+7 930 945 4007</span></a></div>
+                <div>Dubai: <a href="tel:+97143384075"><span dir="ltr">+971 4 338 4075</span></a></div>
+                <div>Mumbai: <a href="tel:+919821869339"><span dir="ltr">+91 98218 69339</span></a></div>
+                <div>Inbound: <a href="mailto:inbound@rotwtravels.com"><span dir="ltr">inbound@rotwtravels.com</span></a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Mobile Accordions (<860px) -->
+        <div class="mobile-tag-accordion">
+          <details class="accordion-tag" open>
+            <summary>
+              <span>Tag 01 · Places &amp; Expeditions</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <ul class="tag-dest-grid">
+                <li><a href="../notes/moscow.html">Moscow</a></li>
+                <li><a href="../notes/spb.html">St Petersburg</a></li>
+                <li><a href="../notes/suzdal.html">The Golden Ring</a></li>
+                <li><a href="../notes/kazan.html">Kazan</a></li>
+                <li><a href="../notes/sochi.html">Sochi</a></li>
+                <li><a href="../notes/kaliningrad.html">Kaliningrad</a></li>
+                <li><a href="../notes/murmansk.html">Murmansk</a></li>
+                <li><a href="../notes/baikal.html">Lake Baikal</a></li>
+                <li><a href="../notes/vladivostok.html">Vladivostok</a></li>
+                <li><a href="../notes/kamchatka.html">Kamchatka</a></li>
+              </ul>
+              <div class="tag-section-subhead" style="margin-top:12px;">Journeys</div>
+              <ul class="tag-sublinks">
+                <li><a href="../index.html#journeys">The two capitals (7 days)</a></li>
+                <li><a href="../index.html#journeys">Moscow and the Golden Ring (5 days)</a></li>
+                <li><a href="../index.html#journeys">Trans-Siberian, end to end (15 days)</a></li>
+                <li><a href="../index.html#journeys">Baikal on clear ice (7 days)</a></li>
+                <li><a href="../index.html#journeys">Kazan and the Volga (4 days)</a></li>
+                <li><a href="../index.html#journeys">Northern lights (4 days)</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="accordion-tag">
+            <summary>
+              <span>Tag 02 · Agents &amp; Services</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <ul class="tag-services-list">
+                <li>Confidential B2B Net Rates for FIT &amp; Groups</li>
+                <li>Russian E-Visa &amp; Tourist Invitation Letters</li>
+                <li>Airport &amp; Station Meet &amp; Assist with Chauffeur</li>
+                <li>Boutique Hotels &amp; Luxury Rail Accommodations</li>
+                <li>MICE &amp; Corporate Incentives Planning</li>
+              </ul>
+              <a href="../plan.html#agent" class="tag-cta-btn" style="margin-top:14px;">
+                <span>Request net rates</span>
+                <svg class="shell-icon shell-icon-flip" aria-hidden="true"><use href="../assets/icons.svg#icon-arrow-right"/></svg>
+              </a>
+            </div>
+          </details>
+
+          <details class="accordion-tag">
+            <summary>
+              <span>Tag 03 · Moscow HQ &amp; Clocks</span>
+              <svg class="shell-icon" aria-hidden="true"><use href="../assets/icons.svg#icon-chevron-down"/></svg>
+            </summary>
+            <div class="accordion-content">
+              <div class="tag-hq-address" style="border:0;padding-bottom:6px;">
+                <strong>ROTW Travels</strong><br>
+                106 Prospekt Mira, Moscow 129626
+              </div>
+              <div class="tag-contact-lines">
+                <div>Moscow: <a href="tel:+79309454007"><span dir="ltr">+7 930 945 4007</span></a></div>
+                <div>Dubai: <a href="tel:+97143384075"><span dir="ltr">+971 4 338 4075</span></a></div>
+                <div>Mumbai: <a href="tel:+919821869339"><span dir="ltr">+91 98218 69339</span></a></div>
+                <div>Email: <a href="mailto:inbound@rotwtravels.com"><span dir="ltr">inbound@rotwtravels.com</span></a></div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- 4. Five Live Clocks -->
+      <section class="tray-clocks-section" aria-label="Bureau time zones">
+        <div class="tray-clocks-head">Bureau Local Times</div>
+        <div class="tray-clocks-row">
+          <div class="tray-clock-dial">
+          <span class="dial-city">Moscow</span>
+          <span class="dial-time" data-clock="moscow"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Dubai</span>
+          <span class="dial-time" data-clock="dubai"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Mumbai</span>
+          <span class="dial-time" data-clock="mumbai"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Muscat</span>
+          <span class="dial-time" data-clock="muscat"><span dir="ltr">--:--</span></span>
+        </div>
+        <div class="tray-clock-dial">
+          <span class="dial-city">Hong Kong</span>
+          <span class="dial-time" data-clock="hongkong"><span dir="ltr">--:--</span></span>
+        </div>
+        </div>
+      </section>
+
+      <!-- 5. Languages Section -->
+      <div class="tray-lang-section" role="group" aria-label="Language options">
+        <button class="tray-lang-btn active" data-shell-lang="en">English</button>
+      <button class="tray-lang-btn" data-shell-lang="ru">Русский</button>
+      <button class="tray-lang-btn" data-shell-lang="ar">العربية</button>
+      <button class="tray-lang-btn" data-shell-lang="hi">हिन्दी</button>
+      </div>
+
+      <!-- 6. Legal Row with Dashed Slots -->
+      <div class="tray-legal-section">
+        <div class="legal-slots-grid">
+          <div class="legal-slot">Tour operator registry no. · ROTW to supply</div>
+          <div class="legal-slot">Financial guarantee · ROTW to supply</div>
+          <div class="legal-slot">Memberships · ROTW to supply</div>
+        </div>
+        <div class="legal-bottom-row">
+          <span>© 2026 ROTW Travels · 106 Prospekt Mira, Moscow 129626</span>
+          <span class="legal-tagline" lang="ru">Дороги мира</span>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
-<script>window.PAGE={"guide":{"name":"Sasha","initial":"S","photo":"assets/sasha.webp","role":"Your guide at ROTW Travels, Moscow"},"city":"murmansk","order":["moscow","spb","suzdal","kazan","sochi","kaliningrad","murmansk","baikal","vladivostok","kamchatka"],"base":"","t":{"_lang":{"code":"en","dir":"ltr","label":"English","short":"EN"},"guideName":"Sasha","guideRole":"Your guide at ROTW Travels, Moscow","plural":{"days":{"one":"{n} day","other":"{n} days"},"places":{"one":"{n} place","other":"{n} places"},"planChip":{"one":"A {n}-day plan","other":"A {n}-day plan"}},"dur":["About an hour","Two or three hours","Half a day","A full day"],"skip":"Skip to the notebook","homeLabel":"ROTW Travels, talk to a guide","preferTalk":"Prefer to talk?","langLabel":"Language","portraitAlt":"{name}, your ROTW guide","yourTrip":"Your trip","nothingYet":"Nothing yet","tripEmpty":"Add places from the conversation and your trip builds itself here.","priceLabel":"Price","priceSlot":"{name} quotes it for your dates, hotels and group size.","address":"106 Prospekt Mira, Moscow 129626","whenToGo":"When to go","thSeason":"Season","thMonths":"Months","thLike":"What it’s like","gettingThere":"Getting there","faqTitle":"Questions people ask","morePlaces":"More places {name} plans","cityTitle":"{city} travel guide: talk to a local guide | ROTW Travels","cityDesc":"{hook} Plan your {city} trip by talking to {name}, a guide at ROTW Travels in Moscow.","hubTitle":"Talk to a guide about Russia | ROTW Travels","hubDesc":"Plan a trip to Russia by talking to a guide at ROTW Travels in Moscow: Moscow, St Petersburg, Lake Baikal, Kamchatka and more.","hubH1":"Where in Russia?","hubKicker":"Talk to your guide, and your trip builds itself as you go.","hubReadTitle":"Every place {name} plans","hubIntro":"ROTW Travels is a tour operator in Moscow. Talk to your guide about any of these places, or read about them here.","hubGreet":["Hello, I’m {name}. I work at ROTW’s office in Moscow, and I’ll be your guide.","Tell me what you’re curious about, and I’ll put a trip together while we talk."],"sendTrip":"Send my trip to {name}","tripSum":"{places}, about {days}","removeItem":"Remove {item}","badEmail":"That email doesn’t look quite right. It should look like name@example.com.","whenPh":"For example, June next year","summary":"Thank you, {name}. Here is what I have: {places} across {cities}, about {days}, around {when}.","prototypeNote":"This is a prototype, so nothing has been sent yet. On the live site this goes straight to me at ROTW in Moscow, and I reply by email with a plan and a real price.","hubTopics":{"first":{"chip":"My first time in Russia","say":"For a first trip, most people start with Moscow and St Petersburg, and add the Golden Ring if they have time."},"nature":{"chip":"Nature and wild places","say":"Russia is enormous once you leave the cities. These are the wildest places I send people."},"winter":{"chip":"A winter trip","say":"Winter is my favourite season here, if you dress for it."},"sea":{"chip":"Sea and sunshine","say":"Russia has more coast than you’d think."},"rail":{"chip":"The Trans-Siberian","say":"The classic route runs from Moscow through Kazan and Lake Baikal to Vladivostok. Talk to me about any stop."},"all":{"chip":"Show me everything","say":"Here is every place I can plan for you."}},"picksTitle":"{name}'s picks","tabAll":"Everything","pin":"Pin","pinned":"Pinned","pinAria":"Pin {title} to your trip","pinPlan":"Pin the whole plan","planPinned":"Plan pinned","noteSign":"— {name}","pageOf":"{n} of {total}","openPage":"Open {city}","contentsLabel":"Contents","howTitle":"How this notebook works","howSteps":["Read my notes on a place.","Pin the things you like. They go into your trip envelope.","Send me your trip. I reply by email with a plan and a real price."],"tripStamps":"Cities in your trip","aboutDaysCity":"about {days}","letterTitle":"A note to {name}","fieldName":"Your name","fieldEmail":"Email","fieldWhen":"When would you like to come?","fieldNotes":"Anything I should know? (optional)","notesPh":"Travelling with children, a slow pace, a special occasion…","nameRequired":"Add your name so I know who to write to.","postIt":"Post it to {name}","back":"Back to your trip","postedTitle":"Posted","priceText":"ROTW prices every trip for your dates, hotel level and group size. Pin what you like, send it to me, and I'll come back with a real quote."},"cities":{"moscow":{"name":"Moscow","photo":"moscow","kicker":"The capital, and where most trips begin","hook":"Red Square at night, the Bolshoi, and metro stations that look like palaces.","highlights":[{"id":"kremlin","title":"The Kremlin and Red Square","line":"Cathedrals, the Armoury, and the square at dusk when the lights come on.","dur":0.5},{"id":"basil","title":"St Basil’s Cathedral","line":"Nine chapels under the famous domes, each painted differently inside.","dur":0.25},{"id":"metro","title":"The metro palaces","line":"Komsomolskaya, Mayakovskaya and Ploshchad Revolyutsii: chandeliers, mosaics and bronze for the price of a ticket.","dur":0.25},{"id":"zaryadye","title":"Zaryadye Park","line":"The floating bridge over the river, with the Kremlin walls behind you.","dur":0.25},{"id":"bolshoi","title":"An evening at the Bolshoi","line":"Ballet or opera on the historic stage. Tickets for big productions go early.","dur":0.25},{"id":"tretyakov","title":"The Tretyakov Gallery","line":"A thousand years of Russian art, from icons to Repin and Levitan.","dur":0.5},{"id":"novodevichy","title":"Novodevichy Convent","line":"A UNESCO-listed convent beside a quiet pond, with a cemetery of famous Russians.","dur":0.5},{"id":"vdnkh","title":"VDNKh","line":"Soviet pavilions, gilded fountains and the Space Pavilion.","dur":0.5},{"id":"danilovsky","title":"Danilovsky Market","line":"Georgian khachapuri, Uzbek plov and Russian pickles under one roof.","dur":0.25},{"id":"gum","title":"GUM and a Soviet ice cream","line":"The glass-roofed arcade on Red Square, and plombir ice cream from the stalls inside.","dur":0.1},{"id":"dinner","title":"A proper Russian dinner","line":"Pelmeni, borscht and blini in a restaurant that does them well.","dur":0.25},{"id":"river","title":"Moscow by night","line":"A river cruise past the lit Kremlin, then the city view from Sparrow Hills.","dur":0.25}],"topics":[{"id":"classic","chip":"The classics","says":["These are the ones you shouldn’t miss on a first visit."],"cards":["kremlin","basil","metro","zaryadye"],"photo":true},{"id":"culture","chip":"Art, ballet and history","says":["Moscow does culture on a grand scale. My favourites:"],"cards":["bolshoi","tretyakov","novodevichy","vdnkh"]},{"id":"food","chip":"Food and markets","says":["Moscow eats well. This is where I’d take you."],"cards":["danilovsky","gum","dinner"]},{"id":"night","chip":"Moscow at night","says":["The city looks its best after dark."],"cards":["river","bolshoi","dinner"]}],"when":{"say":"Late spring to early autumn is easiest. December has the lights and the snow, if you don’t mind the cold.","seasons":[["Winter","Dec–Feb","Snow, New Year lights and the skating rink on Red Square."],["Spring","Mar–May","The snow melts in March and the parks turn green by May. Victory Day parade on 9 May."],["Summer","Jun–Aug","Long days, terraces and parks. The busiest season."],["Autumn","Sep–Nov","Golden leaves in September, grey skies by November, and the theatre season begins."]]},"plan":{"say":"Three days is a good first visit. This is how I’d spend them.","days":[["The heart of the city",["kremlin","basil","gum","river"]],["Art and the metro",["tretyakov","metro","zaryadye","bolshoi"]],["Markets and monasteries",["danilovsky","novodevichy","vdnkh"]]]},"greet":["Privet! I’m Sasha, your guide in Moscow.","It’s my city, so ask me anything. Shall I start with the places you shouldn’t miss?"]},"spb":{"name":"St Petersburg","photo":"spb","kicker":"Palaces, canals and the White Nights","hook":"The Hermitage, the Neva bridges opening at night, and June evenings that never get dark.","highlights":[{"id":"hermitage","title":"The Hermitage","line":"The Winter Palace and three million objects. Go early, choose a few rooms, and come back.","dur":0.5},{"id":"spilled","title":"Church of the Savior on Spilled Blood","line":"Every inch of the inside is covered in mosaics.","dur":0.25},{"id":"canals","title":"The canals by boat","line":"An hour on the rivers and canals shows you the city the way it was meant to be seen.","dur":0.25},{"id":"isaac","title":"St Isaac’s colonnade","line":"Climb about 260 steps for the best view over the rooftops.","dur":0.25},{"id":"peterhof","title":"The Peterhof fountains","line":"The Grand Cascade by the Gulf of Finland. The fountains run from spring to October.","dur":0.5},{"id":"catherine","title":"Catherine Palace and the Amber Room","line":"In Pushkin, under an hour south: the restored Amber Room and the palace park.","dur":0.5},{"id":"bridges","title":"The bridges open at night","line":"From April to November the Neva bridges lift after 1 a.m. to let ships through.","dur":0.25},{"id":"mariinsky","title":"The Mariinsky","line":"Ballet and opera where The Sleeping Beauty and The Nutcracker were first staged.","dur":0.25},{"id":"pyshki","title":"Pyshki at the old pyshechnaya","line":"Sugar-dusted doughnuts and milky coffee, served the same way since 1958.","dur":0.1}],"topics":[{"id":"classic","chip":"The city","says":["Start in the centre. Everything here is walkable or a short boat ride away."],"cards":["hermitage","spilled","canals","isaac"],"photo":true},{"id":"palaces","chip":"The palaces","says":["The tsars’ summer palaces are an easy trip out of town."],"cards":["peterhof","catherine"]},{"id":"night","chip":"Nights and the theatre","says":["St Petersburg comes alive late."],"cards":["bridges","mariinsky","pyshki"]}],"when":{"say":"June for the White Nights, when it barely gets dark. May and September are calmer and still bright.","seasons":[["Winter","Dec–Feb","Short days, the Neva frozen, and quieter museums."],["Spring","Mar–May","The ice breaks on the Neva in April and the Peterhof fountains start."],["Summer","Jun–Aug","White Nights in June and the Scarlet Sails festival. Busy."],["Autumn","Sep–Nov","Golden parks in September, wet and grey by November."]]},"plan":{"say":"Three days gives you the city and one palace day.","days":[["Palace Square and the water",["hermitage","isaac","canals","bridges"]],["Peterhof and the theatre",["peterhof","pyshki","mariinsky"]],["Pushkin and the mosaics",["catherine","spilled"]]]},"greet":["St Petersburg! It’s where I’d send anyone who loves art.","Shall I show you the city first, or the palaces outside it?"]},"suzdal":{"name":"The Golden Ring","photo":"suzdal","kicker":"Old towns north-east of Moscow","hook":"White churches, wooden houses and onion domes over the meadows, a few hours from the capital.","highlights":[{"id":"suzdal","title":"Suzdal","line":"A small town of white churches, wooden houses and meadows along the Kamenka river.","dur":0.5},{"id":"vladimir","title":"Vladimir","line":"The Golden Gate and the Assumption Cathedral, with frescoes by Andrei Rublev.","dur":0.5},{"id":"sergiev","title":"Sergiev Posad","line":"The Trinity Lavra of St Sergius, the heart of Russian Orthodoxy, about two hours from Moscow.","dur":0.5},{"id":"woodmuseum","title":"Museum of Wooden Architecture","line":"Log churches and farmhouses moved here from villages across the region.","dur":0.25},{"id":"rostov","title":"Rostov Veliky","line":"A lakeside kremlin that looks like a film set, and has been one.","dur":0.5},{"id":"yaroslavl","title":"Yaroslavl","line":"Painted churches on the Volga. The historic centre is UNESCO-listed.","dur":0.5},{"id":"medovukha","title":"Medovukha tasting","line":"Suzdal’s honey mead, tasted where it is still made.","dur":0.1}],"topics":[{"id":"classic","chip":"The towns to pick","says":["If you only have two days, these three."],"cards":["suzdal","vladimir","sergiev"],"photo":true},{"id":"more","chip":"Going further","says":["With more time, the northern half of the ring."],"cards":["rostov","yaroslavl","woodmuseum"]},{"id":"food","chip":"Food and drink","says":["Suzdal has one thing everyone tries."],"cards":["medovukha"]}],"when":{"say":"May to September for walking and the meadows. In winter Suzdal looks like a Christmas card.","seasons":[["Winter","Dec–Feb","Snow on the domes and sleigh rides."],["Spring","Mar–May","Muddy in March, green by May."],["Summer","Jun–Aug","Warm evenings by the river and the cucumber festival in Suzdal."],["Autumn","Sep–Nov","Golden birches in September."]]},"plan":{"say":"Two days, with a night in Suzdal so you see it after the day visitors leave.","days":[["Vladimir and Suzdal",["vladimir","suzdal","medovukha"]],["Wood and a monastery",["woodmuseum","sergiev"]]]},"greet":["The Golden Ring is old Russia: monasteries, wooden houses and quiet rivers.","It’s a ring of towns around Moscow. Shall I tell you which ones I’d pick?"]},"kazan":{"name":"Kazan","photo":"kazan","kicker":"Where Europe meets Asia on the Volga","hook":"A white-stone kremlin with a mosque and a cathedral side by side, and Tatar food you won’t find anywhere else.","highlights":[{"id":"kremlin","title":"The Kazan Kremlin","line":"UNESCO-listed walls with a mosque and an Orthodox cathedral side by side.","dur":0.5},{"id":"kulsharif","title":"Kul Sharif Mosque","line":"Blue domes and white minarets, rebuilt inside the Kremlin and opened in 2005.","dur":0.25},{"id":"religions","title":"The Temple of All Religions","line":"One artist’s life project: domes and minarets from many faiths on one building.","dur":0.25},{"id":"bauman","title":"Bauman Street","line":"The pedestrian street for an evening walk, street music and chak-chak.","dur":0.25},{"id":"tatarfood","title":"A Tatar dinner","line":"Echpochmak pies, kazylyk sausage and chak-chak with tea.","dur":0.25},{"id":"sviyazhsk","title":"Sviyazhsk island","line":"An island town of monasteries on the Volga, about an hour from the city.","dur":0.5}],"topics":[{"id":"classic","chip":"The Kremlin and around","says":["Everything starts at the Kremlin."],"cards":["kremlin","kulsharif","religions"],"photo":true},{"id":"food","chip":"Tatar food","says":["You have to eat in Kazan. Truly."],"cards":["tatarfood","bauman"]},{"id":"out","chip":"A day out","says":["The best short trip from Kazan."],"cards":["sviyazhsk"]}],"when":{"say":"May to September. Sabantuy, the Tatar summer festival, usually falls in June.","seasons":[["Winter","Dec–Feb","Cold and clear, with the Kremlin under snow."],["Spring","Mar–May","The Volga thaws and the city warms up by May."],["Summer","Jun–Aug","Sabantuy festival and long evenings on the embankment."],["Autumn","Sep–Nov","Mild in September, quiet afterwards."]]},"plan":{"say":"Two days is right for Kazan.","days":[["The Kremlin and dinner",["kremlin","kulsharif","bauman","tatarfood"]],["The island and the temple",["sviyazhsk","religions"]]]},"greet":["Kazan! Two cultures in one city, and some of the best food in Russia.","Shall I start with the Kremlin?"]},"sochi":{"name":"Sochi","photo":"sochi","photoSrc":"sochi-rosa-khutor-dusk","kicker":"The Black Sea and the Caucasus mountains","hook":"Beaches in the morning and mountains in the afternoon, where the 2014 Winter Olympics were held.","highlights":[{"id":"promenade","title":"The sea promenade","line":"Palms, pebble beaches and the Black Sea, warm enough to swim from June to October.","dur":0.25},{"id":"arboretum","title":"Sochi Arboretum","line":"A park of palms and rare trees, planted in the 1890s.","dur":0.25},{"id":"olympic","title":"Olympic Park","line":"The 2014 Winter Olympics venues by the sea in Adler.","dur":0.25},{"id":"rosa","title":"Rosa Khutor","line":"Mountains above Krasnaya Polyana: skiing in winter, hiking and cable cars in summer.","dur":1},{"id":"agura","title":"The Agura waterfalls","line":"A short gorge walk to three waterfalls and the Eagle Rocks.","dur":0.5},{"id":"tea","title":"The tea plantations","line":"Some of the world’s northernmost tea grows here. Taste it where it’s picked.","dur":0.25}],"topics":[{"id":"classic","chip":"By the sea","says":["Sochi itself is made for slow days."],"cards":["promenade","arboretum","olympic"],"photo":true},{"id":"mountains","chip":"The mountains","says":["The mountains are under an hour from the coast."],"cards":["rosa","agura"]},{"id":"tea","chip":"Tea and food","says":["Something most visitors don’t expect."],"cards":["tea"]}],"when":{"say":"June to September for the sea. December to April for skiing in the mountains.","seasons":[["Winter","Dec–Feb","Skiing at Rosa Khutor; mild by the sea."],["Spring","Mar–May","Spring skiing up high, blossom on the coast."],["Summer","Jun–Aug","Beach season and mountain hiking."],["Autumn","Sep–Nov","The sea stays warm into October."]]},"plan":{"say":"Three days: one by the sea, one up high, one in between.","days":[["The coast",["promenade","arboretum","olympic"]],["The mountains",["rosa"]],["Waterfalls and tea",["agura","tea"]]]},"greet":["Sochi is Russia’s seaside, with mountains right behind it.","Are you after the sea or the mountains? You can have both."]},"kaliningrad":{"name":"Kaliningrad","photo":"kaliningrad","kicker":"Old Königsberg on the Baltic","hook":"A Gothic cathedral on an island, the dunes of the Curonian Spit, and most of the world’s amber.","highlights":[{"id":"cathedral","title":"Königsberg Cathedral","line":"A Gothic cathedral on Kant Island, with Immanuel Kant’s tomb beside its wall.","dur":0.25},{"id":"amber","title":"The Amber Museum","line":"Most of the world’s amber comes from this coast. See the best of it here.","dur":0.25},{"id":"fishing","title":"Fishing Village","line":"A riverside quarter built in the old Prussian style, with smoked fish on the menu.","dur":0.25},{"id":"curonian","title":"The Curonian Spit","line":"A UNESCO-listed sand spit with high dunes and the twisted pines of the Dancing Forest.","dur":1},{"id":"svetlogorsk","title":"Svetlogorsk","line":"A Baltic seaside town of old villas and a long promenade.","dur":0.5}],"topics":[{"id":"classic","chip":"The old city","says":["Start on Kant Island."],"cards":["cathedral","amber","fishing"],"photo":true},{"id":"coast","chip":"The Baltic coast","says":["The coast is the reason to stay longer."],"cards":["curonian","svetlogorsk"]}],"when":{"say":"June to September for the coast. The Spit is beautiful in autumn too.","seasons":[["Winter","Dec–Feb","Grey and mild, with quiet museums."],["Spring","Mar–May","Birdwatching season on the Spit."],["Summer","Jun–Aug","Beach weather on the Baltic."],["Autumn","Sep–Nov","Golden dunes and empty beaches."]]},"plan":{"say":"Two days: the city, then the coast.","days":[["Königsberg",["cathedral","amber","fishing"]],["The Spit and the sea",["curonian","svetlogorsk"]]]},"greet":["Kaliningrad is the Russia most people don’t know about: Baltic, Prussian, and full of amber.","Shall I start in the old city or out on the coast?"]},"murmansk":{"name":"Murmansk","photo":"murmansk","photoSrc":"murmansk-aurora-spruce","kicker":"The Arctic, and the northern lights","hook":"The largest city above the Arctic Circle, with the aurora overhead from September to March.","highlights":[{"id":"lights","title":"The northern lights","line":"From September to March, on clear dark nights away from the city lights.","dur":0.25},{"id":"teriberka","title":"Teriberka","line":"A fishing village on the Barents Sea, at the edge of the Arctic Ocean.","dur":1},{"id":"huskies","title":"Huskies and reindeer","line":"Sled rides and Sami culture outside the city.","dur":0.5},{"id":"lenin","title":"The icebreaker Lenin","line":"The world’s first nuclear-powered surface ship, now a museum.","dur":0.25},{"id":"alyosha","title":"The Alyosha monument","line":"A giant soldier above the bay, with a view over the port.","dur":0.25}],"topics":[{"id":"north","chip":"The Arctic","says":["This is why you came north."],"cards":["lights","teriberka","huskies"],"photo":true},{"id":"city","chip":"The city","says":["Murmansk itself has a few things worth an afternoon."],"cards":["lenin","alyosha"]}],"when":{"say":"September to March for the northern lights. Late May to July for the midnight sun.","seasons":[["Winter","Dec–Feb","The polar night in December, auroras on clear nights."],["Spring","Mar–May","Snow and light return; the aurora season ends in March."],["Summer","Jun–Aug","The midnight sun, until late July."],["Autumn","Sep–Nov","The aurora season starts and the tundra turns red."]]},"plan":{"say":"Two or three nights gives you the best chance of clear skies.","days":[["The city and the first night out",["alyosha","lenin","lights"]],["The Barents Sea",["teriberka","huskies"]]]},"greet":["Murmansk is above the Arctic Circle. Most people come for the northern lights.","Shall I tell you the best way to see them?"]},"baikal":{"name":"Lake Baikal","photo":"baikal","photoSrc":"baikal-shamanka-ice","kicker":"The deepest lake on Earth","hook":"Clear blue ice in February, Olkhon Island in summer, and three nights on the Trans-Siberian to get there.","highlights":[{"id":"olkhon","title":"Olkhon Island","line":"The largest island on the lake, with steppe, cliffs and Shaman Rock.","dur":1},{"id":"ice","title":"The clear ice","line":"In February and March the ice is clear enough to see the water beneath your feet.","dur":0.5},{"id":"circum","title":"The Circum-Baikal Railway","line":"A historic line along the shore, through tunnels and over stone bridges.","dur":1},{"id":"listvyanka","title":"Listvyanka","line":"A lakeside village an hour from Irkutsk, known for smoked omul fish.","dur":0.5},{"id":"irkutsk","title":"Irkutsk","line":"Wooden houses with carved windows, and the gateway to the lake.","dur":0.5},{"id":"nerpa","title":"The Baikal seals","line":"The nerpa lives only here. See them in Listvyanka or, with luck, on the rocks.","dur":0.1}],"topics":[{"id":"classic","chip":"The lake itself","says":["The lake is the reason to come."],"cards":["olkhon","ice","circum"],"photo":true},{"id":"villages","chip":"Towns and villages","says":["Where you’ll stay and eat on the way."],"cards":["irkutsk","listvyanka","nerpa"]}],"when":{"say":"February and March for the clear ice. July and August for warm days on Olkhon.","seasons":[["Winter","Dec–Feb","The lake freezes by January; clear ice from February."],["Spring","Mar–May","The ice holds into March, then breaks up in May."],["Summer","Jun–Aug","Warm days, hiking and boat trips."],["Autumn","Sep–Nov","Golden larches and calm water in September."]]},"plan":{"say":"Four days: Irkutsk, two days on Olkhon, and the old railway.","days":[["Irkutsk and Listvyanka",["irkutsk","listvyanka","nerpa"]],["Olkhon Island",["olkhon"]],["The ice, or a boat in summer",["ice"]],["Along the shore by train",["circum"]]]},"greet":["Baikal is my favourite place in Russia. It’s the deepest and oldest lake on Earth.","Winter ice or summer island? It’s two different trips."]},"vladivostok":{"name":"Vladivostok","photo":"vladivostok","kicker":"The end of the Trans-Siberian, on the Pacific","hook":"Hills over the bay, two great bridges, and seafood straight from the Pacific.","highlights":[{"id":"station","title":"The end of the line","line":"The kilometre 9,288 marker at the station, where the Trans-Siberian ends.","dur":0.1},{"id":"eagle","title":"Eagle’s Nest viewpoint","line":"The best view of the bay and both bridges.","dur":0.25},{"id":"goldenbridge","title":"The Golden Bridge","line":"Cable-stayed across the Golden Horn Bay, and lit at night.","dur":0.25},{"id":"seafood","title":"The fish market","line":"Crab, scallops and sea urchin, eaten by the water.","dur":0.25},{"id":"russky","title":"Russky Island","line":"Across one of the longest cable-stayed bridges in the world: forts, coves and the oceanarium.","dur":0.5},{"id":"fortress","title":"Vladivostok Fortress","line":"Sea forts and tunnels built to guard the Pacific port.","dur":0.25}],"topics":[{"id":"classic","chip":"The city and the bay","says":["Start with the view, then go down to the water."],"cards":["station","eagle","goldenbridge"],"photo":true},{"id":"sea","chip":"Islands and seafood","says":["The Pacific side of the city."],"cards":["russky","seafood","fortress"]}],"when":{"say":"August and September are the warmest and clearest. Early summer is often foggy.","seasons":[["Winter","Dec–Feb","Cold, sunny and dry; the bay can freeze."],["Spring","Mar–May","Windy and cool."],["Summer","Jun–Aug","Fog in June and July, warm sea in August."],["Autumn","Sep–Nov","The best weather of the year in September."]]},"plan":{"say":"Two days is enough for the city.","days":[["The city and the bay",["station","eagle","goldenbridge","seafood"]],["Russky Island",["russky","fortress"]]]},"greet":["Vladivostok is where the railway from Moscow ends, on the Pacific.","Shall I show you the bay first?"]},"kamchatka":{"name":"Kamchatka","photo":"kamchatka","kicker":"Volcanoes and bears on the Pacific","hook":"Active volcanoes, the Valley of Geysers, and brown bears fishing for salmon.","highlights":[{"id":"geysers","title":"The Valley of Geysers","line":"Reached by helicopter: one of the largest geyser fields in the world.","dur":1},{"id":"bears","title":"Bears at Kurile Lake","line":"Brown bears fishing for salmon, July to September, by helicopter.","dur":1},{"id":"avacha","title":"Avachinsky volcano","line":"A climbable volcano above the city, with a summer hike to the crater rim.","dur":1},{"id":"beach","title":"Khalaktyrsky beach","line":"Black volcanic sand on the open Pacific.","dur":0.25},{"id":"springs","title":"The hot springs","line":"Natural thermal pools in the hills, after a day outside.","dur":0.25},{"id":"crab","title":"Kamchatka crab and red caviar","line":"Straight from the Pacific, at the market in Petropavlovsk.","dur":0.1}],"topics":[{"id":"classic","chip":"Volcanoes and wildlife","says":["These are the big days, each a trip of its own."],"cards":["geysers","bears","avacha"],"photo":true},{"id":"coast","chip":"The coast and the springs","says":["For the days in between."],"cards":["beach","springs","crab"]}],"when":{"say":"July to September for hiking, bears and helicopter trips. Winter is for heli-skiing and snowmobiles.","seasons":[["Winter","Dec–Feb","Deep snow, heli-skiing and snowmobiles."],["Spring","Mar–May","Ski touring on the volcanoes."],["Summer","Jun–Aug","Hiking season; bears from July."],["Autumn","Sep–Nov","Bears until September, autumn colours on the tundra."]]},"plan":{"say":"Four days, with a spare day for the weather.","days":[["Arrive and the coast",["beach","crab","springs"]],["The Valley of Geysers",["geysers"]],["Avachinsky volcano",["avacha"]],["Kurile Lake bears",["bears"]]]},"greet":["Kamchatka is the wildest place I send people. Volcanoes, geysers, bears.","Most of it is reached by helicopter. Shall I show you?"]}}};</script>
+<!-- /SHELL:FOOTER -->
+<script>window.PAGE={"guide":{"name":"Sasha","initial":"S","photo":"assets/sasha.webp","role":"Your guide at ROTW Travels, Moscow"},"city":"murmansk","order":["moscow","spb","suzdal","kazan","sochi","kaliningrad","murmansk","baikal","vladivostok","kamchatka"],"base":"","t":{"_lang":{"code":"en","dir":"ltr","label":"English","short":"EN"},"guideName":"Sasha","guideRole":"Your guide at ROTW Travels, Moscow","plural":{"days":{"one":"{n} day","other":"{n} days"},"places":{"one":"{n} place","other":"{n} places"},"planChip":{"one":"A {n}-day plan","other":"A {n}-day plan"}},"dur":["About an hour","Two or three hours","Half a day","A full day"],"skip":"Skip to the notebook","homeLabel":"ROTW Travels, talk to a guide","preferTalk":"Prefer to talk?","langLabel":"Language","portraitAlt":"{name}, your ROTW guide","yourTrip":"Your trip","nothingYet":"Nothing yet","tripEmpty":"Add places from the conversation and your trip builds itself here.","priceLabel":"Price","priceSlot":"{name} quotes it for your dates, hotels and group size.","address":"106 Prospekt Mira, Moscow 129626","whenToGo":"When to go","thSeason":"Season","thMonths":"Months","thLike":"What it’s like","gettingThere":"Getting there","faqTitle":"Questions people ask","morePlaces":"More places {name} plans","cityTitle":"{city} travel guide: talk to a local guide | ROTW Travels","cityDesc":"{hook} Plan your {city} trip by talking to {name}, a guide at ROTW Travels in Moscow.","hubTitle":"Talk to a guide about Russia | ROTW Travels","hubDesc":"Plan a trip to Russia by talking to a guide at ROTW Travels in Moscow: Moscow, St Petersburg, Lake Baikal, Kamchatka and more.","hubH1":"Where in Russia?","hubKicker":"Talk to your guide, and your trip builds itself as you go.","hubReadTitle":"Every place {name} plans","hubIntro":"ROTW Travels is a tour operator in Moscow. Talk to your guide about any of these places, or read about them here.","hubGreet":["Hello, I’m {name}. I work at ROTW’s office in Moscow, and I’ll be your guide.","Tell me what you’re curious about, and I’ll put a trip together while we talk."],"sendTrip":"Send my trip to {name}","tripSum":"{places}, about {days}","removeItem":"Remove {item}","badEmail":"That email doesn’t look quite right. It should look like name@example.com.","whenPh":"For example, June next year","summary":"Thank you, {name}. Here is what I have: {places} across {cities}, about {days}, around {when}.","prototypeNote":"This is a prototype, so nothing has been sent yet. On the live site this goes straight to me at ROTW in Moscow, and I reply by email with a plan and a real price.","hubTopics":{"first":{"chip":"My first time in Russia","say":"For a first trip, most people start with Moscow and St Petersburg, and add the Golden Ring if they have time."},"nature":{"chip":"Nature and wild places","say":"Russia is enormous once you leave the cities. These are the wildest places I send people."},"winter":{"chip":"A winter trip","say":"Winter is my favourite season here, if you dress for it."},"sea":{"chip":"Sea and sunshine","say":"Russia has more coast than you’d think."},"rail":{"chip":"The Trans-Siberian","say":"The classic route runs from Moscow through Kazan and Lake Baikal to Vladivostok. Talk to me about any stop."},"all":{"chip":"Show me everything","say":"Here is every place I can plan for you."}},"picksTitle":"{name}'s picks","tabAll":"Everything","pin":"Pin","pinned":"Pinned","pinAria":"Pin {title} to your trip","pinPlan":"Pin the whole plan","planPinned":"Plan pinned","noteSign":"— {name}","pageOf":"{n} of {total}","openPage":"Open {city}","contentsLabel":"Contents","howTitle":"How this notebook works","howSteps":["Read my notes on a place.","Pin the things you like. They go into your trip envelope.","Send me your trip. I reply by email with a plan and a real price."],"tripStamps":"Cities in your trip","aboutDaysCity":"about {days}","letterTitle":"A note to {name}","fieldName":"Your name","fieldEmail":"Email","fieldWhen":"When would you like to come?","fieldNotes":"Anything I should know? (optional)","notesPh":"Travelling with children, a slow pace, a special occasion…","nameRequired":"Add your name so I know who to write to.","postIt":"Post it to {name}","back":"Back to your trip","postedTitle":"Posted","priceText":"ROTW prices every trip for your dates, hotel level and group size. Pin what you like, send it to me, and I'll come back with a real quote.","photosTitle":"Photos from the trail","photosNote":"Real photos from ROTW journeys.","lbClose":"Close","lbPrev":"Previous photo","lbNext":"Next photo","lbCount":"{n} / {total}","viewPhoto":"View photo: {alt}","reviewsTitle":"Traveller reviews","reviewsEmpty":"Reviews from ROTW travellers will appear here.","reviewsCta":"Speak with our Moscow team"},"photos":[{"file":"murmansk-aurora-spruce","w":1616,"h":1080,"role":"cover","highlight":null,"alt":{"en":"Vibrant green northern lights glow over snow-covered spruce trees in the Murmansk night.","ru":"Яркие зелёные всполохи северного сияния озаряют заснеженные ели в ночи под Мурманском.","ar":"أضواء الشفق القطبي الخضراء المتلألئة تضيء سماء الليل فوق أشجار التنوب المغطاة بالثلوج في منطقة مورمانسك.","hi":"मुरमान्स्क क्षेत्र में बर्फ से ढके सनोबर के पेड़ों के ऊपर रात के आसमान में हरी नदर्न लाइट्स चमक रही हैं।"},"caption":{"en":"Northern lights above the snow-covered taiga.","ru":"Северное сияние над заснеженной тайгой.","ar":"الشفق القطبي فوق غابات التايغا المغطاة بالثلوج.","hi":"बर्फ से ढकी टैगा के ऊपर ऑरोरा।"}},{"file":"murmansk-aurora-ribbons","w":854,"h":1280,"role":"strip","highlight":"lights","alt":{"en":"Bright green ribbons of the northern lights curve across the dark Arctic sky above trees.","ru":"Яркие зелёные ленты северного сияния изгибаются в тёмном арктическом небе над силуэтами деревьев.","ar":"شرائط خضراء ساطعة من الشفق القطبي تتماوج في سماء القطب الشمالي المظلمة فوق الأشجار.","hi":"पेड़ों के ऊपर अंधेरे आर्कटिक आसमान में नदर्न लाइट्स की हरी चमकदार लहरें लहरा रही हैं।"},"caption":{"en":"Aurora curtains curving in the Arctic night.","ru":"Всполохи северного сияния в арктическом небе.","ar":"ستائر الشفق القطبي في ليل القطب الشمالي.","hi":"आर्कटिक रात में लहराती नदर्न लाइट्स।"}},{"file":"teriberka-ship-graveyard-sunset","w":960,"h":1280,"role":"strip","highlight":"teriberka","alt":{"en":"Weathered wooden shipwrecks rest on the frozen tidal shore of Teriberka at sunset.","ru":"Остовы деревянных судов покоятся на замёрзшем побережье Териберки в лучах заката.","ar":"حطام سفن خشبية تاريخية يستقر على شاطئ تيريبيركا المتجمد عند غروب الشمس.","hi":"सूर्यास्त के समय तेरिबेर्का के जमे हुए तट पर पुरानी लकड़ी की जहाजों के अवशेष पड़े हैं।"},"caption":{"en":"The historic ship graveyard in Teriberka at sunset.","ru":"Кладбище кораблей в Териберке на закате.","ar":"مقبرة السفن في تيريبيركا عند الغروب.","hi":"सूर्यास्त के समय तेरिबेर्का का जहाज कब्रिस्तान।"}},{"file":"murmansk-husky-sled-trail","w":960,"h":1280,"role":"strip","highlight":"huskies","alt":{"en":"A team of Siberian huskies pulls a sled along a snow-covered woodland trail.","ru":"Упряжка сибирских хаски бежит по заснеженной лесной тропе.","ar":"فريق من كلاب الهاسكي يسحب زلاجة عبر مسار غابي مغطى بالثلوج.","hi":"साइबेरियन हस्की कुत्तों की एक टीम बर्फीले जंगल के रास्ते पर स्लेज खींच रही है।"},"caption":{"en":"Husky sled team on the winter forest trail.","ru":"Упряжка хаски на заснеженной лесной тропе.","ar":"فريق زلاجات الهاسكي في درب الغابة الشتوي.","hi":"सर्दियों के जंगली रास्ते पर हस्की स्लेज टीम।"}},{"file":"murmansk-lenin-icebreaker-port","w":1600,"h":900,"role":"strip","highlight":"lenin","alt":{"en":"The nuclear-powered icebreaker Lenin sits moored at the passenger pier in Murmansk port.","ru":"Атомный ледокол «Ленин» ошвартован у пассажирского причала в порту Мурманска.","ar":"كاسحة الجليد النووية لينين راسية عند رصيف الركاب في ميناء مورمانسك.","hi":"मुरमान्स्क बंदरगाह के यात्री घाट पर खड़ा परमाणु-संचालित आइसब्रेकर लेनिन।"},"caption":{"en":"Nuclear icebreaker Lenin at Murmansk port pier.","ru":"Атомоход «Ленин» у причала в Мурманске.","ar":"كاسحة الجليد لينين في ميناء مورمانسك.","hi":"मुरमान्स्क बंदरगाह पर खड़ा आइसब्रेकर लेनिन।"}},{"file":"murmansk-alyosha-monument-snow","w":1920,"h":2560,"role":"strip","highlight":"alyosha","alt":{"en":"The monumental concrete soldier statue of the Alyosha memorial stands over Murmansk in winter snow.","ru":"Исполинский бетонный монумент защитникам Заполярья «Алёша» возвышается в зимних снегах Мурманска.","ar":"نصب أليوشا التذكاري الضخم ينتصب فوق مرتفعات مورمانسك وسط الثلوج الشتوية.","hi":"मुरमान्स्क की बर्फीली पहाड़ी पर अलोशा स्मारक की विशाल कंक्रीट प्रतिमा खड़ी है।"},"caption":{"en":"The Alyosha monument overlooking Murmansk in winter.","ru":"Мемориал «Алёша» над зимним Мурманском.","ar":"نصب أليوشا التذكاري فوق مورمانسك في الشتاء.","hi":"सर्दियों में मुरमान्स्क के ऊपर अलोशा स्मारक।"}},{"file":"teriberka-dragon-eggs-beach","w":960,"h":1280,"role":"gallery","highlight":null,"alt":{"en":"Smooth rounded granite boulders emerge from fresh snow along the Arctic beach at Teriberka at sunset.","ru":"Гладкие гранитные валуны проступают сквозь свежий снег на арктическом берегу Териберки в лучах солнца.","ar":"صخور الغرانيت الدائرية الملساء تبرز من الثلوج على شاطئ تيريبيركا عند غروب الشمس.","hi":"सूर्यास्त के समय तेरिबेर्का के आर्कटिक समुद्र तट पर बर्फ के बीच चिकने गोल पत्थर दिखाई दे रहे हैं।"},"caption":{"en":"Dragon eggs beach on the Teriberka coast.","ru":"Пляж «драконьих яиц» на берегу Териберки.","ar":"شاطئ بيض التنين على ساحل تيريبيركا.","hi":"तेरिबेर्का तट पर ड्रैगन एग बीच।"}},{"file":"murmansk-reindeer-sleigh-team","w":960,"h":1280,"role":"gallery","highlight":null,"alt":{"en":"A team of harnessed reindeer stands with a wooden sleigh in the snow-covered forest near Lovozero.","ru":"Упряжка северных оленей стоит с деревянными санями в заснеженном лесу под Ловозером.","ar":"فريق من حيوانات الرنة يقف مربوطاً بزلاجة خشبية في الغابة المغطاة بالثلوج قرب لوفوزيرو.","hi":"लोवोज़ेरो के पास बर्फीले जंगल में लकड़ी की स्लेज के साथ सजी हुई रेनडियर की टीम खड़ी है।"},"caption":{"en":"Reindeer team and wooden sleigh in the snow.","ru":"Оленья упряжка с деревянными санями на снегу.","ar":"حيوانات الرنة والزلاجة الخشبية وسط الثلوج.","hi":"बर्फ में रेनडियर टीम और लकड़ी की स्लेज।"}},{"file":"murmansk-glass-igloo-domes","w":960,"h":1280,"role":"gallery","highlight":"lights","alt":{"en":"Glass geodesic igloo cabins glow with warm interior light in a snow-covered birch forest.","ru":"Стеклянные купольные иглу светятся тёплым светом в заснеженном берёзовом лесу.","ar":"أكواخ الإغلو الزجاجية القبابية تضيء بنور دافئ وسط غابة البتولا المغطاة بالثلوج.","hi":"बर्फ से ढके बर्च के जंगल में कांच के जियोडेसिक इग्लू गर्म रोशनी से चमक रहे हैं।"},"caption":{"en":"Glass aurora domes nestled in the winter birch forest.","ru":"Стеклянные купола для наблюдения сияния в зимнем лесу.","ar":"قباب زجاجية لمراقبة الشفق وسط غابة الشتاء.","hi":"सर्दियों के जंगल में नदर्न लाइट्स देखने वाले कांच के डोम।"}},{"file":"teriberka-ship-graveyard-skeletons","w":960,"h":1280,"role":"gallery","highlight":"teriberka","alt":{"en":"Skeletal wooden ribs of historic fishing boats lie buried in sea ice on the Teriberka shore.","ru":"Деревянные остовы старых рыболовных шхун покоятся в прибрежном льду Териберки.","ar":"هياكل خشبية لقوارب صيد تاريخية ترقد مغمورة في جليد شاطئ تيريبيركا.","hi":"तेरिबेर्का के तट पर समुद्री बर्फ में धंसे ऐतिहासिक नावों के लकड़ी के ढांचे।"},"caption":{"en":"Wooden boat skeletons on the frozen shore of Teriberka.","ru":"Остовы деревянных судов на замёрзшем берегу Териберки.","ar":"هياكل القوارب الخشبية على شاطئ تيريبيركا المتجمد.","hi":"तेरिबेर्का के जमे हुए तट पर पुरानी नावों के अवशेष।"}},{"file":"teriberka-snowmobile-sunset-view","w":960,"h":1280,"role":"gallery","highlight":"teriberka","alt":{"en":"A yellow snowmobile stands on a snowy mountain ridge overlooking an Arctic sunset.","ru":"Жёлтый снегоход стоит на горном гребне с видом на золотой закат над Заполярьем.","ar":"زلاجة جليد صفراء تقف على حافة جبل ثلجي مطلة على غروب الشمس القطبي.","hi":"आर्कटिक सूर्यास्त के सामने बर्फीली पहाड़ी पर खड़ी पीली स्नोमोबाइल।"},"caption":{"en":"Snowmobile overlooking an Arctic sunset on the Teriberka ridge.","ru":"Снегоход на фоне арктического заката на сопках Териберки.","ar":"زلاجة جليدية تطل على الغروب القطبي في تيريبيركا.","hi":"तेरिबेर्का की पहाड़ी पर सूर्यास्त के सामने स्नोमोबाइल।"}},{"file":"murmansk-aurora-tourist-group","w":1080,"h":1616,"role":"gallery","highlight":"lights","alt":{"en":"A cheerful tour group poses together in winter coats under a vivid green aurora borealis.","ru":"Группа улыбающихся туристов позирует в тёплых куртках под ярким зелёным сиянием.","ar":"مجموعة سياحية مبتسمة ترتدي معاطف شتوية تحت شفق قطبي أخضر متوهج.","hi":"चमकती हरी नदर्न लाइट्स के नीचे सर्दियों के कोट पहने खुश पर्यटकों का समूह।"},"caption":{"en":"Tourists posing under a glowing green aurora borealis.","ru":"Туристы под яркими зелёными всполохами северного сияния.","ar":"سياح يلتقطون صورا تذكارية تحت الشفق القطبي المتوهج.","hi":"चमकती हरी नदर्न लाइट्स के नीचे तस्वीरें खिंचवाते पर्यटक।"}},{"file":"murmansk-arctic-floating-suits","w":960,"h":1280,"role":"gallery","highlight":null,"alt":{"en":"Two swimmers in bright red waterproof immersion suits lie floating comfortably on icy waters.","ru":"Двое участников в ярко-красных гидрокостюмах спокойно лежат на поверхности ледяной воды.","ar":"سباحان ببدلات نجاة حمراء زاهية مقاومة للماء يطفوان بارتياح على سطح المياه الجليدية.","hi":"चमकीले लाल वाटरप्रूफ सूट पहने दो तैराक बर्फीले पानी में तैर रहे हैं।"},"caption":{"en":"Floating comfortably on icy waters in safety immersion suits.","ru":"Безопасное купание в ледяной воде в термокостюмах.","ar":"طفو مريح على المياه المتجمدة ببدلات الأمان الحرارية.","hi":"सुरक्षा सूट में बर्फीले पानी की सतह पर आराम से तैरना।"}},{"file":"teriberka-arctic-coast-cliffs","w":960,"h":1280,"role":"gallery","highlight":"teriberka","alt":{"en":"Snow-dusted reddish granite sea cliffs drop into the frothing waves of the Barents Sea.","ru":"Припорошенные снегом скалы из красного гранита обрываются в пенные волны Баренцева моря.","ar":"منحدرات بحرية من الغرانيت الأحمر المغطى بالثلج تنحدر نحو أمواج بحر بارنتس.","hi":"बर्फ से ढकी लाल चट्टानें बारेंट्स सागर की झागदार लहरों से टकरा रही हैं।"},"caption":{"en":"Red cliffs and ocean surf on the Teriberka coast.","ru":"Красные скалы и морской прибой на побережье Териберки.","ar":"منحدرات صخرية حمراء وأمواج المحيط على ساحل تيريبيركا.","hi":"तेरिबेर्का तट पर लाल चट्टानें और समुद्र की लहरें।"}},{"file":"murmansk-reindeer-team-sunset","w":960,"h":1280,"role":"gallery","highlight":"huskies","alt":{"en":"A harnessed team of Arctic reindeer stands in crisp snow facing a golden winter sunset.","ru":"Упряжка северных оленей стоит в пушистом снегу в золотистых лучах зимнего заката.","ar":"فريق مربوط من حيوانات الرنة يقف في الثلج مواجها غروب الشمس الذهبي الشتوي.","hi":"सर्दियों के सुनहरे सूर्यास्त के सामने बर्फ में सजी हुई रेनडियर की जोड़ी खड़ी है।"},"caption":{"en":"Harnessed reindeer team in the snow at sunset.","ru":"Оленья упряжка на снегу в лучах заката.","ar":"فريق الرنة وسط الثلوج عند غروب الشمس.","hi":"सूर्यास्त के समय बर्फ में सजी हुई रेनडियर टीम।"}},{"file":"murmansk-lake-glamping-domes","w":1600,"h":900,"role":"gallery","highlight":null,"alt":{"en":"White geodesic glamping domes sit on a spacious wooden deck beside a serene Arctic lake.","ru":"Белые геодезические купола глэмпинга на деревянном настиле у тихого северного озера.","ar":"قباب تخييم فاخرة بيضاء على منصة خشبية فسيحة بجانب بحيرة هادئة في القطب.","hi":"एक शांत आर्कटिक झील के किनारे लकड़ी के डेक पर बने सफेद जियोडेसिक ग्लेम्पिंग डोम।"},"caption":{"en":"Geodesic glamping domes on a wooden deck by the lake.","ru":"Купольный глэмпинг на деревянной террасе у озера.","ar":"قباب التخييم الفاخر على منصة خشبية عند البحيرة.","hi":"झील के किनारे लकड़ी के डेक पर बने जियोडेसिक डोम।"}}],"cities":{"moscow":{"name":"Moscow","photo":"moscow","kicker":"The capital, and where most trips begin","hook":"Red Square at night, the Bolshoi, and metro stations that look like palaces.","highlights":[{"id":"kremlin","title":"The Kremlin and Red Square","line":"Cathedrals, the Armoury, and the square at dusk when the lights come on.","dur":0.5},{"id":"basil","title":"St Basil’s Cathedral","line":"Nine chapels under the famous domes, each painted differently inside.","dur":0.25},{"id":"metro","title":"The metro palaces","line":"Komsomolskaya, Mayakovskaya and Ploshchad Revolyutsii: chandeliers, mosaics and bronze for the price of a ticket.","dur":0.25},{"id":"zaryadye","title":"Zaryadye Park","line":"The floating bridge over the river, with the Kremlin walls behind you.","dur":0.25},{"id":"bolshoi","title":"An evening at the Bolshoi","line":"Ballet or opera on the historic stage. Tickets for big productions go early.","dur":0.25},{"id":"tretyakov","title":"The Tretyakov Gallery","line":"A thousand years of Russian art, from icons to Repin and Levitan.","dur":0.5},{"id":"novodevichy","title":"Novodevichy Convent","line":"A UNESCO-listed convent beside a quiet pond, with a cemetery of famous Russians.","dur":0.5},{"id":"vdnkh","title":"VDNKh","line":"Soviet pavilions, gilded fountains and the Space Pavilion.","dur":0.5},{"id":"danilovsky","title":"Danilovsky Market","line":"Georgian khachapuri, Uzbek plov and Russian pickles under one roof.","dur":0.25},{"id":"gum","title":"GUM and a Soviet ice cream","line":"The glass-roofed arcade on Red Square, and plombir ice cream from the stalls inside.","dur":0.1},{"id":"dinner","title":"A proper Russian dinner","line":"Pelmeni, borscht and blini in a restaurant that does them well.","dur":0.25},{"id":"river","title":"Moscow by night","line":"A river cruise past the lit Kremlin, then the city view from Sparrow Hills.","dur":0.25}],"topics":[{"id":"classic","chip":"The classics","says":["These are the ones you shouldn’t miss on a first visit."],"cards":["kremlin","basil","metro","zaryadye"],"photo":true},{"id":"culture","chip":"Art, ballet and history","says":["Moscow does culture on a grand scale. My favourites:"],"cards":["bolshoi","tretyakov","novodevichy","vdnkh"]},{"id":"food","chip":"Food and markets","says":["Moscow eats well. This is where I’d take you."],"cards":["danilovsky","gum","dinner"]},{"id":"night","chip":"Moscow at night","says":["The city looks its best after dark."],"cards":["river","bolshoi","dinner"]}],"when":{"say":"Late spring to early autumn is easiest. December has the lights and the snow, if you don’t mind the cold.","seasons":[["Winter","Dec–Feb","Snow, New Year lights and the skating rink on Red Square."],["Spring","Mar–May","The snow melts in March and the parks turn green by May. Victory Day parade on 9 May."],["Summer","Jun–Aug","Long days, terraces and parks. The busiest season."],["Autumn","Sep–Nov","Golden leaves in September, grey skies by November, and the theatre season begins."]]},"plan":{"say":"Three days is a good first visit. This is how I’d spend them.","days":[["The heart of the city",["kremlin","basil","gum","river"]],["Art and the metro",["tretyakov","metro","zaryadye","bolshoi"]],["Markets and monasteries",["danilovsky","novodevichy","vdnkh"]]]},"greet":["Privet! I’m Sasha, your guide in Moscow.","It’s my city, so ask me anything. Shall I start with the places you shouldn’t miss?"]},"spb":{"name":"St Petersburg","photo":"spb","kicker":"Palaces, canals and the White Nights","hook":"The Hermitage, the Neva bridges opening at night, and June evenings that never get dark.","highlights":[{"id":"hermitage","title":"The Hermitage","line":"The Winter Palace and three million objects. Go early, choose a few rooms, and come back.","dur":0.5},{"id":"spilled","title":"Church of the Savior on Spilled Blood","line":"Every inch of the inside is covered in mosaics.","dur":0.25},{"id":"canals","title":"The canals by boat","line":"An hour on the rivers and canals shows you the city the way it was meant to be seen.","dur":0.25},{"id":"isaac","title":"St Isaac’s colonnade","line":"Climb about 260 steps for the best view over the rooftops.","dur":0.25},{"id":"peterhof","title":"The Peterhof fountains","line":"The Grand Cascade by the Gulf of Finland. The fountains run from spring to October.","dur":0.5},{"id":"catherine","title":"Catherine Palace and the Amber Room","line":"In Pushkin, under an hour south: the restored Amber Room and the palace park.","dur":0.5},{"id":"bridges","title":"The bridges open at night","line":"From April to November the Neva bridges lift after 1 a.m. to let ships through.","dur":0.25},{"id":"mariinsky","title":"The Mariinsky","line":"Ballet and opera where The Sleeping Beauty and The Nutcracker were first staged.","dur":0.25},{"id":"pyshki","title":"Pyshki at the old pyshechnaya","line":"Sugar-dusted doughnuts and milky coffee, served the same way since 1958.","dur":0.1}],"topics":[{"id":"classic","chip":"The city","says":["Start in the centre. Everything here is walkable or a short boat ride away."],"cards":["hermitage","spilled","canals","isaac"],"photo":true},{"id":"palaces","chip":"The palaces","says":["The tsars’ summer palaces are an easy trip out of town."],"cards":["peterhof","catherine"]},{"id":"night","chip":"Nights and the theatre","says":["St Petersburg comes alive late."],"cards":["bridges","mariinsky","pyshki"]}],"when":{"say":"June for the White Nights, when it barely gets dark. May and September are calmer and still bright.","seasons":[["Winter","Dec–Feb","Short days, the Neva frozen, and quieter museums."],["Spring","Mar–May","The ice breaks on the Neva in April and the Peterhof fountains start."],["Summer","Jun–Aug","White Nights in June and the Scarlet Sails festival. Busy."],["Autumn","Sep–Nov","Golden parks in September, wet and grey by November."]]},"plan":{"say":"Three days gives you the city and one palace day.","days":[["Palace Square and the water",["hermitage","isaac","canals","bridges"]],["Peterhof and the theatre",["peterhof","pyshki","mariinsky"]],["Pushkin and the mosaics",["catherine","spilled"]]]},"greet":["St Petersburg! It’s where I’d send anyone who loves art.","Shall I show you the city first, or the palaces outside it?"]},"suzdal":{"name":"The Golden Ring","photo":"suzdal","kicker":"Old towns north-east of Moscow","hook":"White churches, wooden houses and onion domes over the meadows, a few hours from the capital.","highlights":[{"id":"suzdal","title":"Suzdal","line":"A small town of white churches, wooden houses and meadows along the Kamenka river.","dur":0.5},{"id":"vladimir","title":"Vladimir","line":"The Golden Gate and the Assumption Cathedral, with frescoes by Andrei Rublev.","dur":0.5},{"id":"sergiev","title":"Sergiev Posad","line":"The Trinity Lavra of St Sergius, the heart of Russian Orthodoxy, about two hours from Moscow.","dur":0.5},{"id":"woodmuseum","title":"Museum of Wooden Architecture","line":"Log churches and farmhouses moved here from villages across the region.","dur":0.25},{"id":"rostov","title":"Rostov Veliky","line":"A lakeside kremlin that looks like a film set, and has been one.","dur":0.5},{"id":"yaroslavl","title":"Yaroslavl","line":"Painted churches on the Volga. The historic centre is UNESCO-listed.","dur":0.5},{"id":"medovukha","title":"Medovukha tasting","line":"Suzdal’s honey mead, tasted where it is still made.","dur":0.1}],"topics":[{"id":"classic","chip":"The towns to pick","says":["If you only have two days, these three."],"cards":["suzdal","vladimir","sergiev"],"photo":true},{"id":"more","chip":"Going further","says":["With more time, the northern half of the ring."],"cards":["rostov","yaroslavl","woodmuseum"]},{"id":"food","chip":"Food and drink","says":["Suzdal has one thing everyone tries."],"cards":["medovukha"]}],"when":{"say":"May to September for walking and the meadows. In winter Suzdal looks like a Christmas card.","seasons":[["Winter","Dec–Feb","Snow on the domes and sleigh rides."],["Spring","Mar–May","Muddy in March, green by May."],["Summer","Jun–Aug","Warm evenings by the river and the cucumber festival in Suzdal."],["Autumn","Sep–Nov","Golden birches in September."]]},"plan":{"say":"Two days, with a night in Suzdal so you see it after the day visitors leave.","days":[["Vladimir and Suzdal",["vladimir","suzdal","medovukha"]],["Wood and a monastery",["woodmuseum","sergiev"]]]},"greet":["The Golden Ring is old Russia: monasteries, wooden houses and quiet rivers.","It’s a ring of towns around Moscow. Shall I tell you which ones I’d pick?"]},"kazan":{"name":"Kazan","photo":"kazan","kicker":"Where Europe meets Asia on the Volga","hook":"A white-stone kremlin with a mosque and a cathedral side by side, and Tatar food you won’t find anywhere else.","highlights":[{"id":"kremlin","title":"The Kazan Kremlin","line":"UNESCO-listed walls with a mosque and an Orthodox cathedral side by side.","dur":0.5},{"id":"kulsharif","title":"Kul Sharif Mosque","line":"Blue domes and white minarets, rebuilt inside the Kremlin and opened in 2005.","dur":0.25},{"id":"religions","title":"The Temple of All Religions","line":"One artist’s life project: domes and minarets from many faiths on one building.","dur":0.25},{"id":"bauman","title":"Bauman Street","line":"The pedestrian street for an evening walk, street music and chak-chak.","dur":0.25},{"id":"tatarfood","title":"A Tatar dinner","line":"Echpochmak pies, kazylyk sausage and chak-chak with tea.","dur":0.25},{"id":"sviyazhsk","title":"Sviyazhsk island","line":"An island town of monasteries on the Volga, about an hour from the city.","dur":0.5}],"topics":[{"id":"classic","chip":"The Kremlin and around","says":["Everything starts at the Kremlin."],"cards":["kremlin","kulsharif","religions"],"photo":true},{"id":"food","chip":"Tatar food","says":["You have to eat in Kazan. Truly."],"cards":["tatarfood","bauman"]},{"id":"out","chip":"A day out","says":["The best short trip from Kazan."],"cards":["sviyazhsk"]}],"when":{"say":"May to September. Sabantuy, the Tatar summer festival, usually falls in June.","seasons":[["Winter","Dec–Feb","Cold and clear, with the Kremlin under snow."],["Spring","Mar–May","The Volga thaws and the city warms up by May."],["Summer","Jun–Aug","Sabantuy festival and long evenings on the embankment."],["Autumn","Sep–Nov","Mild in September, quiet afterwards."]]},"plan":{"say":"Two days is right for Kazan.","days":[["The Kremlin and dinner",["kremlin","kulsharif","bauman","tatarfood"]],["The island and the temple",["sviyazhsk","religions"]]]},"greet":["Kazan! Two cultures in one city, and some of the best food in Russia.","Shall I start with the Kremlin?"]},"sochi":{"name":"Sochi","photo":"sochi","photoSrc":"sochi-rosa-khutor-dusk","kicker":"The Black Sea and the Caucasus mountains","hook":"Beaches in the morning and mountains in the afternoon, where the 2014 Winter Olympics were held.","highlights":[{"id":"promenade","title":"The sea promenade","line":"Palms, pebble beaches and the Black Sea, warm enough to swim from June to October.","dur":0.25},{"id":"arboretum","title":"Sochi Arboretum","line":"A park of palms and rare trees, planted in the 1890s.","dur":0.25},{"id":"olympic","title":"Olympic Park","line":"The 2014 Winter Olympics venues by the sea in Adler.","dur":0.25},{"id":"rosa","title":"Rosa Khutor","line":"Mountains above Krasnaya Polyana: skiing in winter, hiking and cable cars in summer.","dur":1},{"id":"agura","title":"The Agura waterfalls","line":"A short gorge walk to three waterfalls and the Eagle Rocks.","dur":0.5},{"id":"tea","title":"The tea plantations","line":"Some of the world’s northernmost tea grows here. Taste it where it’s picked.","dur":0.25}],"topics":[{"id":"classic","chip":"By the sea","says":["Sochi itself is made for slow days."],"cards":["promenade","arboretum","olympic"],"photo":true},{"id":"mountains","chip":"The mountains","says":["The mountains are under an hour from the coast."],"cards":["rosa","agura"]},{"id":"tea","chip":"Tea and food","says":["Something most visitors don’t expect."],"cards":["tea"]}],"when":{"say":"June to September for the sea. December to April for skiing in the mountains.","seasons":[["Winter","Dec–Feb","Skiing at Rosa Khutor; mild by the sea."],["Spring","Mar–May","Spring skiing up high, blossom on the coast."],["Summer","Jun–Aug","Beach season and mountain hiking."],["Autumn","Sep–Nov","The sea stays warm into October."]]},"plan":{"say":"Three days: one by the sea, one up high, one in between.","days":[["The coast",["promenade","arboretum","olympic"]],["The mountains",["rosa"]],["Waterfalls and tea",["agura","tea"]]]},"greet":["Sochi is Russia’s seaside, with mountains right behind it.","Are you after the sea or the mountains? You can have both."]},"kaliningrad":{"name":"Kaliningrad","photo":"kaliningrad","kicker":"Old Königsberg on the Baltic","hook":"A Gothic cathedral on an island, the dunes of the Curonian Spit, and most of the world’s amber.","highlights":[{"id":"cathedral","title":"Königsberg Cathedral","line":"A Gothic cathedral on Kant Island, with Immanuel Kant’s tomb beside its wall.","dur":0.25},{"id":"amber","title":"The Amber Museum","line":"Most of the world’s amber comes from this coast. See the best of it here.","dur":0.25},{"id":"fishing","title":"Fishing Village","line":"A riverside quarter built in the old Prussian style, with smoked fish on the menu.","dur":0.25},{"id":"curonian","title":"The Curonian Spit","line":"A UNESCO-listed sand spit with high dunes and the twisted pines of the Dancing Forest.","dur":1},{"id":"svetlogorsk","title":"Svetlogorsk","line":"A Baltic seaside town of old villas and a long promenade.","dur":0.5}],"topics":[{"id":"classic","chip":"The old city","says":["Start on Kant Island."],"cards":["cathedral","amber","fishing"],"photo":true},{"id":"coast","chip":"The Baltic coast","says":["The coast is the reason to stay longer."],"cards":["curonian","svetlogorsk"]}],"when":{"say":"June to September for the coast. The Spit is beautiful in autumn too.","seasons":[["Winter","Dec–Feb","Grey and mild, with quiet museums."],["Spring","Mar–May","Birdwatching season on the Spit."],["Summer","Jun–Aug","Beach weather on the Baltic."],["Autumn","Sep–Nov","Golden dunes and empty beaches."]]},"plan":{"say":"Two days: the city, then the coast.","days":[["Königsberg",["cathedral","amber","fishing"]],["The Spit and the sea",["curonian","svetlogorsk"]]]},"greet":["Kaliningrad is the Russia most people don’t know about: Baltic, Prussian, and full of amber.","Shall I start in the old city or out on the coast?"]},"murmansk":{"name":"Murmansk","photo":"murmansk","photoSrc":"murmansk-aurora-spruce","kicker":"The Arctic, and the northern lights","hook":"The largest city above the Arctic Circle, with the aurora overhead from September to March.","highlights":[{"id":"lights","title":"The northern lights","line":"From September to March, on clear dark nights away from the city lights.","dur":0.25},{"id":"teriberka","title":"Teriberka","line":"A fishing village on the Barents Sea, at the edge of the Arctic Ocean.","dur":1},{"id":"huskies","title":"Huskies and reindeer","line":"Sled rides and Sami culture outside the city.","dur":0.5},{"id":"lenin","title":"The icebreaker Lenin","line":"The world’s first nuclear-powered surface ship, now a museum.","dur":0.25},{"id":"alyosha","title":"The Alyosha monument","line":"A giant soldier above the bay, with a view over the port.","dur":0.25}],"topics":[{"id":"north","chip":"The Arctic","says":["This is why you came north."],"cards":["lights","teriberka","huskies"],"photo":true},{"id":"city","chip":"The city","says":["Murmansk itself has a few things worth an afternoon."],"cards":["lenin","alyosha"]}],"when":{"say":"September to March for the northern lights. Late May to July for the midnight sun.","seasons":[["Winter","Dec–Feb","The polar night in December, auroras on clear nights."],["Spring","Mar–May","Snow and light return; the aurora season ends in March."],["Summer","Jun–Aug","The midnight sun, until late July."],["Autumn","Sep–Nov","The aurora season starts and the tundra turns red."]]},"plan":{"say":"Two or three nights gives you the best chance of clear skies.","days":[["The city and the first night out",["alyosha","lenin","lights"]],["The Barents Sea",["teriberka","huskies"]]]},"greet":["Murmansk is above the Arctic Circle. Most people come for the northern lights.","Shall I tell you the best way to see them?"]},"baikal":{"name":"Lake Baikal","photo":"baikal","photoSrc":"baikal-shamanka-ice","kicker":"The deepest lake on Earth","hook":"Clear blue ice in February, Olkhon Island in summer, and three nights on the Trans-Siberian to get there.","highlights":[{"id":"olkhon","title":"Olkhon Island","line":"The largest island on the lake, with steppe, cliffs and Shaman Rock.","dur":1},{"id":"ice","title":"The clear ice","line":"In February and March the ice is clear enough to see the water beneath your feet.","dur":0.5},{"id":"circum","title":"The Circum-Baikal Railway","line":"A historic line along the shore, through tunnels and over stone bridges.","dur":1},{"id":"listvyanka","title":"Listvyanka","line":"A lakeside village an hour from Irkutsk, known for smoked omul fish.","dur":0.5},{"id":"irkutsk","title":"Irkutsk","line":"Wooden houses with carved windows, and the gateway to the lake.","dur":0.5},{"id":"nerpa","title":"The Baikal seals","line":"The nerpa lives only here. See them in Listvyanka or, with luck, on the rocks.","dur":0.1}],"topics":[{"id":"classic","chip":"The lake itself","says":["The lake is the reason to come."],"cards":["olkhon","ice","circum"],"photo":true},{"id":"villages","chip":"Towns and villages","says":["Where you’ll stay and eat on the way."],"cards":["irkutsk","listvyanka","nerpa"]}],"when":{"say":"February and March for the clear ice. July and August for warm days on Olkhon.","seasons":[["Winter","Dec–Feb","The lake freezes by January; clear ice from February."],["Spring","Mar–May","The ice holds into March, then breaks up in May."],["Summer","Jun–Aug","Warm days, hiking and boat trips."],["Autumn","Sep–Nov","Golden larches and calm water in September."]]},"plan":{"say":"Four days: Irkutsk, two days on Olkhon, and the old railway.","days":[["Irkutsk and Listvyanka",["irkutsk","listvyanka","nerpa"]],["Olkhon Island",["olkhon"]],["The ice, or a boat in summer",["ice"]],["Along the shore by train",["circum"]]]},"greet":["Baikal is my favourite place in Russia. It’s the deepest and oldest lake on Earth.","Winter ice or summer island? It’s two different trips."]},"vladivostok":{"name":"Vladivostok","photo":"vladivostok","kicker":"The end of the Trans-Siberian, on the Pacific","hook":"Hills over the bay, two great bridges, and seafood straight from the Pacific.","highlights":[{"id":"station","title":"The end of the line","line":"The kilometre 9,288 marker at the station, where the Trans-Siberian ends.","dur":0.1},{"id":"eagle","title":"Eagle’s Nest viewpoint","line":"The best view of the bay and both bridges.","dur":0.25},{"id":"goldenbridge","title":"The Golden Bridge","line":"Cable-stayed across the Golden Horn Bay, and lit at night.","dur":0.25},{"id":"seafood","title":"The fish market","line":"Crab, scallops and sea urchin, eaten by the water.","dur":0.25},{"id":"russky","title":"Russky Island","line":"Across one of the longest cable-stayed bridges in the world: forts, coves and the oceanarium.","dur":0.5},{"id":"fortress","title":"Vladivostok Fortress","line":"Sea forts and tunnels built to guard the Pacific port.","dur":0.25}],"topics":[{"id":"classic","chip":"The city and the bay","says":["Start with the view, then go down to the water."],"cards":["station","eagle","goldenbridge"],"photo":true},{"id":"sea","chip":"Islands and seafood","says":["The Pacific side of the city."],"cards":["russky","seafood","fortress"]}],"when":{"say":"August and September are the warmest and clearest. Early summer is often foggy.","seasons":[["Winter","Dec–Feb","Cold, sunny and dry; the bay can freeze."],["Spring","Mar–May","Windy and cool."],["Summer","Jun–Aug","Fog in June and July, warm sea in August."],["Autumn","Sep–Nov","The best weather of the year in September."]]},"plan":{"say":"Two days is enough for the city.","days":[["The city and the bay",["station","eagle","goldenbridge","seafood"]],["Russky Island",["russky","fortress"]]]},"greet":["Vladivostok is where the railway from Moscow ends, on the Pacific.","Shall I show you the bay first?"]},"kamchatka":{"name":"Kamchatka","photo":"kamchatka","kicker":"Volcanoes and bears on the Pacific","hook":"Active volcanoes, the Valley of Geysers, and brown bears fishing for salmon.","highlights":[{"id":"geysers","title":"The Valley of Geysers","line":"Reached by helicopter: one of the largest geyser fields in the world.","dur":1},{"id":"bears","title":"Bears at Kurile Lake","line":"Brown bears fishing for salmon, July to September, by helicopter.","dur":1},{"id":"avacha","title":"Avachinsky volcano","line":"A climbable volcano above the city, with a summer hike to the crater rim.","dur":1},{"id":"beach","title":"Khalaktyrsky beach","line":"Black volcanic sand on the open Pacific.","dur":0.25},{"id":"springs","title":"The hot springs","line":"Natural thermal pools in the hills, after a day outside.","dur":0.25},{"id":"crab","title":"Kamchatka crab and red caviar","line":"Straight from the Pacific, at the market in Petropavlovsk.","dur":0.1}],"topics":[{"id":"classic","chip":"Volcanoes and wildlife","says":["These are the big days, each a trip of its own."],"cards":["geysers","bears","avacha"],"photo":true},{"id":"coast","chip":"The coast and the springs","says":["For the days in between."],"cards":["beach","springs","crab"]}],"when":{"say":"July to September for hiking, bears and helicopter trips. Winter is for heli-skiing and snowmobiles.","seasons":[["Winter","Dec–Feb","Deep snow, heli-skiing and snowmobiles."],["Spring","Mar–May","Ski touring on the volcanoes."],["Summer","Jun–Aug","Hiking season; bears from July."],["Autumn","Sep–Nov","Bears until September, autumn colours on the tundra."]]},"plan":{"say":"Four days, with a spare day for the weather.","days":[["Arrive and the coast",["beach","crab","springs"]],["The Valley of Geysers",["geysers"]],["Avachinsky volcano",["avacha"]],["Kurile Lake bears",["bears"]]]},"greet":["Kamchatka is the wildest place I send people. Volcanoes, geysers, bears.","Most of it is reached by helicopter. Shall I show you?"]}}};</script>
 <script>
 // Sasha's Field Notebook
 // Framework-free ES2020 client script.
@@ -2013,9 +2982,20 @@ footer.foot{
       picksList.innerHTML = items.map(h => {
         const on = inTrip(CID, h.id);
         const durPercent = Math.max(10, Math.round(h.dur * 100));
+        const stripPhoto = P.photos ? P.photos.find(p => p.role === 'strip' && p.highlight === h.id) : null;
+        const stripIdx = stripPhoto && P.photos ? P.photos.indexOf(stripPhoto) : -1;
+        let stripHtml = '';
+        if (stripPhoto) {
+          const stripAlt = (stripPhoto.alt && (stripPhoto.alt[LANG] || stripPhoto.alt.en)) || h.title;
+          stripHtml = `
+          <a href="${B}assets/photos/${stripPhoto.file}-1600.webp" class="strip-thumb photo-link" aria-label="${esc(f(T.viewPhoto, { alt: stripAlt }))}" data-photo-idx="${stripIdx}">
+            <img src="${B}assets/photos/${stripPhoto.file}-800.webp" alt="${esc(stripAlt)}" width="72" height="72" loading="lazy">
+          </a>`;
+        }
         return `
-        <li class="pick-row fade-in ${on ? 'pinned' : ''}" data-h="${h.id}">
+        <li class="pick-row fade-in ${on ? 'pinned' : ''}${stripPhoto ? ' has-thumb' : ''}" data-h="${h.id}">
           <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
+          ${stripHtml}
           <div class="pick-info">
             <div class="pick-title">${esc(h.title)}</div>
             <div class="pick-line">${esc(h.line)}</div>
@@ -2138,11 +3118,165 @@ footer.foot{
     });
   }
 
+  /* ---------- Photo Lightbox Dialog (Agent N4) ---------- */
+  const lbDialog = document.getElementById('photo-lightbox');
+  const photosList = P.photos || [];
+
+  if (lbDialog && photosList.length > 0) {
+    const lbImg = document.getElementById('lb-img');
+    const lbCaption = document.getElementById('lb-caption');
+    const lbCounter = document.getElementById('lb-counter');
+    const lbClose = document.getElementById('lb-close');
+    const lbPrev = document.getElementById('lb-prev');
+    const lbNext = document.getElementById('lb-next');
+
+    let currentLbIdx = 0;
+    let lastFocusedElement = null;
+    const pageLandmarks = [
+      document.querySelector('header.top'),
+      document.querySelector('main.desk'),
+      document.querySelector('footer.foot')
+    ].filter(Boolean);
+
+    function preloadNeighbours(idx) {
+      if (photosList.length <= 1) return;
+      const prevIdx = (idx - 1 + photosList.length) % photosList.length;
+      const nextIdx = (idx + 1) % photosList.length;
+      [prevIdx, nextIdx].forEach(i => {
+        const p = photosList[i];
+        if (p && p.file) {
+          const img = new Image();
+          img.src = `${B}assets/photos/${p.file}-1600.webp`;
+        }
+      });
+    }
+
+    function renderLbPhoto(idx) {
+      currentLbIdx = (idx + photosList.length) % photosList.length;
+      const p = photosList[currentLbIdx];
+      const alt = (p.alt && (p.alt[LANG] || p.alt.en)) || '';
+      const cap = (p.caption && (p.caption[LANG] || p.caption.en)) || '';
+
+      if (lbImg) {
+        lbImg.src = `${B}assets/photos/${p.file}-1600.webp`;
+        lbImg.alt = alt;
+      }
+      if (lbCaption) {
+        lbCaption.textContent = cap;
+        lbCaption.style.display = cap ? '' : 'none';
+      }
+      if (lbCounter) {
+        lbCounter.textContent = f(T.lbCount, { n: NF.format(currentLbIdx + 1), total: NF.format(photosList.length) });
+      }
+      preloadNeighbours(currentLbIdx);
+    }
+
+    function openLightbox(idx) {
+      lastFocusedElement = document.activeElement;
+      renderLbPhoto(idx);
+      document.body.classList.add('lightbox-open');
+      pageLandmarks.forEach(el => el.setAttribute('inert', ''));
+
+      if (typeof lbDialog.showModal === 'function') {
+        lbDialog.showModal();
+      } else {
+        lbDialog.setAttribute('open', '');
+      }
+      if (lbClose) lbClose.focus();
+    }
+
+    function closeLightbox() {
+      if (lbDialog.open) {
+        lbDialog.close();
+      }
+      document.body.classList.remove('lightbox-open');
+      pageLandmarks.forEach(el => el.removeAttribute('inert'));
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    }
+
+    function showPrev() { renderLbPhoto(currentLbIdx - 1); }
+    function showNext() { renderLbPhoto(currentLbIdx + 1); }
+
+    if (lbClose) lbClose.addEventListener('click', closeLightbox);
+    if (lbPrev) lbPrev.addEventListener('click', () => { (DIR === 'rtl' ? showNext() : showPrev()); });
+    if (lbNext) lbNext.addEventListener('click', () => { (DIR === 'rtl' ? showPrev() : showNext()); });
+
+    lbDialog.addEventListener('close', () => {
+      document.body.classList.remove('lightbox-open');
+      pageLandmarks.forEach(el => el.removeAttribute('inert'));
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    });
+
+    lbDialog.addEventListener('click', e => {
+      if (e.target === lbDialog) closeLightbox();
+    });
+
+    lbDialog.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        if (DIR === 'rtl') showPrev(); else showNext();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (DIR === 'rtl') showNext(); else showPrev();
+      } else if (e.key === 'Tab') {
+        const focusables = Array.from(lbDialog.querySelectorAll('button:not([disabled])'));
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    let touchStartX = 0, touchStartY = 0;
+    lbDialog.addEventListener('touchstart', e => {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    lbDialog.addEventListener('touchend', e => {
+      if (e.changedTouches.length === 1) {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < -40) {
+            if (DIR === 'rtl') showPrev(); else showNext();
+          } else if (dx > 40) {
+            if (DIR === 'rtl') showNext(); else showPrev();
+          }
+        }
+      }
+    }, { passive: true });
+
+    document.addEventListener('click', e => {
+      const link = e.target.closest('.photo-link');
+      if (link && link.dataset.photoIdx !== undefined) {
+        e.preventDefault();
+        openLightbox(parseInt(link.dataset.photoIdx, 10));
+      }
+    });
+  }
+
   /* ---------- initial setup ---------- */
   syncButtons();
   renderEnvelope();
 })();
 
 </script>
+<script src="../shell/shell.js" defer></script>
 </body>
 </html>

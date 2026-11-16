@@ -1,0 +1,347 @@
+{
+  "languages": [
+    { "code": "en", "endonym": "English", "dir": "ltr" },
+    { "code": "ru", "endonym": "Русский", "dir": "ltr" },
+    { "code": "ar", "endonym": "العربية", "dir": "rtl" },
+    { "code": "hi", "endonym": "हिन्दी", "dir": "ltr" }
+  ],
+  "mainNav": [
+    {
+      "id": "destinations",
+      "href": "notes/index.html",
+      "icon": "icon-map-pin",
+      "label": {
+        "en": "Destinations",
+        "ru": "Направления",
+        "ar": "الوجهات",
+        "hi": "गंतव्य"
+      }
+    },
+    {
+      "id": "journeys",
+      "href": "index.html#journeys",
+      "icon": "icon-route",
+      "label": {
+        "en": "Journeys",
+        "ru": "Маршруты",
+        "ar": "الرحلات",
+        "hi": "यात्राएँ"
+      }
+    },
+    {
+      "id": "experiences",
+      "href": "index.html#trips",
+      "icon": "icon-compass",
+      "label": {
+        "en": "Experiences",
+        "ru": "Впечатления",
+        "ar": "تجارب مميزة",
+        "hi": "अनुभव"
+      }
+    },
+    {
+      "id": "forAgents",
+      "href": "index.html#partners",
+      "icon": "icon-briefcase",
+      "label": {
+        "en": "For agents",
+        "ru": "Турагентам",
+        "ar": "لوكلاء السياحة",
+        "hi": "एजेंटों के लिए"
+      }
+    },
+    {
+      "id": "notebook",
+      "href": "notes/index.html",
+      "icon": "icon-notebook",
+      "label": {
+        "en": "Sasha's notebook",
+        "ru": "Записная книжка Саши",
+        "ar": "دفتر ملاحظات ساشا",
+        "hi": "साशा की नोटबुक"
+      }
+    }
+  ],
+  "ctaPlan": {
+    "href": "plan.html",
+    "icon": "icon-paper-plane",
+    "label": {
+      "en": "Plan a trip",
+      "ru": "Спланировать поездку",
+      "ar": "خطط لرحلتك",
+      "hi": "ट्रिप प्लान करें"
+    }
+  },
+  "cities": [
+    { "id": "moscow", "code": "SVO", "name": { "en": "Moscow", "ru": "Москва", "ar": "موسكو", "hi": "मॉस्को" } },
+    { "id": "spb", "code": "LED", "name": { "en": "St Petersburg", "ru": "Санкт-Петербург", "ar": "سانت بطرسبرغ", "hi": "सेंट पीटर्सबर्ग" } },
+    { "id": "suzdal", "code": "VLD", "name": { "en": "The Golden Ring", "ru": "Золотое кольцо", "ar": "الحلقة الذهبية", "hi": "गोल्डन रिंग" } },
+    { "id": "kazan", "code": "KZN", "name": { "en": "Kazan", "ru": "Казань", "ar": "قازان", "hi": "कज़ान" } },
+    { "id": "sochi", "code": "AER", "name": { "en": "Sochi", "ru": "Сочи", "ar": "سوتشي", "hi": "सोची" } },
+    { "id": "kaliningrad", "code": "KGD", "name": { "en": "Kaliningrad", "ru": "Калининград", "ar": "كالينينغراد", "hi": "कालिनिनग्राद" } },
+    { "id": "murmansk", "code": "MMK", "name": { "en": "Murmansk", "ru": "Мурманск", "ar": "مورمانسك", "hi": "मरमंस्क" } },
+    { "id": "baikal", "code": "IKT", "name": { "en": "Lake Baikal", "ru": "Озеро Байкал", "ar": "بحيرة بايكال", "hi": "बैकाल झील" } },
+    { "id": "vladivostok", "code": "VVO", "name": { "en": "Vladivostok", "ru": "Владивосток", "ar": "فلاديفوستوك", "hi": "व्लादिवोस्तोक" } },
+    { "id": "kamchatka", "code": "PKC", "name": { "en": "Kamchatka", "ru": "Камчатка", "ar": "كامتشاتكا", "hi": "कामचटका" } }
+  ],
+  "journeys": [
+    { "id": "two-capitals", "days": "7", "title": { "en": "The two capitals", "ru": "Две столицы", "ar": "العاصمتان", "hi": "दो राजधानियाँ" } },
+    { "id": "golden-ring", "days": "5", "title": { "en": "Moscow and the Golden Ring", "ru": "Москва и Золотое кольцо", "ar": "موسكو والحلقة الذهبية", "hi": "मॉस्को और गोल्डन रिंग" } },
+    { "id": "trans-siberian", "days": "15", "title": { "en": "Trans-Siberian, end to end", "ru": "Великий Транссиб", "ar": "سكة حديد عبر سيبيريا", "hi": "महान ट्रांस-साइबेरियन" } },
+    { "id": "baikal-ice", "days": "7", "title": { "en": "Baikal on clear ice", "ru": "Байкал на прозрачном льду", "ar": "بايكال على الجليد الصافي", "hi": "साफ़ बर्फ़ पर बैकाल" } },
+    { "id": "volga-kazan", "days": "4", "title": { "en": "Kazan and the Volga", "ru": "Казань и Волга", "ar": "قازان ونهر الفولغا", "hi": "कज़ान और वोल्गा" } },
+    { "id": "northern-lights", "days": "4", "title": { "en": "Northern lights", "ru": "Северное сияние", "ar": "الشفق القطبي", "hi": "नॉर्दर्न लाइट्स" } }
+  ],
+  "offices": [
+    { "id": "moscow", "tz": "Europe/Moscow", "city": { "en": "Moscow", "ru": "Москва", "ar": "موسكو", "hi": "मॉस्को" }, "phone": "+7 930 945 4007", "email": "inbound@rotwtravels.com" },
+    { "id": "dubai", "tz": "Asia/Dubai", "city": { "en": "Dubai", "ru": "Дубай", "ar": "دبي", "hi": "दुबई" }, "phone": "+971 4 338 4075", "email": "sales@fbt.ae" },
+    { "id": "mumbai", "tz": "Asia/Kolkata", "city": { "en": "Mumbai", "ru": "Мумбаи", "ar": "مومباي", "hi": "मुंबई" }, "phone": "+91 98218 69339", "email": "ops.dxb@fbt.ae" },
+    { "id": "muscat", "tz": "Asia/Muscat", "city": { "en": "Muscat", "ru": "Маскат", "ar": "مسقط", "hi": "मस्कट" }, "phone": "+968 7953 1629", "email": "oman@fbtdmc.com" },
+    { "id": "hongkong", "tz": "Asia/Hong_Kong", "city": { "en": "Hong Kong", "ru": "Гонконг", "ar": "هونغ كونغ", "hi": "हांगकांग" }, "phone": "+852 9844 1073", "email": "hk@fbtdmc.com" }
+  ],
+  "address": {
+    "en": "106 Prospekt Mira, Moscow 129626",
+    "ru": "Проспект Мира, 106, Москва 129626",
+    "ar": "106 بروسبكت ميرا، موسكو 129626",
+    "hi": "106 प्रॉस्पेक्ट मीरा, मॉस्को 129626"
+  },
+  "sashaNote": {
+    "text": {
+      "en": "Questions before you pack? Write to Sasha and the Moscow team.",
+      "ru": "Вопросы перед сборами? Напишите Саше и московской команде.",
+      "ar": "لديك أسئلة قبل حزم أمتعتك؟ اكتب إلى ساشا وفريق موسكو.",
+      "hi": "पैक करने से पहले कोई सवाल? साशा और मॉस्को टीम को लिखें।"
+    },
+    "signature": {
+      "en": "— Sasha",
+      "ru": "— Саша",
+      "ar": "— ساشا",
+      "hi": "— साशा"
+    },
+    "btnWrite": {
+      "en": "Write to the Moscow team",
+      "ru": "Написать московской команде",
+      "ar": "راسل فريق موسكو",
+      "hi": "मॉस्को टीम को लिखें"
+    }
+  },
+  "doors": {
+    "d1": {
+      "title": {
+        "en": "Planning a trip to Russia?",
+        "ru": "Планируете поездку в Россию?",
+        "ar": "تخطط لرحلة إلى روسيا؟",
+        "hi": "रूस की यात्रा की योजना बना रहे हैं?"
+      },
+      "btn": {
+        "en": "Plan a trip",
+        "ru": "Спланировать поездку",
+        "ar": "خطط لرحلتك",
+        "hi": "ट्रिप प्लान करें"
+      },
+      "items": {
+        "en": [
+          "Private and small-group tours",
+          "Visa support and invitation letters",
+          "Airport meet and assist",
+          "Transfers and cars with a driver",
+          "Hotels, rail and domestic flights",
+          "Ballet, opera and event tickets"
+        ],
+        "ru": [
+          "Индивидуальные и мини-групповые туры",
+          "Визовая поддержка и приглашения",
+          "Встреча и сопровождение в аэропорту",
+          "Трансферы и автомобили с водителем",
+          "Отели, поезда и внутренние перелёты",
+          "Билеты на балет, оперу и мероприятия"
+        ],
+        "ar": [
+          "جولات خاصة ومجموعات صغيرة",
+          "دعم التأشيرة وخطابات الدعوة",
+          "استقبال ومساعدة في المطار",
+          "تنقلات وسيارات مع سائق",
+          "فنادق وقطارات ورحلات طيران داخلية",
+          "تذاكر عروض الباليه والأوبرا والفعاليات"
+        ],
+        "hi": [
+          "निजी और छोटे समूहों के टूर",
+          "वीज़ा सहायता और आमंत्रण पत्र",
+          "हवाई अड्डे पर स्वागत और सहायता",
+          "ट्रांसफ़र और ड्राइवर के साथ गाड़ियाँ",
+          "होटल, ट्रेन और घरेलू उड़ानें",
+          "बैले, ओपेरा और कार्यक्रमों के टिकट"
+        ]
+      }
+    },
+    "d2": {
+      "title": {
+        "en": "Travel agent or operator?",
+        "ru": "Турагент или туроператор?",
+        "ar": "وكيل سفر أو منظم رحلات؟",
+        "hi": "ट्रैवल एजेंट या टूर ऑपरेटर?"
+      },
+      "btn": {
+        "en": "Request net rates",
+        "ru": "Запросить нетто-тарифы",
+        "ar": "طلب الأسعار الصافية",
+        "hi": "नेट रेट्स का अनुरोध करें"
+      },
+      "items": {
+        "en": [
+          "Net rates for FIT and groups",
+          "MICE, incentives and conferences",
+          "Guides in English, Hindi, Arabic and more",
+          "An operations desk in Moscow",
+          "Outbound to Dubai, Oman, India and Hong Kong"
+        ],
+        "ru": [
+          "Нетто-тарифы для FIT и групп",
+          "MICE, инсентив-туры и конференции",
+          "Гиды со знанием английского, хинди, арабского и других языков",
+          "Операционный отдел в Москве",
+          "Выездные туры в Дубай, Оман, Индию и Гонконг"
+        ],
+        "ar": [
+          "أسعار صافية للأفراد والمجموعات",
+          "سياحة الحوافز والمؤتمرات والفعاليات (MICE)",
+          "مرشدون يتحدثون الإنجليزية والهندية والعربية والمزيد",
+          "مكتب عمليات في موسكو",
+          "رحلات خارجية إلى دبي وعُمان والهند وهونغ كونغ"
+        ],
+        "hi": [
+          "FIT और ग्रुप्स के लिए नेट रेट्स",
+          "MICE, इंसेंटिव और सम्मेलन",
+          "अंग्रेज़ी, हिंदी, अरबी और अन्य भाषाओं में गाइड",
+          "मॉस्को में ऑपरेशंस डेस्क",
+          "दुबई, ओमान, भारत और हांगकांग के लिए आउटबाउंड यात्राएँ"
+        ]
+      }
+    }
+  },
+  "tags": {
+    "tag1": {
+      "kicker": "TAG 01 · ROUTE & STOPS",
+      "title": {
+        "en": "Places & Expeditions",
+        "ru": "Места и экспедиции",
+        "ar": "الوجهات والرحلات الاستكشافية",
+        "hi": "स्थान और अभियान"
+      }
+    },
+    "tag2": {
+      "kicker": "TAG 02 · TRADE & SERVICES",
+      "title": {
+        "en": "Agents & Services",
+        "ru": "Агентам и партнерам",
+        "ar": "الوكلاء والخدمات",
+        "hi": "एजेंट और सेवाएँ"
+      },
+      "items": {
+        "en": [
+          "Confidential B2B Net Rates for FIT & Groups",
+          "Russian E-Visa & Tourist Invitation Letters",
+          "Airport & Station Meet & Assist with Chauffeur",
+          "Boutique Hotels & Luxury Rail Accommodations",
+          "MICE & Corporate Incentives Planning"
+        ],
+        "ru": [
+          "Конфиденциальные B2B нетто-тарифы для FIT и групп",
+          "Визовая поддержка и туристические приглашения",
+          "Встреча и трансферы в аэропортах и на вокзалах",
+          "Бутик-отели и комфортные купе на поездах",
+          "Организация MICE и корпоративных программ"
+        ],
+        "ar": [
+          "أسعار صافية B2B سرية للأفراد والمجموعات",
+          "دعم التأشيرة الإلكترونية والدعوات السياحية",
+          "استقبال ومساعدة في المطارات والمحطات مع سائق خاص",
+          "فنادق بوتيك وإقامات قطارات فاخرة",
+          "تنظيم سياحة المؤتمرات والحوافز MICE"
+        ],
+        "hi": [
+          "FIT और ग्रुप्स के लिए गोपनीय B2B नेट दरें",
+          "रूसी ई-वीज़ा और पर्यटक आमंत्रण पत्र",
+          "ड्राइवर के साथ एयरपोर्ट और स्टेशन मीट एंड असिस्ट",
+          "बुटीक होटल और लग्ज़री रेल आवास",
+          "MICE और कॉर्पोरेट इंसेंटिव योजना"
+        ]
+      },
+      "btn": {
+        "en": "Request net rates",
+        "ru": "Запросить нетто-тарифы",
+        "ar": "طلب الأسعار الصافية",
+        "hi": "नेट रेट्स का अनुरोध करें"
+      }
+    },
+    "tag3": {
+      "kicker": "TAG 03 · HEADQUARTERS",
+      "title": {
+        "en": "Moscow HQ & Clocks",
+        "ru": "Офис в Москве и часы",
+        "ar": "مقر موسكو والتوقيت العالمي",
+        "hi": "मॉस्को मुख्यालय और घड़ियाँ"
+      }
+    }
+  },
+  "directory": {
+    "title": {
+      "en": "Directory & Operations",
+      "ru": "Каталог и контакты",
+      "ar": "الدليل ومكتب العمليات",
+      "hi": "निर्देशिका और संचालन"
+    },
+    "sub": {
+      "en": "Official Inbound Tour Operator · Moscow",
+      "ru": "Официальный принимающий туроператор · Москва",
+      "ar": "منظم رحلات سياحية روسي رسمي · موسكو",
+      "hi": "आधिकारिक इनबाउंड टूर ऑपरेटर · मॉस्को"
+    },
+    "openBtn": {
+      "en": "Full directory",
+      "ru": "Весь каталог",
+      "ar": "الدليل الكامل",
+      "hi": "पूरी निर्देशिका"
+    },
+    "closeBtn": {
+      "en": "Close directory",
+      "ru": "Закрыть каталог",
+      "ar": "إغلاق الدليل",
+      "hi": "निर्देशिका बंद करें"
+    },
+    "reviews": {
+      "en": "Traveller reviews",
+      "ru": "Отзывы путешественников",
+      "ar": "تقييمات المسافرين",
+      "hi": "यात्रियों की समीक्षाएं"
+    },
+    "contact": {
+      "en": "Contact",
+      "ru": "Контакты",
+      "ar": "التواصل",
+      "hi": "संपर्क"
+    }
+  },
+  "legal": {
+    "slot1": {
+      "en": "Tour operator registry no. · ROTW to supply",
+      "ru": "Реестровый номер туроператора · ROTW to supply",
+      "ar": "رقم السجل السياحي · ROTW to supply",
+      "hi": "टूर ऑपरेटर पंजीकरण संख्या · ROTW to supply"
+    },
+    "slot2": {
+      "en": "Financial guarantee · ROTW to supply",
+      "ru": "Финансовое обеспечение · ROTW to supply",
+      "ar": "الضمان المالي · ROTW to supply",
+      "hi": "वित्तीय गारंटी · ROTW to supply"
+    },
+    "slot3": {
+      "en": "Memberships · ROTW to supply",
+      "ru": "Членство в ассоциациях · ROTW to supply",
+      "ar": "عضويات الاتحادات · ROTW to supply",
+      "hi": "सदस्यता · ROTW to supply"
+    },
+    "copyright": "© 2026 ROTW Travels",
+    "tagline": "Дороги мира"
+  }
+}
