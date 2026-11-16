@@ -26,7 +26,11 @@ function renderHeader({ lang = 'en', relBase = '.', activePage = '' }) {
   const navItemsHtml = navData.mainNav.map(item => {
     const isCurrent = activePage === item.id ? ' aria-current="page"' : '';
     const label = esc(item.label[L] || item.label.en);
-    const itemHref = resolveHref(item.href, relBase);
+    let href = item.href;
+    if (item.id === 'destinations' && L !== 'en') {
+      href = `destinations/${L}/index.html`;
+    }
+    const itemHref = resolveHref(href, relBase);
     return `<a href="${itemHref}" class="capsule-link"${isCurrent}>
       <svg class="shell-icon" aria-hidden="true"><use href="${relBase}/assets/icons.svg#${item.icon}"/></svg>
       <span>${label}</span>
@@ -43,7 +47,11 @@ function renderHeader({ lang = 'en', relBase = '.', activePage = '' }) {
   const drawerLinksHtml = navData.mainNav.map(item => {
     const isCurrent = activePage === item.id ? ' aria-current="page"' : '';
     const label = esc(item.label[L] || item.label.en);
-    const itemHref = resolveHref(item.href, relBase);
+    let href = item.href;
+    if (item.id === 'destinations' && L !== 'en') {
+      href = `destinations/${L}/index.html`;
+    }
+    const itemHref = resolveHref(href, relBase);
     return `<li>
       <a href="${itemHref}" class="drawer-nav-row"${isCurrent}>
         <svg class="shell-icon" aria-hidden="true"><use href="${relBase}/assets/icons.svg#${item.icon}"/></svg>
@@ -164,13 +172,20 @@ function renderFooter({ lang = 'en', relBase = '.', activePage = '', speechText 
   const d2Btn = esc(d2.btn[L] || d2.btn.en);
   const d2Items = (d2.items[L] || d2.items.en).map(item => `<li>${esc(item)}</li>`).join('\n              ');
 
-  // Tag 1: Places & Expeditions links
-  const destLinksHtml = navData.cities.map(c => {
+  // Tag 1: Places & Expeditions links (8 destination cities)
+  const destCities = navData.destinations || navData.cities;
+  const destLinksHtml = destCities.map(c => {
     const cName = esc(c.name[L] || c.name.en);
-    // Link to city notebook page
-    const cityHref = resolveHref(`notes/${c.id}.html`, relBase);
-    return `<li><a href="${cityHref}">${cName}</a></li>`;
+    const slug = c.slug || c.id;
+    const destHref = L === 'en'
+      ? resolveHref(`destinations/${slug}.html`, relBase)
+      : resolveHref(`destinations/${L}/${slug}.html`, relBase);
+    return `<li><a href="${destHref}">${cName}</a></li>`;
   }).join('\n                ');
+
+  const destHubHref = L === 'en'
+    ? resolveHref('destinations/index.html', relBase)
+    : resolveHref(`destinations/${L}/index.html`, relBase);
 
   // Journeys links
   const journeyLinksHtml = navData.journeys.map(j => {
@@ -329,6 +344,7 @@ function renderFooter({ lang = 'en', relBase = '.', activePage = '', speechText 
               </ul>
               <div class="tag-section-subhead">${esc(dir.contact[L] || 'More')}</div>
               <ul class="tag-sublinks">
+                <li><a href="${destHubHref}">${esc(navData.mainNav[0].label[L] || 'Destinations')}</a></li>
                 <li><a href="${resolveHref('reviews.html', relBase)}">${esc(dir.reviews[L] || 'Traveller reviews')}</a></li>
                 <li><a href="${resolveHref('notes/index.html', relBase)}">${esc(navData.mainNav[4].label[L] || 'Sasha’s notebook')}</a></li>
               </ul>
@@ -395,6 +411,12 @@ function renderFooter({ lang = 'en', relBase = '.', activePage = '', speechText 
               <div class="tag-section-subhead" style="margin-top:12px;">${esc(navData.mainNav[1].label[L] || 'Journeys')}</div>
               <ul class="tag-sublinks">
                 ${journeyLinksHtml}
+              </ul>
+              <div class="tag-section-subhead" style="margin-top:12px;">${esc(dir.contact[L] || 'More')}</div>
+              <ul class="tag-sublinks">
+                <li><a href="${destHubHref}">${esc(navData.mainNav[0].label[L] || 'Destinations')}</a></li>
+                <li><a href="${resolveHref('reviews.html', relBase)}">${esc(dir.reviews[L] || 'Traveller reviews')}</a></li>
+                <li><a href="${resolveHref('notes/index.html', relBase)}">${esc(navData.mainNav[4].label[L] || 'Sasha’s notebook')}</a></li>
               </ul>
             </div>
           </details>

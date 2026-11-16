@@ -94,21 +94,19 @@
   }
 
   function handleNotebookLangSwitch(targetLang) {
+    if (window.__rotwInit) return;
     const loc = window.location.pathname;
-    const isNotebook = loc.includes('/notes/');
-    if (!isNotebook) return;
-
-    // Detect current city file
-    const match = loc.match(/\/notes\/(?:(ru|ar|hi)\/)?([^/]+\.html)?$/);
+    // Handle both /notes/ and /destinations/
+    const match = loc.match(/\/(notes|destinations)\/(?:(ru|ar|hi)\/)?([^/]+\.html)?$/);
     if (!match) return;
 
-    const currentLangPrefix = match[1] || 'en';
-    const pageFile = match[2] || 'index.html';
+    const currentLangPrefix = match[2] || 'en';
+    const pageFile = match[3] || 'index.html';
 
     if (currentLangPrefix === targetLang) return;
 
     let newUrl = '';
-    // Determine path back to /notes/
+    // Determine path back to /notes/ or /destinations/
     if (currentLangPrefix === 'en') {
       newUrl = targetLang === 'en' ? pageFile : `${targetLang}/${pageFile}`;
     } else {
@@ -294,6 +292,14 @@
     lbObs.observe(lightboxEl, { attributes: true, attributeFilter: ['class', 'hidden', 'style'] });
   }
 
-  // Initial sync
-  setLanguage(getCurrentLang());
+  // Initial sync. On folder-based pages (notebook, destinations) the language in the URL wins:
+  // never redirect on load, just remember it.
+  const folderMatch = window.location.pathname.match(/\/(?:notes|destinations)\/(?:(ru|ar|hi)\/)?[^/]*$/);
+  if (folderMatch) {
+    window.__rotwInit = true;
+    setLanguage(folderMatch[1] || 'en');
+    window.__rotwInit = false;
+  } else {
+    setLanguage(getCurrentLang());
+  }
 })();

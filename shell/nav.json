@@ -8,7 +8,7 @@
   "mainNav": [
     {
       "id": "destinations",
-      "href": "notes/index.html",
+      "href": "destinations/index.html",
       "icon": "icon-map-pin",
       "label": {
         "en": "Destinations",
@@ -72,6 +72,16 @@
       "hi": "ट्रिप प्लान करें"
     }
   },
+  "destinations": [
+    { "id": "moscow", "slug": "moscow", "name": { "en": "Moscow", "ru": "Москва", "ar": "موسكو", "hi": "मॉस्को" } },
+    { "id": "spb", "slug": "st-petersburg", "name": { "en": "St Petersburg", "ru": "Санкт-Петербург", "ar": "سانت بطرسبرغ", "hi": "सेंट पीटर्सबर्ग" } },
+    { "id": "sochi", "slug": "sochi", "name": { "en": "Sochi", "ru": "Сочи", "ar": "سوتشي", "hi": "सोची" } },
+    { "id": "murmansk", "slug": "murmansk", "name": { "en": "Murmansk", "ru": "Мурманск", "ar": "مورمانسك", "hi": "मरमंस्क" } },
+    { "id": "kazan", "slug": "kazan", "name": { "en": "Kazan", "ru": "Казань", "ar": "قازان", "hi": "कज़ान" } },
+    { "id": "baikal", "slug": "lake-baikal", "name": { "en": "Lake Baikal", "ru": "Озеро Байкал", "ar": "بحيرة بايكال", "hi": "बैकाल झील" } },
+    { "id": "kamchatka", "slug": "kamchatka", "name": { "en": "Kamchatka", "ru": "Камчатка", "ar": "كامتشاتكا", "hi": "कामचटका" } },
+    { "id": "vladivostok", "slug": "vladivostok", "name": { "en": "Vladivostok", "ru": "Владивосток", "ar": "فلاديفوستوك", "hi": "व्लादिवोस्तोक" } }
+  ],
   "cities": [
     { "id": "moscow", "code": "SVO", "name": { "en": "Moscow", "ru": "Москва", "ar": "موسكو", "hi": "मॉस्को" } },
     { "id": "spb", "code": "LED", "name": { "en": "St Petersburg", "ru": "Санкт-Петербург", "ar": "سانت بطرسبرغ", "hi": "सेंट पीटर्सबर्ग" } },
