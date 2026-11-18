@@ -44,7 +44,12 @@ body.dest canvas {
   max-width: 100%;
 }
 
-body.dest a {
+body.dest video.dock-wave-vid,
+body.dest .dock-wave-vid {
+  display: none !important;
+}
+
+body.dest a:not(.compass-capsule a):not(.rotw-dock a):not(.rotw-directory-tray a):not(.rotw-footer-card a) {
   color: inherit;
 }
 
@@ -198,57 +203,47 @@ body.dest .d-hero {
   padding: 112px 0 56px;
 }
 
-body.dest .d-hero-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  row-gap: 4px;
-  flex-wrap: wrap;
-  padding-block: 14px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--spruce-2);
+body.dest .d-hero.d-hub-hero {
+  padding: 112px 0 40px;
 }
 
-body.dest .d-langs {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-
-body.dest .d-langs a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 14px;
-  border-radius: 999px;
-  border: 1.5px solid transparent;
-  text-decoration: none;
-  transition: border-color 200ms ease, background-color 200ms ease;
-}
-
-body.dest .d-langs a[aria-current="page"] {
-  background: var(--spruce);
-  color: var(--snow);
-}
-
-@media (hover: hover) {
-  body.dest .d-langs a:not([aria-current="page"]):hover {
-    border-color: var(--line);
-  }
-}
-
-body.dest .d-clock {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-
-body.dest .d-clock b {
-  font-weight: 600;
+body.dest .d-hub-hero .d-hub-title {
+  font: 900 clamp(64px, 11vw, 168px)/0.86 var(--display);
+  text-transform: uppercase;
   color: var(--spruce);
-  font-variant-numeric: tabular-nums;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  text-align: start;
+  letter-spacing: -0.01em;
+  margin: 0;
+  animation: dHeroRise 900ms var(--ease-arrive) both;
+}
+
+html[lang="ar"] body.dest .d-hub-hero .d-hub-title {
+  font-family: var(--display);
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+body.dest .d-hub-hero .d-hub-lead {
+  margin-top: 18px;
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--spruce-2);
+  max-width: 34ch;
+}
+
+@media (max-width: 640px) {
+  body.dest .d-hub-hero {
+    padding-top: 112px;
+    padding-bottom: 40px;
+  }
+  body.dest .d-hub-hero .d-hub-lead {
+    font-size: 20px;
+    margin-top: 14px;
+  }
 }
 
 body.dest .d-kicker {
@@ -896,7 +891,177 @@ body.dest .d-lb-close {
   }
 }
 
-/* ---------- Shared Capsule Override on Destination Pages ---------- */
-body.dest .compass-capsule {
-  background: rgba(11, 22, 38, 0.94);
+/* ---------- Hero Plain Colour (Dubai / Oman) ---------- */
+body.dest .d-hero-solid .d-hero-name {
+  color: var(--lacquer, #C42D1E) !important;
+  -webkit-text-fill-color: var(--lacquer, #C42D1E) !important;
+  background: none !important;
+  text-shadow: none !important;
 }
+
+/* ---------- FAQ Accordion ---------- */
+body.dest .d-faq {
+  padding: 80px 0;
+}
+
+body.dest .d-faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+body.dest .d-faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+body.dest .d-faq-summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  cursor: pointer;
+  list-style: none;
+  font: 600 clamp(16px, 1.8vw, 20px)/1.3 var(--body);
+  color: var(--spruce);
+  transition: color 150ms ease;
+}
+
+body.dest .d-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.dest .d-faq-summary:hover {
+    color: var(--lacquer);
+  }
+}
+
+body.dest .d-faq-q {
+  flex: 1;
+}
+
+body.dest .d-faq-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lacquer, #C42D1E);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  user-select: none;
+}
+
+body.dest .d-faq-icon::before {
+  content: '+';
+}
+
+body.dest .d-faq-item[open] > .d-faq-summary .d-faq-icon::before {
+  content: '\2212';
+}
+
+body.dest .d-faq-ans {
+  padding: 0 0 20px;
+  font: 400 16px/1.6 var(--body);
+  color: var(--spruce-2);
+}
+
+body.dest .d-faq-ans a {
+  color: var(--lacquer);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.dest .d-faq-ans a:hover {
+    color: var(--lacquer-deep);
+  }
+}
+
+/* ---------- Our Office (Dubai / Oman) ---------- */
+body.dest .d-office-card {
+  padding: 32px;
+  background: var(--snow-hi, #F8FAF9);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+body.dest .d-office-card h3 {
+  font: 800 clamp(24px, 3vw, 36px)/1 var(--display);
+  text-transform: uppercase;
+  color: var(--spruce);
+}
+
+body.dest .d-office-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  font-size: 17px;
+  color: var(--spruce-2);
+}
+
+body.dest .d-office-contact a {
+  color: var(--lacquer);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.dest .d-office-contact a:hover {
+    color: var(--lacquer-deep);
+    text-decoration: underline;
+  }
+}
+
+/* ---------- Hub: Beyond Russia Cards ---------- */
+body.dest .d-card-media.d-card-color {
+  background: var(--lacquer, #C42D1E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+body.dest .d-card-media .d-card-hero-text {
+  font: 900 clamp(36px, 5vw, 64px)/0.9 var(--display);
+  color: var(--snow-hi, #F8FAF9);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Back to Hub link in Next/Prev ---------- */
+body.dest .d-np-hub-wrap {
+  margin-top: 24px;
+  text-align: center;
+}
+
+body.dest .d-np-hub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 15px/1 var(--body);
+  color: var(--spruce-2);
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.dest .d-np-hub-link:hover {
+    color: var(--lacquer);
+    border-color: var(--lacquer);
+  }
+}
+
+

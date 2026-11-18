@@ -8,7 +8,7 @@ Real reviews are stored in reviews.json matching this schema:
 - date (string): Month and year of travel in ISO format (YYYY-MM).
 - sourceName (string): Platform name (e.g. "Google Reviews", "TripAdvisor").
 - sourceUrl (string|null): Verifiable public source URL, or null if private email.
-- language (string): ISO language code ("en", "ru", "ar", "hi").
+- language (string): ISO language code ("en", "ru", "ar").
 - permissionFlag (boolean): Strict flag; true only if verified consent exists.
 
 Only real reviews with permissionFlag: true and verified source URL may be added.

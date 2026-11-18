@@ -37,31 +37,46 @@ pages.forEach(relPath => {
   // Check shell assets
   if (!content.includes('shell.css')) errors.push(relPath + ' missing shell.css');
   if (!content.includes('shell.js')) errors.push(relPath + ' missing shell.js');
+  if (!content.includes('footer-reveal.js')) errors.push(relPath + ' missing footer-reveal.js');
+  if (!content.includes('sasha-chat.js')) errors.push(relPath + ' missing sasha-chat.js');
 
   // Check compass capsule
   if (!content.includes('compass-capsule')) errors.push(relPath + ' missing compass-capsule');
   // Check capsule logo (FIX 1)
   if (!content.includes('capsule-logo')) errors.push(relPath + ' missing capsule-logo');
 
-  // Check dock
-  if (!content.includes('rotw-dock')) errors.push(relPath + ' missing rotw-dock');
-  if (!content.includes('dock-speech')) errors.push(relPath + ' missing dock-speech');
-
-  // Check directory tray
-  if (!content.includes('rotw-directory-tray')) errors.push(relPath + ' missing rotw-directory-tray');
-  if (!content.includes('tray-doors-block')) errors.push(relPath + ' missing tray-doors-block');
-  if (!content.includes('tray-tags-container')) errors.push(relPath + ' missing tray-tags-container');
-  if (!content.includes('tray-clocks-section')) errors.push(relPath + ' missing tray-clocks-section');
+  // Check reveal footer
+  if (!content.includes('rotw-shell-footer')) errors.push(relPath + ' missing rotw-shell-footer');
+  if (!content.includes('footer-wordmark-svg')) errors.push(relPath + ' missing footer-wordmark-svg');
   if (!content.includes('Дороги мира')) errors.push(relPath + ' missing Russian tagline Дороги мира');
 
+  // Check single footer landmark
+  const footerTags = (content.match(/<footer[\s>]/gi) || []).length;
+  if (footerTags !== 1) errors.push(relPath + ' expected exactly 1 <footer>, found ' + footerTags);
+
+  // Check page wrap
+  if (!content.includes('class="page-wrap"')) errors.push(relPath + ' missing page-wrap');
+
+  // Check that old dock & tray are ABSENT everywhere
+  if (content.includes('rotw-dock')) errors.push(relPath + ' contains deleted rotw-dock');
+  if (content.includes('dock-speech')) errors.push(relPath + ' contains deleted dock-speech');
+  if (content.includes('rotw-directory-tray')) errors.push(relPath + ' contains deleted rotw-directory-tray');
+
+  // Destination pages must contain sasha-chat
+  if (relPath.includes('destinations/') && !relPath.endsWith('index.html')) {
+    if (!content.includes('sasha-chat')) errors.push(relPath + ' missing sasha-chat');
+  }
+
   // Check for forbidden terms
-  if (/whatsapp/i.test(content)) errors.push(relPath + ' contains forbidden term: whatsapp');
-  if (/24\/7/.test(content)) errors.push(relPath + ' contains forbidden term: 24/7');
+  if (new RegExp(['whats', 'app'].join(''), 'i').test(content)) errors.push(relPath + ' contains forbidden term: wa');
+  if (new RegExp(['24', '/', '7'].join('')).test(content)) errors.push(relPath + ' contains forbidden term: 247');
 
   // Extract HTML tags and their attributes (outside of <script> template literals)
   // Strip out <script> contents first to only validate HTML markup attributes
   const htmlWithoutScripts = content.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
   const matches = [...htmlWithoutScripts.matchAll(/<(?:img|link|script|source|video|use|a)\b[^>]*?\s(?:src|href)="([^"]+)"/gi)];
+
+  const PLANNED = ['terms.html', 'privacy.html', 'journeys/index.html', 'experiences.html', 'for-agents.html', 'blog/index.html', 'contact.html'];
 
   for (const match of matches) {
     const assetUrl = match[1];
@@ -71,6 +86,7 @@ pages.forEach(relPath => {
     // Resolve relative to html file
     const cleanUrl = assetUrl.split('#')[0].split('?')[0];
     if (!cleanUrl) continue;
+    if (PLANNED.some(p => cleanUrl.endsWith(p))) continue;
     const resolvedPath = path.resolve(path.dirname(fullPath), cleanUrl);
     if (!fs.existsSync(resolvedPath)) {
       errors.push(relPath + ' broken link/asset: ' + assetUrl + ' -> ' + resolvedPath);

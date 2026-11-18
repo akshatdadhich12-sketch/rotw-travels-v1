@@ -1,58 +1,81 @@
 /**
  * ROTW Travels · Shared Shell JavaScript
  * - Throttled compass needle rotation tracking scroll (fixed capsule, zero shrinkage)
- * - 4-Language switcher (en, ru, ar RTL, hi) syncing to localStorage 'rotw-lang'
+ * - 3-Language switcher (en, ru, ar RTL) syncing to localStorage 'rotw-lang'
  * - Mobile menu overlay (<1024px) with focus trap & Esc handling
- * - Sasha's Dock & Full Directory disclosure tray open/close
  * - Live timezone clocks (Moscow, Dubai, Mumbai, Muscat, Hong Kong) via Intl.DateTimeFormat
- * - Seamless tucking on modal / lightbox / arrival overlay
+ * - Notebook envelope fade-out when footer is in view
+ * - Global sasha-line event dispatcher
  */
 
 (function () {
   'use strict';
 
-  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add('js');
 
   /* ============================================================
-     1. COMPASS NEEDLE SCROLL ROTATION
+     1. COMPASS CAPSULE LOGO & GSAP ANIMATION LOADER
      ============================================================ */
-  const needle = document.getElementById('shell-compass-needle');
-  let ticking = false;
-  let currentRotation = 0;
-  let targetRotation = 0;
+  (function initLogoLoader() {
+    function start() {
+      if (window.gsap && typeof window.initROTWLogoAnim === 'function') {
+        window.initROTWLogoAnim();
+      }
+      if (typeof window.initROTWFooter === 'function') {
+        window.initROTWFooter();
+      }
+      if (typeof window.initSashaChat === 'function') {
+        window.initSashaChat();
+      }
+    }
 
-  function updateNeedle() {
-    currentRotation += (targetRotation - currentRotation) * 0.15;
-    if (Math.abs(targetRotation - currentRotation) > 0.1) {
-      if (needle) needle.style.transform = `rotate(${currentRotation}deg)`;
-      window.requestAnimationFrame(updateNeedle);
+    const relBase = (function() {
+      const s = document.querySelector('script[src*="shell.js"]');
+      if (s) {
+        const src = s.getAttribute('src');
+        const idx = src.indexOf('shell/shell.js');
+        if (idx >= 0) return src.slice(0, idx);
+      }
+      return './';
+    })();
+
+    function loadScript(src, cb) {
+      if (document.querySelector(`script[src="${src}"]`)) {
+        if (cb) cb();
+        return;
+      }
+      const tag = document.createElement('script');
+      tag.src = src;
+      tag.onload = cb;
+      tag.onerror = function() {
+        console.warn('Could not load script:', src);
+      };
+      document.head.appendChild(tag);
+    }
+
+    function loadShellScripts() {
+      loadScript(relBase + 'shell/logo-anim.js', () => {
+        loadScript(relBase + 'shell/footer-reveal.js', () => {
+          loadScript(relBase + 'shell/sasha-chat.js', start);
+        });
+      });
+    }
+
+    if (window.gsap) {
+      loadShellScripts();
     } else {
-      currentRotation = targetRotation;
-      if (needle) needle.style.transform = `rotate(${currentRotation}deg)`;
-      ticking = false;
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', function() {
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', function() {
+          loadShellScripts();
+        });
+      });
     }
-  }
-
-  function onScroll() {
-    if (isReduced || !needle) return;
-    const scrollY = window.scrollY || window.pageYOffset || 0;
-    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    const progress = Math.min(1, Math.max(0, scrollY / maxScroll));
-    targetRotation = progress * 360;
-
-    if (!ticking) {
-      window.requestAnimationFrame(updateNeedle);
-      ticking = true;
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  })();
 
   /* ============================================================
      2. LANGUAGE SWITCHER (rotw-lang)
      ============================================================ */
-  const LANGS = ['en', 'ru', 'ar', 'hi'];
+  const LANGS = ['en', 'ru', 'ar'];
 
   function getCurrentLang() {
     const stored = localStorage.getItem('rotw-lang');
@@ -96,23 +119,57 @@
   function handleNotebookLangSwitch(targetLang) {
     if (window.__rotwInit) return;
     const loc = window.location.pathname;
-    // Handle both /notes/ and /destinations/
-    const match = loc.match(/\/(notes|destinations)\/(?:(ru|ar|hi)\/)?([^/]+\.html)?$/);
-    if (!match) return;
 
-    const currentLangPrefix = match[2] || 'en';
-    const pageFile = match[3] || 'index.html';
-
-    if (currentLangPrefix === targetLang) return;
-
-    let newUrl = '';
-    // Determine path back to /notes/ or /destinations/
-    if (currentLangPrefix === 'en') {
-      newUrl = targetLang === 'en' ? pageFile : `${targetLang}/${pageFile}`;
-    } else {
-      newUrl = targetLang === 'en' ? `../${pageFile}` : `../${targetLang}/${pageFile}`;
+    // 1. Destination and Notes sections (subfolder per lang: /destinations/ru/page.html or /notes/ru/page.html)
+    const matchSub = loc.match(/\/(notes|destinations)\/(?:(ru|ar)\/)?([^/]+\.html)?$/);
+    if (matchSub) {
+      const section = matchSub[1];
+      const currentLangPrefix = matchSub[2] || 'en';
+      const pageFile = matchSub[3] || 'index.html';
+      if (currentLangPrefix === targetLang) return;
+      let newUrl = '';
+      if (currentLangPrefix === 'en') {
+        newUrl = targetLang === 'en' ? pageFile : `${targetLang}/${pageFile}`;
+      } else {
+        newUrl = targetLang === 'en' ? `../${pageFile}` : `../${targetLang}/${pageFile}`;
+      }
+      window.location.href = newUrl;
+      return;
     }
-    window.location.href = newUrl;
+
+    // 2. Journeys & Blog sections (/journeys/..., /ru/journeys/..., /blog/..., /ru/blog/...)
+    const matchGroup = loc.match(/(?:\/(ru|ar))?\/(journeys|blog)\/(?:(ru|ar)\/)?([^/]+\.html)?$/);
+    if (matchGroup) {
+      const currentLangPrefix = matchGroup[1] || matchGroup[3] || 'en';
+      const group = matchGroup[2];
+      const pageFile = matchGroup[4] || 'index.html';
+      if (currentLangPrefix === targetLang) return;
+      let newUrl = '';
+      if (currentLangPrefix === 'en') {
+        newUrl = targetLang === 'en' ? pageFile : `../${targetLang}/${group}/${pageFile}`;
+      } else {
+        newUrl = targetLang === 'en' ? `../../${group}/${pageFile}` : `../../${targetLang}/${group}/${pageFile}`;
+      }
+      window.location.href = newUrl;
+      return;
+    }
+
+    // 3. Root static pages (/experiences.html, /ru/experiences.html, /contact.html, etc.)
+    const matchRoot = loc.match(/(?:\/(ru|ar))?\/([^/]+\.html)$/);
+    if (matchRoot) {
+      const currentLangPrefix = matchRoot[1] || 'en';
+      const pageFile = matchRoot[2];
+      // Skip home, plan, reviews which handle live language switching in-page
+      if (pageFile === 'index.html' || pageFile === 'plan.html' || pageFile === 'reviews.html') return;
+      if (currentLangPrefix === targetLang) return;
+      let newUrl = '';
+      if (currentLangPrefix === 'en') {
+        newUrl = `${targetLang}/${pageFile}`;
+      } else {
+        newUrl = targetLang === 'en' ? `../${pageFile}` : `../${targetLang}/${pageFile}`;
+      }
+      window.location.href = newUrl;
+    }
   }
 
   // Bind language switcher select elements
@@ -137,17 +194,12 @@
   const menuBtn = document.getElementById('btn-capsule-menu');
   const menuDrawer = document.getElementById('shell-menu-drawer');
   const menuCloseBtn = document.getElementById('btn-drawer-close');
-  const mainContent = document.querySelector('main') || document.body;
-  const dock = document.getElementById('rotw-dock');
-  const guideEl = document.getElementById('guide');
 
   function openMenuDrawer() {
     if (!menuDrawer) return;
     menuDrawer.classList.add('open');
     menuDrawer.setAttribute('aria-hidden', 'false');
     if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
-    if (dock) dock.classList.add('tuck');
-    if (guideEl) guideEl.classList.add('tuck');
     if (menuCloseBtn) menuCloseBtn.focus();
   }
 
@@ -159,8 +211,6 @@
       menuBtn.setAttribute('aria-expanded', 'false');
       menuBtn.focus();
     }
-    if (dock && !isTrayOpen()) dock.classList.remove('tuck');
-    if (guideEl && !isTrayOpen()) guideEl.classList.remove('tuck');
   }
 
   if (menuBtn) menuBtn.addEventListener('click', openMenuDrawer);
@@ -172,68 +222,17 @@
     });
   }
 
-  /* ============================================================
-     4. SASHA'S DOCK & FULL DIRECTORY DISCLOSURE TRAY
-     ============================================================ */
-  const trayBtn = document.getElementById('btn-dock-directory');
-  const tray = document.getElementById('rotw-directory-tray');
-  const backdrop = document.getElementById('rotw-tray-backdrop');
-  const trayCloseBtn = document.getElementById('btn-tray-close');
-  const trayHeading = document.getElementById('rotw-directory-heading');
-
-  function isTrayOpen() {
-    return tray && tray.classList.contains('open');
-  }
-
-  function openTray() {
-    if (!tray) return;
-    tray.classList.add('open');
-    tray.removeAttribute('hidden');
-    if (backdrop) backdrop.classList.add('open');
-    if (guideEl) guideEl.classList.add('tuck');
-    if (trayBtn) trayBtn.setAttribute('aria-expanded', 'true');
-    if (trayHeading) {
-      trayHeading.setAttribute('tabindex', '-1');
-      trayHeading.focus();
-    } else if (trayCloseBtn) {
-      trayCloseBtn.focus();
-    }
-  }
-
-  function closeTray() {
-    if (!tray) return;
-    tray.classList.remove('open');
-    if (backdrop) backdrop.classList.remove('open');
-    if (guideEl) guideEl.classList.remove('tuck');
-    if (trayBtn) {
-      trayBtn.setAttribute('aria-expanded', 'false');
-      trayBtn.focus();
-    }
-  }
-
-  if (trayBtn) {
-    trayBtn.addEventListener('click', () => {
-      if (isTrayOpen()) closeTray();
-      else openTray();
-    });
-  }
-
-  if (backdrop) backdrop.addEventListener('click', closeTray);
-  if (trayCloseBtn) trayCloseBtn.addEventListener('click', closeTray);
-
   // Global Esc key listener
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (isTrayOpen()) {
-        closeTray();
-      } else if (menuDrawer && menuDrawer.classList.contains('open')) {
+      if (menuDrawer && menuDrawer.classList.contains('open')) {
         closeMenuDrawer();
       }
     }
   });
 
   /* ============================================================
-     5. LIVE TIMEZONE CLOCKS (Moscow, Dubai, Mumbai, Muscat, HK)
+     4. LIVE TIMEZONE CLOCKS (Moscow, Dubai, Mumbai, Muscat, HK)
      ============================================================ */
   const TIMEZONES = {
     moscow: 'Europe/Moscow',
@@ -268,33 +267,43 @@
   setInterval(updateLiveClocks, 30000);
 
   /* ============================================================
-     6. AUTOMATIC DOCK TUCKING INTERPLAY
-     Tucks dock when arrival video or image lightbox is active
+     5. NOTEBOOK ENVELOPE FOOTER INTERSECTION OBSERVER
+     Fades out fixed envelope when footer is in view
      ============================================================ */
-  const arriveEl = document.getElementById('arrive');
-  if (arriveEl) {
-    const arriveObs = new MutationObserver(() => {
-      const isVisible = !arriveEl.hidden && arriveEl.style.display !== 'none';
-      if (dock) dock.classList.toggle('tuck', isVisible);
-      if (guideEl) guideEl.classList.toggle('tuck', isVisible);
-    });
-    arriveObs.observe(arriveEl, { attributes: true, attributeFilter: ['hidden', 'style'] });
+  function initFooterObserver() {
+    const footer = document.querySelector('footer.rotw-shell-footer');
+    if (!footer) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      const isVisible = entries[0].isIntersecting;
+      document.body.classList.toggle('footer-in-view', isVisible);
+      const env = document.querySelector('.envelope');
+      if (env) {
+        env.classList.toggle('footer-visible', isVisible);
+      }
+    }, { threshold: 0.01 });
+
+    observer.observe(footer);
   }
 
-  // Tucking when lightbox in notebook opens
-  const lightboxEl = document.getElementById('lightbox') || document.querySelector('.lb-pop');
-  if (lightboxEl) {
-    const lbObs = new MutationObserver(() => {
-      const isOpen = lightboxEl.classList.contains('open') || (!lightboxEl.hidden && lightboxEl.style.display !== 'none');
-      if (dock) dock.classList.toggle('tuck', isOpen);
-      if (guideEl) guideEl.classList.toggle('tuck', isOpen);
-    });
-    lbObs.observe(lightboxEl, { attributes: true, attributeFilter: ['class', 'hidden', 'style'] });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFooterObserver);
+  } else {
+    initFooterObserver();
   }
 
-  // Initial sync. On folder-based pages (notebook, destinations) the language in the URL wins:
-  // never redirect on load, just remember it.
-  const folderMatch = window.location.pathname.match(/\/(?:notes|destinations)\/(?:(ru|ar|hi)\/)?[^/]*$/);
+  /* ============================================================
+     6. SASHA LINE EVENT HELPER
+     ============================================================ */
+  window.emitSashaLine = function(text, id = 'manual') {
+    const lang = getCurrentLang();
+    window.dispatchEvent(new CustomEvent('sasha-line', {
+      detail: { lang, text, id }
+    }));
+  };
+
+  // Initial language sync
+  const folderMatch = window.location.pathname.match(/\/(?:notes|destinations)\/(?:(ru|ar)\/)?[^/]*$/);
   if (folderMatch) {
     window.__rotwInit = true;
     setLanguage(folderMatch[1] || 'en');

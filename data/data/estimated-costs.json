@@ -1,0 +1,76 @@
+{
+  "currency": "USD",
+  "validUntil": null,
+  "disclaimer": {
+    "en": "Estimates are not offers. ROTW confirms the final price in writing in each quote.",
+    "ru": "Ориентировочная стоимость не является офертой. ROTW подтверждает окончательную цену в письменном виде в каждом предложении.",
+    "ar": "التقديرات ليست عروضاً نهائية. تؤكد ROTW السعر النهائي كتابةً في كل عرض أسعار."
+  },
+  "pending": {
+    "en": "Estimated cost: to be confirmed by ROTW.",
+    "ru": "Ориентировочная стоимость: подтверждается ROTW.",
+    "ar": "التكلفة التقديرية: يتم تأكيدها من قبل ROTW."
+  },
+  "assumes": {
+    "en": null,
+    "ru": null,
+    "ar": null
+  },
+  "journeys": {
+    "two-capitals": {
+      "fromUsd": null,
+      "bandKey": null,
+      "singleSupplementUsd": null,
+      "includes": { "en": [], "ru": [], "ar": [] },
+      "excludes": { "en": [], "ru": [], "ar": [] },
+      "notes": { "en": null, "ru": null, "ar": null }
+    },
+    "golden-ring": {
+      "fromUsd": null,
+      "bandKey": null,
+      "singleSupplementUsd": null,
+      "includes": { "en": [], "ru": [], "ar": [] },
+      "excludes": { "en": [], "ru": [], "ar": [] },
+      "notes": { "en": null, "ru": null, "ar": null }
+    },
+    "trans-siberian": {
+      "fromUsd": null,
+      "bandKey": null,
+      "singleSupplementUsd": null,
+      "includes": { "en": [], "ru": [], "ar": [] },
+      "excludes": { "en": [], "ru": [], "ar": [] },
+      "notes": { "en": null, "ru": null, "ar": null }
+    },
+    "baikal-clear-ice": {
+      "fromUsd": null,
+      "bandKey": null,
+      "singleSupplementUsd": null,
+      "includes": { "en": [], "ru": [], "ar": [] },
+      "excludes": { "en": [], "ru": [], "ar": [] },
+      "notes": { "en": null, "ru": null, "ar": null }
+    },
+    "kazan-volga": {
+      "fromUsd": null,
+      "bandKey": null,
+      "singleSupplementUsd": null,
+      "includes": { "en": [], "ru": [], "ar": [] },
+      "excludes": { "en": [], "ru": [], "ar": [] },
+      "notes": { "en": null, "ru": null, "ar": null }
+    },
+    "northern-lights": {
+      "fromUsd": null,
+      "bandKey": null,
+      "singleSupplementUsd": null,
+      "includes": { "en": [], "ru": [], "ar": [] },
+      "excludes": { "en": [], "ru": [], "ar": [] },
+      "notes": { "en": null, "ru": null, "ar": null }
+    }
+  },
+  "bands": {
+    "b1": { "journeys": [] },
+    "b2": { "journeys": [] },
+    "b3": { "journeys": [] },
+    "b4": { "journeys": [] }
+  },
+  "destinationToJourney": {}
+}

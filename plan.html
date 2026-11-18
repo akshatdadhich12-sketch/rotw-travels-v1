@@ -40,14 +40,13 @@
 }
 ::selection{background:var(--coral);color:#0B1626}
 html[lang="ar"]{--f-display:"Noto Naskh Arabic",serif;--f-text:"Noto Sans Arabic",system-ui,sans-serif}
-html[lang="hi"]{--f-display:"Noto Serif Devanagari",serif;--f-text:"Noto Sans Devanagari",system-ui,sans-serif}
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background-color:#0B1626;background:var(--bg-glow), var(--bg-dusk);background-position:center bottom, center top;background-repeat:no-repeat;background-attachment:fixed;color:var(--glacier);font-family:var(--f-text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;
   padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;letter-spacing:-.015em;text-wrap:balance;color:var(--glacier)}
 h1 span.hl,h2 span.hl,h3 span.hl,.hl{color:var(--peach)}
-html[lang="ar"] :is(h1,h2,h3),html[lang="hi"] :is(h1,h2,h3){letter-spacing:0;line-height:1.3!important}
+html[lang="ar"] :is(h1,h2,h3){letter-spacing:0;line-height:1.3!important}
 p{margin:0;text-wrap:pretty;color:var(--soft)}
 button,input,select,textarea{font:inherit;color:inherit}
 a{color:inherit}
@@ -63,7 +62,7 @@ a:hover{text-decoration-color:var(--coral)}
 .top .left{display:flex;align-items:center;gap:22px;min-width:0}
 .logo{display:block;height:36px;width:auto}
 .rotw-logo{overflow:visible;--lg-main:var(--glacier);--lg-red:#E53824;--lg-hole:var(--ink)}
-.rotw-logo .lg-needle{transform-box:view-box;transform-origin:227px 136px;transition:transform 1.1s var(--ease-out)}
+.rotw-logo .lg-face{transform-box:view-box;transform-origin:227px 136px}
 @media (hover:hover) and (pointer:fine){.logo-link:hover .lg-needle{transform:rotate(360deg)}}
 .logo-link{display:block;border-radius:4px}
 .back{font-size:15px;color:var(--soft);text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px}
@@ -245,11 +244,28 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 .warn{font-size:14px;color:var(--err)}
 .warn:empty{display:none}
 .panel h3{font-size:24px}
+/* estimated cost card */
+.estimated-cost-card{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:12px;padding:22px 24px;margin-top:24px;color:var(--glacier)}
+.cost-card-title{font-family:var(--f-display);font-size:clamp(22px,2.6vw,30px);font-weight:400;color:var(--glacier);margin-bottom:12px}
+.cost-card-content{display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.5;color:var(--soft)}
+.cost-budget-line{color:var(--glacier);font-weight:500}
+.cost-journeys-wrap{display:flex;flex-direction:column;gap:6px;margin:2px 0}
+.cost-sublabel{font-size:14px;color:var(--mist)}
+.cost-journeys-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.cost-journey-link{color:var(--gold);text-decoration:underline;text-underline-offset:3px;font-weight:500;display:inline-block;transition:color .15s ease}
+.cost-journey-link:hover{color:var(--sun)}
+.cost-price-line{font-size:18px;font-weight:500;color:var(--glacier)}
+.cost-price-val{color:var(--gold);font-weight:600}
+.cost-meta-line{font-size:14px;color:var(--mist)}
+.cost-list{margin:4px 0 0 18px;padding:0;font-size:14px;color:var(--soft)}
+.cost-pending{color:var(--soft);margin:0}
+.cost-disclaimer{font-size:13px;line-height:1.45;color:var(--mist);margin-top:14px;padding-top:12px;border-top:1px solid rgba(244,166,60,.12)}
+@media (max-width:640px){.estimated-cost-card{padding:16px 18px;margin-top:18px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}.step.enter,.step.leave{transform:none!important}}
 </style>
   <link rel="stylesheet" href="./shell/shell.css">
 </head>
-<body>
+<body class="has-curtain">
 <a class="skip" href="#q-main" data-i18n="skip">Skip to the planner</a>
 <!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">Skip to main content</a>
@@ -258,7 +274,36 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
   <div class="compass-capsule" id="compass-capsule">
     <!-- Company Logo (FIX 1) -->
     <a href="index.html" class="capsule-brand" aria-label="ROTW Travels">
-      <img class="capsule-logo" src="./assets/site/logo-white.png" alt="ROTW Travels" width="80" height="32">
+      <svg class="rotw-logo capsule-logo" viewBox="106 70 346 146" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
+  <g id="lg-letters">
+    <g class="lg-l lg-r" id="lg-l-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g>
+    <g class="lg-l lg-o" id="lg-l-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g>
+    <g class="lg-l lg-t" id="lg-l-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g>
+    <g class="lg-l lg-w1" id="lg-l-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g>
+    <g class="lg-l lg-w2" id="lg-l-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g>
+  </g>
+  <g class="lg-face" id="lg-face">
+    <g class="lg-ticks" id="lg-ticks">
+      <path fill="none" stroke="#F8F1E8" stroke-width="0.8" stroke-linecap="round" d="M226.6 120.3L226.6 113.8 M235.7 120.1L237.6 116.8 M242.3 126.8L245.6 124.8 M242.1 135.8L248.6 135.8 M242.3 144.9L245.6 146.8 M235.7 151.6L237.6 154.9 M226.6 151.3L226.6 157.8 M217.5 151.6L215.6 154.9 M210.8 144.9L207.5 146.8 M211.1 135.8L204.6 135.8 M210.8 126.8L207.5 124.8 M217.4 120.1L215.6 116.8"/>
+    </g>
+  </g>
+  <g class="lg-needle" id="lg-needle">
+    <circle cx="226.55" cy="135.85" r="18.7" fill="none" stroke="rgba(0,0,0,0.001)" stroke-width="0.1"/>
+    <line x1="226.55" y1="135.85" x2="226.55" y2="139.6" stroke="var(--lg-main)" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="226.55" y1="135.85" x2="226.55" y2="120.65" stroke="var(--lg-main)" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="226.55" y1="120.65" x2="226.55" y2="117.15" stroke="var(--lg-red)" stroke-width="1.4" stroke-linecap="round"/>
+    <circle id="lg-hub" class="lg-hub" cx="226.55" cy="135.85" r="2.2" fill="var(--lg-main)"/>
+    <circle cx="226.55" cy="135.85" r="1.0" fill="var(--lg-hole)"/>
+  </g>
+  <g id="lg-accent">
+    <g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g>
+    <g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g>
+    <g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g>
+  </g>
+  <g id="lg-tagline" class="lg-tagline">
+    <path fill="#F8F1E8" d="M124.9 211.6L126.5 203.6L128.6 203.6C128.6 203.6 133.3 194.1 133.7 187.4L146.1 187.4L142.8 203.5L145.1 203.6L143.5 211.8L140.4 211.6L141.3 206.4L128.9 206.3L128 211.7ZM132 203.7L139.1 203.7L141.6 190.5L136.3 190.5C136.3 190.5 134.7 200.9 132.1 203.2ZM161.7 199.1C161.9 197.9 162.4 196.7 163.2 195.5C164 194.3 165 193.4 166.3 192.8C167.5 192.2 168.8 191.9 170.2 191.9C172.4 191.9 174 192.6 175.1 194C176.3 195.4 176.7 197.2 176.3 199.3C175.9 201.5 175 203.2 173.3 204.7C171.7 206.1 169.8 206.8 167.7 206.8C166.4 206.8 165.2 206.5 164.2 205.9C163.1 205.3 162.3 204.4 161.9 203.3C161.5 202.2 161.4 200.8 161.7 199.1ZM165.5 199.3C165.3 200.8 165.4 201.8 166 202.6C166.5 203.3 167.3 203.7 168.2 203.7C169.2 203.7 170.1 203.3 170.9 202.6C171.7 201.8 172.2 200.7 172.4 199.3C172.7 197.9 172.5 196.9 172 196.1C171.5 195.3 170.7 195 169.7 195C168.7 195 167.8 195.3 167.1 196.1C166.3 196.9 165.7 197.9 165.5 199.3ZM194.1 192.2L197.6 192.2L197.3 194.3C197.8 193.6 198.5 193 199.4 192.6C200.2 192.1 201.1 191.9 202.1 191.9C203.7 191.9 205 192.6 206 193.9C206.9 195.1 207.2 197 206.8 199.3C206.4 201.6 205.5 203.5 204.1 204.8C202.7 206.1 201.2 206.8 199.6 206.8C198.8 206.8 198.1 206.6 197.5 206.3C196.9 206 196.3 205.5 195.8 204.7L194.6 211.8L190.8 211.8ZZM196.6 199.1C196.4 200.7 196.5 201.9 197 202.7C197.5 203.4 198.2 203.8 199.1 203.8C200 203.8 200.8 203.4 201.5 202.7C202.2 202 202.6 200.9 202.9 199.3C203.2 197.8 203.1 196.7 202.6 196C202.1 195.2 201.4 194.9 200.5 194.9C199.6 194.9 198.8 195.2 198.1 195.9C197.4 196.6 196.9 197.7 196.6 199.1ZM222.7 199.1C222.9 197.9 223.4 196.7 224.2 195.5C225 194.3 226 193.4 227.3 192.8C228.5 192.2 229.8 191.9 231.2 191.9C233.3 191.9 235 192.6 236.1 194C237.3 195.4 237.6 197.2 237.3 199.3C236.9 201.5 235.9 203.2 234.3 204.7C232.7 206.1 230.8 206.8 228.7 206.8C227.4 206.8 226.2 206.5 225.1 205.9C224.1 205.3 223.3 204.4 222.9 203.3C222.5 202.2 222.4 200.8 222.7 199.1ZM226.5 199.3C226.2 200.8 226.4 201.8 226.9 202.6C227.5 203.3 228.2 203.7 229.2 203.7C230.2 203.7 231.1 203.3 231.9 202.6C232.7 201.8 233.2 200.7 233.4 199.3C233.7 197.9 233.5 196.9 233 196.1C232.4 195.3 231.7 195 230.7 195C229.7 195 228.8 195.3 228 196.1C227.2 196.9 226.7 197.9 226.5 199.3ZM255 192.2L264.6 192.2L264.1 195.2L258.3 195.2L256.4 206.4L252.6 206.4ZZM280.2 192.2L283.9 192.2L282.4 201.1L289.6 192.2L293.3 192.2L291 206.4L287.3 206.4L288.9 197.4L281.5 206.4L277.9 206.4ZZM311.1 192.2L315.7 192.2L317.6 202.1L322.8 192.2L327.4 192.2L325.1 206.4L321.8 206.4L323.4 197.1L318.4 206.4L315.2 206.4L313.4 197.1L311.9 206.4L308.7 206.4ZZM344.9 192.2L348.5 192.2L347 201.1L354.3 192.2L358 192.2L355.6 206.4L352 206.4L353.5 197.4L346.1 206.4L342.5 206.4ZZM375.5 192.2L379 192.2L378.6 194.3C379.2 193.6 379.9 193 380.7 192.6C381.6 192.1 382.5 191.9 383.4 191.9C385.1 191.9 386.4 192.6 387.3 193.9C388.3 195.1 388.5 197 388.1 199.3C387.7 201.6 386.8 203.5 385.5 204.8C384.1 206.1 382.6 206.8 380.9 206.8C380.1 206.8 379.4 206.6 378.9 206.3C378.3 206 377.7 205.5 377.1 204.7L375.9 211.8L372.2 211.8ZZM378 199.1C377.7 200.7 377.8 201.9 378.3 202.7C378.9 203.4 379.6 203.8 380.5 203.8C381.3 203.8 382.1 203.4 382.8 202.7C383.5 202 384 200.9 384.3 199.3C384.5 197.8 384.4 196.7 383.9 196C383.5 195.2 382.8 194.9 381.9 194.9C381 194.9 380.2 195.2 379.4 195.9C378.7 196.6 378.2 197.7 378 199.1ZM408.1 196.6L404.8 196C405.4 194.6 406.3 193.6 407.3 192.9C408.4 192.2 409.8 191.9 411.7 191.9C413.3 191.9 414.6 192.1 415.3 192.5C416.1 192.9 416.6 193.4 416.8 194C417 194.6 417 195.7 416.7 197.4L415.9 201.8C415.7 203 415.6 203.9 415.6 204.5C415.7 205.1 415.8 205.8 416 206.4L412.3 206.4C412.2 206.2 412.2 205.8 412.1 205.3C412.1 205.1 412 205 412 204.9C411.3 205.5 410.5 206 409.7 206.3C409 206.6 408.2 206.8 407.3 206.8C405.9 206.8 404.8 206.4 404.1 205.6C403.4 204.8 403.1 203.8 403.3 202.6C403.5 201.8 403.8 201.1 404.3 200.4C404.8 199.8 405.4 199.3 406.1 199C406.9 198.7 407.9 198.4 409.3 198.1C411.1 197.8 412.3 197.5 413.1 197.2L413.1 196.8C413.2 196.1 413.2 195.6 412.8 195.2C412.5 194.9 411.9 194.8 410.9 194.8C410.2 194.8 409.7 194.9 409.3 195.2C408.8 195.4 408.5 195.9 408.1 196.6ZM412.6 199.6C412.1 199.8 411.3 200 410.3 200.2C409.2 200.4 408.5 200.7 408.1 200.9C407.6 201.2 407.2 201.7 407.1 202.2C407.1 202.7 407.2 203.2 407.5 203.6C407.8 203.9 408.3 204.1 408.9 204.1C409.6 204.1 410.3 203.9 411 203.5C411.5 203.1 411.8 202.7 412.1 202.2C412.2 201.9 412.4 201.3 412.5 200.4Z"/>
+  </g>
+</svg>
     </a>
 
     <!-- Category Nav Links -->
@@ -267,15 +312,15 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
       <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-map-pin"/></svg>
       <span>Destinations</span>
     </a>
-      <a href="index.html#journeys" class="capsule-link">
+      <a href="journeys/index.html" class="capsule-link">
       <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-route"/></svg>
       <span>Journeys</span>
     </a>
-      <a href="index.html#trips" class="capsule-link">
+      <a href="experiences.html" class="capsule-link">
       <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-compass"/></svg>
       <span>Experiences</span>
     </a>
-      <a href="index.html#partners" class="capsule-link">
+      <a href="for-agents.html" class="capsule-link">
       <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
       <span>For agents</span>
     </a>
@@ -293,7 +338,6 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
           <option value="en" selected>English</option>
           <option value="ru">Русский</option>
           <option value="ar">العربية</option>
-          <option value="hi">हिन्दी</option>
         </select>
         <svg class="shell-icon capsule-lang-arrow" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
       </div>
@@ -314,14 +358,43 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 <div class="shell-menu-drawer" id="shell-menu-drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Navigation Menu">
   <div class="drawer-top-row">
     <a href="index.html" class="capsule-brand" aria-label="ROTW Travels">
-      <img class="capsule-logo" src="./assets/site/logo-white.png" alt="ROTW Travels" width="70" height="28">
+      <svg class="rotw-logo capsule-logo" viewBox="106 70 346 146" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
+  <g id="lg-letters">
+    <g class="lg-l lg-r" id="lg-l-r"><path fill="var(--lg-main)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g>
+    <g class="lg-l lg-o" id="lg-l-o"><g class="lg-ring"><path fill="var(--lg-main)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="lg-dirs"><path fill="var(--lg-hole)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g>
+    <g class="lg-l lg-t" id="lg-l-t"><path fill="var(--lg-main)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g>
+    <g class="lg-l lg-w1" id="lg-l-w1"><path fill="var(--lg-main)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g>
+    <g class="lg-l lg-w2" id="lg-l-w2"><path fill="var(--lg-main)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g>
+  </g>
+  <g class="lg-face" id="lg-face">
+    <g class="lg-ticks" id="lg-ticks">
+      <path fill="none" stroke="#F8F1E8" stroke-width="0.8" stroke-linecap="round" d="M226.6 120.3L226.6 113.8 M235.7 120.1L237.6 116.8 M242.3 126.8L245.6 124.8 M242.1 135.8L248.6 135.8 M242.3 144.9L245.6 146.8 M235.7 151.6L237.6 154.9 M226.6 151.3L226.6 157.8 M217.5 151.6L215.6 154.9 M210.8 144.9L207.5 146.8 M211.1 135.8L204.6 135.8 M210.8 126.8L207.5 124.8 M217.4 120.1L215.6 116.8"/>
+    </g>
+  </g>
+  <g class="lg-needle" id="lg-needle">
+    <circle cx="226.55" cy="135.85" r="18.7" fill="none" stroke="rgba(0,0,0,0.001)" stroke-width="0.1"/>
+    <line x1="226.55" y1="135.85" x2="226.55" y2="139.6" stroke="var(--lg-main)" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="226.55" y1="135.85" x2="226.55" y2="120.65" stroke="var(--lg-main)" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="226.55" y1="120.65" x2="226.55" y2="117.15" stroke="var(--lg-red)" stroke-width="1.4" stroke-linecap="round"/>
+    <circle id="lg-hub" class="lg-hub" cx="226.55" cy="135.85" r="2.2" fill="var(--lg-main)"/>
+    <circle cx="226.55" cy="135.85" r="1.0" fill="var(--lg-hole)"/>
+  </g>
+  <g id="lg-accent">
+    <g class="lg-red lg-leaf"><path fill="var(--lg-red)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g>
+    <g class="lg-red lg-flag"><path fill="var(--lg-red)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g>
+    <g class="lg-plane"><path fill="var(--lg-red)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g>
+  </g>
+  <g id="lg-tagline" class="lg-tagline">
+    <path fill="#F8F1E8" d="M124.9 211.6L126.5 203.6L128.6 203.6C128.6 203.6 133.3 194.1 133.7 187.4L146.1 187.4L142.8 203.5L145.1 203.6L143.5 211.8L140.4 211.6L141.3 206.4L128.9 206.3L128 211.7ZM132 203.7L139.1 203.7L141.6 190.5L136.3 190.5C136.3 190.5 134.7 200.9 132.1 203.2ZM161.7 199.1C161.9 197.9 162.4 196.7 163.2 195.5C164 194.3 165 193.4 166.3 192.8C167.5 192.2 168.8 191.9 170.2 191.9C172.4 191.9 174 192.6 175.1 194C176.3 195.4 176.7 197.2 176.3 199.3C175.9 201.5 175 203.2 173.3 204.7C171.7 206.1 169.8 206.8 167.7 206.8C166.4 206.8 165.2 206.5 164.2 205.9C163.1 205.3 162.3 204.4 161.9 203.3C161.5 202.2 161.4 200.8 161.7 199.1ZM165.5 199.3C165.3 200.8 165.4 201.8 166 202.6C166.5 203.3 167.3 203.7 168.2 203.7C169.2 203.7 170.1 203.3 170.9 202.6C171.7 201.8 172.2 200.7 172.4 199.3C172.7 197.9 172.5 196.9 172 196.1C171.5 195.3 170.7 195 169.7 195C168.7 195 167.8 195.3 167.1 196.1C166.3 196.9 165.7 197.9 165.5 199.3ZM194.1 192.2L197.6 192.2L197.3 194.3C197.8 193.6 198.5 193 199.4 192.6C200.2 192.1 201.1 191.9 202.1 191.9C203.7 191.9 205 192.6 206 193.9C206.9 195.1 207.2 197 206.8 199.3C206.4 201.6 205.5 203.5 204.1 204.8C202.7 206.1 201.2 206.8 199.6 206.8C198.8 206.8 198.1 206.6 197.5 206.3C196.9 206 196.3 205.5 195.8 204.7L194.6 211.8L190.8 211.8ZZM196.6 199.1C196.4 200.7 196.5 201.9 197 202.7C197.5 203.4 198.2 203.8 199.1 203.8C200 203.8 200.8 203.4 201.5 202.7C202.2 202 202.6 200.9 202.9 199.3C203.2 197.8 203.1 196.7 202.6 196C202.1 195.2 201.4 194.9 200.5 194.9C199.6 194.9 198.8 195.2 198.1 195.9C197.4 196.6 196.9 197.7 196.6 199.1ZM222.7 199.1C222.9 197.9 223.4 196.7 224.2 195.5C225 194.3 226 193.4 227.3 192.8C228.5 192.2 229.8 191.9 231.2 191.9C233.3 191.9 235 192.6 236.1 194C237.3 195.4 237.6 197.2 237.3 199.3C236.9 201.5 235.9 203.2 234.3 204.7C232.7 206.1 230.8 206.8 228.7 206.8C227.4 206.8 226.2 206.5 225.1 205.9C224.1 205.3 223.3 204.4 222.9 203.3C222.5 202.2 222.4 200.8 222.7 199.1ZM226.5 199.3C226.2 200.8 226.4 201.8 226.9 202.6C227.5 203.3 228.2 203.7 229.2 203.7C230.2 203.7 231.1 203.3 231.9 202.6C232.7 201.8 233.2 200.7 233.4 199.3C233.7 197.9 233.5 196.9 233 196.1C232.4 195.3 231.7 195 230.7 195C229.7 195 228.8 195.3 228 196.1C227.2 196.9 226.7 197.9 226.5 199.3ZM255 192.2L264.6 192.2L264.1 195.2L258.3 195.2L256.4 206.4L252.6 206.4ZZM280.2 192.2L283.9 192.2L282.4 201.1L289.6 192.2L293.3 192.2L291 206.4L287.3 206.4L288.9 197.4L281.5 206.4L277.9 206.4ZZM311.1 192.2L315.7 192.2L317.6 202.1L322.8 192.2L327.4 192.2L325.1 206.4L321.8 206.4L323.4 197.1L318.4 206.4L315.2 206.4L313.4 197.1L311.9 206.4L308.7 206.4ZZM344.9 192.2L348.5 192.2L347 201.1L354.3 192.2L358 192.2L355.6 206.4L352 206.4L353.5 197.4L346.1 206.4L342.5 206.4ZZM375.5 192.2L379 192.2L378.6 194.3C379.2 193.6 379.9 193 380.7 192.6C381.6 192.1 382.5 191.9 383.4 191.9C385.1 191.9 386.4 192.6 387.3 193.9C388.3 195.1 388.5 197 388.1 199.3C387.7 201.6 386.8 203.5 385.5 204.8C384.1 206.1 382.6 206.8 380.9 206.8C380.1 206.8 379.4 206.6 378.9 206.3C378.3 206 377.7 205.5 377.1 204.7L375.9 211.8L372.2 211.8ZZM378 199.1C377.7 200.7 377.8 201.9 378.3 202.7C378.9 203.4 379.6 203.8 380.5 203.8C381.3 203.8 382.1 203.4 382.8 202.7C383.5 202 384 200.9 384.3 199.3C384.5 197.8 384.4 196.7 383.9 196C383.5 195.2 382.8 194.9 381.9 194.9C381 194.9 380.2 195.2 379.4 195.9C378.7 196.6 378.2 197.7 378 199.1ZM408.1 196.6L404.8 196C405.4 194.6 406.3 193.6 407.3 192.9C408.4 192.2 409.8 191.9 411.7 191.9C413.3 191.9 414.6 192.1 415.3 192.5C416.1 192.9 416.6 193.4 416.8 194C417 194.6 417 195.7 416.7 197.4L415.9 201.8C415.7 203 415.6 203.9 415.6 204.5C415.7 205.1 415.8 205.8 416 206.4L412.3 206.4C412.2 206.2 412.2 205.8 412.1 205.3C412.1 205.1 412 205 412 204.9C411.3 205.5 410.5 206 409.7 206.3C409 206.6 408.2 206.8 407.3 206.8C405.9 206.8 404.8 206.4 404.1 205.6C403.4 204.8 403.1 203.8 403.3 202.6C403.5 201.8 403.8 201.1 404.3 200.4C404.8 199.8 405.4 199.3 406.1 199C406.9 198.7 407.9 198.4 409.3 198.1C411.1 197.8 412.3 197.5 413.1 197.2L413.1 196.8C413.2 196.1 413.2 195.6 412.8 195.2C412.5 194.9 411.9 194.8 410.9 194.8C410.2 194.8 409.7 194.9 409.3 195.2C408.8 195.4 408.5 195.9 408.1 196.6ZM412.6 199.6C412.1 199.8 411.3 200 410.3 200.2C409.2 200.4 408.5 200.7 408.1 200.9C407.6 201.2 407.2 201.7 407.1 202.2C407.1 202.7 407.2 203.2 407.5 203.6C407.8 203.9 408.3 204.1 408.9 204.1C409.6 204.1 410.3 203.9 411 203.5C411.5 203.1 411.8 202.7 412.1 202.2C412.2 201.9 412.4 201.3 412.5 200.4Z"/>
+  </g>
+</svg>
     </a>
     <button class="drawer-close-btn" id="btn-drawer-close" aria-label="Close menu">
       <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-close"/></svg>
     </button>
   </div>
 
-  <div class="drawer-scroll-area">
+  <div class="drawer-scroll-area" data-lenis-prevent tabindex="0">
     <ul class="drawer-nav-list">
       <li>
       <a href="destinations/index.html" class="drawer-nav-row">
@@ -330,19 +403,19 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
       </a>
     </li>
       <li>
-      <a href="index.html#journeys" class="drawer-nav-row">
+      <a href="journeys/index.html" class="drawer-nav-row">
         <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-route"/></svg>
         <span>Journeys</span>
       </a>
     </li>
       <li>
-      <a href="index.html#trips" class="drawer-nav-row">
+      <a href="experiences.html" class="drawer-nav-row">
         <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-compass"/></svg>
         <span>Experiences</span>
       </a>
     </li>
       <li>
-      <a href="index.html#partners" class="drawer-nav-row">
+      <a href="for-agents.html" class="drawer-nav-row">
         <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
         <span>For agents</span>
       </a>
@@ -355,11 +428,34 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
     </li>
     </ul>
 
+    
+    <div class="drawer-more-section">
+      <h4 class="drawer-more-title">All Destinations & Sections</h4>
+      <ul class="drawer-more-dests">
+        <li><a href="destinations/moscow.html">Moscow</a></li>
+            <li><a href="destinations/st-petersburg.html">St Petersburg</a></li>
+            <li><a href="destinations/sochi.html">Sochi</a></li>
+            <li><a href="destinations/murmansk.html">Murmansk</a></li>
+            <li><a href="destinations/kazan.html">Kazan</a></li>
+            <li><a href="destinations/lake-baikal.html">Lake Baikal</a></li>
+            <li><a href="destinations/kamchatka.html">Kamchatka</a></li>
+            <li><a href="destinations/vladivostok.html">Vladivostok</a></li>
+            <li><a href="destinations/dubai.html">Dubai</a></li>
+            <li><a href="destinations/oman.html">Oman</a></li>
+      </ul>
+      <ul class="drawer-more-links">
+        <li><a href="reviews.html">Traveller reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="terms.html">Terms and conditions</a></li>
+        <li><a href="privacy.html">Privacy policy</a></li>
+      </ul>
+    </div>
+
     <div class="drawer-lang-chips">
       <button class="drawer-lang-chip active" data-shell-lang="en">English</button>
         <button class="drawer-lang-chip" data-shell-lang="ru">Русский</button>
         <button class="drawer-lang-chip" data-shell-lang="ar">العربية</button>
-        <button class="drawer-lang-chip" data-shell-lang="hi">हिन्दी</button>
     </div>
   </div>
 
@@ -371,9 +467,30 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
   </div>
 </div>
 <!-- /SHELL:HEADER -->
-
+<div class="page-wrap">
 <main class="wrap">
   <section class="q" id="q-main" aria-labelledby="h1">
+    <div class="sasha-chat" id="plan-sasha-chat" style="margin-bottom:24px;">
+      <div class="sasha-chat-card">
+        <header class="sasha-chat-head">
+          <img class="sasha-chat-avatar" src="shell/sasha.webp" alt="Sasha" width="44" height="44">
+          <div class="sasha-chat-meta">
+            <span class="sasha-chat-name" id="plan-sasha-name">Sasha, your guide</span>
+            <span class="sasha-chat-sublabel" id="plan-sasha-sub">Trip Planner</span>
+          </div>
+        </header>
+        <div class="sasha-chat-messages" aria-live="polite">
+          <div class="sasha-bubble sasha-bubble-agent">
+            <p id="plan-sasha-bubble">Hi again! Tell me who’s coming and I’ll set the pace of the trip.</p>
+          </div>
+        </div>
+        <div class="sasha-chat-controls" id="plan-sasha-controls">
+          <div class="sasha-chat-chips">
+            <button type="button" class="sasha-chat-chip" id="plan-start-chip">Start planning</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="progress" aria-hidden="true"><i id="bar"></i></div>
     <div class="meta"><span class="label" id="stepLabel" aria-live="polite"></span><span class="glance" id="glance"></span></div>
     <form id="form" novalidate>
@@ -417,6 +534,13 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
         <p class="hint" data-i18n="hint5"></p>
         <div class="rows" role="radiogroup" id="budget"></div>
         <p class="err" role="alert" data-err="5"></p>
+        <section class="frosted-card estimated-cost-card" role="region" aria-label="Estimated cost">
+          <h2 class="cost-card-title" data-i18n="cost_title">Estimated cost</h2>
+          <div class="cost-card-content" aria-live="polite">
+            <p class="cost-pending" data-i18n="cost_pending">Estimated cost: to be confirmed by ROTW.</p>
+          </div>
+          <p class="cost-disclaimer" data-i18n="cost_disclaimer">Estimates are not offers. ROTW confirms the final price in writing in each quote.</p>
+        </section>
       </div>
       <!-- 6 visa -->
       <div class="step" data-step="6" hidden>
@@ -442,10 +566,18 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
       <div class="step done" data-step="8" hidden>
         <h1 tabindex="-1" data-i18n="done_title"></h1>
         <p class="hint" data-i18n="done_body"></p>
+        <section class="frosted-card estimated-cost-card" role="region" aria-label="Estimated cost">
+          <h2 class="cost-card-title" data-i18n="cost_title">Estimated cost</h2>
+          <div class="cost-card-content" aria-live="polite">
+            <p class="cost-pending" data-i18n="cost_pending">Estimated cost: to be confirmed by ROTW.</p>
+          </div>
+          <p class="cost-disclaimer" data-i18n="cost_disclaimer">Estimates are not offers. ROTW confirms the final price in writing in each quote.</p>
+        </section>
         <label for="planText" class="sr" data-i18n="plan_title"></label>
         <textarea id="planText" readonly></textarea>
         <div class="acts">
           <button type="button" class="btn primary" id="copy" data-i18n="copy"></button>
+          <a class="btn ghost" id="mailLink" href="mailto:inbound@rotwtravels.com" style="display:none;" data-i18n="email_link">Email request</a>
           <button type="button" class="btn ghost" id="restart" data-i18n="restart"></button>
           <span class="status" id="copyStatus" aria-live="polite"></span>
         </div>
@@ -508,6 +640,7 @@ en:{dir:'ltr',skip:'Skip to the planner',back_story:'Back to the flight story',s
  nights:{one:'{n} night',other:'{n} nights'},
  sasha:["Hi again! Tell me who's coming and I'll set the pace of the trip.","Pick your cities. I'll join them into a route.","The month changes everything. Here's what happens then.","Choose what you love and I'll suggest what to add.","The budget only helps us pick hotels.","Nearly there. We can help with the visa if you need it.","Last step. Where should we send the plan?","Great route! Copy your plan or start again."],
  suggestLine:'Moscow and St Petersburg is the classic first trip. Add Kazan if you have 10 nights.',railTip:'You picked rail journeys, so I added three nights on the Trans-Siberian before Baikal.',sashaName:'Sasha, your guide',
+ cost_title:'Estimated cost',cost_pending:'Estimated cost: to be confirmed by ROTW.',cost_disclaimer:'Estimates are not offers. ROTW confirms the final price in writing in each quote.',cost_budget:'Your budget: {budget} per person, without international flights',cost_from:'From US$ {price} per person',cost_valid:'Valid until {date}',cost_journeys_title:'Journeys matching this budget:',cost_shown:'Estimated cost shown',email_link:'Email request',
  notes:['Snow and New Year lights. Cold: around −7 °C in Moscow.','Clear ice on Lake Baikal. The best month for a winter trip.','The last weeks of Baikal ice. Days get longer.','Snow melts. A quiet month, already warm in Sochi.','Parks turn green. Victory Day parades on 9 May.','White Nights in St Petersburg. The sun barely sets.','The warmest month. Best for the Black Sea and Baikal hikes.','Warm and busy. Book St Petersburg early.','Golden autumn. Fewer crowds, mild days.','Autumn colours early in the month, first snow by the end.','Grey and quiet. A good time for museums and theatre.','Christmas markets and New Year lights in Moscow.'],
  city:{moscow:'Moscow',suzdal:'Golden Ring',spb:'St Petersburg',kaliningrad:'Kaliningrad',murmansk:'Murmansk',kazan:'Kazan',sochi:'Sochi',baikal:'Lake Baikal',vladivostok:'Vladivostok',kamchatka:'Kamchatka'},
  sub:{moscow:'Red Square, Bolshoi',suzdal:'Old towns by road',spb:'Hermitage, canals',kaliningrad:'Baltic coast',murmansk:'Northern lights',kazan:'Kremlin on the Volga',sochi:'Black Sea, mountains',baikal:'Deepest lake on Earth',vladivostok:'End of the railway',kamchatka:'Volcanoes, wild coast'}},
@@ -525,6 +658,7 @@ ru:{dir:'ltr',skip:'К планировщику',back_story:'Назад к ис�
  nights:{one:'{n} ночь',few:'{n} ночи',many:'{n} ночей',other:'{n} ночи'},
  sasha:['Привет снова! Расскажите, кто едет, и я подберу темп поездки.','Выбирайте города. Я соединю их в маршрут.','Месяц меняет всё. Посмотрите, что происходит в это время.','Выберите, что вам интересно, и я подскажу, что добавить.','Бюджет нужен только для выбора отелей.','Почти всё. Мы поможем с визой, если нужно.','Последний шаг. Куда отправить план?','Отличный маршрут! Скопируйте план или начните заново.'],
  suggestLine:'Москва и Петербург — классика для первой поездки. Если есть 10 ночей, добавьте Казань.',railTip:'Вы выбрали поезда, поэтому я добавил три ночи на Транссибе перед Байкалом.',sashaName:'Саша, ваш гид',
+ cost_title:'Ориентировочная стоимость',cost_pending:'Ориентировочная стоимость: подтверждается ROTW.',cost_disclaimer:'Ориентировочная стоимость не является офертой. ROTW подтверждает окончательную цену в письменном виде в каждом предложении.',cost_budget:'Ваш бюджет: {budget} на человека, без международных перелётов',cost_from:'От US$ {price} на человека',cost_valid:'Действительно до {date}',cost_journeys_title:'Маршруты в этой категории бюджета:',cost_shown:'Ориентировочная стоимость',email_link:'Отправить запрос',
  notes:['Снег и новогодние огни. Холодно: около −7 °C в Москве.','Прозрачный лёд на Байкале. Лучший месяц для зимней поездки.','Последние недели байкальского льда. Дни становятся длиннее.','Тает снег. Тихий месяц, в Сочи уже тепло.','Парки зеленеют. 9 мая — парад Победы.','Белые ночи в Петербурге. Солнце почти не садится.','Самый тёплый месяц. Лучшее время для Чёрного моря и походов на Байкале.','Тепло и многолюдно. Петербург лучше бронировать заранее.','Золотая осень. Меньше туристов, мягкая погода.','В начале месяца осенние краски, к концу первый снег.','Серо и спокойно. Хорошее время для музеев и театров.','Рождественские ярмарки и новогодние огни в Москве.'],
  city:{moscow:'Москва',suzdal:'Золотое кольцо',spb:'Санкт-Петербург',kaliningrad:'Калининград',murmansk:'Мурманск',kazan:'Казань',sochi:'Сочи',baikal:'Байкал',vladivostok:'Владивосток',kamchatka:'Камчатка'},
  sub:{moscow:'Красная площадь, Большой',suzdal:'Старые города',spb:'Эрмитаж, каналы',kaliningrad:'Балтийское побережье',murmansk:'Северное сияние',kazan:'Кремль на Волге',sochi:'Чёрное море, горы',baikal:'Самое глубокое озеро',vladivostok:'Конец Транссиба',kamchatka:'Вулканы, дикий берег'}},
@@ -542,26 +676,10 @@ ar:{dir:'rtl',skip:'انتقل إلى المخطط',back_story:'العودة إ�
  nights:{zero:'{n} ليلة',one:'ليلة واحدة',two:'ليلتان',few:'{n} ليالٍ',many:'{n} ليلة',other:'{n} ليلة'},
  sasha:['مرحبًا مجددًا! أخبرني من سيسافر وسأختار وتيرة الرحلة.','اختر المدن وسأربطها في مسار واحد.','الشهر يغيّر كل شيء. انظر ماذا يحدث في هذا الوقت.','اختر ما يهمك وسأقترح ما يمكن إضافته.','الميزانية تساعدنا فقط في اختيار الفنادق.','اقتربنا. سنساعدك في التأشيرة إن احتجت.','الخطوة الأخيرة. إلى أين نرسل الخطة؟','مسار رائع! انسخ خطتك أو ابدأ من جديد.'],
  suggestLine:'موسكو وسانت بطرسبرغ هما الخيار الكلاسيكي لأول رحلة. أضف قازان إن كان لديك 10 ليالٍ.',railTip:'اخترت رحلات القطار، فأضفت ثلاث ليالٍ على قطار سيبيريا قبل بايكال.',sashaName:'ساشا، مرشدك',
+ cost_title:'التكلفة التقديرية',cost_pending:'التكلفة التقديرية: يتم تأكيدها من قبل ROTW.',cost_disclaimer:'التقديرات ليست عروضاً نهائية. تؤكد ROTW السعر النهائي كتابةً في كل عرض أسعار.',cost_budget:'ميزانيتك: {budget} للشخص الواحد، من دون الطيران الدولي',cost_from:'تبدأ من <span dir="ltr">US$ {price}</span> للشخص الواحد',cost_valid:'صالح حتى {date}',cost_journeys_title:'الرحلات المناسبة لهذه الميزانية:',cost_shown:'التكلفة التقديرية المعروضة',email_link:'إرسال الطلب بالبريد',
  notes:['ثلج وأضواء رأس السنة. الجو بارد: نحو −7 درجات في موسكو.','جليد صافٍ على بحيرة بايكال. أفضل شهر لرحلة شتوية.','الأسابيع الأخيرة من جليد بايكال. النهار يطول.','يذوب الثلج. شهر هادئ، والجو دافئ في سوتشي.','تخضرّ الحدائق. عرض يوم النصر في 9 مايو.','الليالي البيضاء في سانت بطرسبرغ. الشمس بالكاد تغيب.','أدفأ شهر. الأفضل للبحر الأسود والمشي حول بايكال.','دافئ ومزدحم. احجز سانت بطرسبرغ مبكرًا.','الخريف الذهبي. زحام أقل وطقس معتدل.','ألوان الخريف في بداية الشهر، وأول ثلج في نهايته.','رمادي وهادئ. وقت جيد للمتاحف والمسرح.','أسواق عيد الميلاد وأضواء رأس السنة في موسكو.'],
  city:{moscow:'موسكو',suzdal:'الحلقة الذهبية',spb:'سانت بطرسبرغ',kaliningrad:'كالينينغراد',murmansk:'مورمانسك',kazan:'قازان',sochi:'سوتشي',baikal:'بحيرة بايكال',vladivostok:'فلاديفوستوك',kamchatka:'كامتشاتكا'},
  sub:{moscow:'الساحة الحمراء والبولشوي',suzdal:'مدن قديمة بالطريق البري',spb:'الإرميتاج والقنوات',kaliningrad:'ساحل البلطيق',murmansk:'الشفق القطبي',kazan:'كرملين على الفولغا',sochi:'البحر الأسود والجبال',baikal:'أعمق بحيرة في العالم',vladivostok:'نهاية سكة الحديد',kamchatka:'براكين وساحل بري'}},
-hi:{dir:'ltr',skip:'प्लानर पर जाएँ',back_story:'फ़्लाइट स्टोरी पर वापस',step:'चरण {n} / 7',back:'पीछे',next:'आगे',finish:'मेरा प्लान तैयार करें',keys:'आगे बढ़ने के लिए Enter दबाएँ',
- q1:'कौन यात्रा कर रहा है?',who:{solo:'सिर्फ़ मैं',couple:'हम दोनों',family:'बच्चों के साथ परिवार',group:'दोस्तों या सहकर्मियों का समूह',agent:'मैं ट्रैवल एजेंट हूँ, क्लाइंट के लिए प्लान कर रहा हूँ'},agent_desc:'हम आपके क्लाइंट के लिए कोटेशन तैयार करेंगे',err1:'चुनें कि कौन यात्रा कर रहा है।',
- q2:'आप कहाँ जाना चाहते हैं?',hint2:'यहाँ या नक्शे पर शहरों पर टैप करें। जितने चाहें चुनें।',suggest:'पक्का नहीं? कोई रूट सुझाइए',err2:'कम से कम एक शहर चुनें, या सुझाव माँगें।',
- q3:'कब, और कितने दिन?',month:'महीना',length:'रूस में रातें',err3:'एक महीना चुनें।',
- q4:'यात्रा किस बारे में हो?',hint4:'चार तक चुनें।',interests:{culture:'इतिहास और संस्कृति',rail:'ट्रेन यात्राएँ',winter:'सर्दी और बर्फ़',ballet:'बैले और ओपेरा',food:'खाना',nature:'प्रकृति और झीलें',luxury:'लग्ज़री होटल'},
- q5:'प्रति व्यक्ति बजट कितना है?',hint5:'अंतरराष्ट्रीय उड़ानों के बिना। इससे हमें सिर्फ़ होटल चुनने में मदद मिलती है।',budget:{b1:'$1,500 से कम',b2:'$1,500–3,000',b3:'$3,000–5,000',b4:'$5,000 से ज़्यादा'},
- q6:'वीज़ा और आगमन',visa_q:'क्या आपको वीज़ा में मदद चाहिए?',visa:{yes:'हाँ, मदद कीजिए',no:'नहीं, वीज़ा है या ज़रूरत नहीं',unsure:'पक्का नहीं'},arrival:'कहाँ से उड़ान भरेंगे',arrival_ph:'जैसे, मुंबई',
- q7:'आपका प्लान कहाँ भेजें?',name:'आपका नाम',email:'ईमेल',phone:'फ़ोन (वैकल्पिक)',company:'एजेंसी का नाम',consent:'मैं सहमत हूँ कि ROTW मेरे अनुरोध का जवाब देने के लिए इन जानकारियों का उपयोग करे।',
- err_name:'कृपया अपना नाम लिखें।',err_email:'ईमेल पता जाँचें। यह name@example.com जैसा होना चाहिए।',err_consent:'कृपया बॉक्स पर टिक करें ताकि हम जवाब दे सकें।',
- done_title:'आपका प्लान तैयार है',done_body:'यह एक प्रोटोटाइप है, इसलिए अभी कुछ भी भेजा नहीं गया है। असली साइट पर यह अनुरोध सीधे मॉस्को में ROTW के प्लानरों तक पहुँचेगा, और वे ईमेल से जवाब देंगे।',copy:'मेरा प्लान कॉपी करें',copied:'क्लिपबोर्ड पर कॉपी हो गया।',copy_fail:'कॉपी नहीं हो सका। टेक्स्ट चुनकर ख़ुद कॉपी करें।',restart:'फिर से शुरू करें',
- plan_title:'आपका ड्राफ़्ट प्लान',l_who:'यात्री',l_month:'महीना',l_len:'अवधि',l_budget:'बजट',l_visa:'वीज़ा',l_interests:'रुचियाँ',l_arrival:'कहाँ से',l_contact:'संपर्क',daybyday:'दिन-ब-दिन',empty:'अपना रूट देखने के लिए शहर चुनें।',no_route:'अभी कोई शहर नहीं',train_leg:'ट्रांस-साइबेरियन ट्रेन',days:'दिन {a}–{b}',too_short:'इतने समय के लिए शहर ज़्यादा हैं। रातें बढ़ाएँ या कोई शहर हटाएँ।',glance:'{c} शहर, {m} में {n}',glance1:'1 शहर, {m} में {n}',
- nights:{one:'{n} रात',other:'{n} रातें'},
- sasha:['फिर से नमस्ते! बताइए कौन यात्रा कर रहा है, मैं यात्रा की रफ़्तार तय करूँगा।','शहर चुनिए। मैं उन्हें एक रूट में जोड़ दूँगा।','महीने से सब कुछ बदल जाता है। देखिए उस समय क्या होता है।','चुनिए आपको क्या पसंद है, मैं बताऊँगा क्या जोड़ें।','बजट से हमें सिर्फ़ होटल चुनने में मदद मिलती है।','लगभग हो गया। ज़रूरत हो तो वीज़ा में हम मदद करेंगे।','आख़िरी चरण। प्लान कहाँ भेजें?','बढ़िया रूट! अपना प्लान कॉपी करें या फिर से शुरू करें।'],
- suggestLine:'पहली यात्रा के लिए मॉस्को और सेंट पीटर्सबर्ग क्लासिक है। 10 रातें हों तो कज़ान जोड़ें।',railTip:'आपने ट्रेन यात्राएँ चुनीं, इसलिए मैंने बैकाल से पहले ट्रांस-साइबेरियन पर तीन रातें जोड़ दीं।',sashaName:'साशा, आपका गाइड',
- notes:['बर्फ़ और नए साल की रोशनी। ठंड: मॉस्को में लगभग −7 °C।','बैकाल झील पर साफ़ बर्फ़। सर्दियों की यात्रा का सबसे अच्छा महीना।','बैकाल की बर्फ़ के आख़िरी हफ़्ते। दिन लंबे होने लगते हैं।','बर्फ़ पिघलती है। शांत महीना, सोची में मौसम गरम।','पार्क हरे हो जाते हैं। 9 मई को विजय दिवस परेड।','सेंट पीटर्सबर्ग में व्हाइट नाइट्स। सूरज लगभग डूबता ही नहीं।','सबसे गरम महीना। काला सागर और बैकाल ट्रेकिंग के लिए सबसे अच्छा।','गरम और भीड़भाड़। सेंट पीटर्सबर्ग पहले से बुक करें।','सुनहरी शरद ऋतु। कम भीड़, सुहावना मौसम।','महीने की शुरुआत में पतझड़ के रंग, अंत तक पहली बर्फ़।','धूसर और शांत। संग्रहालयों और थिएटर के लिए अच्छा समय।','मॉस्को में क्रिसमस बाज़ार और नए साल की रोशनी।'],
- city:{moscow:'मॉस्को',suzdal:'गोल्डन रिंग',spb:'सेंट पीटर्सबर्ग',kaliningrad:'कालिनिनग्राद',murmansk:'मरमंस्क',kazan:'कज़ान',sochi:'सोची',baikal:'बैकाल झील',vladivostok:'व्लादिवोस्तोक',kamchatka:'कामचटका'},
- sub:{moscow:'रेड स्क्वायर, बोल्शोई',suzdal:'सड़क से पुराने शहर',spb:'हर्मिटेज, नहरें',kaliningrad:'बाल्टिक तट',murmansk:'नॉर्दर्न लाइट्स',kazan:'वोल्गा पर क्रेमलिन',sochi:'काला सागर, पहाड़',baikal:'धरती की सबसे गहरी झील',vladivostok:'रेल लाइन का आख़िरी छोर',kamchatka:'ज्वालामुखी, जंगली तट'}}
 };
 
 /* ---------- state ---------- */
@@ -580,8 +698,8 @@ const nf=n=>new Intl.NumberFormat(lang).format(n);
 function nightsTxt(n){const forms=L().nights;let cat='other';try{cat=new Intl.PluralRules(lang).select(n);}catch(e){}return (forms[cat]||forms.other).replace('{n}',nf(n));}
 const monthName=(m,style='long')=>new Intl.DateTimeFormat(lang,{month:style}).format(new Date(2026,m-1,1));
 
-/* ---------- fonts for Arabic and Hindi load only when needed ---------- */
-const extraFonts={ar:'family=Noto+Naskh+Arabic:wght@400;500&family=Noto+Sans+Arabic:wght@400;500',hi:'family=Noto+Serif+Devanagari:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500'};
+/* ---------- fonts for Arabic load only when needed ---------- */
+const extraFonts={ar:'family=Noto+Naskh+Arabic:wght@400;500&family=Noto+Sans+Arabic:wght@400;500'};
 function loadFont(l){if(!extraFonts[l]||document.getElementById('font-'+l))return;const k=document.createElement('link');k.id='font-'+l;k.rel='stylesheet';k.href='https://fonts.googleapis.com/css2?'+extraFonts[l]+'&display=swap';document.head.appendChild(k);}
 
 /* ---------- build controls ---------- */
@@ -778,9 +896,25 @@ function drawRoute(animate){
 
 /* ---------- Sasha ---------- */
 let sayTimer=0,waveTimer=0;
-function say(text){const el=$('say'),t=$('sayText');if(t.textContent===text)return;el.classList.add('swap');clearTimeout(sayTimer);
+function say(text){
+  const el=$('say'),t=$('sayText');
+  const planBubble = document.getElementById('plan-sasha-bubble');
+  if(planBubble) planBubble.textContent = text;
+  try{window.dispatchEvent(new CustomEvent('sasha-line',{detail:{lang,text,id:'plan-step'}}));}catch(_){}
+  if(t.textContent===text)return;
+  el.classList.add('swap');clearTimeout(sayTimer);
   sayTimer=setTimeout(()=>{t.textContent=text;el.classList.remove('swap');},reduce?0:160);
-  const img=$('sashaImg');img.src='assets/guide-wave.webp';clearTimeout(waveTimer);waveTimer=setTimeout(()=>{img.src='assets/guide-stand.webp';},1800);}
+  const img=$('sashaImg');if(img){img.src='assets/guide-wave.webp';clearTimeout(waveTimer);waveTimer=setTimeout(()=>{img.src='assets/guide-stand.webp';},1800);}
+}
+
+const startChip = document.getElementById('plan-start-chip');
+if(startChip){
+  startChip.addEventListener('click', ()=>{
+    startChip.style.display='none';
+    const firstInput = document.querySelector('.step:not([hidden]) input, .step:not([hidden]) button');
+    if(firstInput) firstInput.focus();
+  });
+}
 
 /* ---------- panel ---------- */
 function syncPanel(animate){
@@ -808,6 +942,190 @@ function syncPanel(animate){
 }
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+/* ---------- estimated cost data and logic ---------- */
+const DEFAULT_PENDING = {
+  en: "Estimated cost: to be confirmed by ROTW.",
+  ru: "Ориентировочная стоимость: подтверждается ROTW.",
+  ar: "التكلفة التقديرية: يتم تأكيدها من قبل ROTW."
+};
+const DEFAULT_DISCLAIMER = {
+  en: "Estimates are not offers. ROTW confirms the final price in writing in each quote.",
+  ru: "Ориентировочная стоимость не является офертой. ROTW подтверждает окончательную цену в письменном виде в каждом предложении.",
+  ar: "التقديرات ليست عروضاً نهائية. تؤكد ROTW السعر النهائي كتابةً في كل عرض أسعار."
+};
+const JOURNEY_TITLES = {
+  'two-capitals': { en: 'The two capitals', ru: 'Две столицы', ar: 'العاصمتان' },
+  'golden-ring': { en: 'The Golden Ring', ru: 'Золотое кольцо', ar: 'الحلقة الذهبية' },
+  'trans-siberian': { en: 'The Trans-Siberian railway', ru: 'Транссибирская магистраль', ar: 'سكة حديد سيبيريا' },
+  'baikal-clear-ice': { en: 'Lake Baikal clear ice', ru: 'Прозрачный лёд Байкала', ar: 'جليد بحيرة بايكال الصافي' },
+  'kazan-volga': { en: 'Kazan and the Volga', ru: 'Казань и Волга', ar: 'قازان ونهر الفولغا' },
+  'northern-lights': { en: 'Northern lights in Murmansk', ru: 'Северное сияние в Мурманске', ar: 'الشفق القطبي في مورمانسك' }
+};
+
+let costsData = null;
+
+function fetchCosts() {
+  return fetch('data/estimated-costs.json')
+    .then(r => {
+      if (!r.ok) throw new Error('Fetch failed');
+      return r.json();
+    })
+    .then(data => {
+      costsData = data;
+      updateEstimatedCostCards();
+    })
+    .catch(() => {
+      costsData = {
+        currency: "USD",
+        validUntil: null,
+        disclaimer: DEFAULT_DISCLAIMER,
+        pending: DEFAULT_PENDING,
+        assumes: { en: null, ru: null, ar: null },
+        journeys: {},
+        bands: { b1: { journeys: [] }, b2: { journeys: [] }, b3: { journeys: [] }, b4: { journeys: [] } },
+        destinationToJourney: {}
+      };
+      updateEstimatedCostCards();
+    });
+}
+
+function getMatchedJourneySlug() {
+  const cData = costsData || {};
+  if (!cData.destinationToJourney || !S.cities || !S.cities.length) return null;
+  for (const c of S.cities) {
+    if (cData.destinationToJourney[c]) return cData.destinationToJourney[c];
+  }
+  if (cData.destinationToJourney[S.cities.join(',')]) {
+    return cData.destinationToJourney[S.cities.join(',')];
+  }
+  return null;
+}
+
+function getEstimatedCostSentence() {
+  const t = L();
+  const cData = costsData || {};
+  const matchedSlug = getMatchedJourneySlug();
+
+  if (matchedSlug && cData.journeys && cData.journeys[matchedSlug]) {
+    const jCost = cData.journeys[matchedSlug];
+    if (typeof jCost.fromUsd === 'number' && Number.isInteger(jCost.fromUsd) && jCost.fromUsd > 0) {
+      const formatted = new Intl.NumberFormat('en-US').format(jCost.fromUsd);
+      if (lang === 'ar') {
+        return `تبدأ من US$ ${formatted} للشخص الواحد`;
+      } else if (lang === 'ru') {
+        return `От US$ ${formatted} на человека`;
+      } else {
+        return `From US$ ${formatted} per person`;
+      }
+    }
+  }
+
+  return (cData.pending && (cData.pending[lang] || cData.pending.en)) || t.cost_pending || DEFAULT_PENDING[lang] || DEFAULT_PENDING.en;
+}
+
+function updateEstimatedCostCards() {
+  const t = L();
+  const cData = costsData || {};
+  const cards = document.querySelectorAll('.estimated-cost-card');
+  if (!cards.length) return;
+
+  // (1) Your budget line
+  let budgetHtml = '';
+  if (S.budget && t.budget && t.budget[S.budget]) {
+    const bandLabel = t.budget[S.budget];
+    const budgetTxt = (t.cost_budget || 'Your budget: {budget} per person, without international flights').replace('{budget}', bandLabel);
+    budgetHtml = `<p class="cost-budget-line">${esc(budgetTxt)}</p>`;
+  }
+
+  // (2) Journeys in this band
+  let bandJourneysHtml = '';
+  if (S.budget && cData.bands && cData.bands[S.budget] && Array.isArray(cData.bands[S.budget].journeys) && cData.bands[S.budget].journeys.length > 0) {
+    const slugs = cData.bands[S.budget].journeys;
+    const linksHtml = slugs.map(slug => {
+      const titleObj = JOURNEY_TITLES[slug];
+      const name = titleObj ? (titleObj[lang] || titleObj.en) : slug;
+      const href = (lang === 'ru' ? 'ru/journeys/' : lang === 'ar' ? 'ar/journeys/' : 'journeys/') + slug + '.html';
+      return `<li><a href="${href}" class="cost-journey-link">${esc(name)}</a></li>`;
+    }).join('');
+    bandJourneysHtml = `<div class="cost-journeys-wrap">
+      <span class="cost-sublabel">${esc(t.cost_journeys_title || 'Journeys matching this budget:')}</span>
+      <ul class="cost-journeys-list">${linksHtml}</ul>
+    </div>`;
+  }
+
+  // (3) Destination matching journey
+  const matchedSlug = getMatchedJourneySlug();
+  let destHtml = '';
+  const pendingSentence = (cData.pending && (cData.pending[lang] || cData.pending.en)) || t.cost_pending || DEFAULT_PENDING[lang] || DEFAULT_PENDING.en;
+
+  if (matchedSlug && cData.journeys && cData.journeys[matchedSlug]) {
+    const jCost = cData.journeys[matchedSlug];
+    if (typeof jCost.fromUsd === 'number' && Number.isInteger(jCost.fromUsd) && jCost.fromUsd > 0) {
+      const formatted = new Intl.NumberFormat('en-US').format(jCost.fromUsd);
+      let priceText;
+      if (lang === 'ar') {
+        priceText = `تبدأ من <span dir="ltr" class="cost-price-val">US$ ${formatted}</span> للشخص الواحد`;
+      } else if (lang === 'ru') {
+        priceText = `От <span class="cost-price-val">US$ ${formatted}</span> на человека`;
+      } else {
+        priceText = `From <span class="cost-price-val">US$ ${formatted}</span> per person`;
+      }
+      destHtml += `<p class="cost-price-line">${priceText}</p>`;
+
+      const assumesText = cData.assumes && (cData.assumes[lang] || cData.assumes.en);
+      if (assumesText) {
+        destHtml += `<p class="cost-meta-line">${esc(assumesText)}</p>`;
+      }
+
+      const inc = jCost.includes && jCost.includes[lang];
+      if (Array.isArray(inc) && inc.length > 0) {
+        destHtml += `<ul class="cost-list">${inc.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
+      }
+
+      const exc = jCost.excludes && jCost.excludes[lang];
+      if (Array.isArray(exc) && exc.length > 0) {
+        destHtml += `<ul class="cost-list">${exc.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
+      }
+
+      const notesText = jCost.notes && (jCost.notes[lang] || jCost.notes.en);
+      if (notesText) {
+        destHtml += `<p class="cost-meta-line">${esc(notesText)}</p>`;
+      }
+
+      if (cData.validUntil) {
+        const validTxt = (t.cost_valid || 'Valid until {date}').replace('{date}', cData.validUntil);
+        destHtml += `<p class="cost-meta-line">${esc(validTxt)}</p>`;
+      }
+    } else {
+      destHtml = `<p class="cost-pending">${esc(pendingSentence)}</p>`;
+    }
+  } else {
+    destHtml = `<p class="cost-pending">${esc(pendingSentence)}</p>`;
+  }
+
+  // (4) Disclaimer
+  const disclaimerSentence = (cData.disclaimer && (cData.disclaimer[lang] || cData.disclaimer.en)) || t.cost_disclaimer || DEFAULT_DISCLAIMER[lang] || DEFAULT_DISCLAIMER.en;
+
+  cards.forEach(card => {
+    const titleEl = card.querySelector('.cost-card-title');
+    if (titleEl) titleEl.textContent = t.cost_title || 'Estimated cost';
+    card.setAttribute('aria-label', t.cost_title || 'Estimated cost');
+
+    const contentEl = card.querySelector('.cost-card-content');
+    if (contentEl) {
+      contentEl.innerHTML = `${budgetHtml}${bandJourneysHtml}${destHtml}`;
+    }
+
+    const disEl = card.querySelector('.cost-disclaimer');
+    if (disEl) disEl.textContent = disclaimerSentence;
+  });
+
+  if ($('planText')) $('planText').value = planText();
+  if ($('mailLink')) {
+    $('mailLink').href = 'mailto:inbound@rotwtravels.com?subject=' + encodeURIComponent('Russia trip plan') + '&body=' + encodeURIComponent(planText());
+  }
+}
+
 /* ---------- sync controls ---------- */
 function sync(animate){
   const t=L();
@@ -822,6 +1140,7 @@ function sync(animate){
   ['arrival','name','email','phone','company'].forEach(k=>{if($(k).value!==S[k])$(k).value=S[k];});
   $('consent').checked=S.consent;
   syncPanel(animate);
+  updateEstimatedCostCards();
 }
 
 /* ---------- steps ---------- */
@@ -876,6 +1195,7 @@ function planText(){const t=L(),p=buildPlan();const sel=ORDER.filter(id=>S.citie
   lines.push(`${t.l_len}: ${nightsTxt(S.nights)}`);
   lines.push(`${t.l_interests}: ${S.interests.map(k=>t.interests[k]).join(', ')||'—'}`);
   lines.push(`${t.l_budget}: ${S.budget?t.budget[S.budget]:'—'}`);
+  lines.push(`Estimated cost shown: ${getEstimatedCostSentence()}`);
   lines.push(`${t.l_visa}: ${S.visa?t.visa[S.visa]:'—'}`);
   if(S.arrival.trim())lines.push(`${t.l_arrival}: ${S.arrival.trim()}`);
   lines.push('',t.daybyday);
@@ -886,7 +1206,7 @@ function planText(){const t=L(),p=buildPlan();const sel=ORDER.filter(id=>S.citie
 /* ---------- language ---------- */
 function applyLang(){const t=L();
   loadFont(lang);
-  document.documentElement.lang=lang;document.documentElement.dir=t.dir;$('lang').value=lang;
+  document.documentElement.lang=lang;document.documentElement.dir=t.dir;const langEl=$('lang');if(langEl)langEl.value=lang;
   document.querySelectorAll('[data-i18n]').forEach(e=>{const v=t[e.dataset.i18n];if(typeof v==='string')e.textContent=v;});
   ['who','budget','visa'].forEach(k=>$(k)._labels());
   $('who').setAttribute('aria-label',t.q1);$('budget').setAttribute('aria-label',t.q5);$('interests').setAttribute('aria-label',t.q4);$('cities').setAttribute('aria-label',t.q2);
@@ -906,331 +1226,164 @@ window.addEventListener('rotw-lang-change', e => { if (e.detail && e.detail.lang
 applyLang();
 document.querySelectorAll('.step').forEach(s=>s.hidden=+s.dataset.step!==S.step);
 chrome();
+fetchCosts();
 </script>
-  <script src="./shell/shell.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="./shell/logo-anim.js" defer></script>
+<script src="./shell/shell.js" defer></script>
+<script src="./shell/footer-reveal.js" defer></script>
+<script src="./shell/sasha-chat.js" defer></script>
+</div>
 <!-- SHELL:FOOTER -->
 <footer class="rotw-shell-footer" role="contentinfo">
-  <!-- Collapsed Persistent Dock Console -->
-  <aside class="rotw-dock" id="rotw-dock" aria-label="Sasha's Travel Console">
-    <div class="dock-sasha-block" id="bubble">
-      <div class="dock-sasha-avatar">
-        <img src="./assets/sasha.webp" alt="Sasha" width="40" height="40" loading="lazy">
-      </div>
-      <b id="guide-name" style="display:none;">Sasha</b>
-      <span class="dock-speech" id="guide-text">Hi again! Tell me who’s coming and I’ll set the pace of the trip.</span>
+  <!-- Sunset Flood Blurred Blobs (Scrubbed with Reveal) -->
+  <div class="footer-blobs" aria-hidden="true">
+    <div class="footer-blob blob-coral"></div>
+    <div class="footer-blob blob-rose"></div>
+    <div class="footer-blob blob-amber"></div>
+  </div>
+
+  <div class="footer-inner">
+    <!-- Top Row: Kicker & Two-Tone Statement -->
+    <div class="footer-kicker">
+      <svg class="footer-sparkle" width="14" height="14" viewBox="0 0 24 24" fill="#FFAF28" aria-hidden="true">
+        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+      </svg>
+      <span>Contact us</span>
     </div>
 
-    <div class="dock-actions">
-      <button class="btn-dock-dir" id="btn-dock-directory" aria-expanded="false" aria-controls="rotw-directory-tray">
-        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-menu"/></svg>
-        <span class="label-text">Full directory</span>
-      </button>
+    <h2 class="footer-statement">
+      <span class="statement-line statement-cream">Questions before you pack?</span>
+      <span class="statement-line statement-muted"> Write to Sasha and the Moscow team.</span>
+    </h2>
 
-      <a href="plan.html" class="btn-dock-plan">
-        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
-        <span class="label-text">Plan a trip</span>
-      </a>
-    </div>
-  </aside>
-
-  <!-- Slide-Up Full Directory Disclosure Backdrop -->
-  <div class="rotw-tray-backdrop" id="rotw-tray-backdrop" aria-hidden="true"></div>
-
-  <!-- Slide-Up Full Directory Disclosure Tray -->
-  <div class="rotw-directory-tray" id="rotw-directory-tray" role="region" aria-label="Directory &amp; Operations" hidden="until-found">
-    <!-- Tray Header -->
-    <div class="tray-header">
-      <div class="tray-title-block">
-        <h3 id="rotw-directory-heading">Directory &amp; Operations</h3>
-        <p>Official Inbound Tour Operator · Moscow</p>
+    <!-- Mid Row: Contact Email + Nav Links + Offices Strip -->
+    <div class="footer-mid">
+      <div class="footer-contact">
+        <p class="footer-contact-label">Contact the Moscow team at:</p>
+        <a href="mailto:inbound@rotwtravels.com" class="footer-contact-email">
+          <span dir="ltr">inbound@rotwtravels.com</span>
+          <svg class="shell-icon footer-email-arrow" aria-hidden="true"><use href="./assets/icons.svg#icon-arrow-right"/></svg>
+        </a>
       </div>
-      <button class="tray-close-btn" id="btn-tray-close" aria-label="Close directory">
-        <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-close"/></svg>
-      </button>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="destinations/index.html" class="footer-nav-link">Destinations</a>
+        <a href="journeys/index.html" class="footer-nav-link">Journeys</a>
+        <a href="experiences.html" class="footer-nav-link">Experiences</a>
+        <a href="for-agents.html" class="footer-nav-link">For agents</a>
+        <a href="blog/index.html" class="footer-nav-link">Blog</a>
+        <a href="contact.html" class="footer-nav-link">Contact</a>
+      </nav>
     </div>
 
-    <!-- Tray Scrollable Content -->
-    <div class="tray-scroll-body">
-      <!-- 1. Sasha's Note Slip -->
-      <article class="sasha-note-card">
-        <div class="note-tape note-tape-left" aria-hidden="true"></div>
-        <div class="note-tape note-tape-right" aria-hidden="true"></div>
-        <p class="sasha-handwriting-p">
-          “Questions before you pack? Write to Sasha and the Moscow team.”
-          <span class="sasha-signature-span">— Sasha</span>
-        </p>
-        <div class="sasha-note-actions">
-          <a href="plan.html" class="btn-note-plan">
-            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
-            <span>Plan a trip</span>
-          </a>
-          <a href="mailto:inbound@rotwtravels.com" class="btn-note-mail">
-            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-mail"/></svg>
-            <span>Write to the Moscow team</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- 2. Two Doors Block -->
-      <div class="tray-doors-block">
-        <!-- Door 1: Travellers -->
-        <div class="tray-door-card tray-door-light">
-          <div>
-            <h4>Planning a trip to Russia?</h4>
-            <ul class="tray-door-list">
-              <li>Private and small-group tours</li>
-              <li>Visa support and invitation letters</li>
-              <li>Airport meet and assist</li>
-              <li>Transfers and cars with a driver</li>
-              <li>Hotels, rail and domestic flights</li>
-              <li>Ballet, opera and event tickets</li>
-            </ul>
-          </div>
-          <a href="plan.html" class="btn-pill-plan tray-door-btn">
-            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-paper-plane"/></svg>
-            <span>Plan a trip</span>
-          </a>
-        </div>
-
-        <!-- Door 2: Agents & Tour Operators -->
-        <div class="tray-door-card tray-door-dark">
-          <div>
-            <h4>Travel agent or operator?</h4>
-            <ul class="tray-door-list">
-              <li>Net rates for FIT and groups</li>
-              <li>MICE, incentives and conferences</li>
-              <li>Guides in English, Hindi, Arabic and more</li>
-              <li>An operations desk in Moscow</li>
-              <li>Outbound to Dubai, Oman, India and Hong Kong</li>
-            </ul>
-          </div>
-          <a href="plan.html#agent" class="btn-pill-plan tray-door-btn" style="background:transparent;border:1px solid var(--shell-gold);color:var(--shell-gold);">
-            <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-briefcase"/></svg>
-            <span>Request net rates</span>
-          </a>
-        </div>
+    <div class="footer-offices-strip">
+      <div class="footer-office-col">
+        <span class="footer-office-name">Moscow</span>
+        <span class="footer-office-time" data-clock="moscow"><span dir="ltr">--:--</span></span>
+        <a href="tel:+79309454007" class="footer-office-link"><span dir="ltr">+7 930 945 4007</span></a>
       </div>
-
-      <!-- 3. Directory as Luggage Tags -->
-      <div class="tray-tags-container">
-        <!-- Desktop 3-Column Tags -->
-        <div class="desktop-tags-grid">
-          <!-- Tag 1: Places & Expeditions -->
-          <article class="luggage-tag">
-            <div class="tag-eyelet-row">
-              <div class="tag-twine" aria-hidden="true"></div>
-              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
-            </div>
-            <div class="tag-header">
-              <div class="tag-category-kicker">TAG 01 · ROUTE &amp; STOPS</div>
-              <h4>Places &amp; Expeditions</h4>
-            </div>
-            <div class="tag-body">
-              <ul class="tag-dest-grid">
-                <li><a href="destinations/moscow.html">Moscow</a></li>
-                <li><a href="destinations/st-petersburg.html">St Petersburg</a></li>
-                <li><a href="destinations/sochi.html">Sochi</a></li>
-                <li><a href="destinations/murmansk.html">Murmansk</a></li>
-                <li><a href="destinations/kazan.html">Kazan</a></li>
-                <li><a href="destinations/lake-baikal.html">Lake Baikal</a></li>
-                <li><a href="destinations/kamchatka.html">Kamchatka</a></li>
-                <li><a href="destinations/vladivostok.html">Vladivostok</a></li>
-              </ul>
-              <div class="tag-section-subhead">Journeys</div>
-              <ul class="tag-sublinks">
-                <li><a href="index.html#journeys">The two capitals (7 days)</a></li>
-                <li><a href="index.html#journeys">Moscow and the Golden Ring (5 days)</a></li>
-                <li><a href="index.html#journeys">Trans-Siberian, end to end (15 days)</a></li>
-                <li><a href="index.html#journeys">Baikal on clear ice (7 days)</a></li>
-                <li><a href="index.html#journeys">Kazan and the Volga (4 days)</a></li>
-                <li><a href="index.html#journeys">Northern lights (4 days)</a></li>
-              </ul>
-              <div class="tag-section-subhead">Contact</div>
-              <ul class="tag-sublinks">
-                <li><a href="destinations/index.html">Destinations</a></li>
-                <li><a href="reviews.html">Traveller reviews</a></li>
-                <li><a href="notes/index.html">Sasha's notebook</a></li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Tag 2: Agents & Services -->
-          <article class="luggage-tag">
-            <div class="tag-eyelet-row">
-              <div class="tag-twine" aria-hidden="true"></div>
-              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
-            </div>
-            <div class="tag-header">
-              <div class="tag-category-kicker">TAG 02 · TRADE &amp; CONCIERGE</div>
-              <h4>Agents &amp; Services</h4>
-            </div>
-            <div class="tag-body">
-              <ul class="tag-services-list">
-                <li>Confidential B2B Net Rates for FIT &amp; Groups</li>
-                <li>Russian E-Visa &amp; Tourist Invitation Letters</li>
-                <li>Airport &amp; Station Meet &amp; Assist with Chauffeur</li>
-                <li>Boutique Hotels &amp; Luxury Rail Accommodations</li>
-                <li>MICE &amp; Corporate Incentives Planning</li>
-              </ul>
-              <a href="plan.html#agent" class="tag-cta-btn">
-                <span>Request net rates</span>
-                <svg class="shell-icon shell-icon-flip" aria-hidden="true"><use href="./assets/icons.svg#icon-arrow-right"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Tag 3: Moscow HQ & Clocks -->
-          <article class="luggage-tag">
-            <div class="tag-eyelet-row">
-              <div class="tag-twine" aria-hidden="true"></div>
-              <div class="tag-eyelet" aria-hidden="true"><div class="tag-eyelet-hole"></div></div>
-            </div>
-            <div class="tag-header">
-              <div class="tag-category-kicker">TAG 03 · HEADQUARTERS</div>
-              <h4>Moscow HQ &amp; Clocks</h4>
-            </div>
-            <div class="tag-body">
-              <div class="tag-hq-address">
-                <strong>ROTW Travels</strong><br>
-                106 Prospekt Mira, Moscow 129626
-              </div>
-              <div class="tag-contact-lines">
-                <div>Moscow: <a href="tel:+79309454007"><span dir="ltr">+7 930 945 4007</span></a></div>
-                <div>Dubai: <a href="tel:+97143384075"><span dir="ltr">+971 4 338 4075</span></a></div>
-                <div>Mumbai: <a href="tel:+919821869339"><span dir="ltr">+91 98218 69339</span></a></div>
-                <div>Inbound: <a href="mailto:inbound@rotwtravels.com"><span dir="ltr">inbound@rotwtravels.com</span></a></div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Mobile Accordions (<860px) -->
-        <div class="mobile-tag-accordion">
-          <details class="accordion-tag" open>
-            <summary>
-              <span>Tag 01 · Places &amp; Expeditions</span>
-              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
-            </summary>
-            <div class="accordion-content">
-              <ul class="tag-dest-grid">
-                <li><a href="destinations/moscow.html">Moscow</a></li>
-                <li><a href="destinations/st-petersburg.html">St Petersburg</a></li>
-                <li><a href="destinations/sochi.html">Sochi</a></li>
-                <li><a href="destinations/murmansk.html">Murmansk</a></li>
-                <li><a href="destinations/kazan.html">Kazan</a></li>
-                <li><a href="destinations/lake-baikal.html">Lake Baikal</a></li>
-                <li><a href="destinations/kamchatka.html">Kamchatka</a></li>
-                <li><a href="destinations/vladivostok.html">Vladivostok</a></li>
-              </ul>
-              <div class="tag-section-subhead" style="margin-top:12px;">Journeys</div>
-              <ul class="tag-sublinks">
-                <li><a href="index.html#journeys">The two capitals (7 days)</a></li>
-                <li><a href="index.html#journeys">Moscow and the Golden Ring (5 days)</a></li>
-                <li><a href="index.html#journeys">Trans-Siberian, end to end (15 days)</a></li>
-                <li><a href="index.html#journeys">Baikal on clear ice (7 days)</a></li>
-                <li><a href="index.html#journeys">Kazan and the Volga (4 days)</a></li>
-                <li><a href="index.html#journeys">Northern lights (4 days)</a></li>
-              </ul>
-              <div class="tag-section-subhead" style="margin-top:12px;">Contact</div>
-              <ul class="tag-sublinks">
-                <li><a href="destinations/index.html">Destinations</a></li>
-                <li><a href="reviews.html">Traveller reviews</a></li>
-                <li><a href="notes/index.html">Sasha's notebook</a></li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="accordion-tag">
-            <summary>
-              <span>Tag 02 · Agents &amp; Services</span>
-              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
-            </summary>
-            <div class="accordion-content">
-              <ul class="tag-services-list">
-                <li>Confidential B2B Net Rates for FIT &amp; Groups</li>
-                <li>Russian E-Visa &amp; Tourist Invitation Letters</li>
-                <li>Airport &amp; Station Meet &amp; Assist with Chauffeur</li>
-                <li>Boutique Hotels &amp; Luxury Rail Accommodations</li>
-                <li>MICE &amp; Corporate Incentives Planning</li>
-              </ul>
-              <a href="plan.html#agent" class="tag-cta-btn" style="margin-top:14px;">
-                <span>Request net rates</span>
-                <svg class="shell-icon shell-icon-flip" aria-hidden="true"><use href="./assets/icons.svg#icon-arrow-right"/></svg>
-              </a>
-            </div>
-          </details>
-
-          <details class="accordion-tag">
-            <summary>
-              <span>Tag 03 · Moscow HQ &amp; Clocks</span>
-              <svg class="shell-icon" aria-hidden="true"><use href="./assets/icons.svg#icon-chevron-down"/></svg>
-            </summary>
-            <div class="accordion-content">
-              <div class="tag-hq-address" style="border:0;padding-bottom:6px;">
-                <strong>ROTW Travels</strong><br>
-                106 Prospekt Mira, Moscow 129626
-              </div>
-              <div class="tag-contact-lines">
-                <div>Moscow: <a href="tel:+79309454007"><span dir="ltr">+7 930 945 4007</span></a></div>
-                <div>Dubai: <a href="tel:+97143384075"><span dir="ltr">+971 4 338 4075</span></a></div>
-                <div>Mumbai: <a href="tel:+919821869339"><span dir="ltr">+91 98218 69339</span></a></div>
-                <div>Email: <a href="mailto:inbound@rotwtravels.com"><span dir="ltr">inbound@rotwtravels.com</span></a></div>
-              </div>
-            </div>
-          </details>
-        </div>
+      <div class="footer-office-col">
+        <span class="footer-office-name">Dubai</span>
+        <span class="footer-office-time" data-clock="dubai"><span dir="ltr">--:--</span></span>
+        <a href="tel:+97143384075" class="footer-office-link"><span dir="ltr">+971 4 338 4075</span></a>
       </div>
-
-      <!-- 4. Five Live Clocks -->
-      <section class="tray-clocks-section" aria-label="Bureau time zones">
-        <div class="tray-clocks-head">Bureau Local Times</div>
-        <div class="tray-clocks-row">
-          <div class="tray-clock-dial">
-          <span class="dial-city">Moscow</span>
-          <span class="dial-time" data-clock="moscow"><span dir="ltr">--:--</span></span>
-        </div>
-        <div class="tray-clock-dial">
-          <span class="dial-city">Dubai</span>
-          <span class="dial-time" data-clock="dubai"><span dir="ltr">--:--</span></span>
-        </div>
-        <div class="tray-clock-dial">
-          <span class="dial-city">Mumbai</span>
-          <span class="dial-time" data-clock="mumbai"><span dir="ltr">--:--</span></span>
-        </div>
-        <div class="tray-clock-dial">
-          <span class="dial-city">Muscat</span>
-          <span class="dial-time" data-clock="muscat"><span dir="ltr">--:--</span></span>
-        </div>
-        <div class="tray-clock-dial">
-          <span class="dial-city">Hong Kong</span>
-          <span class="dial-time" data-clock="hongkong"><span dir="ltr">--:--</span></span>
-        </div>
-        </div>
-      </section>
-
-      <!-- 5. Languages Section -->
-      <div class="tray-lang-section" role="group" aria-label="Language options">
-        <button class="tray-lang-btn active" data-shell-lang="en">English</button>
-      <button class="tray-lang-btn" data-shell-lang="ru">Русский</button>
-      <button class="tray-lang-btn" data-shell-lang="ar">العربية</button>
-      <button class="tray-lang-btn" data-shell-lang="hi">हिन्दी</button>
+      <div class="footer-office-col">
+        <span class="footer-office-name">Mumbai</span>
+        <span class="footer-office-time" data-clock="mumbai"><span dir="ltr">--:--</span></span>
+        <a href="tel:+919821869339" class="footer-office-link"><span dir="ltr">+91 98218 69339</span></a>
       </div>
+      <div class="footer-office-col">
+        <span class="footer-office-name">Muscat</span>
+        <span class="footer-office-time" data-clock="muscat"><span dir="ltr">--:--</span></span>
+        <a href="tel:+96879531629" class="footer-office-link"><span dir="ltr">+968 7953 1629</span></a>
+      </div>
+      <div class="footer-office-col">
+        <span class="footer-office-name">Hong Kong</span>
+        <span class="footer-office-time" data-clock="hongkong"><span dir="ltr">--:--</span></span>
+        <a href="tel:+85298441073" class="footer-office-link"><span dir="ltr">+852 9844 1073</span></a>
+      </div>
+    </div>
 
-      <!-- 6. Legal Row with Dashed Slots -->
-      <div class="tray-legal-section">
-        <div class="legal-slots-grid">
-          <div class="legal-slot">Tour operator registry no. · ROTW to supply</div>
-          <div class="legal-slot">Financial guarantee · ROTW to supply</div>
-          <div class="legal-slot">Memberships · ROTW to supply</div>
-        </div>
-        <div class="legal-bottom-row">
-          <span>© 2026 ROTW Travels · 106 Prospekt Mira, Moscow 129626</span>
-          <span class="legal-tagline" lang="ru">Дороги мира</span>
-        </div>
+    <!-- Floating zone above wordmark (Card 1: Write to Moscow team; Card 2: Live Clock) -->
+    <div class="footer-floats-bounds" aria-hidden="true">
+      <div class="footer-float-card card-write">
+        <a href="mailto:inbound@rotwtravels.com" class="float-card-link">
+          <span class="float-card-icon">✉</span>
+          <span class="float-card-title">Write to the Moscow team</span>
+          <span class="float-card-sub" dir="ltr">inbound@rotwtravels.com</span>
+        </a>
+      </div>
+      <div class="footer-float-card card-clock">
+        <span class="float-card-icon">⏱</span>
+        <span class="float-card-title">Moscow</span>
+        <span class="float-card-time" data-clock="moscow"><span dir="ltr">--:--</span></span>
+      </div>
+    </div>
+
+    <!-- Middle: Scrolling Marquee Line -->
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>ROTW TRAVELS · ДОРОГИ МИРА · MOSCOW · DUBAI · MUMBAI · MUSCAT · HONG KONG · </span>
+        <span>ROTW TRAVELS · ДОРОГИ МИРА · MOSCOW · DUBAI · MUMBAI · MUSCAT · HONG KONG · </span>
+        <span>ROTW TRAVELS · ДОРОГИ МИРА · MOSCOW · DUBAI · MUMBAI · MUSCAT · HONG KONG · </span>
+        <span>ROTW TRAVELS · ДОРОГИ МИРА · MOSCOW · DUBAI · MUMBAI · MUSCAT · HONG KONG · </span>
+      </div>
+    </div>
+
+    <!-- Bottom: Giant Wordmark SVG Cropped by Bottom Edge -->
+    <div class="footer-wordmark-wrap">
+      <svg class="footer-wordmark-svg" viewBox="106 70 346 146" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
+    <g class="fw-letters">
+      <g class="fw-l fw-r" id="fw-l-r"><path fill="var(--lg-main, #F8F1E8)" d="M136.8 80.8C136.8 80.8 108.4 88.6 112.3 117.6C112.3 117.6 114.6 142.8 147.3 169.3C147.3 169.3 155.1 176.8 170.1 173.5C170.1 173.5 170.7 173.2 169.9 172.5C169.9 172.5 137.9 150.8 127.1 128.9C127.1 128.9 108.2 98.7 136.8 81.2Z"/><path fill="var(--lg-main, #F8F1E8)" d="M125.7 97.9C134.6 97.9 158.7 96.5 166.6 98.5C170.1 99.4 173.9 101.3 176.6 105.2C180.6 111.1 181.6 121.0 177.8 127.1C174.1 133.2 164.8 139.3 142.4 138.5C142.4 138.5 136.5 136.1 134.9 127.2C134.9 127.2 141.5 126.9 148.3 126.4C154.2 125.9 163.0 126.6 166.0 120.5C166.6 119.3 166.8 117.8 166.2 116.1C166.2 116.1 164.2 110.9 154.5 110.0L137.3 109.8C137.3 109.8 127.4 111.4 125.4 98.3Z"/><path fill="var(--lg-main, #F8F1E8)" d="M114.9 174.1L125.9 174.1L125.9 157.0C125.9 157.0 124.7 152.8 120.4 152.6L115.0 152.6Z"/></g>
+      <g class="fw-l fw-o" id="fw-l-o"><g class="fw-ring"><path fill="var(--lg-main, #F8F1E8)" d="M226.6 97.6C247.7 97.6 264.8 114.7 264.8 135.8C264.8 156.9 247.7 174.1 226.6 174.1C205.4 174.1 188.3 156.9 188.3 135.8C188.3 114.7 205.4 97.6 226.6 97.6ZM226.6 112.5C239.4 112.5 249.9 122.9 249.9 135.8C249.9 148.7 239.4 159.2 226.6 159.2C213.7 159.2 203.2 148.7 203.2 135.8C203.2 122.9 213.7 112.5 226.6 112.5"/></g><g class="fw-dirs"><path fill="var(--lg-hole, #0B1626)" d="M227.5 106.8L226.7 106.8L225.3 104.6L225.3 106.8L224.4 106.8L224.4 103.3L225.3 103.3L226.7 105.4L226.7 103.3L227.5 103.3Z"/><path fill="var(--lg-hole, #0B1626)" d="M225.6 168.7C225.4 168.7 225.1 168.7 224.9 168.6C224.7 168.5 224.6 168.4 224.4 168.2C224.3 168.1 224.3 167.8 224.3 167.6L225.2 167.6C225.2 167.8 225.2 167.8 225.3 167.9C225.4 168.0 225.5 168.0 225.6 168.0C225.7 168.0 225.8 168.0 225.9 167.9C226.0 167.9 226.0 167.8 226.0 167.7C226.0 167.6 226.0 167.5 225.9 167.5C225.9 167.4 225.8 167.4 225.7 167.3C225.6 167.3 225.5 167.3 225.3 167.2C225.1 167.1 224.9 167.1 224.8 167.0C224.7 166.9 224.5 166.8 224.4 166.7C224.3 166.6 224.3 166.4 224.3 166.2C224.3 165.8 224.4 165.6 224.6 165.4C224.9 165.2 225.2 165.1 225.6 165.1C225.9 165.1 226.3 165.2 226.5 165.4C226.7 165.6 226.8 165.8 226.9 166.2L225.9 166.2C225.9 166.1 225.9 166.0 225.8 165.9C225.7 165.8 225.6 165.8 225.5 165.8C225.4 165.8 225.3 165.8 225.3 165.9C225.2 165.9 225.2 166.0 225.2 166.1C225.2 166.2 225.2 166.3 225.3 166.4C225.4 166.4 225.6 166.5 225.8 166.6C226.1 166.7 226.3 166.7 226.4 166.8C226.5 166.9 226.7 167.0 226.8 167.1C226.9 167.3 226.9 167.4 226.9 167.6C226.9 167.8 226.9 168.0 226.8 168.2C226.7 168.3 226.5 168.5 226.3 168.6C226.1 168.7 225.9 168.7 225.6 168.7"/><path fill="var(--lg-hole, #0B1626)" d="M198.0 133.8L197.1 137.3L196.1 137.3L195.5 135.0L194.9 137.3L193.9 137.3L193.0 133.8L193.9 133.8L194.4 136.4L195.1 133.8L196.0 133.8L196.6 136.4L197.1 133.8Z"/><path fill="var(--lg-hole, #0B1626)" d="M256.6 134.3L256.6 135.1L257.8 135.1L257.8 135.7L256.6 135.7L256.6 136.5L257.9 136.5L257.9 137.2L255.8 137.2L255.8 133.7L257.9 133.7L257.9 134.3Z"/></g></g>
+      <g class="fw-l fw-t" id="fw-l-t"><path fill="var(--lg-main, #F8F1E8)" d="M271.2 97.1C271.2 97.1 278.9 96.6 283.7 103.1C289.5 111.0 286.6 118.6 286.3 127.2C286.2 133.7 286.9 141.9 290.6 148.5C295.8 157.6 302.8 158.9 312.2 158.9C317.1 158.9 321.9 159.0 325.8 161.4C329.2 163.5 333.1 167.4 333.0 174.3L304.6 173.9C304.6 173.9 287.0 172.9 275.6 153.7C275.6 153.7 271.1 148.3 271.2 130.9Z"/></g>
+      <g class="fw-l fw-w1" id="fw-l-w1"><path fill="var(--lg-main, #F8F1E8)" d="M328.9 98.1L350.6 98.0L375.8 148.6C375.8 148.6 378.3 151.5 375.9 156.6L365.7 177.1Z"/></g>
+      <g class="fw-l fw-w2" id="fw-l-w2"><path fill="var(--lg-main, #F8F1E8)" d="M373.1 98.1L394.7 98.0L419.9 148.6C419.9 148.6 422.4 151.5 419.9 156.6L409.8 177.1Z"/></g>
+    </g>
+    <g class="fw-face" id="fw-face">
+      <g class="fw-ticks" id="fw-ticks">
+        <path fill="none" stroke="#F8F1E8" stroke-width="0.8" stroke-linecap="round" d="M226.6 120.3L226.6 113.8 M235.7 120.1L237.6 116.8 M242.3 126.8L245.6 124.8 M242.1 135.8L248.6 135.8 M242.3 144.9L245.6 146.8 M235.7 151.6L237.6 154.9 M226.6 151.3L226.6 157.8 M217.5 151.6L215.6 154.9 M210.8 144.9L207.5 146.8 M211.1 135.8L204.6 135.8 M210.8 126.8L207.5 124.8 M217.4 120.1L215.6 116.8"/>
+      </g>
+    </g>
+    <g class="fw-needle" id="fw-needle">
+      <circle cx="226.55" cy="135.85" r="18.7" fill="none" stroke="rgba(0,0,0,0.001)" stroke-width="0.1"/>
+      <line x1="226.55" y1="135.85" x2="226.55" y2="139.6" stroke="var(--lg-main, #F8F1E8)" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="226.55" y1="135.85" x2="226.55" y2="120.65" stroke="var(--lg-main, #F8F1E8)" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="226.55" y1="120.65" x2="226.55" y2="117.15" stroke="var(--lg-red, #E53824)" stroke-width="1.4" stroke-linecap="round"/>
+      <circle class="fw-hub" cx="226.55" cy="135.85" r="2.2" fill="var(--lg-main, #F8F1E8)"/>
+      <circle cx="226.55" cy="135.85" r="1.0" fill="var(--lg-hole, #0B1626)"/>
+    </g>
+    <g class="fw-accent">
+      <g class="fw-red fw-leaf" id="fw-leaf"><path fill="var(--lg-red, #E53824)" d="M315.7 117.8L295.6 117.9C295.6 117.9 287.9 118.7 289.5 127.6C289.5 127.6 290.8 133.8 298.3 133.2C298.3 133.2 307.8 134.8 313.6 126.1C313.6 126.1 315.9 123.6 315.9 117.9Z"/></g>
+      <g class="fw-red fw-flag" id="fw-flag"><path fill="var(--lg-red, #E53824)" d="M414.7 98.3L450.4 98.0L433.4 131.2C431.6 107.5 433.8 110.0 414.7 98.3"/></g>
+      <g class="fw-plane" id="fw-plane"><path fill="var(--lg-red, #E53824)" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></g>
+    </g>
+    <g class="fw-tagline" id="fw-tagline">
+      <path fill="#F8F1E8" d="M124.9 211.6L126.5 203.6L128.6 203.6C128.6 203.6 133.3 194.1 133.7 187.4L146.1 187.4L142.8 203.5L145.1 203.6L143.5 211.8L140.4 211.6L141.3 206.4L128.9 206.3L128 211.7ZM132 203.7L139.1 203.7L141.6 190.5L136.3 190.5C136.3 190.5 134.7 200.9 132.1 203.2ZM161.7 199.1C161.9 197.9 162.4 196.7 163.2 195.5C164 194.3 165 193.4 166.3 192.8C167.5 192.2 168.8 191.9 170.2 191.9C172.4 191.9 174 192.6 175.1 194C176.3 195.4 176.7 197.2 176.3 199.3C175.9 201.5 175 203.2 173.3 204.7C171.7 206.1 169.8 206.8 167.7 206.8C166.4 206.8 165.2 206.5 164.2 205.9C163.1 205.3 162.3 204.4 161.9 203.3C161.5 202.2 161.4 200.8 161.7 199.1ZM165.5 199.3C165.3 200.8 165.4 201.8 166 202.6C166.5 203.3 167.3 203.7 168.2 203.7C169.2 203.7 170.1 203.3 170.9 202.6C171.7 201.8 172.2 200.7 172.4 199.3C172.7 197.9 172.5 196.9 172 196.1C171.5 195.3 170.7 195 169.7 195C168.7 195 167.8 195.3 167.1 196.1C166.3 196.9 165.7 197.9 165.5 199.3ZM194.1 192.2L197.6 192.2L197.3 194.3C197.8 193.6 198.5 193 199.4 192.6C200.2 192.1 201.1 191.9 202.1 191.9C203.7 191.9 205 192.6 206 193.9C206.9 195.1 207.2 197 206.8 199.3C206.4 201.6 205.5 203.5 204.1 204.8C202.7 206.1 201.2 206.8 199.6 206.8C198.8 206.8 198.1 206.6 197.5 206.3C196.9 206 196.3 205.5 195.8 204.7L194.6 211.8L190.8 211.8ZZM196.6 199.1C196.4 200.7 196.5 201.9 197 202.7C197.5 203.4 198.2 203.8 199.1 203.8C200 203.8 200.8 203.4 201.5 202.7C202.2 202 202.6 200.9 202.9 199.3C203.2 197.8 203.1 196.7 202.6 196C202.1 195.2 201.4 194.9 200.5 194.9C199.6 194.9 198.8 195.2 198.1 195.9C197.4 196.6 196.9 197.7 196.6 199.1ZM222.7 199.1C222.9 197.9 223.4 196.7 224.2 195.5C225 194.3 226 193.4 227.3 192.8C228.5 192.2 229.8 191.9 231.2 191.9C233.3 191.9 235 192.6 236.1 194C237.3 195.4 237.6 197.2 237.3 199.3C236.9 201.5 235.9 203.2 234.3 204.7C232.7 206.1 230.8 206.8 228.7 206.8C227.4 206.8 226.2 206.5 225.1 205.9C224.1 205.3 223.3 204.4 222.9 203.3C222.5 202.2 222.4 200.8 222.7 199.1ZM226.5 199.3C226.2 200.8 226.4 201.8 226.9 202.6C227.5 203.3 228.2 203.7 229.2 203.7C230.2 203.7 231.1 203.3 231.9 202.6C232.7 201.8 233.2 200.7 233.4 199.3C233.7 197.9 233.5 196.9 233 196.1C232.4 195.3 231.7 195 230.7 195C229.7 195 228.8 195.3 228 196.1C227.2 196.9 226.7 197.9 226.5 199.3ZM255 192.2L264.6 192.2L264.1 195.2L258.3 195.2L256.4 206.4L252.6 206.4ZZM280.2 192.2L283.9 192.2L282.4 201.1L289.6 192.2L293.3 192.2L291 206.4L287.3 206.4L288.9 197.4L281.5 206.4L277.9 206.4ZZM311.1 192.2L315.7 192.2L317.6 202.1L322.8 192.2L327.4 192.2L325.1 206.4L321.8 206.4L323.4 197.1L318.4 206.4L315.2 206.4L313.4 197.1L311.9 206.4L308.7 206.4ZZM344.9 192.2L348.5 192.2L347 201.1L354.3 192.2L358 192.2L355.6 206.4L352 206.4L353.5 197.4L346.1 206.4L342.5 206.4ZZM375.5 192.2L379 192.2L378.6 194.3C379.2 193.6 379.9 193 380.7 192.6C381.6 192.1 382.5 191.9 383.4 191.9C385.1 191.9 386.4 192.6 387.3 193.9C388.3 195.1 388.5 197 388.1 199.3C387.7 201.6 386.8 203.5 385.5 204.8C384.1 206.1 382.6 206.8 380.9 206.8C380.1 206.8 379.4 206.6 378.9 206.3C378.3 206 377.7 205.5 377.1 204.7L375.9 211.8L372.2 211.8ZZM378 199.1C377.7 200.7 377.8 201.9 378.3 202.7C378.9 203.4 379.6 203.8 380.5 203.8C381.3 203.8 382.1 203.4 382.8 202.7C383.5 202 384 200.9 384.3 199.3C384.5 197.8 384.4 196.7 383.9 196C383.5 195.2 382.8 194.9 381.9 194.9C381 194.9 380.2 195.2 379.4 195.9C378.7 196.6 378.2 197.7 378 199.1ZM408.1 196.6L404.8 196C405.4 194.6 406.3 193.6 407.3 192.9C408.4 192.2 409.8 191.9 411.7 191.9C413.3 191.9 414.6 192.1 415.3 192.5C416.1 192.9 416.6 193.4 416.8 194C417 194.6 417 195.7 416.7 197.4L415.9 201.8C415.7 203 415.6 203.9 415.6 204.5C415.7 205.1 415.8 205.8 416 206.4L412.3 206.4C412.2 206.2 412.2 205.8 412.1 205.3C412.1 205.1 412 205 412 204.9C411.3 205.5 410.5 206 409.7 206.3C409 206.6 408.2 206.8 407.3 206.8C405.9 206.8 404.8 206.4 404.1 205.6C403.4 204.8 403.1 203.8 403.3 202.6C403.5 201.8 403.8 201.1 404.3 200.4C404.8 199.8 405.4 199.3 406.1 199C406.9 198.7 407.9 198.4 409.3 198.1C411.1 197.8 412.3 197.5 413.1 197.2L413.1 196.8C413.2 196.1 413.2 195.6 412.8 195.2C412.5 194.9 411.9 194.8 410.9 194.8C410.2 194.8 409.7 194.9 409.3 195.2C408.8 195.4 408.5 195.9 408.1 196.6ZM412.6 199.6C412.1 199.8 411.3 200 410.3 200.2C409.2 200.4 408.5 200.7 408.1 200.9C407.6 201.2 407.2 201.7 407.1 202.2C407.1 202.7 407.2 203.2 407.5 203.6C407.8 203.9 408.3 204.1 408.9 204.1C409.6 204.1 410.3 203.9 411 203.5C411.5 203.1 411.8 202.7 412.1 202.2C412.2 201.9 412.4 201.3 412.5 200.4Z"/>
+    </g>
+  </svg>
+    </div>
+
+    <!-- Bottom Tiny Row Above Crop -->
+    <div class="footer-bottom-row">
+      <div class="footer-bottom-left">
+        <span>© 2026 ROTW Travels</span>
+        <span class="footer-bottom-tagline" lang="ru">· «Дороги мира»</span>
+      </div>
+      <div class="footer-bottom-right">
+        <a href="terms.html" class="footer-legal-link">Terms and conditions</a>
+        <a href="privacy.html" class="footer-legal-link">Privacy policy</a>
+        <span class="footer-legal-slot">Tour operator registry no. · ROTW to supply</span>
+        <span class="footer-legal-slot">Financial guarantee · ROTW to supply</span>
+        <span class="footer-legal-slot">Memberships · ROTW to supply</span>
       </div>
     </div>
   </div>
 </footer>
 <!-- /SHELL:FOOTER -->
+  <script>window.__SASHA_LINES = [{"id":"plan","kind":"greet","text":"Hi again! Tell me who’s coming and I’ll set the pace of the trip."}];</script>
 </body>
 </html>
