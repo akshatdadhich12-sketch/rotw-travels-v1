@@ -217,6 +217,8 @@ body.dest .d-hub-hero .d-hub-title {
   text-align: start;
   letter-spacing: -0.01em;
   margin: 0;
+}
+html.motion-ready body.dest .d-hub-hero .d-hub-title {
   animation: dHeroRise 900ms var(--ease-arrive) both;
 }
 
@@ -272,7 +274,15 @@ body.dest .d-hero-name {
   -webkit-background-clip: text;
   background-clip: text;
   text-align: center;
+}
+html.motion-ready body.dest .d-hero-name {
   animation: dHeroRise 900ms var(--ease-arrive) both;
+}
+
+@media (max-width: 600px) {
+  body.dest .d-hero-word {
+    min-height: 223px;
+  }
 }
 
 @media (min-width: 1440px) {

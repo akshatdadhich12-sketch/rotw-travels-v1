@@ -23,9 +23,12 @@
   <meta name="twitter:image" content="https://akshatdadhich12-sketch.github.io/rotw-travels-v1/assets/og-default.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:ital,wght@0,400;0,500;1,500&display=swap">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@400;500&display=swap">
+  
   <link rel="stylesheet" href="./pages/src/pages.css">
   <link rel="stylesheet" href="./shell/shell.css">
+  <link rel="stylesheet" href="./shell/motion.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +98,7 @@
 }
   </script>
 </head>
-<body class="home-style has-curtain">
+<body class="home-style">
 <!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">Skip to main content</a>
 
@@ -340,7 +343,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/experiences/experiences-tank-forest-ride.mp4" poster="./notes/assets/activities/experiences/experiences-tank-forest-ride-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Group in warm winter gear riding a tracked vehicle in a snowy forest.">
+        <video data-src="./notes/assets/activities/experiences/experiences-tank-forest-ride.mp4" data-poster="./notes/assets/activities/experiences/experiences-tank-forest-ride-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Group in warm winter gear riding a tracked vehicle in a snowy forest.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -356,7 +359,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/experiences/experiences-hovercraft-ice-glide.mp4" poster="./notes/assets/activities/experiences/experiences-hovercraft-ice-glide-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="Red hovercraft skimming over winter ice and snow plain.">
+        <video data-src="./notes/assets/activities/experiences/experiences-hovercraft-ice-glide.mp4" data-poster="./notes/assets/activities/experiences/experiences-hovercraft-ice-glide-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="Red hovercraft skimming over winter ice and snow plain.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -372,7 +375,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/experiences/experiences-atv-giant-wheels.mp4" poster="./notes/assets/activities/experiences/experiences-atv-giant-wheels-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="All-terrain vehicle with oversized tires driving through snow.">
+        <video data-src="./notes/assets/activities/experiences/experiences-atv-giant-wheels.mp4" data-poster="./notes/assets/activities/experiences/experiences-atv-giant-wheels-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="All-terrain vehicle with oversized tires driving through snow.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -388,7 +391,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/experiences/experiences-bear-feeding-tom.mp4" poster="./notes/assets/activities/experiences/experiences-bear-feeding-tom-poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="none" aria-label="Trainer standing in a snowy forest with a brown bear.">
+        <video data-src="./notes/assets/activities/experiences/experiences-bear-feeding-tom.mp4" data-poster="./notes/assets/activities/experiences/experiences-bear-feeding-tom-poster.webp" width="1280" height="720" muted loop playsinline preload="none" aria-label="Trainer standing in a snowy forest with a brown bear.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -404,7 +407,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/experiences/experiences-bear-trainer-hug.mp4" poster="./notes/assets/activities/experiences/experiences-bear-trainer-hug-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Trainer standing near a brown bear leaning against a forest tree.">
+        <video data-src="./notes/assets/activities/experiences/experiences-bear-trainer-hug.mp4" data-poster="./notes/assets/activities/experiences/experiences-bear-trainer-hug-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Trainer standing near a brown bear leaning against a forest tree.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -419,8 +422,7 @@
 
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/experiences/experiences-atv-river-crossing-800.webp" alt="Quad bike driving through shallow river water in woods." width="1600" height="1200" loading="lazy">
+          <img src="./notes/assets/activities/experiences/experiences-atv-river-crossing-800.webp" srcset="./notes/assets/activities/experiences/experiences-atv-river-crossing-800.webp 800w, ./notes/assets/activities/experiences/experiences-atv-river-crossing-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Quad bike driving through shallow river water in woods." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">River crossing</h3>
@@ -434,8 +436,7 @@
 
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/experiences/experiences-husky-snow-park-800.webp" alt="Siberian huskies resting in snow inside a forest enclosure." width="1500" height="1000" loading="lazy">
+          <img src="./notes/assets/activities/experiences/experiences-husky-snow-park-800.webp" srcset="./notes/assets/activities/experiences/experiences-husky-snow-park-800.webp 800w, ./notes/assets/activities/experiences/experiences-husky-snow-park-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Siberian huskies resting in snow inside a forest enclosure." width="1500" height="1000" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Husky park</h3>
@@ -449,8 +450,7 @@
 
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/experiences/experiences-circus-acrobats-800.webp" alt="Circus acrobats performing above the arena." width="1280" height="962" loading="lazy">
+          <img src="./notes/assets/activities/experiences/experiences-circus-acrobats-800.webp" srcset="./notes/assets/activities/experiences/experiences-circus-acrobats-800.webp 800w, ./notes/assets/activities/experiences/experiences-circus-acrobats-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Circus acrobats performing above the arena." width="1280" height="962" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Circus arena</h3>
@@ -472,8 +472,7 @@
           
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/moscow/moscow-zaryadye-floating-bridge-800.webp" alt="A traveller looking out over the Moscow city panorama from Zaryadye Floating Bridge." width="1200" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/moscow/moscow-zaryadye-floating-bridge-800.webp" data-srcset="./notes/assets/activities/moscow/moscow-zaryadye-floating-bridge-800.webp 800w, ./notes/assets/activities/moscow/moscow-zaryadye-floating-bridge-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="A traveller looking out over the Moscow city panorama from Zaryadye Floating Bridge." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Zaryadye Floating Bridge Walk</h3>
@@ -487,8 +486,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/moscow/moscow-red-square-st-basils-800.webp" alt="Couple smiling in front of the colourful domes of Saint Basil Cathedral on Red Square." width="1200" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/moscow/moscow-red-square-st-basils-800.webp" data-srcset="./notes/assets/activities/moscow/moscow-red-square-st-basils-800.webp 800w, ./notes/assets/activities/moscow/moscow-red-square-st-basils-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Couple smiling in front of the colourful domes of Saint Basil Cathedral on Red Square." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Red Square St Basil’s Visit</h3>
@@ -502,8 +500,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/moscow/moscow-metro-palaces-tour-800.webp" alt="Three tourists admiring the mosaic architecture inside a historic Moscow metro station." width="720" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/moscow/moscow-metro-palaces-tour-800.webp" data-srcset="./notes/assets/activities/moscow/moscow-metro-palaces-tour-800.webp 800w, ./notes/assets/activities/moscow/moscow-metro-palaces-tour-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Three tourists admiring the mosaic architecture inside a historic Moscow metro station." width="720" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Moscow Metro Palaces Tour</h3>
@@ -517,8 +514,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/moscow/moscow-gum-ice-cream-800.webp" alt="A traveller enjoying a classic waffle cone ice cream inside GUM on Red Square." width="1200" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/moscow/moscow-gum-ice-cream-800.webp" data-srcset="./notes/assets/activities/moscow/moscow-gum-ice-cream-800.webp 800w, ./notes/assets/activities/moscow/moscow-gum-ice-cream-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="A traveller enjoying a classic waffle cone ice cream inside GUM on Red Square." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Traditional GUM Ice Cream</h3>
@@ -532,8 +528,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/moscow/moscow-kremlin-cathedral-square-800.webp" alt="Couple standing in historic Cathedral Square inside the Moscow Kremlin." width="1200" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/moscow/moscow-kremlin-cathedral-square-800.webp" data-srcset="./notes/assets/activities/moscow/moscow-kremlin-cathedral-square-800.webp 800w, ./notes/assets/activities/moscow/moscow-kremlin-cathedral-square-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Couple standing in historic Cathedral Square inside the Moscow Kremlin." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Moscow Kremlin Cathedral Walk</h3>
@@ -547,8 +542,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/moscow/moscow-old-arbat-cafe-terrace-800.webp" alt="Couple seated at an outdoor cafe terrace table along Arbat pedestrian street." width="1600" height="1200" loading="lazy">
+          <img data-src="./notes/assets/activities/moscow/moscow-old-arbat-cafe-terrace-800.webp" data-srcset="./notes/assets/activities/moscow/moscow-old-arbat-cafe-terrace-800.webp 800w, ./notes/assets/activities/moscow/moscow-old-arbat-cafe-terrace-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Couple seated at an outdoor cafe terrace table along Arbat pedestrian street." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Historic Arbat Cafe Lunch</h3>
@@ -562,8 +556,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/moscow/moscow-sparrow-hills-university-800.webp" alt="Travelers taking in panoramic views of Moscow from the Sparrow Hills viewpoint." width="1600" height="1204" loading="lazy">
+          <img data-src="./notes/assets/activities/moscow/moscow-sparrow-hills-university-800.webp" data-srcset="./notes/assets/activities/moscow/moscow-sparrow-hills-university-800.webp 800w, ./notes/assets/activities/moscow/moscow-sparrow-hills-university-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Travelers taking in panoramic views of Moscow from the Sparrow Hills viewpoint." width="1600" height="1204" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Sparrow Hills Panorama View</h3>
@@ -577,8 +570,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/moscow/moscow-victory-park-promenade-800.webp" alt="Couple walking along the paved avenue towards the monument in Victory Park." width="1200" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/moscow/moscow-victory-park-promenade-800.webp" data-srcset="./notes/assets/activities/moscow/moscow-victory-park-promenade-800.webp 800w, ./notes/assets/activities/moscow/moscow-victory-park-promenade-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Couple walking along the paved avenue towards the monument in Victory Park." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Victory Park Memorial Promenade</h3>
@@ -598,8 +590,7 @@
           
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-ice-floating-night-frigate-800.webp" alt="People in bright insulated suits floating among river ice chunks near a wooden tall ship." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-ice-floating-night-frigate-800.webp" data-srcset="./notes/assets/activities/spb/spb-ice-floating-night-frigate-800.webp 800w, ./notes/assets/activities/spb/spb-ice-floating-night-frigate-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="People in bright insulated suits floating among river ice chunks near a wooden tall ship." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Neva River Ice Floating</h3>
@@ -613,8 +604,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-ice-floating-neva-bank-800.webp" alt="Floaters in orange immersion suits resting in cold river water near illuminated ship." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-ice-floating-neva-bank-800.webp" data-srcset="./notes/assets/activities/spb/spb-ice-floating-neva-bank-800.webp 800w, ./notes/assets/activities/spb/spb-ice-floating-neva-bank-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Floaters in orange immersion suits resting in cold river water near illuminated ship." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Historic Frigate Ice Floating</h3>
@@ -628,8 +618,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-ice-floating-historic-ship-800.webp" alt="Travellers floating relaxed on icy winter water with illuminated ship masts in background." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-ice-floating-historic-ship-800.webp" data-srcset="./notes/assets/activities/spb/spb-ice-floating-historic-ship-800.webp 800w, ./notes/assets/activities/spb/spb-ice-floating-historic-ship-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Travellers floating relaxed on icy winter water with illuminated ship masts in background." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Night Floating on Ice</h3>
@@ -643,8 +632,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-ice-floating-illuminated-frigate-800.webp" alt="People floating in freezing river water among floating ice chunks at night." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-ice-floating-illuminated-frigate-800.webp" data-srcset="./notes/assets/activities/spb/spb-ice-floating-illuminated-frigate-800.webp 800w, ./notes/assets/activities/spb/spb-ice-floating-illuminated-frigate-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="People floating in freezing river water among floating ice chunks at night." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Frigate Winter Ice Swim</h3>
@@ -658,8 +646,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-ice-floating-frozen-river-800.webp" alt="Group of participants floating safely in freezing water in red survival suits." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-ice-floating-frozen-river-800.webp" data-srcset="./notes/assets/activities/spb/spb-ice-floating-frozen-river-800.webp 800w, ./notes/assets/activities/spb/spb-ice-floating-frozen-river-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Group of participants floating safely in freezing water in red survival suits." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Group Ice Floe Floating</h3>
@@ -673,8 +660,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-ice-floating-ice-floe-800.webp" alt="Person in waterproof immersion suit pulling oneself up onto an ice floe." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-ice-floating-ice-floe-800.webp" data-srcset="./notes/assets/activities/spb/spb-ice-floating-ice-floe-800.webp 800w, ./notes/assets/activities/spb/spb-ice-floating-ice-floe-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Person in waterproof immersion suit pulling oneself up onto an ice floe." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Climbing River Ice Floe</h3>
@@ -688,8 +674,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-ice-floating-day-group-800.webp" alt="Group enjoying daytime ice floating experience in snowy open river pool." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-ice-floating-day-group-800.webp" data-srcset="./notes/assets/activities/spb/spb-ice-floating-day-group-800.webp 800w, ./notes/assets/activities/spb/spb-ice-floating-day-group-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Group enjoying daytime ice floating experience in snowy open river pool." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Daytime River Ice Floating</h3>
@@ -703,8 +688,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-ice-floating-orange-suit-800.webp" alt="Person floating peacefully on river water in an orange Arctic survival drysuit." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-ice-floating-orange-suit-800.webp" data-srcset="./notes/assets/activities/spb/spb-ice-floating-orange-suit-800.webp 800w, ./notes/assets/activities/spb/spb-ice-floating-orange-suit-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Person floating peacefully on river water in an orange Arctic survival drysuit." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Winter Immersion Suit Float</h3>
@@ -719,7 +703,7 @@
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/spb/spb-peterhof-fountains-walk.mp4" poster="./notes/assets/activities/spb/spb-peterhof-fountains-walk-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Park visitors walking under leafy trees along a wet pathway in Peterhof gardens.">
+        <video data-src="./notes/assets/activities/spb/spb-peterhof-fountains-walk.mp4" data-poster="./notes/assets/activities/spb/spb-peterhof-fountains-walk-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Park visitors walking under leafy trees along a wet pathway in Peterhof gardens.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -735,7 +719,7 @@
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/spb/spb-peterhof-gardens-promenade.mp4" poster="./notes/assets/activities/spb/spb-peterhof-gardens-promenade-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Tourists walking along a tree-lined gravel park avenue in the Peterhof estate.">
+        <video data-src="./notes/assets/activities/spb/spb-peterhof-gardens-promenade.mp4" data-poster="./notes/assets/activities/spb/spb-peterhof-gardens-promenade-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Tourists walking along a tree-lined gravel park avenue in the Peterhof estate.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -750,8 +734,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-church-spilled-blood-800.webp" alt="Tour group smiling outside the colourful Church of the Savior on Spilled Blood." width="1200" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-church-spilled-blood-800.webp" data-srcset="./notes/assets/activities/spb/spb-church-spilled-blood-800.webp 800w, ./notes/assets/activities/spb/spb-church-spilled-blood-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Tour group smiling outside the colourful Church of the Savior on Spilled Blood." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Church on Spilled Blood</h3>
@@ -765,8 +748,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-palace-square-hermitage-800.webp" alt="Tourists posing in Palace Square before the green facade of the Winter Palace." width="1600" height="1200" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-palace-square-hermitage-800.webp" data-srcset="./notes/assets/activities/spb/spb-palace-square-hermitage-800.webp 800w, ./notes/assets/activities/spb/spb-palace-square-hermitage-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Tourists posing in Palace Square before the green facade of the Winter Palace." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Palace Square Hermitage Visit</h3>
@@ -780,8 +762,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-peterhof-grand-cascade-800.webp" alt="Couple posing before the golden fountains and Grand Cascade at Peterhof Palace." width="1600" height="2134" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-peterhof-grand-cascade-800.webp" data-srcset="./notes/assets/activities/spb/spb-peterhof-grand-cascade-800.webp 800w, ./notes/assets/activities/spb/spb-peterhof-grand-cascade-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Couple posing before the golden fountains and Grand Cascade at Peterhof Palace." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Peterhof Grand Cascade Visit</h3>
@@ -795,8 +776,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-saint-isaacs-cathedral-800.webp" alt="Tour group posing near the towering granite columns of Saint Isaac’s Cathedral." width="1200" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-saint-isaacs-cathedral-800.webp" data-srcset="./notes/assets/activities/spb/spb-saint-isaacs-cathedral-800.webp 800w, ./notes/assets/activities/spb/spb-saint-isaacs-cathedral-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Tour group posing near the towering granite columns of Saint Isaac’s Cathedral." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Saint Isaac’s Cathedral Excursion</h3>
@@ -810,8 +790,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-bronze-horseman-senate-square-800.webp" alt="Tourists exploring Senate Square near the historic Bronze Horseman statue in Saint Petersburg." width="1600" height="1200" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-bronze-horseman-senate-square-800.webp" data-srcset="./notes/assets/activities/spb/spb-bronze-horseman-senate-square-800.webp 800w, ./notes/assets/activities/spb/spb-bronze-horseman-senate-square-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Tourists exploring Senate Square near the historic Bronze Horseman statue in Saint Petersburg." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Bronze Horseman Monument Walk</h3>
@@ -825,8 +804,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/spb/spb-neva-canal-cruise-800.webp" alt="Tourists crossing an ornate iron and stone bridge over a Saint Petersburg canal." width="1600" height="1200" loading="lazy">
+          <img data-src="./notes/assets/activities/spb/spb-neva-canal-cruise-800.webp" data-srcset="./notes/assets/activities/spb/spb-neva-canal-cruise-800.webp 800w, ./notes/assets/activities/spb/spb-neva-canal-cruise-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Tourists crossing an ornate iron and stone bridge over a Saint Petersburg canal." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Historic Canal Bridge Walk</h3>
@@ -847,7 +825,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/sochi/sochi-skypark-bungee-207.mp4" poster="./notes/assets/activities/sochi/sochi-skypark-bungee-207-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="Bungee jumper leaping forward into the deep mountain canyon from bridge station.">
+        <video data-src="./notes/assets/activities/sochi/sochi-skypark-bungee-207.mp4" data-poster="./notes/assets/activities/sochi/sochi-skypark-bungee-207-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="Bungee jumper leaping forward into the deep mountain canyon from bridge station.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -862,8 +840,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/sochi/sochi-skypark-canyon-swing-800.webp" alt="Happy couple suspended together on giant high-altitude swing over canyon." width="1600" height="1068" loading="lazy">
+          <img data-src="./notes/assets/activities/sochi/sochi-skypark-canyon-swing-800.webp" data-srcset="./notes/assets/activities/sochi/sochi-skypark-canyon-swing-800.webp 800w, ./notes/assets/activities/sochi/sochi-skypark-canyon-swing-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Happy couple suspended together on giant high-altitude swing over canyon." width="1600" height="1068" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Giant Canyon Swing Flight</h3>
@@ -877,8 +854,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/sochi/sochi-skypark-bridge-walk-800.webp" alt="Couple walking along narrow steel suspension footbridge high above forested valley." width="1600" height="1068" loading="lazy">
+          <img data-src="./notes/assets/activities/sochi/sochi-skypark-bridge-walk-800.webp" data-srcset="./notes/assets/activities/sochi/sochi-skypark-bridge-walk-800.webp 800w, ./notes/assets/activities/sochi/sochi-skypark-bridge-walk-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Couple walking along narrow steel suspension footbridge high above forested valley." width="1600" height="1068" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Skybridge Suspension Walk</h3>
@@ -892,8 +868,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/sochi/sochi-skypark-bridge-bungee-800.webp" alt="Woman bungee jumping from suspension bridge platform plunging towards green valley." width="1600" height="2398" loading="lazy">
+          <img data-src="./notes/assets/activities/sochi/sochi-skypark-bridge-bungee-800.webp" data-srcset="./notes/assets/activities/sochi/sochi-skypark-bridge-bungee-800.webp 800w, ./notes/assets/activities/sochi/sochi-skypark-bridge-bungee-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Woman bungee jumping from suspension bridge platform plunging towards green valley." width="1600" height="2398" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Skybridge Bungee Freefall</h3>
@@ -907,8 +882,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/sochi/sochi-skypark-tandem-zipline-800.webp" alt="Couple riding tandem zipline cables over lush green canyon canopy in Sochi." width="1600" height="1068" loading="lazy">
+          <img data-src="./notes/assets/activities/sochi/sochi-skypark-tandem-zipline-800.webp" data-srcset="./notes/assets/activities/sochi/sochi-skypark-tandem-zipline-800.webp 800w, ./notes/assets/activities/sochi/sochi-skypark-tandem-zipline-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Couple riding tandem zipline cables over lush green canyon canopy in Sochi." width="1600" height="1068" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Tandem Canyon Zipline Ride</h3>
@@ -922,8 +896,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/sochi/sochi-valley-horseback-trail-800.webp" alt="Two people riding horses along an alpine trail surrounded by dense summer greenery." width="1600" height="1068" loading="lazy">
+          <img data-src="./notes/assets/activities/sochi/sochi-valley-horseback-trail-800.webp" data-srcset="./notes/assets/activities/sochi/sochi-valley-horseback-trail-800.webp 800w, ./notes/assets/activities/sochi/sochi-valley-horseback-trail-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Two people riding horses along an alpine trail surrounded by dense summer greenery." width="1600" height="1068" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Mountain Valley Horseback Ride</h3>
@@ -938,7 +911,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/sochi/sochi-skypark-skybridge-walk.mp4" poster="./notes/assets/activities/sochi/sochi-skypark-skybridge-walk-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="People walking along the long suspension footbridge over Akhshtyr Gorge.">
+        <video data-src="./notes/assets/activities/sochi/sochi-skypark-skybridge-walk.mp4" data-poster="./notes/assets/activities/sochi/sochi-skypark-skybridge-walk-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="People walking along the long suspension footbridge over Akhshtyr Gorge.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -954,7 +927,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/sochi/sochi-skypark-bungee-jump.mp4" poster="./notes/assets/activities/sochi/sochi-skypark-bungee-jump-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="Bungee jumper diving from the suspended platform above the canyon.">
+        <video data-src="./notes/assets/activities/sochi/sochi-skypark-bungee-jump.mp4" data-poster="./notes/assets/activities/sochi/sochi-skypark-bungee-jump-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="Bungee jumper diving from the suspended platform above the canyon.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -970,7 +943,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/sochi/sochi-skypark-giant-swing.mp4" poster="./notes/assets/activities/sochi/sochi-skypark-giant-swing-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="Two riders swinging over the forested river canyon on giant swings.">
+        <video data-src="./notes/assets/activities/sochi/sochi-skypark-giant-swing.mp4" data-poster="./notes/assets/activities/sochi/sochi-skypark-giant-swing-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="Two riders swinging over the forested river canyon on giant swings.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -986,7 +959,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/sochi/sochi-pebble-beach-relaxation.mp4" poster="./notes/assets/activities/sochi/sochi-pebble-beach-relaxation-poster.webp" width="720" height="408" autoplay muted loop playsinline preload="none" aria-label="People sitting on red beanbag cushions on Sochi pebble beach.">
+        <video data-src="./notes/assets/activities/sochi/sochi-pebble-beach-relaxation.mp4" data-poster="./notes/assets/activities/sochi/sochi-pebble-beach-relaxation-poster.webp" width="720" height="408" muted loop playsinline preload="none" aria-label="People sitting on red beanbag cushions on Sochi pebble beach.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1002,7 +975,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/sochi/sochi-rosa-khutor-cable-car.mp4" poster="./notes/assets/activities/sochi/sochi-rosa-khutor-cable-car-poster.webp" width="720" height="408" autoplay muted loop playsinline preload="none" aria-label="Red gondola cable car climbing above mountain slopes in Rosa Khutor.">
+        <video data-src="./notes/assets/activities/sochi/sochi-rosa-khutor-cable-car.mp4" data-poster="./notes/assets/activities/sochi/sochi-rosa-khutor-cable-car-poster.webp" width="720" height="408" muted loop playsinline preload="none" aria-label="Red gondola cable car climbing above mountain slopes in Rosa Khutor.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1017,8 +990,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/sochi/sochi-ekzarkho-horseback-trail-800.webp" alt="Man and woman riding horses along a verdant mountain forest trail." width="1440" height="960" loading="lazy">
+          <img data-src="./notes/assets/activities/sochi/sochi-ekzarkho-horseback-trail-800.webp" data-srcset="./notes/assets/activities/sochi/sochi-ekzarkho-horseback-trail-800.webp 800w, ./notes/assets/activities/sochi/sochi-ekzarkho-horseback-trail-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Man and woman riding horses along a verdant mountain forest trail." width="1440" height="960" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Mountain horseback riding</h3>
@@ -1032,8 +1004,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/sochi/sochi-skypark-zipline-flight-800.webp" alt="Couple in safety harnesses gliding on an aerial zipline across the canyon." width="1600" height="1067" loading="lazy">
+          <img data-src="./notes/assets/activities/sochi/sochi-skypark-zipline-flight-800.webp" data-srcset="./notes/assets/activities/sochi/sochi-skypark-zipline-flight-800.webp 800w, ./notes/assets/activities/sochi/sochi-skypark-zipline-flight-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Couple in safety harnesses gliding on an aerial zipline across the canyon." width="1600" height="1067" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Canyon zipline flight</h3>
@@ -1047,8 +1018,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/sochi/sochi-ekzarkho-balloon-flight-800.webp" alt="Colorful hot air balloon inflating beside a grazing horse on mountain meadow." width="1600" height="1067" loading="lazy">
+          <img data-src="./notes/assets/activities/sochi/sochi-ekzarkho-balloon-flight-800.webp" data-srcset="./notes/assets/activities/sochi/sochi-ekzarkho-balloon-flight-800.webp 800w, ./notes/assets/activities/sochi/sochi-ekzarkho-balloon-flight-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Colorful hot air balloon inflating beside a grazing horse on mountain meadow." width="1600" height="1067" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Hot air balloon ascent</h3>
@@ -1069,7 +1039,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/murmansk/murmansk-reindeer-sleigh-forest.mp4" poster="./notes/assets/activities/murmansk/murmansk-reindeer-sleigh-forest-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Reindeer pulling a wooden sleigh through deep snow among pine trees.">
+        <video data-src="./notes/assets/activities/murmansk/murmansk-reindeer-sleigh-forest.mp4" data-poster="./notes/assets/activities/murmansk/murmansk-reindeer-sleigh-forest-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Reindeer pulling a wooden sleigh through deep snow among pine trees.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1085,7 +1055,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/murmansk/murmansk-arctic-ocean-floating.mp4" poster="./notes/assets/activities/murmansk/murmansk-arctic-ocean-floating-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Group in yellow and red immersion suits floating in Arctic ocean slush.">
+        <video data-src="./notes/assets/activities/murmansk/murmansk-arctic-ocean-floating.mp4" data-poster="./notes/assets/activities/murmansk/murmansk-arctic-ocean-floating-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Group in yellow and red immersion suits floating in Arctic ocean slush.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1101,7 +1071,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/murmansk/murmansk-sami-shaman-drumming.mp4" poster="./notes/assets/activities/murmansk/murmansk-sami-shaman-drumming-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Sami shaman in traditional folk dress beating a drum near a fire inside a yurt tent.">
+        <video data-src="./notes/assets/activities/murmansk/murmansk-sami-shaman-drumming.mp4" data-poster="./notes/assets/activities/murmansk/murmansk-sami-shaman-drumming-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Sami shaman in traditional folk dress beating a drum near a fire inside a yurt tent.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1116,8 +1086,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/murmansk-reindeer-herd-winter-800.webp" alt="Group guiding a herd of reindeer across vast snow-covered Arctic plains." width="1600" height="900" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/murmansk-reindeer-herd-winter-800.webp" data-srcset="./notes/assets/activities/murmansk/murmansk-reindeer-herd-winter-800.webp 800w, ./notes/assets/activities/murmansk/murmansk-reindeer-herd-winter-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Group guiding a herd of reindeer across vast snow-covered Arctic plains." width="1600" height="900" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Guiding Arctic Reindeer Herd</h3>
@@ -1131,8 +1100,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/murmansk-teriberka-dragon-eggs-walk-800.webp" alt="Woman in red winter jacket sitting on giant smooth round stones on Arctic sea beach." width="1600" height="900" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/murmansk-teriberka-dragon-eggs-walk-800.webp" data-srcset="./notes/assets/activities/murmansk/murmansk-teriberka-dragon-eggs-walk-800.webp 800w, ./notes/assets/activities/murmansk/murmansk-teriberka-dragon-eggs-walk-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Woman in red winter jacket sitting on giant smooth round stones on Arctic sea beach." width="1600" height="900" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Teriberka Pebble Beach Walk</h3>
@@ -1146,8 +1114,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/murmansk-reindeer-feeding-birch-800.webp" alt="Tourists feeding friendly reindeer with lichen in a green woodland paddock." width="1600" height="900" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/murmansk-reindeer-feeding-birch-800.webp" data-srcset="./notes/assets/activities/murmansk/murmansk-reindeer-feeding-birch-800.webp 800w, ./notes/assets/activities/murmansk/murmansk-reindeer-feeding-birch-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Tourists feeding friendly reindeer with lichen in a green woodland paddock." width="1600" height="900" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Feeding Woodland Reindeer Herd</h3>
@@ -1161,8 +1128,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/murmansk-arctic-floating-group-cheer-800.webp" alt="Group of happy tourists in bright orange immersion suits posing on snowy shore." width="1600" height="1200" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/murmansk-arctic-floating-group-cheer-800.webp" data-srcset="./notes/assets/activities/murmansk/murmansk-arctic-floating-group-cheer-800.webp 800w, ./notes/assets/activities/murmansk/murmansk-arctic-floating-group-cheer-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Group of happy tourists in bright orange immersion suits posing on snowy shore." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Arctic Ocean Floating Celebration</h3>
@@ -1176,8 +1142,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/murmansk-teriberka-fjord-boat-walk-800.webp" alt="Tourist on small motor boat exploring rocky coastline and fjords in Teriberka." width="1600" height="2844" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/murmansk-teriberka-fjord-boat-walk-800.webp" data-srcset="./notes/assets/activities/murmansk/murmansk-teriberka-fjord-boat-walk-800.webp 800w, ./notes/assets/activities/murmansk/murmansk-teriberka-fjord-boat-walk-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Tourist on small motor boat exploring rocky coastline and fjords in Teriberka." width="1600" height="2844" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Teriberka Barents Sea Voyage</h3>
@@ -1192,7 +1157,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/murmansk/murmansk-reindeer-sleigh-ride.mp4" poster="./notes/assets/activities/murmansk/murmansk-reindeer-sleigh-ride-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Two travelers ride in a wooden sleigh pulled by reindeer in snow.">
+        <video data-src="./notes/assets/activities/murmansk/murmansk-reindeer-sleigh-ride.mp4" data-poster="./notes/assets/activities/murmansk/murmansk-reindeer-sleigh-ride-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Two travelers ride in a wooden sleigh pulled by reindeer in snow.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1208,7 +1173,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/murmansk/murmansk-aurora-hunting-phone.mp4" poster="./notes/assets/activities/murmansk/murmansk-aurora-hunting-phone-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="A traveler holds up a smartphone filming the green aurora in the dark sky.">
+        <video data-src="./notes/assets/activities/murmansk/murmansk-aurora-hunting-phone.mp4" data-poster="./notes/assets/activities/murmansk/murmansk-aurora-hunting-phone-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="A traveler holds up a smartphone filming the green aurora in the dark sky.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1224,7 +1189,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/murmansk/murmansk-arctic-floating-suit.mp4" poster="./notes/assets/activities/murmansk/murmansk-arctic-floating-suit-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="People in bright red survival suits floating safely in icy Arctic water.">
+        <video data-src="./notes/assets/activities/murmansk/murmansk-arctic-floating-suit.mp4" data-poster="./notes/assets/activities/murmansk/murmansk-arctic-floating-suit-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="People in bright red survival suits floating safely in icy Arctic water.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1240,7 +1205,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/murmansk/murmansk-snow-tubing-winter.mp4" poster="./notes/assets/activities/murmansk/murmansk-snow-tubing-winter-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="A man in winter gear smiles as he slides down a snow slope on a tube.">
+        <video data-src="./notes/assets/activities/murmansk/murmansk-snow-tubing-winter.mp4" data-poster="./notes/assets/activities/murmansk/murmansk-snow-tubing-winter-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="A man in winter gear smiles as he slides down a snow slope on a tube.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1255,8 +1220,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/murmansk-snowmobile-tundra-sled-800.webp" alt="Snowmobile driver in winter helmet pulls a passenger sled across wide open snowfields." width="960" height="1280" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/murmansk-snowmobile-tundra-sled-800.webp" data-srcset="./notes/assets/activities/murmansk/murmansk-snowmobile-tundra-sled-800.webp 800w, ./notes/assets/activities/murmansk/murmansk-snowmobile-tundra-sled-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Snowmobile driver in winter helmet pulls a passenger sled across wide open snowfields." width="960" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Snowmobile across the tundra</h3>
@@ -1270,8 +1234,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/murmansk-husky-park-petting-800.webp" alt="Gloved hands gently pet the head of a calm Siberian husky outdoors." width="900" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/murmansk-husky-park-petting-800.webp" data-srcset="./notes/assets/activities/murmansk/murmansk-husky-park-petting-800.webp 800w, ./notes/assets/activities/murmansk/murmansk-husky-park-petting-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Gloved hands gently pet the head of a calm Siberian husky outdoors." width="900" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Meeting Siberian huskies</h3>
@@ -1285,8 +1248,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/teriberka-arctic-giant-throne-800.webp" alt="A tourist sits atop a huge wooden carved throne overlooking the Arctic coastline." width="900" height="1600" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/teriberka-arctic-giant-throne-800.webp" data-srcset="./notes/assets/activities/murmansk/teriberka-arctic-giant-throne-800.webp 800w, ./notes/assets/activities/murmansk/teriberka-arctic-giant-throne-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="A tourist sits atop a huge wooden carved throne overlooking the Arctic coastline." width="900" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Giant throne of Teriberka</h3>
@@ -1300,8 +1262,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/murmansk/murmansk-reindeer-feeding-800.webp" alt="Visitors in warm winter clothing stand close to reindeer with impressive antlers in snow." width="1600" height="2133" loading="lazy">
+          <img data-src="./notes/assets/activities/murmansk/murmansk-reindeer-feeding-800.webp" data-srcset="./notes/assets/activities/murmansk/murmansk-reindeer-feeding-800.webp 800w, ./notes/assets/activities/murmansk/murmansk-reindeer-feeding-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Visitors in warm winter clothing stand close to reindeer with impressive antlers in snow." width="1600" height="2133" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Feeding Arctic reindeer</h3>
@@ -1322,7 +1283,7 @@
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/baikal/baikal-ice-floating.mp4" poster="./notes/assets/activities/baikal/baikal-ice-floating-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="A traveler in a red immersion suit floats comfortably on cold dark water.">
+        <video data-src="./notes/assets/activities/baikal/baikal-ice-floating.mp4" data-poster="./notes/assets/activities/baikal/baikal-ice-floating-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="A traveler in a red immersion suit floats comfortably on cold dark water.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1338,7 +1299,7 @@
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/baikal/baikal-husky-sled-trail.mp4" poster="./notes/assets/activities/baikal/baikal-husky-sled-trail-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Point of view riding a winter dog sled pulled by huskies towards mountains.">
+        <video data-src="./notes/assets/activities/baikal/baikal-husky-sled-trail.mp4" data-poster="./notes/assets/activities/baikal/baikal-husky-sled-trail-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Point of view riding a winter dog sled pulled by huskies towards mountains.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1354,7 +1315,7 @@
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/baikal/baikal-horse-sleigh-ride.mp4" poster="./notes/assets/activities/baikal/baikal-horse-sleigh-ride-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Travelers wrapped in winter coats riding on a horse-drawn sleigh through snowy forest.">
+        <video data-src="./notes/assets/activities/baikal/baikal-horse-sleigh-ride.mp4" data-poster="./notes/assets/activities/baikal/baikal-horse-sleigh-ride-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Travelers wrapped in winter coats riding on a horse-drawn sleigh through snowy forest.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1370,7 +1331,7 @@
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/baikal/baikal-ice-swim-ladder.mp4" poster="./notes/assets/activities/baikal/baikal-ice-swim-ladder-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="A smiling woman in a thermal survival suit climbs a wooden ladder out of dark water.">
+        <video data-src="./notes/assets/activities/baikal/baikal-ice-swim-ladder.mp4" data-poster="./notes/assets/activities/baikal/baikal-ice-swim-ladder-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="A smiling woman in a thermal survival suit climbs a wooden ladder out of dark water.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1385,8 +1346,7 @@
 
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/baikal/baikal-ice-skating-800.webp" alt="Silhouette of an ice skater gliding on mirror-smooth lake ice toward a brilliant sunset." width="1000" height="750" loading="lazy">
+          <img data-src="./notes/assets/activities/baikal/baikal-ice-skating-800.webp" data-srcset="./notes/assets/activities/baikal/baikal-ice-skating-800.webp 800w, ./notes/assets/activities/baikal/baikal-ice-skating-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Silhouette of an ice skater gliding on mirror-smooth lake ice toward a brilliant sunset." width="1000" height="750" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Skating on mirror ice</h3>
@@ -1400,8 +1360,7 @@
 
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/baikal/baikal-ice-kiss-ritual-800.webp" alt="A traveler lies on the clear blue lake ice to drink through a straw." width="720" height="1280" loading="lazy">
+          <img data-src="./notes/assets/activities/baikal/baikal-ice-kiss-ritual-800.webp" data-srcset="./notes/assets/activities/baikal/baikal-ice-kiss-ritual-800.webp 800w, ./notes/assets/activities/baikal/baikal-ice-kiss-ritual-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="A traveler lies on the clear blue lake ice to drink through a straw." width="720" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">The Baikal Kiss ritual</h3>
@@ -1415,8 +1374,7 @@
 
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/baikal/baikal-ice-cave-exploration-800.webp" alt="A traveler touches an enormous natural wall of frozen white icicles on the lake shore." width="1280" height="853" loading="lazy">
+          <img data-src="./notes/assets/activities/baikal/baikal-ice-cave-exploration-800.webp" data-srcset="./notes/assets/activities/baikal/baikal-ice-cave-exploration-800.webp 800w, ./notes/assets/activities/baikal/baikal-ice-cave-exploration-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="A traveler touches an enormous natural wall of frozen white icicles on the lake shore." width="1280" height="853" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Exploring giant ice grottoes</h3>
@@ -1430,8 +1388,7 @@
 
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/baikal/baikal-snowmobile-safari-800.webp" alt="A group of tourists in winter helmets on modern snowmobiles along a forest trail." width="960" height="1280" loading="lazy">
+          <img data-src="./notes/assets/activities/baikal/baikal-snowmobile-safari-800.webp" data-srcset="./notes/assets/activities/baikal/baikal-snowmobile-safari-800.webp 800w, ./notes/assets/activities/baikal/baikal-snowmobile-safari-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="A group of tourists in winter helmets on modern snowmobiles along a forest trail." width="960" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Taiga snowmobile safari</h3>
@@ -1452,7 +1409,7 @@
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/general/general-aurora-watching-arctic.mp4" poster="./notes/assets/activities/general/general-aurora-watching-arctic-poster.webp" width="720" height="540" autoplay muted loop playsinline preload="none" aria-label="A traveller standing beneath a vibrant green aurora arching across the Arctic night sky.">
+        <video data-src="./notes/assets/activities/general/general-aurora-watching-arctic.mp4" data-poster="./notes/assets/activities/general/general-aurora-watching-arctic-poster.webp" width="720" height="540" muted loop playsinline preload="none" aria-label="A traveller standing beneath a vibrant green aurora arching across the Arctic night sky.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1468,7 +1425,7 @@
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/general/general-winter-horse-sleigh.mp4" poster="./notes/assets/activities/general/general-winter-horse-sleigh-poster.webp" width="540" height="954" autoplay muted loop playsinline preload="none" aria-label="Travelers bundled in winter coats riding on a wooden sleigh pulled through snowy woods.">
+        <video data-src="./notes/assets/activities/general/general-winter-horse-sleigh.mp4" data-poster="./notes/assets/activities/general/general-winter-horse-sleigh-poster.webp" width="540" height="954" muted loop playsinline preload="none" aria-label="Travelers bundled in winter coats riding on a wooden sleigh pulled through snowy woods.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1484,7 +1441,7 @@
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/general/general-siberian-husky-play.mp4" poster="./notes/assets/activities/general/general-siberian-husky-play-poster.webp" width="540" height="954" autoplay muted loop playsinline preload="none" aria-label="A tourist smiling and playing with an energetic Siberian husky dog outdoors in snow.">
+        <video data-src="./notes/assets/activities/general/general-siberian-husky-play.mp4" data-poster="./notes/assets/activities/general/general-siberian-husky-play-poster.webp" width="540" height="954" muted loop playsinline preload="none" aria-label="A tourist smiling and playing with an energetic Siberian husky dog outdoors in snow.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1500,7 +1457,7 @@
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
           
-        <video src="./notes/assets/activities/general/general-reindeer-sleigh-ride.mp4" poster="./notes/assets/activities/general/general-reindeer-sleigh-ride-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="Tourists gliding through snowy birch forest in a traditional reindeer-drawn wooden sleigh.">
+        <video data-src="./notes/assets/activities/general/general-reindeer-sleigh-ride.mp4" data-poster="./notes/assets/activities/general/general-reindeer-sleigh-ride-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="Tourists gliding through snowy birch forest in a traditional reindeer-drawn wooden sleigh.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1515,8 +1472,7 @@
 
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/general/general-sapsan-express-journey-800.webp" alt="Travelers smiling inside the bright and modern passenger cabin of high-speed Sapsan train." width="1600" height="1200" loading="lazy">
+          <img data-src="./notes/assets/activities/general/general-sapsan-express-journey-800.webp" data-srcset="./notes/assets/activities/general/general-sapsan-express-journey-800.webp 800w, ./notes/assets/activities/general/general-sapsan-express-journey-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Travelers smiling inside the bright and modern passenger cabin of high-speed Sapsan train." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Sapsan High-Speed Express</h3>
@@ -1530,8 +1486,7 @@
 
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/general/general-horse-sleigh-taiga-800.webp" alt="A horse-drawn wooden sleigh travelling through deep snow in a quiet winter pine forest." width="960" height="1280" loading="lazy">
+          <img data-src="./notes/assets/activities/general/general-horse-sleigh-taiga-800.webp" data-srcset="./notes/assets/activities/general/general-horse-sleigh-taiga-800.webp 800w, ./notes/assets/activities/general/general-horse-sleigh-taiga-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="A horse-drawn wooden sleigh travelling through deep snow in a quiet winter pine forest." width="960" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Horse Sleigh in Taiga</h3>
@@ -1545,8 +1500,7 @@
 
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/general/general-ethnic-village-winter-hospitality-800.webp" alt="Tourists bundled up in warm winter coats and fur hats posing outdoors in an ethnic village." width="720" height="1280" loading="lazy">
+          <img data-src="./notes/assets/activities/general/general-ethnic-village-winter-hospitality-800.webp" data-srcset="./notes/assets/activities/general/general-ethnic-village-winter-hospitality-800.webp 800w, ./notes/assets/activities/general/general-ethnic-village-winter-hospitality-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="Tourists bundled up in warm winter coats and fur hats posing outdoors in an ethnic village." width="720" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Traditional Winter Ethnic Village</h3>
@@ -1560,8 +1514,7 @@
 
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
-          
-        <img src="./notes/assets/activities/general/general-snowy-plaza-festive-tree-800.webp" alt="An illuminated festive tree shining brightly in a snow-covered urban plaza under falling snow." width="480" height="848" loading="lazy">
+          <img data-src="./notes/assets/activities/general/general-snowy-plaza-festive-tree-800.webp" data-srcset="./notes/assets/activities/general/general-snowy-plaza-festive-tree-800.webp 800w, ./notes/assets/activities/general/general-snowy-plaza-festive-tree-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="An illuminated festive tree shining brightly in a snow-covered urban plaza under falling snow." width="480" height="848" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">Festive Winter City Lights</h3>
@@ -1612,17 +1565,18 @@
       </div>
     </section>
   </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="./shell/logo-anim.js" defer></script>
 <script src="./shell/shell.js" defer></script>
 <script src="./shell/footer-reveal.js" defer></script>
 <script src="./shell/sasha-chat.js" defer></script>
+<script src="./shell/lazy-media.js" defer></script>
+<script src="./shell/motion.js" defer></script>
 </div>
 <!-- SHELL:FOOTER -->
 <footer class="rotw-shell-footer" role="contentinfo">
-  <!-- Sunset Flood Blurred Blobs (Scrubbed with Reveal) -->
+  <!-- Sunset Flood Blurred Blobs -->
   <div class="footer-blobs" aria-hidden="true">
     <div class="footer-blob blob-coral"></div>
     <div class="footer-blob blob-rose"></div>
@@ -1718,7 +1672,7 @@
       </div>
     </div>
 
-    <!-- Bottom: Giant Wordmark SVG Cropped by Bottom Edge -->
+    <!-- Giant Wordmark SVG -->
     <div class="footer-wordmark-wrap">
       <svg class="footer-wordmark-svg" viewBox="98 56 366 168" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
     <g class="fw-letters">
@@ -1752,7 +1706,7 @@
   </svg>
     </div>
 
-    <!-- Bottom Tiny Row Above Crop -->
+    <!-- Bottom Legal Row -->
     <div class="footer-bottom-row">
       <div class="footer-bottom-left">
         <span>© 2026 ROTW Travels</span>

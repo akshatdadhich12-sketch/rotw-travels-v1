@@ -266,11 +266,9 @@ body.home-style .hero-sasha-wrap {
 
 /* Frosted Card token */
 body.home-style .frosted-card {
-  background: rgba(21, 35, 59, 0.72);
+  background: rgba(21, 35, 59, 0.92);
   border: 1px solid rgba(244, 166, 60, 0.22);
   border-radius: 6px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-sizing: border-box;
   transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
@@ -368,15 +366,13 @@ body.home-style .jny-badge {
   position: absolute;
   top: 12px;
   inset-inline-end: 12px;
-  background: rgba(11, 22, 38, 0.88);
+  background: rgba(11, 22, 38, 0.92);
   color: var(--gold);
   border: 1px solid rgba(244, 166, 60, 0.4);
   font-size: 13px;
   font-weight: 500;
   border-radius: 999px;
   padding: 4px 12px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 body.home-style .jny-card-body {

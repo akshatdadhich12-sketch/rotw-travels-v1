@@ -23,8 +23,10 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1626'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23F4A63C' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23F8F1E8'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23F4A63C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&family=Caveat:wght@400;600&display=swap">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@400;500&family=Caveat:wght@500&display=swap">
 <link rel="stylesheet" href="../shell/shell.css">
+<link rel="stylesheet" href="../shell/motion.css">
 <style>
 /* Sasha's Field Notebook
    ROTW Travels Moscow - Integration with v1
@@ -1663,7 +1665,7 @@ body.lightbox-open #trip{
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TravelAgency","name":"ROTW Travels","telephone":"+7 930 945 4007","email":"inbound@rotwtravels.com","address":{"@type":"PostalAddress","streetAddress":"106 Prospekt Mira","addressLocality":"Moscow","postalCode":"129626","addressCountry":"RU"}},{"@type":"ItemList","inLanguage":"en","itemListElement":[{"@type":"ListItem","position":1,"name":"Moscow","url":"moscow.html"},{"@type":"ListItem","position":2,"name":"St Petersburg","url":"spb.html"},{"@type":"ListItem","position":3,"name":"The Golden Ring","url":"suzdal.html"},{"@type":"ListItem","position":4,"name":"Kazan","url":"kazan.html"},{"@type":"ListItem","position":5,"name":"Sochi","url":"sochi.html"},{"@type":"ListItem","position":6,"name":"Kaliningrad","url":"kaliningrad.html"},{"@type":"ListItem","position":7,"name":"Murmansk","url":"murmansk.html"},{"@type":"ListItem","position":8,"name":"Lake Baikal","url":"baikal.html"},{"@type":"ListItem","position":9,"name":"Vladivostok","url":"vladivostok.html"},{"@type":"ListItem","position":10,"name":"Kamchatka","url":"kamchatka.html"}]},{"@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"What is Sasha's notebook?","acceptedAnswer":{"@type":"Answer","text":"Sasha's notebook is our collection of field notes and practical travel insights gathered across Russia. It highlights authentic landmarks, quiet viewpoints, tea rooms, and local advice to help travellers experience each destination beyond ordinary tourist paths across the regions."}},{"@type":"Question","name":"Which cities are in the notebook?","acceptedAnswer":{"@type":"Answer","text":"The notebook covers ten remarkable destinations across Russia: Moscow, St Petersburg, Suzdal and the Golden Ring, Sochi, Murmansk, Kazan, Lake Baikal, Kamchatka, Vladivostok, and Kaliningrad on the Baltic coast. Each city features curated places and notes."}},{"@type":"Question","name":"How do I save places to my trip?","acceptedAnswer":{"@type":"Answer","text":"Click the pin button beside any note entry to add that location to your trip envelope. You can collect sights, culinary stops, and seasonal tips across multiple destinations as you browse the notebook entries before planning your route."}},{"@type":"Question","name":"Can I send my trip to the Moscow team?","acceptedAnswer":{"@type":"Answer","text":"Yes, open your saved trip envelope and tap Send my trip. This formats your curated pin collection into a neat inquiry that opens directly in your email app for our Moscow operations team to review and incorporate into your route."}},{"@type":"Question","name":"Which languages does the site use?","acceptedAnswer":{"@type":"Answer","text":"The site is fully available in three languages: English, Russian, and Arabic with right-to-left typography. You can switch between languages seamlessly at any time using the active language selector in the compass capsule header at the top of every page."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://akshatdadhich12-sketch.github.io/rotw-travels-v1/"},{"@type":"ListItem","position":2,"name":"Field Notebook","item":"https://akshatdadhich12-sketch.github.io/rotw-travels-v1/notes/index.html"}]}]}</script>
 </head>
-<body class="page-notebook has-curtain">
+<body class="page-notebook">
 <!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">Skip to main content</a>
 
@@ -2065,7 +2067,7 @@ body.lightbox-open #trip{
 </div>
 <!-- SHELL:FOOTER -->
 <footer class="rotw-shell-footer" role="contentinfo">
-  <!-- Sunset Flood Blurred Blobs (Scrubbed with Reveal) -->
+  <!-- Sunset Flood Blurred Blobs -->
   <div class="footer-blobs" aria-hidden="true">
     <div class="footer-blob blob-coral"></div>
     <div class="footer-blob blob-rose"></div>
@@ -2161,7 +2163,7 @@ body.lightbox-open #trip{
       </div>
     </div>
 
-    <!-- Bottom: Giant Wordmark SVG Cropped by Bottom Edge -->
+    <!-- Giant Wordmark SVG -->
     <div class="footer-wordmark-wrap">
       <svg class="footer-wordmark-svg" viewBox="98 56 366 168" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
     <g class="fw-letters">
@@ -2195,7 +2197,7 @@ body.lightbox-open #trip{
   </svg>
     </div>
 
-    <!-- Bottom Tiny Row Above Crop -->
+    <!-- Bottom Legal Row -->
     <div class="footer-bottom-row">
       <div class="footer-bottom-left">
         <span>© 2026 ROTW Travels</span>
@@ -2898,11 +2900,12 @@ body.lightbox-open #trip{
 })();
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="../shell/logo-anim.js" defer></script>
 <script src="../shell/shell.js" defer></script>
+<script src="../shell/lazy-media.js" defer></script>
+<script src="../shell/motion.js" defer></script>
 <script src="../shell/footer-reveal.js" defer></script>
 <script src="../shell/sasha-chat.js" defer></script>
 </body>

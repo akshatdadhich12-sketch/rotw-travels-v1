@@ -117,7 +117,7 @@
       bubble.setAttribute('role', 'listitem');
       bubble.innerHTML = '<p>' + text + '</p>';
       messagesContainer.appendChild(bubble);
-      bubble.scrollIntoView({ behavior: isReduced ? 'auto' : 'smooth', block: 'nearest' });
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
       emitSashaLine(lang, text, id);
     }
 
@@ -127,7 +127,7 @@
       bubble.setAttribute('role', 'listitem');
       bubble.innerHTML = '<p>' + text + '</p>';
       messagesContainer.appendChild(bubble);
-      bubble.scrollIntoView({ behavior: isReduced ? 'auto' : 'smooth', block: 'nearest' });
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
     function renderInitialChips(chipList) {
@@ -242,6 +242,19 @@
         }
       }
       renderFinalActions();
+      return;
+    }
+
+    // If the card already has pre-rendered initial content, wire up chips directly
+    const hasExistingBubble = messagesContainer.querySelector('.sasha-bubble, .chat-bubble');
+    const existingChips = actionsContainer ? actionsContainer.querySelectorAll('.sasha-chat-chip, .chat-chip') : [];
+    if (hasExistingBubble && existingChips.length > 0 && steps[0] && steps[0].chips) {
+      existingChips.forEach((btn, idx) => {
+        const chip = steps[0].chips[idx];
+        if (chip) {
+          btn.addEventListener('click', () => onInitialChipClick(chip));
+        }
+      });
       return;
     }
 

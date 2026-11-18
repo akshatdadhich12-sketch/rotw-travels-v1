@@ -23,9 +23,12 @@
   <meta name="twitter:image" content="https://akshatdadhich12-sketch.github.io/rotw-travels-v1/assets/og-default.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:ital,wght@0,400;0,500;1,500&display=swap">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@400;500&display=swap">
+  
   <link rel="stylesheet" href="../pages/src/pages.css">
   <link rel="stylesheet" href="../shell/shell.css">
+  <link rel="stylesheet" href="../shell/motion.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +98,7 @@
 }
   </script>
 </head>
-<body class="home-style has-curtain">
+<body class="home-style">
 <!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">انتقل إلى المحتوى الرئيسي</a>
 
@@ -340,7 +343,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/experiences/experiences-tank-forest-ride.mp4" poster="../notes/assets/activities/experiences/experiences-tank-forest-ride-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="مجموعة ترتدي ملابس شتوية تركب مركبة مجنزرة في غابة ثلجية.">
+        <video data-src="../notes/assets/activities/experiences/experiences-tank-forest-ride.mp4" data-poster="../notes/assets/activities/experiences/experiences-tank-forest-ride-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="مجموعة ترتدي ملابس شتوية تركب مركبة مجنزرة في غابة ثلجية.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -356,7 +359,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/experiences/experiences-hovercraft-ice-glide.mp4" poster="../notes/assets/activities/experiences/experiences-hovercraft-ice-glide-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="حوامة حمراء تنزلق فوق سهل من الجليد والثلج.">
+        <video data-src="../notes/assets/activities/experiences/experiences-hovercraft-ice-glide.mp4" data-poster="../notes/assets/activities/experiences/experiences-hovercraft-ice-glide-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="حوامة حمراء تنزلق فوق سهل من الجليد والثلج.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -372,7 +375,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/experiences/experiences-atv-giant-wheels.mp4" poster="../notes/assets/activities/experiences/experiences-atv-giant-wheels-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="مركبة بعجلات بالونية كبيرة تسير وسط الثلوج.">
+        <video data-src="../notes/assets/activities/experiences/experiences-atv-giant-wheels.mp4" data-poster="../notes/assets/activities/experiences/experiences-atv-giant-wheels-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="مركبة بعجلات بالونية كبيرة تسير وسط الثلوج.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -388,7 +391,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/experiences/experiences-bear-feeding-tom.mp4" poster="../notes/assets/activities/experiences/experiences-bear-feeding-tom-poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="none" aria-label="مدرب يقف في غابة ثلجية بجوار دب بني.">
+        <video data-src="../notes/assets/activities/experiences/experiences-bear-feeding-tom.mp4" data-poster="../notes/assets/activities/experiences/experiences-bear-feeding-tom-poster.webp" width="1280" height="720" muted loop playsinline preload="none" aria-label="مدرب يقف في غابة ثلجية بجوار دب بني.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -404,7 +407,7 @@
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/experiences/experiences-bear-trainer-hug.mp4" poster="../notes/assets/activities/experiences/experiences-bear-trainer-hug-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="مدرب يقف بجوار دب بني يستند إلى شجرة في الغابة.">
+        <video data-src="../notes/assets/activities/experiences/experiences-bear-trainer-hug.mp4" data-poster="../notes/assets/activities/experiences/experiences-bear-trainer-hug-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="مدرب يقف بجوار دب بني يستند إلى شجرة في الغابة.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -419,8 +422,7 @@
 
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/experiences/experiences-atv-river-crossing-800.webp" alt="دراجة دفع رباعي تسير عبر مياه نهر ضحل في غابة مشمسة." width="1600" height="1200" loading="lazy">
+          <img src="../notes/assets/activities/experiences/experiences-atv-river-crossing-800.webp" srcset="../notes/assets/activities/experiences/experiences-atv-river-crossing-800.webp 800w, ../notes/assets/activities/experiences/experiences-atv-river-crossing-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="دراجة دفع رباعي تسير عبر مياه نهر ضحل في غابة مشمسة." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">عبور النهر</h3>
@@ -434,8 +436,7 @@
 
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/experiences/experiences-husky-snow-park-800.webp" alt="كلاب هاسكي سيبيرية تستريح فوق الثلج الأبيض في حديقة خشبية." width="1500" height="1000" loading="lazy">
+          <img src="../notes/assets/activities/experiences/experiences-husky-snow-park-800.webp" srcset="../notes/assets/activities/experiences/experiences-husky-snow-park-800.webp 800w, ../notes/assets/activities/experiences/experiences-husky-snow-park-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="كلاب هاسكي سيبيرية تستريح فوق الثلج الأبيض في حديقة خشبية." width="1500" height="1000" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">حديقة الهاسكي</h3>
@@ -449,8 +450,7 @@
 
       <article class="frosted-card exp-card" data-city="experiences">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/experiences/experiences-circus-acrobats-800.webp" alt="لاعبو السيرك يؤدون حركات بهلوانية هوائية فوق الحلبة المضاءة." width="1280" height="962" loading="lazy">
+          <img src="../notes/assets/activities/experiences/experiences-circus-acrobats-800.webp" srcset="../notes/assets/activities/experiences/experiences-circus-acrobats-800.webp 800w, ../notes/assets/activities/experiences/experiences-circus-acrobats-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="لاعبو السيرك يؤدون حركات بهلوانية هوائية فوق الحلبة المضاءة." width="1280" height="962" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">حلبة السيرك</h3>
@@ -472,8 +472,7 @@
           
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/moscow/moscow-zaryadye-floating-bridge-800.webp" alt="مسافرة تتأمل المشهد البانورامي لمدينة موسكو من جسر زاريادي المعلق." width="1200" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/moscow/moscow-zaryadye-floating-bridge-800.webp" data-srcset="../notes/assets/activities/moscow/moscow-zaryadye-floating-bridge-800.webp 800w, ../notes/assets/activities/moscow/moscow-zaryadye-floating-bridge-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مسافرة تتأمل المشهد البانورامي لمدينة موسكو من جسر زاريادي المعلق." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">جولة الجسر المعلق زاريادي</h3>
@@ -487,8 +486,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/moscow/moscow-red-square-st-basils-800.webp" alt="زوجان يبتسمان أمام قباب كاتدرائية القديس باسيل الملونة في الساحة الحمراء." width="1200" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/moscow/moscow-red-square-st-basils-800.webp" data-srcset="../notes/assets/activities/moscow/moscow-red-square-st-basils-800.webp 800w, ../notes/assets/activities/moscow/moscow-red-square-st-basils-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوجان يبتسمان أمام قباب كاتدرائية القديس باسيل الملونة في الساحة الحمراء." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">زيارة كاتدرائية القديس باسيل</h3>
@@ -502,8 +500,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/moscow/moscow-metro-palaces-tour-800.webp" alt="ثلاثة سياح يتأملون العمارة المزينة بالفسيفساء داخل محطة مترو موسكو." width="720" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/moscow/moscow-metro-palaces-tour-800.webp" data-srcset="../notes/assets/activities/moscow/moscow-metro-palaces-tour-800.webp 800w, ../notes/assets/activities/moscow/moscow-metro-palaces-tour-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="ثلاثة سياح يتأملون العمارة المزينة بالفسيفساء داخل محطة مترو موسكو." width="720" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">جولة قصور مترو موسكو</h3>
@@ -517,8 +514,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/moscow/moscow-gum-ice-cream-800.webp" alt="مسافرة تستمتع بتناول مثلجات الوافل التقليدية داخل متجر غوم في الساحة الحمراء." width="1200" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/moscow/moscow-gum-ice-cream-800.webp" data-srcset="../notes/assets/activities/moscow/moscow-gum-ice-cream-800.webp 800w, ../notes/assets/activities/moscow/moscow-gum-ice-cream-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مسافرة تستمتع بتناول مثلجات الوافل التقليدية داخل متجر غوم في الساحة الحمراء." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">مثلجات متجر غوم الشهيرة</h3>
@@ -532,8 +528,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/moscow/moscow-kremlin-cathedral-square-800.webp" alt="زوجان يقفان في ساحة الكاتدرائيات التاريخية داخل الكرملين في موسكو." width="1200" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/moscow/moscow-kremlin-cathedral-square-800.webp" data-srcset="../notes/assets/activities/moscow/moscow-kremlin-cathedral-square-800.webp 800w, ../notes/assets/activities/moscow/moscow-kremlin-cathedral-square-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوجان يقفان في ساحة الكاتدرائيات التاريخية داخل الكرملين في موسكو." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">جولة ساحة كاتدرائيات الكرملين</h3>
@@ -547,8 +542,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/moscow/moscow-old-arbat-cafe-terrace-800.webp" alt="زوجان يجلسان على طاولة في شرفة مقهى بشارع أربات للمشاة." width="1600" height="1200" loading="lazy">
+          <img data-src="../notes/assets/activities/moscow/moscow-old-arbat-cafe-terrace-800.webp" data-srcset="../notes/assets/activities/moscow/moscow-old-arbat-cafe-terrace-800.webp 800w, ../notes/assets/activities/moscow/moscow-old-arbat-cafe-terrace-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوجان يجلسان على طاولة في شرفة مقهى بشارع أربات للمشاة." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">غداء في مقاهي أربات</h3>
@@ -562,8 +556,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/moscow/moscow-sparrow-hills-university-800.webp" alt="مسافرون يستمتعون بالمشهد البانورامي لمدينة موسكو من مطل تلال العصافير." width="1600" height="1204" loading="lazy">
+          <img data-src="../notes/assets/activities/moscow/moscow-sparrow-hills-university-800.webp" data-srcset="../notes/assets/activities/moscow/moscow-sparrow-hills-university-800.webp 800w, ../notes/assets/activities/moscow/moscow-sparrow-hills-university-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مسافرون يستمتعون بالمشهد البانورامي لمدينة موسكو من مطل تلال العصافير." width="1600" height="1204" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">إطلالة تلال العصافير البانورامية</h3>
@@ -577,8 +570,7 @@
 
       <article class="frosted-card exp-card" data-city="moscow">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/moscow/moscow-victory-park-promenade-800.webp" alt="زوجان يتنزهان في الممر الحجري نحو النصب التذكاري في منتزه النصر." width="1200" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/moscow/moscow-victory-park-promenade-800.webp" data-srcset="../notes/assets/activities/moscow/moscow-victory-park-promenade-800.webp 800w, ../notes/assets/activities/moscow/moscow-victory-park-promenade-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوجان يتنزهان في الممر الحجري نحو النصب التذكاري في منتزه النصر." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">نزهة منتزه النصر التذكاري</h3>
@@ -598,8 +590,7 @@
           
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-ice-floating-night-frigate-800.webp" alt="أشخاص يرتدون بدلات عازلة يطفون وسط قطع الجليد قرب سفينة شراعية خشبية." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-ice-floating-night-frigate-800.webp" data-srcset="../notes/assets/activities/spb/spb-ice-floating-night-frigate-800.webp 800w, ../notes/assets/activities/spb/spb-ice-floating-night-frigate-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="أشخاص يرتدون بدلات عازلة يطفون وسط قطع الجليد قرب سفينة شراعية خشبية." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">الطفو على جليد نهر نيفا</h3>
@@ -613,8 +604,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-ice-floating-neva-bank-800.webp" alt="عائمون في بدلات عازلة برتقالية في مياه النهر الباردة قرب سفينة مضاءة." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-ice-floating-neva-bank-800.webp" data-srcset="../notes/assets/activities/spb/spb-ice-floating-neva-bank-800.webp 800w, ../notes/assets/activities/spb/spb-ice-floating-neva-bank-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="عائمون في بدلات عازلة برتقالية في مياه النهر الباردة قرب سفينة مضاءة." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">الطفو الجليدي قرب السفينة التاريخية</h3>
@@ -628,8 +618,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-ice-floating-historic-ship-800.webp" alt="مسافرون مسترخون فوق مياه الشتاء المتجمدة وخلفهم سواري السفينة المضاءة." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-ice-floating-historic-ship-800.webp" data-srcset="../notes/assets/activities/spb/spb-ice-floating-historic-ship-800.webp 800w, ../notes/assets/activities/spb/spb-ice-floating-historic-ship-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مسافرون مسترخون فوق مياه الشتاء المتجمدة وخلفهم سواري السفينة المضاءة." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">الطفو الليلي فوق الجليد</h3>
@@ -643,8 +632,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-ice-floating-illuminated-frigate-800.webp" alt="أشخاص يطفون في مياه النهر المتجمدة بين كتل الجليد العائمة ليلاً." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-ice-floating-illuminated-frigate-800.webp" data-srcset="../notes/assets/activities/spb/spb-ice-floating-illuminated-frigate-800.webp 800w, ../notes/assets/activities/spb/spb-ice-floating-illuminated-frigate-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="أشخاص يطفون في مياه النهر المتجمدة بين كتل الجليد العائمة ليلاً." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">سباحة شتوية قرب السفينة</h3>
@@ -658,8 +646,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-ice-floating-frozen-river-800.webp" alt="مجموعة من المشاركين يطفون بأمان في المياه المتجمدة ببدلات حمراء." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-ice-floating-frozen-river-800.webp" data-srcset="../notes/assets/activities/spb/spb-ice-floating-frozen-river-800.webp 800w, ../notes/assets/activities/spb/spb-ice-floating-frozen-river-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مجموعة من المشاركين يطفون بأمان في المياه المتجمدة ببدلات حمراء." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">طفو جماعي بين ألواح الجليد</h3>
@@ -673,8 +660,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-ice-floating-ice-floe-800.webp" alt="شخص يرتدي بدلة غمر عازلة يتسلق على سطح لوح جليدي." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-ice-floating-ice-floe-800.webp" data-srcset="../notes/assets/activities/spb/spb-ice-floating-ice-floe-800.webp 800w, ../notes/assets/activities/spb/spb-ice-floating-ice-floe-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="شخص يرتدي بدلة غمر عازلة يتسلق على سطح لوح جليدي." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">الصعود على لوح الجليد</h3>
@@ -688,8 +674,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-ice-floating-day-group-800.webp" alt="مجموعة تستمتع بتجربة الطفو في بركة نهرية وسط الثلوج نهاراً." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-ice-floating-day-group-800.webp" data-srcset="../notes/assets/activities/spb/spb-ice-floating-day-group-800.webp 800w, ../notes/assets/activities/spb/spb-ice-floating-day-group-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مجموعة تستمتع بتجربة الطفو في بركة نهرية وسط الثلوج نهاراً." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">طفو نهري نهاري في الجليد</h3>
@@ -703,8 +688,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-ice-floating-orange-suit-800.webp" alt="شخص يطفو بسلام على مياه النهر في بدلة نجاة قطبية برتقالية." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-ice-floating-orange-suit-800.webp" data-srcset="../notes/assets/activities/spb/spb-ice-floating-orange-suit-800.webp 800w, ../notes/assets/activities/spb/spb-ice-floating-orange-suit-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="شخص يطفو بسلام على مياه النهر في بدلة نجاة قطبية برتقالية." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">طفو فردي ببدلة الغمر الشتوية</h3>
@@ -719,7 +703,7 @@
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/spb/spb-peterhof-fountains-walk.mp4" poster="../notes/assets/activities/spb/spb-peterhof-fountains-walk-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="زوار المنتزه يتنزهون تحت الأشجار المورقة في حدائق بيترهوف.">
+        <video data-src="../notes/assets/activities/spb/spb-peterhof-fountains-walk.mp4" data-poster="../notes/assets/activities/spb/spb-peterhof-fountains-walk-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="زوار المنتزه يتنزهون تحت الأشجار المورقة في حدائق بيترهوف.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -735,7 +719,7 @@
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/spb/spb-peterhof-gardens-promenade.mp4" poster="../notes/assets/activities/spb/spb-peterhof-gardens-promenade-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="سياح يتنزهون في ممر المنتزه المحاط بالأشجار في قصر بيترهوف.">
+        <video data-src="../notes/assets/activities/spb/spb-peterhof-gardens-promenade.mp4" data-poster="../notes/assets/activities/spb/spb-peterhof-gardens-promenade-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="سياح يتنزهون في ممر المنتزه المحاط بالأشجار في قصر بيترهوف.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -750,8 +734,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-church-spilled-blood-800.webp" alt="مجموعة سياحية تقف مبتسمة أمام كاتدرائية المخلص على الدم الملونة." width="1200" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-church-spilled-blood-800.webp" data-srcset="../notes/assets/activities/spb/spb-church-spilled-blood-800.webp 800w, ../notes/assets/activities/spb/spb-church-spilled-blood-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مجموعة سياحية تقف مبتسمة أمام كاتدرائية المخلص على الدم الملونة." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">كنيسة مخلصنا على الدم</h3>
@@ -765,8 +748,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-palace-square-hermitage-800.webp" alt="سياح يقفون في ساحة القصر أمام الواجهة الخضراء لقصر الشتاء." width="1600" height="1200" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-palace-square-hermitage-800.webp" data-srcset="../notes/assets/activities/spb/spb-palace-square-hermitage-800.webp 800w, ../notes/assets/activities/spb/spb-palace-square-hermitage-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="سياح يقفون في ساحة القصر أمام الواجهة الخضراء لقصر الشتاء." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">ساحة القصر ومتحف الإرميتاج</h3>
@@ -780,8 +762,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-peterhof-grand-cascade-800.webp" alt="زوجان يقفان أمام النوافير الذهبية والشلال الكبير في قصر بيترهوف." width="1600" height="2134" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-peterhof-grand-cascade-800.webp" data-srcset="../notes/assets/activities/spb/spb-peterhof-grand-cascade-800.webp 800w, ../notes/assets/activities/spb/spb-peterhof-grand-cascade-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوجان يقفان أمام النوافير الذهبية والشلال الكبير في قصر بيترهوف." width="1600" height="2134" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">شلال بيترهوف الكبير الفخم</h3>
@@ -795,8 +776,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-saint-isaacs-cathedral-800.webp" alt="مجموعة سياحية تقف بالقرب من أعمدة الغرانيت الشاهقة لكاتدرائية القديس إسحاق." width="1200" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-saint-isaacs-cathedral-800.webp" data-srcset="../notes/assets/activities/spb/spb-saint-isaacs-cathedral-800.webp 800w, ../notes/assets/activities/spb/spb-saint-isaacs-cathedral-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مجموعة سياحية تقف بالقرب من أعمدة الغرانيت الشاهقة لكاتدرائية القديس إسحاق." width="1200" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">جولة كاتدرائية القديس إسحاق</h3>
@@ -810,8 +790,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-bronze-horseman-senate-square-800.webp" alt="سياح يستكشفون ساحة مجلس الشيوخ بالقرب من تمثال الفارس البرونزي الشهير." width="1600" height="1200" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-bronze-horseman-senate-square-800.webp" data-srcset="../notes/assets/activities/spb/spb-bronze-horseman-senate-square-800.webp 800w, ../notes/assets/activities/spb/spb-bronze-horseman-senate-square-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="سياح يستكشفون ساحة مجلس الشيوخ بالقرب من تمثال الفارس البرونزي الشهير." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">نصب الفارس البرونزي التذكاري</h3>
@@ -825,8 +804,7 @@
 
       <article class="frosted-card exp-card" data-city="spb">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/spb/spb-neva-canal-cruise-800.webp" alt="سياح يعبرون جسراً تاريخياً فوق إحدى قنوات سانت بطرسبرغ المائية." width="1600" height="1200" loading="lazy">
+          <img data-src="../notes/assets/activities/spb/spb-neva-canal-cruise-800.webp" data-srcset="../notes/assets/activities/spb/spb-neva-canal-cruise-800.webp 800w, ../notes/assets/activities/spb/spb-neva-canal-cruise-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="سياح يعبرون جسراً تاريخياً فوق إحدى قنوات سانت بطرسبرغ المائية." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">جسور وقنوات سانت بطرسبرغ</h3>
@@ -847,7 +825,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/sochi/sochi-skypark-bungee-207.mp4" poster="../notes/assets/activities/sochi/sochi-skypark-bungee-207-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="قافز بانجي يثب نحو الوادي الجبلي العميق من منصة الجسر.">
+        <video data-src="../notes/assets/activities/sochi/sochi-skypark-bungee-207.mp4" data-poster="../notes/assets/activities/sochi/sochi-skypark-bungee-207-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="قافز بانجي يثب نحو الوادي الجبلي العميق من منصة الجسر.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -862,8 +840,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/sochi/sochi-skypark-canyon-swing-800.webp" alt="زوجان سعيدان معلقان معاً على أرجوحة شاهقة الارتفاع فوق الوادي الجبلي." width="1600" height="1068" loading="lazy">
+          <img data-src="../notes/assets/activities/sochi/sochi-skypark-canyon-swing-800.webp" data-srcset="../notes/assets/activities/sochi/sochi-skypark-canyon-swing-800.webp 800w, ../notes/assets/activities/sochi/sochi-skypark-canyon-swing-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوجان سعيدان معلقان معاً على أرجوحة شاهقة الارتفاع فوق الوادي الجبلي." width="1600" height="1068" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">أرجوحة الوادي العملاقة</h3>
@@ -877,8 +854,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/sochi/sochi-skypark-bridge-walk-800.webp" alt="زوجان يسيران على جسر مشاة معلق وضيق على ارتفاع شاهق فوق الوادي." width="1600" height="1068" loading="lazy">
+          <img data-src="../notes/assets/activities/sochi/sochi-skypark-bridge-walk-800.webp" data-srcset="../notes/assets/activities/sochi/sochi-skypark-bridge-walk-800.webp 800w, ../notes/assets/activities/sochi/sochi-skypark-bridge-walk-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوجان يسيران على جسر مشاة معلق وضيق على ارتفاع شاهق فوق الوادي." width="1600" height="1068" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">جولة الجسر المعلق سكاي بريدج</h3>
@@ -892,8 +868,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/sochi/sochi-skypark-bridge-bungee-800.webp" alt="امرأة تقفز بالبانجي من منصة الجسر المعلق هاوية نحو الوادي الأخضر." width="1600" height="2398" loading="lazy">
+          <img data-src="../notes/assets/activities/sochi/sochi-skypark-bridge-bungee-800.webp" data-srcset="../notes/assets/activities/sochi/sochi-skypark-bridge-bungee-800.webp 800w, ../notes/assets/activities/sochi/sochi-skypark-bridge-bungee-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="امرأة تقفز بالبانجي من منصة الجسر المعلق هاوية نحو الوادي الأخضر." width="1600" height="2398" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">السقوط الحر ببانجي سكاي بارك</h3>
@@ -907,8 +882,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/sochi/sochi-skypark-tandem-zipline-800.webp" alt="شخصان ينزلقان على كابلات الحبل الهوائي فوق غابات الوادي في سوتشي." width="1600" height="1068" loading="lazy">
+          <img data-src="../notes/assets/activities/sochi/sochi-skypark-tandem-zipline-800.webp" data-srcset="../notes/assets/activities/sochi/sochi-skypark-tandem-zipline-800.webp 800w, ../notes/assets/activities/sochi/sochi-skypark-tandem-zipline-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="شخصان ينزلقان على كابلات الحبل الهوائي فوق غابات الوادي في سوتشي." width="1600" height="1068" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">انزلاق بالحبل الهوائي المزدوج</h3>
@@ -922,8 +896,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/sochi/sochi-valley-horseback-trail-800.webp" alt="شخصان يمتطيان الخيول على مسار جبلي محاط بالطبيعة الخضراء الكثيفة." width="1600" height="1068" loading="lazy">
+          <img data-src="../notes/assets/activities/sochi/sochi-valley-horseback-trail-800.webp" data-srcset="../notes/assets/activities/sochi/sochi-valley-horseback-trail-800.webp 800w, ../notes/assets/activities/sochi/sochi-valley-horseback-trail-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="شخصان يمتطيان الخيول على مسار جبلي محاط بالطبيعة الخضراء الكثيفة." width="1600" height="1068" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">ركوب الخيل في وادي الجبال</h3>
@@ -938,7 +911,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/sochi/sochi-skypark-skybridge-walk.mp4" poster="../notes/assets/activities/sochi/sochi-skypark-skybridge-walk-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="أشخاص يمشون على جسر المشاة المعلق الطويل فوق وادي أخشتير.">
+        <video data-src="../notes/assets/activities/sochi/sochi-skypark-skybridge-walk.mp4" data-poster="../notes/assets/activities/sochi/sochi-skypark-skybridge-walk-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="أشخاص يمشون على جسر المشاة المعلق الطويل فوق وادي أخشتير.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -954,7 +927,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/sochi/sochi-skypark-bungee-jump.mp4" poster="../notes/assets/activities/sochi/sochi-skypark-bungee-jump-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="شخص يقفز قفزة البانجي من منصة معلقة فوق وادي النهر.">
+        <video data-src="../notes/assets/activities/sochi/sochi-skypark-bungee-jump.mp4" data-poster="../notes/assets/activities/sochi/sochi-skypark-bungee-jump-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="شخص يقفز قفزة البانجي من منصة معلقة فوق وادي النهر.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -970,7 +943,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/sochi/sochi-skypark-giant-swing.mp4" poster="../notes/assets/activities/sochi/sochi-skypark-giant-swing-poster.webp" width="720" height="406" autoplay muted loop playsinline preload="none" aria-label="شخصان يتأرجحان فوق وادي النهر والغابات على أرجوحة ضخمة.">
+        <video data-src="../notes/assets/activities/sochi/sochi-skypark-giant-swing.mp4" data-poster="../notes/assets/activities/sochi/sochi-skypark-giant-swing-poster.webp" width="720" height="406" muted loop playsinline preload="none" aria-label="شخصان يتأرجحان فوق وادي النهر والغابات على أرجوحة ضخمة.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -986,7 +959,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/sochi/sochi-pebble-beach-relaxation.mp4" poster="../notes/assets/activities/sochi/sochi-pebble-beach-relaxation-poster.webp" width="720" height="408" autoplay muted loop playsinline preload="none" aria-label="أشخاص يجلسون على وسائد حمراء على شاطئ الحصى في سوتشي.">
+        <video data-src="../notes/assets/activities/sochi/sochi-pebble-beach-relaxation.mp4" data-poster="../notes/assets/activities/sochi/sochi-pebble-beach-relaxation-poster.webp" width="720" height="408" muted loop playsinline preload="none" aria-label="أشخاص يجلسون على وسائد حمراء على شاطئ الحصى في سوتشي.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1002,7 +975,7 @@
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/sochi/sochi-rosa-khutor-cable-car.mp4" poster="../notes/assets/activities/sochi/sochi-rosa-khutor-cable-car-poster.webp" width="720" height="408" autoplay muted loop playsinline preload="none" aria-label="كابينة تلفريك حمراء تصعد فوق سفوح الجبال في روزا خوتور.">
+        <video data-src="../notes/assets/activities/sochi/sochi-rosa-khutor-cable-car.mp4" data-poster="../notes/assets/activities/sochi/sochi-rosa-khutor-cable-car-poster.webp" width="720" height="408" muted loop playsinline preload="none" aria-label="كابينة تلفريك حمراء تصعد فوق سفوح الجبال في روزا خوتور.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1017,8 +990,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/sochi/sochi-ekzarkho-horseback-trail-800.webp" alt="رجل وامرأة يمتطيان الخيول على مسار جبلي في غابة خضراء." width="1440" height="960" loading="lazy">
+          <img data-src="../notes/assets/activities/sochi/sochi-ekzarkho-horseback-trail-800.webp" data-srcset="../notes/assets/activities/sochi/sochi-ekzarkho-horseback-trail-800.webp 800w, ../notes/assets/activities/sochi/sochi-ekzarkho-horseback-trail-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="رجل وامرأة يمتطيان الخيول على مسار جبلي في غابة خضراء." width="1440" height="960" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">ركوب الخيل في الجبال</h3>
@@ -1032,8 +1004,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/sochi/sochi-skypark-zipline-flight-800.webp" alt="زوجان بأحزمة الأمان ينزلقان على حبل الانزلاق الهوائي فوق الوادي." width="1600" height="1067" loading="lazy">
+          <img data-src="../notes/assets/activities/sochi/sochi-skypark-zipline-flight-800.webp" data-srcset="../notes/assets/activities/sochi/sochi-skypark-zipline-flight-800.webp 800w, ../notes/assets/activities/sochi/sochi-skypark-zipline-flight-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوجان بأحزمة الأمان ينزلقان على حبل الانزلاق الهوائي فوق الوادي." width="1600" height="1067" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">طيران الانزلاق بالحبل</h3>
@@ -1047,8 +1018,7 @@
 
       <article class="frosted-card exp-card" data-city="sochi">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/sochi/sochi-ekzarkho-balloon-flight-800.webp" alt="منطاد هواء ساخن ملون يرتفع بجوار حصان يرعى في مرج جبلي." width="1600" height="1067" loading="lazy">
+          <img data-src="../notes/assets/activities/sochi/sochi-ekzarkho-balloon-flight-800.webp" data-srcset="../notes/assets/activities/sochi/sochi-ekzarkho-balloon-flight-800.webp 800w, ../notes/assets/activities/sochi/sochi-ekzarkho-balloon-flight-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="منطاد هواء ساخن ملون يرتفع بجوار حصان يرعى في مرج جبلي." width="1600" height="1067" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">صعود منطاد الهواء الساخن</h3>
@@ -1069,7 +1039,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/murmansk/murmansk-reindeer-sleigh-forest.mp4" poster="../notes/assets/activities/murmansk/murmansk-reindeer-sleigh-forest-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="حيوان الرنة يجر مزلقة خشبية عبر الثلوج الكثيفة بين أشجار الصنوبر.">
+        <video data-src="../notes/assets/activities/murmansk/murmansk-reindeer-sleigh-forest.mp4" data-poster="../notes/assets/activities/murmansk/murmansk-reindeer-sleigh-forest-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="حيوان الرنة يجر مزلقة خشبية عبر الثلوج الكثيفة بين أشجار الصنوبر.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1085,7 +1055,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/murmansk/murmansk-arctic-ocean-floating.mp4" poster="../notes/assets/activities/murmansk/murmansk-arctic-ocean-floating-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="مجموعة ترتدي بدلات غمر صفراء وحمراء تطفو في مياه المحيط الجليدية.">
+        <video data-src="../notes/assets/activities/murmansk/murmansk-arctic-ocean-floating.mp4" data-poster="../notes/assets/activities/murmansk/murmansk-arctic-ocean-floating-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="مجموعة ترتدي بدلات غمر صفراء وحمراء تطفو في مياه المحيط الجليدية.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1101,7 +1071,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/murmansk/murmansk-sami-shaman-drumming.mp4" poster="../notes/assets/activities/murmansk/murmansk-sami-shaman-drumming-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="شامان من شعب السامي بالزي التقليدي يقرع طبلة قرب النار داخل خيمة.">
+        <video data-src="../notes/assets/activities/murmansk/murmansk-sami-shaman-drumming.mp4" data-poster="../notes/assets/activities/murmansk/murmansk-sami-shaman-drumming-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="شامان من شعب السامي بالزي التقليدي يقرع طبلة قرب النار داخل خيمة.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1116,8 +1086,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/murmansk-reindeer-herd-winter-800.webp" alt="مجموعة تقود قطيع رنة عبر سهول قطبية شاسعة مغطاة بالثلوج." width="1600" height="900" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/murmansk-reindeer-herd-winter-800.webp" data-srcset="../notes/assets/activities/murmansk/murmansk-reindeer-herd-winter-800.webp 800w, ../notes/assets/activities/murmansk/murmansk-reindeer-herd-winter-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مجموعة تقود قطيع رنة عبر سهول قطبية شاسعة مغطاة بالثلوج." width="1600" height="900" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">قيادة قطيع رنة القطب الشمالي</h3>
@@ -1131,8 +1100,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/murmansk-teriberka-dragon-eggs-walk-800.webp" alt="امرأة بسترة حمراء تجلس على أحجار مستديرة ضخمة وناعمة على شاطئ البحر." width="1600" height="900" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/murmansk-teriberka-dragon-eggs-walk-800.webp" data-srcset="../notes/assets/activities/murmansk/murmansk-teriberka-dragon-eggs-walk-800.webp 800w, ../notes/assets/activities/murmansk/murmansk-teriberka-dragon-eggs-walk-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="امرأة بسترة حمراء تجلس على أحجار مستديرة ضخمة وناعمة على شاطئ البحر." width="1600" height="900" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">جولة شاطئ بيض التنين بتيريبيركا</h3>
@@ -1146,8 +1114,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/murmansk-reindeer-feeding-birch-800.webp" alt="سياح يطعمون غزلان الرنة الأليفة في حظيرة وسط أشجار الغابة." width="1600" height="900" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/murmansk-reindeer-feeding-birch-800.webp" data-srcset="../notes/assets/activities/murmansk/murmansk-reindeer-feeding-birch-800.webp 800w, ../notes/assets/activities/murmansk/murmansk-reindeer-feeding-birch-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="سياح يطعمون غزلان الرنة الأليفة في حظيرة وسط أشجار الغابة." width="1600" height="900" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">إطعام غزلان الرنة باليد</h3>
@@ -1161,8 +1128,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/murmansk-arctic-floating-group-cheer-800.webp" alt="مجموعة من السياح المبتهجين في بدلات برتقالية عازلة يلتقطون صورة على الشاطئ الثلجي." width="1600" height="1200" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/murmansk-arctic-floating-group-cheer-800.webp" data-srcset="../notes/assets/activities/murmansk/murmansk-arctic-floating-group-cheer-800.webp 800w, ../notes/assets/activities/murmansk/murmansk-arctic-floating-group-cheer-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مجموعة من السياح المبتهجين في بدلات برتقالية عازلة يلتقطون صورة على الشاطئ الثلجي." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">احتفال الطفو في المحيط المتجمد</h3>
@@ -1176,8 +1142,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/murmansk-teriberka-fjord-boat-walk-800.webp" alt="سائح على متن قارب بخاري يستكشف السواحل الصخرية والمضايق في تيريبيركا." width="1600" height="2844" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/murmansk-teriberka-fjord-boat-walk-800.webp" data-srcset="../notes/assets/activities/murmansk/murmansk-teriberka-fjord-boat-walk-800.webp 800w, ../notes/assets/activities/murmansk/murmansk-teriberka-fjord-boat-walk-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="سائح على متن قارب بخاري يستكشف السواحل الصخرية والمضايق في تيريبيركا." width="1600" height="2844" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">رحلة بحر بارنتس في تيريبيركا</h3>
@@ -1192,7 +1157,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/murmansk/murmansk-reindeer-sleigh-ride.mp4" poster="../notes/assets/activities/murmansk/murmansk-reindeer-sleigh-ride-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="مسافران يركبان زلاجة خشبية تجرها حيوانات الرنة في الثلج.">
+        <video data-src="../notes/assets/activities/murmansk/murmansk-reindeer-sleigh-ride.mp4" data-poster="../notes/assets/activities/murmansk/murmansk-reindeer-sleigh-ride-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="مسافران يركبان زلاجة خشبية تجرها حيوانات الرنة في الثلج.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1208,7 +1173,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/murmansk/murmansk-aurora-hunting-phone.mp4" poster="../notes/assets/activities/murmansk/murmansk-aurora-hunting-phone-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="مسافر يحمل هاتفا ذكيا يصور الشفق القطبي الأخضر في السماء المظلمة.">
+        <video data-src="../notes/assets/activities/murmansk/murmansk-aurora-hunting-phone.mp4" data-poster="../notes/assets/activities/murmansk/murmansk-aurora-hunting-phone-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="مسافر يحمل هاتفا ذكيا يصور الشفق القطبي الأخضر في السماء المظلمة.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1224,7 +1189,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/murmansk/murmansk-arctic-floating-suit.mp4" poster="../notes/assets/activities/murmansk/murmansk-arctic-floating-suit-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="أشخاص ببدلات نجاة حمراء زاهية يطفون بأمان في مياه القطب الجليدية.">
+        <video data-src="../notes/assets/activities/murmansk/murmansk-arctic-floating-suit.mp4" data-poster="../notes/assets/activities/murmansk/murmansk-arctic-floating-suit-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="أشخاص ببدلات نجاة حمراء زاهية يطفون بأمان في مياه القطب الجليدية.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1240,7 +1205,7 @@
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/murmansk/murmansk-snow-tubing-winter.mp4" poster="../notes/assets/activities/murmansk/murmansk-snow-tubing-winter-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="رجل بملابس شتوية يبتسم أثناء انزلاقه على منحدر ثلجي فوق الإطار.">
+        <video data-src="../notes/assets/activities/murmansk/murmansk-snow-tubing-winter.mp4" data-poster="../notes/assets/activities/murmansk/murmansk-snow-tubing-winter-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="رجل بملابس شتوية يبتسم أثناء انزلاقه على منحدر ثلجي فوق الإطار.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1255,8 +1220,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/murmansk-snowmobile-tundra-sled-800.webp" alt="سائق زلاجة آلية يرتدي خوذة شتوية يجر زلاجة ركاب عبر سهول الثلج." width="960" height="1280" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/murmansk-snowmobile-tundra-sled-800.webp" data-srcset="../notes/assets/activities/murmansk/murmansk-snowmobile-tundra-sled-800.webp 800w, ../notes/assets/activities/murmansk/murmansk-snowmobile-tundra-sled-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="سائق زلاجة آلية يرتدي خوذة شتوية يجر زلاجة ركاب عبر سهول الثلج." width="960" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">رحلة الزلاجات الآلية بالتندرا</h3>
@@ -1270,8 +1234,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/murmansk-husky-park-petting-800.webp" alt="أيد ترتدي قفازات تداعب بلطف رأس كلب هاسكي سيبيري في الهواء الطلق." width="900" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/murmansk-husky-park-petting-800.webp" data-srcset="../notes/assets/activities/murmansk/murmansk-husky-park-petting-800.webp 800w, ../notes/assets/activities/murmansk/murmansk-husky-park-petting-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="أيد ترتدي قفازات تداعب بلطف رأس كلب هاسكي سيبيري في الهواء الطلق." width="900" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">لقاء كلاب الهاسكي</h3>
@@ -1285,8 +1248,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/teriberka-arctic-giant-throne-800.webp" alt="سائح يجلس فوق عرش خشبي ضخم منحوت يطل على ساحل القطب الشمالي." width="900" height="1600" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/teriberka-arctic-giant-throne-800.webp" data-srcset="../notes/assets/activities/murmansk/teriberka-arctic-giant-throne-800.webp 800w, ../notes/assets/activities/murmansk/teriberka-arctic-giant-throne-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="سائح يجلس فوق عرش خشبي ضخم منحوت يطل على ساحل القطب الشمالي." width="900" height="1600" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">عرش تيريبيركا الخشبي الضخم</h3>
@@ -1300,8 +1262,7 @@
 
       <article class="frosted-card exp-card" data-city="murmansk">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/murmansk/murmansk-reindeer-feeding-800.webp" alt="زوار بملابس شتوية دافئة يقفون بالقرب من الرنة ذات القرون الكبيرة في الثلج." width="1600" height="2133" loading="lazy">
+          <img data-src="../notes/assets/activities/murmansk/murmansk-reindeer-feeding-800.webp" data-srcset="../notes/assets/activities/murmansk/murmansk-reindeer-feeding-800.webp 800w, ../notes/assets/activities/murmansk/murmansk-reindeer-feeding-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زوار بملابس شتوية دافئة يقفون بالقرب من الرنة ذات القرون الكبيرة في الثلج." width="1600" height="2133" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">إطعام حيوانات الرنة</h3>
@@ -1322,7 +1283,7 @@
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/baikal/baikal-ice-floating.mp4" poster="../notes/assets/activities/baikal/baikal-ice-floating-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="مسافر يرتدي بدلة غطس حرارية حمراء يطفو بارتياح على سطح الماء البارد.">
+        <video data-src="../notes/assets/activities/baikal/baikal-ice-floating.mp4" data-poster="../notes/assets/activities/baikal/baikal-ice-floating-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="مسافر يرتدي بدلة غطس حرارية حمراء يطفو بارتياح على سطح الماء البارد.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1338,7 +1299,7 @@
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/baikal/baikal-husky-sled-trail.mp4" poster="../notes/assets/activities/baikal/baikal-husky-sled-trail-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="منظور الركاب من داخل زلاجة تجرها كلاب الهاسكي نحو الجبال الشتوية.">
+        <video data-src="../notes/assets/activities/baikal/baikal-husky-sled-trail.mp4" data-poster="../notes/assets/activities/baikal/baikal-husky-sled-trail-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="منظور الركاب من داخل زلاجة تجرها كلاب الهاسكي نحو الجبال الشتوية.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1354,7 +1315,7 @@
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/baikal/baikal-horse-sleigh-ride.mp4" poster="../notes/assets/activities/baikal/baikal-horse-sleigh-ride-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="مسافرون بملابس شتوية دافئة يستمتعون بركوب زلاجة خيل وسط الغابات الثلجية.">
+        <video data-src="../notes/assets/activities/baikal/baikal-horse-sleigh-ride.mp4" data-poster="../notes/assets/activities/baikal/baikal-horse-sleigh-ride-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="مسافرون بملابس شتوية دافئة يستمتعون بركوب زلاجة خيل وسط الغابات الثلجية.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1370,7 +1331,7 @@
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/baikal/baikal-ice-swim-ladder.mp4" poster="../notes/assets/activities/baikal/baikal-ice-swim-ladder-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="امرأة مبتسمة ترتدي بدلة نجاة حرارية تصعد سلماً خشبياً من الماء.">
+        <video data-src="../notes/assets/activities/baikal/baikal-ice-swim-ladder.mp4" data-poster="../notes/assets/activities/baikal/baikal-ice-swim-ladder-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="امرأة مبتسمة ترتدي بدلة نجاة حرارية تصعد سلماً خشبياً من الماء.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1385,8 +1346,7 @@
 
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/baikal/baikal-ice-skating-800.webp" alt="شخص يتزلج على جليد البحيرة الأملس نحو مشهد غروب الشمس الرائع." width="1000" height="750" loading="lazy">
+          <img data-src="../notes/assets/activities/baikal/baikal-ice-skating-800.webp" data-srcset="../notes/assets/activities/baikal/baikal-ice-skating-800.webp 800w, ../notes/assets/activities/baikal/baikal-ice-skating-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="شخص يتزلج على جليد البحيرة الأملس نحو مشهد غروب الشمس الرائع." width="1000" height="750" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">التزلج على الجليد اللامع</h3>
@@ -1400,8 +1360,7 @@
 
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/baikal/baikal-ice-kiss-ritual-800.webp" alt="مسافر يستلقي على جليد البحيرة الصافي ليتناول مشروباً بواسطة قشة." width="720" height="1280" loading="lazy">
+          <img data-src="../notes/assets/activities/baikal/baikal-ice-kiss-ritual-800.webp" data-srcset="../notes/assets/activities/baikal/baikal-ice-kiss-ritual-800.webp 800w, ../notes/assets/activities/baikal/baikal-ice-kiss-ritual-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مسافر يستلقي على جليد البحيرة الصافي ليتناول مشروباً بواسطة قشة." width="720" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">طقوس قبلة بايكال التراثية</h3>
@@ -1415,8 +1374,7 @@
 
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/baikal/baikal-ice-cave-exploration-800.webp" alt="مسافرة تلمس جداراً طبيعياً هائلاً من قوالب الجليد المتدلية على شاطئ البحيرة." width="1280" height="853" loading="lazy">
+          <img data-src="../notes/assets/activities/baikal/baikal-ice-cave-exploration-800.webp" data-srcset="../notes/assets/activities/baikal/baikal-ice-cave-exploration-800.webp 800w, ../notes/assets/activities/baikal/baikal-ice-cave-exploration-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مسافرة تلمس جداراً طبيعياً هائلاً من قوالب الجليد المتدلية على شاطئ البحيرة." width="1280" height="853" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">استكشاف الكهوف الجليدية العملاقة</h3>
@@ -1430,8 +1388,7 @@
 
       <article class="frosted-card exp-card" data-city="baikal">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/baikal/baikal-snowmobile-safari-800.webp" alt="مجموعة من السياح يرتدون خوذات شتوية على متن زلاجات آلية في الغابة." width="960" height="1280" loading="lazy">
+          <img data-src="../notes/assets/activities/baikal/baikal-snowmobile-safari-800.webp" data-srcset="../notes/assets/activities/baikal/baikal-snowmobile-safari-800.webp 800w, ../notes/assets/activities/baikal/baikal-snowmobile-safari-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مجموعة من السياح يرتدون خوذات شتوية على متن زلاجات آلية في الغابة." width="960" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">سفاري الزلاجات الآلية بالتايغا</h3>
@@ -1452,7 +1409,7 @@
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/general/general-aurora-watching-arctic.mp4" poster="../notes/assets/activities/general/general-aurora-watching-arctic-poster.webp" width="720" height="540" autoplay muted loop playsinline preload="none" aria-label="مسافر يقف تحت قوس متوهج من الشفق القطبي الأخضر في سماء الليل.">
+        <video data-src="../notes/assets/activities/general/general-aurora-watching-arctic.mp4" data-poster="../notes/assets/activities/general/general-aurora-watching-arctic-poster.webp" width="720" height="540" muted loop playsinline preload="none" aria-label="مسافر يقف تحت قوس متوهج من الشفق القطبي الأخضر في سماء الليل.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1468,7 +1425,7 @@
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/general/general-winter-horse-sleigh.mp4" poster="../notes/assets/activities/general/general-winter-horse-sleigh-poster.webp" width="540" height="954" autoplay muted loop playsinline preload="none" aria-label="مسافرون يستمتعون بركوب زلاجة خشبية تجرها الخيول وسط الثلوج الشتوية.">
+        <video data-src="../notes/assets/activities/general/general-winter-horse-sleigh.mp4" data-poster="../notes/assets/activities/general/general-winter-horse-sleigh-poster.webp" width="540" height="954" muted loop playsinline preload="none" aria-label="مسافرون يستمتعون بركوب زلاجة خشبية تجرها الخيول وسط الثلوج الشتوية.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1484,7 +1441,7 @@
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/general/general-siberian-husky-play.mp4" poster="../notes/assets/activities/general/general-siberian-husky-play-poster.webp" width="540" height="954" autoplay muted loop playsinline preload="none" aria-label="سائح يبتسم ويلاعب كلب هاسكي سيبيري مرح وسط الثلوج.">
+        <video data-src="../notes/assets/activities/general/general-siberian-husky-play.mp4" data-poster="../notes/assets/activities/general/general-siberian-husky-play-poster.webp" width="540" height="954" muted loop playsinline preload="none" aria-label="سائح يبتسم ويلاعب كلب هاسكي سيبيري مرح وسط الثلوج.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1500,7 +1457,7 @@
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
           
-        <video src="../notes/assets/activities/general/general-reindeer-sleigh-ride.mp4" poster="../notes/assets/activities/general/general-reindeer-sleigh-ride-poster.webp" width="540" height="960" autoplay muted loop playsinline preload="none" aria-label="سياح ينزلقون عبر غابة ثلجية في زلاجة خشبية تقليدية تجرها حيوانات الرنة.">
+        <video data-src="../notes/assets/activities/general/general-reindeer-sleigh-ride.mp4" data-poster="../notes/assets/activities/general/general-reindeer-sleigh-ride-poster.webp" width="540" height="960" muted loop playsinline preload="none" aria-label="سياح ينزلقون عبر غابة ثلجية في زلاجة خشبية تقليدية تجرها حيوانات الرنة.">
         </video>
         </div>
         <div class="exp-card-info">
@@ -1515,8 +1472,7 @@
 
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/general/general-sapsan-express-journey-800.webp" alt="مسافرون يبتسمون داخل مقصورة الركاب الحديثة والمشرقة لقطار سابسان فائق السرعة." width="1600" height="1200" loading="lazy">
+          <img data-src="../notes/assets/activities/general/general-sapsan-express-journey-800.webp" data-srcset="../notes/assets/activities/general/general-sapsan-express-journey-800.webp 800w, ../notes/assets/activities/general/general-sapsan-express-journey-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="مسافرون يبتسمون داخل مقصورة الركاب الحديثة والمشرقة لقطار سابسان فائق السرعة." width="1600" height="1200" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">قطار سابسان السريع الفاخر</h3>
@@ -1530,8 +1486,7 @@
 
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/general/general-horse-sleigh-taiga-800.webp" alt="زلاجة خشبية تجرها الخيول وسط الثلوج الكثيفة في غابة الصنوبر الشتوية." width="960" height="1280" loading="lazy">
+          <img data-src="../notes/assets/activities/general/general-horse-sleigh-taiga-800.webp" data-srcset="../notes/assets/activities/general/general-horse-sleigh-taiga-800.webp 800w, ../notes/assets/activities/general/general-horse-sleigh-taiga-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="زلاجة خشبية تجرها الخيول وسط الثلوج الكثيفة في غابة الصنوبر الشتوية." width="960" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">زلاجة خيل في التايغا</h3>
@@ -1545,8 +1500,7 @@
 
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/general/general-ethnic-village-winter-hospitality-800.webp" alt="سياح يرتدون معاطف شتوية سميكة وقبعات فراء في قرية ريفية تقليدية." width="720" height="1280" loading="lazy">
+          <img data-src="../notes/assets/activities/general/general-ethnic-village-winter-hospitality-800.webp" data-srcset="../notes/assets/activities/general/general-ethnic-village-winter-hospitality-800.webp 800w, ../notes/assets/activities/general/general-ethnic-village-winter-hospitality-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="سياح يرتدون معاطف شتوية سميكة وقبعات فراء في قرية ريفية تقليدية." width="720" height="1280" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">القرية التراثية الشتوية الأصيلة</h3>
@@ -1560,8 +1514,7 @@
 
       <article class="frosted-card exp-card" data-city="general">
         <div class="exp-media-wrap">
-          
-        <img src="../notes/assets/activities/general/general-snowy-plaza-festive-tree-800.webp" alt="شجرة احتفالية مضاءة تتلألأ في ساحة حضرية مغطاة بالثلوج ليلاً." width="480" height="848" loading="lazy">
+          <img data-src="../notes/assets/activities/general/general-snowy-plaza-festive-tree-800.webp" data-srcset="../notes/assets/activities/general/general-snowy-plaza-festive-tree-800.webp 800w, ../notes/assets/activities/general/general-snowy-plaza-festive-tree-1600.webp 1600w" sizes="(min-width: 800px) 400px, 100vw" alt="شجرة احتفالية مضاءة تتلألأ في ساحة حضرية مغطاة بالثلوج ليلاً." width="480" height="848" loading="lazy" decoding="async">
         </div>
         <div class="exp-card-info">
           <h3 class="exp-card-title">أضواء المدينة الشتوية الاحتفالية</h3>
@@ -1612,17 +1565,18 @@
       </div>
     </section>
   </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="../shell/logo-anim.js" defer></script>
 <script src="../shell/shell.js" defer></script>
 <script src="../shell/footer-reveal.js" defer></script>
 <script src="../shell/sasha-chat.js" defer></script>
+<script src="../shell/lazy-media.js" defer></script>
+<script src="../shell/motion.js" defer></script>
 </div>
 <!-- SHELL:FOOTER -->
 <footer class="rotw-shell-footer" role="contentinfo">
-  <!-- Sunset Flood Blurred Blobs (Scrubbed with Reveal) -->
+  <!-- Sunset Flood Blurred Blobs -->
   <div class="footer-blobs" aria-hidden="true">
     <div class="footer-blob blob-coral"></div>
     <div class="footer-blob blob-rose"></div>
@@ -1718,7 +1672,7 @@
       </div>
     </div>
 
-    <!-- Bottom: Giant Wordmark SVG Cropped by Bottom Edge -->
+    <!-- Giant Wordmark SVG -->
     <div class="footer-wordmark-wrap">
       <svg class="footer-wordmark-svg" viewBox="98 56 366 168" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
     <g class="fw-letters">
@@ -1752,7 +1706,7 @@
   </svg>
     </div>
 
-    <!-- Bottom Tiny Row Above Crop -->
+    <!-- Bottom Legal Row -->
     <div class="footer-bottom-row">
       <div class="footer-bottom-left">
         <span>© 2026 ROTW Travels</span>

@@ -23,8 +23,10 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1626'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23F4A63C' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23F8F1E8'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23F4A63C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500&family=Aref+Ruqaa:wght@400&display=swap">
 <link rel="stylesheet" href="../../shell/shell.css">
+<link rel="stylesheet" href="../../shell/motion.css">
 <style>
 /* Sasha's Field Notebook
    ROTW Travels Moscow - Integration with v1
@@ -1664,7 +1666,7 @@ body.lightbox-open #trip{
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TouristDestination","name":"مورمانسك","description":"أكبر مدينة شمال الدائرة القطبية الشمالية، حيث يتلألأ الشفق القطبي في سمائها من سبتمبر إلى مارس.","inLanguage":"ar","includesAttraction":[{"@type":"TouristAttraction","name":"أضواء الشفق القطبي","description":"من سبتمبر إلى مارس، في الليالي الصافية والمظلمة بعيداً عن أضواء المدينة."},{"@type":"TouristAttraction","name":"تيريبيركا","description":"قرية صيد على بحر بارنتس، عند حافة المحيط المتجمد الشمالي."},{"@type":"TouristAttraction","name":"كلاب الهاسكي وحيوانات الرنة","description":"ركوب الزلاجات والتعرف على ثقافة شعب السامي الأصلية خارج المدينة."},{"@type":"TouristAttraction","name":"كاسحة الجليد لينين","description":"أول سفينة سطح تعمل بالطاقة النووية في العالم، وقد تحولت اليوم إلى متحف."},{"@type":"TouristAttraction","name":"نصب أليوشا التذكاري","description":"تمثال عملاق لجندي يرتفع فوق الخليج، مع إطلالة ساحرة على الميناء."}]},{"@type":"FAQPage","inLanguage":"ar","mainEntity":[{"@type":"Question","name":"هل رؤية الشفق القطبي مضمونة؟","acceptedAnswer":{"@type":"Answer","text":"لا يمكن لأحد ضمان ذلك؛ فالأمر يتوقف على صفاء السماء والنشاط الشمسي، لذا فإن قضاء ليلتين أو ثلاث يزيد من فرصك كثيراً."}},{"@type":"Question","name":"كم تبلغ درجة البرودة؟","acceptedAnswer":{"@type":"Answer","text":"تتراوح في الغالب بين 10 إلى 20 درجة تحت الصفر في الشتاء، وتكون أشد برودة قرب البحر مع الرياح. وتستطيع ROTW توفير ملابس دافئة ومجهزة."}},{"@type":"Question","name":"ما هو الليل القطبي؟","acceptedAnswer":{"@type":"Answer","text":"في ديسمبر وأوائل يناير لا تشرق الشمس على الإطلاق، مع وجود ساعات قليلة من الشفق الأزرق الخافت نهاراً."}},{"@type":"Question","name":"كيف أحفظ الأماكن من هذا الدفتر في خطتي؟","acceptedAnswer":{"@type":"Answer","text":"انقر على زر الدبوس بجوار أي مكان أو نشاط لحفظه في خطتك. تبقى اختياراتك محفوظة في متصفحك ويمكنك إرسالها إلى فريقنا."}},{"@type":"Question","name":"كيف أخطط لرحلة مخصصة إلى مورمانسك مع ROTW؟","acceptedAnswer":{"@type":"Answer","text":"انقر على «خطط لرحلتك» أو أرسل أماكنك المحفوظة إلى فريقنا في موسكو. نحن نصمم مساراً مخصصاً بإشراف مرشدين محليين وإقامة فندقية منسقة."}}]},{"@type":"TravelAgency","name":"ROTW Travels","telephone":"+7 930 945 4007","email":"inbound@rotwtravels.com","address":{"@type":"PostalAddress","streetAddress":"106 Prospekt Mira","addressLocality":"Moscow","postalCode":"129626","addressCountry":"RU"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://akshatdadhich12-sketch.github.io/rotw-travels-v1/"},{"@type":"ListItem","position":2,"name":"دفتر الملاحظات","item":"https://akshatdadhich12-sketch.github.io/rotw-travels-v1/notes/ar/index.html"},{"@type":"ListItem","position":3,"name":"مورمانسك","item":"https://akshatdadhich12-sketch.github.io/rotw-travels-v1/notes/ar/murmansk.html"}]}]}</script>
 </head>
-<body class="page-notebook has-curtain">
+<body class="page-notebook">
 <!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">انتقل إلى المحتوى الرئيسي</a>
 
@@ -1905,7 +1907,7 @@ body.lightbox-open #trip{
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
               
               <a href="../assets/photos/murmansk-aurora-ribbons-1600.webp" class="strip-thumb photo-link" aria-label="عرض الصورة: شرائط خضراء ساطعة من الشفق القطبي تتماوج في سماء القطب الشمالي المظلمة فوق الأشجار." data-photo-idx="1">
-                <img src="../assets/photos/murmansk-aurora-ribbons-800.webp" alt="شرائط خضراء ساطعة من الشفق القطبي تتماوج في سماء القطب الشمالي المظلمة فوق الأشجار." width="72" height="72" loading="lazy">
+                <img src="../assets/photos/murmansk-aurora-ribbons-800.webp" alt="شرائط خضراء ساطعة من الشفق القطبي تتماوج في سماء القطب الشمالي المظلمة فوق الأشجار." width="72" height="72" loading="lazy" decoding="async">
               </a>
               <div class="pick-info">
                 <div class="pick-title">أضواء الشفق القطبي</div>
@@ -1922,7 +1924,7 @@ body.lightbox-open #trip{
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
               
               <a href="../assets/photos/teriberka-ship-graveyard-sunset-1600.webp" class="strip-thumb photo-link" aria-label="عرض الصورة: حطام سفن خشبية تاريخية يستقر على شاطئ تيريبيركا المتجمد عند غروب الشمس." data-photo-idx="2">
-                <img src="../assets/photos/teriberka-ship-graveyard-sunset-800.webp" alt="حطام سفن خشبية تاريخية يستقر على شاطئ تيريبيركا المتجمد عند غروب الشمس." width="72" height="72" loading="lazy">
+                <img data-src="../assets/photos/teriberka-ship-graveyard-sunset-800.webp" alt="حطام سفن خشبية تاريخية يستقر على شاطئ تيريبيركا المتجمد عند غروب الشمس." width="72" height="72" loading="lazy" decoding="async">
               </a>
               <div class="pick-info">
                 <div class="pick-title">تيريبيركا</div>
@@ -1939,7 +1941,7 @@ body.lightbox-open #trip{
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
               
               <a href="../assets/photos/murmansk-husky-sled-trail-1600.webp" class="strip-thumb photo-link" aria-label="عرض الصورة: فريق من كلاب الهاسكي يسحب زلاجة عبر مسار غابي مغطى بالثلوج." data-photo-idx="3">
-                <img src="../assets/photos/murmansk-husky-sled-trail-800.webp" alt="فريق من كلاب الهاسكي يسحب زلاجة عبر مسار غابي مغطى بالثلوج." width="72" height="72" loading="lazy">
+                <img data-src="../assets/photos/murmansk-husky-sled-trail-800.webp" alt="فريق من كلاب الهاسكي يسحب زلاجة عبر مسار غابي مغطى بالثلوج." width="72" height="72" loading="lazy" decoding="async">
               </a>
               <div class="pick-info">
                 <div class="pick-title">كلاب الهاسكي وحيوانات الرنة</div>
@@ -1956,7 +1958,7 @@ body.lightbox-open #trip{
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
               
               <a href="../assets/photos/murmansk-lenin-icebreaker-port-1600.webp" class="strip-thumb photo-link" aria-label="عرض الصورة: كاسحة الجليد النووية لينين راسية عند رصيف الركاب في ميناء مورمانسك." data-photo-idx="4">
-                <img src="../assets/photos/murmansk-lenin-icebreaker-port-800.webp" alt="كاسحة الجليد النووية لينين راسية عند رصيف الركاب في ميناء مورمانسك." width="72" height="72" loading="lazy">
+                <img data-src="../assets/photos/murmansk-lenin-icebreaker-port-800.webp" alt="كاسحة الجليد النووية لينين راسية عند رصيف الركاب في ميناء مورمانسك." width="72" height="72" loading="lazy" decoding="async">
               </a>
               <div class="pick-info">
                 <div class="pick-title">كاسحة الجليد لينين</div>
@@ -1973,7 +1975,7 @@ body.lightbox-open #trip{
               <svg class="row-clip" viewBox="0 0 20 46" width="20" height="46" fill="none" stroke="var(--pen)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14v20a5 5 0 0 0 10 0V8a7 7 0 0 0-14 0v26a9 9 0 0 0 18 0V14"/></svg>
               
               <a href="../assets/photos/murmansk-alyosha-monument-snow-1600.webp" class="strip-thumb photo-link" aria-label="عرض الصورة: نصب أليوشا التذكاري الضخم ينتصب فوق مرتفعات مورمانسك وسط الثلوج الشتوية." data-photo-idx="5">
-                <img src="../assets/photos/murmansk-alyosha-monument-snow-800.webp" alt="نصب أليوشا التذكاري الضخم ينتصب فوق مرتفعات مورمانسك وسط الثلوج الشتوية." width="72" height="72" loading="lazy">
+                <img data-src="../assets/photos/murmansk-alyosha-monument-snow-800.webp" alt="نصب أليوشا التذكاري الضخم ينتصب فوق مرتفعات مورمانسك وسط الثلوج الشتوية." width="72" height="72" loading="lazy" decoding="async">
               </a>
               <div class="pick-info">
                 <div class="pick-title">نصب أليوشا التذكاري</div>
@@ -1998,8 +2000,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-neg15 portrait" style="order:3">
           <div class="taped">
             <a href="../assets/photos/teriberka-dragon-eggs-beach-1600.webp" class="photo-link" aria-label="عرض الصورة: صخور الغرانيت الدائرية الملساء تبرز من الثلوج على شاطئ تيريبيركا عند غروب الشمس." data-photo-idx="6">
-              <img src="../assets/photos/teriberka-dragon-eggs-beach-800.webp"
-                   srcset="../assets/photos/teriberka-dragon-eggs-beach-800.webp 800w, ../assets/photos/teriberka-dragon-eggs-beach-1600.webp 1600w"
+              <img data-src="../assets/photos/teriberka-dragon-eggs-beach-800.webp"
+                   data-srcset="../assets/photos/teriberka-dragon-eggs-beach-800.webp 800w, ../assets/photos/teriberka-dragon-eggs-beach-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="960"
                    height="1280"
@@ -2012,8 +2014,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-neg05 portrait" style="order:5">
           <div class="taped">
             <a href="../assets/photos/murmansk-glass-igloo-domes-1600.webp" class="photo-link" aria-label="عرض الصورة: أكواخ الإغلو الزجاجية القبابية تضيء بنور دافئ وسط غابة البتولا المغطاة بالثلوج." data-photo-idx="8">
-              <img src="../assets/photos/murmansk-glass-igloo-domes-800.webp"
-                   srcset="../assets/photos/murmansk-glass-igloo-domes-800.webp 800w, ../assets/photos/murmansk-glass-igloo-domes-1600.webp 1600w"
+              <img data-src="../assets/photos/murmansk-glass-igloo-domes-800.webp"
+                   data-srcset="../assets/photos/murmansk-glass-igloo-domes-800.webp 800w, ../assets/photos/murmansk-glass-igloo-domes-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="960"
                    height="1280"
@@ -2026,8 +2028,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-pos10 portrait" style="order:7">
           <div class="taped">
             <a href="../assets/photos/teriberka-snowmobile-sunset-view-1600.webp" class="photo-link" aria-label="عرض الصورة: زلاجة جليد صفراء تقف على حافة جبل ثلجي مطلة على غروب الشمس القطبي." data-photo-idx="10">
-              <img src="../assets/photos/teriberka-snowmobile-sunset-view-800.webp"
-                   srcset="../assets/photos/teriberka-snowmobile-sunset-view-800.webp 800w, ../assets/photos/teriberka-snowmobile-sunset-view-1600.webp 1600w"
+              <img data-src="../assets/photos/teriberka-snowmobile-sunset-view-800.webp"
+                   data-srcset="../assets/photos/teriberka-snowmobile-sunset-view-800.webp 800w, ../assets/photos/teriberka-snowmobile-sunset-view-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="960"
                    height="1280"
@@ -2040,8 +2042,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-neg15 portrait" style="order:9">
           <div class="taped">
             <a href="../assets/photos/murmansk-arctic-floating-suits-1600.webp" class="photo-link" aria-label="عرض الصورة: سباحان ببدلات نجاة حمراء زاهية مقاومة للماء يطفوان بارتياح على سطح المياه الجليدية." data-photo-idx="12">
-              <img src="../assets/photos/murmansk-arctic-floating-suits-800.webp"
-                   srcset="../assets/photos/murmansk-arctic-floating-suits-800.webp 800w, ../assets/photos/murmansk-arctic-floating-suits-1600.webp 1600w"
+              <img data-src="../assets/photos/murmansk-arctic-floating-suits-800.webp"
+                   data-srcset="../assets/photos/murmansk-arctic-floating-suits-800.webp 800w, ../assets/photos/murmansk-arctic-floating-suits-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="960"
                    height="1280"
@@ -2054,8 +2056,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-neg05 portrait" style="order:11">
           <div class="taped">
             <a href="../assets/photos/murmansk-reindeer-team-sunset-1600.webp" class="photo-link" aria-label="عرض الصورة: فريق مربوط من حيوانات الرنة يقف في الثلج مواجها غروب الشمس الذهبي الشتوي." data-photo-idx="14">
-              <img src="../assets/photos/murmansk-reindeer-team-sunset-800.webp"
-                   srcset="../assets/photos/murmansk-reindeer-team-sunset-800.webp 800w, ../assets/photos/murmansk-reindeer-team-sunset-1600.webp 1600w"
+              <img data-src="../assets/photos/murmansk-reindeer-team-sunset-800.webp"
+                   data-srcset="../assets/photos/murmansk-reindeer-team-sunset-800.webp 800w, ../assets/photos/murmansk-reindeer-team-sunset-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="960"
                    height="1280"
@@ -2073,8 +2075,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-pos10 portrait" style="order:4">
           <div class="taped">
             <a href="../assets/photos/murmansk-reindeer-sleigh-team-1600.webp" class="photo-link" aria-label="عرض الصورة: فريق من حيوانات الرنة يقف مربوطاً بزلاجة خشبية في الغابة المغطاة بالثلوج قرب لوفوزيرو." data-photo-idx="7">
-              <img src="../assets/photos/murmansk-reindeer-sleigh-team-800.webp"
-                   srcset="../assets/photos/murmansk-reindeer-sleigh-team-800.webp 800w, ../assets/photos/murmansk-reindeer-sleigh-team-1600.webp 1600w"
+              <img data-src="../assets/photos/murmansk-reindeer-sleigh-team-800.webp"
+                   data-srcset="../assets/photos/murmansk-reindeer-sleigh-team-800.webp 800w, ../assets/photos/murmansk-reindeer-sleigh-team-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="960"
                    height="1280"
@@ -2087,8 +2089,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-neg15 portrait" style="order:6">
           <div class="taped">
             <a href="../assets/photos/teriberka-ship-graveyard-skeletons-1600.webp" class="photo-link" aria-label="عرض الصورة: هياكل خشبية لقوارب صيد تاريخية ترقد مغمورة في جليد شاطئ تيريبيركا." data-photo-idx="9">
-              <img src="../assets/photos/teriberka-ship-graveyard-skeletons-800.webp"
-                   srcset="../assets/photos/teriberka-ship-graveyard-skeletons-800.webp 800w, ../assets/photos/teriberka-ship-graveyard-skeletons-1600.webp 1600w"
+              <img data-src="../assets/photos/teriberka-ship-graveyard-skeletons-800.webp"
+                   data-srcset="../assets/photos/teriberka-ship-graveyard-skeletons-800.webp 800w, ../assets/photos/teriberka-ship-graveyard-skeletons-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="960"
                    height="1280"
@@ -2101,8 +2103,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-neg05 portrait" style="order:8">
           <div class="taped">
             <a href="../assets/photos/murmansk-aurora-tourist-group-1600.webp" class="photo-link" aria-label="عرض الصورة: مجموعة سياحية مبتسمة ترتدي معاطف شتوية تحت شفق قطبي أخضر متوهج." data-photo-idx="11">
-              <img src="../assets/photos/murmansk-aurora-tourist-group-800.webp"
-                   srcset="../assets/photos/murmansk-aurora-tourist-group-800.webp 800w, ../assets/photos/murmansk-aurora-tourist-group-1600.webp 1600w"
+              <img data-src="../assets/photos/murmansk-aurora-tourist-group-800.webp"
+                   data-srcset="../assets/photos/murmansk-aurora-tourist-group-800.webp 800w, ../assets/photos/murmansk-aurora-tourist-group-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="1080"
                    height="1616"
@@ -2115,8 +2117,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-pos10 portrait" style="order:10">
           <div class="taped">
             <a href="../assets/photos/teriberka-arctic-coast-cliffs-1600.webp" class="photo-link" aria-label="عرض الصورة: منحدرات بحرية من الغرانيت الأحمر المغطى بالثلج تنحدر نحو أمواج بحر بارنتس." data-photo-idx="13">
-              <img src="../assets/photos/teriberka-arctic-coast-cliffs-800.webp"
-                   srcset="../assets/photos/teriberka-arctic-coast-cliffs-800.webp 800w, ../assets/photos/teriberka-arctic-coast-cliffs-1600.webp 1600w"
+              <img data-src="../assets/photos/teriberka-arctic-coast-cliffs-800.webp"
+                   data-srcset="../assets/photos/teriberka-arctic-coast-cliffs-800.webp 800w, ../assets/photos/teriberka-arctic-coast-cliffs-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="960"
                    height="1280"
@@ -2129,8 +2131,8 @@ body.lightbox-open #trip{
         <figure class="photo-print rot-neg15" style="order:12">
           <div class="taped">
             <a href="../assets/photos/murmansk-lake-glamping-domes-1600.webp" class="photo-link" aria-label="عرض الصورة: قباب تخييم فاخرة بيضاء على منصة خشبية فسيحة بجانب بحيرة هادئة في القطب." data-photo-idx="15">
-              <img src="../assets/photos/murmansk-lake-glamping-domes-800.webp"
-                   srcset="../assets/photos/murmansk-lake-glamping-domes-800.webp 800w, ../assets/photos/murmansk-lake-glamping-domes-1600.webp 1600w"
+              <img data-src="../assets/photos/murmansk-lake-glamping-domes-800.webp"
+                   data-srcset="../assets/photos/murmansk-lake-glamping-domes-800.webp 800w, ../assets/photos/murmansk-lake-glamping-domes-1600.webp 1600w"
                    sizes="(max-width: 899px) 100vw, 420px"
                    width="1600"
                    height="900"
@@ -2361,7 +2363,7 @@ body.lightbox-open #trip{
 </div>
 <!-- SHELL:FOOTER -->
 <footer class="rotw-shell-footer" role="contentinfo">
-  <!-- Sunset Flood Blurred Blobs (Scrubbed with Reveal) -->
+  <!-- Sunset Flood Blurred Blobs -->
   <div class="footer-blobs" aria-hidden="true">
     <div class="footer-blob blob-coral"></div>
     <div class="footer-blob blob-rose"></div>
@@ -2457,7 +2459,7 @@ body.lightbox-open #trip{
       </div>
     </div>
 
-    <!-- Bottom: Giant Wordmark SVG Cropped by Bottom Edge -->
+    <!-- Giant Wordmark SVG -->
     <div class="footer-wordmark-wrap">
       <svg class="footer-wordmark-svg" viewBox="98 56 366 168" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
     <g class="fw-letters">
@@ -2491,7 +2493,7 @@ body.lightbox-open #trip{
   </svg>
     </div>
 
-    <!-- Bottom Tiny Row Above Crop -->
+    <!-- Bottom Legal Row -->
     <div class="footer-bottom-row">
       <div class="footer-bottom-left">
         <span>© 2026 ROTW Travels</span>
@@ -3194,11 +3196,12 @@ body.lightbox-open #trip{
 })();
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="../../shell/logo-anim.js" defer></script>
 <script src="../../shell/shell.js" defer></script>
+<script src="../../shell/lazy-media.js" defer></script>
+<script src="../../shell/motion.js" defer></script>
 <script src="../../shell/footer-reveal.js" defer></script>
 <script src="../../shell/sasha-chat.js" defer></script>
 </body>

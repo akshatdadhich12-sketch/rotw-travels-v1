@@ -23,9 +23,12 @@
   <meta name="twitter:image" content="https://akshatdadhich12-sketch.github.io/rotw-travels-v1/assets/og-default.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:ital,wght@0,400;0,500;1,500&display=swap">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@400;500&display=swap">
+  
   <link rel="stylesheet" href="../pages/src/pages.css">
   <link rel="stylesheet" href="../shell/shell.css">
+  <link rel="stylesheet" href="../shell/motion.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,7 +98,7 @@
 }
   </script>
 </head>
-<body class="home-style has-curtain">
+<body class="home-style">
 <!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">Перейти к основному содержимому</a>
 
@@ -395,17 +398,18 @@
       </div>
     </section>
   </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="../shell/logo-anim.js" defer></script>
 <script src="../shell/shell.js" defer></script>
 <script src="../shell/footer-reveal.js" defer></script>
 <script src="../shell/sasha-chat.js" defer></script>
+<script src="../shell/lazy-media.js" defer></script>
+<script src="../shell/motion.js" defer></script>
 </div>
 <!-- SHELL:FOOTER -->
 <footer class="rotw-shell-footer" role="contentinfo">
-  <!-- Sunset Flood Blurred Blobs (Scrubbed with Reveal) -->
+  <!-- Sunset Flood Blurred Blobs -->
   <div class="footer-blobs" aria-hidden="true">
     <div class="footer-blob blob-coral"></div>
     <div class="footer-blob blob-rose"></div>
@@ -501,7 +505,7 @@
       </div>
     </div>
 
-    <!-- Bottom: Giant Wordmark SVG Cropped by Bottom Edge -->
+    <!-- Giant Wordmark SVG -->
     <div class="footer-wordmark-wrap">
       <svg class="footer-wordmark-svg" viewBox="98 56 366 168" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
     <g class="fw-letters">
@@ -535,7 +539,7 @@
   </svg>
     </div>
 
-    <!-- Bottom Tiny Row Above Crop -->
+    <!-- Bottom Legal Row -->
     <div class="footer-bottom-row">
       <div class="footer-bottom-left">
         <span>© 2026 ROTW Travels</span>

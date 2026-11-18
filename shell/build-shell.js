@@ -7,38 +7,46 @@ const PROTOTYPE_DIR = path.resolve(__dirname, '..');
 function ensureShellAssets(html, relBase = '.') {
   let res = html;
   const cssHref = `${relBase}/shell/shell.css`;
+  const motionCssHref = `${relBase}/shell/motion.css`;
   const jsSrc = `${relBase}/shell/shell.js`;
   const logoAnimSrc = `${relBase}/shell/logo-anim.js`;
   const footerRevealSrc = `${relBase}/shell/footer-reveal.js`;
   const sashaChatSrc = `${relBase}/shell/sasha-chat.js`;
+  const lazyMediaSrc = `${relBase}/shell/lazy-media.js`;
+  const motionJsSrc = `${relBase}/shell/motion.js`;
 
   const gsapCore = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
   const gsapST = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
-  const gsapDrag = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js';
 
   if (!res.includes('shell/shell.css')) {
     if (res.includes('</head>')) {
-      res = res.replace('</head>', `  <link rel="stylesheet" href="${cssHref}">\n</head>`);
+      res = res.replace('</head>', `  <link rel="stylesheet" href="${cssHref}">\n  <link rel="stylesheet" href="${motionCssHref}">\n</head>`);
     } else if (res.includes('</style>')) {
-      res = res.replace('</style>', `</style>\n<link rel="stylesheet" href="${cssHref}">`);
+      res = res.replace('</style>', `</style>\n<link rel="stylesheet" href="${cssHref}">\n<link rel="stylesheet" href="${motionCssHref}">`);
     } else {
-      res = `<link rel="stylesheet" href="${cssHref}">\n` + res;
+      res = `<link rel="stylesheet" href="${cssHref}">\n<link rel="stylesheet" href="${motionCssHref}">\n` + res;
     }
+  } else if (!res.includes('shell/motion.css')) {
+    res = res.replace(/(<link\s+rel="stylesheet"\s+href="[^"]*shell\/shell\.css"[^>]*>)/, `$1\n  <link rel="stylesheet" href="${motionCssHref}">`);
   }
 
+  // Remove any obsolete Draggable script
+  res = res.replace(/\s*<script\s+src="[^"]*Draggable\.min\.js"[^>]*><\/script>/g, '');
+
   if (!res.includes('gsap/3.12.5/gsap.min.js')) {
-    const scripts = `<script src="${gsapCore}"></script>\n<script src="${gsapST}"></script>\n<script src="${gsapDrag}"></script>\n<script src="${logoAnimSrc}" defer></script>\n<script src="${jsSrc}" defer></script>\n<script src="${footerRevealSrc}" defer></script>\n<script src="${sashaChatSrc}" defer></script>`;
+    const scripts = `<script src="${gsapCore}" defer></script>\n<script src="${gsapST}" defer></script>\n<script src="${logoAnimSrc}" defer></script>\n<script src="${jsSrc}" defer></script>\n<script src="${footerRevealSrc}" defer></script>\n<script src="${sashaChatSrc}" defer></script>\n<script src="${lazyMediaSrc}" defer></script>\n<script src="${motionJsSrc}" defer></script>`;
     if (res.includes('</body>')) {
       res = res.replace('</body>', `  ${scripts}\n</body>`);
     } else {
       res = res + `\n${scripts}\n`;
     }
   } else {
+    // Ensure gsap scripts have defer
+    res = res.replace(/<script\s+src="([^"]*gsap\.min\.js)"(?!\s+defer)><\/script>/, '<script src="$1" defer></script>');
     if (!res.includes('ScrollTrigger.min.js')) {
-      res = res.replace(/<script\s+src="[^"]*gsap\.min\.js"[^>]*><\/script>/, m => `${m}\n<script src="${gsapST}"></script>`);
-    }
-    if (!res.includes('Draggable.min.js')) {
-      res = res.replace(/<script\s+src="[^"]*ScrollTrigger\.min\.js"[^>]*><\/script>/, m => `${m}\n<script src="${gsapDrag}"></script>`);
+      res = res.replace(/<script\s+src="[^"]*gsap\.min\.js"[^>]*><\/script>/, m => `${m}\n<script src="${gsapST}" defer></script>`);
+    } else {
+      res = res.replace(/<script\s+src="([^"]*ScrollTrigger\.min\.js)"(?!\s+defer)><\/script>/, '<script src="$1" defer></script>');
     }
     if (!res.includes('shell/shell.js')) {
       if (res.includes('</body>')) {
@@ -52,6 +60,18 @@ function ensureShellAssets(html, relBase = '.') {
     }
     if (!res.includes('shell/sasha-chat.js')) {
       res = res.replace(/<script\s+src="[^"]*shell\/footer-reveal\.js"[^>]*><\/script>/, m => `${m}\n<script src="${sashaChatSrc}" defer></script>`);
+    }
+    if (!res.includes('shell/lazy-media.js')) {
+      res = res.replace(/<script\s+src="[^"]*shell\/sasha-chat\.js"[^>]*><\/script>/, m => `${m}\n<script src="${lazyMediaSrc}" defer></script>`);
+    }
+    if (!res.includes('shell/motion.js')) {
+      if (res.includes('shell/lazy-media.js')) {
+        res = res.replace(/<script\s+src="[^"]*shell\/lazy-media\.js"[^>]*><\/script>/, m => `${m}\n<script src="${motionJsSrc}" defer></script>`);
+      } else if (res.includes('</body>')) {
+        res = res.replace('</body>', `  <script src="${motionJsSrc}" defer></script>\n</body>`);
+      } else {
+        res = res + `\n<script src="${motionJsSrc}" defer></script>\n`;
+      }
     }
   }
   return res;
@@ -72,18 +92,10 @@ function stampShellIntoHtml(html, { lang = 'en', relBase = '.', activePage = '',
         }
       }
     }
-    res = res.replace(/(<body[^>]*)\bhas-curtain\b\s*([^>]*>)/g, '$1$2');
-  } else {
-    if (!res.includes('has-curtain')) {
-      if (res.includes('<body class="')) {
-        res = res.replace(/<body class="([^"]*)"/, '<body class="$1 has-curtain"');
-      } else if (res.includes("<body class='")) {
-        res = res.replace(/<body class='([^']*)'/, "<body class='$1 has-curtain'");
-      } else if (res.includes('<body')) {
-        res = res.replace('<body', '<body class="has-curtain"');
-      }
-    }
   }
+  // Remove has-curtain everywhere (spec-footer-v5)
+  res = res.replace(/(<body[^>]*)\bhas-curtain\b\s*([^>]*>)/g, '$1$2');
+  res = res.replace(/<body\s+class="\s*"/g, '<body>');
 
   if (Array.isArray(sashaLines) && sashaLines.length > 0 && !speechText) {
     speechText = sashaLines[0].text;

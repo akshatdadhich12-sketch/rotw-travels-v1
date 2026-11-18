@@ -69,9 +69,11 @@ publicPages.forEach(relPath => {
 
   // 1. Check Shell assets and landmarks
   if (!content.includes('shell.css')) errors.push(relPath + ' missing shell.css');
+  if (!content.includes('motion.css')) errors.push(relPath + ' missing motion.css');
   if (!content.includes('shell.js')) errors.push(relPath + ' missing shell.js');
   if (!content.includes('footer-reveal.js')) errors.push(relPath + ' missing footer-reveal.js');
   if (!content.includes('sasha-chat.js')) errors.push(relPath + ' missing sasha-chat.js');
+  if (!content.includes('motion.js')) errors.push(relPath + ' missing motion.js');
   if (!content.includes('compass-capsule')) errors.push(relPath + ' missing compass-capsule');
   if (!content.includes('capsule-logo')) errors.push(relPath + ' missing capsule-logo');
   if (!content.includes('rotw-shell-footer')) errors.push(relPath + ' missing rotw-shell-footer');

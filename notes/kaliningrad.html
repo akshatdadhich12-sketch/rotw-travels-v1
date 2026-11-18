@@ -23,8 +23,10 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1626'/%3E%3Cpath d='M6 21c6-9 14-12 20-12' stroke='%23F4A63C' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='21' r='2.6' fill='%23F8F1E8'/%3E%3Ccircle cx='26' cy='9' r='2.6' fill='%23F4A63C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&family=Caveat:wght@400;600&display=swap">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@400;500&family=Caveat:wght@500&display=swap">
 <link rel="stylesheet" href="../shell/shell.css">
+<link rel="stylesheet" href="../shell/motion.css">
 <style>
 /* Sasha's Field Notebook
    ROTW Travels Moscow - Integration with v1
@@ -1663,7 +1665,7 @@ body.lightbox-open #trip{
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TouristDestination","name":"Kaliningrad","description":"A Gothic cathedral on an island, the dunes of the Curonian Spit, and most of the world’s amber.","inLanguage":"en","includesAttraction":[{"@type":"TouristAttraction","name":"Königsberg Cathedral","description":"A Gothic cathedral on Kant Island, with Immanuel Kant’s tomb beside its wall."},{"@type":"TouristAttraction","name":"The Amber Museum","description":"Most of the world’s amber comes from this coast. See the best of it here."},{"@type":"TouristAttraction","name":"Fishing Village","description":"A riverside quarter built in the old Prussian style, with smoked fish on the menu."},{"@type":"TouristAttraction","name":"The Curonian Spit","description":"A UNESCO-listed sand spit with high dunes and the twisted pines of the Dancing Forest."},{"@type":"TouristAttraction","name":"Svetlogorsk","description":"A Baltic seaside town of old villas and a long promenade."}]},{"@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Is Kaliningrad part of Russia?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is an exclave on the Baltic, between Poland and Lithuania."}},{"@type":"Question","name":"How many days?","acceptedAnswer":{"@type":"Answer","text":"Two or three days."}},{"@type":"Question","name":"What is the Dancing Forest?","acceptedAnswer":{"@type":"Answer","text":"A stretch of pines on the Curonian Spit whose trunks twist into loops and spirals."}},{"@type":"Question","name":"How do I save places from this notebook to my trip?","acceptedAnswer":{"@type":"Answer","text":"Click the pin button next to any place or activity to save it to your trip plan. Your selections stay in your browser and can be sent to our team."}},{"@type":"Question","name":"How do I plan a tailored trip to Kaliningrad with ROTW?","acceptedAnswer":{"@type":"Answer","text":"Click \"Plan a trip\" or send your pinned places to our Moscow team. We design a tailored itinerary with verified local guides, boutique hotels, and seamless transfers."}}]},{"@type":"TravelAgency","name":"ROTW Travels","telephone":"+7 930 945 4007","email":"inbound@rotwtravels.com","address":{"@type":"PostalAddress","streetAddress":"106 Prospekt Mira","addressLocality":"Moscow","postalCode":"129626","addressCountry":"RU"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://akshatdadhich12-sketch.github.io/rotw-travels-v1/"},{"@type":"ListItem","position":2,"name":"Field Notebook","item":"https://akshatdadhich12-sketch.github.io/rotw-travels-v1/notes/index.html"},{"@type":"ListItem","position":3,"name":"Kaliningrad","item":"https://akshatdadhich12-sketch.github.io/rotw-travels-v1/notes/kaliningrad.html"}]}]}</script>
 </head>
-<body class="page-notebook has-curtain">
+<body class="page-notebook">
 <!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">Skip to main content</a>
 
@@ -2159,7 +2161,7 @@ body.lightbox-open #trip{
 </div>
 <!-- SHELL:FOOTER -->
 <footer class="rotw-shell-footer" role="contentinfo">
-  <!-- Sunset Flood Blurred Blobs (Scrubbed with Reveal) -->
+  <!-- Sunset Flood Blurred Blobs -->
   <div class="footer-blobs" aria-hidden="true">
     <div class="footer-blob blob-coral"></div>
     <div class="footer-blob blob-rose"></div>
@@ -2255,7 +2257,7 @@ body.lightbox-open #trip{
       </div>
     </div>
 
-    <!-- Bottom: Giant Wordmark SVG Cropped by Bottom Edge -->
+    <!-- Giant Wordmark SVG -->
     <div class="footer-wordmark-wrap">
       <svg class="footer-wordmark-svg" viewBox="98 56 366 168" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
     <g class="fw-letters">
@@ -2289,7 +2291,7 @@ body.lightbox-open #trip{
   </svg>
     </div>
 
-    <!-- Bottom Tiny Row Above Crop -->
+    <!-- Bottom Legal Row -->
     <div class="footer-bottom-row">
       <div class="footer-bottom-left">
         <span>© 2026 ROTW Travels</span>
@@ -2992,11 +2994,12 @@ body.lightbox-open #trip{
 })();
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="../shell/logo-anim.js" defer></script>
 <script src="../shell/shell.js" defer></script>
+<script src="../shell/lazy-media.js" defer></script>
+<script src="../shell/motion.js" defer></script>
 <script src="../shell/footer-reveal.js" defer></script>
 <script src="../shell/sasha-chat.js" defer></script>
 </body>

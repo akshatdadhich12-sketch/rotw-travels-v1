@@ -210,7 +210,7 @@ html[dir="rtl"] .progress i{transform-origin:right}
 
 /* choice rows */
 .rows{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;border:0}
-.choice{display:grid;grid-template-columns:minmax(0,1fr) 26px;align-items:center;gap:14px;width:100%;text-align:start;background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:10px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:16px 18px;cursor:pointer;min-height:64px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
+.choice{display:grid;grid-template-columns:minmax(0,1fr) 26px;align-items:center;gap:14px;width:100%;text-align:start;background:rgba(21,35,59,.92);border:1px solid rgba(244,166,60,.22);border-radius:10px;padding:16px 18px;cursor:pointer;min-height:64px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
 .choice:active{transform:scale(.985)}
 .choice b{display:block;font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1.15}
 .choice small{display:block;font-size:14px;color:var(--mist);margin-top:2px}
@@ -221,7 +221,7 @@ html[dir="rtl"] .progress i{transform-origin:right}
 
 /* cities */
 .cities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.city{display:grid;grid-template-columns:64px minmax(0,1fr) 26px;align-items:center;gap:12px;text-align:start;background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);border-radius:10px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:8px 12px 8px 8px;cursor:pointer;min-height:64px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
+.city{display:grid;grid-template-columns:64px minmax(0,1fr) 26px;align-items:center;gap:12px;text-align:start;background:rgba(21,35,59,.92);border:1px solid rgba(244,166,60,.22);border-radius:10px;padding:8px 12px 8px 8px;cursor:pointer;min-height:64px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
 html[dir="rtl"] .city{padding:8px 8px 8px 12px}
 .city img{width:64px;height:48px;object-fit:cover;border-radius:6px;display:block}
 .city b{font-family:var(--f-display);font-weight:400;font-size:22px;line-height:1.1;display:block}
@@ -237,7 +237,7 @@ html[dir="rtl"] .city{padding:8px 8px 8px 12px}
 
 /* months */
 .months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
-.month{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:8px;min-height:56px;cursor:pointer;font-size:16px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
+.month{background:rgba(21,35,59,.92);border:1px solid rgba(244,166,60,.22);border-radius:8px;min-height:56px;cursor:pointer;font-size:16px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
 .month:active{transform:scale(.97)}
 .month[aria-checked="true"]{background:var(--gold);color:#0B1626;border-color:var(--gold);font-weight:500}
 @media (hover:hover) and (pointer:fine){.month:hover{border-color:var(--gold)}}
@@ -259,7 +259,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 
 /* chips */
 .chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer;font-size:16px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
+.chip{background:rgba(21,35,59,.92);border:1px solid rgba(244,166,60,.22);border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer;font-size:16px;transition:border-color .15s ease,background .15s ease,transform .16s var(--ease-out)}
 .chip:active{transform:scale(.97)}
 .chip[aria-pressed="true"]{background:var(--coral);color:#0B1626;border-color:var(--coral)}
 .chip[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
@@ -270,7 +270,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .field.full{grid-column:1/-1}
 .field label{font-size:15px;color:var(--soft)}
-.field input{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:8px;padding:12px 14px;min-height:50px;font-size:17px;color:var(--glacier);width:100%}
+.field input{background:rgba(21,35,59,.92);border:1px solid rgba(244,166,60,.22);border-radius:8px;padding:12px 14px;min-height:50px;font-size:17px;color:var(--glacier);width:100%}
 .field input::placeholder{color:#6F7D92}
 .field input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(244,166,60,.18)}
 .field input[aria-invalid="true"]{border-color:var(--err)}
@@ -295,7 +295,7 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 @media (pointer:coarse){.keys{display:none}}
 
 /* done */
-.done textarea{width:100%;min-height:260px;background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:10px;padding:16px;color:var(--soft);font-size:15px;line-height:1.55;resize:vertical}
+.done textarea{width:100%;min-height:260px;background:rgba(21,35,59,.92);border:1px solid rgba(244,166,60,.22);border-radius:10px;padding:16px;color:var(--soft);font-size:15px;line-height:1.55;resize:vertical}
 .done .acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .done .status{font-size:15px;color:var(--soft)}
 
@@ -308,7 +308,7 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 .say::before{content:"";position:absolute;bottom:14px;inset-inline-start:-8px;border:8px solid transparent;border-inline-end-color:var(--paper);border-inline-start:0}
 .say b{display:block;font-size:13px;font-weight:500;color:#8A4A10;margin-bottom:2px}
 .say.swap{opacity:0}
-.mapbox{position:relative;background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:12px;overflow:hidden;aspect-ratio:1000/430}
+.mapbox{position:relative;background:rgba(21,35,59,.92);border:1px solid rgba(244,166,60,.22);border-radius:12px;overflow:hidden;aspect-ratio:1000/430}
 .mapbox svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .mapbox .land{fill:#1A2B45;stroke:#2F4567;stroke-width:.8}
 .mapbox .ru{fill:#2C2B20;stroke:#F4A63C;stroke-width:1.4}
@@ -359,7 +359,7 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 .warn:empty{display:none}
 .panel h3{font-size:24px}
 /* estimated cost card */
-.estimated-cost-card{background:rgba(21,35,59,.72);border:1px solid rgba(244,166,60,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:12px;padding:22px 24px;margin-top:24px;color:var(--glacier)}
+.estimated-cost-card{background:rgba(21,35,59,.92);border:1px solid rgba(244,166,60,.22);border-radius:12px;padding:22px 24px;margin-top:24px;color:var(--glacier)}
 .cost-card-title{font-family:var(--f-display);font-size:clamp(22px,2.6vw,30px);font-weight:400;color:var(--glacier);margin-bottom:12px}
 .cost-card-content{display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.5;color:var(--soft)}
 .cost-budget-line{color:var(--glacier);font-weight:500}
@@ -397,8 +397,9 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
 .faq-ans p{margin:0}
 </style>
   <link rel="stylesheet" href="./shell/shell.css">
+  <link rel="stylesheet" href="./shell/motion.css">
 </head>
-<body class="has-curtain">
+<body>
 <a class="skip" href="#q-main" data-i18n="skip">Skip to the planner</a>
 <!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">Skip to main content</a>
@@ -773,7 +774,7 @@ html[dir="rtl"] .btn svg{transform:scaleX(-1)}
   </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js" defer></script>
 <script>
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const CITIES={
@@ -904,8 +905,8 @@ radioRows($('visa'),VISA,k=>L().visa[k],null,'visa');
 
 $('cities').innerHTML=ORDER.map(id=>`<button type="button" class="city" data-city="${id}" aria-pressed="false"><img src="${PHOTO(id)}" alt="" width="64" height="48" loading="lazy"><span><b></b><small></small></span><span class="tick"></span></button>`).join('');
 document.querySelectorAll('.city').forEach(b=>b.addEventListener('click',()=>toggleCity(b.dataset.city)));
-function toggleCity(id){const i=S.cities.indexOf(id);if(i>=0)S.cities.splice(i,1);else S.cities.push(id);clearErr();save();sync(true);}
-$('suggest').addEventListener('click',()=>{S.cities=['moscow','spb'];if(S.nights>=10)S.cities.push('kazan');clearErr();save();sync(true);say(L().suggestLine);});
+function toggleCity(id){triggerMapLoad();const i=S.cities.indexOf(id);if(i>=0)S.cities.splice(i,1);else S.cities.push(id);clearErr();save();sync(true);}
+$('suggest').addEventListener('click',()=>{triggerMapLoad();S.cities=['moscow','spb'];if(S.nights>=10)S.cities.push('kazan');clearErr();save();sync(true);say(L().suggestLine);});
 
 $('months').innerHTML=Array.from({length:12},(_,i)=>`<button type="button" class="month" role="radio" data-m="${i+1}"></button>`).join('');
 document.querySelectorAll('.month').forEach(b=>b.addEventListener('click',()=>{S.month=+b.dataset.m;clearErr();save();sync();}));
@@ -963,7 +964,18 @@ function loadWorld(){
   return fetch('assets/countries-50m.json').then(r=>{if(!r.ok)throw 0;return r.json();})
     .catch(()=>new Promise((res,rej)=>{const s=document.createElement('script');s.src='assets/mapdata.js';s.onload=()=>window.MAP_DATA?res(MAP_DATA.world):rej();s.onerror=rej;document.head.appendChild(s);}));
 }
-loadWorld().then(drawMap).catch(()=>{});
+let mapDataLoaded = false;
+function triggerMapLoad() {
+  if (mapDataLoaded) return;
+  mapDataLoaded = true;
+  const ric = window.requestIdleCallback || ((cb) => setTimeout(cb, 50));
+  ric(() => {
+    loadWorld().then(drawMap).catch(()=>{});
+  });
+}
+window.addEventListener('scroll', triggerMapLoad, { once: true, passive: true });
+window.addEventListener('pointerdown', triggerMapLoad, { once: true, passive: true });
+window.addEventListener('keydown', triggerMapLoad, { once: true, passive: true });
 /* label collision avoidance */
 const PIN_CONFIG={
   moscow:     {side:'bottom',ox:0, oy:14,leader:true},
@@ -1087,7 +1099,7 @@ function say(text){
   if(t.textContent===text)return;
   el.classList.add('swap');clearTimeout(sayTimer);
   sayTimer=setTimeout(()=>{t.textContent=text;el.classList.remove('swap');},reduce?0:160);
-  const img=$('sashaImg');if(img){img.src='assets/guide-wave.webp';clearTimeout(waveTimer);waveTimer=setTimeout(()=>{img.src='assets/guide-stand.webp';},1800);}
+  const img=$('sashaImg');if(img){img.src='assets/guide-stand.webp';}
 }
 
 const startChip = document.getElementById('plan-start-chip');
@@ -1411,17 +1423,18 @@ document.querySelectorAll('.step').forEach(s=>s.hidden=+s.dataset.step!==S.step)
 chrome();
 fetchCosts();
 </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="./shell/logo-anim.js" defer></script>
 <script src="./shell/shell.js" defer></script>
 <script src="./shell/footer-reveal.js" defer></script>
 <script src="./shell/sasha-chat.js" defer></script>
+<script src="./shell/lazy-media.js" defer></script>
+<script src="./shell/motion.js" defer></script>
 </div>
 <!-- SHELL:FOOTER -->
 <footer class="rotw-shell-footer" role="contentinfo">
-  <!-- Sunset Flood Blurred Blobs (Scrubbed with Reveal) -->
+  <!-- Sunset Flood Blurred Blobs -->
   <div class="footer-blobs" aria-hidden="true">
     <div class="footer-blob blob-coral"></div>
     <div class="footer-blob blob-rose"></div>
@@ -1517,7 +1530,7 @@ fetchCosts();
       </div>
     </div>
 
-    <!-- Bottom: Giant Wordmark SVG Cropped by Bottom Edge -->
+    <!-- Giant Wordmark SVG -->
     <div class="footer-wordmark-wrap">
       <svg class="footer-wordmark-svg" viewBox="98 56 366 168" role="img" aria-label="ROTW Travels" xmlns="http://www.w3.org/2000/svg">
     <g class="fw-letters">
@@ -1551,7 +1564,7 @@ fetchCosts();
   </svg>
     </div>
 
-    <!-- Bottom Tiny Row Above Crop -->
+    <!-- Bottom Legal Row -->
     <div class="footer-bottom-row">
       <div class="footer-bottom-left">
         <span>© 2026 ROTW Travels</span>
