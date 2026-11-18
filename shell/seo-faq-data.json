@@ -1,0 +1,622 @@
+{
+  "plan": [
+    {
+      "q": {
+        "en": "How do I plan a trip to Russia with ROTW?",
+        "ru": "Как спланировать поездку в Россию с ROTW?",
+        "ar": "كيف أخطط لرحلة إلى روسيا مع ROTW؟"
+      },
+      "a": {
+        "en": "Start by choosing who is travelling, your travel dates, preferred destinations, and comfort style in our planner. We shape a tailored itinerary based on your choices. Every estimate is confirmed in writing by ROTW in a personal quote before anything is finalized.",
+        "ru": "Начните с выбора спутников, дат поездки, желаемых городов и уровня комфорта в нашем планировщике. Мы составим индивидуальный маршрут с учетом ваших пожеланий. Все расчеты подтверждаются компанией ROTW в письменном виде в индивидуальном предложении перед утверждением программы.",
+        "ar": "ابدأ بتحديد المسافرين ومواعيد السفر والوجهات المفضلة ومستوى الراحة في أداة التخطيط الخاصة بنا. نحن نصمم مساراً مخصصاً يناسب اختياراتك تماماً. تؤكد شركة ROTW كل تقدير كتابياً في عرض أسعار مخصص قبل تأكيد أي ترتيبات نهائية."
+      }
+    },
+    {
+      "q": {
+        "en": "Does the planner give a final price?",
+        "ru": "Показывает ли планировщик окончательную стоимость?",
+        "ar": "هل توفر أداة التخطيط سعراً نهائياً؟"
+      },
+      "a": {
+        "en": "No, estimates shown in the planner are not binding offers. The estimated cost is always subject to confirmation by ROTW. We review seasonal availability, tailored hotels, and private guides before confirming the exact final price in writing in your formal itinerary quote.",
+        "ru": "Нет, ориентировочные расчеты в планировщике не являются публичной офертой. Примерная стоимость всегда подлежит уточнению компанией ROTW. Мы проверяем сезонную доступность, выбранные отели и персональных гидов, после чего письменно подтверждаем итоговую стоимость в официальном расчете маршрута.",
+        "ar": "لا، التقديرات المعروضة في أداة التخطيط ليست عروضاً نهائية ملزمة. التكلفة التقديرية تخضع دائماً للتأكيد من قبل شركة ROTW. نراجع التوفر الموسمي والفنادق والمرشدين الخاصين قبل تأكيد السعر النهائي الدقيق كتابة في عرض أسعار مفصل."
+      }
+    },
+    {
+      "q": {
+        "en": "Is my information stored when I use the planner?",
+        "ru": "Сохраняются ли мои данные при использовании планировщика?",
+        "ar": "هل يتم تخزين معلوماتي عند استخدام أداة التخطيط؟"
+      },
+      "a": {
+        "en": "No, your planning selections remain entirely inside your browser local storage on your device. We do not transmit or store your planner inputs on any remote web server. When you submit your plan, it opens a prefilled message directly in your local email app.",
+        "ru": "Нет, выбранные параметры поездки сохраняются исключительно в локальном хранилище вашего браузера на вашем устройстве. Мы не передаем и не сохраняем ваши данные на веб-серверах. При отправке запроса программа открывает готовый черновик письма непосредственно в вашей почтовой программе.",
+        "ar": "لا، تظل اختياراتك التخطيطية محفوظة بالكامل داخل وحدة التخزين المحلية لمتصفحك على جهازك فقط. نحن لا ننقل أو نخزن مدخلاتك على خوادم بعيدة. عند إرسال خطتك، يتم فتح مسودة بريد إلكتروني منسقة في تطبيق بريدك الشخصي مباشرة."
+      }
+    },
+    {
+      "q": {
+        "en": "Which budget bands does the planner use?",
+        "ru": "Какие категории бюджета используются в планировщике?",
+        "ar": "ما هي فئات الميزانية المعتمدة في أداة التخطيط؟"
+      },
+      "a": {
+        "en": "The planner offers four distinct budget categories to reflect your preferred style of travel and comfort. These categories cover your land arrangements within Russia, excluding international flights. They guide our travel specialists in selecting appropriate boutique hotels, private transfers, and curated excursions.",
+        "ru": "Планировщик предлагает четыре категории бюджета, соответствующие вашему предпочтительному стилю путешествия и уровню комфорта. Эти категории охватывают наземное обслуживание в России без учета международных авиаперелетов. Они помогают нашим специалистам подобрать подходящие отели, индивидуальные трансферы и экскурсии.",
+        "ar": "توفر أداة التخطيط أربع فئات للميزانية تعكس أسلوب سفرك ومستوى الراحة المفضل لديك. تغطي هذه الفئات الترتيبات الأرضية داخل روسيا دون تذاكر الطيران الدولي. وتساعد اختصاصيينا على اختيار الفنادق المناسبة ووسائل النقل الخاصة والجولات السياحية الملائمة."
+      }
+    },
+    {
+      "q": {
+        "en": "Can travel agents use the planner?",
+        "ru": "Могут ли турагенты пользоваться планировщиком?",
+        "ar": "هل يمكن لوكلاء السفر استخدام أداة التخطيط؟"
+      },
+      "a": {
+        "en": "Yes, travel agents can select the dedicated agent option within the trip planner. This routes your inquiry directly to our confidential B2B operations department in Moscow. You can also visit our For agents page to review our partnership terms and request wholesale net rates.",
+        "ru": "Да, турагенты могут выбрать соответствующий пункт в нашем планировщике поездок. Это направляет ваш запрос напрямую в отдел по работе с B2B партнерами в Москве. Вы также можете открыть страницу Тэрагентам, чтобы ознакомиться с условиями сотрудничества и запросить нетто-тарифы.",
+        "ar": "نعم، يمكن لوكلاء السفر اختيار خيار الوكلاء المخصص داخل أداة التخطيط. يوجه هذا استفسارك مباشرة إلى قسم العمليات والتعاون التجاري في موسكو. كما يمكنك زيارة صفحة وكلاء السفر للاطلاع على شروط الشراكة وطلب الأسعار الصافية."
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "q": {
+        "en": "Are there traveller reviews yet?",
+        "ru": "Есть ли уже отзывы путешественников?",
+        "ar": "هل توجد آراء للمسافرين حتى الآن؟"
+      },
+      "a": {
+        "en": "Reviews from ROTW travellers will appear here as our guests return from their journeys across Russia. We believe in genuine feedback rather than manufactured testimonials. In the meantime, you can explore authentic photographs and practical field notes recorded directly across Russia in Sasha's notebook.",
+        "ru": "Отзывы путешественников ROTW будут опубликованы здесь по мере возвращения гостей из поездок по России. Мы ценим подлинные впечатления и не используем заказные тексты. А пока вы можете ознакомиться с настоящими фотографиями и практическими заметками в полевом блокноте Саши.",
+        "ar": "ستظهر تقييمات مسافري ROTW هنا فور عودة ضيوفنا من رحلاتهم الميدانية في أرجاء روسيا. نحن نؤمن بالآراء الحقيقية الصادقة ولا ننشر تقييمات مصطنعة. في هذه الأثناء، يمكنك استكشاف الصور الحقيقية والملاحظات الميدانية المفيدة المسجلة في دفتر ملاحظات ساشا عبر روسيا."
+      }
+    },
+    {
+      "q": {
+        "en": "Where can I see real photos of ROTW journeys?",
+        "ru": "Где посмотреть настоящие фотографии из путешествий ROTW?",
+        "ar": "أين يمكنني مشاهدة صور حقيقية لرحلات ROTW؟"
+      },
+      "a": {
+        "en": "You can explore real photos in Sasha's notebook and across our destinations section. We feature authentic pictures taken during actual journeys across Russia with real travellers, guides, and drivers. We strictly avoid using generic stock photos anywhere across our entire website presentation.",
+        "ru": "Вы можете увидеть подлинные фотографии в блокноте Саши и в разделе направлений нашего сайта. Мы публикуем настоящие кадры, сделанные во время реальных поездок по России с гостями, гидами и водителями. Мы принципиально не используем стоковые или постановочные снимки на страницах нашего сайта.",
+        "ar": "يمكنك استكشاف صور حقيقية في دفتر ملاحظات ساشا وقسم الوجهات السياحية في موقعنا. نحن نعرض صوراً أصلية التقطت أثناء رحلات حقيقية في جميع أنحاء روسيا برفقة مسافرين ومرشدين وسائقين حقيقيين. ونتجنب تماماً وبشكل قاطع استخدام أي صور دعائية جاهزة في موقعنا."
+      }
+    },
+    {
+      "q": {
+        "en": "Who can I speak with before I decide?",
+        "ru": "С кем я могу посоветоваться перед принятием решения?",
+        "ar": "مع من يمكنني التحدث قبل اتخاذ قراري؟"
+      },
+      "a": {
+        "en": "You can speak directly with our core travel operations team based in Moscow. Reach out through our contact page by email or telephone. Our planners answer your questions about itineraries, seasons, and local logistics to help you shape your journey across Russia comfortably.",
+        "ru": "Вы можете напрямую связаться с нашей операционной командой в Москве перед принятием любого решения о поездке. Напишите нам по электронной почте или позвоните по телефону, указанному на странице контактов. Наши специалисты ответят на любые вопросы о маршрутах, сезонах и логистике поездки по России.",
+        "ar": "يمكنك التحدث مباشرة وبشكل مريح مع فريق العمليات والتخطيط الرئيسي لدينا في موسكو قبل اتخاذ أي قرار بشأن رحلتك. تواصل معنا عبر صفحة الاتصال بالبريد الإلكتروني أو الهاتف المعتمد. يجيب مختصونا عن جميع أسئلتك المتعلقة بالمسارات والمواسم والترتيبات المحلية لمساعدتك في بناء رحلتك."
+      }
+    },
+    {
+      "q": {
+        "en": "Which cities does ROTW plan journeys to?",
+        "ru": "В какие города ROTW организует путешествия?",
+        "ar": "ما هي المدن التي تنظم ROTW رحلات إليها؟"
+      },
+      "a": {
+        "en": "We design journeys across eight Russian destinations: Moscow, St Petersburg, Sochi, Murmansk, Kazan, Lake Baikal, Kamchatka, and Vladivostok. We also operate representative travel bureaus and partner itineraries in Dubai and Oman for international travellers connecting through regional hubs across the world.",
+        "ru": "Мы организуем поездки по восьми направлениям России: Москве, Санкт-Петербургу, Сочи, Мурманску, Казани, Байкалу, Камчатке и Владивостоку. Также у нас работают собственные представительства и партнерские программы в Дубае и Омане для гостей, путешествующих через эти международные транзитные хабы по всему миру.",
+        "ar": "نحن ننظم رحلات عبر ثماني وجهات روسية رئيسية تشمل موسكو وسانت بطرسبرغ وسوتشي ومورمانسك وقازان وبحيرة بايكال وكامتشاتكا وفلاديفوستوك. كما ندير مكاتب تمثيلية خاصة وبرامج شريكة في دبي وعُمان لخدمة المسافرين الدوليين القادمين عبر هذه المحاور الإقليمية العالمية في رحلاتهم."
+      }
+    },
+    {
+      "q": {
+        "en": "How do I start planning?",
+        "ru": "Как начать подготовку к поездке?",
+        "ar": "كيف أبدأ التخطيط لرحلتي؟"
+      },
+      "a": {
+        "en": "Open our interactive trip planner to outline your party size, preferred travel window, and destinations of interest. You can pin highlights from Sasha's notebook or request a bespoke itinerary. Our Moscow desk reviews your selections and crafts a tailored route proposal for you.",
+        "ru": "Откройте наш интерактивный планировщик поездок, чтобы указать состав группы, удобные даты путешествия и интересующие направления. Вы можете сохранять места из блокнота Саши или запросить авторский маршрут. Наша московская команда внимательно изучит детали и подготовит персональное предложение для вас и ваших спутников.",
+        "ar": "افتح أداة التخطيط التفاعلية لتحديد حجم مجموعتك وفترة السفر المفضلة والوجهات التي تود زيارتها بالتحديد. يمكنك أيضاً حفظ المعالم من دفتر ملاحظات ساشا أو طلب مسار مخصص. سيراجع فريقنا المتخصص في موسكو اختياراتك بعناية ويصمم مقترحاً مفصلاً ومناسباً لك ولمرافقتك."
+      }
+    }
+  ],
+  "contact": [
+    {
+      "q": {
+        "en": "How do I contact ROTW Travels?",
+        "ru": "Как связаться с компанией ROTW Travels?",
+        "ar": "كيف أتواصل مع شركة ROTW Travels؟"
+      },
+      "a": {
+        "en": "You can write directly to our Moscow team by email at inbound@rotwtravels.com or call our offices. Contact details and local telephone numbers for all our international bureaus in Moscow, Dubai, Mumbai, Muscat, and Hong Kong are listed below on this contact page.",
+        "ru": "Вы можете написать нашей московской команде по официальной электронной почте inbound@rotwtravels.com или позвонить в наши офисы. Все контактные данные и прямые телефоны международных представительств в Москве, Дубае, Мумбаи, Маскате и Гонконге подробно указаны ниже на этой странице нашего сайта.",
+        "ar": "يمكنك مراسلة فريقنا في موسكو مباشرة عبر البريد الإلكتروني المعتمد inbound@rotwtravels.com أو الاتصال بمكاتبنا. تفاصيل الاتصال الكاملة وأرقام الهواتف المباشرة لجميع مكاتبنا الدولية في موسكو ودبي ومومباي ومسقط وهونغ كونغ موضحة بالتفصيل أدناه في هذه الصفحة من موقعنا."
+      }
+    },
+    {
+      "q": {
+        "en": "Where is the ROTW head office?",
+        "ru": "Где находится главный офис ROTW?",
+        "ar": "أين يقع المقر الرئيسي لشركة ROTW؟"
+      },
+      "a": {
+        "en": "Our central operations headquarters is located at 106 Prospekt Mira, Moscow 129626. This is where our primary destination management team coordinates guides, transport, private transfers, and hotel arrangements across all Russian destinations for incoming travellers from around the world.",
+        "ru": "Наша главная операционная штаб-квартира расположена по официальному адресу: Россия, Москва, 129626, Проспект Мира, дом 106. Здесь наша центральная команда туроператора координирует работу гидов, трансферы, транспортную логистику и бронирование отелей во всех городах России для прибывающих гостей со всего мира.",
+        "ar": "يقع مقر عملياتنا الرئيسي الدائم في 106 بروسبكت ميرا، موسكو 129626 في روسيا الاتحادية. من هذا المقر، يتولى فريقنا المركزي المتخصص إدارة وتنسيق المرشدين والتنقلات الخاصة وحجوزات الفنادق المعتمدة في جميع الوجهات الروسية لجميع المسافرين والضيوف القادمين من مختلف بلدان العالم."
+      }
+    },
+    {
+      "q": {
+        "en": "Which offices does ROTW have?",
+        "ru": "Какие представительства есть у ROTW?",
+        "ar": "ما هي المكاتب التابعة لشركة ROTW؟"
+      },
+      "a": {
+        "en": "ROTW maintains five offices worldwide: our operations desk in Moscow, along with regional bureaus in Dubai, Mumbai, Muscat, and Hong Kong. Each international desk provides localized support for regional partners and travellers across their respective timezones with dedicated local personnel.",
+        "ru": "Компания ROTW располагает пятью офисами: операционным центром в Москве и региональными бюро в Дубае, Мумбаи, Маскате и Гонконге. Каждое международное отделение обеспечивает прямую поддержку партнеров и индивидуальных путешественников в соответствующих часовых поясах с участием наших опытных местных специалистов.",
+        "ar": "تمتلك ROTW خمسة مكاتب متكاملة حول العالم: مركز عملياتنا في موسكو، ومكاتبنا الإقليمية في دبي ومومباي ومسقط وهونغ كونغ. يقدم كل مكتب إقليمي دعماً مباشراً وشاملاً للشركاء المحليين والمسافرين عبر المناطق الزمنية المختلفة بواسطة فرق عمل متخصصة ومؤهلة لخدمتكم."
+      }
+    },
+    {
+      "q": {
+        "en": "How does the contact form work?",
+        "ru": "Как работает форма обратной связи?",
+        "ar": "كيف يعمل نموذج التواصل؟"
+      },
+      "a": {
+        "en": "The contact form prepares a formatted email message that opens directly inside your default mail application using a mailto link. No personal contact data is collected or stored on our website server, giving you full control over your sent messages and privacy.",
+        "ru": "Форма обратной связи на странице формирует готовый черновик письма, который открывается в вашей почтовой программе по протоколу mailto. Никакие личные данные не передаются и не сохраняются на серверах сайта, что гарантирует полный контроль над отправляемыми сообщениями и вашу конфиденциальность.",
+        "ar": "يقوم نموذج التواصل بإعداد مسودة بريد إلكتروني منسقة تفتح مباشرة داخل تطبيق البريد الافتراضي على جهازك الشخصي عبر رابط mailto. لا يتم جمع أو حفظ أو تخزين أي بيانات شخصية على خوادمنا، مما يمنحك تحكماً كاملاً وحماية تامة لخصوصيتك وبياناتك."
+      }
+    },
+    {
+      "q": {
+        "en": "Can I plan a trip without writing an email?",
+        "ru": "Можно ли спланировать поездку без отправки письма?",
+        "ar": "هل يمكنني التخطيط لرحلة دون كتابة بريد إلكتروني؟"
+      },
+      "a": {
+        "en": "Yes, you can use our interactive trip planner to configure your entire travel route step by step. Select your party size, destinations, activities, and budget style directly in the browser to receive an immediate structured itinerary summary without writing a manual letter.",
+        "ru": "Да, вы можете использовать наш интерактивный планировщик поездок для последовательной настройки всего маршрута шаг за шагом. Выберите количество гостей, города, мероприятия и категорию бюджета прямо в браузере, чтобы сразу получить наглядную программу поездки без составления отдельного ручного письма на почту.",
+        "ar": "نعم، يمكنك استخدام أداة التخطيط التفاعلية لتحديد مسار رحلتك بالكامل خطوة بخطوة بكل يسر وسهولة. اختر عدد المسافرين والوجهات والأنشطة وفئة الميزانية مباشرة في المتصفح للحصول على ملخص شامل ومنظم لرحلتك المقترحة دون الحاجة لكتابة رسالة يدوية إلى البريد."
+      }
+    }
+  ],
+  "experiences": [
+    {
+      "q": {
+        "en": "What experiences can I add to a trip in Russia?",
+        "ru": "Какие впечатления можно добавить в поездку по России?",
+        "ar": "ما هي التجارب التي يمكنني إضافتها لرحلتي في روسيا؟"
+      },
+      "a": {
+        "en": "You can add authentic cultural, nature, and adventure activities across our destinations. Options include Neva river night ice floating, Teriberka Arctic ocean coastal voyages, Sochi canyon suspension walks, reindeer feeding encounters, and gentle wildlife observation in natural protected Russian habitats.",
+        "ru": "Вы можете дополнить поездку культурными, природными и активными впечатлениями во всех регионах. Среди них: купание во льдах Невы, морские прогулки в Териберке, мост над каньоном в Сочи, кормление северных оленей и наблюдение за дикой природой в заповедных уголках нашей страны.",
+        "ar": "يمكنك إضافة باقة واسعة من التجارب الثقافية والطبيعية ومغامرات الهواء الطلق الأصيلة عبر وجهاتنا الروسية المتنوعة. تشمل الخيارات السباحة الشتوية في نهر نيفا، ورحلات ساحل المحيط القطبي في تيريبيركا، وجسور الوديان المعلقة في سوتشي، وإطعام الرنة، ومشاهدة الحياة البرية في المحميات."
+      }
+    },
+    {
+      "q": {
+        "en": "Do the experiences have fixed prices?",
+        "ru": "Указаны ли фиксированные цены на экскурсии и впечатления?",
+        "ar": "هل التجارب لها أسعار ثابتة ومحددة مسبقاً؟"
+      },
+      "a": {
+        "en": "No, experiences do not carry standalone fixed prices on this website. Every activity is integrated into a complete tailored travel programme. Final costs depend on your group size, season, and private guide arrangements, and are confirmed in writing in your formal itinerary quote.",
+        "ru": "Нет, на нашем сайте не указаны отдельные фиксированные цены на программы и впечатления. Каждое мероприятие включается в общий индивидуальный тур. Итоговая стоимость зависит от размера группы, сезона и персонального гида и письменно подтверждается в официальном расчете маршрута.",
+        "ar": "لا، لا تحمل التجارب والأنشطة السياحية أسعاراً ثابتة منفصلة على هذا الموقع. يتم دمج كل تجربة ونشاط ضمن برنامج سفر مخصص ومتكامل. وتعتمد التكلفة النهائية على حجم المجموعة والموسم وترتيبات المرشدين الخاصين، وتؤكد كتابياً في عرض السعر الرسمي الخاص بك."
+      }
+    },
+    {
+      "q": {
+        "en": "Where do the experiences take place?",
+        "ru": "Где именно проводятся эти мероприятия?",
+        "ar": "أين تقام هذه التجارب والأنشطة بالتحديد؟"
+      },
+      "a": {
+        "en": "Our curated experiences take place in St Petersburg, Murmansk, Sochi, Lake Baikal, Moscow, and partner natural regions. Specific operating sites and meeting points are confirmed upon request based on local weather conditions, river navigation schedules, and regional seasonal availability throughout Russia.",
+        "ru": "Наши авторские программы и мероприятия проходят в Санкт-Петербурге, Мурманске, Сочи, на озере Байкал, в Москве и живописных природных уголках. Точные площадки и места сбора подтверждаются по запросу с учетом погоды, навигации и сезонных условий в регионах России.",
+        "ar": "تقام تجاربنا المختارة بعناية في سانت بطرسبرغ ومورمانسك وسوتشي وبحيرة بايكال وموسكو والمناطق الطبيعية الخلابة الشريكة. ويتم تأكيد المواقع الدقيقة ونقاط التجمع عند الطلب وفقاً للأحوال الجوية المحلية وجداول الملاحة النهرية والمواسم المتاحة في أنحاء روسيا."
+      }
+    },
+    {
+      "q": {
+        "en": "How do I book an experience?",
+        "ru": "Как забронировать понравившееся впечатление?",
+        "ar": "كيف يمكنني حجز إحدى هذه التجارب؟"
+      },
+      "a": {
+        "en": "Simply tell Sasha or mention the activity titles in your trip planner submission. Our Moscow team will weave the chosen experiences into your daily itinerary, arranging private transportation, certified local instructors, and required permits seamlessly for your entire journey.",
+        "ru": "Просто сообщите Саше или укажите названия интересующих программ в планировщике поездки. Наша команда в Москве гармонично включит выбранные мероприятия в ваш ежедневный маршрут, организовав комфортабельный частный транспорт, сертифицированных инструкторов и все необходимые разрешения на всем вашем туристическом маршруте.",
+        "ar": "ببساطة أخبر ساشا أو اذكر أسماء التجارب التي تهمك في أداة تخطيط الرحلات المعتمدة. سيقوم فريقنا في موسكو بدمج التجارب المختارة بانسجام تام ضمن جدولك اليومي، مع تنظيم وسائل النقل الخاصة والمدربين المعتمدين والتصاريح المطلوبة طوال الرحلة بأكملها."
+      }
+    },
+    {
+      "q": {
+        "en": "Are the photos real?",
+        "ru": "Действительно ли фотографии настоящие?",
+        "ar": "هل الصور المعروضة حقيقية وأصيلة؟"
+      },
+      "a": {
+        "en": "Yes, every photo and video on this page shows authentic moments from our journeys across Russia. You see real travellers, local experts, and genuine landscapes. We never use fabricated digital graphics or commercial stock photography anywhere in our activity catalogue.",
+        "ru": "Да, каждая фотография и видеозапись на этой странице запечатлела подлинные моменты наших путешествий по городам России. Вы видите реальных гостей, местных проводников и настоящую природу. Мы никогда не используем графические имитации или стоковые снимки в каталоге программ.",
+        "ar": "نعم، كل صورة ومقطع فيديو في هذه الصفحة يعرض لحظات حقيقية من رحلاتنا عبر روسيا. يمكنك رؤية مسافرين ومرشدين حقيقيين ومشاهد طبيعية أصيلة من الميدان. نحن لا نستخدم إطلاقاً أي صور مخزنة أو لقطات دعائية مسبقة الصنع في هذا الدليل التفاعلي."
+      }
+    }
+  ],
+  "blog": [
+    {
+      "q": {
+        "en": "Where can I read Sasha's tips today?",
+        "ru": "Где сегодня можно прочитать советы Саши?",
+        "ar": "أين يمكنني قراءة نصائح ساشا اليوم؟"
+      },
+      "a": {
+        "en": "You can read Sasha's practical travel recommendations directly in Sasha's field notebook. It features curated highlights, seasonal suggestions, and local pointers for ten iconic destinations across Russia, helping you discover quiet courtyards and regional culinary traditions across the country.",
+        "ru": "Практические советы Саши можно прочитать в ее полевом блокноте на нашем сайте. Там собраны главные достопримечательности, проверенные сезонные рекомендации и полезные заметки по десяти направлениям России: от тихих двориков до местных гастрономических традиций в разных городах.",
+        "ar": "يمكنك قراءة توصيات ساشا الميدانية والعملية مباشرة في دفتر ملاحظات ساشا على موقعنا. يضم الدفتر معالم مختارة ونصائح موسمية مجربة وإرشادات لعشر وجهات رئيسية في روسيا لمساعدتك على استكشاف الأماكن الهادئة والتقاليد الإقليمية والضيافة المحلية الأصيلة."
+      }
+    },
+    {
+      "q": {
+        "en": "Where do I find guides to each city?",
+        "ru": "Где найти путеводители по городам?",
+        "ar": "أين أجد أدلة السفر الخاصة بكل مدينة؟"
+      },
+      "a": {
+        "en": "Visit our destinations hub to access comprehensive guides for each of our featured cities. Each destination page provides key historical landmarks, recommended travel months, local time information, airport details, and curated activity collections tailored for independent exploration across Russia.",
+        "ru": "Перейдите в наш раздел направлений, чтобы открыть подробные путеводители по каждому городу. На страницах направлений подробно описаны ключевые достопримечательности, лучшие месяцы для поездки, местное время, аэропорты и проверенные варианты культурного досуга во всех регионах по всей стране.",
+        "ar": "تفضل بزيارة قسم الوجهات الرئيسية للوصول إلى أدلة سفر شاملة لكل مدينة نغطيها. توفر صفحة كل وجهة أهم المعالم التاريخية وأفضل أشهر الزيارة ومعلومات التوقيت المحلي والمطارات وقوائم الأنشطة المنسقة بعناية للاستكشاف المنظم في كل أنحاء روسيا."
+      }
+    },
+    {
+      "q": {
+        "en": "What journeys does ROTW offer?",
+        "ru": "Какие готовые маршруты предлагает ROTW?",
+        "ar": "ما هي مسارات الرحلات التي تقدمها ROTW؟"
+      },
+      "a": {
+        "en": "ROTW offers six signature starter itineraries: Classic Two Capitals, The Golden Ring, The Great Trans-Siberian, Lake Baikal Clear Ice, Kazan & Volga Heritage, and Polar Night Murmansk. Every journey serves as a customizable foundation adapted to your exact travel dates.",
+        "ru": "Компания ROTW предлагает шесть классических программ: Классика двух столиц, Золотое кольцо, Великий Транссиб, Прозрачный лед Байкала, Казань и сокровища Волги, а также Полярная ночь в Мурманске. Каждая программа служит гибкой основой для вашего будущего маршрута путешествия.",
+        "ar": "تقدم شركة ROTW ستة مسارات رحلات كلاسيكية نموذجية: العاصمتان الكلاسيكيتان، الطوق الذهبي، سكة حديد عبر سيبيريا، جليد بايكال الشفاف، قازان وتراث الفولغا، وليالي مورمانسك القطبية. يشكل كل مسار قاعدة مرنة وممتازة تناسب مواعيدك واهتماماتك الخاصة في السفر."
+      }
+    },
+    {
+      "q": {
+        "en": "How do I contact the Moscow team?",
+        "ru": "Как связаться с московской командой?",
+        "ar": "كيف أتواصل مع فريق العمل في موسكو؟"
+      },
+      "a": {
+        "en": "You can reach our Moscow operations desk directly through our contact page or by sending an email to inbound@rotwtravels.com. Our travel designers assist with private route customization, booking requirements, and specific logistics across Russia for incoming travellers from worldwide locations.",
+        "ru": "Связаться с операционным отделом в Москве можно напрямую через официальную страницу контактов или по электронной почте inbound@rotwtravels.com. Наши координаторы помогут адаптировать маршрут, оформить заявку и уточнить любые детали логистики по всей России для всех гостей нашего туроператора.",
+        "ar": "يمكنك التواصل مع مكتب عملياتنا في موسكو مباشرة عبر صفحة الاتصال الرسمية أو بمراسلتنا على البريد inbound@rotwtravels.com. يساعدك مصممو رحلاتنا في تخصيص المسارات وتلبية متطلبات الحجز والترتيبات اللوجستية الميدانية في جميع أنحاء روسيا لجميع ضيوفنا القادمين من كل مكان."
+      }
+    },
+    {
+      "q": {
+        "en": "When will stories appear on the blog?",
+        "ru": "Когда на страницах блога появятся первые статьи?",
+        "ar": "متى ستنشر المقالات والقصص في المدونة؟"
+      },
+      "a": {
+        "en": "Stories and field notes from Sasha and the Moscow team will appear here soon as seasonal articles are finalized. In the meantime, you can explore the notebook for immediate travel insights and practical destination suggestions across all our regions.",
+        "ru": "Путевые заметки и истории от Саши и московской команды появятся здесь в ближайшее время по мере публикации сезонных статей. А пока вы можете найти практические советы и живые описания мест в нашем полевом блокноте по разным регионам.",
+        "ar": "ستظهر القصص والملاحظات الميدانية المفصلة من ساشا وفريق موسكو هنا قريباً مع اكتمال تحرير المقالات الموسمية الجديدة بصورة ممتازة. في هذه الأثناء، يمكنك تصفح دفتر الملاحظات للحصول على إرشادات سفر فورية واقتراحات عملية لجميع الوجهات في أرجاء روسيا."
+      }
+    }
+  ],
+  "terms": [
+    {
+      "q": {
+        "en": "Are the prices on this website final?",
+        "ru": "Являются ли цены на сайте окончательными?",
+        "ar": "هل الأسعار المعروضة على هذا الموقع نهائية؟"
+      },
+      "a": {
+        "en": "No, indicative figures or cost bands on this website are not binding offers. Prices are confirmed in writing by ROTW in each formal quote after verifying seasonal availability, hotel tariffs, and private guide arrangements for your exact travel dates.",
+        "ru": "Нет, ориентировочные диапазоны стоимости на страницах сайта не являются публичной офертой. Цены подтверждаются компанией ROTW в письменном виде в индивидуальном расчете после проверки наличия мест в отелях и работы персональных гидов на ваши точные даты поездки.",
+        "ar": "لا، الأرقام التقديرية وفئات الميزانية المعروضة على الموقع ليست عروضاً نهائية ملزمة. يتم تأكيد الأسعار كتابياً من قبل ROTW في كل عرض أسعار رسمي بعد التحقق التام من التوفر الموسمي وتعرفات الفنادق وترتيبات المرشدين الخاصين."
+      }
+    },
+    {
+      "q": {
+        "en": "How are itineraries set?",
+        "ru": "Как формируются маршруты путешествий?",
+        "ar": "كيف يتم تحديد مسارات وتفاصيل الرحلات؟"
+      },
+      "a": {
+        "en": "Itineraries are tailored per traveller. Every published route on this website serves as a starting concept. We customize the daily pace, destinations, accommodations, and guided excursions to match your personal preferences, party size, and arrival details throughout Russia.",
+        "ru": "Маршруты составляются индивидуально для каждого путешественника. Все программы на сайте служат отправной точкой. Мы адаптируем темп поездки, города, отели и экскурсии в строгом соответствии с вашими предпочтениями, количеством участников и датами прибытия по всей России.",
+        "ar": "يتم تصميم خطط الرحلات خصيصاً لكل مسافر على حدة. يعتبر كل مسار منشور على الموقع مسودة أولية ونقطة انطلاق. نقوم بتعديل جدول الأيام والوجهات والإقامة والجولات لتناسب تماماً رغباتك وحجم مجموعتك ومواعيد وصولك عبر روسيا."
+      }
+    },
+    {
+      "q": {
+        "en": "Who confirms a quote?",
+        "ru": "Кто подтверждает расчет стоимости поездки?",
+        "ar": "من هي الجهة المسؤولة عن تأكيد عرض السعر؟"
+      },
+      "a": {
+        "en": "All travel quotes are officially confirmed in writing by ROTW Travels. Our Moscow operations team issues a detailed itinerary document outlining inclusions, hotel arrangements, and terms before any travel booking is accepted as definitive by our bureau.",
+        "ru": "Все расчеты путешествий официально подтверждаются туроператором ROTW Travels в письменной форме. Наша московская команда готовит детальную программу с полным перечнем услуг, подтверждением отелей и условиями обслуживания перед окончательным оформлением бронирования в нашем бюро для наших клиентов.",
+        "ar": "يتم تأكيد جميع عروض الأسعار رسمياً وكتابياً من قبل شركة ROTW Travels. يصدر فريق عملياتنا في موسكو وثيقة مسار مفصلة توضح كافة الخدمات المشمولة وتأكيدات الفنادق والشروط قبل اعتماد أي حجز سفر نهائي في مكتبنا المعتمد."
+      }
+    },
+    {
+      "q": {
+        "en": "What happens to prices before a quote?",
+        "ru": "Что происходит со стоимостью до получения расчета?",
+        "ar": "ما هو وضع الأسعار قبل استلام عرض السعر الرسمي؟"
+      },
+      "a": {
+        "en": "Before a tailored quote is issued, any cost figure represents an estimate subject to confirmation by ROTW. Rates may fluctuate based on seasonal peak dates, currency adjustments, and regional provider policies until locked in a formal written proposal.",
+        "ru": "До составления индивидуального расчета любая указанная сумма носит исключительно ориентировочный характер и требует подтверждения ROTW. Тарифы могут меняться в зависимости от сезона, дат поездки и условий партнеров до фиксации в официальном письменном предложении для гостей и заказчиков.",
+        "ar": "قبل إصدار عرض السعر المخصص، يعتبر أي رقم تكلفة تقديراً أولياً يخضع للتأكيد من قبل ROTW. قد تتغير الأسعار وفقاً للمواسم المزدحمة وتعديلات أسعار الصرف وسياسات المزودين الشركاء حتى يتم تثبيتها في مقترح مكتوب رسمي للعميل."
+      }
+    },
+    {
+      "q": {
+        "en": "Where can I ask a question about these terms?",
+        "ru": "Где можно задать вопрос по условиям обслуживания?",
+        "ar": "أين يمكنني طرح استفسار حول هذه الشروط والأحكام؟"
+      },
+      "a": {
+        "en": "You can ask any questions regarding our terms and booking conditions through our contact page. Write to our Moscow team at inbound@rotwtravels.com or contact any of our international bureau desks for guidance on service agreements and private itineraries.",
+        "ru": "Вы можете задать любые вопросы об условиях обслуживания через страницу контактов в любое удобное время. Напишите нашей московской команде по адресу inbound@rotwtravels.com или обратитесь в любое из наших международных представительств за подробными разъяснениями условий и правил обслуживания туристов.",
+        "ar": "يمكنك طرح أي أسئلة واستفسارات تتعلق بشروط الخدمة وسياسات الحجز عبر صفحة الاتصال الخاصة بنا في أي وقت. راسل فريقنا في موسكو على inbound@rotwtravels.com أو اتصل بأي من مكاتبنا الدولية للحصول على التوضيحات والتوجيه القانوني الشامل حول الاتفاقيات."
+      }
+    }
+  ],
+  "privacy": [
+    {
+      "q": {
+        "en": "Does this website use cookies?",
+        "ru": "Используются ли cookie-файлы на этом сайте?",
+        "ar": "هل يستخدم هذا الموقع ملفات تعريف الارتباط (الكوكيز)؟"
+      },
+      "a": {
+        "en": "No tracking, advertising, or profiling cookies are used or set by this website. We do not track your browsing activity across other websites or deploy third-party advertising trackers on our pages. Your visits remain private and secure at all times.",
+        "ru": "На сайте не используются и не устанавливаются рекламные, аналитические или профилирующие cookie-файлы. Мы не отслеживаем ваши действия на сторонних веб-сайтах и не используем сторонние рекламные трекеры. Ваше пребывание на нашем сайте остается полностью конфиденциальным и безопасным всегда.",
+        "ar": "لا يستخدم هذا الموقع أي ملفات تعريف ارتباط إعلانية أو تتبعية أو موجهة. نحن لا نتتبع نشاط تصفحك عبر مواقع أخرى ولا نوظف أدوات تتبع إعلانية خارجية على صفحاتنا إطلاقاً. تظل زيارتك لموقعنا خاصة وآمنة تماماً في كل الأوقات."
+      }
+    },
+    {
+      "q": {
+        "en": "Where is my information stored?",
+        "ru": "Где сохраняется моя информация?",
+        "ar": "أين يتم تخزين معلوماتي وتفضيلاتي؟"
+      },
+      "a": {
+        "en": "Your language choice and trip planner preferences are saved only in your browser local storage directly on your own device. We do not store or mirror this information on any web server or database. You can clear this data at any time.",
+        "ru": "Выбранный язык интерфейса и параметры поездки сохраняются исключительно в локальном хранилище вашего браузера на вашем собственном устройстве. Мы не сохраняем и не копируем эти сведения на серверах или базах данных. Вы можете удалить эти данные в любой момент времени.",
+        "ar": "يتم حفظ اختيار اللغة وتفضيلات مخطط الرحلة فقط داخل وحدة التخزين المحلية لمتصفحك على جهازك الشخصي. نحن لا نخزن أو ننسخ هذه المعلومات على أي خادم ويب أو قاعدة بيانات إطلاقاً. ويمكنك مسح هذه البيانات متى شئت بسهولة."
+      }
+    },
+    {
+      "q": {
+        "en": "Do the forms send my data to a server?",
+        "ru": "Отправляют ли формы мои данные на сервер?",
+        "ar": "هل تقوم النماذج بإرسال بياناتي إلى خادم خارجي؟"
+      },
+      "a": {
+        "en": "No, forms on this site do not transmit data to an online web server. Instead, our inquiry forms generate a formatted email message inside your local email application using standard mailto links. You inspect and send the communication yourself directly.",
+        "ru": "Нет, формы на сайте не отправляют информацию на внешние веб-серверы. Вместо этого они формируют готовое письмо в вашей почтовой программе с помощью стандартных ссылок протокола mailto. Вы сами проверяете текст и отправляете сообщение из своей почты непосредственно.",
+        "ar": "لا، لا تقوم النماذج الموجودة في هذا الموقع بنقل البيانات إلى خادم ويب خارجي. بدلاً من ذلك، تقوم نماذج الاستفسار بإنشاء مسودة بريد منسقة في تطبيق بريدك الشخصي عبر روابط mailto القياسية. يمكنك فحص الرسالة وإرسالها بنفسك مباشرة بكل ثقة وأمان."
+      }
+    },
+    {
+      "q": {
+        "en": "Which third parties does the site load?",
+        "ru": "Какие сторонние сервисы загружает этот сайт?",
+        "ar": "ما هي الأطراف والمكتبات الخارجية التي يحملها الموقع؟"
+      },
+      "a": {
+        "en": "This website loads typography and animation libraries from verified content delivery networks: Google Fonts for typography, cdnjs Cloudflare for GSAP and Three.js, and unpkg for smooth scroll utilities under their standard privacy terms. No personal profiles are created.",
+        "ru": "Сайт загружает шрифты и библиотеки анимации через проверенные сети доставки контента: Google Fonts для отображения текста, cdnjs Cloudflare для библиотек GSAP и Three.js, а также unpkg для плавной прокрутки. Никакие персональные профили посетителей при этом не создаются вовсе.",
+        "ar": "يقوم هذا الموقع بتحميل الخطوط ومكتبات الحركة من شبكات توصيل محتوى موثوقة: خطوط Google Fonts للطباعة، وcdnjs Cloudflare لمكتبتي GSAP وThree.js، وunpkg لخصائص التمرير السلس وفق سياساتها القياسية. ولا يتم إنشاء أي ملفات تعريف شخصية للمستخدمين."
+      }
+    },
+    {
+      "q": {
+        "en": "Who do I contact about privacy?",
+        "ru": "К кому можно обратиться по вопросам конфиденциальности?",
+        "ar": "من هي الجهة المسؤولة التي يمكنني التواصل معها بشأن الخصوصية؟"
+      },
+      "a": {
+        "en": "You can contact our team regarding data privacy questions directly through our contact page. Write to our central Moscow desk at inbound@rotwtravels.com with any questions regarding site operation or personal data handling. We assist with all data inquiries promptly.",
+        "ru": "По любым вопросам конфиденциальности данных вы можете обратиться через страницу контактов. Напишите в наш центральный офис в Москве по адресу inbound@rotwtravels.com по всем аспектам обработки информации. Мы оперативно ответим на все возникающие вопросы по защите данных путешественников.",
+        "ar": "يمكنك التواصل مع فريقنا بخصوص أسئلة خصوصية البيانات مباشرة عبر صفحة الاتصال الخاصة بنا. راسل مكتبنا الرئيسي في موسكو على inbound@rotwtravels.com لأي استفسارات تتعلق بتشغيل الموقع والبيانات. نحن نجيب على جميع الاستفسارات المتعلقة بالبيانات باهتمام كامل وسرعة."
+      }
+    }
+  ],
+  "destinationsHub": [
+    {
+      "q": {
+        "en": "What cities does ROTW plan journeys to?",
+        "ru": "В какие города ROTW организует путешествия?",
+        "ar": "ما هي المدن التي تخطط ROTW لرحلات إليها؟"
+      },
+      "a": {
+        "en": "ROTW plans journeys to eight iconic destinations across Russia: Moscow, St Petersburg, Sochi, Murmansk, Kazan, Lake Baikal, Kamchatka, and Vladivostok. We also operate regional travel offices and curated travel extensions in Dubai and Oman for international travellers visiting regional hubs.",
+        "ru": "Компания ROTW организует путешествия по восьми ключевым направлениям России: Москве, Санкт-Петербургу, Сочи, Мурманску, Казани, Байкалу, Камчатке и Владивостоку. Также мы ведем активную работу и предлагаем программы в Дубае и Омане для зарубежных гостей в их поездках.",
+        "ar": "تنظم شركة ROTW رحلات سياحية إلى ثماني وجهات رئيسية في روسيا: موسكو وسانت بطرسبرغ وسوتشي ومورمانسك وقازان وبحيرة بايكال وكامتشاتكا وفلاديفوستوك. كما ندير مكاتب وبرامج سفر إقليمية في دبي وعُمان لخدمة المسافرين الدوليين في رحلاتهم عبر المنطقة بأسرها."
+      }
+    },
+    {
+      "q": {
+        "en": "Where can I see the northern lights in Russia?",
+        "ru": "Где в России можно увидеть северное сияние?",
+        "ar": "أين يمكنني رؤية الشفق القطبي في روسيا؟"
+      },
+      "a": {
+        "en": "You can witness the northern lights in Murmansk and the Kola Peninsula above the Arctic Circle. The aurora season extends from September to March, offering dark skies, snow-covered tundra, and opportunities to observe natural displays in remote landscapes.",
+        "ru": "Увидеть северное сияние можно в Мурманске и на Кольском полуострове за Полярным кругом. Сезон сияний длится с сентября по март, предлагая темные ночи, заснеженную тундру и великолепные панорамы вдали от городской засветки для каждого путешественника.",
+        "ar": "يمكنك مشاهدة أضواء الشفق القطبي في مورمانسك وشبه جزيرة كولا فوق الدائرة القطبية الشمالية. يمتد موسم الشفق من سبتمبر إلى مارس، حيث تتزين السماء المظلمة وتندرا الثلوج بعروض طبيعية ساحرة في أحضان الطبيعة البكر لجميع الزوار والضيوف."
+      }
+    },
+    {
+      "q": {
+        "en": "Where is Lake Baikal and when is the ice clear?",
+        "ru": "Где находится озеро Байкал и когда там прозрачный лед?",
+        "ar": "أين تقع بحيرة بايكال ومتى يكون جليدها شفافاً تماماً؟"
+      },
+      "a": {
+        "en": "Lake Baikal is located in southern Siberia, reached via the historic gateway city of Irkutsk. The famous transparent winter ice forms fully in February and March, creating pristine ice fields, natural pressure ridges, and walk-in frozen caves.",
+        "ru": "Озеро Байкал находится на юге Сибири, воротами к которому служит исторический город Иркутск. Знаменитый прозрачный зимний лед формируется в феврале и марте, открывая ледяные поля, торосы и живописные замерзшие гроты для прогулок и экскурсий в зимний период.",
+        "ar": "تقع بحيرة بايكال في جنوب سيبيريا، ويمكن الوصول إليها عبر مدينة إيركوتسك التاريخية. يتشكل الجليد الشتوي الشفاف الشهير في شهري فبراير ومارس، كاشفاً عن مساحات جليدية نقية وتلال جليدية وكهوف متجمدة رائعة مناسبة للمشي والاستكشاف في الشتاء."
+      }
+    },
+    {
+      "q": {
+        "en": "Which city is the end of the Trans-Siberian line?",
+        "ru": "Какой город является конечной станцией Транссибирской магистрали?",
+        "ar": "ما هي المدينة التي تعد المحطة النهائية لسكة حديد عبر سيبيريا؟"
+      },
+      "a": {
+        "en": "Vladivostok is the grand Pacific terminus of the Trans-Siberian railway, located 9,289 kilometres from Moscow. The port city overlooks the Golden Horn Bay, featuring dramatic suspension bridges, fresh seafood markets, and coastal naval heritage along the ocean.",
+        "ru": "Владивосток — конечная тихоокеанская станция Транссибирской магистрали, расположенная в 9 289 километрах от Москвы. Этот портовый город на берегу бухты Золотой Рог славится вантовыми мостами, морепродуктами и богатой морской историей тихоокеанского флота на всем его протяжении.",
+        "ar": "فلاديفوستوك هي المحطة الختامية على المحيط الهادئ لسكة حديد عبر سيبيريا، على بعد 9289 كيلومتراً من موسكو. تطل هذه المدينة الساحلية على خليج القرن الذهبي، وتتميز بجسورها المعلقة ومأكولاتها البحرية الطازجة وتاريخها البحري العريق على ساحل المحيط الهادئ الممتد."
+      }
+    },
+    {
+      "q": {
+        "en": "Does ROTW cover places outside Russia?",
+        "ru": "Организует ли ROTW поездки за пределами России?",
+        "ar": "هل تغطي ROTW وجهات سياحية خارج روسيا؟"
+      },
+      "a": {
+        "en": "Yes, ROTW operates dedicated destination programmes and regional offices in Dubai and Oman. These bureaus serve as regional hubs for international travellers, coordinating Arabian desert journeys, cultural heritage tours, and stopovers connecting to Russia for our guests.",
+        "ru": "Да, ROTW предлагает программы и располагает собственными офисами в Дубае и Омане. Эти представительства координируют путешествия по Аравийскому полуострову, поездки в пустыню, культурные экскурсии и удобные стыковочные маршруты в Россию для наших дорогих гостей в любое время года.",
+        "ar": "نعم، تدير ROTW برامج سفر مخصصة ومكاتب إقليمية في دبي وسلطنة عُمان. تعمل هذه المكاتب كمحاور رئيسية لخدمة المسافرين الدوليين، وتنسيق رحلات الصحراء العربية والجولات التراثية والمحطات الرابطة المتجهة إلى روسيا لضيوفنا الكرام في رحلاتهم المتنوعة."
+      }
+    }
+  ],
+  "journeysHub": [
+    {
+      "q": {
+        "en": "What journeys does ROTW offer?",
+        "ru": "Какие маршруты предлагает ROTW?",
+        "ar": "ما هي رحلات ومسارات السفر التي تقدمها ROTW؟"
+      },
+      "a": {
+        "en": "ROTW offers six curated foundational journeys: Classic Two Capitals (8 days), The Golden Ring (6 days), The Great Trans-Siberian (15 days), Lake Baikal Clear Ice (7 days), Kazan & Volga Heritage (5 days), and Polar Night Murmansk (5 days).",
+        "ru": "ROTW предлагает шесть базовых классических маршрутов: Классика двух столиц (8 дней), Золотое кольцо (6 дней), Великий Транссиб (15 дней), Прозрачный лед Байкала (7 дней), Казань и сокровища Волги (5 дней) и Полярная ночь в Мурманске (5 дней).",
+        "ar": "تقدم ROTW ست رحلات تأسيسية منسقة: العاصمتان الكلاسيكيتان (8 أيام)، الطوق الذهبي (6 أيام)، سكة حديد عبر سيبيريا (15 يوماً)، جليد بايكال الشفاف (7 أيام)، قازان وتراث الفولغا (5 أيام)، وليالي مورمانسك القطبية (5 أيام)."
+      }
+    },
+    {
+      "q": {
+        "en": "How long is the Trans-Siberian journey?",
+        "ru": "Сколько длится путешествие по Транссибирской магистрали?",
+        "ar": "كم تستغرق رحلة سكة حديد عبر سيبيريا؟"
+      },
+      "a": {
+        "en": "The classic Trans-Siberian journey spans 15 days, connecting Moscow across Siberia to the Pacific port of Vladivostok. The rail route stops in historic cities including Kazan, Yekaterinburg, Novosibirsk, and Irkutsk beside Lake Baikal across seven timezones.",
+        "ru": "Классическое путешествие по Транссибу длится 15 дней и соединяет Москву с Владивостоком через всю территорию Сибири. Железнодорожный маршрут включает интересные остановки в исторических центрах: Казани, Екатеринбурге, Новосибирске и Иркутске возле Байкала в семи часовых поясах.",
+        "ar": "تستغرق الرحلة الكلاسيكية عبر سيبيريا 15 يوماً، وتربط موسكو عبر سهوب وغابات سيبيريا بميناء فلاديفوستوك على المحيط الهادئ. ويتوقف مسار القطار في مدن تاريخية بارزة تشمل قازان ويكاترينبورغ ونوفوسيبيرسك وإيركوتسك قرب بايكال عبر سبع مناطق زمنية."
+      }
+    },
+    {
+      "q": {
+        "en": "Are the journeys fixed?",
+        "ru": "Являются ли эти маршруты фиксированными?",
+        "ar": "هل برامج ومسارات الرحلات المعروضة ثابتة؟"
+      },
+      "a": {
+        "en": "No, every itinerary is tailored to you. The journeys showcased on this site serve as proven blueprints. We adapt travel dates, duration, hotel selections, and private excursions to align with your personal pace and interests across Russia.",
+        "ru": "Нет, каждый маршрут подстраивается под вас. Представленные программы служат надежной основой. Мы адаптируем даты поездки, продолжительность, выбор отелей и индивидуальные экскурсии в строгом соответствии с вашим темпом и пожеланиями по всей территории России для вашего удобства.",
+        "ar": "لا، كل مسار مصمم ومعدل ليناسبك تماماً. الرحلات المعروضة في الموقع بمثابة مخططات نموذجية مجربة وموثوقة. نحن نعدل مواعيد السفر والمدة واختيارات الفنادق والجولات الخاصة لتتوافق بدقة مع وتيرتك واهتماماتك الشخصية في جميع أنحاء روسيا دائماً."
+      }
+    },
+    {
+      "q": {
+        "en": "How much does a journey cost?",
+        "ru": "Сколько стоит такое путешествие?",
+        "ar": "كم تبلغ تكلفة رحلة سياحية متكاملة؟"
+      },
+      "a": {
+        "en": "The cost depends on your group size, travel season, and comfort style, with the estimated cost to be confirmed by ROTW. We calculate tailored pricing in a formal written quote after reviewing your requirements and hotel preferences in detail.",
+        "ru": "Стоимость зависит от состава вашей группы, сезона и категории комфорта, при этом ориентировочная цена всегда подтверждается ROTW. Мы рассчитываем точный бюджет поездки в официальном письменном предложении после согласования всех деталей программы и отелей в нашей компании.",
+        "ar": "تعتمد التكلفة على عدد أفراد مجموعتك وموسم السفر ومستوى الراحة المفضل، وتخضع التكلفة التقديرية للتأكيد من قبل ROTW. نحن نحسب سعراً مخصصاً في عرض أسعار رسمي ومكتوب بعد مراجعة متطلباتك واختيارات الفنادق والخدمات المطلوبة والمعتمدة بالتفصيل."
+      }
+    },
+    {
+      "q": {
+        "en": "How do I book a journey?",
+        "ru": "Как забронировать выбранный маршрут?",
+        "ar": "كيف يمكنني حجز أحد مسارات الرحلات؟"
+      },
+      "a": {
+        "en": "Click the Plan this journey button on any route page to open our planner with your selected itinerary preloaded. Specify your dates, party size, and preferences, and our Moscow team will prepare a formal proposal tailored for you.",
+        "ru": "Нажмите кнопку Спланировать поездку на странице маршрута, чтобы открыть планировщик с выбранной программой. Укажите удобные даты, состав группы и пожелания, и московская команда оперативно подготовит официальное индивидуальное предложение для вашей поездки по стране для вашего комфортного отдыха.",
+        "ar": "اضغط على زر التخطيط لهذه الرحلة في أي صفحة مسار لفتح أداة التخطيط مع تحميل الرحلة المختارة مسبقاً. حدد مواعيدك وعدد المسافرين وتفضيلاتك، وسيقوم فريقنا في موسكو بإعداد مقترح رسمي مفصل ومخصص لك تماماً لرحلتك المرتقبة."
+      }
+    }
+  ],
+  "notesHub": [
+    {
+      "q": {
+        "en": "What is Sasha's notebook?",
+        "ru": "Что такое полевой блокнот Саши?",
+        "ar": "ما هو دفتر ملاحظات ساشا؟"
+      },
+      "a": {
+        "en": "Sasha's notebook is our collection of field notes and practical travel insights gathered across Russia. It highlights authentic landmarks, quiet viewpoints, tea rooms, and local advice to help travellers experience each destination beyond ordinary tourist paths across the regions.",
+        "ru": "Полевой блокнот Саши — это сборник практических заметок и наблюдений из реальных поездок по России. Здесь собраны интересные места, панорамные точки, чайные и полезные советы, помогающие открыть города вне привычных туристических маршрутов во время поездок.",
+        "ar": "دفتر ملاحظات ساشا هو مجموعتنا من الملاحظات الميدانية وإرشادات السفر العملية التي جمعت عبر روسيا. يسلط الضوء على المعالم الأصيلة ونقاط الإطلالات الهادئة والمقاهي والنصائح المحلية لتجربة الوجهات بعيداً عن المسارات التقليدية في كل منطقة من مناطقها."
+      }
+    },
+    {
+      "q": {
+        "en": "Which cities are in the notebook?",
+        "ru": "Какие города представлены в блокноте?",
+        "ar": "ما هي المدن المضمنة في دفتر الملاحظات؟"
+      },
+      "a": {
+        "en": "The notebook covers ten remarkable destinations across Russia: Moscow, St Petersburg, Suzdal and the Golden Ring, Sochi, Murmansk, Kazan, Lake Baikal, Kamchatka, Vladivostok, and Kaliningrad on the Baltic coast. Each city features curated places and notes.",
+        "ru": "В блокноте представлены десять ярких направлений по всей России: Москва, Санкт-Петербург, Суздаль и Золотое кольцо, Сочи, Мурманск, Казань, озеро Байкал, Камчатка, Владивосток и Калининград на Балтийском побережье. Для каждого города собраны лучшие заметки и рекомендации на каждый день.",
+        "ar": "يغطي دفتر الملاحظات عشر وجهات بارزة في جميع أنحاء روسيا: موسكو وسانت بطرسبرغ وسوزدال والطوق الذهبي وسوتشي ومورمانسك وقازان وبحيرة بايكال وكامتشاتكا وفلاديفوستوك وكالينينغراد على ساحل البلطيق. وتتضمن كل مدينة معالم وملاحظات منسقة بعناية لزيارتها واستكشافها."
+      }
+    },
+    {
+      "q": {
+        "en": "How do I save places to my trip?",
+        "ru": "Как сохранять понравившиеся места в поездку?",
+        "ar": "كيف أحفظ الأماكن المفضلة في مسار رحلتي؟"
+      },
+      "a": {
+        "en": "Click the pin button beside any note entry to add that location to your trip envelope. You can collect sights, culinary stops, and seasonal tips across multiple destinations as you browse the notebook entries before planning your route.",
+        "ru": "Нажмите на кнопку с булавкой рядом с любой заметкой, чтобы добавить это место в конверт поездки. Вы можете отмечать понравившиеся достопримечательности, кафе и интересные точки в разных городах по мере чтения блокнота перед планированием маршрута поездки.",
+        "ar": "انقر على زر الدبوس بجوار أي ملاحظة لإضافة هذا الموقع إلى مظروف رحلتك الخاص. يمكنك جمع المعالم والمحطات المميزة والنصائح الموسمية عبر وجهات متعددة أثناء تصفحك لمدخلات الدفتر الميداني قبل بدء التخطيط لمسارك النهائي المفضل بالتفصيل."
+      }
+    },
+    {
+      "q": {
+        "en": "Can I send my trip to the Moscow team?",
+        "ru": "Можно ли отправить свой список мест московской команде?",
+        "ar": "هل يمكنني إرسال رحلتي المحفوظة لفريق موسكو؟"
+      },
+      "a": {
+        "en": "Yes, open your saved trip envelope and tap Send my trip. This formats your curated pin collection into a neat inquiry that opens directly in your email app for our Moscow operations team to review and incorporate into your route.",
+        "ru": "Да, откройте конверт с сохраненными местами и нажмите кнопку Отправить мою поездку. Ваши выбранные точки будут оформлены в удобную заявку, которая откроется в вашей почте для передачи московской команде и включения в общий маршрут в самые короткие сроки.",
+        "ar": "نعم، افتح مظروف رحلتك المحفوظة واضغط على إرسال رحلتي. سيتم تنسيق قائمتك المحفوظة بالكامل في رسالة استفسار منظمة تفتح مباشرة في تطبيق بريدك لمراجعتها من قبل فريق عملياتنا في موسكو وتضمينها في مسار رحلتك بالكامل بكل سهولة."
+      }
+    },
+    {
+      "q": {
+        "en": "Which languages does the site use?",
+        "ru": "На каких языках доступен сайт?",
+        "ar": "ما هي اللغات المتوفرة في الموقع؟"
+      },
+      "a": {
+        "en": "The site is fully available in three languages: English, Russian, and Arabic with right-to-left typography. You can switch between languages seamlessly at any time using the active language selector in the compass capsule header at the top of every page.",
+        "ru": "Сайт полностью доступен на трех языках: английском, русском и арабском с поддержкой письма справа налево. Вы можете переключать язык в любой момент с помощью селектора в шапке-капсуле с компасом в верхней части любой страницы нашего сайта для удобства чтения.",
+        "ar": "الموقع متاح بالكامل بثلاث لغات: الإنجليزية والروسية والعربية مع تنسيق كامل للاتجاه من اليمين إلى اليسار. يمكنك التبديل بين اللغات بسلاسة في أي وقت عبر محدد اللغة في كبسولة البوصلة بالأعلى في كل صفحة من صفحات موقعنا لسهولة القراءة."
+      }
+    }
+  ]
+}

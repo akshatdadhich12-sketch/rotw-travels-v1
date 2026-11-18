@@ -40,17 +40,29 @@
     // Check screen dimensions for curtain reveal capability (never on home page)
     function checkCurtainSupport() {
       if (isHome) return false;
-      return window.innerWidth >= 768 && window.innerHeight >= 560;
+      if (window.innerWidth < 768) return false;
+      const neededH = footer.scrollHeight || 760;
+      if (window.innerHeight < Math.max(560, neededH - 40)) return false;
+      return true;
     }
 
-    if (checkCurtainSupport()) {
-      document.documentElement.classList.add('curtain-ready');
-    } else {
-      document.documentElement.classList.remove('curtain-ready');
+    function updateCurtainSupport() {
+      const isCurtain = checkCurtainSupport();
+      if (isCurtain) {
+        document.documentElement.classList.add('curtain-ready');
+        const neededH = footer.scrollHeight || 760;
+        const curtainH = Math.min(window.innerHeight, Math.max(neededH, 560));
+        document.documentElement.style.setProperty('--footer-h', `${curtainH}px`);
+      } else {
+        document.documentElement.classList.remove('curtain-ready');
+      }
+      return isCurtain;
     }
+
+    updateCurtainSupport();
 
     /* -------------------------------------------------------------
-     * 1. SENTINEL & AT-END DETECTION (spec-footer-fix-home requirement 1)
+     * 1. SENTINEL & AT-END DETECTION (spec-footer-end-logo requirement 1)
      * ------------------------------------------------------------- */
     let sentinel = document.getElementById('rotw-footer-sentinel');
     if (!sentinel) {
@@ -58,41 +70,76 @@
       sentinel.id = 'rotw-footer-sentinel';
       sentinel.setAttribute('aria-hidden', 'true');
       sentinel.style.cssText = 'position:relative;width:100%;height:1px;pointer-events:none;visibility:hidden;margin:0;padding:0;';
-      footer.parentNode.insertBefore(sentinel, footer);
+      if (pageWrap) {
+        pageWrap.appendChild(sentinel);
+      } else {
+        footer.parentNode.insertBefore(sentinel, footer);
+      }
     }
 
     function updateAtEnd() {
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      const innerH = window.innerHeight;
+      const scrollH = document.documentElement.scrollHeight;
+
       let isAtEnd = false;
+
+      // Rule 1: Decide at-end by position (sentinel at top of footer region or above or inside viewport)
       if (sentinel) {
         const rect = sentinel.getBoundingClientRect();
-        isAtEnd = rect.top <= (window.innerHeight + 8);
+        if (rect.top <= (innerH + 8)) {
+          isAtEnd = true;
+        }
+      }
+
+      // Rule 2: Bottom reached by any means (End key, dragging scrollbar, fast flick, Lenis jump)
+      if (scrollY + innerH >= (scrollH - 4)) {
+        isAtEnd = true;
+      }
+
+      // Rule 3: Never hide the footer while any part of it is inside the viewport
+      const isCurtain = checkCurtainSupport() && !!pageWrap;
+      if (isCurtain) {
+        const pwRect = pageWrap.getBoundingClientRect();
+        if (pwRect.bottom <= (innerH + 8)) {
+          isAtEnd = true;
+        }
       } else {
-        const footerH = footer.offsetHeight || (window.innerHeight >= 560 ? Math.min(window.innerHeight, 760) : 560);
-        const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
-        const innerH = window.innerHeight;
-        const scrollH = document.documentElement.scrollHeight;
-        const threshold = isHome ? (scrollH - footerH - 8) : (scrollH - 8);
-        isAtEnd = (scrollY + innerH) >= threshold;
+        const fRect = footer.getBoundingClientRect();
+        if (fRect.top < innerH && fRect.bottom > 0) {
+          isAtEnd = true;
+        }
       }
 
       if (isAtEnd) {
         document.documentElement.classList.add('at-end');
         document.documentElement.setAttribute('data-footer', 'on');
+        footer.classList.add('footer-force-visible');
       } else {
         document.documentElement.classList.remove('at-end');
         document.documentElement.removeAttribute('data-footer');
+        footer.classList.remove('footer-force-visible');
       }
       return isAtEnd;
     }
 
-    window.addEventListener('scroll', updateAtEnd, { passive: true });
+    let scrollRaf = null;
+    function throttledUpdate() {
+      if (scrollRaf) return;
+      scrollRaf = requestAnimationFrame(() => {
+        scrollRaf = null;
+        updateAtEnd();
+      });
+    }
+
+    window.addEventListener('scroll', throttledUpdate, { passive: true });
     if (window.lenis && typeof window.lenis.on === 'function') {
       try {
-        window.lenis.on('scroll', updateAtEnd);
+        window.lenis.on('scroll', throttledUpdate);
       } catch (_) {}
     }
 
-    if ('IntersectionObserver' in window) {
+    if ('IntersectionObserver' in window && sentinel) {
       const observer = new IntersectionObserver(() => {
         updateAtEnd();
       }, {
@@ -104,18 +151,43 @@
     }
 
     window.addEventListener('resize', () => {
-      if (checkCurtainSupport()) {
-        document.documentElement.classList.add('curtain-ready');
-      } else {
-        document.documentElement.classList.remove('curtain-ready');
-      }
+      updateCurtainSupport();
       updateAtEnd();
       if (window.ScrollTrigger) {
         ScrollTrigger.refresh();
       }
     });
 
+    window.addEventListener('orientationchange', () => {
+      updateCurtainSupport();
+      updateAtEnd();
+      if (window.ScrollTrigger) {
+        ScrollTrigger.refresh();
+      }
+    });
+
+    window.addEventListener('load', () => {
+      updateCurtainSupport();
+      updateAtEnd();
+      if (window.ScrollTrigger) {
+        ScrollTrigger.refresh();
+      }
+    });
+
+    setTimeout(() => { updateCurtainSupport(); updateAtEnd(); }, 300);
+    setTimeout(() => { updateCurtainSupport(); updateAtEnd(); }, 1200);
+
+    if (typeof ResizeObserver !== 'undefined') {
+      const ro = new ResizeObserver(() => {
+        updateCurtainSupport();
+        updateAtEnd();
+      });
+      if (document.body) ro.observe(document.body);
+      if (pageWrap) ro.observe(pageWrap);
+    }
+
     // Initial check
+    updateCurtainSupport();
     updateAtEnd();
 
     /* -------------------------------------------------------------

@@ -1,0 +1,29 @@
+# ROTW Travels
+
+> Destination management company in Moscow, planning curated journeys and authentic travel across Russia.
+
+## Core Service Overview
+ROTW Travels provides bespoke travel planning, private itinerary curation, and destination management across Russia and partner destinations (Dubai, Oman). All itineraries are tailored per traveller, with confidential B2B net rates for travel agents and dedicated operations desks.
+
+## Main Pages
+- [Home](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/): Curated journeys, travel storytelling, and visual trip planning across Russia.
+- [Trip Planner](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/plan.html): Interactive step-by-step custom travel route designer with live cost estimates.
+- [Traveller Reviews](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/reviews.html): Genuine feedback and authentic travel photography from ROTW journeys.
+- [Destinations Hub](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/destinations/index.html): Comprehensive travel guides for 8 Russian destinations, Dubai, and Oman.
+- [Journeys Hub](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/journeys/index.html): Six classic customizable starter itineraries across Russia.
+- [Experiences](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/experiences.html): Authentic activities and cultural experiences from ice floating to nature expeditions.
+- [Sasha's Notebook](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/notes/index.html): Curated field notes, local viewpoints, and practical recommendations across 10 cities.
+- [For Travel Agents](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/for-agents.html): Confidential B2B net rates, multilingual guides, and Moscow operations support.
+- [Contact & Bureaus](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/contact.html): Direct contact details for our Moscow headquarters and international bureaus.
+- [Terms of Service](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/terms.html): Booking terms, custom itinerary policies, and written quote procedures.
+- [Privacy Policy](https://akshatdadhich12-sketch.github.io/rotw-travels-v1/privacy.html): Client privacy statement confirming static operation and zero cookie tracking.
+
+## Bureau Desks
+- **ROTW Travels Moscow Desk**: 106 Prospekt Mira, Moscow | Tel: +7 930 945 4007 | Email: inbound@rotwtravels.com
+- **ROTW Travels Dubai Office**: Dubai | Tel: +971 4 338 4075 | Email: sales@fbt.ae
+- **ROTW Travels Mumbai Office**: Mumbai | Tel: +91 98218 69339 | Email: ops.dxb@fbt.ae
+- **ROTW Travels Muscat Office**: Muscat | Tel: +968 7953 1629 | Email: oman@fbtdmc.com
+- **ROTW Travels Hong Kong Office**: Hong Kong | Tel: +852 9844 1073 | Email: hk@fbtdmc.com
+
+## Language Support
+ROTW Travels operates natively in English, Russian (Русский), and Arabic (العربية).

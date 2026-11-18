@@ -131,6 +131,7 @@ html[lang="ar"] {
   justify-content: space-between;
   padding-inline: 18px 8px;
   gap: 16px;
+  overflow: visible;
   /* NO TRANSITIONS ON DIMENSIONS OR PADDING PER CLIENT SPEC */
 }
 
@@ -149,25 +150,27 @@ html[lang="ar"] {
   align-items: center;
   flex: none;
   text-decoration: none;
-  height: 34px;
+  height: calc(34px * 168 / 146);
+  overflow: visible;
 }
 
 @media (max-width: 768px) {
   .capsule-brand {
-    height: 30px;
+    height: calc(30px * 168 / 146);
   }
 }
 
 .capsule-logo {
-  height: 34px;
+  height: calc(34px * 168 / 146);
   width: auto;
   display: block;
   object-fit: contain;
+  overflow: visible;
 }
 
 @media (max-width: 768px) {
   .capsule-logo {
-    height: 30px;
+    height: calc(30px * 168 / 146);
   }
 }
 
@@ -181,13 +184,14 @@ html[lang="ar"] {
 }
 
 .rotw-logo.capsule-logo {
-  height: 34px;
+  height: calc(34px * 168 / 146);
   width: auto;
+  overflow: visible;
 }
 
 @media (max-width: 768px) {
   .rotw-logo.capsule-logo {
-    height: 30px;
+    height: calc(30px * 168 / 146);
   }
 }
 
@@ -991,10 +995,12 @@ html.js footer.rotw-shell-footer {
 
 html.js.at-end footer.rotw-shell-footer,
 html.at-end footer.rotw-shell-footer,
-html[data-footer="on"] footer.rotw-shell-footer {
+html[data-footer="on"] footer.rotw-shell-footer,
+footer.rotw-shell-footer.footer-force-visible {
   visibility: visible !important;
   opacity: 1 !important;
   pointer-events: auto !important;
+  transition: opacity 0.6s ease;
 }
 
 /* Without JavaScript: normal in-flow block, fully visible */
@@ -1164,10 +1170,18 @@ body:has(#story) footer.rotw-shell-footer {
   max-width: 1360px;
   margin: 0 auto;
   padding: clamp(24px, 3.8vw, 48px) clamp(20px, 3.8vw, 44px) 0;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+
+.footer-top-row {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
 }
 
 /* Kicker */
@@ -1296,11 +1310,11 @@ body:has(#story) footer.rotw-shell-footer {
   padding: 14px 0;
   border-top: 1px solid rgba(244, 166, 60, 0.2);
   border-bottom: 1px solid rgba(244, 166, 60, 0.2);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   font-size: 13px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer-offices-strip {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -1452,6 +1466,7 @@ body:has(#story) footer.rotw-shell-footer {
   user-select: none;
   position: relative;
   z-index: 2;
+  margin-bottom: 20px;
 }
 
 .marquee-track {
@@ -1505,13 +1520,18 @@ body:has(#story) footer.rotw-shell-footer {
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(6%);
-  transform-origin: 50% 100%;
+  margin-bottom: -2.5%;
+}
+
+@media (max-width: 520px) {
+  .footer-wordmark-svg .fw-tagline {
+    display: none;
+  }
 }
 
 /* Tiny Bottom Legal Row (Above Crop) */
 .footer-bottom-row {
-  position: relative;
+  position: static !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1519,14 +1539,19 @@ body:has(#story) footer.rotw-shell-footer {
   color: #AEB6C4;
   z-index: 4;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 8px 0 12px;
+  gap: 12px 24px;
+  margin-top: 24px;
+  border-top: 1px solid transparent;
+  border-image: var(--sunset-line) 1;
+  padding: 16px 0 24px;
+  box-sizing: border-box;
 }
 
 .footer-bottom-left {
   display: flex;
   gap: 6px;
   align-items: center;
+  white-space: nowrap;
 }
 
 .footer-bottom-tagline {
@@ -1536,7 +1561,7 @@ body:has(#story) footer.rotw-shell-footer {
 
 .footer-bottom-right {
   display: flex;
-  gap: 12px;
+  gap: 8px 20px;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -1548,6 +1573,7 @@ body:has(#story) footer.rotw-shell-footer {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .footer-legal-link:hover,
@@ -1558,6 +1584,7 @@ body:has(#story) footer.rotw-shell-footer {
 .footer-legal-slot {
   opacity: 0.65;
   font-style: italic;
+  white-space: nowrap;
 }
 
 /* Focus and contrast standards */

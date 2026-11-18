@@ -1,0 +1,82 @@
+{
+  "siteUrl": "https://akshatdadhich12-sketch.github.io/rotw-travels-v1/",
+  "indexable": false,
+  "ogImage": "assets/og-default.jpg",
+  "organization": {
+    "@type": "TravelAgency",
+    "name": "ROTW Travels",
+    "legalName": "ROTW Travels LLC",
+    "url": "https://akshatdadhich12-sketch.github.io/rotw-travels-v1/",
+    "logo": "https://akshatdadhich12-sketch.github.io/rotw-travels-v1/assets/logo-ink.png",
+    "image": "https://akshatdadhich12-sketch.github.io/rotw-travels-v1/assets/og-default.jpg",
+    "description": "Destination management company in Moscow, planning curated journeys and authentic travel across Russia.",
+    "telephone": "+7 930 945 4007",
+    "email": "inbound@rotwtravels.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "106 Prospekt Mira",
+      "addressLocality": "Moscow",
+      "postalCode": "129626",
+      "addressCountry": "RU"
+    },
+    "department": [
+      {
+        "@type": "TravelAgency",
+        "name": "ROTW Travels Moscow Desk",
+        "telephone": "+7 930 945 4007",
+        "email": "inbound@rotwtravels.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "106 Prospekt Mira",
+          "addressLocality": "Moscow",
+          "postalCode": "129626",
+          "addressCountry": "RU"
+        }
+      },
+      {
+        "@type": "TravelAgency",
+        "name": "ROTW Travels Dubai Office",
+        "telephone": "+971 4 338 4075",
+        "email": "sales@fbt.ae",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressCountry": "AE"
+        }
+      },
+      {
+        "@type": "TravelAgency",
+        "name": "ROTW Travels Mumbai Office",
+        "telephone": "+91 98218 69339",
+        "email": "ops.dxb@fbt.ae",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "TravelAgency",
+        "name": "ROTW Travels Muscat Office",
+        "telephone": "+968 7953 1629",
+        "email": "oman@fbtdmc.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Muscat",
+          "addressCountry": "OM"
+        }
+      },
+      {
+        "@type": "TravelAgency",
+        "name": "ROTW Travels Hong Kong Office",
+        "telephone": "+852 9844 1073",
+        "email": "hk@fbtdmc.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hong Kong",
+          "addressCountry": "HK"
+        }
+      }
+    ]
+  }
+}
