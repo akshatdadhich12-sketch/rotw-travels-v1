@@ -92,7 +92,7 @@ function renderHeader({ lang = 'en', relBase = '.', activePage = '' }) {
 
   const drawerMoreSectionHtml = `
     <div class="drawer-more-section">
-      <h4 class="drawer-more-title">${moreTitle}</h4>
+      <div class="drawer-more-title">${moreTitle}</div>
       <ul class="drawer-more-dests">
         ${moreDestList}
       </ul>
@@ -110,6 +110,9 @@ function renderHeader({ lang = 'en', relBase = '.', activePage = '' }) {
     const activeClass = lg.code === L ? ' active' : '';
     return `<button class="drawer-lang-chip${activeClass}" data-shell-lang="${lg.code}">${esc(lg.endonym)}</button>`;
   }).join('\n        ');
+
+  // Secondary copy of logo with unique lgf- prefix to avoid duplicate IDs sitewide
+  const drawerLogoSvg = logoSvg.replace(/\bid="lg-/g, 'id="lgf-');
 
   return `<!-- SHELL:HEADER -->
 <a href="#main" class="shell-skip">${L === 'ru' ? 'Перейти к основному содержимому' : L === 'ar' ? 'انتقل إلى المحتوى الرئيسي' : 'Skip to main content'}</a>
@@ -152,7 +155,7 @@ function renderHeader({ lang = 'en', relBase = '.', activePage = '' }) {
 <div class="shell-menu-drawer" id="shell-menu-drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Navigation Menu">
   <div class="drawer-top-row">
     <a href="${homeHref}" class="capsule-brand" aria-label="ROTW Travels">
-      ${logoSvg}
+      ${drawerLogoSvg}
     </a>
     <button class="drawer-close-btn" id="btn-drawer-close" aria-label="Close menu">
       <svg class="shell-icon" aria-hidden="true"><use href="${relBase}/assets/icons.svg#icon-close"/></svg>

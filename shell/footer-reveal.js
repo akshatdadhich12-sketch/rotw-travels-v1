@@ -234,8 +234,8 @@
       }
     }
 
-    const needle = footer.querySelector('.fw-needle');
-    const letters = footer.querySelectorAll('.fw-letters > g, .fw-l');
+    const needle = footer.querySelector('.fw-needle, #fw-needle, .lgf-needle, #lgf-needle');
+    const letters = footer.querySelectorAll('.fw-letters > g, .fw-l, #lgf-letters > g, .lgf-l');
     const statementLines = footer.querySelectorAll('.footer-statement .statement-line');
     const navItems = footer.querySelectorAll('.footer-nav-link, .footer-office-col');
     const blobs = footer.querySelector('.footer-blobs');

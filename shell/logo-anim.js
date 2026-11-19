@@ -30,12 +30,12 @@
   }
 
   function initSingleLogo(logo) {
-    const needle = logo.querySelector('#lg-needle, .lg-needle');
-    const face = logo.querySelector('#lg-face, .lg-face');
-    const letters = logo.querySelectorAll('#lg-letters > g, .lg-l');
-    const accents = logo.querySelectorAll('#lg-accent > *, .lg-red, .lg-plane');
-    const tagline = logo.querySelector('#lg-tagline, .lg-tagline');
-    const oLetter = logo.querySelector('#lg-l-o .lg-ring') || logo.querySelector('#lg-l-o');
+    const needle = logo.querySelector('#lg-needle, #lgf-needle, .lg-needle, .lgf-needle');
+    const face = logo.querySelector('#lg-face, #lgf-face, .lg-face, .lgf-face');
+    const letters = logo.querySelectorAll('#lg-letters > g, #lgf-letters > g, .lg-l, .lgf-l');
+    const accents = logo.querySelectorAll('#lg-accent > *, #lgf-accent > *, .lg-red, .lg-plane');
+    const tagline = logo.querySelector('#lg-tagline, #lgf-tagline, .lg-tagline, .lgf-tagline');
+    const oLetter = logo.querySelector('#lg-l-o .lg-ring, #lgf-l-o .lg-ring') || logo.querySelector('#lg-l-o, #lgf-l-o');
 
     if (!needle) return;
 
