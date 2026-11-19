@@ -904,3 +904,5 @@ body.home-style .legal-slot {
 [dir="rtl"] body.home-style .faq-item summary {
   text-align: right;
 }
+
+.exp-illus{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;opacity:.7;margin-top:6px}
