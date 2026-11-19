@@ -1645,3 +1645,30 @@ a:focus-visible, button:focus-visible {
   outline: 2px solid #FFAF28 !important;
   outline-offset: 3px !important;
 }
+
+/* Sasha card, pre-rendered markup (same look as the animated chat) with proper spacing */
+.sasha-chat-card { display: block; }
+.sasha-chat-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid rgba(244, 166, 60, 0.2); }
+body.dest .sasha-chat-head { border-bottom-color: rgba(20, 33, 30, 0.15); }
+.sasha-chat-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); }
+.sasha-chat-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sasha-chat-name { font-weight: 600; font-size: 16px; line-height: 1.3; color: #F8F1E8; }
+body.dest .sasha-chat-name { color: #0B1626; }
+.sasha-chat-sublabel { font-size: 13px; line-height: 1.3; color: #AEB6C4; }
+body.dest .sasha-chat-sublabel { color: rgba(20, 33, 30, 0.65); }
+.sasha-chat-messages { display: flex; flex-direction: column; gap: 14px; margin-bottom: 18px; min-height: 48px; }
+.sasha-bubble { max-width: 82%; padding: 14px 18px; border-radius: 16px; font-size: 15px; line-height: 1.5; word-wrap: break-word; }
+.sasha-bubble p { margin: 0; line-height: 1.5; }
+.sasha-bubble-agent { align-self: flex-start; background: #FBF1E4; color: #0B1626; border-bottom-left-radius: 4px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15); }
+[dir="rtl"] .sasha-bubble-agent { border-bottom-left-radius: 16px; border-bottom-right-radius: 4px; }
+body.dest .sasha-bubble-agent { background: #FFFFFF; border: 1px solid rgba(20, 33, 30, 0.12); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); }
+.sasha-chat-controls { margin-top: 4px; }
+.sasha-chat-chips { display: flex; flex-wrap: wrap; gap: 12px; }
+.sasha-chat-chip { min-height: 44px; padding: 10px 20px; line-height: 1.35; text-align: center; white-space: normal; border-radius: 22px; border: 1.5px solid #F4A63C; background: transparent; color: #F4A63C; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer; box-sizing: border-box; transition: background-color .2s ease, color .2s ease; }
+.sasha-chat-chip:hover, .sasha-chat-chip:focus-visible { background: #F4A63C; color: #0B1626; outline: none; }
+body.dest .sasha-chat-chip { border-color: rgba(20, 33, 30, 0.4); color: #0B1626; }
+body.dest .sasha-chat-chip:hover, body.dest .sasha-chat-chip:focus-visible { background: #0B1626; color: #FAF5EE; border-color: #0B1626; }
+.chat-actions { gap: 12px; margin-top: 16px; }
+.chat-chip { line-height: 1.35; }
+
+.sasha-bubble, .sasha-bubble p { color: #0B1626 !important; }

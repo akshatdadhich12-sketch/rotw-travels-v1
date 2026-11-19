@@ -67,3 +67,6 @@ body.dest{--motion-accent:#C42D1E;--motion-hover:#8F1F14;--motion-pressed:#73180
   :is(.jny-card,.d-card,.exp-tile,.d-act-btn):hover :is(img,video){transform:none !important}
   :is([class*="card"],[class*="tile"])::after{display:none !important}
 }
+
+/* One underline only: the capsule links draw their own active/hover underline */
+.compass-capsule a, .compass-capsule .capsule-link, .compass-capsule .capsule-cta { background-image: none !important; background-size: 0 0 !important; }
