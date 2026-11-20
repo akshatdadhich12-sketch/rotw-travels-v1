@@ -133,6 +133,8 @@
       } else {
         newUrl = targetLang === 'en' ? `../${pageFile}` : `../${targetLang}/${pageFile}`;
       }
+      try { sessionStorage.setItem('rotw-transition', '1'); } catch(_) {}
+      document.documentElement.classList.add('page-leaving');
       window.location.href = newUrl;
       return;
     }
@@ -150,6 +152,8 @@
       } else {
         newUrl = targetLang === 'en' ? `../../${group}/${pageFile}` : `../../${targetLang}/${group}/${pageFile}`;
       }
+      try { sessionStorage.setItem('rotw-transition', '1'); } catch(_) {}
+      document.documentElement.classList.add('page-leaving');
       window.location.href = newUrl;
       return;
     }
@@ -168,6 +172,8 @@
       } else {
         newUrl = targetLang === 'en' ? `../${pageFile}` : `../${targetLang}/${pageFile}`;
       }
+      try { sessionStorage.setItem('rotw-transition', '1'); } catch(_) {}
+      document.documentElement.classList.add('page-leaving');
       window.location.href = newUrl;
     }
   }

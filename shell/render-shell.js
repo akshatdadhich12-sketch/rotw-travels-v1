@@ -252,6 +252,230 @@ function renderHeader({ lang = 'en', relBase = '.', activePage = '' }) {
   }
 })();
 </script>
+
+<script>
+(function(){
+  // Page-to-page transition screen (spec-page-transition.md)
+  var ROTW_FACTS = {
+    en: [
+      "Russia spans eleven time zones.",
+      "Lake Baikal is the deepest lake on Earth.",
+      "In February the ice on Lake Baikal can be clear as glass.",
+      "The Trans-Siberian Railway links Moscow with the Pacific coast at Vladivostok.",
+      "Some stations of the Moscow Metro look like palaces, with mosaics and chandeliers.",
+      "Saint Petersburg's drawbridges open at night over the Neva.",
+      "Kazan's Kremlin has a mosque and an Orthodox cathedral side by side.",
+      "Kamchatka has active volcanoes and one of the largest geyser fields in the world.",
+      "In winter the northern lights can be seen near Murmansk.",
+      "Tea in a glass holder is a classic part of a long train journey in Russia."
+    ],
+    ru: [
+      "Россия расположена в одиннадцати часовых поясах.",
+      "Байкал — самое глубокое озеро на Земле.",
+      "В феврале лёд на Байкале бывает прозрачным, как стекло.",
+      "Транссибирская магистраль соединяет Москву с Владивостоком.",
+      "Станции московского метро похожи на дворцы с мозаиками и люстрами.",
+      "Разводные мосты Санкт-Петербурга открываются ночью над Невой.",
+      "В Казанском кремле мечеть и православный собор стоят рядом.",
+      "На Камчатке действуют вулканы и одно из крупнейших гейзерных полей.",
+      "Зимой северное сияние можно увидеть под Мурманском.",
+      "Чай в подстаканнике — классика путешествий на поезде по России."
+    ],
+    ar: [
+      "تمتد روسيا عبر أحد عشر توقيتاً زمنياً.",
+      "بحيرة بايكال هي أعمق بحيرة على وجه الأرض.",
+      "في فبراير، يكون جليد بحيرة بايكال شفافاً كالزجاج.",
+      "يربط خط السكك الحديدية عبر سيبيريا موسكو بساحل المحيط الهادئ.",
+      "تبدو بعض محطات مترو موسكو كقصور تضم الفسيفساء والثريات.",
+      "تفتح جسور سانت بطرسبرغ المتحركة ليلاً فوق نهر نيفا.",
+      "يضم كرملين قازان مسجداً وكاتدرائية أرثوذكسية جنباً إلى جنب.",
+      "تضم كامتشاتكا براكين نشطة وواحداً من أكبر حقول الينابيع الحارة.",
+      "في الشتاء، يمكن رؤية الشفق القطبي بالقرب من مورمانسك.",
+      "الشاي في حامل الأكواب جزء كلاسيكي من رحلات القطار في روسيا."
+    ]
+  };
+
+  var ROTW_LABELS = {
+    en: "Did you know?",
+    ru: "Знаете ли вы?",
+    ar: "هل تعلم؟"
+  };
+
+  var planeSvg = '<svg viewBox="135 71 16 15" width="26" height="24" aria-hidden="true" focusable="false"><path fill="#E53824" d="M138.3 81.9L138.2 79.9L136.6 78.5C136.6 78.5 137.3 77.3 139.1 79.1L143.4 77.0L140.1 72.9C140.1 72.9 140.1 72.7 140.1 72.5C140.2 72.1 140.3 71.7 140.8 72.1L141.1 72.3L145.7 75.8C145.7 75.8 148.9 73.3 149.9 75.6C149.9 75.6 150.6 77.0 146.5 78.1C146.3 80.8 146.1 81.1 145.8 84.5C145.8 84.5 144.9 85.6 144.5 84.2L144.3 78.8L139.6 80.3L139.3 82.1C139.3 82.4 139.2 82.8 138.8 82.8C138.3 82.9 138.3 82.2 138.3 81.9"/></svg>';
+
+  function getLang() {
+    var l = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+    return ROTW_FACTS[l] ? l : 'en';
+  }
+
+  function createOverlay(factIdx) {
+    var existing = document.getElementById('pt-overlay');
+    if (existing) return existing;
+    var lang = getLang();
+    var facts = ROTW_FACTS[lang] || ROTW_FACTS.en;
+    var label = ROTW_LABELS[lang] || ROTW_LABELS.en;
+    var factText = facts[factIdx % facts.length];
+
+    var ov = document.createElement('div');
+    ov.id = 'pt-overlay';
+    ov.className = 'pt-overlay';
+    ov.setAttribute('aria-hidden', 'true');
+    ov.innerHTML = '<div class="pt-box" id="pt-box">' +
+      '<div class="pt-track" id="pt-track">' +
+        '<div class="pt-route" id="pt-route"></div>' +
+        '<div class="pt-plane" id="pt-plane">' + planeSvg + '</div>' +
+      '</div>' +
+      '<div class="pt-fact-wrap" id="pt-fact-wrap">' +
+        '<span class="pt-label" id="pt-label">' + label + '</span> ' +
+        '<span class="pt-fact" id="pt-fact">' + factText + '</span>' +
+      '</div>' +
+    '</div>';
+    if (document.body) {
+      document.body.insertBefore(ov, document.body.firstChild);
+    } else {
+      document.documentElement.appendChild(ov);
+    }
+    return ov;
+  }
+
+  // 1. ARRIVING AT PAGE
+  if (document.documentElement.classList.contains('transition-pending')) {
+    if (document.documentElement.classList.contains('splash-pending') || document.getElementById('rotw-splash')) {
+      document.documentElement.classList.remove('transition-pending');
+    } else {
+      var savedIdx = 0;
+      try {
+        var s = sessionStorage.getItem('rotw-fact-idx');
+        if (s !== null) savedIdx = parseInt(s, 10) || 0;
+      } catch(_) {}
+      var overlay = createOverlay(savedIdx);
+      document.documentElement.classList.add('transition-live');
+
+      var t0 = window.__rotw_t_start || Date.now();
+      var minTime = 450;
+      var maxTime = 1600;
+      var failsafeTime = 2500;
+      var transitionEnded = false;
+
+      function endTransition() {
+        if (transitionEnded) return;
+        transitionEnded = true;
+        if (overlay) overlay.classList.add('pt-out');
+        setTimeout(function() {
+          document.documentElement.classList.remove('transition-pending', 'transition-live', 'page-leaving');
+          if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
+          window.dispatchEvent(new CustomEvent('rotw-transition-done'));
+          window.dispatchEvent(new Event('resize'));
+        }, 300);
+      }
+
+      setTimeout(endTransition, failsafeTime);
+      setTimeout(endTransition, maxTime);
+
+      function checkImagesAndFinish() {
+        var imgs = Array.from(document.querySelectorAll('img, video'));
+        var pending = [];
+        var vh = window.innerHeight || 800;
+        for (var i = 0; i < imgs.length; i++) {
+          var el = imgs[i];
+          var rect = el.getBoundingClientRect();
+          if (rect.top < vh + 100 && rect.bottom > -50) {
+            if (el.tagName === 'IMG' && !el.complete) pending.push(el);
+          }
+        }
+        function onReady() {
+          var elapsed = Date.now() - t0;
+          var wait = Math.max(0, minTime - elapsed);
+          setTimeout(endTransition, wait);
+        }
+        if (pending.length === 0) {
+          onReady();
+        } else {
+          var count = pending.length;
+          var timer = setTimeout(onReady, Math.max(0, maxTime - (Date.now() - t0)));
+          function checkOne() {
+            count--;
+            if (count <= 0) {
+              clearTimeout(timer);
+              onReady();
+            }
+          }
+          for (var j = 0; j < pending.length; j++) {
+            pending[j].addEventListener('load', checkOne, { once: true });
+            pending[j].addEventListener('error', checkOne, { once: true });
+          }
+        }
+      }
+
+      function onDOMContentLoaded() {
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            checkImagesAndFinish();
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+      } else {
+        onDOMContentLoaded();
+      }
+    }
+  }
+
+  // 2. LEAVING A PAGE
+  document.addEventListener('click', function(e) {
+    if (e.defaultPrevented || e.button !== 0) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (navigator.connection && (navigator.connection.saveData || navigator.connection.effectiveType === 'slow-2g')) return;
+    if (/bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent || '')) return;
+
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    if (a.target && a.target !== '_self') return;
+    if (a.hasAttribute('download')) return;
+
+    var rawHref = a.getAttribute('href');
+    if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('mailto:') || rawHref.startsWith('tel:') || rawHref.startsWith('javascript:')) return;
+
+    var url;
+    try {
+      url = new URL(a.href, window.location.href);
+    } catch (_) {
+      return;
+    }
+    if (url.origin !== window.location.origin) return;
+    if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+
+    var nextIdx = 0;
+    try {
+      sessionStorage.setItem('rotw-transition', '1');
+      var lastIdx = parseInt(sessionStorage.getItem('rotw-fact-idx'), 10);
+      nextIdx = Math.floor(Math.random() * 10);
+      if (!isNaN(lastIdx) && nextIdx === lastIdx) {
+        nextIdx = (nextIdx + 1) % 10;
+      }
+      sessionStorage.setItem('rotw-fact-idx', String(nextIdx));
+    } catch (_) {}
+
+    document.documentElement.classList.add('page-leaving');
+    createOverlay(nextIdx);
+
+    setTimeout(function() {
+      document.documentElement.classList.remove('page-leaving');
+    }, 2500);
+  }, false);
+
+  // 3. BFCACHE RESTORATION
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+      document.documentElement.classList.remove('page-leaving', 'transition-pending', 'transition-live');
+      var ov = document.getElementById('pt-overlay');
+      if (ov && ov.parentNode) ov.parentNode.removeChild(ov);
+    }
+  });
+})();
+</script>
 <!-- /SHELL:HEADER -->`;
 }
 

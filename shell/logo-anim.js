@@ -262,6 +262,18 @@
       setTimeout(onDone, 3600);
       return;
     }
+    if (document.documentElement.classList.contains('transition-pending')) {
+      let fired = false;
+      function onDone() {
+        if (fired) return;
+        fired = true;
+        window.removeEventListener('rotw-transition-done', onDone);
+        initROTWLogo();
+      }
+      window.addEventListener('rotw-transition-done', onDone);
+      setTimeout(onDone, 2600);
+      return;
+    }
     initROTWLogo();
   }
 
