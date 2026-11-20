@@ -181,6 +181,77 @@ function renderHeader({ lang = 'en', relBase = '.', activePage = '' }) {
     </a>
   </div>
 </div>
+
+<script>
+(function(){
+  if (!document.documentElement.classList.contains('splash-pending')) return;
+  try {
+    var logo = document.querySelector('.compass-capsule .rotw-logo');
+    if (!logo) return;
+    var splash = document.createElement('div');
+    splash.id = 'rotw-splash';
+    splash.className = 'rotw-splash';
+    splash.setAttribute('aria-hidden', 'true');
+    var inner = document.createElement('div');
+    inner.className = 'rotw-splash-inner';
+    var clone = logo.cloneNode(true);
+    clone.classList.remove('capsule-logo');
+    clone.classList.remove('rotw-logo');
+    clone.classList.add('splash-logo');
+    clone.setAttribute('aria-hidden', 'true');
+    var svgStr = clone.outerHTML.replace(/ id="lg-/g, ' id="lgs-');
+    inner.innerHTML = svgStr;
+    splash.appendChild(inner);
+    document.body.insertBefore(splash, document.body.firstChild);
+    document.documentElement.classList.add('splash-live');
+    try { sessionStorage.setItem('rotw-splash', '1'); } catch(e){}
+
+    var done = false;
+    function finishSplash() {
+      if (done) return;
+      done = true;
+      try { sessionStorage.setItem('rotw-splash', '1'); } catch(e){}
+      document.documentElement.classList.remove('splash-pending');
+      splash.classList.add('splash-out');
+      setTimeout(function() {
+        if (splash.parentNode) splash.parentNode.removeChild(splash);
+        window.dispatchEvent(new Event('resize'));
+        window.dispatchEvent(new CustomEvent('rotw-splash-done'));
+      }, 450);
+    }
+
+    setTimeout(finishSplash, 1800);
+    setTimeout(finishSplash, 3500);
+
+    function onSkip(e) {
+      if (e && e.isTrusted === false) return;
+      window.removeEventListener('click', onSkip);
+      window.removeEventListener('keydown', onSkip);
+      window.removeEventListener('wheel', onSkip);
+      window.removeEventListener('touchstart', onSkip);
+      document.documentElement.classList.remove('splash-pending');
+      try { sessionStorage.setItem('rotw-splash', '1'); } catch(e){}
+      if (splash.parentNode) splash.parentNode.removeChild(splash);
+      if (e && (e.key === 'End' || e.code === 'End')) {
+        var maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+          try { window.lenis.scrollTo(maxScroll, { immediate: true }); } catch(_) { window.scrollTo(0, maxScroll); }
+        } else {
+          window.scrollTo(0, maxScroll);
+        }
+      }
+      window.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new CustomEvent('rotw-splash-done'));
+    }
+    window.addEventListener('click', onSkip, { passive: true });
+    window.addEventListener('keydown', onSkip, { passive: true });
+    window.addEventListener('wheel', onSkip, { passive: true });
+    window.addEventListener('touchstart', onSkip, { passive: true });
+  } catch(e) {
+    document.documentElement.classList.remove('splash-pending');
+  }
+})();
+</script>
 <!-- /SHELL:HEADER -->`;
 }
 

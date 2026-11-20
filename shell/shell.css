@@ -107,10 +107,46 @@ html[lang="ar"] {
   padding-inline: max(16px, env(safe-area-inset-left, 0px));
 }
 
+/* Full-width header band behind capsule (spec-header-band-splash.md Part A) */
+.shell-header-wrapper::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(16px + 52px + 14px);
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, #0B1626 0%, #0B1626 calc(100% - 10px), rgba(11, 22, 38, 0) 100%);
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
 @media (max-width: 768px) {
   .shell-header-wrapper {
     top: 12px;
     padding-inline: 12px;
+  }
+  .shell-header-wrapper::before {
+    height: calc(12px + 46px + 12px);
+  }
+}
+
+body.dest .shell-header-wrapper::before {
+  background: linear-gradient(180deg, #EEF1EF 0%, #EEF1EF calc(100% - 10px), rgba(238, 241, 239, 0) 100%);
+}
+
+body.page-home .shell-header-wrapper::before {
+  opacity: 0;
+}
+
+html.post-story body.page-home .shell-header-wrapper::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell-header-wrapper::before {
+    transition: none !important;
   }
 }
 
@@ -1672,3 +1708,115 @@ body.dest .sasha-chat-chip:hover, body.dest .sasha-chat-chip:focus-visible { bac
 .chat-chip { line-height: 1.35; }
 
 .sasha-bubble, .sasha-bubble p { color: #0B1626 !important; }
+
+/* ============================================================
+   SPLASH OVERLAY & LOGO ANIMATION (spec-header-band-splash.md Part B)
+   ============================================================ */
+
+.rotw-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0B1626;
+  background-image: radial-gradient(120% 70% at 50% 110%, rgba(255, 129, 86, 0.45) 0%, rgba(245, 138, 160, 0.22) 38%, rgba(11, 22, 38, 0) 70%);
+  background-repeat: no-repeat;
+  pointer-events: auto;
+  opacity: 1;
+  transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rotw-splash.splash-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rotw-splash-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(560px, 78vw);
+  max-width: 560px;
+}
+
+.rotw-splash-inner svg.splash-logo {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  display: block;
+  --lg-main: var(--shell-glacier, #F8F1E8);
+  --lg-red: #E53824;
+  --lg-hole: #0B1626;
+}
+
+/* Splash Logo Animations */
+@keyframes splashLetterRise {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rotw-splash-inner #lgs-letters > g {
+  opacity: 0;
+  animation: splashLetterRise 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.rotw-splash-inner #lgs-l-r  { animation-delay: 0.00s; }
+.rotw-splash-inner #lgs-l-o  { animation-delay: 0.04s; }
+.rotw-splash-inner #lgs-l-t  { animation-delay: 0.08s; }
+.rotw-splash-inner #lgs-l-w1 { animation-delay: 0.12s; }
+.rotw-splash-inner #lgs-l-w2 { animation-delay: 0.16s; }
+
+/* Needle sweep */
+@keyframes splashNeedleSweep {
+  0% {
+    transform: rotate(-540deg);
+  }
+  68% {
+    transform: rotate(8deg);
+  }
+  84% {
+    transform: rotate(-3deg);
+  }
+  94% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.rotw-splash-inner #lgs-needle {
+  transform-box: view-box;
+  transform-origin: 226.55px 135.85px;
+  animation: splashNeedleSweep 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+/* Accent & Tagline fade in */
+@keyframes splashFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rotw-splash-inner #lgs-accent {
+  opacity: 0;
+  animation: splashFadeIn 0.45s ease 1.15s forwards;
+}
+
+.rotw-splash-inner #lgs-tagline {
+  opacity: 0;
+  animation: splashFadeIn 0.45s ease 1.15s forwards;
+}
+

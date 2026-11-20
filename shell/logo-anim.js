@@ -249,11 +249,27 @@
     });
   }
 
+  function scheduleInit() {
+    if (document.documentElement.classList.contains('splash-pending')) {
+      let fired = false;
+      function onDone() {
+        if (fired) return;
+        fired = true;
+        window.removeEventListener('rotw-splash-done', onDone);
+        initROTWLogo();
+      }
+      window.addEventListener('rotw-splash-done', onDone);
+      setTimeout(onDone, 3600);
+      return;
+    }
+    initROTWLogo();
+  }
+
   window.initROTWLogoAnim = initROTWLogo;
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initROTWLogo);
+    document.addEventListener('DOMContentLoaded', scheduleInit);
   } else {
-    initROTWLogo();
+    scheduleInit();
   }
 })();
